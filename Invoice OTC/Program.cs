@@ -17,7 +17,17 @@ namespace Invoice_OTC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new dgBindingFrm());
+
+            DialogResult dialogResult = MessageBox.Show("Press Enter to view in grid mode, No to view in detailed mode", "Choose View", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dialogResult != DialogResult.No)
+            {
+                Application.Run(new dgBindingFrm());
+            }
+            else
+            {
+                Application.Run(new Form1());
+            }      
+            
         }
     }
 }

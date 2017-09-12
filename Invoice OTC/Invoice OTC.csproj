@@ -39,8 +39,12 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -74,14 +78,21 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controller\ItemFoundEventArgs.cs" />
-    <Compile Include="Data Access\CustomerListDAO.cs" />
+    <Compile Include="CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Data Access\Customer\CustomerListDAO.cs" />
     <Compile Include="Data Access\DataProvider.cs" />
-    <Compile Include="Data Access\InvoiceItemDAO.cs" />
-    <Compile Include="Data Access\InvoiceListADO.cs" />
+    <Compile Include="Data Access\Invoice\InvoiceItemDAO.cs" />
+    <Compile Include="Data Access\Invoice\InvoiceListADO.cs" />
     <Compile Include="Data Access\numberingListDAO.cs" />
-    <Compile Include="Data Access\rotiItemDAO.cs" />
-    <Compile Include="Data Access\rotiListDAO.cs" />
-    <Compile Include="Data Access\RotiToChooseListDAO.cs" />
+    <Compile Include="Data Access\InvoiceDetail\rotiItemDAO.cs" />
+    <Compile Include="Data Access\InvoiceDetail\rotiListDAO.cs" />
+    <Compile Include="Data Access\outletitemDAO.cs" />
+    <Compile Include="Data Access\RotiToChoose\RotiToChooseListDAO.cs" />
     <Compile Include="Model\Customer\CustomerItem.cs" />
     <Compile Include="Model\Customer\CustomerList.cs" />
     <Compile Include="Model\Invoice\invoiceItem.cs" />
@@ -91,6 +102,8 @@
     <Compile Include="Model\NumberingList.cs" />
     <Compile Include="Model\InvoiceDetail\rotiItem.cs" />
     <Compile Include="Model\InvoiceDetail\rotiList.cs" />
+    <Compile Include="Model\Outlet\outletItem.cs" />
+    <Compile Include="Model\Outlet\outletList.cs" />
     <Compile Include="Model\Roti Item\RotiToChooseItem.cs" />
     <Compile Include="Model\Roti Item\RotiToChooseList.cs" />
     <Compile Include="View\dgBindingFrm.cs">
@@ -105,6 +118,12 @@
     <Compile Include="View\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmInvoicePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmInvoicePrint.Designer.cs">
+      <DependentUpon>FrmInvoicePrint.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\itemFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,20 +132,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Invoice Institusi FIX.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Invoice Institusi FIX.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <EmbeddedResource Include="Controller\FindStrip.resx">
       <DependentUpon>FindStrip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\dgBindingFrm.resx">
       <DependentUpon>dgBindingFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmInvoicePrint.resx">
+      <DependentUpon>FrmInvoicePrint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\itemFrm.resx">
       <DependentUpon>itemFrm.cs</DependentUpon>
@@ -141,10 +161,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Invoice Institusi FIX.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Invoice Institusi FIX.cs</LastGenOutput>
-    </EmbeddedResource>
     <None Include="Properties\DataSources\Invoice_OTC.Controller.AppController.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Controller.Command.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Controller.CommandAddItem.datasource" />

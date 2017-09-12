@@ -226,6 +226,11 @@ namespace Invoice_OTC.View
         {
             MessageBox.Show(e.Exception.ToString());
         }
-        
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            FrmInvoicePrint form = new FrmInvoicePrint();
+            form.ShowDialog();
+        }
     }
 }
