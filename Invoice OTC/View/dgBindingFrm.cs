@@ -232,5 +232,11 @@ namespace Invoice_OTC.View
             FrmInvoicePrint form = new FrmInvoicePrint();
             form.ShowDialog();
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            FrmReportItemList form = new FrmReportItemList();
+            form.ShowDialog();
+        }
     }
 }

@@ -72,7 +72,8 @@ namespace Invoice_OTC.Data_Access
                     nextRoti = new rotiItem();
 
                     //Fill in roti's properties
-                    nextRoti.ID = Convert.ToInt32(childRow["rotiID"]);                   
+                    nextRoti.ID = Convert.ToInt32(childRow["rotiID"]);
+                    nextRoti.Invoiceid = Convert.ToInt32(childRow["invoiceID"]);                
                     nextRoti.Code = childRow["itemCode"].ToString();
                     nextRoti.Name = childRow["itemName"].ToString();
                     nextRoti.Qty = Convert.ToInt32(childRow["itemQty"]);

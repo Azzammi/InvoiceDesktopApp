@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Invoice_OTC.Controller;
 using Invoice_OTC.Model;
 using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
+using Invoice_OTC.View;
 
 namespace Invoice_OTC.View
 {
@@ -21,6 +21,7 @@ namespace Invoice_OTC.View
         AppController m_AppController;
         InvoiceList m_InvoiceList;
         CustomerList m_CustomerList;
+        RotiToChooseList m_RotiToChooseList;
         #endregion
         public FrmInvoicePrint()
         {
@@ -29,31 +30,12 @@ namespace Invoice_OTC.View
 
         private void FrmInvoicePrint_Load(object sender, EventArgs e)
         {
-            //This section of code need to be cleaned and be effective
-            CommandGetInvoices getInvoices = new CommandGetInvoices();
-            m_InvoiceList = (InvoiceList)m_AppController.ExecuteCommand(getInvoices);
-
-            CommandGetCustomer getCustomers = new CommandGetCustomer();
-            m_CustomerList = (CustomerList)m_AppController.ExecuteCommand(getCustomers);
-
-            invoiceItemBindingSource.DataSource = m_InvoiceList;
-            rotiItemBindingSource.DataSource = invoiceItemBindingSource;
-            rotiItemBindingSource.DataMember = "Items";
-
-            customerListBindingSource.DataSource = m_CustomerList;
-
-            CrystalReport2 crInvoice = new CrystalReport2();
-            crInvoice.Database.Tables["Invoice_OTC_Model_InvoiceItem"].SetDataSource(invoiceItemBindingSource);
-            crInvoice.Database.Tables["Invoice_OTC_Model_RotiItem"].SetDataSource(rotiItemBindingSource);
-            crInvoice.Database.Tables["Invoice_OTC_Model_CustomerList"].SetDataSource(customerListBindingSource);
-
-            crystalReportViewer1.ReportSource = crInvoice;
-            crystalReportViewer1.Refresh();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ReportDocument invoiceObjectReport = new ReportDocument(); ;
+            //ReportDocument invoiceObjectReport = new ReportDocument(); ;
             //invoiceObjectReport.Load(Application.StartupPath + "\\CrystalReport2.rpt");
 
             m_AppController = new AppController();
@@ -64,20 +46,23 @@ namespace Invoice_OTC.View
             CommandGetCustomer getCustomers = new CommandGetCustomer();
             m_CustomerList = (CustomerList)m_AppController.ExecuteCommand(getCustomers);
 
+            CommandGetRoti getRotis = new CommandGetRoti();
+            m_RotiToChooseList = (RotiToChooseList)m_AppController.ExecuteCommand(getRotis);
+
             invoiceItemBindingSource.DataSource = m_InvoiceList;
             rotiItemBindingSource.DataSource = invoiceItemBindingSource;
             rotiItemBindingSource.DataMember = "Items";
 
             customerListBindingSource.DataSource = m_CustomerList;
 
-            CrystalReport2 crInvoice = new CrystalReport2();
+            rptInvoice crInvoice = new rptInvoice();
 
-            invoiceObjectReport = (ReportDocument)crInvoice;
-            invoiceObjectReport.Database.Tables["Invoice_OTC_Model_InvoiceItem"].SetDataSource(invoiceItemBindingSource);
-            invoiceObjectReport.Database.Tables["Invoice_OTC_Model_RotiItem"].SetDataSource(rotiItemBindingSource);
-            invoiceObjectReport.Database.Tables["Invoice_OTC_Model_CustomerItem"].SetDataSource(customerListBindingSource);
+            crInvoice.Database.Tables["Invoice_OTC_Model_InvoiceItem"].SetDataSource(invoiceItemBindingSource);
+            crInvoice.Database.Tables["Invoice_OTC_Model_RotiItem"].SetDataSource(rotiItemBindingSource);
+            crInvoice.Database.Tables["Invoice_OTC_Model_CustomerItem"].SetDataSource(m_CustomerList);
+            crInvoice.Database.Tables["Invoice_OTC_Model_RotiToChooseItem"].SetDataSource(m_RotiToChooseList);
             
-            crystalReportViewer1.ReportSource = invoiceObjectReport;
+            crystalReportViewer1.ReportSource = crInvoice;
             crystalReportViewer1.Refresh();
         }
     }

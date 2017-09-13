@@ -32,11 +32,7 @@ namespace Invoice_OTC.Model
             get { return slsmName; }
             set { slsmName = value; }
         }
-
-        public string FullName
-        {
-            get { return slsmCode + " | " + slsmName; }
-        }
+        
         #endregion
     }
 }

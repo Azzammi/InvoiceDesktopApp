@@ -25,7 +25,7 @@ namespace Invoice_OTC
             }
             else
             {
-                Application.Run(new Form1());
+                Application.Run(new detailedBindingForm());
             }      
             
         }

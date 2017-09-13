@@ -122,6 +122,7 @@ namespace Invoice_OTC
         private void tambahBtn_Click(object sender, EventArgs e)
         {
             cekKondisi(2);
+            bindingCustomer.AddNew();
         }
 
         private void batalBtn_Click(object sender, EventArgs e)

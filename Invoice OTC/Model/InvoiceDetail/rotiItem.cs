@@ -13,7 +13,7 @@ namespace Invoice_OTC.Model
 
         //Property Variables
         private int p_ID;
-        //private string invoiceID;
+        private int invoiceID;
         private string itemCode;
         private string itemName;
         private int itemQty;
@@ -48,11 +48,11 @@ namespace Invoice_OTC.Model
             set { p_ID = value; }
         }
 
-        //public string InvoiceID
-        //{
-        //    get { return invoiceID; }
-        //    set { invoiceID = value; }
-        //}
+        public int Invoiceid
+        {
+            get { return invoiceID; }
+            set { invoiceID = value; }
+        }
 
         public string Code
         {

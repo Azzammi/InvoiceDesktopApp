@@ -1,6 +1,6 @@
 ﻿namespace Invoice_OTC.View
 {
-    partial class FrmInvoicePrint
+    partial class FrmReportItemList
     {
         /// <summary>
         /// Required designer variable.
@@ -29,19 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInvoicePrint));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReportItemList));
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.invoiceItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rotiItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rotiToChooseItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceItemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotiItemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotiToChooseItemBindingSource)).BeginInit();
+            this.rotiToChooseItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rotiToChooseItemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -52,25 +46,8 @@
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 25);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(776, 369);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(777, 439);
             this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.ParameterPanel;
-            // 
-            // invoiceItemBindingSource
-            // 
-            this.invoiceItemBindingSource.DataSource = typeof(Invoice_OTC.Model.InvoiceItem);
-            // 
-            // rotiItemBindingSource
-            // 
-            this.rotiItemBindingSource.DataSource = typeof(Invoice_OTC.Model.rotiItem);
-            // 
-            // customerListBindingSource
-            // 
-            this.customerListBindingSource.DataSource = typeof(Invoice_OTC.Model.CustomerItem);
-            // 
-            // rotiToChooseItemBindingSource
-            // 
-            this.rotiToChooseItemBindingSource.DataSource = typeof(Invoice_OTC.Model.RotiToChooseItem);
             // 
             // toolStrip1
             // 
@@ -78,7 +55,7 @@
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(776, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(777, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -90,25 +67,25 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(78, 22);
             this.toolStripButton1.Text = "Show Report";
-            this.toolStripButton1.Click += new System.EventHandler(this.button1_Click);
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // FrmInvoicePrint
+            // rotiToChooseItemBindingSource
+            // 
+            this.rotiToChooseItemBindingSource.DataSource = typeof(Invoice_OTC.Model.RotiToChooseItem);
+            // 
+            // FrmReportItemList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 394);
+            this.ClientSize = new System.Drawing.Size(777, 464);
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "FrmInvoicePrint";
+            this.Name = "FrmReportItemList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmInvoicePrint";
-            this.Load += new System.EventHandler(this.FrmInvoicePrint_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceItemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotiItemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotiToChooseItemBindingSource)).EndInit();
+            this.Text = "FrmReportItemList";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rotiToChooseItemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,12 +94,8 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private System.Windows.Forms.BindingSource invoiceItemBindingSource;
-        private System.Windows.Forms.BindingSource rotiItemBindingSource;
-        private System.Windows.Forms.BindingSource customerListBindingSource;                
-        private CrystalReport2 CrystalReport2;
-        private System.Windows.Forms.BindingSource rotiToChooseItemBindingSource;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.BindingSource rotiToChooseItemBindingSource;
     }
 }

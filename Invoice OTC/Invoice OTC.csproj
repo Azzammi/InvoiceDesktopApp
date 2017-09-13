@@ -70,6 +70,7 @@
     <Compile Include="Controller\Invoice\CommandGetInvoice.cs" />
     <Compile Include="Controller\Invoice\commandGetInvoices.cs" />
     <Compile Include="Controller\commandGetNumber.cs" />
+    <Compile Include="Controller\miscellanacousFunction.cs" />
     <Compile Include="Controller\Roti Item\CommandGetRoti.cs" />
     <Compile Include="Controller\commandInsertInvoice.cs" />
     <Compile Include="Controller\Invoice\CommandUpdateInvoice.cs" />
@@ -106,6 +107,18 @@
     <Compile Include="Model\Outlet\outletList.cs" />
     <Compile Include="Model\Roti Item\RotiToChooseItem.cs" />
     <Compile Include="Model\Roti Item\RotiToChooseList.cs" />
+    <Compile Include="rptInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="View\detailedBindingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\detailedBindingForm.Designer.cs">
+      <DependentUpon>detailedBindingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\dgBindingFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,11 +131,18 @@
     <Compile Include="View\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormStatusChangedEventArgs.cs" />
     <Compile Include="View\FrmInvoicePrint.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FrmInvoicePrint.Designer.cs">
       <DependentUpon>FrmInvoicePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmReportItemList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmReportItemList.Designer.cs">
+      <DependentUpon>FrmReportItemList.cs</DependentUpon>
     </Compile>
     <Compile Include="View\itemFrm.cs">
       <SubType>Form</SubType>
@@ -132,12 +152,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\rptRoti.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptRoti.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Controller\FindStrip.resx">
       <DependentUpon>FindStrip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInvoice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\detailedBindingForm.resx">
+      <DependentUpon>detailedBindingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\dgBindingFrm.resx">
       <DependentUpon>dgBindingFrm.cs</DependentUpon>
@@ -147,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmInvoicePrint.resx">
       <DependentUpon>FrmInvoicePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmReportItemList.resx">
+      <DependentUpon>FrmReportItemList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\itemFrm.resx">
       <DependentUpon>itemFrm.cs</DependentUpon>
@@ -161,6 +197,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\rptRoti.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptRoti.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\Invoice_OTC.Controller.AppController.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Controller.Command.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Controller.CommandAddItem.datasource" />
