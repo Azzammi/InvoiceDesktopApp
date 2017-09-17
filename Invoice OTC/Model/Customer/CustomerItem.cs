@@ -12,7 +12,8 @@ namespace Invoice_OTC.Model
         #region Declarations
 
         private string slsmCode;
-        private string slsmName;        
+        private string slsmName;
+        private string slsmAddress;
         
         #endregion
 
@@ -31,6 +32,12 @@ namespace Invoice_OTC.Model
         {
             get { return slsmName; }
             set { slsmName = value; }
+        }
+
+        public string SlsmAddress
+        {
+            get { return slsmAddress; }
+            set { slsmAddress = value; }
         }
         
         #endregion

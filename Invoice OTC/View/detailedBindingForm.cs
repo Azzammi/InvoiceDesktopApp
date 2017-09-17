@@ -32,9 +32,40 @@ namespace Invoice_OTC.View
         #endregion
 
         #region Constructor
-        public detailedBindingForm()
+        public detailedBindingForm(FormStatus value)
         {
             InitializeComponent();
+
+            //Add method event
+            frmStatusChanged += DetailedBindingForm_frmStatusChanged;
+
+            //Load the form first
+            detailedBindingForm_Load();
+
+            //Set the form Status 
+            FrmStatus = value;
+        }
+
+        private void DetailedBindingForm_frmStatusChanged(object sender, FormStatusChangedEventArgs e)
+        {
+            switch (e.FrmStatus)
+            {
+                case FormStatus.Init:
+                    MessageBox.Show("Init");
+                    break;
+                case FormStatus.OnEditMode:
+                    MessageBox.Show("OnEditMode");
+                    break;
+                case FormStatus.Ready:
+                    MessageBox.Show("Ready");
+                    break;
+                case FormStatus.NewRecord:
+                    MessageBox.Show("NewRecord");
+                    break;
+                default:
+                    MessageBox.Show("Default");
+                    break;
+            }
         }
         #endregion
 
@@ -45,24 +76,7 @@ namespace Invoice_OTC.View
             //Report Changes
             frmStatusChanged?.Invoke(this, e);
         }
-
-        protected void StatusChanged(object sender, FormStatusChangedEventArgs e)
-        {
-            switch (e.FrmStatus)
-            {
-                case FormStatus.Init:
-                    break;
-                case FormStatus.OnEditMode:
-                    break;
-                case FormStatus.Ready:
-                    break;
-                case FormStatus.NewRecord:
-                    break;
-                default:
-                    break;
-            }
-        }
-
+        
         private void tambahBtn_Click(object sender, EventArgs e)
         {
             invoiceItemBindingSource.AddNew();
@@ -99,7 +113,7 @@ namespace Invoice_OTC.View
             }
         }
 
-        private void detailedBindingForm_Load(object sender, EventArgs e)
+        private void detailedBindingForm_Load()
         {
             m_AppController = new AppController();
 
@@ -122,5 +136,19 @@ namespace Invoice_OTC.View
             invoiceItemBindingSource.Position = 0;
         }
         #endregion
+        
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if(bindingNavigator1.Visible != true)
+            {
+                toolStripButton1.Text = "Show Navigator";
+                bindingNavigator1.Visible = true;
+            }
+            else
+            {
+                toolStripButton1.Text = "Hide Navigator";
+                bindingNavigator1.Visible = false;
+            }
+        }
     }
 }

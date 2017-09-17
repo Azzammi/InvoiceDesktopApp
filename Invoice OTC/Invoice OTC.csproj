@@ -71,6 +71,10 @@
     <Compile Include="Controller\Invoice\commandGetInvoices.cs" />
     <Compile Include="Controller\commandGetNumber.cs" />
     <Compile Include="Controller\miscellanacousFunction.cs" />
+    <Compile Include="Controller\Outlet\CommandCRUOutlet.cs" />
+    <Compile Include="Controller\Outlet\CommandDeleteOutlet.cs" />
+    <Compile Include="Controller\Outlet\CommandGetOutlet.cs" />
+    <Compile Include="Controller\Outlet\CommandGettingOutlet.cs" />
     <Compile Include="Controller\Roti Item\CommandGetRoti.cs" />
     <Compile Include="Controller\commandInsertInvoice.cs" />
     <Compile Include="Controller\Invoice\CommandUpdateInvoice.cs" />
@@ -92,7 +96,8 @@
     <Compile Include="Data Access\numberingListDAO.cs" />
     <Compile Include="Data Access\InvoiceDetail\rotiItemDAO.cs" />
     <Compile Include="Data Access\InvoiceDetail\rotiListDAO.cs" />
-    <Compile Include="Data Access\outletitemDAO.cs" />
+    <Compile Include="Data Access\Outlet\outletitemDAO.cs" />
+    <Compile Include="Data Access\Outlet\OutletListDAO.cs" />
     <Compile Include="Data Access\RotiToChoose\RotiToChooseListDAO.cs" />
     <Compile Include="Model\Customer\CustomerItem.cs" />
     <Compile Include="Model\Customer\CustomerList.cs" />
@@ -132,11 +137,23 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormStatusChangedEventArgs.cs" />
+    <Compile Include="View\FrmImportExcelOutlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmImportExcelOutlet.Designer.cs">
+      <DependentUpon>FrmImportExcelOutlet.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmInvoicePrint.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FrmInvoicePrint.Designer.cs">
       <DependentUpon>FrmInvoicePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmOutlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmOutlet.Designer.cs">
+      <DependentUpon>FrmOutlet.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmReportItemList.cs">
       <SubType>Form</SubType>
@@ -178,8 +195,14 @@
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmImportExcelOutlet.resx">
+      <DependentUpon>FrmImportExcelOutlet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmInvoicePrint.resx">
       <DependentUpon>FrmInvoicePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmOutlet.resx">
+      <DependentUpon>FrmOutlet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmReportItemList.resx">
       <DependentUpon>FrmReportItemList.cs</DependentUpon>
@@ -217,6 +240,7 @@
     <None Include="Properties\DataSources\Invoice_OTC.Controller.ItemFoundEventArgs.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Model.CustomerList.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Model.InvoiceItem.datasource" />
+    <None Include="Properties\DataSources\Invoice_OTC.Model.outletItem.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Model.rotiItem.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Model.RotiToChooseItem.datasource" />
     <None Include="Properties\Settings.settings">

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Invoice_OTC.Data_Access;
 
 namespace Invoice_OTC.Model
 {
     class outletItem
     {
         #region Declaration
-        private string slsmCode;
-        private string slsmName;
+        private string slsmCode;        
         private string outletCode;
         private string outletName;
         private string outletAddress;
@@ -34,11 +34,6 @@ namespace Invoice_OTC.Model
         {
             get { return slsmCode; }
             set { slsmCode = value; }
-        }
-        public string SlsmName
-        {
-            get { return slsmName; }
-            set { slsmName = value; }
         }
         public string OutletCode
         {
@@ -65,24 +60,29 @@ namespace Invoice_OTC.Model
             get { return outletStatus; }
             set { outletStatus = value; }
         }
+        
         #endregion
 
         #region Methods
         internal void CreateDatabaseRecord()
         {
-
+            outletitemDAO dao = new outletitemDAO();
+            dao.CreateDatabaseRecord(this);
         }
-        internal void ImportDatabaseRecord()
-        {
-
-        }
+        //internal void ImportDatabaseRecord()
+        //{
+        //    outletitemDAO dao = new outletitemDAO();
+        //    dao.UpdateDatabaseRecord(this);
+        //}
         internal void UpdateDatabaseRecord()
         {
-
+            outletitemDAO dao = new outletitemDAO();
+            dao.UpdateDatabaseRecord(this);
         }
         internal void DeleteDatabaseRecord()
         {
-
+            outletitemDAO dao = new outletitemDAO();
+            dao.DeleteDatabaseRecord(this.OutletCode);
         }
         #endregion
     }
