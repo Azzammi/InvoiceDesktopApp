@@ -18,16 +18,16 @@ namespace Invoice_OTC
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //DialogResult dialogResult = MessageBox.Show("Press Enter to view in grid mode, No to view in detailed mode", "Choose View", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //if(dialogResult != DialogResult.No)
-            //{
-            //    Application.Run(new dgBindingFrm());
-            //}
-            //else
-            //{
-            //    Application.Run(new detailedBindingForm(FormStatus.Ready));
-            //}      
-            Application.Run(new FrmOutlet());
+            DialogResult dialogResult = MessageBox.Show("Press Enter to view in grid mode, No to view in detailed mode", "Choose View", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult != DialogResult.No)
+            {
+                Application.Run(new dgBindingFrm());
+            }
+            else
+            {
+                Application.Run(new detailedBindingForm(FormStatus.Ready));
+            }
+            //Application.Run(new FrmOutlet());
         }
     }
 }

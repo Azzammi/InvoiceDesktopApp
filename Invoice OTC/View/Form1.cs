@@ -18,8 +18,7 @@ namespace Invoice_OTC
         #region Declarations        
 
         AppController m_AppController;
-        InvoiceList m_Invoices;
-        InvoiceItem m_Items;
+        InvoiceList m_Invoices;        
 
         CustomerList m_Customer;
 

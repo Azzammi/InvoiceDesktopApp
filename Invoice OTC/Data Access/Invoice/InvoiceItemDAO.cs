@@ -22,7 +22,7 @@ namespace Invoice_OTC.Data_Access
 
             //Built SqlQuery
             string sql = string.Format("INSERT INTO invoice "
-                                + "(slsmCode) "
+                                + "(noInvoice) "
                                 + "OUTPUT INSERTED.invoiceID "
                                 + " VALUES "
                                 + "('[1313]')");
@@ -39,8 +39,7 @@ namespace Invoice_OTC.Data_Access
             StringBuilder sqlQuery = new StringBuilder("Update invoice SET ");
             sqlQuery.Append(String.Format("noInvoice = '{0}', ", changedInvoice.Nomor));
             sqlQuery.Append(String.Format("periodeBulan = '{0}', ", changedInvoice.PeriodeBulan));
-            sqlQuery.Append(String.Format("slsmCode = '{0}', ", changedInvoice.SlsmCode));
-            sqlQuery.Append(String.Format("slsmName = '{0}', ", changedInvoice.SlsmName));
+            sqlQuery.Append(String.Format("outletCode = '{0}', ", changedInvoice.OutletCode));            
             sqlQuery.Append(String.Format("subTotal = '{0}', ", changedInvoice.SubTotal));
             sqlQuery.Append(String.Format("ppn = '{0}', ", changedInvoice.PPN));
             sqlQuery.Append(String.Format("total = '{0}', ", changedInvoice.Total));

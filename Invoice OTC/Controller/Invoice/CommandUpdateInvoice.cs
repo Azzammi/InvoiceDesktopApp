@@ -10,8 +10,7 @@ namespace Invoice_OTC.Controller
     class CommandUpdateInvoice : Command
     {
         #region Declarations
-        InvoiceItem m_InvoiceToUpdate;
-        CustomerItem m_CustomerToSelect;
+        InvoiceItem m_InvoiceToUpdate;        
         #endregion
 
         #region Contructor

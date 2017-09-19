@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Invoice_OTC.Controller.Outlet;
 using Invoice_OTC.Controller;
 using Invoice_OTC.Model;
 
@@ -17,7 +18,7 @@ namespace Invoice_OTC.View
         #region Declaration
         AppController m_AppController;
         InvoiceList m_Invoices;
-        CustomerList m_Customer;
+        outletList m_OutletList;
         RotiToChooseList m_RotiList;
         #endregion
         public dgBindingFrm()
@@ -34,8 +35,8 @@ namespace Invoice_OTC.View
              * get instantiated. */
 
             //Get Customer List
-            CommandGetCustomer getCustomer = new CommandGetCustomer();
-            m_Customer = (CustomerList)m_AppController.ExecuteCommand(getCustomer);
+            CommandGettingOutlet getOutlets = new CommandGettingOutlet();
+            m_OutletList = (outletList)m_AppController.ExecuteCommand(getOutlets);
 
             // Get invoices List
             CommandGetInvoices getInvoices = new CommandGetInvoices();
@@ -45,7 +46,7 @@ namespace Invoice_OTC.View
             m_RotiList = (RotiToChooseList)m_AppController.ExecuteCommand(getRoti);
 
             //Bind Grids            
-            customerListBindingSource.DataSource = m_Customer;
+            outletItemBindingSource.DataSource = m_OutletList;
             rotiToChooseItemBindingSource.DataSource = m_RotiList;
 
             bindingInvoice.DataSource = m_Invoices;
@@ -69,12 +70,7 @@ namespace Invoice_OTC.View
             {
                 changedInvoice = m_Invoices[index];
             }
-
-            CustomerItem changedCustomer = null;
-            if(m_Customer.Count > 0)
-            {
-                changedCustomer = (CustomerItem)customerListBindingSource.Current;
-            }
+            
             // Get the type of change that occured
             ListChangedType changeType = e.ListChangedType;
 

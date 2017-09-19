@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Invoice_OTC</RootNamespace>
     <AssemblyName>Invoice OTC</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -76,7 +76,7 @@
     <Compile Include="Controller\Outlet\CommandGetOutlet.cs" />
     <Compile Include="Controller\Outlet\CommandGettingOutlet.cs" />
     <Compile Include="Controller\Roti Item\CommandGetRoti.cs" />
-    <Compile Include="Controller\commandInsertInvoice.cs" />
+    <Compile Include="Controller\Invoice\commandInsertInvoice.cs" />
     <Compile Include="Controller\Invoice\CommandUpdateInvoice.cs" />
     <Compile Include="Controller\Invoice Detail\CommandUpdateItem.cs" />
     <Compile Include="Controller\FindStrip.cs">
@@ -89,6 +89,7 @@
       <DependentUpon>CrystalReport2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Data Access\Customer\CustomerItemDAO.cs" />
     <Compile Include="Data Access\Customer\CustomerListDAO.cs" />
     <Compile Include="Data Access\DataProvider.cs" />
     <Compile Include="Data Access\Invoice\InvoiceItemDAO.cs" />

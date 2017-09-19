@@ -18,7 +18,7 @@ namespace Invoice_OTC.Data_Access
         public void LoadCustomerList(CustomerList list)
         {
             
-            string sql ="SELECT SLSMCODE, SLSMNAME, SLSMSUPV FROM OTFSLSM";
+            string sql ="SELECT SLSMCODE, SLSMNAME, SLSMADDRESS, STAT FROM SALESMAN";
 
             DataSet dataSet = DataProvider.GetDataSet(sql);
 
@@ -33,6 +33,7 @@ namespace Invoice_OTC.Data_Access
 
                 nextCustomer.SlsmCode = parentRow["SLSMCODE"].ToString();
                 nextCustomer.SlsmName = parentRow["SLSMNAME"].ToString();
+                nextCustomer.SlsmAddress = parentRow["SLSMADDRESS"].ToString();
 
                 list.Add(nextCustomer);
             }

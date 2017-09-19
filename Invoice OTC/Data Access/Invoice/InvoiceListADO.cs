@@ -26,7 +26,7 @@ namespace Invoice_OTC.Data_Access
         {
             //Build query to get Invoice's and their roti
             StringBuilder sqlQuery = new StringBuilder();
-            sqlQuery.Append(String.Format("Select invoiceID, noInvoice, periodeBulan, invoice.slsmCode, OTFSLSM.slsmName, subTotal, ppn, total, issuedDate FROM invoice INNER JOIN OTFSLSM ON invoice.slsmCode = otfslsm.slsmCode ;"));
+            sqlQuery.Append(String.Format("Select invoiceID, noInvoice, periodeBulan, invoice.outletCode, OUTLET.OUTLNAME, subTotal, ppn, total, issuedDate FROM invoice INNER JOIN OUTLET ON invoice.outletCode = OUTLET.OUTLCODE ;"));
             sqlQuery.Append(string.Format("Select rotiID, invoiceID, itemCode, itemName, itemQty, itemPrice FROM invoiceDetail"));
 
             //Get a data set from the query
@@ -55,8 +55,8 @@ namespace Invoice_OTC.Data_Access
                 nextInvoice.InvoiceID = Convert.ToInt32(parentRow["invoiceID"]);
                 nextInvoice.Nomor = parentRow["noInvoice"].ToString();
                 nextInvoice.PeriodeBulan = Convert.ToDateTime(parentRow["periodeBulan"]);
-                nextInvoice.SlsmCode = parentRow["slsmCode"].ToString();
-                nextInvoice.SlsmName = parentRow["slsmName"].ToString();
+                nextInvoice.OutletCode = parentRow["outletCode"].ToString();
+                
                 //nextInvoice.SubTotal = Convert.ToDecimal(parentRow["subTotal"]);
                 nextInvoice.PPN = Convert.ToInt32(parentRow["ppn"]);
                 //nextInvoice.Total = Convert.ToDecimal(parentRow["total"]);
