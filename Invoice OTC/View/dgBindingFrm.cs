@@ -56,11 +56,7 @@ namespace Invoice_OTC.View
 
         private void bindingInvoice_ListChanged(object sender, ListChangedEventArgs e)
         {
-            /* This event will be called several times during form initialization.
-            * We don't want to do anything with it until the runtime authors
-            * list has been passed in. */
-
-            // Exit if no project list
+             // Exit if no project list
             if (m_Invoices == null) return;
 
             // Get the item affected
@@ -83,8 +79,16 @@ namespace Invoice_OTC.View
             switch (changeType)
             {
                 case ListChangedType.ItemChanged:
-                    CommandUpdateInvoice updateAuthor = new CommandUpdateInvoice(changedInvoice);
-                    m_AppController.ExecuteCommand(updateAuthor);
+                    if(changedInvoice.Nomor != null)
+                    {
+                        CommandUpdateInvoice updateAuthor = new CommandUpdateInvoice(changedInvoice);
+                        m_AppController.ExecuteCommand(updateAuthor);
+                    }
+                    else
+                    {
+                        CommandDeleteInvoice deleteInvoice = new CommandDeleteInvoice(m_Invoices, changedInvoice);
+                        m_AppController.ExecuteCommand(deleteInvoice);
+                    }                    
                     break;
 
                 case ListChangedType.ItemMoved:
@@ -157,8 +161,17 @@ namespace Invoice_OTC.View
             switch (changeType)
             {
                 case ListChangedType.ItemChanged:
-                    CommandUpdateItem updateItem = new CommandUpdateItem(changedItem);
-                    m_AppController.ExecuteCommand(updateItem);
+                    if(changedItem.Code != null)
+                    {
+                        CommandUpdateItem updateItem = new CommandUpdateItem(changedItem);
+                        m_AppController.ExecuteCommand(updateItem);
+                    }
+                    else
+                    {
+                        CommandDeleteItem deleteItem = new CommandDeleteItem(changedItem);
+                        m_AppController.ExecuteCommand(deleteItem);
+                    }
+                    
                     break;
 
                 case ListChangedType.ItemMoved:

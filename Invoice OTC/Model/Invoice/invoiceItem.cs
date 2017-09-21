@@ -95,8 +95,7 @@ namespace Invoice_OTC.Model
 
         public float PPN
         {
-            get { return ppn; }
-            set { ppn = value; }
+            get { return (float)(SubTotal * 10) / 100; } 
         }
 
         public decimal Total

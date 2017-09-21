@@ -94,6 +94,8 @@
             // outletItemBindingSource
             // 
             this.outletItemBindingSource.DataSource = typeof(Invoice_OTC.Model.outletItem);
+            this.outletItemBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.outletItemBindingSource_AddingNew);
+            this.outletItemBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.outletItemBindingSource_ListChanged);
             // 
             // bindingNavigatorCountItem
             // 
@@ -260,14 +262,14 @@
             // deletesToolStripMenuItem
             // 
             this.deletesToolStripMenuItem.Name = "deletesToolStripMenuItem";
-            this.deletesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deletesToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.deletesToolStripMenuItem.Text = "Delete(s)";
             this.deletesToolStripMenuItem.Click += new System.EventHandler(this.deletesToolStripMenuItem_Click);
             // 
             // deleteAllToolStripMenuItem
             // 
             this.deleteAllToolStripMenuItem.Name = "deleteAllToolStripMenuItem";
-            this.deleteAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteAllToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.deleteAllToolStripMenuItem.Text = "Delete All";
             this.deleteAllToolStripMenuItem.Click += new System.EventHandler(this.deleteAllToolStripMenuItem_Click);
             // 

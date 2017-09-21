@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Invoice_OTC.Controller.Outlet;
 using Invoice_OTC.Controller;
 using Invoice_OTC.Model;
 using CrystalDecisions.CrystalReports.Engine;
@@ -19,9 +20,9 @@ namespace Invoice_OTC.View
     {
         #region Declaration
         AppController m_AppController;
-        InvoiceList m_InvoiceList;
-        CustomerList m_CustomerList;
+        InvoiceList m_InvoiceList;        
         RotiToChooseList m_RotiToChooseList;
+        outletList m_OutletList;
         #endregion
         public FrmInvoicePrint()
         {
@@ -43,8 +44,8 @@ namespace Invoice_OTC.View
             CommandGetInvoices getInvoices = new CommandGetInvoices();
             m_InvoiceList = (InvoiceList)m_AppController.ExecuteCommand(getInvoices);
 
-            CommandGetCustomer getCustomers = new CommandGetCustomer();
-            m_CustomerList = (CustomerList)m_AppController.ExecuteCommand(getCustomers);
+            CommandGettingOutlet getOutlet = new CommandGettingOutlet();
+            m_OutletList = (outletList)m_AppController.ExecuteCommand(getOutlet);
 
             CommandGetRoti getRotis = new CommandGetRoti();
             m_RotiToChooseList = (RotiToChooseList)m_AppController.ExecuteCommand(getRotis);
@@ -53,14 +54,13 @@ namespace Invoice_OTC.View
             rotiItemBindingSource.DataSource = invoiceItemBindingSource;
             rotiItemBindingSource.DataMember = "Items";
 
-            customerListBindingSource.DataSource = m_CustomerList;
-
             rptInvoice crInvoice = new rptInvoice();
+            //rptInvoiceFix crInvoice = new rptInvoiceFix();
 
             crInvoice.Database.Tables["Invoice_OTC_Model_InvoiceItem"].SetDataSource(invoiceItemBindingSource);
-            crInvoice.Database.Tables["Invoice_OTC_Model_RotiItem"].SetDataSource(rotiItemBindingSource);
-            crInvoice.Database.Tables["Invoice_OTC_Model_CustomerItem"].SetDataSource(m_CustomerList);
+            crInvoice.Database.Tables["Invoice_OTC_Model_RotiItem"].SetDataSource(rotiItemBindingSource);            
             crInvoice.Database.Tables["Invoice_OTC_Model_RotiToChooseItem"].SetDataSource(m_RotiToChooseList);
+            crInvoice.Database.Tables["Invoice_OTC_Model_OutletItem"].SetDataSource(m_OutletList);
             
             crystalReportViewer1.ReportSource = crInvoice;
             crystalReportViewer1.Refresh();

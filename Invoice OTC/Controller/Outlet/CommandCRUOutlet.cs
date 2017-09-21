@@ -16,10 +16,10 @@ namespace Invoice_OTC.Controller.Outlet
 
         #region Constructor
         public CommandCRUOutlet() { }
-        public CommandCRUOutlet(outletItem item, bool isUpdate)
+        public CommandCRUOutlet(outletItem item)
         {
             m_Item = item;
-            this.isUpdate = isUpdate;
+            this.isUpdate = true;
         }
         #endregion
 
@@ -28,12 +28,12 @@ namespace Invoice_OTC.Controller.Outlet
         {
             if(isUpdate != false)
             {
-                m_Item.CreateDatabaseRecord();
+                m_Item.UpdateDatabaseRecord();
                 return m_Item;
             }
             else
             {
-                m_Item.UpdateDatabaseRecord();
+                m_Item.CreateDatabaseRecord();
                 return m_Item;
             }            
        }

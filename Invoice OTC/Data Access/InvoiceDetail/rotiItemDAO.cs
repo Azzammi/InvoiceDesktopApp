@@ -14,9 +14,9 @@ namespace Invoice_OTC.Data_Access
         {
             //Built "insert" query
             String sql = string.Format("INSERT INTO invoiceDetail "
-                + "(invoiceID, itemQty, itemPrice) "
+                + "(itemCode,invoiceID, itemQty, itemPrice) "
                 +" OUTPUT INSERTED.rotiID  "
-                + "VALUES ({0},0,0)",parentID);
+                + "VALUES ('0',{0},0,0)",parentID);
             //Execute Query
             int newRecordID = DataProvider.ExecuteScalar(sql);
 

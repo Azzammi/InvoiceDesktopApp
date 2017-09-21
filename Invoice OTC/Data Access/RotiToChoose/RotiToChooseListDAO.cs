@@ -24,7 +24,7 @@ namespace Invoice_OTC.Data_Access
         public void ListRotiToChoose(RotiToChooseList rotiList)
         {
             //Build a query string
-            string sql = string.Format("SELECT ITEMCODE, ITEMNAME, ITEMSORT FROM OTFITEM");
+            string sql = string.Format("SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM [ITEM]");
 
             //Get a dataset from the query
             DataSet dataSet = DataProvider.GetDataSet(sql);
@@ -40,6 +40,12 @@ namespace Invoice_OTC.Data_Access
                 nextRoti.ItemCode = parent["itemCode"].ToString();
                 nextRoti.ItemName = parent["itemName"].ToString();
                 nextRoti.ItemSort = parent["itemSort"].ToString();
+                nextRoti.Brand = parent["Brand"].ToString();
+                nextRoti.Jenis = parent["Jenis"].ToString();
+                nextRoti.Category = parent["Category"].ToString();
+                nextRoti.SubCategory = parent["SubCategory"].ToString();
+                nextRoti.Price = Convert.ToDecimal(parent["Price"]);
+                nextRoti.Stat = Convert.ToBoolean(parent["Stat"]);
 
                 //Add the data item to the data list
                 rotiList.Add(nextRoti);

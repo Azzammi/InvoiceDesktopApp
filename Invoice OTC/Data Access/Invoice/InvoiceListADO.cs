@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using Invoice_OTC.Model;
+using Invoice_OTC.Controller;
 
 namespace Invoice_OTC.Data_Access
 {
@@ -58,7 +59,7 @@ namespace Invoice_OTC.Data_Access
                 nextInvoice.OutletCode = parentRow["outletCode"].ToString();
                 
                 //nextInvoice.SubTotal = Convert.ToDecimal(parentRow["subTotal"]);
-                nextInvoice.PPN = Convert.ToInt32(parentRow["ppn"]);
+                //nextInvoice.PPN = Convert.ToInt32(parentRow["ppn"]);
                 //nextInvoice.Total = Convert.ToDecimal(parentRow["total"]);
                 nextInvoice.IssuedData = Convert.ToDateTime(parentRow["issuedDate"]);
 
@@ -80,10 +81,17 @@ namespace Invoice_OTC.Data_Access
                     nextRoti.Price = Convert.ToDecimal(childRow["itemPrice"]);
 
                     //Add roti to invoice
-                    nextInvoice.Items.Add(nextRoti);
+                    if(nextRoti.Code != "0")
+                    {
+                        nextInvoice.Items.Add(nextRoti);
+                    }
+                    else
+                    {
+                        nextRoti.DeleteDatabaseRecord();
+                    }                    
                 }
 
-                //Add the invoice to the invoice List
+                //Add the invoice to the invoice List                
                 invoiceList.Add(nextInvoice);
             }
 

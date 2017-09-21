@@ -95,5 +95,49 @@ namespace Invoice_OTC.View
                 }
             }
         }
+
+        private void outletItemBindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        {
+            if (m_List == null) return;
+
+            // Create a new project
+            CommandCRUOutlet newOutlet = new CommandCRUOutlet();
+            outletItem item = (outletItem)m_AppController.ExecuteCommand(newOutlet);
+
+            // Add it to theAuthors list
+            e.NewObject = item;
+        }
+
+        private void outletItemBindingSource_ListChanged(object sender, ListChangedEventArgs e)
+        {
+            
+            // Exit if no project list
+            if (m_List == null) return;
+
+            // Get the item affected
+            int index = e.NewIndex;
+            outletItem changedOutlet = null;
+            if ((index > -1) && (index < m_List.Count))
+            {
+                changedOutlet = m_List[index];
+            }
+
+            // Get the type of change that occured
+            ListChangedType changeType = e.ListChangedType;
+
+            // Dispatch a change handler
+
+            switch (changeType)
+            {
+                case ListChangedType.ItemChanged:
+                    CommandCRUOutlet updateOutlet = new CommandCRUOutlet(changedOutlet);
+                    m_AppController.ExecuteCommand(updateOutlet);
+                    break;
+
+                case ListChangedType.ItemMoved:
+                    // Not supported in this app
+                    break;
+            }
+        }
     }
 }

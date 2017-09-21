@@ -15,6 +15,10 @@ namespace Invoice_OTC.Controller
         #endregion
 
         #region Constructor
+        public CommandDeleteItem(rotiItem rotiToDelete)
+        {
+            m_rotiToDelete = rotiToDelete;
+        }
         public CommandDeleteItem(InvoiceItem parent, rotiItem rotiToDelete)
         {
             m_parent = parent;
@@ -26,7 +30,10 @@ namespace Invoice_OTC.Controller
         public override object Execute()
         {
             m_rotiToDelete.DeleteDatabaseRecord();
-            m_parent.Items.Remove(m_rotiToDelete);
+            if (m_parent != null)
+            {                
+                m_parent.Items.Remove(m_rotiToDelete);
+            }            
             return null;
         }
         #endregion

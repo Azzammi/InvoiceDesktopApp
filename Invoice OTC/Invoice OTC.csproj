@@ -41,6 +41,13 @@
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Syncfusion.Grid.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Grid.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Shared.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Shared.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.SpellChecker.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Tools.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Tools.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -75,6 +82,7 @@
     <Compile Include="Controller\Outlet\CommandDeleteOutlet.cs" />
     <Compile Include="Controller\Outlet\CommandGetOutlet.cs" />
     <Compile Include="Controller\Outlet\CommandGettingOutlet.cs" />
+    <Compile Include="Controller\Roti Item\CommandDeleteRoti.cs" />
     <Compile Include="Controller\Roti Item\CommandGetRoti.cs" />
     <Compile Include="Controller\Invoice\commandInsertInvoice.cs" />
     <Compile Include="Controller\Invoice\CommandUpdateInvoice.cs" />
@@ -83,6 +91,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controller\ItemFoundEventArgs.cs" />
+    <Compile Include="Controller\Roti Item\CommandInsertRoti.cs" />
+    <Compile Include="Controller\Roti Item\CommandUpdateRoti.cs" />
     <Compile Include="CrystalReport2.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,6 +109,7 @@
     <Compile Include="Data Access\InvoiceDetail\rotiListDAO.cs" />
     <Compile Include="Data Access\Outlet\outletitemDAO.cs" />
     <Compile Include="Data Access\Outlet\OutletListDAO.cs" />
+    <Compile Include="Data Access\RotiToChoose\RotiToChooseItemDAO.cs" />
     <Compile Include="Data Access\RotiToChoose\RotiToChooseListDAO.cs" />
     <Compile Include="Model\Customer\CustomerItem.cs" />
     <Compile Include="Model\Customer\CustomerList.cs" />
@@ -117,6 +128,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptInvoiceFix.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptInvoiceFix.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\detailedBindingForm.cs">
@@ -138,10 +155,16 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormStatusChangedEventArgs.cs" />
-    <Compile Include="View\FrmImportExcelOutlet.cs">
+    <Compile Include="View\FrmImportExcelRoti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmImportExcelOutlet.Designer.cs">
+    <Compile Include="View\FrmImportExcelRoti.Designer.cs">
+      <DependentUpon>FrmImportExcelRoti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Outlet\FrmImportExcelOutlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Outlet\FrmImportExcelOutlet.Designer.cs">
       <DependentUpon>FrmImportExcelOutlet.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmInvoicePrint.cs">
@@ -150,10 +173,10 @@
     <Compile Include="View\FrmInvoicePrint.Designer.cs">
       <DependentUpon>FrmInvoicePrint.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmOutlet.cs">
+    <Compile Include="View\Outlet\FrmOutlet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmOutlet.Designer.cs">
+    <Compile Include="View\Outlet\FrmOutlet.Designer.cs">
       <DependentUpon>FrmOutlet.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmReportItemList.cs">
@@ -170,6 +193,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\RibbonForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RibbonForm1.Designer.cs">
+      <DependentUpon>RibbonForm1.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\rptRoti.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -187,6 +216,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptInvoice.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptInvoiceFix.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInvoiceFix.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\detailedBindingForm.resx">
       <DependentUpon>detailedBindingForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,13 +229,16 @@
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmImportExcelOutlet.resx">
+    <EmbeddedResource Include="View\FrmImportExcelRoti.resx">
+      <DependentUpon>FrmImportExcelRoti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Outlet\FrmImportExcelOutlet.resx">
       <DependentUpon>FrmImportExcelOutlet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmInvoicePrint.resx">
       <DependentUpon>FrmInvoicePrint.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmOutlet.resx">
+    <EmbeddedResource Include="View\Outlet\FrmOutlet.resx">
       <DependentUpon>FrmOutlet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmReportItemList.resx">
@@ -221,6 +257,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\RibbonForm1.resx">
+      <DependentUpon>RibbonForm1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\rptRoti.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptRoti.cs</LastGenOutput>

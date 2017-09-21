@@ -35,7 +35,7 @@ namespace Invoice_OTC.Data_Access
         }
 
         internal void UpdateDatabaseRecord(InvoiceItem changedInvoice)
-        {
+        {            
             StringBuilder sqlQuery = new StringBuilder("Update invoice SET ");
             sqlQuery.Append(String.Format("noInvoice = '{0}', ", changedInvoice.Nomor));
             sqlQuery.Append(String.Format("periodeBulan = '{0}', ", changedInvoice.PeriodeBulan));

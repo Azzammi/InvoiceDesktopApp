@@ -10,40 +10,45 @@ using System.Windows.Forms;
 
 namespace Invoice_OTC.Data_Access
 {
-    class outletitemDAO
+    class RotiToChooseItemDAO
     {
-        #region Declaration 
+        #region Declaration
         private static string m_ConnectionString;
         #endregion
 
         #region Constructor
-        public outletitemDAO()
+        public RotiToChooseItemDAO()
         {
-            m_ConnectionString = Settings.Default.ConnectionString.ToString();
+            m_ConnectionString = Settings.Default.ConnectionString;
         }
         #endregion
 
         #region Methods
-        internal void CreateDatabaseRecord(outletItem newItem)
+        internal void CreateDatabaseRecord(RotiToChooseItem newRoti)
         {
-            string sql = "INSERT INTO OUTLET (outlcode, outlname, outladdress, outlroute, outlslsm, outlstat) " +
-                         "VALUES(@code, @name, @address, @route, @slsmCode, @stat)";
-            AddOrUpdateDatabaseRecord(sql, newItem);
+            string sql = "INSERT INTO ITEM " +
+                        "(ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat)" +
+                        " VALUES " +
+                        "(@code, @name, @sort, @brand, @jenis, @category, @subcategory, @price, @stat)";
+            AddorUpdateDatabaseRecord(sql, newRoti);
         }
-        internal void UpdateDatabaseRecord(outletItem updateItem)
+        internal void UpdateDatabaseRecord(RotiToChooseItem updateRoti)
         {
-            string sql = "UPDATE OUTLET SET " +
-                         "outlName = @name, " +
-                         "outlAddress = @address, " +
-                         "outlroute = @route, " +
-                         "outlslsm = @slsmCode, " +
-                         "outlStat = @stat " +
-                         "WHERE outlCode = @code";
-            AddOrUpdateDatabaseRecord(sql, updateItem);
+            string sql = "UPDATE ITEM SET " +
+                        "ITEMNAME = @code, " +
+                        "ITEMSORT = @sort, " +
+                        "Brand = @brand, " +
+                        "Jenis = @jenis, " +
+                        "category = @category, " +
+                        "subcategory = @subcategory, " +
+                        "price = @price, " +
+                        "Stat = @stat " +
+                        "WHERE ITEMCODE = @code";
+            AddorUpdateDatabaseRecord(sql, updateRoti);
         }
-        internal void DeleteDatabaseRecord(string kodeOutlet)
+        internal void DeleteDatabaseRecord(string itemCode)
         {
-            string sql = "Delete From OUTLET Where outlCode = @code";
+            string sql = "Delete From ITEM Where ITEMCODE = @code";
             try
             {
                 //Create and open a connection
@@ -56,7 +61,7 @@ namespace Invoice_OTC.Data_Access
                 //Adding value through parameter
                 command.CommandType = System.Data.CommandType.Text;
                 command.Parameters.Clear();
-                command.Parameters.AddWithValue("@code", kodeOutlet);
+                command.Parameters.AddWithValue("@code", itemCode);
 
                 //execute the command
                 command.ExecuteNonQuery();
@@ -72,8 +77,7 @@ namespace Invoice_OTC.Data_Access
                 MessageBox.Show(ex.Message.ToString());
             }
         }
-
-        protected void AddOrUpdateDatabaseRecord(string sql, outletItem itemMaster)
+        protected void AddorUpdateDatabaseRecord(string sql, RotiToChooseItem itemMaster)
         {
             try
             {
@@ -87,12 +91,15 @@ namespace Invoice_OTC.Data_Access
                 //Adding value through parameter
                 command.CommandType = System.Data.CommandType.Text;
                 command.Parameters.Clear();
-                command.Parameters.AddWithValue("@code", itemMaster.OutletCode);
-                command.Parameters.AddWithValue("@name", itemMaster.OutletName);
-                command.Parameters.AddWithValue("@address", itemMaster.OutletAddress);
-                command.Parameters.AddWithValue("@route", itemMaster.OutletRoute);
-                command.Parameters.AddWithValue("@slsmCode", itemMaster.SlsmCode);
-                command.Parameters.AddWithValue("@stat", itemMaster.OutletStatus);
+                command.Parameters.AddWithValue("@code", itemMaster.ItemCode);
+                command.Parameters.AddWithValue("@name", itemMaster.ItemName);
+                command.Parameters.AddWithValue("@sort", itemMaster.ItemSort);
+                command.Parameters.AddWithValue("@brand", itemMaster.Brand);
+                command.Parameters.AddWithValue("@jenis", itemMaster.Jenis);
+                command.Parameters.AddWithValue("@category", itemMaster.Category);
+                command.Parameters.AddWithValue("@subcategory", itemMaster.SubCategory);
+                command.Parameters.AddWithValue("@price", itemMaster.Price);
+                command.Parameters.AddWithValue("@stat", itemMaster.Stat);
 
                 //execute the command
                 command.ExecuteNonQuery();
@@ -111,4 +118,3 @@ namespace Invoice_OTC.Data_Access
         #endregion
     }
 }
-

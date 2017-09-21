@@ -1,5 +1,6 @@
 ﻿using Invoice_OTC.Controller;
 using Invoice_OTC.Model;
+using Invoice_OTC.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,12 @@ namespace Invoice_OTC
             }
 
             this.Close();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            FrmImportExcelRoti form = new FrmImportExcelRoti();
+            form.ShowDialog();
         }
     }
 }
