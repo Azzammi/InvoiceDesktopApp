@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Invoice_OTC.Controller;
+using Invoice_OTC.Controller.Outlet;
 using Invoice_OTC.Model;
 using static Invoice_OTC.View.FormStatusChangedEventArgs;
 
@@ -11,7 +12,7 @@ namespace Invoice_OTC.View
         #region Declaration
         AppController m_AppController;
         InvoiceList m_InvoiceList;
-        CustomerList m_CustomerList;
+        outletList m_OutletList;
         RotiToChooseList m_RotiToChooseList;
 
         private FormStatus frmStatus;
@@ -120,8 +121,8 @@ namespace Invoice_OTC.View
             CommandGetInvoices getInvoices = new CommandGetInvoices();
             m_InvoiceList = (InvoiceList)m_AppController.ExecuteCommand(getInvoices);
 
-            CommandGetCustomer getCustomers = new CommandGetCustomer();
-            m_CustomerList = (CustomerList)m_AppController.ExecuteCommand(getCustomers);
+            CommandGetOutlet getOutlets = new CommandGetOutlet();
+            m_OutletList = (outletList)m_AppController.ExecuteCommand(getOutlets);
 
             CommandGetRoti getRoti = new CommandGetRoti();
             m_RotiToChooseList = (RotiToChooseList)m_AppController.ExecuteCommand(getRoti);
@@ -130,7 +131,7 @@ namespace Invoice_OTC.View
             itemsBindingSource.DataSource = invoiceItemBindingSource;
             itemsBindingSource.DataMember = "Items";
 
-            customerListBindingSource.DataSource = m_CustomerList;
+            outletItemBindingSource.DataSource = m_OutletList;
             rotiToChooseItemBindingSource.DataSource = m_RotiToChooseList;
 
             invoiceItemBindingSource.Position = 0;
@@ -149,6 +150,11 @@ namespace Invoice_OTC.View
                 toolStripButton1.Text = "Hide Navigator";
                 bindingNavigator1.Visible = false;
             }
+        }
+
+        private void detailedBindingForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

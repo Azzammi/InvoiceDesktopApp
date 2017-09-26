@@ -26,7 +26,7 @@ namespace Invoice_OTC.View
         outletList m_OutletList;
         RotiList m_InvoiceDetailList;
 
-        private string nomorInvoice;
+        private string nomorInvoice = "";
         #endregion
 
         #region Constructor
@@ -44,7 +44,7 @@ namespace Invoice_OTC.View
 
         private void FrmInvoicePrint_Load(object sender, EventArgs e)
         {
-           
+            toolStripButton1.PerformClick();
         }
 
         private void button1_Click(object sender, EventArgs e)

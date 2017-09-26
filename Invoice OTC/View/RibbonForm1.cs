@@ -15,48 +15,79 @@ using System.Windows.Forms;
 
 namespace Invoice_OTC.View
 {
+    public enum NamaForm
+    {
+        Outlet,
+        Item,
+        GridInvoice,
+        DetailInvoice,
+        CetakInvoice
+    }
+
     public partial class RibbonForm1 : Syncfusion.Windows.Forms.Tools.RibbonForm
     {
+        #region Declaration
+        Form frm;
+        #endregion
+
         public RibbonForm1()
         {
             InitializeComponent();
-        }
+        }        
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            FrmOutlet form = new FrmOutlet();
-            form.MdiParent = this;
-            form.Text = "Outlet";
-            form.Show();
+            ShowForm(NamaForm.Outlet);
         }
-
-        private void toolStripSplitButtonEx1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+       
         private void detailedViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            detailedBindingForm form = new detailedBindingForm(FormStatus.Ready);
-            form.MdiParent = this;
-            form.Text = "Invoice Detailed View";
-            form.Show();
+            ShowForm(NamaForm.DetailInvoice);
         }
 
         private void gridViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dgBindingFrm form = new dgBindingFrm();
-            form.MdiParent = this;
-            form.Text = "Invoice Grid View";
-            form.Show();
+            ShowForm(NamaForm.GridInvoice);
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            itemFrm form = new itemFrm();
-            form.MdiParent = this;
-            form.Text = "Barang";
-            form.Show();
+            ShowForm(NamaForm.Item);
+        }
+
+        private void invoicePrintBtn_Click(object sender, EventArgs e)
+        {
+            ShowForm(NamaForm.CetakInvoice);
+        }
+
+        //This is the function to call form
+        //If there is new form just write it in the enum above and this add the switch
+        protected void ShowForm(NamaForm form)
+        {                        
+            switch (form)   
+            {
+                case NamaForm.Outlet:
+                    frm = new FrmOutlet();
+                    break;
+                case NamaForm.Item:
+                    frm = new itemFrm();
+                    break;
+                case NamaForm.GridInvoice:
+                    frm = new dgBindingFrm();
+                    break;
+                case NamaForm.DetailInvoice:
+                    frm = new detailedBindingForm(FormStatus.Ready);
+                    break;
+                case NamaForm.CetakInvoice:
+                    frm = new FrmInvoicePrint();
+                    break;
+                default:
+                    break;
+            }
+
+            frm.MdiParent = this;
+            frm.Text = form.ToString();
+            frm.Show();
         }
     }
 }

@@ -12,5 +12,8 @@
     <Setting Name="Setting" Type="System.Windows.Forms.DataGridViewCellStyle" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="textboxFont" Type="System.Drawing.Font" Scope="User">
+      <Value Profile="(Default)">Microsoft Sans Serif, 11.25pt</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

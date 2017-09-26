@@ -44,5 +44,17 @@ namespace Invoice_OTC.Properties {
                 this["Setting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Microsoft Sans Serif, 11.25pt")]
+        public global::System.Drawing.Font textboxFont {
+            get {
+                return ((global::System.Drawing.Font)(this["textboxFont"]));
+            }
+            set {
+                this["textboxFont"] = value;
+            }
+        }
     }
 }
