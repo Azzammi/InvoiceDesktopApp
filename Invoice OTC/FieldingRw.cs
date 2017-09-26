@@ -16,14 +16,14 @@ namespace Invoice_OTC {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport2 : ReportClass {
+    public class FieldingRw : ReportClass {
         
-        public CrystalReport2() {
+        public FieldingRw() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport2.rpt";
+                return "FieldingRw.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Invoice_OTC {
         
         public override string FullResourceName {
             get {
-                return "Invoice_OTC.CrystalReport2.rpt";
+                return "Invoice_OTC.FieldingRw.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace Invoice_OTC {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport2 : Component, ICachedReport {
+    public class CachedFieldingRw : Component, ICachedReport {
         
-        public CachedCrystalReport2() {
+        public CachedFieldingRw() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace Invoice_OTC {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport2 rpt = new CrystalReport2();
+            FieldingRw rpt = new FieldingRw();
             rpt.Site = this.Site;
             return rpt;
         }

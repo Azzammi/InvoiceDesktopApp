@@ -238,7 +238,9 @@ namespace Invoice_OTC.View
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            FrmInvoicePrint form = new FrmInvoicePrint();
+            InvoiceItem nomorValue = (InvoiceItem)bindingInvoice.Current;
+
+            FrmInvoicePrint form = new FrmInvoicePrint(nomorValue.Nomor);
             form.ShowDialog();
         }
 

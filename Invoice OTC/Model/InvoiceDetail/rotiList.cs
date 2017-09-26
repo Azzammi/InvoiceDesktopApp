@@ -8,8 +8,19 @@ namespace Invoice_OTC.Model
 {
     public class RotiList : FSBindingList<rotiItem>
     {
-        #region Methods
+        #region Constructor
+        public RotiList()
+        {
 
+        }
+        public RotiList(bool isReporting)
+        {
+            RotiListDAO dao = new RotiListDAO();
+            dao.ShowList(this);
+        }
+        #endregion
+        
+        #region Methods
         internal void ClearRoti()
         {
             //Delete Database Records

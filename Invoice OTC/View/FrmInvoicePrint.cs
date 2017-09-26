@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Invoice_OTC.Controller.Invoice_Detail;
 using Invoice_OTC.Controller.Outlet;
 using Invoice_OTC.Controller;
 using Invoice_OTC.Model;
@@ -23,11 +24,23 @@ namespace Invoice_OTC.View
         InvoiceList m_InvoiceList;        
         RotiToChooseList m_RotiToChooseList;
         outletList m_OutletList;
+        RotiList m_InvoiceDetailList;
+
+        private string nomorInvoice;
         #endregion
+
+        #region Constructor
         public FrmInvoicePrint()
         {
             InitializeComponent();
         }
+
+        public FrmInvoicePrint(string NomorInvoice)
+        {
+            InitializeComponent();
+            this.nomorInvoice = NomorInvoice;
+        }
+        #endregion
 
         private void FrmInvoicePrint_Load(object sender, EventArgs e)
         {
@@ -37,7 +50,8 @@ namespace Invoice_OTC.View
         private void button1_Click(object sender, EventArgs e)
         {
             //ReportDocument invoiceObjectReport = new ReportDocument(); ;
-            //invoiceObjectReport.Load(Application.StartupPath + "\\CrystalReport2.rpt");
+            //invoiceObjectReport.Load(Application.StartupPath + "\\rptInvoice.rpt");
+            
 
             m_AppController = new AppController();
 
@@ -50,18 +64,22 @@ namespace Invoice_OTC.View
             CommandGetRoti getRotis = new CommandGetRoti();
             m_RotiToChooseList = (RotiToChooseList)m_AppController.ExecuteCommand(getRotis);
 
-            invoiceItemBindingSource.DataSource = m_InvoiceList;
-            rotiItemBindingSource.DataSource = invoiceItemBindingSource;
-            rotiItemBindingSource.DataMember = "Items";
-
-            rptInvoice crInvoice = new rptInvoice();
-            //rptInvoiceFix crInvoice = new rptInvoiceFix();
-
-            crInvoice.Database.Tables["Invoice_OTC_Model_InvoiceItem"].SetDataSource(invoiceItemBindingSource);
-            crInvoice.Database.Tables["Invoice_OTC_Model_RotiItem"].SetDataSource(rotiItemBindingSource);            
-            crInvoice.Database.Tables["Invoice_OTC_Model_RotiToChooseItem"].SetDataSource(m_RotiToChooseList);
-            crInvoice.Database.Tables["Invoice_OTC_Model_OutletItem"].SetDataSource(m_OutletList);
+            CommandGetItem getInvoiceDetai = new CommandGetItem();
+            m_InvoiceDetailList = (RotiList)m_AppController.ExecuteCommand(getInvoiceDetai);
             
+      
+            //FieldingRw crInvoice = new FieldingRw();
+            rptInvoice crInvoice = new rptInvoice();
+
+            //Set DataSource First            
+            crInvoice.Database.Tables["Invoice_OTC_Model_InvoiceItem"].SetDataSource(m_InvoiceList);
+            crInvoice.Subreports[0].Database.Tables["Invoice_OTC_Model_RotiItem"].SetDataSource(m_InvoiceDetailList);            
+            crInvoice.Subreports[0].Database.Tables["Invoice_OTC_Model_RotiToChooseItem"].SetDataSource(m_RotiToChooseList);
+            crInvoice.Database.Tables["Invoice_OTC_Model_OutletItem"].SetDataSource(m_OutletList);
+
+            //Set the parameter value
+            crInvoice.SetParameterValue("nomorInvoice",nomorInvoice);            
+
             crystalReportViewer1.ReportSource = crInvoice;
             crystalReportViewer1.Refresh();
         }

@@ -72,6 +72,7 @@
     <Compile Include="Controller\Command.cs" />
     <Compile Include="Controller\Invoice Detail\CommandAddItem.cs" />
     <Compile Include="Controller\Invoice Detail\CommandDeleteItem.cs" />
+    <Compile Include="Controller\Invoice Detail\CommandGetItem.cs" />
     <Compile Include="Controller\Invoice\CommandDeleteInvoice.cs" />
     <Compile Include="Controller\Customer\CommandGetCustomer.cs" />
     <Compile Include="Controller\Invoice\CommandGetInvoice.cs" />
@@ -93,12 +94,6 @@
     <Compile Include="Controller\ItemFoundEventArgs.cs" />
     <Compile Include="Controller\Roti Item\CommandInsertRoti.cs" />
     <Compile Include="Controller\Roti Item\CommandUpdateRoti.cs" />
-    <Compile Include="CrystalReport2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport2.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Data Access\Customer\CustomerItemDAO.cs" />
     <Compile Include="Data Access\Customer\CustomerListDAO.cs" />
     <Compile Include="Data Access\DataProvider.cs" />
@@ -111,6 +106,18 @@
     <Compile Include="Data Access\Outlet\OutletListDAO.cs" />
     <Compile Include="Data Access\RotiToChoose\RotiToChooseItemDAO.cs" />
     <Compile Include="Data Access\RotiToChoose\RotiToChooseListDAO.cs" />
+    <Compile Include="FieldingRw.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FieldingRw.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Invoice Institusi FIX.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Invoice Institusi FIX.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Model\Customer\CustomerItem.cs" />
     <Compile Include="Model\Customer\CustomerList.cs" />
     <Compile Include="Model\Invoice\invoiceItem.cs" />
@@ -134,6 +141,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptInvoiceFix.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptSubReportInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptSubReportInvoice.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="View\detailedBindingForm.cs">
@@ -208,9 +221,13 @@
     <EmbeddedResource Include="Controller\FindStrip.resx">
       <DependentUpon>FindStrip.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport2.rpt">
+    <EmbeddedResource Include="FieldingRw.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+      <LastGenOutput>FieldingRw.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoice Institusi FIX.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Invoice Institusi FIX.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="rptInvoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -219,6 +236,10 @@
     <EmbeddedResource Include="rptInvoiceFix.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptInvoiceFix.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptSubReportInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptSubReportInvoice.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="View\detailedBindingForm.resx">
       <DependentUpon>detailedBindingForm.cs</DependentUpon>
