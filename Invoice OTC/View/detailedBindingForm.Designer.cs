@@ -37,9 +37,10 @@
             System.Windows.Forms.Label subTotalLabel;
             System.Windows.Forms.Label totalLabel;
             System.Windows.Forms.Label outletAddressLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(detailedBindingForm));
+            System.Windows.Forms.Label isPPNLabel;
             this.invoiceItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.issuedDataDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.nomorTextBox = new System.Windows.Forms.TextBox();
@@ -73,6 +74,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.outletAddressTextBox = new System.Windows.Forms.TextBox();
+            this.isPPNCheckBox = new System.Windows.Forms.CheckBox();
             issuedDataLabel = new System.Windows.Forms.Label();
             nomorLabel = new System.Windows.Forms.Label();
             periodeBulanLabel = new System.Windows.Forms.Label();
@@ -81,6 +83,7 @@
             subTotalLabel = new System.Windows.Forms.Label();
             totalLabel = new System.Windows.Forms.Label();
             outletAddressLabel = new System.Windows.Forms.Label();
+            isPPNLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.itemsBindingSource)).BeginInit();
@@ -120,8 +123,9 @@
             // 
             // pPNLabel
             // 
+            pPNLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             pPNLabel.AutoSize = true;
-            pPNLabel.Location = new System.Drawing.Point(387, 342);
+            pPNLabel.Location = new System.Drawing.Point(643, 333);
             pPNLabel.Name = "pPNLabel";
             pPNLabel.Size = new System.Drawing.Size(32, 13);
             pPNLabel.TabIndex = 9;
@@ -130,7 +134,7 @@
             // slsmCodeLabel
             // 
             slsmCodeLabel.AutoSize = true;
-            slsmCodeLabel.Location = new System.Drawing.Point(328, 46);
+            slsmCodeLabel.Location = new System.Drawing.Point(384, 46);
             slsmCodeLabel.Name = "slsmCodeLabel";
             slsmCodeLabel.Size = new System.Drawing.Size(64, 13);
             slsmCodeLabel.TabIndex = 11;
@@ -138,8 +142,9 @@
             // 
             // subTotalLabel
             // 
+            subTotalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             subTotalLabel.AutoSize = true;
-            subTotalLabel.Location = new System.Drawing.Point(387, 316);
+            subTotalLabel.Location = new System.Drawing.Point(643, 307);
             subTotalLabel.Name = "subTotalLabel";
             subTotalLabel.Size = new System.Drawing.Size(56, 13);
             subTotalLabel.TabIndex = 17;
@@ -147,8 +152,9 @@
             // 
             // totalLabel
             // 
+            totalLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             totalLabel.AutoSize = true;
-            totalLabel.Location = new System.Drawing.Point(387, 369);
+            totalLabel.Location = new System.Drawing.Point(643, 360);
             totalLabel.Name = "totalLabel";
             totalLabel.Size = new System.Drawing.Size(34, 13);
             totalLabel.TabIndex = 19;
@@ -157,7 +163,7 @@
             // outletAddressLabel
             // 
             outletAddressLabel.AutoSize = true;
-            outletAddressLabel.Location = new System.Drawing.Point(328, 77);
+            outletAddressLabel.Location = new System.Drawing.Point(384, 77);
             outletAddressLabel.Name = "outletAddressLabel";
             outletAddressLabel.Size = new System.Drawing.Size(48, 13);
             outletAddressLabel.TabIndex = 26;
@@ -166,15 +172,16 @@
             // invoiceItemBindingSource
             // 
             this.invoiceItemBindingSource.DataSource = typeof(Invoice_OTC.Model.InvoiceItem);
+            this.invoiceItemBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.invoiceItemBindingSource_AddingNew);
             // 
             // issuedDataDateTimePicker
             // 
-            this.issuedDataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceItemBindingSource, "IssuedData", true));
+            this.issuedDataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceItemBindingSource, "IssuedData", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.issuedDataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.issuedDataDateTimePicker.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
             this.issuedDataDateTimePicker.Location = new System.Drawing.Point(111, 103);
             this.issuedDataDateTimePicker.Name = "issuedDataDateTimePicker";
-            this.issuedDataDateTimePicker.Size = new System.Drawing.Size(200, 24);
+            this.issuedDataDateTimePicker.Size = new System.Drawing.Size(267, 24);
             this.issuedDataDateTimePicker.TabIndex = 4;
             // 
             // nomorTextBox
@@ -184,25 +191,26 @@
             this.nomorTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
             this.nomorTextBox.Location = new System.Drawing.Point(111, 43);
             this.nomorTextBox.Name = "nomorTextBox";
-            this.nomorTextBox.Size = new System.Drawing.Size(200, 24);
+            this.nomorTextBox.Size = new System.Drawing.Size(89, 24);
             this.nomorTextBox.TabIndex = 6;
             // 
             // periodeBulanDateTimePicker
             // 
-            this.periodeBulanDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceItemBindingSource, "PeriodeBulan", true));
+            this.periodeBulanDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceItemBindingSource, "PeriodeBulan", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.periodeBulanDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.periodeBulanDateTimePicker.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
             this.periodeBulanDateTimePicker.Location = new System.Drawing.Point(111, 73);
             this.periodeBulanDateTimePicker.Name = "periodeBulanDateTimePicker";
-            this.periodeBulanDateTimePicker.Size = new System.Drawing.Size(200, 24);
+            this.periodeBulanDateTimePicker.Size = new System.Drawing.Size(267, 24);
             this.periodeBulanDateTimePicker.TabIndex = 8;
             // 
             // pPNTextBox
             // 
-            this.pPNTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceItemBindingSource, "PPN", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C0"));
+            this.pPNTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pPNTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceItemBindingSource, "PPN", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C0"));
             this.pPNTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.pPNTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
-            this.pPNTextBox.Location = new System.Drawing.Point(475, 341);
+            this.pPNTextBox.Location = new System.Drawing.Point(731, 332);
             this.pPNTextBox.Name = "pPNTextBox";
             this.pPNTextBox.Size = new System.Drawing.Size(200, 24);
             this.pPNTextBox.TabIndex = 10;
@@ -215,7 +223,7 @@
             this.slsmCodeComboBox.DisplayMember = "OutletName";
             this.slsmCodeComboBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
             this.slsmCodeComboBox.FormattingEnabled = true;
-            this.slsmCodeComboBox.Location = new System.Drawing.Point(416, 43);
+            this.slsmCodeComboBox.Location = new System.Drawing.Point(472, 43);
             this.slsmCodeComboBox.Name = "slsmCodeComboBox";
             this.slsmCodeComboBox.Size = new System.Drawing.Size(259, 26);
             this.slsmCodeComboBox.TabIndex = 12;
@@ -227,20 +235,22 @@
             // 
             // subTotalTextBox
             // 
-            this.subTotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceItemBindingSource, "SubTotal", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C0"));
+            this.subTotalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.subTotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceItemBindingSource, "SubTotal", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C0"));
             this.subTotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.subTotalTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
-            this.subTotalTextBox.Location = new System.Drawing.Point(475, 313);
+            this.subTotalTextBox.Location = new System.Drawing.Point(731, 304);
             this.subTotalTextBox.Name = "subTotalTextBox";
             this.subTotalTextBox.Size = new System.Drawing.Size(200, 24);
             this.subTotalTextBox.TabIndex = 18;
             // 
             // totalTextBox
             // 
-            this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceItemBindingSource, "Total", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C0"));
+            this.totalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceItemBindingSource, "Total", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C0"));
             this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.totalTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
-            this.totalTextBox.Location = new System.Drawing.Point(475, 369);
+            this.totalTextBox.Location = new System.Drawing.Point(731, 360);
             this.totalTextBox.Name = "totalTextBox";
             this.totalTextBox.Size = new System.Drawing.Size(200, 24);
             this.totalTextBox.TabIndex = 20;
@@ -252,10 +262,13 @@
             // 
             // itemsDataGridView
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            this.itemsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            this.itemsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.itemsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.itemsDataGridView.AutoGenerateColumns = false;
             this.itemsDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.itemsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -264,19 +277,20 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.itemsDataGridView.DataSource = this.itemsBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.itemsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.itemsDataGridView.Location = new System.Drawing.Point(26, 133);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.itemsDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            this.itemsDataGridView.Location = new System.Drawing.Point(23, 133);
             this.itemsDataGridView.Name = "itemsDataGridView";
-            this.itemsDataGridView.Size = new System.Drawing.Size(649, 165);
+            this.itemsDataGridView.Size = new System.Drawing.Size(905, 165);
             this.itemsDataGridView.TabIndex = 21;
+            this.itemsDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.itemsDataGridView_DataError);
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -315,7 +329,7 @@
             this.cetakBtn});
             this.findStrip1.Location = new System.Drawing.Point(0, 0);
             this.findStrip1.Name = "findStrip1";
-            this.findStrip1.Size = new System.Drawing.Size(697, 32);
+            this.findStrip1.Size = new System.Drawing.Size(943, 32);
             this.findStrip1.TabIndex = 2;
             this.findStrip1.Text = "findStrip1";
             this.findStrip1.ItemFound += new Invoice_OTC.Controller.ItemFoundEventHandler(this.findStrip1_ItemFound);
@@ -340,25 +354,30 @@
             // 
             // batalBtn
             // 
+            this.batalBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.batalBtn.Image = global::Invoice_OTC.Properties.Resources.Close_Window_96px;
             this.batalBtn.Location = new System.Drawing.Point(264, 313);
             this.batalBtn.Name = "batalBtn";
             this.batalBtn.Size = new System.Drawing.Size(72, 65);
             this.batalBtn.TabIndex = 25;
             this.batalBtn.UseVisualStyleBackColor = true;
+            this.batalBtn.Click += new System.EventHandler(this.batalBtn_Click);
             // 
             // deleteBtn
             // 
+            this.deleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.deleteBtn.Image = global::Invoice_OTC.Properties.Resources.Delete_50px;
             this.deleteBtn.Location = new System.Drawing.Point(186, 313);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(72, 65);
             this.deleteBtn.TabIndex = 24;
             this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // simpanBtn
             // 
-            this.simpanBtn.Image = global::Invoice_OTC.Properties.Resources.Save_50px_1;
+            this.simpanBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.simpanBtn.Image = global::Invoice_OTC.Properties.Resources.Pencil_Tip_50px;
             this.simpanBtn.Location = new System.Drawing.Point(108, 313);
             this.simpanBtn.Name = "simpanBtn";
             this.simpanBtn.Size = new System.Drawing.Size(72, 65);
@@ -368,6 +387,7 @@
             // 
             // tambahBtn
             // 
+            this.tambahBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.tambahBtn.Image = global::Invoice_OTC.Properties.Resources.Add_50px;
             this.tambahBtn.Location = new System.Drawing.Point(30, 313);
             this.tambahBtn.Name = "tambahBtn";
@@ -473,20 +493,39 @@
             // 
             // outletAddressTextBox
             // 
-            this.outletAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.outletItemBindingSource, "OutletAddress", true));
             this.outletAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.outletAddressTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
-            this.outletAddressTextBox.Location = new System.Drawing.Point(416, 75);
+            this.outletAddressTextBox.Location = new System.Drawing.Point(472, 75);
             this.outletAddressTextBox.Multiline = true;
             this.outletAddressTextBox.Name = "outletAddressTextBox";
             this.outletAddressTextBox.Size = new System.Drawing.Size(259, 52);
             this.outletAddressTextBox.TabIndex = 27;
             // 
+            // isPPNCheckBox
+            // 
+            this.isPPNCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceItemBindingSource, "IsPPN", true));
+            this.isPPNCheckBox.Location = new System.Drawing.Point(851, 41);
+            this.isPPNCheckBox.Name = "isPPNCheckBox";
+            this.isPPNCheckBox.Size = new System.Drawing.Size(20, 24);
+            this.isPPNCheckBox.TabIndex = 28;
+            this.isPPNCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // isPPNLabel
+            // 
+            isPPNLabel.AutoSize = true;
+            isPPNLabel.Location = new System.Drawing.Point(761, 46);
+            isPPNLabel.Name = "isPPNLabel";
+            isPPNLabel.Size = new System.Drawing.Size(90, 13);
+            isPPNLabel.TabIndex = 27;
+            isPPNLabel.Text = "Include PPN 10%";
+            // 
             // detailedBindingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 419);
+            this.ClientSize = new System.Drawing.Size(943, 419);
+            this.Controls.Add(isPPNLabel);
+            this.Controls.Add(this.isPPNCheckBox);
             this.Controls.Add(outletAddressLabel);
             this.Controls.Add(this.outletAddressTextBox);
             this.Controls.Add(this.bindingNavigator1);
@@ -565,5 +604,6 @@
         private System.Windows.Forms.BindingSource outletItemBindingSource;
         private System.Windows.Forms.ToolStripButton cetakBtn;
         private System.Windows.Forms.TextBox outletAddressTextBox;
+        private System.Windows.Forms.CheckBox isPPNCheckBox;
     }
 }

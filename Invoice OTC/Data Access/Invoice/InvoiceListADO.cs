@@ -27,7 +27,7 @@ namespace Invoice_OTC.Data_Access
         {
             //Build query to get Invoice's and their roti
             StringBuilder sqlQuery = new StringBuilder();
-            sqlQuery.Append(String.Format("Select invoiceID, noInvoice, periodeBulan, invoice.outletCode, OUTLET.OUTLNAME, subTotal, ppn, total, issuedDate FROM invoice INNER JOIN OUTLET ON invoice.outletCode = OUTLET.OUTLCODE ;"));
+            sqlQuery.Append(String.Format("Select invoiceID, noInvoice, periodeBulan, invoiced.outletCode, OUTLET.OUTLNAME, subTotal, ppn, total, issuedDate, isPPN, Pengguna FROM invoiced INNER JOIN OUTLET ON invoiced.outletCode = OUTLET.OUTLCODE ;"));
             sqlQuery.Append(string.Format("Select rotiID, invoiceID, itemCode, itemName, itemQty, itemPrice FROM invoiceDetail"));
 
             //Get a data set from the query
@@ -59,9 +59,11 @@ namespace Invoice_OTC.Data_Access
                 nextInvoice.OutletCode = parentRow["outletCode"].ToString();
                 
                 //nextInvoice.SubTotal = Convert.ToDecimal(parentRow["subTotal"]);
-                //nextInvoice.PPN = Convert.ToInt32(parentRow["ppn"]);
+                nextInvoice.PPN = Convert.ToInt32(parentRow["ppn"]);
                 //nextInvoice.Total = Convert.ToDecimal(parentRow["total"]);
                 nextInvoice.IssuedData = Convert.ToDateTime(parentRow["issuedDate"]);
+                nextInvoice.IsPPN = Convert.ToBoolean(parentRow["isPPN"]);
+                nextInvoice.User = parentRow["pengguna"].ToString();
 
                 //Get Invoice Item
                 DataRow[] childRows = parentRow.GetChildRows(invoiceToDetail);

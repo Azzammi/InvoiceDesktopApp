@@ -20,6 +20,8 @@ namespace Invoice_OTC.Model
         private decimal subTotal;
         private float ppn;        
         private DateTime issuedData;
+        private bool isPPN;
+        private string pengguna;
 
         #endregion
 
@@ -95,13 +97,28 @@ namespace Invoice_OTC.Model
 
         public float PPN
         {
-            get { return (float)(SubTotal * 10) / 100; } 
+            //get { return (float)(SubTotal * 10) / 100; } 
+            get {
+                if (isPPN)
+                {
+                    return (float)(subTotal * 10) / 100;
+                }
+                else
+                {
+                    return ppn;
+                }                
+            }
+            set {
+                if (!isPPN)
+                {
+                    ppn = value;
+                }                          
+            }
         }
 
         public decimal Total
-        {
-            //It will using the subTotal Value until i figured the formula of PPN
-            get { return SubTotal + (decimal)PPN; }                   
+        {            
+            get { return SubTotal + Convert.ToDecimal(PPN); }                   
         }
 
         public DateTime IssuedData
@@ -110,6 +127,17 @@ namespace Invoice_OTC.Model
             set { issuedData = value; }
         }
 
+        public bool IsPPN
+        {
+            get { return isPPN; }
+            set { isPPN = value; }
+        }
+
+        public string User
+        {
+            get { return pengguna; }
+            set { pengguna = value; }
+        }
         #endregion
 
         #region Methods
@@ -117,6 +145,12 @@ namespace Invoice_OTC.Model
         internal void DeleteItem()
         {
             p_Items.ClearRoti();
+        }
+
+        internal void CreateDatabaseRecord()
+        {
+            InvoiceItemDAO dao = new InvoiceItemDAO();
+            dao.CreateDatabaseRecord(this, true);
         }
 
         internal void DeleteDatabaseRecord()

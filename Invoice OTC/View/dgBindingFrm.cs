@@ -182,37 +182,48 @@ namespace Invoice_OTC.View
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-             // Get author
-           InvoiceItem itemToDelete = (InvoiceItem)bindingInvoice.Current;
-
-            // Confirm Delete
-            string invoiceNumber = String.Format("{0}", itemToDelete.Nomor);
-            string message = String.Format("Delete Invoice '{0}' and all of its item?", invoiceNumber);
+             // Confirm Delete 
+            string message = String.Format("Delete Invoices and all of its item?");
             DialogResult result = MessageBox.Show(message, "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             // Delete author
             if (result == DialogResult.Yes)
-            {
-                CommandDeleteInvoice deleteInvoice = new CommandDeleteInvoice(m_Invoices, itemToDelete);
-                m_AppController.ExecuteCommand(deleteInvoice);
+            {                
+                foreach (DataGridViewRow row in dgInvoice.SelectedRows)
+                {
+                    InvoiceItem item = row.DataBoundItem as InvoiceItem;
+                    if (item != null)
+                    {
+                        CommandDeleteInvoice deleteInvoice = new CommandDeleteInvoice(m_Invoices, item);
+                        m_AppController.ExecuteCommand(deleteInvoice);
+                    }
+
+                }
             }
         }
 
         private void deleteBookToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Get Item Roti
-            InvoiceItem parent = (InvoiceItem)bindingInvoice.Current;
-            rotiItem itemToDelete = (rotiItem)bindingItem.Current;
+            InvoiceItem parent = (InvoiceItem)bindingInvoice.Current;            
 
             //Confirm Delete
-            string message = String.Format("Delete Item '{0}' ? ", itemToDelete.Code);
+            string message = String.Format("Delete Items ? ");
             DialogResult result = MessageBox.Show(message, "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             //Delete Item
             if(result == DialogResult.Yes)
-            {
-                CommandDeleteItem deleteItem = new CommandDeleteItem(parent, itemToDelete);
-                m_AppController.ExecuteCommand(deleteItem);
+            {             
+                foreach (DataGridViewRow row in dgItem.SelectedRows)
+                {
+                    rotiItem item = row.DataBoundItem as rotiItem;
+                    if (item != null)
+                    {
+                        CommandDeleteItem deleteItem = new CommandDeleteItem(parent, item);
+                        m_AppController.ExecuteCommand(deleteItem);
+                    }
+
+                }
             }
         }
 

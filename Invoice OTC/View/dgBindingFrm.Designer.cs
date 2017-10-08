@@ -31,14 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgInvoice = new System.Windows.Forms.DataGridView();
             this.OutletCode = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.IsPPN = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgItem = new System.Windows.Forms.DataGridView();
@@ -46,7 +49,6 @@
             this.deleteBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.nomorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outletItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -100,18 +102,19 @@
             this.subTotalDataGridViewTextBoxColumn,
             this.pPNDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn,
-            this.issuedDataDataGridViewTextBoxColumn});
+            this.issuedDataDataGridViewTextBoxColumn,
+            this.IsPPN});
             this.dgInvoice.ContextMenuStrip = this.contextMenuStrip1;
             this.dgInvoice.DataSource = this.bindingInvoice;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgInvoice.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgInvoice.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgInvoice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgInvoice.Location = new System.Drawing.Point(0, 57);
             this.dgInvoice.Name = "dgInvoice";
@@ -129,7 +132,13 @@
             this.OutletCode.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.OutletCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.OutletCode.ValueMember = "OutletCode";
-            this.OutletCode.Width = 150;
+            this.OutletCode.Width = 250;
+            // 
+            // IsPPN
+            // 
+            this.IsPPN.DataPropertyName = "IsPPN";
+            this.IsPPN.HeaderText = "IsPPN";
+            this.IsPPN.Name = "IsPPN";
             // 
             // contextMenuStrip1
             // 
@@ -147,20 +156,20 @@
             // 
             // dgItem
             // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.AliceBlue;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(1);
-            this.dgItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AliceBlue;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(1);
+            this.dgItem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgItem.AutoGenerateColumns = false;
             this.dgItem.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(4);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(4);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codeDataGridViewTextBoxColumn,
@@ -168,15 +177,15 @@
             this.priceDataGridViewTextBoxColumn});
             this.dgItem.ContextMenuStrip = this.contextMenuStrip2;
             this.dgItem.DataSource = this.bindingItem;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgItem.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgItem.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgItem.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgItem.Location = new System.Drawing.Point(0, 321);
             this.dgItem.Name = "dgItem";
@@ -200,8 +209,7 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2});
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 32);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(778, 25);
@@ -216,15 +224,6 @@
             this.toolStripButton1.Size = new System.Drawing.Size(93, 22);
             this.toolStripButton1.Text = "Print Invoice";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.Image = global::Invoice_OTC.Properties.Resources.Print_96px;
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(100, 22);
-            this.toolStripButton2.Text = "Print List Item";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // label1
             // 
@@ -243,7 +242,6 @@
             this.nomorDataGridViewTextBoxColumn.DataPropertyName = "Nomor";
             this.nomorDataGridViewTextBoxColumn.HeaderText = "Nomor";
             this.nomorDataGridViewTextBoxColumn.Name = "nomorDataGridViewTextBoxColumn";
-            this.nomorDataGridViewTextBoxColumn.Width = 200;
             // 
             // outletItemBindingSource
             // 
@@ -268,16 +266,18 @@
             // pPNDataGridViewTextBoxColumn
             // 
             this.pPNDataGridViewTextBoxColumn.DataPropertyName = "PPN";
+            dataGridViewCellStyle4.Format = "C0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.pPNDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.pPNDataGridViewTextBoxColumn.HeaderText = "PPN";
             this.pPNDataGridViewTextBoxColumn.Name = "pPNDataGridViewTextBoxColumn";
-            this.pPNDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // totalDataGridViewTextBoxColumn
             // 
             this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
-            dataGridViewCellStyle4.Format = "C0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Format = "C0";
+            dataGridViewCellStyle5.NullValue = null;
+            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             this.totalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -315,7 +315,7 @@
             this.codeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.codeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.codeDataGridViewTextBoxColumn.ValueMember = "ItemCode";
-            this.codeDataGridViewTextBoxColumn.Width = 200;
+            this.codeDataGridViewTextBoxColumn.Width = 250;
             // 
             // rotiToChooseItemBindingSource
             // 
@@ -324,6 +324,9 @@
             // qtyDataGridViewTextBoxColumn
             // 
             this.qtyDataGridViewTextBoxColumn.DataPropertyName = "Qty";
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = null;
+            this.qtyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.qtyDataGridViewTextBoxColumn.HeaderText = "Qty";
             this.qtyDataGridViewTextBoxColumn.Name = "qtyDataGridViewTextBoxColumn";
             // 
@@ -389,18 +392,18 @@
         private System.Windows.Forms.BindingSource rotiToChooseItemBindingSource;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn codeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.BindingSource outletItemBindingSource;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn OutletCode;
-        private System.Windows.Forms.BindingSource outletItemBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn periodeBulanDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pPNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn issuedDataDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsPPN;
+        private System.Windows.Forms.DataGridViewComboBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
     }
 }

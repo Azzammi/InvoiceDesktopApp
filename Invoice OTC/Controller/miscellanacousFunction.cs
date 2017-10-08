@@ -9,12 +9,28 @@ namespace Invoice_OTC.Controller
 {
     class miscellanacousFunction
     {
-        internal void resetInput(Form frm)
+        #region Methods
+        internal void ResetInput(Form frm)
         {
-            foreach(Control ctl in frm.Controls)
+            foreach (Control ctl in frm.Controls)
             {
-                if (ctl is TextBox) ctl.Text = ""; 
+                if (ctl is TextBox) ctl.Text = "";
             }
         }
+        internal void DisableInput(Form frm)
+        {
+            foreach (Control ctl in frm.Controls)
+            {
+                if (ctl is TextBox || ctl is ComboBox || ctl is DataGridView || ctl is DateTimePicker) ctl.Enabled = false;
+            }
+        }
+        internal void EnableInput(Form frm)
+        {
+            foreach (Control ctl in frm.Controls)
+            {
+                if (ctl is TextBox || ctl is ComboBox || ctl is DataGridView || ctl is DateTimePicker) ctl.Enabled = true;
+            }
+        }
+        #endregion
     }
 }

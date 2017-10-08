@@ -78,6 +78,7 @@
     <Compile Include="Controller\Invoice\CommandGetInvoice.cs" />
     <Compile Include="Controller\Invoice\commandGetInvoices.cs" />
     <Compile Include="Controller\commandGetNumber.cs" />
+    <Compile Include="Controller\Invoice\CommandInsertByDetailInvoice.cs" />
     <Compile Include="Controller\miscellanacousFunction.cs" />
     <Compile Include="Controller\Outlet\CommandCRUOutlet.cs" />
     <Compile Include="Controller\Outlet\CommandDeleteOutlet.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Data Access\Outlet\OutletListDAO.cs" />
     <Compile Include="Data Access\RotiToChoose\RotiToChooseItemDAO.cs" />
     <Compile Include="Data Access\RotiToChoose\RotiToChooseListDAO.cs" />
+    <Compile Include="Data Access\SalesmanItemDAO.cs" />
     <Compile Include="FieldingRw.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -131,6 +133,8 @@
     <Compile Include="Model\Outlet\outletList.cs" />
     <Compile Include="Model\Roti Item\RotiToChooseItem.cs" />
     <Compile Include="Model\Roti Item\RotiToChooseList.cs" />
+    <Compile Include="Model\SalesmanItem.cs" />
+    <Compile Include="Model\SalesmanList.cs" />
     <Compile Include="rptInvoice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -167,6 +171,8 @@
     <Compile Include="View\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormShowItem.cs" />
+    <Compile Include="View\FormShowList.cs" />
     <Compile Include="View\FormStatusChangedEventArgs.cs" />
     <Compile Include="View\FrmImportExcelRoti.cs">
       <SubType>Form</SubType>

@@ -28,6 +28,8 @@ namespace Invoice_OTC.View
     {
         #region Declaration
         Form frm;
+        FormShowList m_FormList;
+        FormShowItem m_FormItem;
         #endregion
 
         public RibbonForm1()
@@ -63,8 +65,8 @@ namespace Invoice_OTC.View
         //This is the function to call form
         //If there is new form just write it in the enum above and this add the switch
         protected void ShowForm(NamaForm form)
-        {                        
-            switch (form)   
+        {
+            switch (form)
             {
                 case NamaForm.Outlet:
                     frm = new FrmOutlet();
@@ -85,9 +87,20 @@ namespace Invoice_OTC.View
                     break;
             }
 
+            /* Function to check for the existing form */
+            foreach (Form window in Application.OpenForms)
+            {
+                if (window.GetType() == frm.GetType())
+                {
+                    window.Activate();
+                    return;
+                }
+            }
+            /* The code end here */
+
             frm.MdiParent = this;
-            frm.Text = form.ToString();
-            frm.Show();
+            frm.Text = frm.Text;
+            frm.Show();            
         }
     }
 }

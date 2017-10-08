@@ -56,6 +56,8 @@ namespace Invoice_OTC.View
             this.tabbedMDIManager1 = new Syncfusion.Windows.Forms.Tools.TabbedMDIManager(this.components);
             this.imageListAdv1 = new Syncfusion.Windows.Forms.Tools.ImageListAdv(this.components);
             this.statusStripEx1 = new Syncfusion.Windows.Forms.Tools.StatusStripEx();
+            this.statusStripButton1 = new Syncfusion.Windows.Forms.Tools.StatusStripButton();
+            this.statusStripLabel1 = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.navigationView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
             this.ribbonControlAdv1.SuspendLayout();
@@ -65,6 +67,7 @@ namespace Invoice_OTC.View
             this.toolStripTabItem2.Panel.SuspendLayout();
             this.toolStripEx3.SuspendLayout();
             this.toolStripEx4.SuspendLayout();
+            this.statusStripEx1.SuspendLayout();
             this.SuspendLayout();
             // 
             // navigationView1
@@ -241,14 +244,14 @@ namespace Invoice_OTC.View
             // detailedViewToolStripMenuItem
             // 
             this.detailedViewToolStripMenuItem.Name = "detailedViewToolStripMenuItem";
-            this.detailedViewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.detailedViewToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.detailedViewToolStripMenuItem.Text = "Detailed View";
             this.detailedViewToolStripMenuItem.Click += new System.EventHandler(this.detailedViewToolStripMenuItem_Click);
             // 
             // gridViewToolStripMenuItem
             // 
             this.gridViewToolStripMenuItem.Name = "gridViewToolStripMenuItem";
-            this.gridViewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gridViewToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.gridViewToolStripMenuItem.Text = "Grid View";
             this.gridViewToolStripMenuItem.Click += new System.EventHandler(this.gridViewToolStripMenuItem_Click);
             // 
@@ -303,6 +306,9 @@ namespace Invoice_OTC.View
             this.tabbedMDIManager1.DropDownButtonToolTip = "";
             this.tabbedMDIManager1.ImageSize = new System.Drawing.Size(16, 16);
             this.tabbedMDIManager1.NeedUpdateHostedForm = false;
+            this.tabbedMDIManager1.ShowCloseButton = true;
+            this.tabbedMDIManager1.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererDockingWhidbey);
+            this.tabbedMDIManager1.UseIconsInTabs = false;
             // 
             // imageListAdv1
             // 
@@ -362,14 +368,34 @@ namespace Invoice_OTC.View
             // statusStripEx1
             // 
             this.statusStripEx1.BackColor = System.Drawing.SystemColors.Control;
-            this.statusStripEx1.BeforeTouchSize = new System.Drawing.Size(762, 22);
-            this.statusStripEx1.Location = new System.Drawing.Point(1, 358);
-            this.statusStripEx1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
+            this.statusStripEx1.BeforeTouchSize = new System.Drawing.Size(762, 26);
+            this.statusStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusStripButton1,
+            this.statusStripLabel1});
+            this.statusStripEx1.Location = new System.Drawing.Point(1, 354);
+            this.statusStripEx1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.statusStripEx1.Name = "statusStripEx1";
-            this.statusStripEx1.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Managed;
-            this.statusStripEx1.Size = new System.Drawing.Size(762, 22);
+            this.statusStripEx1.OfficeColorScheme = Syncfusion.Windows.Forms.Tools.ToolStripEx.ColorScheme.Black;
+            this.statusStripEx1.Size = new System.Drawing.Size(762, 26);
             this.statusStripEx1.TabIndex = 2;
             this.statusStripEx1.Text = "statusStripEx1";
+            this.statusStripEx1.VisualStyle = Syncfusion.Windows.Forms.Tools.StatusStripExStyle.Metro;
+            // 
+            // statusStripButton1
+            // 
+            this.statusStripButton1.Image = global::Invoice_OTC.Properties.Resources.Accept_Database_96px;
+            this.statusStripButton1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 2);
+            this.statusStripButton1.Name = "statusStripButton1";
+            this.statusStripButton1.Size = new System.Drawing.Size(124, 20);
+            this.statusStripButton1.Text = "statusStripButton1";
+            // 
+            // statusStripLabel1
+            // 
+            this.statusStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.statusStripLabel1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 2);
+            this.statusStripLabel1.Name = "statusStripLabel1";
+            this.statusStripLabel1.Size = new System.Drawing.Size(96, 15);
+            this.statusStripLabel1.Text = "statusStripLabel1";
             // 
             // RibbonForm1
             // 
@@ -400,6 +426,7 @@ namespace Invoice_OTC.View
             this.toolStripEx3.PerformLayout();
             this.toolStripEx4.ResumeLayout(false);
             this.toolStripEx4.PerformLayout();
+            this.statusStripEx1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -426,5 +453,7 @@ namespace Invoice_OTC.View
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx4;
         private System.Windows.Forms.ToolStripButton invoicePrintBtn;
         private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem3;
+        private Syncfusion.Windows.Forms.Tools.StatusStripButton statusStripButton1;
+        private Syncfusion.Windows.Forms.Tools.StatusStripLabel statusStripLabel1;
     }
 }
