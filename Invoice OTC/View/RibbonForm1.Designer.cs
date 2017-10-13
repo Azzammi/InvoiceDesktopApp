@@ -56,8 +56,9 @@ namespace Invoice_OTC.View
             this.tabbedMDIManager1 = new Syncfusion.Windows.Forms.Tools.TabbedMDIManager(this.components);
             this.imageListAdv1 = new Syncfusion.Windows.Forms.Tools.ImageListAdv(this.components);
             this.statusStripEx1 = new Syncfusion.Windows.Forms.Tools.StatusStripEx();
-            this.statusStripButton1 = new Syncfusion.Windows.Forms.Tools.StatusStripButton();
-            this.statusStripLabel1 = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
+            this.userNameStripBtn = new Syncfusion.Windows.Forms.Tools.StatusStripButton();
+            this.levelStripBtn = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.navigationView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
             this.ribbonControlAdv1.SuspendLayout();
@@ -110,6 +111,7 @@ namespace Invoice_OTC.View
             this.ribbonControlAdv1.TabIndex = 1;
             this.ribbonControlAdv1.Text = "ribbonControlAdv1";
             this.ribbonControlAdv1.TitleColor = System.Drawing.Color.Black;
+            this.ribbonControlAdv1.Click += new System.EventHandler(this.ribbonControlAdv1_Click);
             // 
             // toolStripTabItem1
             // 
@@ -177,12 +179,13 @@ namespace Invoice_OTC.View
             this.toolStripEx2.Image = null;
             this.toolStripEx2.ImageScalingSize = new System.Drawing.Size(48, 48);
             this.toolStripEx2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton3});
+            this.toolStripButton3,
+            this.toolStripButton4});
             this.toolStripEx2.Location = new System.Drawing.Point(141, 1);
             this.toolStripEx2.Name = "toolStripEx2";
             this.toolStripEx2.Office12Mode = false;
             this.toolStripEx2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.toolStripEx2.Size = new System.Drawing.Size(146, 92);
+            this.toolStripEx2.Size = new System.Drawing.Size(302, 92);
             this.toolStripEx2.TabIndex = 1;
             // 
             // toolStripButton3
@@ -370,8 +373,8 @@ namespace Invoice_OTC.View
             this.statusStripEx1.BackColor = System.Drawing.SystemColors.Control;
             this.statusStripEx1.BeforeTouchSize = new System.Drawing.Size(762, 26);
             this.statusStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.statusStripButton1,
-            this.statusStripLabel1});
+            this.userNameStripBtn,
+            this.levelStripBtn});
             this.statusStripEx1.Location = new System.Drawing.Point(1, 354);
             this.statusStripEx1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.statusStripEx1.Name = "statusStripEx1";
@@ -381,21 +384,30 @@ namespace Invoice_OTC.View
             this.statusStripEx1.Text = "statusStripEx1";
             this.statusStripEx1.VisualStyle = Syncfusion.Windows.Forms.Tools.StatusStripExStyle.Metro;
             // 
-            // statusStripButton1
+            // userNameStripBtn
             // 
-            this.statusStripButton1.Image = global::Invoice_OTC.Properties.Resources.Accept_Database_96px;
-            this.statusStripButton1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 2);
-            this.statusStripButton1.Name = "statusStripButton1";
-            this.statusStripButton1.Size = new System.Drawing.Size(124, 20);
-            this.statusStripButton1.Text = "statusStripButton1";
+            this.userNameStripBtn.Image = global::Invoice_OTC.Properties.Resources.Accept_Database_96px;
+            this.userNameStripBtn.Margin = new System.Windows.Forms.Padding(0, 4, 0, 2);
+            this.userNameStripBtn.Name = "userNameStripBtn";
+            this.userNameStripBtn.Size = new System.Drawing.Size(124, 20);
+            this.userNameStripBtn.Text = "statusStripButton1";
             // 
-            // statusStripLabel1
+            // levelStripBtn
             // 
-            this.statusStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.statusStripLabel1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 2);
-            this.statusStripLabel1.Name = "statusStripLabel1";
-            this.statusStripLabel1.Size = new System.Drawing.Size(96, 15);
-            this.statusStripLabel1.Text = "statusStripLabel1";
+            this.levelStripBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.levelStripBtn.Margin = new System.Windows.Forms.Padding(0, 4, 0, 2);
+            this.levelStripBtn.Name = "levelStripBtn";
+            this.levelStripBtn.Size = new System.Drawing.Size(96, 15);
+            this.levelStripBtn.Text = "statusStripLabel1";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(140, 70);
+            this.toolStripButton4.Text = "Linq Show Case";
+            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // RibbonForm1
             // 
@@ -453,7 +465,8 @@ namespace Invoice_OTC.View
         private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx4;
         private System.Windows.Forms.ToolStripButton invoicePrintBtn;
         private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem3;
-        private Syncfusion.Windows.Forms.Tools.StatusStripButton statusStripButton1;
-        private Syncfusion.Windows.Forms.Tools.StatusStripLabel statusStripLabel1;
+        private Syncfusion.Windows.Forms.Tools.StatusStripButton userNameStripBtn;
+        private Syncfusion.Windows.Forms.Tools.StatusStripLabel levelStripBtn;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
     }
 }

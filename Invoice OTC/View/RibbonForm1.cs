@@ -21,20 +21,33 @@ namespace Invoice_OTC.View
         Item,
         GridInvoice,
         DetailInvoice,
-        CetakInvoice
+        CetakInvoice,
+        LinqShowCase
     }
 
     public partial class RibbonForm1 : Syncfusion.Windows.Forms.Tools.RibbonForm
     {
         #region Declaration
         Form frm;
-        FormShowList m_FormList;
-        FormShowItem m_FormItem;
-        #endregion
 
+        private string periode;
+        private string user;
+        private string level;
+        #endregion
         public RibbonForm1()
         {
             InitializeComponent();
+        }
+
+        public RibbonForm1(string users, string levels)
+        {
+            InitializeComponent();
+
+            user = users;
+            level = levels;
+
+            userNameStripBtn.Text = User;
+            levelStripBtn.Text = Level;
         }        
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -83,6 +96,9 @@ namespace Invoice_OTC.View
                 case NamaForm.CetakInvoice:
                     frm = new FrmInvoicePrint();
                     break;
+                case NamaForm.LinqShowCase:
+                    frm = new FrmShowCaseLinq();
+                    break;
                 default:
                     break;
             }
@@ -102,5 +118,34 @@ namespace Invoice_OTC.View
             frm.Text = frm.Text;
             frm.Show();            
         }
+
+        private void ribbonControlAdv1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        #region Properties
+        public string Periode
+        {
+            get { return periode; }
+            set { periode = value; }
+        }
+        public string User
+        {
+            get { return user; }
+            set { user = value; }
+        }
+        public string Level
+        {
+            get { return level; }
+            set { level = value; }
+        }
+        #endregion
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            ShowForm(NamaForm.LinqShowCase);
+        }
     }
 }
+

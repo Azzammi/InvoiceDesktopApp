@@ -125,23 +125,22 @@ public class FSBindingList<T> : BindingList<T>
         /// <param name="property">The property to search.</param>
         /// <param name="key">The value to find.</param>
         /// <returns>The collection index of the found item.</returns>
-        protected override int FindCore(PropertyDescriptor property, object key)
+            protected override int FindCore(PropertyDescriptor property, object key)
         {
             // Exit if no property specified
             if (property == null) return -1;
 
             // Get list to search
             List<T> items = this.Items as List<T>;
-            
+
             //Get the type and convert it
-            //if(key.GetType() == typeof(string))
-            //{
-            //    Convert.ToString(key);
-                string Key = (string)key;
-                Key = Key.Trim();
-                Key = Key.ToLower();
-            //}          
-            
+
+            string Key = null;
+            Key = key.ToString();
+
+            Key = Key.Trim();
+            Key = Key.ToLower();
+
             // Traverse list for value
             foreach (T item in items)
             {
@@ -153,7 +152,7 @@ public class FSBindingList<T> : BindingList<T>
                 // If value is the search value, return the index of the data item
                 // Remove whitespace in search value, for accurate searching ---Luthfi
                 if (Key == value) return IndexOf(item);
-                
+
             }
             return -1;
         }

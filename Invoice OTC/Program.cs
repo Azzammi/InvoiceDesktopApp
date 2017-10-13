@@ -12,6 +12,7 @@ namespace Invoice_OTC
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
         [STAThread]
         static void Main()
         {
@@ -26,8 +27,9 @@ namespace Invoice_OTC
             //else
             //{
             //    Application.Run(new detailedBindingForm(FormStatus.Ready));
-            //}
-            Application.Run(new RibbonForm1());
+            //}           
+
+            Application.Run(new RibbonForm1("User","Level"));
         }
     }
 }

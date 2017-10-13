@@ -37,10 +37,10 @@
             System.Windows.Forms.Label subTotalLabel;
             System.Windows.Forms.Label totalLabel;
             System.Windows.Forms.Label outletAddressLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(detailedBindingForm));
             System.Windows.Forms.Label isPPNLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(detailedBindingForm));
             this.invoiceItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.issuedDataDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.nomorTextBox = new System.Windows.Forms.TextBox();
@@ -169,10 +169,18 @@
             outletAddressLabel.TabIndex = 26;
             outletAddressLabel.Text = "Address:";
             // 
+            // isPPNLabel
+            // 
+            isPPNLabel.AutoSize = true;
+            isPPNLabel.Location = new System.Drawing.Point(761, 46);
+            isPPNLabel.Name = "isPPNLabel";
+            isPPNLabel.Size = new System.Drawing.Size(90, 13);
+            isPPNLabel.TabIndex = 27;
+            isPPNLabel.Text = "Include PPN 10%";
+            // 
             // invoiceItemBindingSource
             // 
             this.invoiceItemBindingSource.DataSource = typeof(Invoice_OTC.Model.InvoiceItem);
-            this.invoiceItemBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.invoiceItemBindingSource_AddingNew);
             // 
             // issuedDataDateTimePicker
             // 
@@ -262,10 +270,10 @@
             // 
             // itemsDataGridView
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.SkyBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            this.itemsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            this.itemsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.itemsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -277,15 +285,15 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.itemsDataGridView.DataSource = this.itemsBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.itemsDataGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.itemsDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.itemsDataGridView.Location = new System.Drawing.Point(23, 133);
             this.itemsDataGridView.Name = "itemsDataGridView";
             this.itemsDataGridView.Size = new System.Drawing.Size(905, 165);
@@ -494,6 +502,7 @@
             // outletAddressTextBox
             // 
             this.outletAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.outletAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.outletItemBindingSource, "OutletAddress", true));
             this.outletAddressTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
             this.outletAddressTextBox.Location = new System.Drawing.Point(472, 75);
             this.outletAddressTextBox.Multiline = true;
@@ -509,15 +518,6 @@
             this.isPPNCheckBox.Size = new System.Drawing.Size(20, 24);
             this.isPPNCheckBox.TabIndex = 28;
             this.isPPNCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // isPPNLabel
-            // 
-            isPPNLabel.AutoSize = true;
-            isPPNLabel.Location = new System.Drawing.Point(761, 46);
-            isPPNLabel.Name = "isPPNLabel";
-            isPPNLabel.Size = new System.Drawing.Size(90, 13);
-            isPPNLabel.TabIndex = 27;
-            isPPNLabel.Text = "Include PPN 10%";
             // 
             // detailedBindingForm
             // 
