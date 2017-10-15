@@ -126,33 +126,53 @@ public class FSBindingList<T> : BindingList<T>
         /// <returns>The collection index of the found item.</returns>
         protected override int FindCore(PropertyDescriptor property, object key)
         {
-            // Exit if no property specified
-            if (property == null) return -1;
-
-            // Get list to search
-            List<T> items = this.Items as List<T>;
-            
-            //Get the type and convert it         
-            string Key = (string)key;
-            Key = Key.Trim();
-            Key = Key.ToLower();           
-            
-            // Traverse list for value
-            foreach (T item in items)
+            try
             {
-                // Test column search value
-                string value = (string)property.GetValue(item);
-                value = value.Trim();
-                value = value.ToLower();
+                // Exit if no property specified
+                if (property == null) return -1;
 
-                // If value is the search value, return the index of the data item
-                // Remove whitespace in search value, for accurate searching ---Luthfi
-                //if (Key == value) return IndexOf(item);
-                if (value.Contains(Key, StringComparison.OrdinalIgnoreCase)) ;
+                // Get list to search
+                List<T> items = this.Items as List<T>;
+
+                // string Key = theKey(key);
+
+                string Key = (string)key;
+                Key = Key.Trim();
+                Key = Key.ToLower();
+
+
+                // Traverse list for value
+                foreach (T item in items)
+                {
+                    // Test column search value
+                    string value = (string)property.GetValue(item);
+                    value = value.Trim();
+                    value = value.ToLower();
+
+                    // If value is the search value, return the index of the data item
+                    // Remove whitespace in search value, for accurate searching ---Luthfi
+                    //if (Key == value) return IndexOf(item);
+                    if (value.Contains(Key, StringComparison.OrdinalIgnoreCase)) return IndexOf(item);
+                }
+                return -1;
             }
-            return -1;
+            catch (InvalidCastException ex)
+            {
+                ex = null;
+                return -1;
+            }
+            finally
+            {
+                GC.Collect();
+            }
         }
 
+        /// <summary>
+        /// This property that will be called by the programmer in the user interface
+        /// </summary>
+        /// <param name="param"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public int Find(string param, string key)
         {
             //Check properties with the specified name
@@ -168,6 +188,16 @@ public class FSBindingList<T> : BindingList<T>
                 }
             }
             return 0;
+        }
+
+        /// <summary>
+        /// This Method check the key value if it has DBNull.Value
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public string theKey(object key)
+        {
+           return key == DBNull.Value ? string.Empty : key.ToString();
         }
         #endregion
 

@@ -139,5 +139,10 @@ namespace Invoice_OTC.View
                     break;
             }
         }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            m_List.ResetBindings();
+        }
     }
 }

@@ -15,5 +15,14 @@
     <Setting Name="textboxFont" Type="System.Drawing.Font" Scope="User">
       <Value Profile="(Default)">Microsoft Sans Serif, 11.25pt</Value>
     </Setting>
+    <Setting Name="currentUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Luthfi</Value>
+    </Setting>
+    <Setting Name="level" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Admin</Value>
+    </Setting>
+    <Setting Name="periode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">201701</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Invoice_OTC.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -35,6 +36,7 @@ namespace Invoice_OTC.Controller
         private ToolStripLabel toolStripLabel2;
         private ToolStripComboBox searchInCmb;
         private ToolStripButton searchBtn;
+        private ToolStripButton refreshBtn;
         private BindingSource m_bindingSource;
         public event ItemFoundEventHandler ItemFound;
         #endregion
@@ -89,6 +91,12 @@ namespace Invoice_OTC.Controller
             this.Find();
         }
 
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            if (m_bindingSource == null) return;
+            this.m_bindingSource.ResetBindings(true);
+        }
+
         private void Find()
         {
             //Don't search if nothing specified to look for
@@ -127,6 +135,7 @@ namespace Invoice_OTC.Controller
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.searchInCmb = new System.Windows.Forms.ToolStripComboBox();
             this.searchBtn = new System.Windows.Forms.ToolStripButton();
+            this.refreshBtn = new System.Windows.Forms.ToolStripButton();
             this.SuspendLayout();
             // 
             // toolStripLabel1
@@ -153,7 +162,7 @@ namespace Invoice_OTC.Controller
             // 
             this.searchInCmb.Name = "searchInCmb";
             this.searchInCmb.Size = new System.Drawing.Size(100, 32);
-            searchInCmb.GotFocus += new EventHandler(searchInToolStripCombobox_GotFocus);
+            this.searchInCmb.GotFocus += new System.EventHandler(this.searchInToolStripCombobox_GotFocus);
             // 
             // searchBtn
             // 
@@ -163,7 +172,18 @@ namespace Invoice_OTC.Controller
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(52, 29);
             this.searchBtn.Text = "Search !";
-            searchBtn.Click += new EventHandler(searchBtnToolStripButton_Click);
+            this.searchBtn.Click += new System.EventHandler(this.searchBtnToolStripButton_Click);
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.refreshBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.refreshBtn.ForeColor = System.Drawing.Color.White;
+            this.refreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(50, 29);
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // FindStrip
             // 
@@ -173,13 +193,15 @@ namespace Invoice_OTC.Controller
             this.searchTxt,
             this.toolStripLabel2,
             this.searchInCmb,
-            this.searchBtn});
+            this.searchBtn,
+            this.refreshBtn});
             this.Name = "findStrip2";
             this.Size = new System.Drawing.Size(772, 32);
             this.TabIndex = 2;
             this.Text = "toolStrip1";
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion        
     }

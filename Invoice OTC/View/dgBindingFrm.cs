@@ -78,7 +78,7 @@ namespace Invoice_OTC.View
             
             switch (changeType)
             {
-                case ListChangedType.ItemChanged:
+                case ListChangedType.ItemChanged:                     
                     if(changedInvoice.Nomor != null)
                     {
                         CommandUpdateInvoice updateAuthor = new CommandUpdateInvoice(changedInvoice);

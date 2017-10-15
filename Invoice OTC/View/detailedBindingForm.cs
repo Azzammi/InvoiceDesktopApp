@@ -5,6 +5,7 @@ using Invoice_OTC.Controller.Outlet;
 using Invoice_OTC.Controller.Invoice;
 using Invoice_OTC.Model;
 using static Invoice_OTC.View.FormStatusChangedEventArgs;
+using System.ComponentModel;
 
 namespace Invoice_OTC.View
 {
@@ -36,6 +37,10 @@ namespace Invoice_OTC.View
         #endregion
 
         #region Constructor
+        public detailedBindingForm()
+        {
+            InitializeComponent();
+        }
         public detailedBindingForm(FormStatus value)
         {
             InitializeComponent();
@@ -44,10 +49,10 @@ namespace Invoice_OTC.View
             frmStatusChanged += DetailedBindingForm_frmStatusChanged;
 
             //Load the form first
-            detailedBindingForm_Load();
+            //detailedBindingForm_Load();
 
             //Set the form Status 
-            FrmStatus = value;
+            //FrmStatus = value;
         }
 
         private void DetailedBindingForm_frmStatusChanged(object sender, FormStatusChangedEventArgs e)
@@ -147,7 +152,7 @@ namespace Invoice_OTC.View
             }
         }
 
-        private void detailedBindingForm_Load()
+        private void detailedBindingForm_Load(object sender, EventArgs e)
         {
             m_AppController = new AppController();
             m_Control = new miscellanacousFunction();
@@ -161,14 +166,14 @@ namespace Invoice_OTC.View
             CommandGetRoti getRoti = new CommandGetRoti();
             m_RotiToChooseList = (RotiToChooseList)m_AppController.ExecuteCommand(getRoti);
 
-            invoiceItemBindingSource.DataSource = m_InvoiceList;
-            itemsBindingSource.DataSource = invoiceItemBindingSource;
-            itemsBindingSource.DataMember = "Items";
-
             outletItemBindingSource.DataSource = m_OutletList;
             rotiToChooseItemBindingSource.DataSource = m_RotiToChooseList;
 
-            invoiceItemBindingSource.Position = 0;
+            invoiceItemBindingSource.DataSource = m_InvoiceList;
+            itemsBindingSource.DataSource = invoiceItemBindingSource;
+            itemsBindingSource.DataMember = "Items";         
+
+            //invoiceItemBindingSource.Position = 0;            
         }
         #endregion
         
@@ -185,17 +190,7 @@ namespace Invoice_OTC.View
                 bindingNavigator1.Visible = false;
             }
         }
-
-        private void detailedBindingForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void invoiceItemBindingSource_AddingNew(object sender, System.ComponentModel.AddingNewEventArgs e)
-        {
-            
-        }
-
+        
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             // Get author
@@ -217,11 +212,77 @@ namespace Invoice_OTC.View
         private void batalBtn_Click(object sender, EventArgs e)
         {
             FrmStatus = FormStatus.Ready;
+            invoiceItemBindingSource.Remove(invoiceItemBindingSource.Current);
+        }
+   
+
+        private void RefreshBinding()
+        {
+            foreach (Control c in this.Controls)
+            {
+                foreach (Binding b in c.DataBindings)
+                {
+                    b.ReadValue();
+                }
+            }
         }
 
-        private void itemsDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(e.ToString());
+            m_InvoiceList.ResetBindings();
+        }
+
+        private void itemsBindingSource_AddingNew(object sender, System.ComponentModel.AddingNewEventArgs e)
+        {
+
+        }
+
+        private void itemsBindingSource_ListChanged(object sender, System.ComponentModel.ListChangedEventArgs e)
+        {
+            /* This event will be called several times during form initialization.
+             * We don't want to do anything with it until the runtime author
+             * list has been passed in. */
+
+            // Exit if no parent
+            InvoiceItem parent = (InvoiceItem)invoiceItemBindingSource.Current;
+            if (parent == null) return;
+
+            // Get the item affected
+            int index = e.NewIndex;
+            rotiItem changedItem = null;
+            if ((index > -1) && (index < parent.Items.Count))
+            {
+                changedItem = parent.Items[index];
+            }
+
+            // Get the type of change that occured
+            ListChangedType changeType = e.ListChangedType;
+
+            /* We only need to respond to two types of changes here; updates
+             * and moves. Adds are handled by bindingSourceAuthors_AddingNew(),
+             * and deletes are handled by menuItemBooksDelete_Click(). */
+
+            // Dispatch a change handler
+            switch (changeType)
+            {
+                case ListChangedType.ItemChanged:
+                    //if (changedItem.Code != null)
+                    //{
+                    //    CommandUpdateItem updateItem = new CommandUpdateItem(changedItem);
+                    //    m_AppController.ExecuteCommand(updateItem);
+                    //}
+                    //else
+                    //{
+                    //    CommandDeleteItem deleteItem = new CommandDeleteItem(changedItem);
+                    //    m_AppController.ExecuteCommand(deleteItem);
+                    //}
+
+                    break;
+
+                case ListChangedType.ItemMoved:
+                    // Not supported in this app
+                    break;
+            }
         }
     }
 }

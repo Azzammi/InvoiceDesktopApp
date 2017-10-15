@@ -48,18 +48,7 @@ namespace Invoice_OTC
             bindingSource1.DataSource = m_rotis;            
             
         }
-
-        private void dgViewRoti_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            foreach(DataGridViewRow dataRow in dgViewRoti.SelectedRows)
-            {
-                m_motherForm.ItemCode = dataRow.Cells[0].Value.ToString();
-                m_motherForm.ItemName = dataRow.Cells[1].Value.ToString();
-            }
-
-            this.Close();
-        }
-
+        
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             FrmImportExcelRoti form = new FrmImportExcelRoti();

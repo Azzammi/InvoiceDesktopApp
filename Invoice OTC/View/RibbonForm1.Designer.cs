@@ -110,6 +110,7 @@ namespace Invoice_OTC.View
             this.ribbonControlAdv1.TabIndex = 1;
             this.ribbonControlAdv1.Text = "ribbonControlAdv1";
             this.ribbonControlAdv1.TitleColor = System.Drawing.Color.Black;
+            this.ribbonControlAdv1.Click += new System.EventHandler(this.ribbonControlAdv1_Click);
             // 
             // toolStripTabItem1
             // 
@@ -386,16 +387,16 @@ namespace Invoice_OTC.View
             this.statusStripButton1.Image = global::Invoice_OTC.Properties.Resources.Accept_Database_96px;
             this.statusStripButton1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 2);
             this.statusStripButton1.Name = "statusStripButton1";
-            this.statusStripButton1.Size = new System.Drawing.Size(124, 20);
-            this.statusStripButton1.Text = "statusStripButton1";
+            this.statusStripButton1.Size = new System.Drawing.Size(58, 20);
+            this.statusStripButton1.Text = global::Invoice_OTC.Properties.Settings.Default.currentUser;
             // 
             // statusStripLabel1
             // 
             this.statusStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.statusStripLabel1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 2);
             this.statusStripLabel1.Name = "statusStripLabel1";
-            this.statusStripLabel1.Size = new System.Drawing.Size(96, 15);
-            this.statusStripLabel1.Text = "statusStripLabel1";
+            this.statusStripLabel1.Size = new System.Drawing.Size(43, 15);
+            this.statusStripLabel1.Text = global::Invoice_OTC.Properties.Settings.Default.level;
             // 
             // RibbonForm1
             // 

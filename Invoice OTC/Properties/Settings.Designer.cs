@@ -56,5 +56,41 @@ namespace Invoice_OTC.Properties {
                 this["textboxFont"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Luthfi")]
+        public string currentUser {
+            get {
+                return ((string)(this["currentUser"]));
+            }
+            set {
+                this["currentUser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Admin")]
+        public string level {
+            get {
+                return ((string)(this["level"]));
+            }
+            set {
+                this["level"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("201701")]
+        public string periode {
+            get {
+                return ((string)(this["periode"]));
+            }
+            set {
+                this["periode"] = value;
+            }
+        }
     }
 }

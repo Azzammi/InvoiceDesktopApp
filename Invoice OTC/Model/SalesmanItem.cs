@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using Invoice_OTC.Data_Access;
 using FSCollections;
 
 namespace Invoice_OTC.Model
@@ -16,7 +16,14 @@ namespace Invoice_OTC.Model
         private string slsmTelp;
         private string slsmSupv;
         private string slsmPhoto;
-        private string Stat;
+        private bool stat;
+        #endregion
+
+        #region Constructor
+        public SalesmanItem()
+        {
+
+        }
         #endregion
 
         #region Properties
@@ -25,10 +32,54 @@ namespace Invoice_OTC.Model
             get { return slsmCode; }
             set { slsmCode = value; }
         }
+        public string SlsmName
+        {
+            get { return slsmName; }
+            set { slsmName = value; }
+        }
+        public string SlsmAddress
+        {
+            get { return slsmAddress; }
+            set { slsmAddress = value; }
+        }
+        public string SlsmTelp
+        {
+            get { return slsmTelp;}
+            set { slsmTelp = value; }
+        }
+        public string SlsmSupv
+        {
+            get { return slsmSupv; }
+            set { slsmSupv = value; }
+        }
+        public string SlsmPhoto
+        {
+            get { return slsmPhoto; }
+            set { slsmPhoto = value; }
+        }
+        public bool Stat
+        {
+            get { return stat; }
+            set { stat = value; }
+        }
         #endregion
 
         #region Methods
-
+        internal void CreateDatabaseRecord()
+        {
+            SalesmanItemDAO dao = new SalesmanItemDAO();
+            dao.CreateDatabaseRecord(this);
+        }
+        internal void UpdateDatabaseRecord()
+        {
+            SalesmanItemDAO dao = new SalesmanItemDAO();
+            dao.UpdateDatabaseRecord(this);
+        }
+        internal void DeleteDatabaseRecord()
+        {
+            SalesmanItemDAO dao = new SalesmanItemDAO();
+            dao.DeleteDatabaseRecord(this.SlsmCode);
+        }
         #endregion
     }
 }

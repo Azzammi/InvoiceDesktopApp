@@ -30,12 +30,15 @@ namespace Invoice_OTC.View
         Form frm;
         FormShowList m_FormList;
         FormShowItem m_FormItem;
+
         #endregion
 
+        #region Constructor
         public RibbonForm1()
         {
             InitializeComponent();
-        }        
+        }      
+        #endregion
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
@@ -101,6 +104,11 @@ namespace Invoice_OTC.View
             frm.MdiParent = this;
             frm.Text = frm.Text;
             frm.Show();            
+        }
+
+        private void ribbonControlAdv1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

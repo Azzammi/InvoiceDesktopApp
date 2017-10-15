@@ -31,6 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(itemFrm));
             this.dgViewRoti = new System.Windows.Forms.DataGridView();
+            this.itemCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemSortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stat = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.outletItemBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -43,15 +52,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.itemCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemSortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Jenis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubCategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stat = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.findStrip1 = new Invoice_OTC.Controller.FindStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewRoti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingNavigator)).BeginInit();
@@ -76,12 +77,75 @@
             this.Stat});
             this.dgViewRoti.DataSource = this.bindingSource1;
             this.dgViewRoti.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgViewRoti.Location = new System.Drawing.Point(0, 25);
+            this.dgViewRoti.Location = new System.Drawing.Point(0, 57);
             this.dgViewRoti.Name = "dgViewRoti";
             this.dgViewRoti.ReadOnly = true;
-            this.dgViewRoti.Size = new System.Drawing.Size(834, 334);
+            this.dgViewRoti.Size = new System.Drawing.Size(834, 302);
             this.dgViewRoti.TabIndex = 0;
-            this.dgViewRoti.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgViewRoti_CellMouseDoubleClick);
+            // 
+            // itemCodeDataGridViewTextBoxColumn
+            // 
+            this.itemCodeDataGridViewTextBoxColumn.DataPropertyName = "ItemCode";
+            this.itemCodeDataGridViewTextBoxColumn.HeaderText = "ROTI CODE";
+            this.itemCodeDataGridViewTextBoxColumn.Name = "itemCodeDataGridViewTextBoxColumn";
+            this.itemCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // itemNameDataGridViewTextBoxColumn
+            // 
+            this.itemNameDataGridViewTextBoxColumn.DataPropertyName = "ItemName";
+            this.itemNameDataGridViewTextBoxColumn.HeaderText = "ROTI NAME";
+            this.itemNameDataGridViewTextBoxColumn.Name = "itemNameDataGridViewTextBoxColumn";
+            this.itemNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.itemNameDataGridViewTextBoxColumn.Width = 300;
+            // 
+            // itemSortDataGridViewTextBoxColumn
+            // 
+            this.itemSortDataGridViewTextBoxColumn.DataPropertyName = "ItemSort";
+            this.itemSortDataGridViewTextBoxColumn.HeaderText = "ROTI SORT";
+            this.itemSortDataGridViewTextBoxColumn.Name = "itemSortDataGridViewTextBoxColumn";
+            this.itemSortDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // Brand
+            // 
+            this.Brand.DataPropertyName = "Brand";
+            this.Brand.HeaderText = "Brand";
+            this.Brand.Name = "Brand";
+            this.Brand.ReadOnly = true;
+            // 
+            // Jenis
+            // 
+            this.Jenis.DataPropertyName = "Jenis";
+            this.Jenis.HeaderText = "Jenis";
+            this.Jenis.Name = "Jenis";
+            this.Jenis.ReadOnly = true;
+            // 
+            // Category
+            // 
+            this.Category.DataPropertyName = "Category";
+            this.Category.HeaderText = "Category";
+            this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
+            // 
+            // SubCategory
+            // 
+            this.SubCategory.DataPropertyName = "SubCategory";
+            this.SubCategory.HeaderText = "SubCategory";
+            this.SubCategory.Name = "SubCategory";
+            this.SubCategory.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // Stat
+            // 
+            this.Stat.DataPropertyName = "Stat";
+            this.Stat.HeaderText = "Stat";
+            this.Stat.Name = "Stat";
+            this.Stat.ReadOnly = true;
             // 
             // bindingSource1
             // 
@@ -191,69 +255,15 @@
             this.toolStripButton1.Text = "Import From Excel";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // itemCodeDataGridViewTextBoxColumn
+            // findStrip1
             // 
-            this.itemCodeDataGridViewTextBoxColumn.DataPropertyName = "ItemCode";
-            this.itemCodeDataGridViewTextBoxColumn.HeaderText = "ROTI CODE";
-            this.itemCodeDataGridViewTextBoxColumn.Name = "itemCodeDataGridViewTextBoxColumn";
-            this.itemCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // itemNameDataGridViewTextBoxColumn
-            // 
-            this.itemNameDataGridViewTextBoxColumn.DataPropertyName = "ItemName";
-            this.itemNameDataGridViewTextBoxColumn.HeaderText = "ROTI NAME";
-            this.itemNameDataGridViewTextBoxColumn.Name = "itemNameDataGridViewTextBoxColumn";
-            this.itemNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.itemNameDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // itemSortDataGridViewTextBoxColumn
-            // 
-            this.itemSortDataGridViewTextBoxColumn.DataPropertyName = "ItemSort";
-            this.itemSortDataGridViewTextBoxColumn.HeaderText = "ROTI SORT";
-            this.itemSortDataGridViewTextBoxColumn.Name = "itemSortDataGridViewTextBoxColumn";
-            this.itemSortDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // Brand
-            // 
-            this.Brand.DataPropertyName = "Brand";
-            this.Brand.HeaderText = "Brand";
-            this.Brand.Name = "Brand";
-            this.Brand.ReadOnly = true;
-            // 
-            // Jenis
-            // 
-            this.Jenis.DataPropertyName = "Jenis";
-            this.Jenis.HeaderText = "Jenis";
-            this.Jenis.Name = "Jenis";
-            this.Jenis.ReadOnly = true;
-            // 
-            // Category
-            // 
-            this.Category.DataPropertyName = "Category";
-            this.Category.HeaderText = "Category";
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
-            // 
-            // SubCategory
-            // 
-            this.SubCategory.DataPropertyName = "SubCategory";
-            this.SubCategory.HeaderText = "SubCategory";
-            this.SubCategory.Name = "SubCategory";
-            this.SubCategory.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            // 
-            // Stat
-            // 
-            this.Stat.DataPropertyName = "Stat";
-            this.Stat.HeaderText = "Stat";
-            this.Stat.Name = "Stat";
-            this.Stat.ReadOnly = true;
+            this.findStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.findStrip1.bindingSource = this.bindingSource1;
+            this.findStrip1.Location = new System.Drawing.Point(0, 25);
+            this.findStrip1.Name = "findStrip1";
+            this.findStrip1.Size = new System.Drawing.Size(834, 32);
+            this.findStrip1.TabIndex = 2;
+            this.findStrip1.Text = "findStrip1";
             // 
             // itemFrm
             // 
@@ -261,6 +271,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 359);
             this.Controls.Add(this.dgViewRoti);
+            this.Controls.Add(this.findStrip1);
             this.Controls.Add(this.outletItemBindingNavigator);
             this.Name = "itemFrm";
             this.Text = "itemFrm";
@@ -299,5 +310,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private Controller.FindStrip findStrip1;
     }
 }
