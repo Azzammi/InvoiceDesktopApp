@@ -109,6 +109,9 @@
     <Compile Include="Data Access\RotiToChoose\RotiToChooseItemDAO.cs" />
     <Compile Include="Data Access\RotiToChoose\RotiToChooseListDAO.cs" />
     <Compile Include="Data Access\SalesmanItemDAO.cs" />
+    <Compile Include="DataClasses1.cs">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,6 +138,7 @@
     <Compile Include="Model\NumberingList.cs" />
     <Compile Include="Model\InvoiceDetail\rotiItem.cs" />
     <Compile Include="Model\InvoiceDetail\rotiList.cs" />
+    <Compile Include="Model\Outlet\outletGenericList.cs" />
     <Compile Include="Model\Outlet\outletItem.cs" />
     <Compile Include="Model\Outlet\outletList.cs" />
     <Compile Include="Model\Roti Item\RotiToChooseItem.cs" />
@@ -159,6 +163,7 @@
       <DependentUpon>rptSubReportInvoice.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="StringComparison.cs" />
     <Compile Include="View\detailedBindingForm.cs">
       <SubType>Form</SubType>
     </Compile>

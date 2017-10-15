@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.Linq;
 using Invoice_OTC.Model;
 using System.Data;
 
@@ -10,6 +9,14 @@ namespace Invoice_OTC.Data_Access
 {
     class OutletListDAO
     {
+        internal enum OutletParameter{
+            OutletCode,
+            OutletName,
+            OutletAddrees,
+            OutletRoute,
+            OutletSalesman
+        }
+
         #region COnstructor
         public OutletListDAO()
         {
@@ -51,6 +58,78 @@ namespace Invoice_OTC.Data_Access
 
             //Dispose of the dataset
             dataSet.Dispose();
+        }
+        internal void ShowListWithLinq(outletList list)
+        {
+            //Set the connection
+            DataClasses1DataContext db = new DataClasses1DataContext();
+
+            //Get a typed table
+            Table<OUTLET> items = db.GetTable<OUTLET>();
+
+            //Get all author
+            var allItem = from roti in items select roti;
+
+            outletItem nextItem = null;
+            foreach (var item in allItem)
+            {
+                nextItem = new outletItem();
+                nextItem.OutletCode = item.OUTLCODE;
+                nextItem.OutletName = item.OUTLNAME;
+                nextItem.OutletAddress = item.OUTLADDRESS;
+                nextItem.OutletRoute = item.OUTLROUTE;
+                nextItem.SlsmCode = item.OUTLSLSM;
+                nextItem.OutletStatus = (bool)item.OUTLSTAT;
+
+                list.Add(nextItem);
+            }
+        }
+        internal void ShowListWithLinq(outletList list, OutletParameter param, string paramValue)
+        {
+            //Set the connection
+            DataClasses1DataContext db = new DataClasses1DataContext();
+
+            //Get a typed table
+            Table<OUTLET> items = db.GetTable<OUTLET>();
+
+            var allItem = from roti in items select roti;
+
+            //Get all author
+            switch (param)
+            {
+                case OutletParameter.OutletCode:
+                    allItem = from roti in items where roti.OUTLCODE == paramValue select roti;
+                    break;
+                case OutletParameter.OutletName:
+                    allItem = from roti in items where roti.OUTLNAME.Contains(paramValue) select roti;
+                    break;
+                case OutletParameter.OutletAddrees:
+                    allItem = from roti in items where roti.OUTLADDRESS == paramValue select roti;
+                    break;
+                case OutletParameter.OutletRoute:
+                    allItem = from roti in items where roti.OUTLROUTE == paramValue select roti;
+                    break;
+                case OutletParameter.OutletSalesman:
+                    allItem = from roti in items where roti.OUTLSLSM == paramValue select roti;
+                    break;
+                default:
+                    allItem = from roti in items select roti;
+                    break;
+            }         
+
+            outletItem nextItem = null;
+            foreach (var item in allItem)
+            {
+                nextItem = new outletItem();
+                nextItem.OutletCode = item.OUTLCODE;
+                nextItem.OutletName = item.OUTLNAME;
+                nextItem.OutletAddress = item.OUTLADDRESS;
+                nextItem.OutletRoute = item.OUTLROUTE;
+                nextItem.SlsmCode = item.OUTLSLSM;
+                nextItem.OutletStatus = (bool)item.OUTLSTAT;
+
+                list.Add(nextItem);
+            }
         }
         #endregion
     }

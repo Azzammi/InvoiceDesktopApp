@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
+using Invoice_OTC;
 
 
 namespace FSCollections
@@ -125,7 +125,7 @@ public class FSBindingList<T> : BindingList<T>
         /// <param name="property">The property to search.</param>
         /// <param name="key">The value to find.</param>
         /// <returns>The collection index of the found item.</returns>
-            protected override int FindCore(PropertyDescriptor property, object key)
+        protected override int FindCore(PropertyDescriptor property, object key)
         {
             // Exit if no property specified
             if (property == null) return -1;
@@ -139,20 +139,17 @@ public class FSBindingList<T> : BindingList<T>
             Key = key.ToString();
 
             Key = Key.Trim();
-            Key = Key.ToLower();
+            Key = Key.ToLower();            
 
             // Traverse list for value
             foreach (T item in items)
             {
                 // Test column search value
-                string value = (string)property.GetValue(item);
+                string value = property.GetValue(item).ToString();
                 value = value.Trim();
-                value = value.ToLower();
+                value = value.ToLower();                
 
-                // If value is the search value, return the index of the data item
-                // Remove whitespace in search value, for accurate searching ---Luthfi
-                if (Key == value) return IndexOf(item);
-
+                if (value.Contains(Key, StringComparison.OrdinalIgnoreCase)) return IndexOf(item);                                
             }
             return -1;
         }
@@ -223,5 +220,6 @@ public class FSBindingList<T> : BindingList<T>
         #endregion
 
         #endregion
+
     }
 }

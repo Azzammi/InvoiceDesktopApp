@@ -5,8 +5,8 @@ using System.Data.Linq;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Invoice_OTC.Model;
 
 namespace Invoice_OTC.View
 {
@@ -23,13 +23,18 @@ namespace Invoice_OTC.View
             DataClasses1DataContext db = new DataClasses1DataContext();
 
             //Get a typed table
-            Table<ITEM> items = db.GetTable<ITEM>();
+            Table<OUTLET> items = db.GetTable<OUTLET>();
 
             //Get all author
             var allItem = from roti in items select roti;
 
+            foreach (var item in allItem)
+            {
+                
+            }
+            outletGenericList<OUTLET> dataOutlet = new outletGenericList<OUTLET>(allItem.ToList());
             //Set binding source datasource to linq select result
-            bindingSource1.DataSource = allItem;
+            bindingSource1.DataSource = dataOutlet.BindingLists;
 
             //Set datagridview datasource to binding source
             dataGridView1.DataSource = bindingSource1;
@@ -37,7 +42,10 @@ namespace Invoice_OTC.View
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string message = "The quick brown fox jumps over the lazy DOg";
+            string subString = "ump";
 
+            MessageBox.Show(subString + " in the " + message + " was : " + message.Contains(subString,StringComparison.OrdinalIgnoreCase));
         }
     }
 }

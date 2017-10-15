@@ -4,8 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.Linq;
 using System.Windows.Forms;
 using Invoice_OTC.Model;
 using Invoice_OTC.Controller;
@@ -18,6 +17,8 @@ namespace Invoice_OTC.View
         #region Declaration
         AppController m_AppController;
         outletList m_List;
+
+        outletGenericList<outletItem> outletData; 
         #endregion
 
         public FrmOutlet()
@@ -30,7 +31,7 @@ namespace Invoice_OTC.View
             m_AppController = new AppController();
 
             CommandGettingOutlet getOutlet = new CommandGettingOutlet();
-            m_List = (outletList)m_AppController.ExecuteCommand(getOutlet);
+            m_List = (outletList)m_AppController.ExecuteCommand(getOutlet);            
 
             outletItemBindingSource.DataSource = m_List;
         }
@@ -138,6 +139,14 @@ namespace Invoice_OTC.View
                     // Not supported in this app
                     break;
             }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            CommandGettingOutlet getOutlet = new CommandGettingOutlet(toolStripTextBox1.Text);
+            m_List = (outletList)m_AppController.ExecuteCommand(getOutlet);
+
+            outletItemBindingSource.DataSource = m_List;
         }
     }
 }
