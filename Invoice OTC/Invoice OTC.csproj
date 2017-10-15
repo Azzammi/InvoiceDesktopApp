@@ -66,6 +66,7 @@
     <Compile Include="Base Classes\FSBindingItem.cs" />
     <Compile Include="Base Classes\FSBindingList.cs" />
     <Compile Include="Base Classes\FSPropertyComaparer.cs" />
+    <Compile Include="Base Classes\StringComparison.cs" />
     <Compile Include="clsSales.cs" />
     <Compile Include="ClsSupport.cs" />
     <Compile Include="Controller\AppController.cs" />

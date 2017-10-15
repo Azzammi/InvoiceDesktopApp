@@ -1,10 +1,9 @@
-﻿using System;
+﻿using Invoice_OTC.Base_Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-
 
 namespace FSCollections
 {
@@ -133,14 +132,10 @@ public class FSBindingList<T> : BindingList<T>
             // Get list to search
             List<T> items = this.Items as List<T>;
             
-            //Get the type and convert it
-            //if(key.GetType() == typeof(string))
-            //{
-            //    Convert.ToString(key);
-                string Key = (string)key;
-                Key = Key.Trim();
-                Key = Key.ToLower();
-            //}          
+            //Get the type and convert it         
+            string Key = (string)key;
+            Key = Key.Trim();
+            Key = Key.ToLower();           
             
             // Traverse list for value
             foreach (T item in items)
@@ -152,8 +147,8 @@ public class FSBindingList<T> : BindingList<T>
 
                 // If value is the search value, return the index of the data item
                 // Remove whitespace in search value, for accurate searching ---Luthfi
-                if (Key == value) return IndexOf(item);
-                
+                //if (Key == value) return IndexOf(item);
+                if (value.Contains(Key, StringComparison.OrdinalIgnoreCase)) ;
             }
             return -1;
         }
