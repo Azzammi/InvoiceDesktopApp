@@ -19,7 +19,7 @@ namespace Invoice_OTC.Data_Access
         #region Methods
         internal void ShowList(RotiList list)
         {
-            string sql = "SELECT [rotiID],[InvoiceID],[itemCode],[itemName],[itemQty],[itemPrice] FROM [OTF_Invoice].[dbo].[invoiceDetail]";
+            string sql = "SELECT [rotiID],[InvoiceID],[itemCode],[itemQty],[itemPrice],[discount],[subTotal] FROM [OTF_Invoice].[dbo].[invoiceDetail]";
 
             DataSet dataSet = DataProvider.GetDataSet(sql);
 
@@ -34,9 +34,11 @@ namespace Invoice_OTC.Data_Access
 
                 nextDetail.ID = Convert.ToInt32(parentRow["rotiID"]);
                 nextDetail.Invoiceid = Convert.ToInt32(parentRow["InvoiceID"]);
-                nextDetail.Code = parentRow["itemCode"].ToString();
+                nextDetail.ItemCode = parentRow["ItemCode"].ToString();         
                 nextDetail.Qty = Convert.ToInt32(parentRow["itemQty"]);
                 nextDetail.Price = Convert.ToDecimal(parentRow["itemPrice"]);
+                nextDetail.Discount = Convert.ToDouble(parentRow["discount"]);
+                nextDetail.SubTotal = Convert.ToDecimal(parentRow["subTotal"]);
 
                 list.Add(nextDetail);
             }

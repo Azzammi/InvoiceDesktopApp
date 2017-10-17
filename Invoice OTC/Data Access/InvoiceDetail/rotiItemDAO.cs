@@ -27,10 +27,11 @@ namespace Invoice_OTC.Data_Access
         internal void UpdateDatabaseRecord(rotiItem changedRoti)
         {
             StringBuilder sqlQuery = new StringBuilder("Update invoiceDetail SET ");           
-            sqlQuery.Append(String.Format("itemCode = '{0}', ", changedRoti.Code));
-            sqlQuery.Append(String.Format("itemName = '{0}', ", changedRoti.Name));
+            sqlQuery.Append(String.Format("itemCode = '{0}', ", changedRoti.ItemCode));            
             sqlQuery.Append(String.Format("itemQty = '{0}', ", changedRoti.Qty));
-            sqlQuery.Append(String.Format("itemPrice = '{0}' ", changedRoti.Price));
+            sqlQuery.Append(String.Format("itemPrice = '{0}' , ", changedRoti.Price));
+            sqlQuery.Append(String.Format("discount = '{0}' ,", changedRoti.Discount));
+            sqlQuery.Append(String.Format("subTotal = '{0}' ", changedRoti.SubTotal));
             sqlQuery.Append(String.Format("WHERE rotiID = '{0}'",  changedRoti.ID));
 
             //Execute Query

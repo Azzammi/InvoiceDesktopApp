@@ -157,6 +157,7 @@ namespace Invoice_OTC.View
             this.toolStripButton1.Size = new System.Drawing.Size(59, 70);
             this.toolStripButton1.Text = "Salesman";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 

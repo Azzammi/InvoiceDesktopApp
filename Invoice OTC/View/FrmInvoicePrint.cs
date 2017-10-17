@@ -70,11 +70,12 @@ namespace Invoice_OTC.View
       
             //FieldingRw crInvoice = new FieldingRw();
             rptInvoice crInvoice = new rptInvoice();
+            //rptSubReportInvoice crInvoice = new rptSubReportInvoice();
 
             //Set DataSource First            
             crInvoice.Database.Tables["Invoice_OTC_Model_InvoiceItem"].SetDataSource(m_InvoiceList);
-            crInvoice.Subreports[0].Database.Tables["Invoice_OTC_Model_RotiItem"].SetDataSource(m_InvoiceDetailList);            
-            crInvoice.Subreports[0].Database.Tables["Invoice_OTC_Model_RotiToChooseItem"].SetDataSource(m_RotiToChooseList);
+            //crInvoice.Subreports[0].Database.Tables["Invoice_OTC_Model_RotiToChooseItem"].SetDataSource(m_RotiToChooseList);
+            crInvoice.Subreports[0].Database.Tables["Invoice_OTC_Model_RotiItem"].SetDataSource(m_InvoiceDetailList); 
             crInvoice.Database.Tables["Invoice_OTC_Model_OutletItem"].SetDataSource(m_OutletList);
 
             //Set the parameter value

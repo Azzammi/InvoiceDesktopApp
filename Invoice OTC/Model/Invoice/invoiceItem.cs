@@ -18,11 +18,12 @@ namespace Invoice_OTC.Model
         private DateTime periodeBulan;
         private string outletName;
         private decimal subTotal;
-        private float ppn;        
+        private float ppn;
         private DateTime issuedData;
         private bool isPPN;
+        private string nomorPO;
         private string pengguna;
-
+        private string periode;
         #endregion
 
         #region Constructor
@@ -36,7 +37,7 @@ namespace Invoice_OTC.Model
         {
             p_Items = new RotiList();
 
-            if(createDatabaseRecord == true)
+            if (createDatabaseRecord == true)
             {
                 InvoiceItemDAO dao = new InvoiceItemDAO();
                 dao.CreateDatabaseRecord(this);
@@ -76,7 +77,7 @@ namespace Invoice_OTC.Model
             get { return outletName; }
             set { outletName = value; }
         }
-        
+
         public decimal SubTotal //Get the value from invoice Detail
         {
             get {
@@ -86,13 +87,13 @@ namespace Invoice_OTC.Model
                 if (p_Items == null) return 0;
 
                 //Get the sub of subtotal from the rotiList
-                foreach(rotiItem item in p_Items)
+                foreach (rotiItem item in p_Items)
                 {
                     subTotal += item.Price * item.Qty;
                 }
 
                 return subTotal;
-            }            
+            }
         }
 
         public float PPN
@@ -106,19 +107,19 @@ namespace Invoice_OTC.Model
                 else
                 {
                     return ppn;
-                }                
+                }
             }
             set {
                 if (!isPPN)
                 {
                     ppn = value;
-                }                          
+                }
             }
         }
 
         public decimal Total
-        {            
-            get { return SubTotal + Convert.ToDecimal(PPN); }                   
+        {
+            get { return SubTotal + Convert.ToDecimal(PPN); }
         }
 
         public DateTime IssuedData
@@ -133,6 +134,17 @@ namespace Invoice_OTC.Model
             set { isPPN = value; }
         }
 
+        public string NomorPO
+        {
+            get { return nomorPO; }
+            set { nomorPO = value; }
+        }
+
+        public string Periode
+        {
+            get { return periode; }
+            set { periode = value; }
+        }
         public string User
         {
             get { return pengguna; }

@@ -27,8 +27,8 @@ namespace Invoice_OTC.Data_Access
         {
             //Build query to get Invoice's and their roti
             StringBuilder sqlQuery = new StringBuilder();
-            sqlQuery.Append(String.Format("Select invoiceID, noInvoice, periodeBulan, invoiced.outletCode, OUTLET.OUTLNAME, subTotal, ppn, total, issuedDate, isPPN, Pengguna FROM invoiced INNER JOIN OUTLET ON invoiced.outletCode = OUTLET.OUTLCODE ;"));
-            sqlQuery.Append(string.Format("Select rotiID, invoiceID, itemCode, itemName, itemQty, itemPrice FROM invoiceDetail"));
+            sqlQuery.Append(String.Format("Select invoiceID, noInvoice, periodeBulan, invoiced.outletCode, OUTLET.OUTLNAME, subTotal, ppn, total, issuedDate, isPPN, nomorPO, Periode, Pengguna FROM invoiced INNER JOIN OUTLET ON invoiced.outletCode = OUTLET.OUTLCODE ;"));
+            sqlQuery.Append(string.Format("Select rotiID, invoiceID, itemCode, itemQty, itemPrice, discount, subTotal FROM invoiceDetail"));
 
             //Get a data set from the query
             DataSet dataSet = DataProvider.GetDataSet(sqlQuery.ToString());
@@ -77,13 +77,14 @@ namespace Invoice_OTC.Data_Access
                     //Fill in roti's properties
                     nextRoti.ID = Convert.ToInt32(childRow["rotiID"]);
                     nextRoti.Invoiceid = Convert.ToInt32(childRow["invoiceID"]);                
-                    nextRoti.Code = childRow["itemCode"].ToString();
-                    nextRoti.Name = childRow["itemName"].ToString();
+                    nextRoti.ItemCode = childRow["itemCode"].ToString();                   
                     nextRoti.Qty = Convert.ToInt32(childRow["itemQty"]);
                     nextRoti.Price = Convert.ToDecimal(childRow["itemPrice"]);
+                    nextRoti.Discount = Convert.ToDouble(childRow["discount"]);
+                    nextRoti.SubTotal = Convert.ToDecimal(childRow["Subtotal"]);
 
                     //Add roti to invoice
-                    if(nextRoti.Code != "0")
+                    if(nextRoti.ItemCode != "0")
                     {
                         nextInvoice.Items.Add(nextRoti);
                     }

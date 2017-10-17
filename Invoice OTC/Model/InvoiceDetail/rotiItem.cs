@@ -14,10 +14,11 @@ namespace Invoice_OTC.Model
         //Property Variables
         private int p_ID;
         private int invoiceID;
-        private string itemCode;
-        private string itemName;
+        private string itemCode;        
         private int itemQty;
+        private double discount;
         private decimal itemPrice;
+        private decimal subTotal;
 
         #endregion
 
@@ -54,16 +55,10 @@ namespace Invoice_OTC.Model
             set { invoiceID = value; }
         }
 
-        public string Code
+        public string ItemCode
         {
             get { return itemCode; }
             set { itemCode = value; }
-        }
-
-        public string Name
-        {
-            get { return itemName; }
-            set { itemName = value; }
         }
 
         public int Qty
@@ -76,6 +71,18 @@ namespace Invoice_OTC.Model
         {
             get { return itemPrice; }
             set { itemPrice = value; }
+        }
+
+        public double Discount
+        {
+            get { return discount; }
+            set { discount = value; }
+        }
+
+        public decimal SubTotal
+        {
+            get { return subTotal; }
+            set { subTotal = value; }
         }
 
         #endregion

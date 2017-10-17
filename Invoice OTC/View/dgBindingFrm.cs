@@ -161,7 +161,7 @@ namespace Invoice_OTC.View
             switch (changeType)
             {
                 case ListChangedType.ItemChanged:
-                    if(changedItem.Code != null)
+                    if(changedItem.ItemCode != null)
                     {
                         CommandUpdateItem updateItem = new CommandUpdateItem(changedItem);
                         m_AppController.ExecuteCommand(updateItem);
@@ -178,6 +178,8 @@ namespace Invoice_OTC.View
                     // Not supported in this app
                     break;
             }
+
+            m_Invoices.ResetBindings();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -259,6 +261,18 @@ namespace Invoice_OTC.View
         {
             FrmReportItemList form = new FrmReportItemList();
             form.ShowDialog();
+        }
+
+        private void bindingItem_CurrentChanged(object sender, EventArgs e)
+        {
+            if (m_Invoices == null) return;
+            //rotiItem checkEmpty = (rotiItem)bindingItem.Current;
+
+            //if(checkEmpty.Code == null)
+            //{
+            //    CommandDeleteItem deleteItem = new CommandDeleteItem(checkEmpty);
+            //    m_AppController.ExecuteCommand(deleteItem);
+            //}            
         }
     }
 }

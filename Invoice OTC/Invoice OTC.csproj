@@ -98,6 +98,7 @@
     <Compile Include="Controller\Roti Item\CommandUpdateRoti.cs" />
     <Compile Include="Data Access\Customer\CustomerItemDAO.cs" />
     <Compile Include="Data Access\Customer\CustomerListDAO.cs" />
+    <Compile Include="Data Access\Salesman\SalesmanListDAO.cs" />
     <Compile Include="Data Access\DataProvider.cs" />
     <Compile Include="Data Access\Invoice\InvoiceItemDAO.cs" />
     <Compile Include="Data Access\Invoice\InvoiceListADO.cs" />
@@ -108,7 +109,7 @@
     <Compile Include="Data Access\Outlet\OutletListDAO.cs" />
     <Compile Include="Data Access\RotiToChoose\RotiToChooseItemDAO.cs" />
     <Compile Include="Data Access\RotiToChoose\RotiToChooseListDAO.cs" />
-    <Compile Include="Data Access\SalesmanItemDAO.cs" />
+    <Compile Include="Data Access\Salesman\SalesmanItemDAO.cs" />
     <Compile Include="FieldingRw.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,8 +135,8 @@
     <Compile Include="Model\Outlet\outletList.cs" />
     <Compile Include="Model\Roti Item\RotiToChooseItem.cs" />
     <Compile Include="Model\Roti Item\RotiToChooseList.cs" />
-    <Compile Include="Model\SalesmanItem.cs" />
-    <Compile Include="Model\SalesmanList.cs" />
+    <Compile Include="Model\Salesman\SalesmanItem.cs" />
+    <Compile Include="Model\Salesman\SalesmanList.cs" />
     <Compile Include="rptInvoice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -175,6 +176,12 @@
     <Compile Include="View\FormShowItem.cs" />
     <Compile Include="View\FormShowList.cs" />
     <Compile Include="View\FormStatusChangedEventArgs.cs" />
+    <Compile Include="View\FrmDetailedSlsman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmDetailedSlsman.Designer.cs">
+      <DependentUpon>FrmDetailedSlsman.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmImportExcelRoti.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,6 +264,9 @@
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmDetailedSlsman.resx">
+      <DependentUpon>FrmDetailedSlsman.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmImportExcelRoti.resx">
       <DependentUpon>FrmImportExcelRoti.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +321,7 @@
     <None Include="Properties\DataSources\Invoice_OTC.Model.outletItem.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Model.rotiItem.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Model.RotiToChooseItem.datasource" />
+    <None Include="Properties\DataSources\Invoice_OTC.Model.SalesmanItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

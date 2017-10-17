@@ -21,7 +21,8 @@ namespace Invoice_OTC.View
         Item,
         GridInvoice,
         DetailInvoice,
-        CetakInvoice
+        CetakInvoice,
+        DetailSalesman,
     }
 
     public partial class RibbonForm1 : Syncfusion.Windows.Forms.Tools.RibbonForm
@@ -86,6 +87,9 @@ namespace Invoice_OTC.View
                 case NamaForm.CetakInvoice:
                     frm = new FrmInvoicePrint();
                     break;
+                case NamaForm.DetailSalesman:
+                    frm = new FrmDetailedSlsman();
+                    break;
                 default:
                     break;
             }
@@ -109,6 +113,11 @@ namespace Invoice_OTC.View
         private void ribbonControlAdv1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ShowForm(NamaForm.DetailSalesman);
         }
     }
 }
