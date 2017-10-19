@@ -22,7 +22,7 @@
       <Value Profile="(Default)">Admin</Value>
     </Setting>
     <Setting Name="periode" Type="System.String" Scope="User">
-      <Value Profile="(Default)">201701</Value>
+      <Value Profile="(Default)">201710</Value>
     </Setting>
   </Settings>
 </SettingsFile>

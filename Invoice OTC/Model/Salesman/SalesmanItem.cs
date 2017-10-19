@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Invoice_OTC.Data_Access;
 using FSCollections;
+using System.Drawing;
 
 namespace Invoice_OTC.Model
 {
@@ -67,13 +68,18 @@ namespace Invoice_OTC.Model
         #region Methods
         internal void CreateDatabaseRecord()
         {
-            SalesmanItemDAO dao = new SalesmanItemDAO();
-            dao.CreateDatabaseRecord(this);
+            //SalesmanItemDAO dao = new SalesmanItemDAO();
+            //dao.CreateDatabaseRecord(this);
         }
         internal void UpdateDatabaseRecord()
         {
+            //SalesmanItemDAO dao = new SalesmanItemDAO();
+            //dao.UpdateDatabaseRecord(this);
+        }
+        internal void CreateOrUpdateDatabaseRecord()
+        {
             SalesmanItemDAO dao = new SalesmanItemDAO();
-            dao.UpdateDatabaseRecord(this);
+            dao.CreateOrUpdateDatabase(this);            
         }
         internal void DeleteDatabaseRecord()
         {

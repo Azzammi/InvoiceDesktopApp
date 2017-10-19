@@ -256,13 +256,7 @@ namespace Invoice_OTC.View
             FrmInvoicePrint form = new FrmInvoicePrint(nomorValue.Nomor);
             form.ShowDialog();
         }
-
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            FrmReportItemList form = new FrmReportItemList();
-            form.ShowDialog();
-        }
-
+        
         private void bindingItem_CurrentChanged(object sender, EventArgs e)
         {
             if (m_Invoices == null) return;

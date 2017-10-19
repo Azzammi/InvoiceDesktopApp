@@ -83,7 +83,7 @@ namespace Invoice_OTC.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("201701")]
+        [global::System.Configuration.DefaultSettingValueAttribute("201710")]
         public string periode {
             get {
                 return ((string)(this["periode"]));

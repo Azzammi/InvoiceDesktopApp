@@ -20,31 +20,7 @@ namespace Invoice_OTC.Data_Access
         }
         #endregion
 
-        #region Methods
-        internal void CreateDatabaseRecord(SalesmanItem newSalesman)
-        {
-            //Sql Query
-            string sql = "INSERT INTO Salesman " +
-                         "(slsmCode, slsmName, slsmAddress, slsmTelp, slsmSupv, slsmPhoto, stat) " +
-                         " VALUES " +
-                         "(@slsmCode, @slsmName, @slsmAddress, @slsmTelp, @slsmSupv, @slsmPhoto, @Stat)";
-
-            CreateOrUpdateDatabase(sql, newSalesman);
-        }
-        internal void UpdateDatabaseRecord(SalesmanItem updateItem)
-        {
-            //Sql Query
-            string sql = "UPDATE SALESMAN SET " +
-                         "slsmName = @slsmCode, " +
-                         "slsmAddress = @slsmAddress," +
-                         "slsmTelp = @slsmTelp, " +
-                         "slsmSupv = @slsmSupv, " +
-                         "slsmPhoto = @slsmPhoto, " +
-                         "stat = @stat " +
-                         "WHERE slsmCode = @slsmCode ";
-
-            CreateOrUpdateDatabase(sql, updateItem);
-        }
+        #region Methods       
         internal void DeleteDatabaseRecord(string SlsmCode)
         {
             string sql = "Delete From Salesman Where slsmCode = @code";
@@ -77,8 +53,7 @@ namespace Invoice_OTC.Data_Access
                 sql = null;
             }
         }
-
-        protected void CreateOrUpdateDatabase(string sql, SalesmanItem itemMaster)
+        internal void CreateOrUpdateDatabase(SalesmanItem itemMaster)
         {
             try
             {
@@ -86,11 +61,12 @@ namespace Invoice_OTC.Data_Access
                 SqlConnection connection = new SqlConnection(m_ConnectionString);
                 connection.Open();
 
-                //create and configure a command
-                SqlCommand command = new SqlCommand(sql, connection);
+                //create and configure a command     
+                string sql2 = "CRUSalesman";
+                SqlCommand command = new SqlCommand(sql2, connection);
 
                 //Adding value through parameter
-                command.CommandType = System.Data.CommandType.Text;
+                command.CommandType = System.Data.CommandType.StoredProcedure;
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@slsmCode", itemMaster.SlsmCode);
                 command.Parameters.AddWithValue("@slsmName", itemMaster.SlsmName);
@@ -98,7 +74,7 @@ namespace Invoice_OTC.Data_Access
                 command.Parameters.AddWithValue("@slsmTelp", itemMaster.SlsmTelp);
                 command.Parameters.AddWithValue("@slsmSupv", itemMaster.SlsmSupv);
                 command.Parameters.AddWithValue("@slsmPhoto", itemMaster.SlsmPhoto);
-                command.Parameters.AddWithValue("@stat", itemMaster.Stat);
+                command.Parameters.AddWithValue("@slsmStat", itemMaster.Stat);
 
                 //execute the command
                 command.ExecuteNonQuery();

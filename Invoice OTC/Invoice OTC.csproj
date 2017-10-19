@@ -96,6 +96,9 @@
     <Compile Include="Controller\ItemFoundEventArgs.cs" />
     <Compile Include="Controller\Roti Item\CommandInsertRoti.cs" />
     <Compile Include="Controller\Roti Item\CommandUpdateRoti.cs" />
+    <Compile Include="Controller\Salesman\commandCRUSalesman.cs" />
+    <Compile Include="Controller\Salesman\CommandDeleteSalesman.cs" />
+    <Compile Include="Controller\Salesman\CommandGetSalesman.cs" />
     <Compile Include="Data Access\Customer\CustomerItemDAO.cs" />
     <Compile Include="Data Access\Customer\CustomerListDAO.cs" />
     <Compile Include="Data Access\Salesman\SalesmanListDAO.cs" />
