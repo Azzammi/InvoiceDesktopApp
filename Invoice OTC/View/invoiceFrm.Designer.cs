@@ -36,49 +36,44 @@ namespace Invoice_OTC.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(invoiceFrm));
             System.Windows.Forms.Label invoiceIDLabel;
             System.Windows.Forms.Label isPPNLabel;
             System.Windows.Forms.Label issuedDataLabel;
             System.Windows.Forms.Label nomorLabel;
             System.Windows.Forms.Label nomorPOLabel;
             System.Windows.Forms.Label outletCodeLabel;
-            System.Windows.Forms.Label periodeLabel;
             System.Windows.Forms.Label periodeBulanLabel;
             System.Windows.Forms.Label pPNLabel;
             System.Windows.Forms.Label subTotalLabel;
             System.Windows.Forms.Label totalLabel;
-            System.Windows.Forms.Label userLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(invoiceFrm));
             this.invoiceItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.invoiceItemBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.invoiceItemBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.invoiceIDTextBox = new System.Windows.Forms.TextBox();
             this.isPPNCheckBox = new System.Windows.Forms.CheckBox();
             this.issuedDataDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.nomorTextBox = new System.Windows.Forms.TextBox();
             this.nomorPOTextBox = new System.Windows.Forms.TextBox();
-            this.outletCodeTextBox = new System.Windows.Forms.TextBox();
-            this.periodeTextBox = new System.Windows.Forms.TextBox();
             this.periodeBulanDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.pPNTextBox = new System.Windows.Forms.TextBox();
             this.subTotalTextBox = new System.Windows.Forms.TextBox();
             this.totalTextBox = new System.Windows.Forms.TextBox();
-            this.userTextBox = new System.Windows.Forms.TextBox();
             this.itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemsDataGridView = new System.Windows.Forms.DataGridView();
-            this.rotiToChooseItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.rotiToChooseItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,12 +84,10 @@ namespace Invoice_OTC.View
             nomorLabel = new System.Windows.Forms.Label();
             nomorPOLabel = new System.Windows.Forms.Label();
             outletCodeLabel = new System.Windows.Forms.Label();
-            periodeLabel = new System.Windows.Forms.Label();
             periodeBulanLabel = new System.Windows.Forms.Label();
             pPNLabel = new System.Windows.Forms.Label();
             subTotalLabel = new System.Windows.Forms.Label();
             totalLabel = new System.Windows.Forms.Label();
-            userLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceItemBindingNavigator)).BeginInit();
             this.invoiceItemBindingNavigator.SuspendLayout();
@@ -102,6 +95,96 @@ namespace Invoice_OTC.View
             ((System.ComponentModel.ISupportInitialize)(this.itemsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotiToChooseItemBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // invoiceIDLabel
+            // 
+            invoiceIDLabel.AutoSize = true;
+            invoiceIDLabel.Location = new System.Drawing.Point(23, 58);
+            invoiceIDLabel.Name = "invoiceIDLabel";
+            invoiceIDLabel.Size = new System.Drawing.Size(59, 13);
+            invoiceIDLabel.TabIndex = 2;
+            invoiceIDLabel.Text = "Invoice ID:";
+            // 
+            // isPPNLabel
+            // 
+            isPPNLabel.AutoSize = true;
+            isPPNLabel.Location = new System.Drawing.Point(23, 86);
+            isPPNLabel.Name = "isPPNLabel";
+            isPPNLabel.Size = new System.Drawing.Size(43, 13);
+            isPPNLabel.TabIndex = 4;
+            isPPNLabel.Text = "Is PPN:";
+            // 
+            // issuedDataLabel
+            // 
+            issuedDataLabel.AutoSize = true;
+            issuedDataLabel.Location = new System.Drawing.Point(23, 115);
+            issuedDataLabel.Name = "issuedDataLabel";
+            issuedDataLabel.Size = new System.Drawing.Size(67, 13);
+            issuedDataLabel.TabIndex = 6;
+            issuedDataLabel.Text = "Issued Data:";
+            // 
+            // nomorLabel
+            // 
+            nomorLabel.AutoSize = true;
+            nomorLabel.Location = new System.Drawing.Point(23, 140);
+            nomorLabel.Name = "nomorLabel";
+            nomorLabel.Size = new System.Drawing.Size(41, 13);
+            nomorLabel.TabIndex = 8;
+            nomorLabel.Text = "Nomor:";
+            // 
+            // nomorPOLabel
+            // 
+            nomorPOLabel.AutoSize = true;
+            nomorPOLabel.Location = new System.Drawing.Point(23, 166);
+            nomorPOLabel.Name = "nomorPOLabel";
+            nomorPOLabel.Size = new System.Drawing.Size(59, 13);
+            nomorPOLabel.TabIndex = 10;
+            nomorPOLabel.Text = "Nomor PO:";
+            // 
+            // outletCodeLabel
+            // 
+            outletCodeLabel.AutoSize = true;
+            outletCodeLabel.Location = new System.Drawing.Point(23, 192);
+            outletCodeLabel.Name = "outletCodeLabel";
+            outletCodeLabel.Size = new System.Drawing.Size(66, 13);
+            outletCodeLabel.TabIndex = 12;
+            outletCodeLabel.Text = "Outlet Code:";
+            // 
+            // periodeBulanLabel
+            // 
+            periodeBulanLabel.AutoSize = true;
+            periodeBulanLabel.Location = new System.Drawing.Point(23, 245);
+            periodeBulanLabel.Name = "periodeBulanLabel";
+            periodeBulanLabel.Size = new System.Drawing.Size(76, 13);
+            periodeBulanLabel.TabIndex = 16;
+            periodeBulanLabel.Text = "Periode Bulan:";
+            // 
+            // pPNLabel
+            // 
+            pPNLabel.AutoSize = true;
+            pPNLabel.Location = new System.Drawing.Point(23, 270);
+            pPNLabel.Name = "pPNLabel";
+            pPNLabel.Size = new System.Drawing.Size(32, 13);
+            pPNLabel.TabIndex = 18;
+            pPNLabel.Text = "PPN:";
+            // 
+            // subTotalLabel
+            // 
+            subTotalLabel.AutoSize = true;
+            subTotalLabel.Location = new System.Drawing.Point(23, 296);
+            subTotalLabel.Name = "subTotalLabel";
+            subTotalLabel.Size = new System.Drawing.Size(56, 13);
+            subTotalLabel.TabIndex = 20;
+            subTotalLabel.Text = "Sub Total:";
+            // 
+            // totalLabel
+            // 
+            totalLabel.AutoSize = true;
+            totalLabel.Location = new System.Drawing.Point(23, 322);
+            totalLabel.Name = "totalLabel";
+            totalLabel.Size = new System.Drawing.Size(34, 13);
+            totalLabel.TabIndex = 22;
+            totalLabel.Text = "Total:";
             // 
             // invoiceItemBindingSource
             // 
@@ -137,6 +220,31 @@ namespace Invoice_OTC.View
             this.invoiceItemBindingNavigator.TabIndex = 0;
             this.invoiceItemBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -169,16 +277,9 @@ namespace Invoice_OTC.View
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -201,26 +302,8 @@ namespace Invoice_OTC.View
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // invoiceItemBindingNavigatorSaveItem
             // 
@@ -231,67 +314,37 @@ namespace Invoice_OTC.View
             this.invoiceItemBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.invoiceItemBindingNavigatorSaveItem.Text = "Save Data";
             // 
-            // invoiceIDLabel
-            // 
-            invoiceIDLabel.AutoSize = true;
-            invoiceIDLabel.Location = new System.Drawing.Point(23, 58);
-            invoiceIDLabel.Name = "invoiceIDLabel";
-            invoiceIDLabel.Size = new System.Drawing.Size(59, 13);
-            invoiceIDLabel.TabIndex = 2;
-            invoiceIDLabel.Text = "Invoice ID:";
-            // 
             // invoiceIDTextBox
             // 
             this.invoiceIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceItemBindingSource, "InvoiceID", true));
+            this.invoiceIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.invoiceIDTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
             this.invoiceIDTextBox.Location = new System.Drawing.Point(105, 55);
             this.invoiceIDTextBox.Name = "invoiceIDTextBox";
-            this.invoiceIDTextBox.Size = new System.Drawing.Size(200, 20);
+            this.invoiceIDTextBox.Size = new System.Drawing.Size(200, 24);
             this.invoiceIDTextBox.TabIndex = 3;
-            // 
-            // isPPNLabel
-            // 
-            isPPNLabel.AutoSize = true;
-            isPPNLabel.Location = new System.Drawing.Point(23, 86);
-            isPPNLabel.Name = "isPPNLabel";
-            isPPNLabel.Size = new System.Drawing.Size(43, 13);
-            isPPNLabel.TabIndex = 4;
-            isPPNLabel.Text = "Is PPN:";
             // 
             // isPPNCheckBox
             // 
             this.isPPNCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceItemBindingSource, "IsPPN", true));
+            this.isPPNCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.isPPNCheckBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
             this.isPPNCheckBox.Location = new System.Drawing.Point(105, 81);
             this.isPPNCheckBox.Name = "isPPNCheckBox";
             this.isPPNCheckBox.Size = new System.Drawing.Size(200, 24);
             this.isPPNCheckBox.TabIndex = 5;
-            this.isPPNCheckBox.Text = "checkBox1";
+            this.isPPNCheckBox.Text = "PPN 10% ";
             this.isPPNCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // issuedDataLabel
-            // 
-            issuedDataLabel.AutoSize = true;
-            issuedDataLabel.Location = new System.Drawing.Point(23, 115);
-            issuedDataLabel.Name = "issuedDataLabel";
-            issuedDataLabel.Size = new System.Drawing.Size(67, 13);
-            issuedDataLabel.TabIndex = 6;
-            issuedDataLabel.Text = "Issued Data:";
             // 
             // issuedDataDateTimePicker
             // 
             this.issuedDataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceItemBindingSource, "IssuedData", true));
+            this.issuedDataDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.issuedDataDateTimePicker.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
             this.issuedDataDateTimePicker.Location = new System.Drawing.Point(105, 111);
             this.issuedDataDateTimePicker.Name = "issuedDataDateTimePicker";
-            this.issuedDataDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.issuedDataDateTimePicker.Size = new System.Drawing.Size(200, 24);
             this.issuedDataDateTimePicker.TabIndex = 7;
-            // 
-            // nomorLabel
-            // 
-            nomorLabel.AutoSize = true;
-            nomorLabel.Location = new System.Drawing.Point(23, 140);
-            nomorLabel.Name = "nomorLabel";
-            nomorLabel.Size = new System.Drawing.Size(41, 13);
-            nomorLabel.TabIndex = 8;
-            nomorLabel.Text = "Nomor:";
             // 
             // nomorTextBox
             // 
@@ -301,15 +354,6 @@ namespace Invoice_OTC.View
             this.nomorTextBox.Size = new System.Drawing.Size(200, 20);
             this.nomorTextBox.TabIndex = 9;
             // 
-            // nomorPOLabel
-            // 
-            nomorPOLabel.AutoSize = true;
-            nomorPOLabel.Location = new System.Drawing.Point(23, 166);
-            nomorPOLabel.Name = "nomorPOLabel";
-            nomorPOLabel.Size = new System.Drawing.Size(59, 13);
-            nomorPOLabel.TabIndex = 10;
-            nomorPOLabel.Text = "Nomor PO:";
-            // 
             // nomorPOTextBox
             // 
             this.nomorPOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceItemBindingSource, "NomorPO", true));
@@ -317,49 +361,6 @@ namespace Invoice_OTC.View
             this.nomorPOTextBox.Name = "nomorPOTextBox";
             this.nomorPOTextBox.Size = new System.Drawing.Size(200, 20);
             this.nomorPOTextBox.TabIndex = 11;
-            // 
-            // outletCodeLabel
-            // 
-            outletCodeLabel.AutoSize = true;
-            outletCodeLabel.Location = new System.Drawing.Point(23, 192);
-            outletCodeLabel.Name = "outletCodeLabel";
-            outletCodeLabel.Size = new System.Drawing.Size(66, 13);
-            outletCodeLabel.TabIndex = 12;
-            outletCodeLabel.Text = "Outlet Code:";
-            // 
-            // outletCodeTextBox
-            // 
-            this.outletCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceItemBindingSource, "OutletCode", true));
-            this.outletCodeTextBox.Location = new System.Drawing.Point(105, 189);
-            this.outletCodeTextBox.Name = "outletCodeTextBox";
-            this.outletCodeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.outletCodeTextBox.TabIndex = 13;
-            // 
-            // periodeLabel
-            // 
-            periodeLabel.AutoSize = true;
-            periodeLabel.Location = new System.Drawing.Point(23, 218);
-            periodeLabel.Name = "periodeLabel";
-            periodeLabel.Size = new System.Drawing.Size(46, 13);
-            periodeLabel.TabIndex = 14;
-            periodeLabel.Text = "Periode:";
-            // 
-            // periodeTextBox
-            // 
-            this.periodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceItemBindingSource, "Periode", true));
-            this.periodeTextBox.Location = new System.Drawing.Point(105, 215);
-            this.periodeTextBox.Name = "periodeTextBox";
-            this.periodeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.periodeTextBox.TabIndex = 15;
-            // 
-            // periodeBulanLabel
-            // 
-            periodeBulanLabel.AutoSize = true;
-            periodeBulanLabel.Location = new System.Drawing.Point(23, 245);
-            periodeBulanLabel.Name = "periodeBulanLabel";
-            periodeBulanLabel.Size = new System.Drawing.Size(76, 13);
-            periodeBulanLabel.TabIndex = 16;
-            periodeBulanLabel.Text = "Periode Bulan:";
             // 
             // periodeBulanDateTimePicker
             // 
@@ -369,15 +370,6 @@ namespace Invoice_OTC.View
             this.periodeBulanDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.periodeBulanDateTimePicker.TabIndex = 17;
             // 
-            // pPNLabel
-            // 
-            pPNLabel.AutoSize = true;
-            pPNLabel.Location = new System.Drawing.Point(23, 270);
-            pPNLabel.Name = "pPNLabel";
-            pPNLabel.Size = new System.Drawing.Size(32, 13);
-            pPNLabel.TabIndex = 18;
-            pPNLabel.Text = "PPN:";
-            // 
             // pPNTextBox
             // 
             this.pPNTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceItemBindingSource, "PPN", true));
@@ -385,15 +377,6 @@ namespace Invoice_OTC.View
             this.pPNTextBox.Name = "pPNTextBox";
             this.pPNTextBox.Size = new System.Drawing.Size(200, 20);
             this.pPNTextBox.TabIndex = 19;
-            // 
-            // subTotalLabel
-            // 
-            subTotalLabel.AutoSize = true;
-            subTotalLabel.Location = new System.Drawing.Point(23, 296);
-            subTotalLabel.Name = "subTotalLabel";
-            subTotalLabel.Size = new System.Drawing.Size(56, 13);
-            subTotalLabel.TabIndex = 20;
-            subTotalLabel.Text = "Sub Total:";
             // 
             // subTotalTextBox
             // 
@@ -403,15 +386,6 @@ namespace Invoice_OTC.View
             this.subTotalTextBox.Size = new System.Drawing.Size(200, 20);
             this.subTotalTextBox.TabIndex = 21;
             // 
-            // totalLabel
-            // 
-            totalLabel.AutoSize = true;
-            totalLabel.Location = new System.Drawing.Point(23, 322);
-            totalLabel.Name = "totalLabel";
-            totalLabel.Size = new System.Drawing.Size(34, 13);
-            totalLabel.TabIndex = 22;
-            totalLabel.Text = "Total:";
-            // 
             // totalTextBox
             // 
             this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceItemBindingSource, "Total", true));
@@ -419,23 +393,6 @@ namespace Invoice_OTC.View
             this.totalTextBox.Name = "totalTextBox";
             this.totalTextBox.Size = new System.Drawing.Size(200, 20);
             this.totalTextBox.TabIndex = 23;
-            // 
-            // userLabel
-            // 
-            userLabel.AutoSize = true;
-            userLabel.Location = new System.Drawing.Point(23, 348);
-            userLabel.Name = "userLabel";
-            userLabel.Size = new System.Drawing.Size(32, 13);
-            userLabel.TabIndex = 24;
-            userLabel.Text = "User:";
-            // 
-            // userTextBox
-            // 
-            this.userTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceItemBindingSource, "User", true));
-            this.userTextBox.Location = new System.Drawing.Point(105, 345);
-            this.userTextBox.Name = "userTextBox";
-            this.userTextBox.Size = new System.Drawing.Size(200, 20);
-            this.userTextBox.TabIndex = 25;
             // 
             // itemsBindingSource
             // 
@@ -458,10 +415,6 @@ namespace Invoice_OTC.View
             this.itemsDataGridView.Size = new System.Drawing.Size(452, 220);
             this.itemsDataGridView.TabIndex = 25;
             // 
-            // rotiToChooseItemBindingSource
-            // 
-            this.rotiToChooseItemBindingSource.DataSource = typeof(Invoice_OTC.Model.RotiToChooseItem);
-            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "ItemCode";
@@ -472,6 +425,10 @@ namespace Invoice_OTC.View
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn3.ValueMember = "ItemCode";
+            // 
+            // rotiToChooseItemBindingSource
+            // 
+            this.rotiToChooseItemBindingSource.DataSource = typeof(Invoice_OTC.Model.RotiToChooseItem);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -496,6 +453,7 @@ namespace Invoice_OTC.View
             this.dataGridViewTextBoxColumn7.DataPropertyName = "SubTotal";
             this.dataGridViewTextBoxColumn7.HeaderText = "SubTotal";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // invoiceFrm
             // 
@@ -514,9 +472,6 @@ namespace Invoice_OTC.View
             this.Controls.Add(nomorPOLabel);
             this.Controls.Add(this.nomorPOTextBox);
             this.Controls.Add(outletCodeLabel);
-            this.Controls.Add(this.outletCodeTextBox);
-            this.Controls.Add(periodeLabel);
-            this.Controls.Add(this.periodeTextBox);
             this.Controls.Add(periodeBulanLabel);
             this.Controls.Add(this.periodeBulanDateTimePicker);
             this.Controls.Add(pPNLabel);
@@ -525,8 +480,6 @@ namespace Invoice_OTC.View
             this.Controls.Add(this.subTotalTextBox);
             this.Controls.Add(totalLabel);
             this.Controls.Add(this.totalTextBox);
-            this.Controls.Add(userLabel);
-            this.Controls.Add(this.userTextBox);
             this.Controls.Add(this.invoiceItemBindingNavigator);
             this.Name = "invoiceFrm";
             this.Text = "Invoice";
@@ -564,13 +517,10 @@ namespace Invoice_OTC.View
         private System.Windows.Forms.DateTimePicker issuedDataDateTimePicker;
         private System.Windows.Forms.TextBox nomorTextBox;
         private System.Windows.Forms.TextBox nomorPOTextBox;
-        private System.Windows.Forms.TextBox outletCodeTextBox;
-        private System.Windows.Forms.TextBox periodeTextBox;
         private System.Windows.Forms.DateTimePicker periodeBulanDateTimePicker;
         private System.Windows.Forms.TextBox pPNTextBox;
         private System.Windows.Forms.TextBox subTotalTextBox;
         private System.Windows.Forms.TextBox totalTextBox;
-        private System.Windows.Forms.TextBox userTextBox;
         private System.Windows.Forms.BindingSource itemsBindingSource;
         private System.Windows.Forms.DataGridView itemsDataGridView;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
