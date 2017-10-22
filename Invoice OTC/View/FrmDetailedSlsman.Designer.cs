@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetailedSlsman));
             System.Windows.Forms.Label slsmAddressLabel;
             System.Windows.Forms.Label slsmCodeLabel;
             System.Windows.Forms.Label slsmNameLabel;
@@ -37,6 +36,7 @@
             System.Windows.Forms.Label slsmSupvLabel;
             System.Windows.Forms.Label slsmTelpLabel;
             System.Windows.Forms.Label statLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDetailedSlsman));
             this.salesmanItemBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -53,15 +53,32 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.browsePictureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deletesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statCheckBox = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.browseBtn = new System.Windows.Forms.Button();
             this.slsmAddressTextBox = new System.Windows.Forms.TextBox();
             this.slsmCodeTextBox = new System.Windows.Forms.TextBox();
             this.slsmNameTextBox = new System.Windows.Forms.TextBox();
             this.slsmPhotoTextBox = new System.Windows.Forms.TextBox();
             this.slsmSupvTextBox = new System.Windows.Forms.TextBox();
             this.slsmTelpTextBox = new System.Windows.Forms.TextBox();
-            this.statCheckBox = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.browseBtn = new System.Windows.Forms.Button();
+            this.salesmanItemDataGridView = new System.Windows.Forms.DataGridView();
+            this.outletItemDataGridView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.outletItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.salesmanItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.findStrip1 = new Invoice_OTC.Controller.FindStrip();
             slsmAddressLabel = new System.Windows.Forms.Label();
@@ -75,8 +92,74 @@
             this.salesmanItemBindingNavigator.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesmanItemDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outletItemDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesmanItemBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // slsmAddressLabel
+            // 
+            slsmAddressLabel.AutoSize = true;
+            slsmAddressLabel.Location = new System.Drawing.Point(21, 130);
+            slsmAddressLabel.Name = "slsmAddressLabel";
+            slsmAddressLabel.Size = new System.Drawing.Size(73, 13);
+            slsmAddressLabel.TabIndex = 3;
+            slsmAddressLabel.Text = "Slsm Address:";
+            // 
+            // slsmCodeLabel
+            // 
+            slsmCodeLabel.AutoSize = true;
+            slsmCodeLabel.Location = new System.Drawing.Point(21, 74);
+            slsmCodeLabel.Name = "slsmCodeLabel";
+            slsmCodeLabel.Size = new System.Drawing.Size(60, 13);
+            slsmCodeLabel.TabIndex = 5;
+            slsmCodeLabel.Text = "Slsm Code:";
+            // 
+            // slsmNameLabel
+            // 
+            slsmNameLabel.AutoSize = true;
+            slsmNameLabel.Location = new System.Drawing.Point(21, 100);
+            slsmNameLabel.Name = "slsmNameLabel";
+            slsmNameLabel.Size = new System.Drawing.Size(63, 13);
+            slsmNameLabel.TabIndex = 7;
+            slsmNameLabel.Text = "Slsm Name:";
+            // 
+            // slsmPhotoLabel
+            // 
+            slsmPhotoLabel.AutoSize = true;
+            slsmPhotoLabel.Location = new System.Drawing.Point(398, 290);
+            slsmPhotoLabel.Name = "slsmPhotoLabel";
+            slsmPhotoLabel.Size = new System.Drawing.Size(63, 13);
+            slsmPhotoLabel.TabIndex = 9;
+            slsmPhotoLabel.Text = "Slsm Photo:";
+            // 
+            // slsmSupvLabel
+            // 
+            slsmSupvLabel.AutoSize = true;
+            slsmSupvLabel.Location = new System.Drawing.Point(21, 264);
+            slsmSupvLabel.Name = "slsmSupvLabel";
+            slsmSupvLabel.Size = new System.Drawing.Size(60, 13);
+            slsmSupvLabel.TabIndex = 11;
+            slsmSupvLabel.Text = "Slsm Supv:";
+            // 
+            // slsmTelpLabel
+            // 
+            slsmTelpLabel.AutoSize = true;
+            slsmTelpLabel.Location = new System.Drawing.Point(21, 294);
+            slsmTelpLabel.Name = "slsmTelpLabel";
+            slsmTelpLabel.Size = new System.Drawing.Size(56, 13);
+            slsmTelpLabel.TabIndex = 13;
+            slsmTelpLabel.Text = "Slsm Telp:";
+            // 
+            // statLabel
+            // 
+            statLabel.AutoSize = true;
+            statLabel.Location = new System.Drawing.Point(21, 326);
+            statLabel.Name = "statLabel";
+            statLabel.Size = new System.Drawing.Size(29, 13);
+            statLabel.TabIndex = 15;
+            statLabel.Text = "Stat:";
             // 
             // salesmanItemBindingNavigator
             // 
@@ -104,7 +187,7 @@
             this.salesmanItemBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.salesmanItemBindingNavigator.Name = "salesmanItemBindingNavigator";
             this.salesmanItemBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.salesmanItemBindingNavigator.Size = new System.Drawing.Size(734, 25);
+            this.salesmanItemBindingNavigator.Size = new System.Drawing.Size(1054, 25);
             this.salesmanItemBindingNavigator.TabIndex = 0;
             this.salesmanItemBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -224,130 +307,6 @@
             this.deletesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.deletesToolStripMenuItem.Text = "Delete(s)";
             // 
-            // slsmAddressLabel
-            // 
-            slsmAddressLabel.AutoSize = true;
-            slsmAddressLabel.Location = new System.Drawing.Point(21, 130);
-            slsmAddressLabel.Name = "slsmAddressLabel";
-            slsmAddressLabel.Size = new System.Drawing.Size(73, 13);
-            slsmAddressLabel.TabIndex = 3;
-            slsmAddressLabel.Text = "Slsm Address:";
-            // 
-            // slsmAddressTextBox
-            // 
-            this.slsmAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesmanItemBindingSource, "SlsmAddress", true));
-            this.slsmAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.slsmAddressTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
-            this.slsmAddressTextBox.Location = new System.Drawing.Point(100, 127);
-            this.slsmAddressTextBox.Multiline = true;
-            this.slsmAddressTextBox.Name = "slsmAddressTextBox";
-            this.slsmAddressTextBox.Size = new System.Drawing.Size(275, 128);
-            this.slsmAddressTextBox.TabIndex = 4;
-            // 
-            // slsmCodeLabel
-            // 
-            slsmCodeLabel.AutoSize = true;
-            slsmCodeLabel.Location = new System.Drawing.Point(21, 74);
-            slsmCodeLabel.Name = "slsmCodeLabel";
-            slsmCodeLabel.Size = new System.Drawing.Size(60, 13);
-            slsmCodeLabel.TabIndex = 5;
-            slsmCodeLabel.Text = "Slsm Code:";
-            // 
-            // slsmCodeTextBox
-            // 
-            this.slsmCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesmanItemBindingSource, "SlsmCode", true));
-            this.slsmCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.slsmCodeTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
-            this.slsmCodeTextBox.Location = new System.Drawing.Point(100, 71);
-            this.slsmCodeTextBox.Name = "slsmCodeTextBox";
-            this.slsmCodeTextBox.Size = new System.Drawing.Size(275, 24);
-            this.slsmCodeTextBox.TabIndex = 6;
-            // 
-            // slsmNameLabel
-            // 
-            slsmNameLabel.AutoSize = true;
-            slsmNameLabel.Location = new System.Drawing.Point(21, 100);
-            slsmNameLabel.Name = "slsmNameLabel";
-            slsmNameLabel.Size = new System.Drawing.Size(63, 13);
-            slsmNameLabel.TabIndex = 7;
-            slsmNameLabel.Text = "Slsm Name:";
-            // 
-            // slsmNameTextBox
-            // 
-            this.slsmNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesmanItemBindingSource, "SlsmName", true));
-            this.slsmNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.slsmNameTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
-            this.slsmNameTextBox.Location = new System.Drawing.Point(100, 97);
-            this.slsmNameTextBox.Name = "slsmNameTextBox";
-            this.slsmNameTextBox.Size = new System.Drawing.Size(275, 24);
-            this.slsmNameTextBox.TabIndex = 8;
-            // 
-            // slsmPhotoLabel
-            // 
-            slsmPhotoLabel.AutoSize = true;
-            slsmPhotoLabel.Location = new System.Drawing.Point(398, 290);
-            slsmPhotoLabel.Name = "slsmPhotoLabel";
-            slsmPhotoLabel.Size = new System.Drawing.Size(63, 13);
-            slsmPhotoLabel.TabIndex = 9;
-            slsmPhotoLabel.Text = "Slsm Photo:";
-            // 
-            // slsmPhotoTextBox
-            // 
-            this.slsmPhotoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesmanItemBindingSource, "SlsmPhoto", true));
-            this.slsmPhotoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.slsmPhotoTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
-            this.slsmPhotoTextBox.Location = new System.Drawing.Point(477, 287);
-            this.slsmPhotoTextBox.Name = "slsmPhotoTextBox";
-            this.slsmPhotoTextBox.Size = new System.Drawing.Size(245, 24);
-            this.slsmPhotoTextBox.TabIndex = 10;
-            // 
-            // slsmSupvLabel
-            // 
-            slsmSupvLabel.AutoSize = true;
-            slsmSupvLabel.Location = new System.Drawing.Point(21, 264);
-            slsmSupvLabel.Name = "slsmSupvLabel";
-            slsmSupvLabel.Size = new System.Drawing.Size(60, 13);
-            slsmSupvLabel.TabIndex = 11;
-            slsmSupvLabel.Text = "Slsm Supv:";
-            // 
-            // slsmSupvTextBox
-            // 
-            this.slsmSupvTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesmanItemBindingSource, "SlsmSupv", true));
-            this.slsmSupvTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.slsmSupvTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
-            this.slsmSupvTextBox.Location = new System.Drawing.Point(100, 261);
-            this.slsmSupvTextBox.Name = "slsmSupvTextBox";
-            this.slsmSupvTextBox.Size = new System.Drawing.Size(275, 24);
-            this.slsmSupvTextBox.TabIndex = 12;
-            // 
-            // slsmTelpLabel
-            // 
-            slsmTelpLabel.AutoSize = true;
-            slsmTelpLabel.Location = new System.Drawing.Point(21, 294);
-            slsmTelpLabel.Name = "slsmTelpLabel";
-            slsmTelpLabel.Size = new System.Drawing.Size(56, 13);
-            slsmTelpLabel.TabIndex = 13;
-            slsmTelpLabel.Text = "Slsm Telp:";
-            // 
-            // slsmTelpTextBox
-            // 
-            this.slsmTelpTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesmanItemBindingSource, "SlsmTelp", true));
-            this.slsmTelpTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.slsmTelpTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
-            this.slsmTelpTextBox.Location = new System.Drawing.Point(100, 291);
-            this.slsmTelpTextBox.Name = "slsmTelpTextBox";
-            this.slsmTelpTextBox.Size = new System.Drawing.Size(275, 24);
-            this.slsmTelpTextBox.TabIndex = 14;
-            // 
-            // statLabel
-            // 
-            statLabel.AutoSize = true;
-            statLabel.Location = new System.Drawing.Point(21, 326);
-            statLabel.Name = "statLabel";
-            statLabel.Size = new System.Drawing.Size(29, 13);
-            statLabel.TabIndex = 15;
-            statLabel.Text = "Stat:";
-            // 
             // statCheckBox
             // 
             this.statCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.salesmanItemBindingSource, "Stat", true));
@@ -378,9 +337,213 @@
             this.browseBtn.UseVisualStyleBackColor = true;
             this.browseBtn.Click += new System.EventHandler(this.browsePictureToolStripMenuItem_Click);
             // 
+            // slsmAddressTextBox
+            // 
+            this.slsmAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesmanItemBindingSource, "SlsmAddress", true));
+            this.slsmAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.slsmAddressTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
+            this.slsmAddressTextBox.Location = new System.Drawing.Point(100, 127);
+            this.slsmAddressTextBox.Multiline = true;
+            this.slsmAddressTextBox.Name = "slsmAddressTextBox";
+            this.slsmAddressTextBox.Size = new System.Drawing.Size(275, 128);
+            this.slsmAddressTextBox.TabIndex = 4;
+            // 
+            // slsmCodeTextBox
+            // 
+            this.slsmCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesmanItemBindingSource, "SlsmCode", true));
+            this.slsmCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.slsmCodeTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
+            this.slsmCodeTextBox.Location = new System.Drawing.Point(100, 71);
+            this.slsmCodeTextBox.Name = "slsmCodeTextBox";
+            this.slsmCodeTextBox.Size = new System.Drawing.Size(275, 24);
+            this.slsmCodeTextBox.TabIndex = 6;
+            // 
+            // slsmNameTextBox
+            // 
+            this.slsmNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesmanItemBindingSource, "SlsmName", true));
+            this.slsmNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.slsmNameTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
+            this.slsmNameTextBox.Location = new System.Drawing.Point(100, 97);
+            this.slsmNameTextBox.Name = "slsmNameTextBox";
+            this.slsmNameTextBox.Size = new System.Drawing.Size(275, 24);
+            this.slsmNameTextBox.TabIndex = 8;
+            // 
+            // slsmPhotoTextBox
+            // 
+            this.slsmPhotoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesmanItemBindingSource, "SlsmPhoto", true));
+            this.slsmPhotoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.slsmPhotoTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
+            this.slsmPhotoTextBox.Location = new System.Drawing.Point(477, 287);
+            this.slsmPhotoTextBox.Name = "slsmPhotoTextBox";
+            this.slsmPhotoTextBox.Size = new System.Drawing.Size(245, 24);
+            this.slsmPhotoTextBox.TabIndex = 10;
+            // 
+            // slsmSupvTextBox
+            // 
+            this.slsmSupvTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesmanItemBindingSource, "SlsmSupv", true));
+            this.slsmSupvTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.slsmSupvTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
+            this.slsmSupvTextBox.Location = new System.Drawing.Point(100, 261);
+            this.slsmSupvTextBox.Name = "slsmSupvTextBox";
+            this.slsmSupvTextBox.Size = new System.Drawing.Size(275, 24);
+            this.slsmSupvTextBox.TabIndex = 12;
+            // 
+            // slsmTelpTextBox
+            // 
+            this.slsmTelpTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.salesmanItemBindingSource, "SlsmTelp", true));
+            this.slsmTelpTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.slsmTelpTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
+            this.slsmTelpTextBox.Location = new System.Drawing.Point(100, 291);
+            this.slsmTelpTextBox.Name = "slsmTelpTextBox";
+            this.slsmTelpTextBox.Size = new System.Drawing.Size(275, 24);
+            this.slsmTelpTextBox.TabIndex = 14;
+            // 
+            // salesmanItemDataGridView
+            // 
+            this.salesmanItemDataGridView.AllowUserToAddRows = false;
+            this.salesmanItemDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.salesmanItemDataGridView.AutoGenerateColumns = false;
+            this.salesmanItemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.salesmanItemDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewCheckBoxColumn1});
+            this.salesmanItemDataGridView.DataSource = this.salesmanItemBindingSource;
+            this.salesmanItemDataGridView.Location = new System.Drawing.Point(727, 104);
+            this.salesmanItemDataGridView.Name = "salesmanItemDataGridView";
+            this.salesmanItemDataGridView.Size = new System.Drawing.Size(303, 531);
+            this.salesmanItemDataGridView.TabIndex = 19;
+            // 
+            // outletItemDataGridView
+            // 
+            this.outletItemDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.outletItemDataGridView.AutoGenerateColumns = false;
+            this.outletItemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.outletItemDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewCheckBoxColumn2});
+            this.outletItemDataGridView.DataSource = this.outletItemBindingSource;
+            this.outletItemDataGridView.Location = new System.Drawing.Point(24, 380);
+            this.outletItemDataGridView.Name = "outletItemDataGridView";
+            this.outletItemDataGridView.Size = new System.Drawing.Size(697, 255);
+            this.outletItemDataGridView.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(24, 349);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(697, 29);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Daftar Outlet";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(727, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(303, 29);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Daftar Salesman";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "OutletCode";
+            this.dataGridViewTextBoxColumn8.HeaderText = "OutletCode";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "OutletName";
+            this.dataGridViewTextBoxColumn9.HeaderText = "OutletName";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "OutletAddress";
+            this.dataGridViewTextBoxColumn10.HeaderText = "OutletAddress";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "OutletRoute";
+            this.dataGridViewTextBoxColumn11.HeaderText = "OutletRoute";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "OutletStatus";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "OutletStatus";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            // 
+            // outletItemBindingSource
+            // 
+            this.outletItemBindingSource.DataSource = typeof(Invoice_OTC.Model.outletItem);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "SlsmCode";
+            this.dataGridViewTextBoxColumn1.HeaderText = "SlsmCode";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "SlsmName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "SlsmName";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "SlsmAddress";
+            this.dataGridViewTextBoxColumn3.HeaderText = "SlsmAddress";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "SlsmTelp";
+            this.dataGridViewTextBoxColumn4.HeaderText = "SlsmTelp";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "SlsmSupv";
+            this.dataGridViewTextBoxColumn5.HeaderText = "SlsmSupv";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "SlsmPhoto";
+            this.dataGridViewTextBoxColumn6.HeaderText = "SlsmPhoto";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Stat";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Stat";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
             // salesmanItemBindingSource
             // 
             this.salesmanItemBindingSource.DataSource = typeof(Invoice_OTC.Model.SalesmanItem);
+            this.salesmanItemBindingSource.CurrentChanged += new System.EventHandler(this.salesmanItemBindingSource_CurrentChanged);
             // 
             // findStrip1
             // 
@@ -388,7 +551,7 @@
             this.findStrip1.bindingSource = this.salesmanItemBindingSource;
             this.findStrip1.Location = new System.Drawing.Point(0, 25);
             this.findStrip1.Name = "findStrip1";
-            this.findStrip1.Size = new System.Drawing.Size(734, 32);
+            this.findStrip1.Size = new System.Drawing.Size(1054, 32);
             this.findStrip1.TabIndex = 2;
             this.findStrip1.Text = "findStrip1";
             // 
@@ -396,7 +559,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 360);
+            this.ClientSize = new System.Drawing.Size(1054, 647);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.outletItemDataGridView);
+            this.Controls.Add(this.salesmanItemDataGridView);
             this.Controls.Add(this.browseBtn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(slsmAddressLabel);
@@ -423,6 +590,9 @@
             this.salesmanItemBindingNavigator.PerformLayout();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.salesmanItemDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outletItemDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesmanItemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -458,5 +628,22 @@
         private System.Windows.Forms.CheckBox statCheckBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button browseBtn;
+        private System.Windows.Forms.DataGridView salesmanItemDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.BindingSource outletItemBindingSource;
+        private System.Windows.Forms.DataGridView outletItemDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

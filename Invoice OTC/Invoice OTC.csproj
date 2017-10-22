@@ -42,7 +42,10 @@
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Syncfusion.Grid.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Grid.Grouping.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Grid.Grouping.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Grid.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Grouping.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Shared.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Shared.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.SpellChecker.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -50,6 +53,7 @@
     <Reference Include="Syncfusion.Tools.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -61,6 +65,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base Classes\FSBindingItem.cs" />
@@ -84,6 +91,7 @@
     <Compile Include="Controller\Outlet\CommandCRUOutlet.cs" />
     <Compile Include="Controller\Outlet\CommandDeleteOutlet.cs" />
     <Compile Include="Controller\Outlet\CommandGetOutlet.cs" />
+    <Compile Include="Controller\Outlet\CommandGetOutletBySalesman.cs" />
     <Compile Include="Controller\Outlet\CommandGettingOutlet.cs" />
     <Compile Include="Controller\Roti Item\CommandDeleteRoti.cs" />
     <Compile Include="Controller\Roti Item\CommandGetRoti.cs" />
@@ -99,6 +107,7 @@
     <Compile Include="Controller\Salesman\commandCRUSalesman.cs" />
     <Compile Include="Controller\Salesman\CommandDeleteSalesman.cs" />
     <Compile Include="Controller\Salesman\CommandGetSalesman.cs" />
+    <Compile Include="Data Access\AccountItemDAO.cs" />
     <Compile Include="Data Access\Customer\CustomerItemDAO.cs" />
     <Compile Include="Data Access\Customer\CustomerListDAO.cs" />
     <Compile Include="Data Access\Salesman\SalesmanListDAO.cs" />
@@ -119,12 +128,15 @@
       <DependentUpon>FieldingRw.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Helper\DatabaseHelper.cs" />
+    <Compile Include="Helper\Encryption.cs" />
     <Compile Include="Invoice Institusi FIX.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Invoice Institusi FIX.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Model\accountItem.cs" />
     <Compile Include="Model\Customer\CustomerItem.cs" />
     <Compile Include="Model\Customer\CustomerList.cs" />
     <Compile Include="Model\Invoice\invoiceItem.cs" />
@@ -179,6 +191,12 @@
     <Compile Include="View\FormShowItem.cs" />
     <Compile Include="View\FormShowList.cs" />
     <Compile Include="View\FormStatusChangedEventArgs.cs" />
+    <Compile Include="View\FrmDaftarUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmDaftarUser.Designer.cs">
+      <DependentUpon>FrmDaftarUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmDetailedSlsman.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -190,6 +208,18 @@
     </Compile>
     <Compile Include="View\FrmImportExcelRoti.Designer.cs">
       <DependentUpon>FrmImportExcelRoti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\invoiceFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\invoiceFrm.Designer.cs">
+      <DependentUpon>invoiceFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Outlet\FrmImportExcelOutlet.cs">
       <SubType>Form</SubType>
@@ -267,11 +297,20 @@
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmDaftarUser.resx">
+      <DependentUpon>FrmDaftarUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmDetailedSlsman.resx">
       <DependentUpon>FrmDetailedSlsman.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmImportExcelRoti.resx">
       <DependentUpon>FrmImportExcelRoti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\invoiceFrm.resx">
+      <DependentUpon>invoiceFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Outlet\FrmImportExcelOutlet.resx">
       <DependentUpon>FrmImportExcelOutlet.cs</DependentUpon>
@@ -319,6 +358,7 @@
     <None Include="Properties\DataSources\Invoice_OTC.Controller.CommandUpdateItem.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Controller.FindStrip.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Controller.ItemFoundEventArgs.datasource" />
+    <None Include="Properties\DataSources\Invoice_OTC.Model.accountItem.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Model.CustomerList.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Model.InvoiceItem.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Model.outletItem.datasource" />
@@ -496,7 +536,6 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

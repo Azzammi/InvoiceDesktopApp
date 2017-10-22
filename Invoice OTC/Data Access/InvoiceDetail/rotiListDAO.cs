@@ -38,7 +38,7 @@ namespace Invoice_OTC.Data_Access
                 nextDetail.Qty = Convert.ToInt32(parentRow["itemQty"]);
                 nextDetail.Price = Convert.ToDecimal(parentRow["itemPrice"]);
                 nextDetail.Discount = Convert.ToDouble(parentRow["discount"]);
-                nextDetail.SubTotal = Convert.ToDecimal(parentRow["subTotal"]);
+                //nextDetail.SubTotal = Convert.ToDecimal(parentRow["subTotal"]);
 
                 list.Add(nextDetail);
             }

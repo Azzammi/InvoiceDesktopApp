@@ -13,7 +13,7 @@ namespace Invoice_OTC.Data_Access
         #region Declaration
 
         //Member Variables
-        private static string m_ConnectionString = String.Empty;
+        private static string m_ConnectionString = String.Empty;       
 
         #endregion
 

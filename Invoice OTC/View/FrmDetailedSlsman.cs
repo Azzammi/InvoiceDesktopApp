@@ -6,6 +6,7 @@ using System.Drawing;
 using Invoice_OTC.Model;
 using Invoice_OTC.Controller;
 using Invoice_OTC.Controller.Salesman;
+using Invoice_OTC.Controller.Outlet;
 using System.Windows.Forms;
 
 namespace Invoice_OTC.View
@@ -16,6 +17,8 @@ namespace Invoice_OTC.View
         AppController m_AppController;
         SalesmanList m_SalesmanList;
         SalesmanItem m_Item;
+
+        outletList m_OutletList;
         #endregion
 
         public FrmDetailedSlsman()
@@ -43,7 +46,7 @@ namespace Invoice_OTC.View
             m_AppController = new AppController();
 
             CommandGetSalesman getSalesman = new CommandGetSalesman();
-            m_SalesmanList = (SalesmanList)m_AppController.ExecuteCommand(getSalesman);
+            m_SalesmanList = (SalesmanList)m_AppController.ExecuteCommand(getSalesman);            
 
             salesmanItemBindingSource.DataSource = m_SalesmanList;
         }
@@ -56,14 +59,27 @@ namespace Invoice_OTC.View
                 {
                     case DialogResult.Cancel:
                         break;
-                    case DialogResult.OK:
-                        slsmPhotoTextBox.Text = opd.FileName;
-
+                    case DialogResult.OK:                        
                         m_Item = (SalesmanItem)salesmanItemBindingSource.Current;
                         m_Item.SlsmPhoto = opd.FileName;
+
+                        salesmanItemBindingSource.ResetCurrentItem();
                         break;
                 }
             }            
+        }
+
+        private void salesmanItemBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            if (m_SalesmanList == null) return;
+
+            m_Item = (SalesmanItem)salesmanItemBindingSource.Current;
+            if (m_Item == null) return;
+
+            CommandGetOutletBySalesman getOutlet = new CommandGetOutletBySalesman(m_Item.SlsmCode);
+            m_OutletList = (outletList)m_AppController.ExecuteCommand(getOutlet);
+
+            outletItemBindingSource.DataSource = m_OutletList;
         }
     }
 }

@@ -29,8 +29,8 @@ namespace Invoice_OTC.View
     {
         #region Declaration
         Form frm;
-        FormShowList m_FormList;
-        FormShowItem m_FormItem;
+        //FormShowList m_FormList;
+        //FormShowItem m_FormItem;
 
         #endregion
 
@@ -82,7 +82,8 @@ namespace Invoice_OTC.View
                     frm = new dgBindingFrm();
                     break;
                 case NamaForm.DetailInvoice:
-                    frm = new detailedBindingForm(FormStatus.Ready);
+                    //frm = new detailedBindingForm(FormStatus.Ready);
+                    frm = new invoiceFrm();
                     break;
                 case NamaForm.CetakInvoice:
                     frm = new FrmInvoicePrint();
@@ -118,6 +119,38 @@ namespace Invoice_OTC.View
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             ShowForm(NamaForm.DetailSalesman);
+        }
+
+        private void RibbonForm1_Load(object sender, EventArgs e)
+        {
+            Authentication();
+        }
+
+        /// <summary>
+        /// Proses autentikasi login ketika aplikasi pertama kali dibuka.
+        /// </summary>
+        /// <returns></returns>
+        private bool Authentication()
+        {
+            bool logged = false;
+            FrmLogin login = new FrmLogin();
+            login.ShowDialog();
+
+            /* Memastikan bahwa user telah berhasil login
+             dengan ditandainya variable isLogged telah menjadi "True". 
+             Namun jika false, aplikasi akan otomatis tertutup, guna 
+             mencegah terjadinya bug login */
+            if (login.IsLoggedIn)
+            {
+                //Mengambil value username pada form login                
+                logged = true;
+            }
+            else
+            {
+                //Menutup program
+                this.Close();
+            }
+            return logged;
         }
     }
 }

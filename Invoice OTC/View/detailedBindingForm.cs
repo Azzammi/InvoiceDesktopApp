@@ -46,7 +46,7 @@ namespace Invoice_OTC.View
             InitializeComponent();
 
             //Add method event
-            frmStatusChanged += DetailedBindingForm_frmStatusChanged;
+            //frmStatusChanged += DetailedBindingForm_frmStatusChanged;
 
             //Load the form first
             //detailedBindingForm_Load();
@@ -119,7 +119,7 @@ namespace Invoice_OTC.View
                     CommandUpdateInvoice updateInvoice = new CommandUpdateInvoice(currentInvoice);
                     m_AppController.ExecuteCommand(updateInvoice);
 
-                    foreach (DataGridViewRow row in itemsDataGridView.Rows)
+                    foreach (DataGridViewRow row in dgItem.Rows)
                     {
                         rotiItem item = row.DataBoundItem as rotiItem;
                         if (item != null)
@@ -167,7 +167,7 @@ namespace Invoice_OTC.View
             m_RotiToChooseList = (RotiToChooseList)m_AppController.ExecuteCommand(getRoti);
 
             outletItemBindingSource.DataSource = m_OutletList;
-            rotiToChooseItemBindingSource.DataSource = m_RotiToChooseList;
+            RotiToChooseBindingSource.DataSource = m_RotiToChooseList;
 
             invoiceItemBindingSource.DataSource = m_InvoiceList;
             itemsBindingSource.DataSource = invoiceItemBindingSource;

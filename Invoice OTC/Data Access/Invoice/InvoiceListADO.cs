@@ -63,6 +63,7 @@ namespace Invoice_OTC.Data_Access
                 //nextInvoice.Total = Convert.ToDecimal(parentRow["total"]);
                 nextInvoice.IssuedData = Convert.ToDateTime(parentRow["issuedDate"]);
                 nextInvoice.IsPPN = Convert.ToBoolean(parentRow["isPPN"]);
+                nextInvoice.NomorPO = parentRow["nomorPO"].ToString();
                 nextInvoice.User = parentRow["pengguna"].ToString();
 
                 //Get Invoice Item
@@ -81,7 +82,7 @@ namespace Invoice_OTC.Data_Access
                     nextRoti.Qty = Convert.ToInt32(childRow["itemQty"]);
                     nextRoti.Price = Convert.ToDecimal(childRow["itemPrice"]);
                     nextRoti.Discount = Convert.ToDouble(childRow["discount"]);
-                    nextRoti.SubTotal = Convert.ToDecimal(childRow["Subtotal"]);
+                    //nextRoti.SubTotal = Convert.ToDecimal(childRow["Subtotal"]);
 
                     //Add roti to invoice
                     if(nextRoti.ItemCode != "0")

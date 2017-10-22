@@ -56,6 +56,7 @@ namespace Invoice_OTC.Data_Access
             sqlQuery.Append(String.Format("total = '{0}', ", changedInvoice.Total));
             sqlQuery.Append(String.Format("issuedDate = '{0}', ", changedInvoice.IssuedData));
             sqlQuery.Append(String.Format("isPPN = '{0}', ", changedInvoice.IsPPN));
+            sqlQuery.Append(String.Format("nomorPO = '{0}', ", changedInvoice.NomorPO));
             sqlQuery.Append(String.Format("pengguna = '{0}' ", Properties.Settings.Default.currentUser));
             sqlQuery.Append(String.Format("WHERE InvoiceID = '{0}'", changedInvoice.InvoiceID));
 

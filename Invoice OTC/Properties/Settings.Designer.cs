@@ -92,5 +92,17 @@ namespace Invoice_OTC.Properties {
                 this["periode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isLoggedIn {
+            get {
+                return ((bool)(this["isLoggedIn"]));
+            }
+            set {
+                this["isLoggedIn"] = value;
+            }
+        }
     }
 }

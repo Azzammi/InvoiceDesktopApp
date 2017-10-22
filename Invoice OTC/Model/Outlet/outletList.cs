@@ -16,6 +16,11 @@ namespace Invoice_OTC.Model
             OutletListDAO dao = new OutletListDAO();
             dao.ShowList(this);
         }
+        public outletList(string slsmCode)
+        {
+            OutletListDAO dao = new OutletListDAO();
+            dao.ShowList(this, slsmCode);
+        }
         #endregion
     }
 }
