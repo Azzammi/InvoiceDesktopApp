@@ -31,17 +31,14 @@ namespace Invoice_OTC.View
         #endregion
         public FrmLogin()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
-
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-            accountItemBindingSource.AddNew();
-        }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             m_Item = (accountItem)accountItemBindingSource.Current;
+            if (m_Item == null) return;
+
             if(m_Item.Login())
             {
                 isLoggedIn = true;
@@ -49,6 +46,17 @@ namespace Invoice_OTC.View
 
                 this.Close();
             }
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+            accountItemBindingSource.AddNew();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmDaftarUser frm = new FrmDaftarUser();
+            frm.ShowDialog();
         }
     }
 }

@@ -35,7 +35,7 @@ namespace Invoice_OTC.Data_Access
         internal void UpdateDatabaseRecord(RotiToChooseItem updateRoti)
         {
             string sql = "UPDATE ITEM SET " +
-                        "ITEMNAME = @code, " +
+                        "ITEMNAME = @name, " +
                         "ITEMSORT = @sort, " +
                         "Brand = @brand, " +
                         "Jenis = @jenis, " +

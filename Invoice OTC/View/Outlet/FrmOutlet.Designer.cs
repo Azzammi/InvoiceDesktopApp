@@ -30,7 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOutlet));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.outletItemBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.outletItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -51,13 +55,12 @@
             this.outletAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outletRouteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outletStatusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.outletItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.findStrip1 = new Invoice_OTC.Controller.FindStrip();
             ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingNavigator)).BeginInit();
             this.outletItemBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingSource)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outletItemDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // outletItemBindingNavigator
@@ -87,6 +90,12 @@
             this.outletItemBindingNavigator.Size = new System.Drawing.Size(811, 25);
             this.outletItemBindingNavigator.TabIndex = 0;
             this.outletItemBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // outletItemBindingSource
+            // 
+            this.outletItemBindingSource.DataSource = typeof(Invoice_OTC.Model.outletItem);
+            this.outletItemBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.outletItemBindingSource_AddingNew);
+            this.outletItemBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.outletItemBindingSource_ListChanged);
             // 
             // bindingNavigatorCountItem
             // 
@@ -189,7 +198,18 @@
             // 
             // outletItemDataGridView
             // 
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            this.outletItemDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.outletItemDataGridView.AutoGenerateColumns = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.outletItemDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.outletItemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.outletItemDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.slsmCodeDataGridViewTextBoxColumn,
@@ -200,6 +220,15 @@
             this.outletStatusDataGridViewCheckBoxColumn});
             this.outletItemDataGridView.ContextMenuStrip = this.contextMenuStrip1;
             this.outletItemDataGridView.DataSource = this.outletItemBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.outletItemDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.outletItemDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.outletItemDataGridView.Location = new System.Drawing.Point(0, 57);
             this.outletItemDataGridView.Name = "outletItemDataGridView";
@@ -223,12 +252,14 @@
             this.outletNameDataGridViewTextBoxColumn.DataPropertyName = "OutletName";
             this.outletNameDataGridViewTextBoxColumn.HeaderText = "OutletName";
             this.outletNameDataGridViewTextBoxColumn.Name = "outletNameDataGridViewTextBoxColumn";
+            this.outletNameDataGridViewTextBoxColumn.Width = 250;
             // 
             // outletAddressDataGridViewTextBoxColumn
             // 
             this.outletAddressDataGridViewTextBoxColumn.DataPropertyName = "OutletAddress";
             this.outletAddressDataGridViewTextBoxColumn.HeaderText = "OutletAddress";
             this.outletAddressDataGridViewTextBoxColumn.Name = "outletAddressDataGridViewTextBoxColumn";
+            this.outletAddressDataGridViewTextBoxColumn.Width = 300;
             // 
             // outletRouteDataGridViewTextBoxColumn
             // 
@@ -241,12 +272,6 @@
             this.outletStatusDataGridViewCheckBoxColumn.DataPropertyName = "OutletStatus";
             this.outletStatusDataGridViewCheckBoxColumn.HeaderText = "OutletStatus";
             this.outletStatusDataGridViewCheckBoxColumn.Name = "outletStatusDataGridViewCheckBoxColumn";
-            // 
-            // outletItemBindingSource
-            // 
-            this.outletItemBindingSource.DataSource = typeof(Invoice_OTC.Model.outletItem);
-            this.outletItemBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.outletItemBindingSource_AddingNew);
-            this.outletItemBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.outletItemBindingSource_ListChanged);
             // 
             // findStrip1
             // 
@@ -269,14 +294,14 @@
             this.Controls.Add(this.outletItemBindingNavigator);
             this.Name = "FrmOutlet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmOutlet";
+            this.Text = "OUTLET";
             this.Load += new System.EventHandler(this.FrmOutlet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingNavigator)).EndInit();
             this.outletItemBindingNavigator.ResumeLayout(false);
             this.outletItemBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingSource)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.outletItemDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,12 +325,12 @@
         private System.Windows.Forms.ToolStripMenuItem deletesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteAllToolStripMenuItem;
         private System.Windows.Forms.DataGridView outletItemDataGridView;
+        private Controller.FindStrip findStrip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn slsmCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn outletCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn outletNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn outletAddressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn outletRouteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn outletStatusDataGridViewCheckBoxColumn;
-        private Controller.FindStrip findStrip1;
     }
 }

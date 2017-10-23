@@ -170,16 +170,17 @@
       <DependentUpon>rptSubReportInvoice.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\detailedBindingForm.cs">
+    <Compile Include="sessionUser.cs" />
+    <Compile Include="View\Invoice\detailedBindingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\detailedBindingForm.Designer.cs">
+    <Compile Include="View\Invoice\detailedBindingForm.Designer.cs">
       <DependentUpon>detailedBindingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\dgBindingFrm.cs">
+    <Compile Include="View\Invoice\dgBindingFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\dgBindingFrm.Designer.cs">
+    <Compile Include="View\Invoice\dgBindingFrm.Designer.cs">
       <DependentUpon>dgBindingFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Form1.cs">
@@ -191,10 +192,10 @@
     <Compile Include="View\FormShowItem.cs" />
     <Compile Include="View\FormShowList.cs" />
     <Compile Include="View\FormStatusChangedEventArgs.cs" />
-    <Compile Include="View\FrmDaftarUser.cs">
+    <Compile Include="View\User\FrmDaftarUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmDaftarUser.Designer.cs">
+    <Compile Include="View\User\FrmDaftarUser.Designer.cs">
       <DependentUpon>FrmDaftarUser.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmDetailedSlsman.cs">
@@ -203,10 +204,10 @@
     <Compile Include="View\FrmDetailedSlsman.Designer.cs">
       <DependentUpon>FrmDetailedSlsman.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmImportExcelRoti.cs">
+    <Compile Include="View\Salesman\FrmImportExcelRoti.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmImportExcelRoti.Designer.cs">
+    <Compile Include="View\Salesman\FrmImportExcelRoti.Designer.cs">
       <DependentUpon>FrmImportExcelRoti.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FrmLogin.cs">
@@ -215,10 +216,10 @@
     <Compile Include="View\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\invoiceFrm.cs">
+    <Compile Include="View\Invoice\invoiceFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\invoiceFrm.Designer.cs">
+    <Compile Include="View\Invoice\invoiceFrm.Designer.cs">
       <DependentUpon>invoiceFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Outlet\FrmImportExcelOutlet.cs">
@@ -245,10 +246,10 @@
     <Compile Include="View\FrmReportItemList.Designer.cs">
       <DependentUpon>FrmReportItemList.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\itemFrm.cs">
+    <Compile Include="View\Item\itemFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\itemFrm.Designer.cs">
+    <Compile Include="View\Item\itemFrm.Designer.cs">
       <DependentUpon>itemFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -288,28 +289,28 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptSubReportInvoice.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\detailedBindingForm.resx">
+    <EmbeddedResource Include="View\Invoice\detailedBindingForm.resx">
       <DependentUpon>detailedBindingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\dgBindingFrm.resx">
+    <EmbeddedResource Include="View\Invoice\dgBindingFrm.resx">
       <DependentUpon>dgBindingFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmDaftarUser.resx">
+    <EmbeddedResource Include="View\User\FrmDaftarUser.resx">
       <DependentUpon>FrmDaftarUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmDetailedSlsman.resx">
       <DependentUpon>FrmDetailedSlsman.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmImportExcelRoti.resx">
+    <EmbeddedResource Include="View\Salesman\FrmImportExcelRoti.resx">
       <DependentUpon>FrmImportExcelRoti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\invoiceFrm.resx">
+    <EmbeddedResource Include="View\Invoice\invoiceFrm.resx">
       <DependentUpon>invoiceFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Outlet\FrmImportExcelOutlet.resx">
@@ -324,7 +325,7 @@
     <EmbeddedResource Include="View\FrmReportItemList.resx">
       <DependentUpon>FrmReportItemList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\itemFrm.resx">
+    <EmbeddedResource Include="View\Item\itemFrm.resx">
       <DependentUpon>itemFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -536,6 +537,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

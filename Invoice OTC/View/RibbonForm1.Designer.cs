@@ -389,7 +389,7 @@ namespace Invoice_OTC.View
             this.statusStripButton1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 2);
             this.statusStripButton1.Name = "statusStripButton1";
             this.statusStripButton1.Size = new System.Drawing.Size(58, 20);
-            this.statusStripButton1.Text = global::Invoice_OTC.Properties.Settings.Default.currentUser;
+            this.statusStripButton1.Text = "Luthfi";
             // 
             // statusStripLabel1
             // 
@@ -397,7 +397,7 @@ namespace Invoice_OTC.View
             this.statusStripLabel1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 2);
             this.statusStripLabel1.Name = "statusStripLabel1";
             this.statusStripLabel1.Size = new System.Drawing.Size(43, 15);
-            this.statusStripLabel1.Text = global::Invoice_OTC.Properties.Settings.Default.level;
+            this.statusStripLabel1.Text = "Admin";
             // 
             // RibbonForm1
             // 

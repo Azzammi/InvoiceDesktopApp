@@ -28,10 +28,7 @@ namespace Invoice_OTC.View
     public partial class RibbonForm1 : Syncfusion.Windows.Forms.Tools.RibbonForm
     {
         #region Declaration
-        Form frm;
-        //FormShowList m_FormList;
-        //FormShowItem m_FormItem;
-
+        Form frm;        
         #endregion
 
         #region Constructor
@@ -130,27 +127,24 @@ namespace Invoice_OTC.View
         /// Proses autentikasi login ketika aplikasi pertama kali dibuka.
         /// </summary>
         /// <returns></returns>
-        private bool Authentication()
+        private void Authentication()
         {
-            bool logged = false;
-            FrmLogin login = new FrmLogin();
-            login.ShowDialog();
 
             /* Memastikan bahwa user telah berhasil login
              dengan ditandainya variable isLogged telah menjadi "True". 
              Namun jika false, aplikasi akan otomatis tertutup, guna 
              mencegah terjadinya bug login */
-            if (login.IsLoggedIn)
+            if (!sessionUser.GetLoginStatus())
             {
-                //Mengambil value username pada form login                
-                logged = true;
+                FrmLogin login = new FrmLogin();
+                login.ShowDialog();
             }
             else
             {
-                //Menutup program
                 this.Close();
             }
-            return logged;
+            
+            statusStripButton1.Text = sessionUser.GetCurrentUser();          
         }
     }
 }

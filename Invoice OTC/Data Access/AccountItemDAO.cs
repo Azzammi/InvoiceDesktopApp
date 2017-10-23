@@ -30,6 +30,8 @@ namespace Invoice_OTC.Data_Access
             try
             {
                 db.StartConnection();
+                //SqlConnection connection = new SqlConnection(Settings.Default.ConnectionString.ToString());
+                //connection.Open();
                 string sql = "SELECT Username FROM USERS WHERE password = @password";
 
                 SqlCommand command = new SqlCommand(sql, db.Koneksi);
@@ -39,9 +41,14 @@ namespace Invoice_OTC.Data_Access
                 command.Parameters.AddWithValue("@password", encrypt.HashPassword(loginAccount.PassWord.Replace("'","")));
 
                 string username = (string)command.ExecuteScalar();
-                if(username == loginAccount.UserName.Replace("'", ""))
+
+
+                command.Dispose();
+                db.CloseConnection();
+                
+                if (username == loginAccount.UserName.Replace("'", ""))
                 {
-                    Settings.Default.currentUser = username;                    
+                    sessionUser.Login(username);             
                     return true;
                 }
                 else if(username == "")
@@ -54,11 +61,10 @@ namespace Invoice_OTC.Data_Access
                     MessageBox.Show("Username Salah !");
                     return false;
                 }
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
                 return false;
             }             
         }
@@ -93,8 +99,7 @@ namespace Invoice_OTC.Data_Access
                 //Close and dispose
                 command.Dispose();
                 db.CloseConnection();
-                db.Koneksi.Dispose();
-
+                //db.Koneksi.Dispose();
             }
             catch (SqlException ex)
             {               

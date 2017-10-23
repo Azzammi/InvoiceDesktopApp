@@ -40,8 +40,8 @@ namespace Invoice_OTC.View
              * get instantiated. */
 
             //Get Customer List
-            //CommandGettingOutlet getOutlets = new CommandGettingOutlet();
-            //m_OutletList = (outletList)m_AppController.ExecuteCommand(getOutlets);
+            CommandGettingOutlet getOutlets = new CommandGettingOutlet();
+            m_OutletList = (outletList)m_AppController.ExecuteCommand(getOutlets);
 
             // Get invoices List
             CommandGetInvoices getInvoices = new CommandGetInvoices();
@@ -51,7 +51,7 @@ namespace Invoice_OTC.View
             m_RotiList = (RotiToChooseList)m_AppController.ExecuteCommand(getRoti);
 
             //Bind Grids            
-            //outletItemBindingSource.DataSource = m_OutletList;
+            outletItemBindingSource.DataSource = m_OutletList;
             rotiToChooseItemBindingSource.DataSource = m_RotiList;
 
             invoiceItemBindingSource.DataSource = m_Invoices;

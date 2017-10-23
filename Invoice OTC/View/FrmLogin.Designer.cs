@@ -38,11 +38,11 @@ namespace Invoice_OTC.View
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label passWordLabel;
             System.Windows.Forms.Label userNameLabel;
-            this.accountItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.passWordTextBox = new System.Windows.Forms.TextBox();
             this.userNameTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.accountItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             passWordLabel = new System.Windows.Forms.Label();
             userNameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.accountItemBindingSource)).BeginInit();
@@ -66,44 +66,50 @@ namespace Invoice_OTC.View
             userNameLabel.TabIndex = 11;
             userNameLabel.Text = "User Name:";
             // 
-            // accountItemBindingSource
-            // 
-            this.accountItemBindingSource.DataSource = typeof(Invoice_OTC.Model.accountItem);
-            // 
             // passWordTextBox
             // 
             this.passWordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountItemBindingSource, "PassWord", true));
+            this.passWordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.passWordTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
             this.passWordTextBox.Location = new System.Drawing.Point(97, 69);
             this.passWordTextBox.Name = "passWordTextBox";
-            this.passWordTextBox.Size = new System.Drawing.Size(200, 20);
-            this.passWordTextBox.TabIndex = 8;
+            this.passWordTextBox.Size = new System.Drawing.Size(200, 24);
+            this.passWordTextBox.TabIndex = 1;
+            this.passWordTextBox.UseSystemPasswordChar = true;
             // 
             // userNameTextBox
             // 
             this.userNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.accountItemBindingSource, "UserName", true));
+            this.userNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::Invoice_OTC.Properties.Settings.Default, "textboxFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.userNameTextBox.Font = global::Invoice_OTC.Properties.Settings.Default.textboxFont;
             this.userNameTextBox.Location = new System.Drawing.Point(97, 43);
             this.userNameTextBox.Name = "userNameTextBox";
-            this.userNameTextBox.Size = new System.Drawing.Size(200, 20);
-            this.userNameTextBox.TabIndex = 12;
+            this.userNameTextBox.Size = new System.Drawing.Size(200, 24);
+            this.userNameTextBox.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(173, 129);
+            this.button1.Location = new System.Drawing.Point(34, 99);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "button1";
+            this.button1.Size = new System.Drawing.Size(91, 49);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(255, 129);
+            this.button2.Location = new System.Drawing.Point(131, 99);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 49);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Daftar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // accountItemBindingSource
+            // 
+            this.accountItemBindingSource.DataSource = typeof(Invoice_OTC.Model.accountItem);
             // 
             // FrmLogin
             // 
@@ -117,6 +123,7 @@ namespace Invoice_OTC.View
             this.Controls.Add(userNameLabel);
             this.Controls.Add(this.userNameTextBox);
             this.Name = "FrmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Frm";
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.accountItemBindingSource)).EndInit();

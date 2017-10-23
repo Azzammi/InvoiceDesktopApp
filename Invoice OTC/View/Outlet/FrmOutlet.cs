@@ -109,8 +109,7 @@ namespace Invoice_OTC.View
         }
 
         private void outletItemBindingSource_ListChanged(object sender, ListChangedEventArgs e)
-        {
-            
+        {            
             // Exit if no project list
             if (m_List == null) return;
 
