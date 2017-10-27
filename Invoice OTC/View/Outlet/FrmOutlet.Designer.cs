@@ -45,6 +45,10 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deletesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +73,7 @@
             this.outletItemBindingNavigator.BindingSource = this.outletItemBindingSource;
             this.outletItemBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.outletItemBindingNavigator.DeleteItem = null;
+            this.outletItemBindingNavigator.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.outletItemBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -79,7 +84,12 @@
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.newToolStripButton,
+            this.saveToolStripButton,
+            this.toolStripSeparator1,
+            this.helpToolStripButton});
+            this.outletItemBindingNavigator.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.outletItemBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.outletItemBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.outletItemBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -87,20 +97,19 @@
             this.outletItemBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.outletItemBindingNavigator.Name = "outletItemBindingNavigator";
             this.outletItemBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.outletItemBindingNavigator.Size = new System.Drawing.Size(811, 25);
+            this.outletItemBindingNavigator.Size = new System.Drawing.Size(811, 31);
             this.outletItemBindingNavigator.TabIndex = 0;
             this.outletItemBindingNavigator.Text = "bindingNavigator1";
             // 
             // outletItemBindingSource
             // 
             this.outletItemBindingSource.DataSource = typeof(Invoice_OTC.Model.outletItem);
-            this.outletItemBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.outletItemBindingSource_AddingNew);
             this.outletItemBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.outletItemBindingSource_ListChanged);
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -110,7 +119,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -119,13 +128,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -139,7 +148,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -147,7 +156,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -156,13 +165,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // toolStripButton1
             // 
@@ -170,9 +179,43 @@
             this.toolStripButton1.Image = global::Invoice_OTC.Properties.Resources.View_Details_50px;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(123, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(131, 28);
             this.toolStripButton1.Text = "Import From Excel";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // newToolStripButton
+            // 
+            this.newToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.newToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("newToolStripButton.Image")));
+            this.newToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.newToolStripButton.Name = "newToolStripButton";
+            this.newToolStripButton.Size = new System.Drawing.Size(28, 28);
+            this.newToolStripButton.Text = "&New";
+            this.newToolStripButton.Click += new System.EventHandler(this.newToolStripButton_Click);
+            // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(28, 28);
+            this.saveToolStripButton.Text = "&Save";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
+            // 
+            // helpToolStripButton
+            // 
+            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
+            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.helpToolStripButton.Name = "helpToolStripButton";
+            this.helpToolStripButton.Size = new System.Drawing.Size(28, 28);
+            this.helpToolStripButton.Text = "He&lp";
             // 
             // contextMenuStrip1
             // 
@@ -198,6 +241,7 @@
             // 
             // outletItemDataGridView
             // 
+            this.outletItemDataGridView.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
             this.outletItemDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.outletItemDataGridView.AutoGenerateColumns = false;
@@ -230,9 +274,9 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.outletItemDataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.outletItemDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outletItemDataGridView.Location = new System.Drawing.Point(0, 57);
+            this.outletItemDataGridView.Location = new System.Drawing.Point(0, 63);
             this.outletItemDataGridView.Name = "outletItemDataGridView";
-            this.outletItemDataGridView.Size = new System.Drawing.Size(811, 342);
+            this.outletItemDataGridView.Size = new System.Drawing.Size(811, 336);
             this.outletItemDataGridView.TabIndex = 3;
             // 
             // slsmCodeDataGridViewTextBoxColumn
@@ -277,7 +321,7 @@
             // 
             this.findStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.findStrip1.bindingSource = this.outletItemBindingSource;
-            this.findStrip1.Location = new System.Drawing.Point(0, 25);
+            this.findStrip1.Location = new System.Drawing.Point(0, 31);
             this.findStrip1.Name = "findStrip1";
             this.findStrip1.Size = new System.Drawing.Size(811, 32);
             this.findStrip1.TabIndex = 2;
@@ -292,6 +336,7 @@
             this.Controls.Add(this.outletItemDataGridView);
             this.Controls.Add(this.findStrip1);
             this.Controls.Add(this.outletItemBindingNavigator);
+            this.KeyPreview = true;
             this.Name = "FrmOutlet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OUTLET";
@@ -332,5 +377,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn outletAddressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn outletRouteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn outletStatusDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.ToolStripButton newToolStripButton;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton helpToolStripButton;
     }
 }

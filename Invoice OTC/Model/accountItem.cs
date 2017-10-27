@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using FSCollections;
 using Invoice_OTC.Data_Access;
 
 namespace Invoice_OTC.Model
 {
-    class accountItem
+    class accountItem : FSBindingItem
     {
         #region Declaration
         private string userId;

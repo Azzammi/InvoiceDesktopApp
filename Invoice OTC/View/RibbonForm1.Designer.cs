@@ -53,11 +53,15 @@ namespace Invoice_OTC.View
             this.toolStripEx4 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.invoicePrintBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripTabItem3 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.toolStripEx6 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.tabbedMDIManager1 = new Syncfusion.Windows.Forms.Tools.TabbedMDIManager(this.components);
             this.imageListAdv1 = new Syncfusion.Windows.Forms.Tools.ImageListAdv(this.components);
             this.statusStripEx1 = new Syncfusion.Windows.Forms.Tools.StatusStripEx();
             this.statusStripButton1 = new Syncfusion.Windows.Forms.Tools.StatusStripButton();
-            this.statusStripLabel1 = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
+            this.timeLbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripTabItem4 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
+            this.toolStripEx5 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.timerControl = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.navigationView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
             this.ribbonControlAdv1.SuspendLayout();
@@ -67,7 +71,9 @@ namespace Invoice_OTC.View
             this.toolStripTabItem2.Panel.SuspendLayout();
             this.toolStripEx3.SuspendLayout();
             this.toolStripEx4.SuspendLayout();
+            this.toolStripTabItem3.Panel.SuspendLayout();
             this.statusStripEx1.SuspendLayout();
+            this.toolStripTabItem4.Panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // navigationView1
@@ -102,7 +108,7 @@ namespace Invoice_OTC.View
             this.ribbonControlAdv1.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ribbonControlAdv1.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
             this.ribbonControlAdv1.RibbonStyle = Syncfusion.Windows.Forms.Tools.RibbonStyle.Office2016;
-            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem2;
+            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem1;
             this.ribbonControlAdv1.ShowRibbonDisplayOptionButton = true;
             this.ribbonControlAdv1.Size = new System.Drawing.Size(766, 158);
             this.ribbonControlAdv1.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -291,6 +297,7 @@ namespace Invoice_OTC.View
             // 
             // ribbonControlAdv1.ribbonPanel3
             // 
+            this.toolStripTabItem3.Panel.Controls.Add(this.toolStripEx6);
             this.toolStripTabItem3.Panel.Name = "ribbonPanel3";
             this.toolStripTabItem3.Panel.ScrollPosition = 0;
             this.toolStripTabItem3.Panel.TabIndex = 4;
@@ -299,6 +306,21 @@ namespace Invoice_OTC.View
             this.toolStripTabItem3.Size = new System.Drawing.Size(79, 30);
             this.toolStripTabItem3.Tag = "3";
             this.toolStripTabItem3.Text = "Laporan";
+            // 
+            // toolStripEx6
+            // 
+            this.toolStripEx6.AutoSize = false;
+            this.toolStripEx6.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripEx6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.toolStripEx6.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx6.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripEx6.Image = null;
+            this.toolStripEx6.Location = new System.Drawing.Point(0, 1);
+            this.toolStripEx6.Name = "toolStripEx6";
+            this.toolStripEx6.Office12Mode = false;
+            this.toolStripEx6.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.toolStripEx6.Size = new System.Drawing.Size(100, 92);
+            this.toolStripEx6.TabIndex = 0;
             // 
             // tabbedMDIManager1
             // 
@@ -373,7 +395,7 @@ namespace Invoice_OTC.View
             this.statusStripEx1.BeforeTouchSize = new System.Drawing.Size(762, 26);
             this.statusStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusStripButton1,
-            this.statusStripLabel1});
+            this.timeLbl});
             this.statusStripEx1.Location = new System.Drawing.Point(1, 354);
             this.statusStripEx1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.statusStripEx1.Name = "statusStripEx1";
@@ -391,13 +413,45 @@ namespace Invoice_OTC.View
             this.statusStripButton1.Size = new System.Drawing.Size(58, 20);
             this.statusStripButton1.Text = "Luthfi";
             // 
-            // statusStripLabel1
+            // timeLbl
             // 
-            this.statusStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.statusStripLabel1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 2);
-            this.statusStripLabel1.Name = "statusStripLabel1";
-            this.statusStripLabel1.Size = new System.Drawing.Size(43, 15);
-            this.statusStripLabel1.Text = "Admin";
+            this.timeLbl.Name = "timeLbl";
+            this.timeLbl.Size = new System.Drawing.Size(118, 15);
+            this.timeLbl.Text = "toolStripStatusLabel1";
+            // 
+            // toolStripTabItem4
+            // 
+            this.toolStripTabItem4.Name = "toolStripTabItem4";
+            // 
+            // 
+            // 
+            this.toolStripTabItem4.Panel.Controls.Add(this.toolStripEx5);
+            this.toolStripTabItem4.Panel.Name = "";
+            this.toolStripTabItem4.Panel.ScrollPosition = 0;
+            this.toolStripTabItem4.Panel.TabIndex = 5;
+            this.toolStripTabItem4.Panel.Text = "toolStripTabItem4";
+            this.toolStripTabItem4.Position = -1;
+            this.toolStripTabItem4.Size = new System.Drawing.Size(128, 30);
+            this.toolStripTabItem4.Text = "toolStripTabItem4";
+            // 
+            // toolStripEx5
+            // 
+            this.toolStripEx5.AutoSize = false;
+            this.toolStripEx5.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStripEx5.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+            this.toolStripEx5.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.toolStripEx5.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStripEx5.Image = null;
+            this.toolStripEx5.Location = new System.Drawing.Point(0, 1);
+            this.toolStripEx5.Name = "toolStripEx5";
+            this.toolStripEx5.Office12Mode = false;
+            this.toolStripEx5.Size = new System.Drawing.Size(100, 92);
+            this.toolStripEx5.TabIndex = 0;
+            // 
+            // timerControl
+            // 
+            this.timerControl.Enabled = true;
+            this.timerControl.Tick += new System.EventHandler(this.timerControl_Tick);
             // 
             // RibbonForm1
             // 
@@ -429,7 +483,9 @@ namespace Invoice_OTC.View
             this.toolStripEx3.PerformLayout();
             this.toolStripEx4.ResumeLayout(false);
             this.toolStripEx4.PerformLayout();
+            this.toolStripTabItem3.Panel.ResumeLayout(false);
             this.statusStripEx1.ResumeLayout(false);
+            this.toolStripTabItem4.Panel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,6 +513,10 @@ namespace Invoice_OTC.View
         private System.Windows.Forms.ToolStripButton invoicePrintBtn;
         private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem3;
         private Syncfusion.Windows.Forms.Tools.StatusStripButton statusStripButton1;
-        private Syncfusion.Windows.Forms.Tools.StatusStripLabel statusStripLabel1;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx6;
+        private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem4;
+        private Syncfusion.Windows.Forms.Tools.ToolStripEx toolStripEx5;
+        private System.Windows.Forms.ToolStripStatusLabel timeLbl;
+        private System.Windows.Forms.Timer timerControl;
     }
 }

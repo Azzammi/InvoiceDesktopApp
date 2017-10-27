@@ -82,7 +82,6 @@ namespace Invoice_OTC.View
             var pesan = MessageBox.Show("Apakah Anda Yakin Ingin Menghapus ? ", "Penghapusan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (pesan == DialogResult.Yes)
             {
-
                 foreach (DataGridViewRow row in outletItemDataGridView.SelectedRows)
                 {
                     outletItem item = row.DataBoundItem as outletItem;
@@ -94,18 +93,6 @@ namespace Invoice_OTC.View
 
                 }
             }
-        }
-
-        private void outletItemBindingSource_AddingNew(object sender, AddingNewEventArgs e)
-        {
-            if (m_List == null) return;
-
-            // Create a new project
-            CommandCRUOutlet newOutlet = new CommandCRUOutlet();
-            outletItem item = (outletItem)m_AppController.ExecuteCommand(newOutlet);
-
-            // Add it to theAuthors list
-            e.NewObject = item;
         }
 
         private void outletItemBindingSource_ListChanged(object sender, ListChangedEventArgs e)
@@ -129,7 +116,7 @@ namespace Invoice_OTC.View
             switch (changeType)
             {
                 case ListChangedType.ItemChanged:
-                    CommandCRUOutlet updateOutlet = new CommandCRUOutlet(changedOutlet);
+                    CommandCRUOutlet updateOutlet = new CommandCRUOutlet(changedOutlet, true);
                     m_AppController.ExecuteCommand(updateOutlet);
                     break;
 
@@ -142,6 +129,51 @@ namespace Invoice_OTC.View
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             m_List.ResetBindings();
+        }
+
+        private void newToolStripButton_Click(object sender, EventArgs e)
+        {
+            outletItemBindingSource.AddNew();
+        }
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (m_List == null) return;
+            outletItem currentItem = (outletItem)outletItemBindingSource.Current;
+
+            CommandCRUOutlet newOutlet = new CommandCRUOutlet(currentItem, false);
+            m_AppController.ExecuteCommand(newOutlet);
+        }
+
+        /// <summary>
+        /// Overrid Method to setting the shortcut keys
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="keyData"></param>
+        /// <returns></returns>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.N))
+            {
+                outletItemBindingSource.ListChanged -= outletItemBindingSource_ListChanged;
+                newToolStripButton.PerformClick();
+                return true;
+            }
+            else if (keyData == (Keys.Control | Keys.S)){
+                saveToolStripButton.PerformClick();
+                outletItemBindingSource.ListChanged += outletItemBindingSource_ListChanged;
+                return true;
+            }
+            else if(keyData == (Keys.Delete))
+            {
+                outletItemDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                deletesToolStripMenuItem.PerformClick();
+                outletItemDataGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
+
+                return true;
+            }
+            
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }

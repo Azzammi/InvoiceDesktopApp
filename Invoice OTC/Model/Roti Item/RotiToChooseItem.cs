@@ -8,6 +8,7 @@ using Invoice_OTC.Data_Access;
 
 namespace Invoice_OTC.Model
 {
+    [Serializable]
     public class RotiToChooseItem : FSBindingItem
     {
         #region Declarations

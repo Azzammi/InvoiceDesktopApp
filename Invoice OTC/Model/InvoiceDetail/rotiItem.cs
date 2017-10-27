@@ -83,8 +83,10 @@ namespace Invoice_OTC.Model
         {
             get {
                 decimal kenaDiskon = (itemPrice * itemQty) * (decimal)discount / 100;
-                return subTotal - kenaDiskon;
-            }            
+                subTotal += kenaDiskon;
+                return subTotal;
+            }
+            set { subTotal = value; }
         }
 
         #endregion

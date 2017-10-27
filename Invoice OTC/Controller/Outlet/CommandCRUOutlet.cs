@@ -16,10 +16,10 @@ namespace Invoice_OTC.Controller.Outlet
 
         #region Constructor
         public CommandCRUOutlet() { }
-        public CommandCRUOutlet(outletItem item)
+        public CommandCRUOutlet(outletItem item, bool isUpdate)
         {
             m_Item = item;
-            this.isUpdate = true;
+            this.isUpdate = isUpdate;
         }
         #endregion
 

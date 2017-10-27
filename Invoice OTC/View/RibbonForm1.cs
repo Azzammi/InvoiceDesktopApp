@@ -138,13 +138,19 @@ namespace Invoice_OTC.View
             {
                 FrmLogin login = new FrmLogin();
                 login.ShowDialog();
-            }
-            else
-            {
-                this.Close();
-            }
+
+                if (!login.IsLoggedIn)
+                {
+                    this.Close();
+                }
+            }            
             
             statusStripButton1.Text = sessionUser.GetCurrentUser();          
+        }
+
+        private void timerControl_Tick(object sender, EventArgs e)
+        {
+            timeLbl.Text = DateTime.Now.ToShortTimeString();
         }
     }
 }

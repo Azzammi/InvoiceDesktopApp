@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice OTC", "Invoice OTC\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceOTC_UnitTest", "InvoiceOTC_UnitTest\InvoiceOTC_UnitTest.csproj", "{A60F615F-3CF2-4BA6-8E7C-FB86F27DBF99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bindingNavigatorStrip", "bindingNavigatorStrip\bindingNavigatorStrip.csproj", "{BD491E50-01E2-46E7-8B16-C6EB401E85FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A60F615F-3CF2-4BA6-8E7C-FB86F27DBF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A60F615F-3CF2-4BA6-8E7C-FB86F27DBF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A60F615F-3CF2-4BA6-8E7C-FB86F27DBF99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD491E50-01E2-46E7-8B16-C6EB401E85FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD491E50-01E2-46E7-8B16-C6EB401E85FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD491E50-01E2-46E7-8B16-C6EB401E85FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD491E50-01E2-46E7-8B16-C6EB401E85FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

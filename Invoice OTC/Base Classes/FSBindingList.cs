@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Security;
+using System.Security.Permissions;
+using System.Windows.Forms;
 
 namespace FSCollections
 {
@@ -237,7 +240,7 @@ public class FSBindingList<T> : BindingList<T>
         /// </summary>
         /// <param name="filename">The file path of the file to save.</param>
         public void Save(string filename)
-        {
+        {            
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream stream = new FileStream(filename, FileMode.Create))
             {

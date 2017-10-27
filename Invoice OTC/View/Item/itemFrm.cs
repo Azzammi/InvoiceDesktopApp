@@ -80,5 +80,11 @@ namespace Invoice_OTC
                     break;
             }
         }
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            CommandSaveRotiList saveRoti = new CommandSaveRotiList(m_List);
+            m_AppController.ExecuteCommand(saveRoti);
+        }
     }
 }

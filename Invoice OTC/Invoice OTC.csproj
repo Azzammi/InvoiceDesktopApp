@@ -103,6 +103,7 @@
     </Compile>
     <Compile Include="Controller\ItemFoundEventArgs.cs" />
     <Compile Include="Controller\Roti Item\CommandInsertRoti.cs" />
+    <Compile Include="Controller\Roti Item\CommandSaveRotiList.cs" />
     <Compile Include="Controller\Roti Item\CommandUpdateRoti.cs" />
     <Compile Include="Controller\Salesman\commandCRUSalesman.cs" />
     <Compile Include="Controller\Salesman\CommandDeleteSalesman.cs" />
@@ -137,6 +138,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Model\accountItem.cs" />
+    <Compile Include="Model\AccountList.cs" />
+    <Compile Include="Model\CompanyIdentity.cs" />
     <Compile Include="Model\Customer\CustomerItem.cs" />
     <Compile Include="Model\Customer\CustomerList.cs" />
     <Compile Include="Model\Invoice\invoiceItem.cs" />
@@ -148,6 +151,7 @@
     <Compile Include="Model\InvoiceDetail\rotiList.cs" />
     <Compile Include="Model\Outlet\outletItem.cs" />
     <Compile Include="Model\Outlet\outletList.cs" />
+    <Compile Include="Model\PeriodeItem.cs" />
     <Compile Include="Model\Roti Item\RotiToChooseItem.cs" />
     <Compile Include="Model\Roti Item\RotiToChooseList.cs" />
     <Compile Include="Model\Salesman\SalesmanItem.cs" />
@@ -171,6 +175,13 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="sessionUser.cs" />
+    <Compile Include="SpecialServices.cs" />
+    <Compile Include="View\Item\FrmItemDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Item\FrmItemDetail.Designer.cs">
+      <DependentUpon>FrmItemDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Invoice\detailedBindingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -288,6 +299,9 @@
     <EmbeddedResource Include="rptSubReportInvoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptSubReportInvoice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Item\FrmItemDetail.resx">
+      <DependentUpon>FrmItemDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Invoice\detailedBindingForm.resx">
       <DependentUpon>detailedBindingForm.cs</DependentUpon>
