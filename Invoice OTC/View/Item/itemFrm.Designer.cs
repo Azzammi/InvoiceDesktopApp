@@ -57,18 +57,24 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.outletItemBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.newToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.printToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.findStrip1 = new Invoice_OTC.Controller.FindStrip();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deletesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgViewRoti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingNavigator)).BeginInit();
             this.outletItemBindingNavigator.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgViewRoti
             // 
+            this.dgViewRoti.AllowUserToAddRows = false;
             this.dgViewRoti.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
@@ -94,6 +100,7 @@
             this.SubCategory,
             this.Price,
             this.Stat});
+            this.dgViewRoti.ContextMenuStrip = this.contextMenuStrip1;
             this.dgViewRoti.DataSource = this.bindingSource1;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
@@ -269,9 +276,11 @@
             this.bindingNavigatorSeparator2,
             this.toolStripButton1,
             this.newToolStripButton,
-            this.openToolStripButton,
             this.saveToolStripButton,
-            this.printToolStripButton});
+            this.bindingNavigatorDeleteItem,
+            this.printToolStripButton,
+            this.toolStripSeparator,
+            this.helpToolStripButton});
             this.outletItemBindingNavigator.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.outletItemBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.outletItemBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -292,15 +301,7 @@
             this.newToolStripButton.Name = "newToolStripButton";
             this.newToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.newToolStripButton.Text = "&New";
-            // 
-            // openToolStripButton
-            // 
-            this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(28, 28);
-            this.openToolStripButton.Text = "&Open";
+            this.newToolStripButton.Click += new System.EventHandler(this.newToolStripButton_Click);
             // 
             // saveToolStripButton
             // 
@@ -321,6 +322,20 @@
             this.printToolStripButton.Size = new System.Drawing.Size(28, 28);
             this.printToolStripButton.Text = "&Print";
             // 
+            // toolStripSeparator
+            // 
+            this.toolStripSeparator.Name = "toolStripSeparator";
+            this.toolStripSeparator.Size = new System.Drawing.Size(6, 31);
+            // 
+            // helpToolStripButton
+            // 
+            this.helpToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
+            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.helpToolStripButton.Name = "helpToolStripButton";
+            this.helpToolStripButton.Size = new System.Drawing.Size(28, 28);
+            this.helpToolStripButton.Text = "He&lp";
+            // 
             // findStrip1
             // 
             this.findStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -331,6 +346,29 @@
             this.findStrip1.TabIndex = 2;
             this.findStrip1.Text = "findStrip1";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deletesToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(121, 26);
+            // 
+            // deletesToolStripMenuItem
+            // 
+            this.deletesToolStripMenuItem.Name = "deletesToolStripMenuItem";
+            this.deletesToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.deletesToolStripMenuItem.Text = "Delete(s)";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
             // itemFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,6 +377,7 @@
             this.Controls.Add(this.dgViewRoti);
             this.Controls.Add(this.findStrip1);
             this.Controls.Add(this.outletItemBindingNavigator);
+            this.KeyPreview = true;
             this.Name = "itemFrm";
             this.Text = "ITEM";
             this.Load += new System.EventHandler(this.itemFrm_Load);
@@ -347,6 +386,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingNavigator)).EndInit();
             this.outletItemBindingNavigator.ResumeLayout(false);
             this.outletItemBindingNavigator.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -378,8 +418,12 @@
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.BindingNavigator outletItemBindingNavigator;
         private System.Windows.Forms.ToolStripButton newToolStripButton;
-        private System.Windows.Forms.ToolStripButton openToolStripButton;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
         private System.Windows.Forms.ToolStripButton printToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator;
+        private System.Windows.Forms.ToolStripButton helpToolStripButton;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem deletesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
     }
 }

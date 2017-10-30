@@ -81,5 +81,46 @@ namespace Invoice_OTC.View
 
             outletItemBindingSource.DataSource = m_OutletList;
         }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            if (m_SalesmanList == null) return;
+            m_Item = (SalesmanItem)salesmanItemBindingSource.Current;
+            if (m_Item == null) return;
+
+            var pesan = MessageBox.Show("Apakah Anda Yakin Ingin Menghapus " + m_Item.SlsmName + " ? ", "Penghapusan", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (pesan == DialogResult.Yes)
+            {
+                CommandDeleteSalesman deleteSalesman = new CommandDeleteSalesman(m_SalesmanList, m_Item);
+                m_AppController.ExecuteCommand(deleteSalesman);
+            }                
+        }
+
+        /// <summary>
+        /// Overrid Method to setting the shortcut keys
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="keyData"></param>
+        /// <returns></returns>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Control | Keys.N))
+            {
+                bindingNavigatorAddNewItem.PerformClick();
+                return true;
+            }
+            else if (keyData == (Keys.Control | Keys.S))
+            {
+                salesmanItemBindingNavigatorSaveItem.PerformClick();
+                return true;
+            }
+            else if (keyData == (Keys.Delete))
+            {
+                bindingNavigatorDeleteItem.PerformClick();
+                return true;
+            }           
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }

@@ -165,10 +165,10 @@ namespace Invoice_OTC.View
                 return true;
             }
             else if(keyData == (Keys.Delete))
-            {
-                outletItemDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            {                
+                outletItemDataGridView.Rows[outletItemDataGridView.CurrentRow.Index].Selected = true;
                 deletesToolStripMenuItem.PerformClick();
-                outletItemDataGridView.SelectionMode = DataGridViewSelectionMode.CellSelect;
+                outletItemDataGridView.Rows[outletItemDataGridView.CurrentRow.Index].Selected = false;
 
                 return true;
             }

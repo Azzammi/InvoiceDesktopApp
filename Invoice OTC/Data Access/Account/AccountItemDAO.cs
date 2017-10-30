@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Invoice_OTC.Properties;
 
 namespace Invoice_OTC.Data_Access
-{
+{    
     class AccountItemDAO
     {
         #region Declaration

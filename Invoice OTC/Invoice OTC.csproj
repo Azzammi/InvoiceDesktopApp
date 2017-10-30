@@ -76,6 +76,9 @@
     <Compile Include="Base Classes\StringComparison.cs" />
     <Compile Include="clsSales.cs" />
     <Compile Include="ClsSupport.cs" />
+    <Compile Include="Controller\Account\CommandGetAccount.cs" />
+    <Compile Include="Controller\Account\CommandLoadAccountList.cs" />
+    <Compile Include="Controller\Account\CommandSaveAccountList.cs" />
     <Compile Include="Controller\AppController.cs" />
     <Compile Include="Controller\Command.cs" />
     <Compile Include="Controller\Invoice Detail\CommandAddItem.cs" />
@@ -108,7 +111,8 @@
     <Compile Include="Controller\Salesman\commandCRUSalesman.cs" />
     <Compile Include="Controller\Salesman\CommandDeleteSalesman.cs" />
     <Compile Include="Controller\Salesman\CommandGetSalesman.cs" />
-    <Compile Include="Data Access\AccountItemDAO.cs" />
+    <Compile Include="Data Access\Account\AccountItemDAO.cs" />
+    <Compile Include="Data Access\Account\AccountListDAO.cs" />
     <Compile Include="Data Access\Customer\CustomerItemDAO.cs" />
     <Compile Include="Data Access\Customer\CustomerListDAO.cs" />
     <Compile Include="Data Access\Salesman\SalesmanListDAO.cs" />
@@ -176,6 +180,12 @@
     </Compile>
     <Compile Include="sessionUser.cs" />
     <Compile Include="SpecialServices.cs" />
+    <Compile Include="View\FrmListAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmListAccount.Designer.cs">
+      <DependentUpon>FrmListAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Item\FrmItemDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,10 +219,10 @@
     <Compile Include="View\User\FrmDaftarUser.Designer.cs">
       <DependentUpon>FrmDaftarUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FrmDetailedSlsman.cs">
+    <Compile Include="View\Salesman\FrmDetailedSlsman.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FrmDetailedSlsman.Designer.cs">
+    <Compile Include="View\Salesman\FrmDetailedSlsman.Designer.cs">
       <DependentUpon>FrmDetailedSlsman.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Salesman\FrmImportExcelRoti.cs">
@@ -300,6 +310,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptSubReportInvoice.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmListAccount.resx">
+      <DependentUpon>FrmListAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Item\FrmItemDetail.resx">
       <DependentUpon>FrmItemDetail.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,7 +328,7 @@
     <EmbeddedResource Include="View\User\FrmDaftarUser.resx">
       <DependentUpon>FrmDaftarUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FrmDetailedSlsman.resx">
+    <EmbeddedResource Include="View\Salesman\FrmDetailedSlsman.resx">
       <DependentUpon>FrmDetailedSlsman.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Salesman\FrmImportExcelRoti.resx">

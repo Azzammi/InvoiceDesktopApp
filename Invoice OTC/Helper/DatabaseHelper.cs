@@ -29,7 +29,7 @@ namespace Invoice_OTC.Helper
             {
                 koneksi.Open();
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
