@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Invoice_OTC.Base_Classes
+namespace BaseClasses
 {
     public static class StringExtensions
     {
-        public static bool Contains(this String str, String substring,
+        public static bool Contains(this string str, string substring,
                                     StringComparison comp)
         {
             if (substring == null)

@@ -8,6 +8,7 @@ using FSCollections;
 
 namespace InvoiceOTC.Model
 {
+    [Serializable]
     public class Product : FSBindingItem
     {
         public string itemCode { get; set; }

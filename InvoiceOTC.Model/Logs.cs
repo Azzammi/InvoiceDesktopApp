@@ -7,6 +7,7 @@ using FSCollections;
 
 namespace InvoiceOTC.Model
 {
+    [Serializable]
     public class Logs : FSBindingItem
     {
         public int LogID { get; set; }

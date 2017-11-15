@@ -11,6 +11,10 @@ namespace InvoiceOTC.Model
     {
         private IList<T> logs;
 
+        public SortableBindingList()
+        {
+        }
+
         public SortableBindingList(IList<T> logs)
         {
             this.logs = logs;

@@ -5,10 +5,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Invoice_OTC.View;
 
+using log4net;
+
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 namespace Invoice_OTC
 {
     static class Program
     {
+        public static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -20,6 +25,10 @@ namespace Invoice_OTC
 
             //Application.Run(new RibbonForm1());
             //this source : https://www.codeproject.com/Articles/3014/Single-Process-Instance-Object
+            GlobalContext.Properties["UserName"] = "Admin";
+            GlobalContext.Properties["LogDate"] = DateTime.Now;
+            log.Info("Log Greget");
+
             using (SingleProgramInstance spi = new SingleProgramInstance("x5k6yz"))
             {
                 if (spi.IsSingleInstance)

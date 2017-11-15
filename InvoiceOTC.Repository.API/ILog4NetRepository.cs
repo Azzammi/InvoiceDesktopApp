@@ -10,6 +10,6 @@ namespace InvoiceOTC.Repository.API
 {
     public interface ILog4NetRepository : IBaseRepository<Logs>
     {
-
+        
     }
 }

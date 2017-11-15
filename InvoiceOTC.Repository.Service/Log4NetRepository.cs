@@ -10,7 +10,7 @@ using InvoiceOTC.Repository.API;
 namespace InvoiceOTC.Repository.Service
 {
     class Log4NetRepository : ILog4NetRepository
-    {
+    {        
         public int Delete(Logs obj)
         {
             throw new NotImplementedException();
@@ -18,14 +18,12 @@ namespace InvoiceOTC.Repository.Service
 
         public IList<Logs> GetAll()
         {
-            SortableBindingList<Logs> log;
-            log.Load("")
+            throw new NotImplementedException();
         }
 
         public int Save(Logs obj)
         {
-            var result = 0;
-            SortableBindingList<Logs> log = new SortableBindingList<Logs>(GetAll());
+            throw new NotImplementedException();
         }
 
         public int Update(Logs obj)
@@ -33,9 +31,17 @@ namespace InvoiceOTC.Repository.Service
             throw new NotImplementedException();
         }
 
+        public void Save(SortableBindingList<Logs> log)
+        {
+            log.Save(System.IO.Directory.GetCurrentDirectory() + "\\Logs.log");            
+        }
+
         public SortableBindingList<Logs> GetSortedList()
         {
-          //  return SortableBindingList<Logs>(GetAll());
+            //  return SortableBindingList<Logs>(GetAll());
+            SortableBindingList<Logs> log = new SortableBindingList<Logs>();
+            log.Load(System.IO.Directory.GetCurrentDirectory() + "\\Logs.log");
+            return log;
         } 
     }
 }
