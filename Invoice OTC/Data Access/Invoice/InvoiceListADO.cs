@@ -27,7 +27,7 @@ namespace Invoice_OTC.Data_Access
         {
             //Build query to get Invoice's and their roti
             StringBuilder sqlQuery = new StringBuilder();
-            sqlQuery.Append(String.Format("Select invoiceID, noInvoice, periodeBulan, invoiced.outletCode, OUTLET.OUTLNAME, subTotal, ppn, total, issuedDate, isPPN, nomorPO, Periode, Pengguna FROM invoiced INNER JOIN OUTLET ON invoiced.outletCode = OUTLET.OUTLCODE ;"));
+            sqlQuery.Append(String.Format("Select invoiceID, noInvoice, dueDate, invoiced.outletCode, OUTLET.OUTLNAME, subTotal, ppn, total, issuedDate, isPPN, nomorPO, Periode, Pengguna, id_payment, isPayed FROM invoiced INNER JOIN OUTLET ON invoiced.outletCode = OUTLET.OUTLCODE ;"));
             sqlQuery.Append(string.Format("Select rotiID, invoiceID, itemCode, itemQty, itemPrice, discount, subTotal FROM invoiceDetail"));
 
             //Get a data set from the query
@@ -55,7 +55,7 @@ namespace Invoice_OTC.Data_Access
                 //Fill in invoice properties
                 nextInvoice.InvoiceID = Convert.ToInt32(parentRow["invoiceID"]);
                 nextInvoice.Nomor = parentRow["noInvoice"].ToString();
-                nextInvoice.PeriodeBulan = Convert.ToDateTime(parentRow["periodeBulan"]);
+                nextInvoice.DueDate = Convert.ToDateTime(parentRow["dueDate"]);
                 nextInvoice.OutletCode = parentRow["outletCode"].ToString();
                 
                 //nextInvoice.SubTotal = Convert.ToDecimal(parentRow["subTotal"]);

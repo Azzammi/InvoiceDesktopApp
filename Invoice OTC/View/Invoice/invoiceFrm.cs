@@ -58,5 +58,10 @@ namespace Invoice_OTC.View
             itemsBindingSource.DataSource = invoiceItemBindingSource;
             itemsBindingSource.DataMember = "Items";
         }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

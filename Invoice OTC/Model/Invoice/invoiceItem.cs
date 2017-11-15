@@ -15,15 +15,17 @@ namespace Invoice_OTC.Model
         private RotiList p_Items;
         private int invoiceID;
         private string nomorInvoice;
-        private DateTime periodeBulan;
+        private DateTime dueDate;
         private string outletName;
         private decimal subTotal;
         private float ppn;
-        private DateTime issuedData;
+        private DateTime issuedDate;
         private bool isPPN;
         private string nomorPO;
         private string pengguna;
         private string periode;
+        private string paymentMethod;
+        private bool isPayed;
         #endregion
 
         #region Constructor
@@ -66,10 +68,10 @@ namespace Invoice_OTC.Model
             set { nomorInvoice = value; }
         }
 
-        public DateTime PeriodeBulan
+        public DateTime DueDate
         {
-            get { return periodeBulan; }
-            set { periodeBulan = value; }
+            get { return dueDate; }
+            set { dueDate = value; }
         }
 
         public string OutletCode
@@ -124,8 +126,8 @@ namespace Invoice_OTC.Model
 
         public DateTime IssuedData
         {
-            get { return issuedData; }
-            set { issuedData = value; }
+            get { return issuedDate; }
+            set { issuedDate = value; }
         }
 
         public bool IsPPN
@@ -149,6 +151,16 @@ namespace Invoice_OTC.Model
         {
             get { return pengguna; }
             set { pengguna = value; }
+        }
+        public string Payment
+        {
+            get { return paymentMethod; }
+            set { paymentMethod = value; }
+        }
+        public bool IsPayed
+        {
+            get { return isPayed; }
+            set { isPayed = value; }
         }
         #endregion
 

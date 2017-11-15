@@ -95,7 +95,15 @@ namespace Invoice_OTC.View
                     // Not supported in this app
                     break;
             }
-            
+
+            decimal totalValue = 0;
+            foreach(InvoiceItem item in m_Invoices)
+            {
+                totalValue += item.Total;
+            }
+
+            toolStripLabel1.Text = "Total Tagihan : " + string.Format("{0:n0}",totalValue);
+            toolStripLabel2.Text = "Count : " + string.Format("{0:n0}",m_Invoices.Count);
         }
 
         private void bindingInvoice_AddingNew(object sender, AddingNewEventArgs e)
@@ -267,6 +275,11 @@ namespace Invoice_OTC.View
             //    CommandDeleteItem deleteItem = new CommandDeleteItem(checkEmpty);
             //    m_AppController.ExecuteCommand(deleteItem);
             //}            
+        }
+        
+        private void label1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

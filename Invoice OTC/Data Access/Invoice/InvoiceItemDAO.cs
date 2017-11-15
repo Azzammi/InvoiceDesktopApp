@@ -41,7 +41,7 @@ namespace Invoice_OTC.Data_Access
         {            
             StringBuilder sqlQuery = new StringBuilder("Update INVOICED SET ");
             sqlQuery.Append(String.Format("noInvoice = '{0}', ", changedInvoice.Nomor));
-            sqlQuery.Append(String.Format("periodeBulan = '{0}', ", changedInvoice.PeriodeBulan));
+            sqlQuery.Append(String.Format("dueDate = '{0}', ", changedInvoice.DueDate));
             sqlQuery.Append(String.Format("outletCode = '{0}', ", changedInvoice.OutletCode));            
             sqlQuery.Append(String.Format("subTotal = '{0}', ", changedInvoice.SubTotal));
             sqlQuery.Append(String.Format("ppn = '{0}', ", changedInvoice.PPN));
@@ -80,9 +80,9 @@ namespace Invoice_OTC.Data_Access
 
                 //Sql Query
                 string sql = "INSERT INTO INVOICED " +
-                             "(noInvoice, PeriodeBulan, outletCode, Subtotal, PPN, Total,issuedDate, isPPN, pengguna) " +
+                             "(noInvoice, dueDate, outletCode, Subtotal, PPN, Total,issuedDate, isPPN, pengguna) " +
                              " VALUES " +
-                             "(@noinvoice, @periodebulan, @outletcode, @subtotal, @ppn, @total, @issueddate, @isppn, @pengguna)";
+                             "(@noinvoice, @dueDate, @outletcode, @subtotal, @ppn, @total, @issueddate, @isppn, @pengguna)";
 
                 //create and configure a command
                 SqlCommand command = new SqlCommand(sql, connection);
@@ -91,7 +91,7 @@ namespace Invoice_OTC.Data_Access
                 command.CommandType = System.Data.CommandType.Text;
                 command.Parameters.Clear();
                 command.Parameters.AddWithValue("@noInvoice", newInvoice.Nomor);
-                command.Parameters.AddWithValue("@periodebulan", newInvoice.PeriodeBulan);
+                command.Parameters.AddWithValue("@dueDate", newInvoice.DueDate);
                 command.Parameters.AddWithValue("@outletCode", newInvoice.OutletCode);
                 command.Parameters.AddWithValue("@subtotal", newInvoice.SubTotal);
                 command.Parameters.AddWithValue("@ppn", newInvoice.PPN);
