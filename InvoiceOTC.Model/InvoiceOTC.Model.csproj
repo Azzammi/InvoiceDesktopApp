@@ -84,7 +84,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="BaseClasses\FSBindingItem.cs" />
+    <Compile Include="BaseClasses\FSBindingList.cs" />
+    <Compile Include="BaseClasses\FSPropertyComaparer.cs" />
+    <Compile Include="Logs.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BaseClasses\StringComparison.cs" />
+    <Compile Include="SortableBindingList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

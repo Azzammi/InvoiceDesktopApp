@@ -7,6 +7,7 @@ using Invoice_OTC.Data_Access;
 
 namespace Invoice_OTC.Model
 {
+    [Serializable]
     class outletItem
     {
         #region Declaration

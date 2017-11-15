@@ -175,5 +175,32 @@ namespace Invoice_OTC.View
             
             return base.ProcessCmdKey(ref msg, keyData);
         }
+
+        private void toolStripButton2_Click_1(object sender, EventArgs e)
+        {
+            if (m_List == null) return;
+            using (SaveFileDialog svd = new SaveFileDialog())
+            {
+                if(svd.ShowDialog() == DialogResult.OK)
+                {
+                    m_List.Save(svd.FileName);
+                }
+            }
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            outletItemBindingSource.DataSource = null;
+
+            using (OpenFileDialog opd= new OpenFileDialog())
+            {
+                if (opd.ShowDialog() == DialogResult.OK)
+                {
+                    m_List.Load(opd.FileName);
+                }
+            }
+
+            outletItemBindingSource.DataSource = m_List; 
+        }
     }
 }
