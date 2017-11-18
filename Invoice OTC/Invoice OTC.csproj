@@ -38,6 +38,10 @@
     <Reference Include="ClassLibrary1">
       <HintPath>..\..\ClassLibrary1\ClassLibrary1\bin\Debug\ClassLibrary1.dll</HintPath>
     </Reference>
+    <Reference Include="ClosedXML, Version=0.90.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.90.0\lib\net452\ClosedXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -46,12 +50,20 @@
       <HintPath>..\packages\Dapper.1.50.2\lib\net451\Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FastMember.Signed, Version=1.0.0.9, Culture=neutral, PublicKeyToken=9e8f22703bef9a29, processorArchitecture=MSIL">
+      <HintPath>..\packages\FastMember.Signed.1.1.0\lib\net40\FastMember.Signed.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -94,6 +106,14 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Design" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
       <Private>True</Private>
@@ -230,6 +250,12 @@
     <Compile Include="View\FrmListAccount.Designer.cs">
       <DependentUpon>FrmListAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmLogReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmLogReport.Designer.cs">
+      <DependentUpon>FrmLogReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmViewInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -363,6 +389,9 @@
     <EmbeddedResource Include="View\FrmListAccount.resx">
       <DependentUpon>FrmListAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmLogReport.resx">
+      <DependentUpon>FrmLogReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmViewInvoice.resx">
       <DependentUpon>FrmViewInvoice.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,6 +455,7 @@
       <LastGenOutput>rptRoti.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\InvoiceOTC.Model.Logs.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Controller.AppController.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Controller.Command.datasource" />
     <None Include="Properties\DataSources\Invoice_OTC.Controller.CommandAddItem.datasource" />
@@ -619,10 +649,6 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\InvoiceOTC.Model\InvoiceOTC.Model.csproj">
-      <Project>{042f7b2a-d2bc-49e0-9024-7f81abd447ea}</Project>
-      <Name>InvoiceOTC.Model</Name>
-    </ProjectReference>
     <ProjectReference Include="..\InvoiceOTC.Repository.API\InvoiceOTC.Repository.API.csproj">
       <Project>{09d68629-e6a4-4ef4-84f9-035786ac68b4}</Project>
       <Name>InvoiceOTC.Repository.API</Name>

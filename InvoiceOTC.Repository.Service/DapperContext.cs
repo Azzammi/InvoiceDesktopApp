@@ -22,10 +22,13 @@ namespace InvoiceOTC.Repository.Service
         #region Constructor
         public DapperContext()
         {
-            var dbName = System.IO.Directory.GetCurrentDirectory() + "\\OTF_Invoice.db";
+            //For Get directory and database
+            //var dbName = System.IO.Directory.GetCurrentDirectory() + "OTF_Invoice";
 
-            m_ProviderName = "System.Data.SQLite";
-            m_ConnectionString = "Data Source = " + dbName;
+            string dbName = "OTF_Invoice";
+
+            m_ProviderName = "System.Data.SqlClient";
+            m_ConnectionString = "Data Source = (local)/sqlexpress; Initial Catalog = " + dbName + "; Integrated Security = True;" ;
         }
         #endregion
         private IDbConnection GetOpenConnection(string providerName, string connectionString)

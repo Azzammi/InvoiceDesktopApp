@@ -20,8 +20,9 @@ namespace InvoiceOTC.Repository.Service
         
         protected override void Append(LoggingEvent loggingEvent)
         {
-           Log4NetRepository repository = new Log4NetRepository();
-           m_Log = repository.GetSortedList();
+            Log4NetRepository repository = new Log4NetRepository();
+            m_Log = repository.GetSortedList();
+            //m_Log = new SortableBindingList<Logs>();
 
             // cek nilai custom properties
             var newValue = (loggingEvent.LookupProperty("NewValue") != null) ? loggingEvent.LookupProperty("NewValue").ToString() : string.Empty;
@@ -37,7 +38,8 @@ namespace InvoiceOTC.Repository.Service
                 NewValue = newValue,
                 OldValue = oldValue,
                 Exception = loggingEvent.GetExceptionString(),
-                CreatedBy = createdBy
+                CreatedBy = createdBy,
+                LogDate = DateTime.Now
             };
 
             // reset nilai property NewValue dan OldValue

@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Invoice_OTC.View;
 
+using InvoiceOTC.Repository.API;
+using InvoiceOTC.Repository.Service;
+//using InvoiceOTC.Model;
 using log4net;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
@@ -25,10 +28,9 @@ namespace Invoice_OTC
 
             //Application.Run(new RibbonForm1());
             //this source : https://www.codeproject.com/Articles/3014/Single-Process-Instance-Object
-            GlobalContext.Properties["UserName"] = "Admin";
-            GlobalContext.Properties["LogDate"] = DateTime.Now;
-            log.Info("Log Greget");
-
+            //GlobalContext.Properties["UserName"] = "Admin";
+            //GlobalContext.Properties["LogDate"] = "Apak";
+            //log.Info("Log Greget");
             using (SingleProgramInstance spi = new SingleProgramInstance("x5k6yz"))
             {
                 if (spi.IsSingleInstance)

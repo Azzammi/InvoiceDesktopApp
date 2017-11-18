@@ -21,7 +21,7 @@ namespace Invoice_OTC.Model
         private string jenis;
         private string category;
         private string subCategory;
-        private Nullable<decimal> price;
+        private decimal price;
         private bool stat;
         #endregion
 
@@ -73,7 +73,7 @@ namespace Invoice_OTC.Model
             get { return subCategory; }
             set { subCategory = value; }
         }
-        public Nullable<decimal> Price
+        public decimal Price
         {
             get { return price; }
             set { price = value; }

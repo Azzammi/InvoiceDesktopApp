@@ -9,7 +9,7 @@ using InvoiceOTC.Repository.API;
 
 namespace InvoiceOTC.Repository.Service
 {
-    class Log4NetRepository : ILog4NetRepository
+    public class Log4NetRepository : ILog4NetRepository
     {        
         public int Delete(Logs obj)
         {

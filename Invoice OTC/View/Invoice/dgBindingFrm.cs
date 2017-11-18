@@ -52,6 +52,8 @@ namespace Invoice_OTC.View
             bindingInvoice.DataSource = m_Invoices;
             bindingItem.DataSource = bindingInvoice;
             bindingItem.DataMember = "Items";
+
+            dgItem.RowValidating += dgItem_RowValidating;
         }            
 
         private void bindingInvoice_ListChanged(object sender, ListChangedEventArgs e)
@@ -276,10 +278,20 @@ namespace Invoice_OTC.View
             //    m_AppController.ExecuteCommand(deleteItem);
             //}            
         }
-        
-        private void label1_Click(object sender, EventArgs e)
+       
+        private void dgItem_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
         {
-            
+            bindingItem.AddingNew -= bindingItem_AddingNew;
+            if (m_RotiList == null) return;
+            rotiItem item = (rotiItem)bindingItem.Current;
+
+            if(string.IsNullOrEmpty(item.ItemCode) || item.SubTotal == 0)
+            {
+                MessageBox.Show("Row Empty");
+                return;
+            }
+
+            bindingItem.AddingNew += bindingItem_AddingNew;
         }
     }
 }
