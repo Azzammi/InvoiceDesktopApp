@@ -97,7 +97,6 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DapperContext.cs" />
-    <Compile Include="DapperContextLog.cs" />
     <Compile Include="Log4NetAppender.cs" />
     <Compile Include="Log4NetRepository.cs" />
     <Compile Include="ProductRepository.cs" />

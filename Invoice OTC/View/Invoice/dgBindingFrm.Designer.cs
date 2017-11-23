@@ -32,17 +32,24 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgItem = new System.Windows.Forms.DataGridView();
             this.ItemCode = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.rotiToChooseItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteBookToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bindingItem = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,19 +58,9 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.dgInvoice = new System.Windows.Forms.DataGridView();
-            this.OutletCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OutletName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OutletAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.outletItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.findStrip1 = new Invoice_OTC.Controller.FindStrip();
-            this.bindingInvoice = new System.Windows.Forms.BindingSource(this.components);
-            this.rotiToChooseItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingItem = new System.Windows.Forms.BindingSource(this.components);
-            this.customerListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.invoiceIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OutletCode = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.outletItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outletCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,16 +73,19 @@
             this.userDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paymentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isPayedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bindingInvoice = new System.Windows.Forms.BindingSource(this.components);
+            this.findStrip1 = new Invoice_OTC.Controller.FindStrip();
+            this.customerListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rotiToChooseItemBindingSource)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingItem)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInvoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingInvoice)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotiToChooseItemBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -155,6 +155,19 @@
             this.ItemCode.ValueMember = "ItemCode";
             this.ItemCode.Width = 300;
             // 
+            // rotiToChooseItemBindingSource
+            // 
+            this.rotiToChooseItemBindingSource.DataSource = typeof(Invoice_OTC.Model.RotiToChooseItem);
+            // 
+            // qtyDataGridViewTextBoxColumn
+            // 
+            this.qtyDataGridViewTextBoxColumn.DataPropertyName = "Qty";
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.qtyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.qtyDataGridViewTextBoxColumn.HeaderText = "Qty";
+            this.qtyDataGridViewTextBoxColumn.Name = "qtyDataGridViewTextBoxColumn";
+            // 
             // Discount
             // 
             this.Discount.DataPropertyName = "Discount";
@@ -163,6 +176,12 @@
             this.Discount.HeaderText = "Discount";
             this.Discount.Name = "Discount";
             this.Discount.Width = 50;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
             // SubTotal
             // 
@@ -186,6 +205,13 @@
             this.deleteBookToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.deleteBookToolStripMenuItem.Text = "Delete Book";
             this.deleteBookToolStripMenuItem.Click += new System.EventHandler(this.deleteBookToolStripMenuItem_Click);
+            // 
+            // bindingItem
+            // 
+            this.bindingItem.DataSource = typeof(Invoice_OTC.Model.rotiItem);
+            this.bindingItem.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.bindingItem_AddingNew);
+            
+            this.bindingItem.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.bindingItem_ListChanged);
             // 
             // toolStrip1
             // 
@@ -256,11 +282,8 @@
             this.dgInvoice.AutoGenerateColumns = false;
             this.dgInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgInvoice.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.OutletCode,
-            this.OutletName,
-            this.OutletAddress,
-            this.invoiceIDDataGridViewTextBoxColumn,
             this.nomorDataGridViewTextBoxColumn,
+            this.OutletCode,
             this.dueDateDataGridViewTextBoxColumn,
             this.outletCodeDataGridViewTextBoxColumn,
             this.subTotalDataGridViewTextBoxColumn,
@@ -280,86 +303,27 @@
             this.dgInvoice.Size = new System.Drawing.Size(870, 212);
             this.dgInvoice.TabIndex = 6;
             // 
-            // OutletCode
-            // 
-            this.OutletCode.DataPropertyName = "OutletCode";
-            this.OutletCode.HeaderText = "OutletCode";
-            this.OutletCode.Name = "OutletCode";
-            // 
-            // OutletName
-            // 
-            this.OutletName.DataPropertyName = "OutletName";
-            this.OutletName.HeaderText = "OutletName";
-            this.OutletName.Name = "OutletName";
-            // 
-            // OutletAddress
-            // 
-            this.OutletAddress.DataPropertyName = "OutletAddress";
-            this.OutletAddress.HeaderText = "OutletAddress";
-            this.OutletAddress.Name = "OutletAddress";
-            // 
-            // outletItemBindingSource
-            // 
-            this.outletItemBindingSource.DataSource = typeof(Invoice_OTC.Model.outletItem);
-            // 
-            // findStrip1
-            // 
-            this.findStrip1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.findStrip1.bindingSource = this.bindingInvoice;
-            this.findStrip1.Location = new System.Drawing.Point(0, 0);
-            this.findStrip1.Name = "findStrip1";
-            this.findStrip1.Size = new System.Drawing.Size(870, 32);
-            this.findStrip1.TabIndex = 2;
-            this.findStrip1.Text = "findStrip1";
-            this.findStrip1.ItemFound += new Invoice_OTC.Controller.ItemFoundEventHandler(this.findStrip1_ItemFound);
-            // 
-            // bindingInvoice
-            // 
-            this.bindingInvoice.DataSource = typeof(Invoice_OTC.Model.InvoiceItem);
-            this.bindingInvoice.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.bindingInvoice_AddingNew);
-            this.bindingInvoice.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.bindingInvoice_ListChanged);
-            // 
-            // rotiToChooseItemBindingSource
-            // 
-            this.rotiToChooseItemBindingSource.DataSource = typeof(Invoice_OTC.Model.RotiToChooseItem);
-            // 
-            // qtyDataGridViewTextBoxColumn
-            // 
-            this.qtyDataGridViewTextBoxColumn.DataPropertyName = "Qty";
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.qtyDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.qtyDataGridViewTextBoxColumn.HeaderText = "Qty";
-            this.qtyDataGridViewTextBoxColumn.Name = "qtyDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            // 
-            // bindingItem
-            // 
-            this.bindingItem.DataSource = typeof(Invoice_OTC.Model.rotiItem);
-            this.bindingItem.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.bindingItem_AddingNew);
-            this.bindingItem.CurrentChanged += new System.EventHandler(this.bindingItem_CurrentChanged);
-            this.bindingItem.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.bindingItem_ListChanged);
-            // 
-            // customerListBindingSource
-            // 
-            this.customerListBindingSource.DataSource = typeof(Invoice_OTC.Model.CustomerList);
-            // 
-            // invoiceIDDataGridViewTextBoxColumn
-            // 
-            this.invoiceIDDataGridViewTextBoxColumn.DataPropertyName = "InvoiceID";
-            this.invoiceIDDataGridViewTextBoxColumn.HeaderText = "InvoiceID";
-            this.invoiceIDDataGridViewTextBoxColumn.Name = "invoiceIDDataGridViewTextBoxColumn";
-            // 
             // nomorDataGridViewTextBoxColumn
             // 
             this.nomorDataGridViewTextBoxColumn.DataPropertyName = "Nomor";
             this.nomorDataGridViewTextBoxColumn.HeaderText = "Nomor";
             this.nomorDataGridViewTextBoxColumn.Name = "nomorDataGridViewTextBoxColumn";
+            // 
+            // OutletCode
+            // 
+            this.OutletCode.DataPropertyName = "OutletCode";
+            this.OutletCode.DataSource = this.outletItemBindingSource;
+            this.OutletCode.DisplayMember = "OutletName";
+            this.OutletCode.HeaderText = "OutletCode";
+            this.OutletCode.Name = "OutletCode";
+            this.OutletCode.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.OutletCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.OutletCode.ValueMember = "OutletCode";
+            this.OutletCode.Width = 300;
+            // 
+            // outletItemBindingSource
+            // 
+            this.outletItemBindingSource.DataSource = typeof(Invoice_OTC.Model.outletItem);
             // 
             // dueDateDataGridViewTextBoxColumn
             // 
@@ -376,6 +340,9 @@
             // subTotalDataGridViewTextBoxColumn
             // 
             this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "SubTotal";
+            dataGridViewCellStyle7.Format = "C0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.subTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.subTotalDataGridViewTextBoxColumn.HeaderText = "SubTotal";
             this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
             this.subTotalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -383,12 +350,18 @@
             // pPNDataGridViewTextBoxColumn
             // 
             this.pPNDataGridViewTextBoxColumn.DataPropertyName = "PPN";
+            dataGridViewCellStyle8.Format = "C0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.pPNDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.pPNDataGridViewTextBoxColumn.HeaderText = "PPN";
             this.pPNDataGridViewTextBoxColumn.Name = "pPNDataGridViewTextBoxColumn";
             // 
             // totalDataGridViewTextBoxColumn
             // 
             this.totalDataGridViewTextBoxColumn.DataPropertyName = "Total";
+            dataGridViewCellStyle9.Format = "C0";
+            dataGridViewCellStyle9.NullValue = null;
+            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.totalDataGridViewTextBoxColumn.HeaderText = "Total";
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             this.totalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -422,6 +395,7 @@
             this.userDataGridViewTextBoxColumn.DataPropertyName = "User";
             this.userDataGridViewTextBoxColumn.HeaderText = "User";
             this.userDataGridViewTextBoxColumn.Name = "userDataGridViewTextBoxColumn";
+            this.userDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // paymentDataGridViewTextBoxColumn
             // 
@@ -434,6 +408,27 @@
             this.isPayedDataGridViewCheckBoxColumn.DataPropertyName = "IsPayed";
             this.isPayedDataGridViewCheckBoxColumn.HeaderText = "IsPayed";
             this.isPayedDataGridViewCheckBoxColumn.Name = "isPayedDataGridViewCheckBoxColumn";
+            // 
+            // bindingInvoice
+            // 
+            this.bindingInvoice.DataSource = typeof(Invoice_OTC.Model.InvoiceItem);
+            this.bindingInvoice.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.bindingInvoice_AddingNew);
+            this.bindingInvoice.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.bindingInvoice_ListChanged);
+            // 
+            // findStrip1
+            // 
+            this.findStrip1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.findStrip1.bindingSource = this.bindingInvoice;
+            this.findStrip1.Location = new System.Drawing.Point(0, 0);
+            this.findStrip1.Name = "findStrip1";
+            this.findStrip1.Size = new System.Drawing.Size(870, 32);
+            this.findStrip1.TabIndex = 2;
+            this.findStrip1.Text = "findStrip1";
+            this.findStrip1.ItemFound += new Invoice_OTC.Controller.ItemFoundEventHandler(this.findStrip1_ItemFound);
+            // 
+            // customerListBindingSource
+            // 
+            this.customerListBindingSource.DataSource = typeof(Invoice_OTC.Model.CustomerList);
             // 
             // dgBindingFrm
             // 
@@ -452,7 +447,9 @@
             this.Load += new System.EventHandler(this.dgBindingFrm_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rotiToChooseItemBindingSource)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bindingItem)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
@@ -460,8 +457,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgInvoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletItemBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingInvoice)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotiToChooseItemBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -496,11 +491,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridView dgInvoice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OutletCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OutletName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OutletAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn OutletCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn outletCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn;

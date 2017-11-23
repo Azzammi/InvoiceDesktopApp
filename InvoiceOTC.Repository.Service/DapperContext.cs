@@ -11,7 +11,7 @@ using Dapper;
 
 namespace InvoiceOTC.Repository.Service
 {
-    class DapperContext : IDapperContext
+    public class DapperContext : IDapperContext
     {
         #region Declaration
         private readonly string m_ProviderName;
@@ -28,7 +28,20 @@ namespace InvoiceOTC.Repository.Service
             string dbName = "OTF_Invoice";
 
             m_ProviderName = "System.Data.SqlClient";
-            m_ConnectionString = "Data Source = (local)/sqlexpress; Initial Catalog = " + dbName + "; Integrated Security = True;" ;
+            //m_ConnectionString = "Data Source = (local)/sqlexpress; Initial Catalog = " + dbName + "; Integrated Security = True;" ;
+            m_ConnectionString = @"Data Source = (local)\sqlexpress; Initial Catalog = " + dbName + "; Integrated Security = True;";
+        }
+
+        /// <summary>
+        /// DapperContext For Logger Data
+        /// </summary>
+        /// <param name="isLogger">Just Set True</param>
+        public DapperContext(bool isLogger)
+        {
+            string dbName = System.IO.Directory.GetCurrentDirectory() + "\\OTF_Invoice";
+
+            m_ProviderName = "System.Data.SQLite";
+            m_ConnectionString = @"Data Source = " + dbName + "; Version = 3";
         }
         #endregion
         private IDbConnection GetOpenConnection(string providerName, string connectionString)

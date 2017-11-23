@@ -1,6 +1,6 @@
-﻿namespace Invoice_OTC.View
+﻿namespace InvoiceOTCNew
 {
-    partial class FrmLogReport
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogReport));
-            this.logsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.logsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -43,8 +43,8 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.logsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.logsDataGridView = new System.Windows.Forms.DataGridView();
+            this.productBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.productDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,25 +53,24 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logsBindingNavigator)).BeginInit();
-            this.logsBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logsDataGridView)).BeginInit();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).BeginInit();
+            this.productBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // logsBindingSource
+            // productBindingSource
             // 
-            //this.logsBindingSource.DataSource = typeof(InvoiceOTC.Model.Logs);
+            this.productBindingSource.DataSource = typeof(InvoiceOTC.Model.Product);
             // 
-            // logsBindingNavigator
+            // productBindingNavigator
             // 
-            this.logsBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.logsBindingNavigator.BindingSource = this.logsBindingSource;
-            this.logsBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.logsBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.logsBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.productBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.productBindingNavigator.BindingSource = this.productBindingSource;
+            this.productBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.productBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.productBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -83,17 +82,17 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.logsBindingNavigatorSaveItem});
-            this.logsBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.logsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.logsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.logsBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.logsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.logsBindingNavigator.Name = "logsBindingNavigator";
-            this.logsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.logsBindingNavigator.Size = new System.Drawing.Size(758, 25);
-            this.logsBindingNavigator.TabIndex = 0;
-            this.logsBindingNavigator.Text = "bindingNavigator1";
+            this.productBindingNavigatorSaveItem});
+            this.productBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.productBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.productBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.productBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.productBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.productBindingNavigator.Name = "productBindingNavigator";
+            this.productBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.productBindingNavigator.Size = new System.Drawing.Size(696, 25);
+            this.productBindingNavigator.TabIndex = 0;
+            this.productBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -180,20 +179,20 @@
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
-            // logsBindingNavigatorSaveItem
+            // productBindingNavigatorSaveItem
             // 
-            this.logsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.logsBindingNavigatorSaveItem.Enabled = false;
-            this.logsBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("logsBindingNavigatorSaveItem.Image")));
-            this.logsBindingNavigatorSaveItem.Name = "logsBindingNavigatorSaveItem";
-            this.logsBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.logsBindingNavigatorSaveItem.Text = "Save Data";
+            this.productBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.productBindingNavigatorSaveItem.Enabled = false;
+            this.productBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("productBindingNavigatorSaveItem.Image")));
+            this.productBindingNavigatorSaveItem.Name = "productBindingNavigatorSaveItem";
+            this.productBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.productBindingNavigatorSaveItem.Text = "Save Data";
             // 
-            // logsDataGridView
+            // productDataGridView
             // 
-            this.logsDataGridView.AutoGenerateColumns = false;
-            this.logsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.logsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productDataGridView.AutoGenerateColumns = false;
+            this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -202,91 +201,84 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10});
-            this.logsDataGridView.DataSource = this.logsBindingSource;
-            this.logsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logsDataGridView.Location = new System.Drawing.Point(0, 25);
-            this.logsDataGridView.Name = "logsDataGridView";
-            this.logsDataGridView.Size = new System.Drawing.Size(758, 288);
-            this.logsDataGridView.TabIndex = 1;
+            this.dataGridViewCheckBoxColumn1});
+            this.productDataGridView.DataSource = this.productBindingSource;
+            this.productDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.productDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.productDataGridView.Name = "productDataGridView";
+            this.productDataGridView.Size = new System.Drawing.Size(696, 298);
+            this.productDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "LogID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "LogID";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "itemCode";
+            this.dataGridViewTextBoxColumn1.HeaderText = "itemCode";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Level";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Level";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "itemName";
+            this.dataGridViewTextBoxColumn2.HeaderText = "itemName";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ClassName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ClassName";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "itemSort";
+            this.dataGridViewTextBoxColumn3.HeaderText = "itemSort";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "MethodName";
-            this.dataGridViewTextBoxColumn4.HeaderText = "MethodName";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "brand";
+            this.dataGridViewTextBoxColumn4.HeaderText = "brand";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Message";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Message";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "jenis";
+            this.dataGridViewTextBoxColumn5.HeaderText = "jenis";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "NewValue";
-            this.dataGridViewTextBoxColumn6.HeaderText = "NewValue";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "category";
+            this.dataGridViewTextBoxColumn6.HeaderText = "category";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
             // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "OldValue";
-            this.dataGridViewTextBoxColumn7.HeaderText = "OldValue";
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "subCategory";
+            this.dataGridViewTextBoxColumn7.HeaderText = "subCategory";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // dataGridViewTextBoxColumn8
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Exception";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Exception";
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "price";
+            this.dataGridViewTextBoxColumn8.HeaderText = "price";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // dataGridViewTextBoxColumn9
+            // dataGridViewCheckBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "CreatedBy";
-            this.dataGridViewTextBoxColumn9.HeaderText = "CreatedBy";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "stat";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "stat";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "LogDate";
-            this.dataGridViewTextBoxColumn10.HeaderText = "LogDate";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // FrmLogReport
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 313);
-            this.Controls.Add(this.logsDataGridView);
-            this.Controls.Add(this.logsBindingNavigator);
-            this.Name = "FrmLogReport";
+            this.ClientSize = new System.Drawing.Size(696, 323);
+            this.Controls.Add(this.productDataGridView);
+            this.Controls.Add(this.productBindingNavigator);
+            this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmLogReport";
-            this.Load += new System.EventHandler(this.FrmLogReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logsBindingNavigator)).EndInit();
-            this.logsBindingNavigator.ResumeLayout(false);
-            this.logsBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logsDataGridView)).EndInit();
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).EndInit();
+            this.productBindingNavigator.ResumeLayout(false);
+            this.productBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,8 +286,8 @@
 
         #endregion
 
-        private System.Windows.Forms.BindingSource logsBindingSource;
-        private System.Windows.Forms.BindingNavigator logsBindingNavigator;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.BindingNavigator productBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -307,8 +299,8 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton logsBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView logsDataGridView;
+        private System.Windows.Forms.ToolStripButton productBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridView productDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -317,7 +309,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
     }
 }
+

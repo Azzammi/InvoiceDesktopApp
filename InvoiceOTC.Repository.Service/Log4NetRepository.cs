@@ -10,7 +10,10 @@ using InvoiceOTC.Repository.API;
 namespace InvoiceOTC.Repository.Service
 {
     public class Log4NetRepository : ILog4NetRepository
-    {        
+    {
+        #region Declaration
+
+        #endregion
         public int Delete(Logs obj)
         {
             throw new NotImplementedException();
@@ -23,7 +26,18 @@ namespace InvoiceOTC.Repository.Service
 
         public int Save(Logs obj)
         {
-            throw new NotImplementedException();
+            var result = 0;
+
+            try
+            {
+                
+            }
+            catch
+            {
+
+            }
+
+            return result;
         }
 
         public int Update(Logs obj)

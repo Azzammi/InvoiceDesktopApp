@@ -35,10 +35,18 @@ public class FSBindingList<T> : BindingList<T>
         private bool p_isSorted;
         private PropertyDescriptor p_sortProperty;
         private ListSortDirection p_sortDirection;
-        
 
         #endregion
 
+        #endregion
+
+        #region Constructor
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SortableBindingList{T}"/> class.
+        /// </summary>
+        /// <param name="list">An <see cref="T:System.Collections.Generic.IList`1" /> of items to be contained in the <see cref="T:System.ComponentModel.BindingList`1" />.</param>
+        public FSBindingList(IList<T> list) : base(list) { }
+        public FSBindingList() { }
         #endregion
 
         #region Properties

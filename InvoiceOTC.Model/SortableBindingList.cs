@@ -7,17 +7,17 @@ using FSCollections;
 
 namespace InvoiceOTC.Model
 {
-    public class SortableBindingList<T> : FSBindingList<T>
+    public class SortableBindingList<T> : FSBindingList<T>,ICollection<T>
     {
-        private IList<T> logs;
+        private IList<T> list;        
 
         public SortableBindingList()
         {
         }
-
-        public SortableBindingList(IList<T> logs)
+        
+        public SortableBindingList(IList<T> list):base(list)
         {
-            this.logs = logs;
-        }
+
+        }       
     }
 }

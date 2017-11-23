@@ -88,6 +88,18 @@
       <Project>{d9686316-d311-4fa6-aff5-31bf760af57b}</Project>
       <Name>Invoice OTC</Name>
     </ProjectReference>
+    <ProjectReference Include="..\InvoiceOTC.Model\InvoiceOTC.Model.csproj">
+      <Project>{042f7b2a-d2bc-49e0-9024-7f81abd447ea}</Project>
+      <Name>InvoiceOTC.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InvoiceOTC.Repository.API\InvoiceOTC.Repository.API.csproj">
+      <Project>{09d68629-e6a4-4ef4-84f9-035786ac68b4}</Project>
+      <Name>InvoiceOTC.Repository.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InvoiceOTC.Repository.Service\InvoiceOTC.Repository.Service.csproj">
+      <Project>{aa807a36-246c-491c-9b20-52624877d81a}</Project>
+      <Name>InvoiceOTC.Repository.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -53,7 +53,7 @@ namespace Invoice_OTC.View
             bindingItem.DataSource = bindingInvoice;
             bindingItem.DataMember = "Items";
 
-            dgItem.RowValidating += dgItem_RowValidating;
+            //dgItem.RowValidating += dgItem_RowValidating;
         }            
 
         private void bindingInvoice_ListChanged(object sender, ListChangedEventArgs e)
@@ -267,31 +267,31 @@ namespace Invoice_OTC.View
             form.ShowDialog();
         }
         
-        private void bindingItem_CurrentChanged(object sender, EventArgs e)
-        {
-            if (m_Invoices == null) return;
-            //rotiItem checkEmpty = (rotiItem)bindingItem.Current;
+        //private void bindingItem_CurrentChanged(object sender, EventArgs e)
+        //{
+        //    if (m_Invoices == null) return;
+        //    //rotiItem checkEmpty = (rotiItem)bindingItem.Current;
 
-            //if(checkEmpty.Code == null)
-            //{
-            //    CommandDeleteItem deleteItem = new CommandDeleteItem(checkEmpty);
-            //    m_AppController.ExecuteCommand(deleteItem);
-            //}            
-        }
+        //    //if(checkEmpty.Code == null)
+        //    //{
+        //    //    CommandDeleteItem deleteItem = new CommandDeleteItem(checkEmpty);
+        //    //    m_AppController.ExecuteCommand(deleteItem);
+        //    //}            
+        //}
        
-        private void dgItem_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            bindingItem.AddingNew -= bindingItem_AddingNew;
-            if (m_RotiList == null) return;
-            rotiItem item = (rotiItem)bindingItem.Current;
+        //private void dgItem_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
+        //{
+        //    bindingItem.AddingNew -= bindingItem_AddingNew;
+        //    if (m_RotiList == null) return;
+        //    rotiItem item = (rotiItem)bindingItem.Current;
 
-            if(string.IsNullOrEmpty(item.ItemCode) || item.SubTotal == 0)
-            {
-                MessageBox.Show("Row Empty");
-                return;
-            }
+        //    if(string.IsNullOrEmpty(item.ItemCode) || item.SubTotal == 0)
+        //    {
+        //        MessageBox.Show("Row Empty");
+        //        return;
+        //    }
 
-            bindingItem.AddingNew += bindingItem_AddingNew;
-        }
+        //    bindingItem.AddingNew += bindingItem_AddingNew;
+        //}
     }
 }

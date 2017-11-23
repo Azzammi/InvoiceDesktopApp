@@ -11,17 +11,23 @@ using InvoiceOTC.Repository.API;
 
 namespace InvoiceOTC.Repository.Service
 {
-    class ProductRepository : IProductRepository
+    public class ProductRepository : IProductRepository
     {
         #region Declaration
         protected ILog m_Log;
         protected static string m_Sql;
+        protected IDapperContext context;
         #endregion
 
         #region Constructor
+        public ProductRepository()
+        {
+            context = new DapperContext();
+        }
         public ProductRepository(ILog log)
         {
             m_Log = log;
+            context = new DapperContext();
         }
         #endregion
 
@@ -31,11 +37,8 @@ namespace InvoiceOTC.Repository.Service
             try
             {
                 m_Sql = @"Delete From ITEM Where ITEMCODE = @itemCode";
-
-                using(IDapperContext context = new DapperContext())
-                {
-                    result = context.db.Execute(m_Sql, obj);
-                }
+                
+                result = context.db.Execute(m_Sql, obj);                
             }
             catch
             {
@@ -53,10 +56,7 @@ namespace InvoiceOTC.Repository.Service
             {
                 m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM [ITEM]";
 
-                using (IDapperContext context = new DapperContext())
-                {
-                    listOfProduct = context.db.Query<Product>(m_Sql).ToList();
-                }
+                listOfProduct = context.db.Query<Product>(m_Sql).ToList();                
             }
             catch 
             {
@@ -68,7 +68,19 @@ namespace InvoiceOTC.Repository.Service
 
         public Product GetItemByID(string itemCode)
         {
-            throw new NotImplementedException();
+            Product product = null ;
+            try
+            {
+                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM [ITEM] " +
+                         "WHERE ITEMCODE = @itemCode";
+                product = context.db.Query<Product>(m_Sql, new { itemCode }).SingleOrDefault();
+            }
+            catch
+            {
+
+            }
+
+            return product;
         }
 
         public int Save(Product obj)
@@ -80,12 +92,7 @@ namespace InvoiceOTC.Repository.Service
                         "(ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat)" +
                         " VALUES " +
                         "(@itemCode, @itemName, @itemSort, @brand, @jenis, @category, @subCategory, @price, @stat)";
-
-                using (IDapperContext context = new DapperContext())
-                {
-                    result = context.db.Execute(m_Sql, obj);
-                }
-
+                result = context.db.Execute(m_Sql, obj);             
             }
             catch
             {
@@ -110,10 +117,7 @@ namespace InvoiceOTC.Repository.Service
                         "price = @price, " +
                         "Stat = @stat " +
                         "WHERE ITEMCODE = @itemCode";
-                using (IDapperContext context = new DapperContext())
-                {
-                    result = context.db.Execute(m_Sql, obj);
-                }
+                result = context.db.Execute(m_Sql, obj);            
             }
             catch
             {
