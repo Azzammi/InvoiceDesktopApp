@@ -14,6 +14,8 @@ namespace InvoiceOTCUnitTest
     [TestFixture]
     public class ProductRepoTest
     {
+        /* The method name still random cause of Nunit Bug */
+
         #region Declaration
         private IProductRepository m_product;
         #endregion
@@ -48,7 +50,7 @@ namespace InvoiceOTCUnitTest
         }
 
         [Test]
-        public void SaveTest()
+        public void AddTest()
         {
             var product = new Product
             {
@@ -77,7 +79,7 @@ namespace InvoiceOTCUnitTest
         }
 
         [Test]
-        public void UpdateTest()
+        public void EditTest()
         {
             var product = new Product
             {
@@ -106,7 +108,7 @@ namespace InvoiceOTCUnitTest
         }
 
         [Test]
-        public void DeleteTest()
+        public void RemoveTest()
         {
             var itemCode = "TST00001";
             var product = m_product.GetItemByID(itemCode);
