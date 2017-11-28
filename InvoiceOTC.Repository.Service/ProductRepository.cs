@@ -15,7 +15,7 @@ namespace InvoiceOTC.Repository.Service
     {
         #region Declaration
         protected ILog m_Log;
-        protected static string m_Sql;
+        protected string m_Sql;
         protected IDapperContext context;
         #endregion
 

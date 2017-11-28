@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DapperContextTest.cs" />
+    <Compile Include="OutletRepoTest.cs" />
     <Compile Include="ProductRepoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

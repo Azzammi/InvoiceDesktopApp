@@ -23,5 +23,7 @@ namespace InvoiceOTC.Repository.API
         /// <param name="nomorInvoice"></param>
         /// <returns></returns>
         Invoice GetInvoiceByNomor(int nomorInvoice);
+
+        IList<InvoiceDetail> GetInvoiceDetail();
     }
 }

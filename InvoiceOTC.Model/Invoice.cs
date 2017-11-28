@@ -25,6 +25,7 @@ namespace InvoiceOTC.Model
         public string periode {get; set;}
         public string paymentMethod {get; set;}
         public bool isPayed {get; set;}
+        
         #endregion
     }
 }
