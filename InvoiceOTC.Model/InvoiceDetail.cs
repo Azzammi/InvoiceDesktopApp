@@ -11,13 +11,13 @@ namespace InvoiceOTC.Model
         #region Declarations
 
         //Property Variables
-        private int p_ID { get; set; }
-        private int invoiceID {get; set;}
-        private string itemCode {get; set;}
-        private int itemQty {get; set;}
-        private double discount {get; set;}
-        private decimal itemPrice {get; set;}
-        private decimal subTotal {get; set;}
+        public int p_ID { get; set; }
+        public int invoiceID {get; set;}
+        public string itemCode {get; set;}
+        public int itemQty {get; set;}
+        public double discount {get; set;}
+        public decimal itemPrice {get; set;}
+        public decimal subTotal {get; set;}
 
         #endregion
     }

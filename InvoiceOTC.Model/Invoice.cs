@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using FSCollections;
+
 namespace InvoiceOTC.Model
 {
     public class Invoice
@@ -11,20 +13,22 @@ namespace InvoiceOTC.Model
         #region Declaration
 
         //Property Variables
-        public IList<InvoiceDetail> p_Items {get; set;}
-        public int invoiceID {get; set;}
+        public FSBindingList<InvoiceDetail> p_Items { get; set; }
+        public int invoiceID { get; set; }
         public string nomorInvoice;
-        public DateTime dueDate {get; set;}
-        public string outletName {get; set;}
-        public decimal subTotal {get; set;}
-        public float ppn {get; set;}
-        public DateTime issuedDate {get; set;}
-        public bool isPPN {get; set;}
-        public string nomorPO {get; set;}
-        public string pengguna {get; set;}
-        public string periode {get; set;}
-        public string paymentMethod {get; set;}
-        public bool isPayed {get; set;}
+        public DateTime dueDate { get; set; }
+        public string outletCode { get; set; }
+        public decimal subTotal { get; set; }
+        public float ppn { get; set; }
+        public DateTime issuedDate { get; set; }
+        public bool isPPN { get; set; }
+        public string nomorPO { get; set; }
+        public string pengguna { get; set; }
+        public string periode { get; set; }
+        public string paymentMethod { get; set; }
+        public bool isPayed { get; set; }
+
+        public List<InvoiceDetail> detail {get; set;}
         
         #endregion
     }

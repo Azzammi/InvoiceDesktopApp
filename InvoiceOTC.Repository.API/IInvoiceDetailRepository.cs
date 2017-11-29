@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using InvoiceOTC.Model;
 namespace InvoiceOTC.Repository.API
 {
-    interface IInvoiceDetailRepository : IBaseRepository<InvoiceDetail>
+    public interface IInvoiceDetailRepository : IBaseRepository<InvoiceDetail>
     {
     }
 }

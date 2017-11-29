@@ -45,17 +45,17 @@ namespace InvoiceOTC.Repository.Service
             throw new NotImplementedException();
         }
 
-        public void Save(SortableBindingList<Logs> log)
-        {
-            log.Save(System.IO.Directory.GetCurrentDirectory() + "\\Logs.log");            
-        }
+        //public void Save(SortableBindingList<Logs> log)
+        //{
+        //    log.Save(System.IO.Directory.GetCurrentDirectory() + "\\Logs.log");            
+        //}
 
-        public SortableBindingList<Logs> GetSortedList()
-        {
-            //  return SortableBindingList<Logs>(GetAll());
-            SortableBindingList<Logs> log = new SortableBindingList<Logs>();
-            log.Load(System.IO.Directory.GetCurrentDirectory() + "\\Logs.log");
-            return log;
-        } 
+        //public SortableBindingList<Logs> GetSortedList()
+        //{
+        //    //  return SortableBindingList<Logs>(GetAll());
+        //    SortableBindingList<Logs> log = new SortableBindingList<Logs>();
+        //    log.Load(System.IO.Directory.GetCurrentDirectory() + "\\Logs.log");
+        //    return log;
+        //} 
     }
 }

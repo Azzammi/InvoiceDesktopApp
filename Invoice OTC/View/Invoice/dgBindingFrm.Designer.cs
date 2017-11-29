@@ -210,7 +210,6 @@
             // 
             this.bindingItem.DataSource = typeof(Invoice_OTC.Model.rotiItem);
             this.bindingItem.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.bindingItem_AddingNew);
-            
             this.bindingItem.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.bindingItem_ListChanged);
             // 
             // toolStrip1
@@ -296,6 +295,7 @@
             this.userDataGridViewTextBoxColumn,
             this.paymentDataGridViewTextBoxColumn,
             this.isPayedDataGridViewCheckBoxColumn});
+            this.dgInvoice.ContextMenuStrip = this.contextMenuStrip1;
             this.dgInvoice.DataSource = this.bindingInvoice;
             this.dgInvoice.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgInvoice.Location = new System.Drawing.Point(0, 57);

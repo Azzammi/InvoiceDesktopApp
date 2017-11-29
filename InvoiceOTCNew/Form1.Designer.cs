@@ -90,7 +90,7 @@
             this.productBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.productBindingNavigator.Name = "productBindingNavigator";
             this.productBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productBindingNavigator.Size = new System.Drawing.Size(696, 25);
+            this.productBindingNavigator.Size = new System.Drawing.Size(812, 25);
             this.productBindingNavigator.TabIndex = 0;
             this.productBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -206,7 +206,7 @@
             this.productDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.productDataGridView.Location = new System.Drawing.Point(0, 25);
             this.productDataGridView.Name = "productDataGridView";
-            this.productDataGridView.Size = new System.Drawing.Size(696, 298);
+            this.productDataGridView.Size = new System.Drawing.Size(812, 298);
             this.productDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -267,7 +267,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 323);
+            this.ClientSize = new System.Drawing.Size(812, 323);
             this.Controls.Add(this.productDataGridView);
             this.Controls.Add(this.productBindingNavigator);
             this.Name = "Form1";
