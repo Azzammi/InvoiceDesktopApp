@@ -10,13 +10,13 @@ namespace InvoiceOTC.Model
     public class Outlet
     {
         #region Declaration
-        private string slsmCode { get; set; }
-        private string outletCode { get; set; }
-        private string outletName { get; set; }
-        private string outletAddress { get; set; }
-        private string outletRoute { get; set; }
-        private string outletType { get; set; }
-        private bool outletStatus { get; set; }
+        public string slsmCode { get; set; }
+        public string outletCode { get; set; }
+        public string outletName { get; set; }
+        public string outletAddress { get; set; }
+        public string outletRoute { get; set; }
+       // public string outletType { get; set; }
+        public bool outletStatus { get; set; }
         #endregion
     }
 }

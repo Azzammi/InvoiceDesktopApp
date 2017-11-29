@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using InvoiceOTC.Model;
+using FSCollections;
 
 namespace InvoiceOTC.Repository.API
 {
@@ -24,6 +25,10 @@ namespace InvoiceOTC.Repository.API
         /// <returns></returns>
         Invoice GetInvoiceByNomor(int nomorInvoice);
 
-        IList<InvoiceDetail> GetInvoiceDetail();
+        /// <summary>
+        /// Using Custom class to achieve sorting ability. Dapper ORM Multi Mapping One to Many
+        /// </summary>
+        /// <returns></returns>
+        FSBindingList<Invoice> GetAllSorted();
     }
 }

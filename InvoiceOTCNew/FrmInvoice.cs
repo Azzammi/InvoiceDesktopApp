@@ -37,8 +37,9 @@ namespace InvoiceOTCNew
         private void FrmInvoice_Load(object sender, EventArgs e)
         {
             IList<Invoice> listInvoice = invoiceRepository.GetAll();
-            invoiceBindingSource.DataSource = listInvoice;
-            pItemsBindingSource.DataSource = listInvoice.SelectMany(x => x.detail).ToList();
+            
+            invoiceBindingSource.DataSource = invoiceRepository.GetAllSorted();
+            //pItemsBindingSource.DataSource = listInvoice.SelectMany(x => x.detail).ToList();
             
         }
     }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using InvoiceOTC.Model;
+using FSCollections;
 
 namespace InvoiceOTC.Repository.API
 {
@@ -15,14 +16,14 @@ namespace InvoiceOTC.Repository.API
         /// </summary>
         /// <param name="outletCode"></param>
         /// <returns></returns>
-        Outlet GetOutletByCode(int outletCode);
+        Outlet GetOutletByCode(string outletCode);
 
         /// <summary>
         /// Get Outlet by Salesman
         /// </summary>
         /// <param name="salesmanCode"></param>
         /// <returns></returns>
-        Outlet GetOutletBySalesmanID(int salesmanCode);
+        Outlet GetOutletBySalesmanID(string salesmanCode);
 
         /// <summary>
         /// Get Outlet by outlet name
@@ -30,5 +31,11 @@ namespace InvoiceOTC.Repository.API
         /// <param name="outletName"></param>
         /// <returns></returns>
         Outlet GetOutletByName(string outletName);
+
+        /// <summary>
+        /// Get a custom list to achieve sorting ability
+        /// </summary>
+        /// <returns>FSBindingList<T></T></returns>
+        FSBindingList<Outlet> GetAllSorted();        
     }
 }

@@ -100,7 +100,7 @@
             this.invoiceBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.invoiceBindingNavigator.Name = "invoiceBindingNavigator";
             this.invoiceBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.invoiceBindingNavigator.Size = new System.Drawing.Size(755, 25);
+            this.invoiceBindingNavigator.Size = new System.Drawing.Size(916, 25);
             this.invoiceBindingNavigator.TabIndex = 0;
             this.invoiceBindingNavigator.Text = "bindingNavigator1";
             this.invoiceBindingNavigator.RefreshItems += new System.EventHandler(this.invoiceBindingNavigator_RefreshItems);
@@ -223,7 +223,7 @@
             this.invoiceDataGridView.DataSource = this.invoiceBindingSource;
             this.invoiceDataGridView.Location = new System.Drawing.Point(12, 28);
             this.invoiceDataGridView.Name = "invoiceDataGridView";
-            this.invoiceDataGridView.Size = new System.Drawing.Size(422, 220);
+            this.invoiceDataGridView.Size = new System.Drawing.Size(892, 157);
             this.invoiceDataGridView.TabIndex = 1;
             // 
             // invoiceIDDataGridViewTextBoxColumn
@@ -311,9 +311,9 @@
             this.itemPriceDataGridViewTextBoxColumn,
             this.subTotalDataGridViewTextBoxColumn1});
             this.invoiceDetailDataGridView.DataSource = this.pItemsBindingSource;
-            this.invoiceDetailDataGridView.Location = new System.Drawing.Point(450, 28);
+            this.invoiceDetailDataGridView.Location = new System.Drawing.Point(12, 191);
             this.invoiceDetailDataGridView.Name = "invoiceDetailDataGridView";
-            this.invoiceDetailDataGridView.Size = new System.Drawing.Size(293, 220);
+            this.invoiceDetailDataGridView.Size = new System.Drawing.Size(892, 203);
             this.invoiceDetailDataGridView.TabIndex = 2;
             // 
             // pIDDataGridViewTextBoxColumn
@@ -367,7 +367,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(755, 306);
+            this.ClientSize = new System.Drawing.Size(916, 406);
             this.Controls.Add(this.invoiceDetailDataGridView);
             this.Controls.Add(this.invoiceDataGridView);
             this.Controls.Add(this.invoiceBindingNavigator);

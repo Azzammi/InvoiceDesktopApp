@@ -9,6 +9,8 @@ using log4net;
 using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 
+using FSCollections;
+
 namespace InvoiceOTC.Repository.Service
 {
     public class InvoiceRepository : IInvoiceRepository
@@ -56,6 +58,53 @@ namespace InvoiceOTC.Repository.Service
             return result;
         }
 
+        /// <summary>
+        /// Using Custom class to achieve sorting ability. Dapper ORM Multi Mapping One to Many
+        /// </summary>
+        /// <returns></returns>
+        public FSBindingList<Invoice> GetAllSorted()
+        {
+            IList<Invoice> listOfInvoice = new List<Invoice>();
+            try
+            {
+                m_Sql = @"SELECT * FROM Invoiced AS A INNER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID;";               
+
+                var invoiceDictionary = new Dictionary<int, Invoice>();
+
+                listOfInvoice = context.db.Query<Invoice, InvoiceDetail, Invoice>(
+                        m_Sql,
+                        (invoice, invoiceDetail) =>
+                        {
+                            Invoice invoiceEntry;
+
+                            if (!invoiceDictionary.TryGetValue(invoice.invoiceID, out invoiceEntry))
+                            {
+                                invoiceEntry = invoice;
+
+                                //Declare the list type first
+                                List<InvoiceDetail> detail = new List<InvoiceDetail>();
+
+                                //Convert it to custom list
+                                invoiceEntry.p_Items = new FSBindingList<InvoiceDetail>(detail);
+                                invoiceDictionary.Add(invoiceEntry.invoiceID, invoiceEntry);
+                            }
+
+                            //Add invoiceDetail item to Invoice
+                            invoiceEntry.p_Items.Add(invoiceDetail);
+                            return invoiceEntry;
+                        },
+                        splitOn: "rotiID")
+                    .Distinct()
+                    .ToList();
+            }
+            catch
+            {
+
+            }
+
+            return new FSBindingList<Invoice>(listOfInvoice);
+        }
+
         public IList<Invoice> GetAll()
         {
             IList<Invoice> listOfInvoice = new List<Invoice>();
@@ -90,7 +139,8 @@ namespace InvoiceOTC.Repository.Service
                             if (!invoiceDictionary.TryGetValue(invoice.invoiceID, out invoiceEntry))
                             {
                                 invoiceEntry = invoice;
-                                invoiceEntry.detail = new List<InvoiceDetail>();
+                               invoiceEntry.detail = new List<InvoiceDetail>();
+                                //invoiceEntry.p_Items = new FSBindingList<InvoiceDetail>(detail);
                                 invoiceDictionary.Add(invoiceEntry.invoiceID, invoiceEntry);
                             }
 
