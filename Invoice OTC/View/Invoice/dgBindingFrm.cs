@@ -34,13 +34,14 @@ namespace Invoice_OTC.View
             /* Note that the DataProvider class is static, so it doesn't
              * get instantiated. */
 
-            //Get Customer List
-            CommandGettingOutlet getOutlets = new CommandGettingOutlet();
-            m_OutletList = (outletList)m_AppController.ExecuteCommand(getOutlets);
-
             // Get invoices List
             CommandGetInvoices getInvoices = new CommandGetInvoices();
             m_Invoices = (InvoiceList)m_AppController.ExecuteCommand(getInvoices);
+
+            //Get Customer List
+            CommandGettingOutlet getOutlets = new CommandGettingOutlet();
+            m_OutletList = (outletList)m_AppController.ExecuteCommand(getOutlets);
+          
 
             CommandGetRoti getRoti = new CommandGetRoti();
             m_RotiList = (RotiToChooseList)m_AppController.ExecuteCommand(getRoti);
@@ -81,16 +82,16 @@ namespace Invoice_OTC.View
             switch (changeType)
             {
                 case ListChangedType.ItemChanged:                     
-                    if(changedInvoice.Nomor != null)
-                    {
+                    //if(changedInvoice.Nomor != null)
+                    //{
                         CommandUpdateInvoice updateAuthor = new CommandUpdateInvoice(changedInvoice);
                         m_AppController.ExecuteCommand(updateAuthor);
-                    }
-                    else
-                    {
-                        CommandDeleteInvoice deleteInvoice = new CommandDeleteInvoice(m_Invoices, changedInvoice);
-                        m_AppController.ExecuteCommand(deleteInvoice);
-                    }                    
+                    //}
+                    //else
+                    //{
+                    //    CommandDeleteInvoice deleteInvoice = new CommandDeleteInvoice(m_Invoices, changedInvoice);
+                    //    m_AppController.ExecuteCommand(deleteInvoice);
+                    //}                    
                     break;
 
                 case ListChangedType.ItemMoved:

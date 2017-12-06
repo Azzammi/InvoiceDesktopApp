@@ -11,45 +11,40 @@ using System.Windows.Forms;
 using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 using InvoiceOTC.Repository.Service;
-
 using FSCollections;
-
 
 namespace InvoiceOTCNew
 {
-    public partial class Form1 : Form, IBaseFormCRUD
+    public partial class FrmOutlet : Form, IBaseFormCRUD
     {
         #region Declaration
-        private IProductRepository product;
-        public FSBindingList<Product> productList { get; set; }
+        private IOutletRepository m_Outlet;
+        private FSBindingList<Outlet> outletList;
         #endregion
 
-        public Form1()
+        public FrmOutlet()
         {
             InitializeComponent();
-            product = new ProductRepository();
+
+            m_Outlet = new OutletRepository();
         }
-        
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void BindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
-            productList = product.GetAllSorted();
-            productBindingSource.DataSource = productList;
-
-            productDataGridView.DataSource = productBindingSource;         
+            
         }
 
         public void BindingSource_ListChanged(object sender, ListChangedEventArgs e)
         {
             // Exit if no project list
-            if (productList == null) return;
+            if (outletList == null) return;
 
             // Get the item affected
             int index = e.NewIndex;
-            Product changedProduct = null;
-            if ((index > -1) && (index < productList.Count))
+            Outlet changedOutlet = null;
+            if ((index > -1) && (index < outletList.Count))
             {
-                changedProduct = productList[index];
+                changedOutlet = outletList[index];
             }
 
             // Get the type of change that occured
@@ -60,7 +55,7 @@ namespace InvoiceOTCNew
             switch (changeType)
             {
                 case ListChangedType.ItemChanged:
-                    var result = product.Update(changedProduct);
+                    var result = m_Outlet.Update(changedOutlet);
                     break;
 
                 case ListChangedType.ItemMoved:
@@ -69,14 +64,15 @@ namespace InvoiceOTCNew
             }
         }
 
-        public void BindingSource_AddingNew(object sender, AddingNewEventArgs e)
+        private void FrmOutlet_Load(object sender, EventArgs e)
         {
-            var newProduct = new Product
-            {
-                itemCode = "FG00002"
-            };
+            outletList = m_Outlet.GetAllSorted();
+            outletBindingSource.DataSource = outletList;
+        }
 
-            var result = product.Save(newProduct);
+        private void outletBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

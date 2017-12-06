@@ -33,12 +33,12 @@ namespace InvoiceOTCUnitTest
         {
             var outlet = new Outlet
             {
-                slsmCode = "slsmtest",
-                outletCode = "outlet001",
-                outletName = "outletTestName",
-                outletAddress = "outletAddressNo.002020",
-                outletRoute = "F01",
-                outletStatus = true
+                outlSlsm = "slsmtest",
+                outlCode = "outlet001",
+                outlName = "outletTestName",
+                outlAddress = "outlAddressNo.002020",
+                outlRoute = "F01",
+                outlStatus = true
                 //outletType = "P & D"
             };
 
@@ -51,12 +51,12 @@ namespace InvoiceOTCUnitTest
         {
             var outlet = new Outlet
             {
-                slsmCode = "slsmtest",
-                outletCode = "outlet001",
-                outletName = "LenovoMart",
-                outletAddress = "Griya Asri 2",
-                outletRoute = "F33",
-                outletStatus = false
+                outlSlsm = "slsmtest",
+                outlCode = "outlet001",
+                outlName = "LenovoMart",
+                outlAddress = "Griya Asri 2",
+                outlRoute = "F33",
+                outlStatus = false
                // outletType = "Retailer"
             };
 
@@ -68,18 +68,14 @@ namespace InvoiceOTCUnitTest
         public void GetAll()
         {
             var outlets = m_outlet.GetAll();
+            Assert.IsNotNull(outlets);            
+        }
 
-            var index = 0;
-            var outlet = outlets[index];
-
+        [Test]
+        public void GetAllSorted()
+        {
+            var outlets = m_outlet.GetAllSorted();
             Assert.IsNotNull(outlets);
-            Assert.AreEqual("outlet001", outlet.outletCode);
-            Assert.AreEqual("slsmtest", outlet.slsmCode);
-            Assert.AreEqual("LenovoMart", outlet.outletName);
-            Assert.AreEqual("Griya Asri 2", outlet.outletAddress);
-            Assert.AreEqual("F33", outlet.outletRoute);
-            Assert.AreEqual(false, outlet.outletStatus);
-            //Assert.AreEqual("Retailer", outlet.outletType);
         }
 
         [Test]
@@ -87,12 +83,12 @@ namespace InvoiceOTCUnitTest
         {
             var outlet= m_outlet.GetOutletByCode("outlet001");
 
-            Assert.AreEqual("outlet001", outlet.outletCode);
-            Assert.AreEqual("slsmtest", outlet.slsmCode);
-            Assert.AreEqual("outletTestName", outlet.outletName);
-            Assert.AreEqual("outletAddressNo.002020", outlet.outletAddress);
-            Assert.AreEqual("F01", outlet.outletRoute);
-            Assert.AreEqual(true, outlet.outletStatus);
+            Assert.AreEqual("outlet001", outlet.outlCode);
+            Assert.AreEqual("slsmtest", outlet.outlSlsm);
+            Assert.AreEqual("outletTestName", outlet.outlName);
+            Assert.AreEqual("outlAddressNo.002020", outlet.outlAddress);
+            Assert.AreEqual("F01", outlet.outlRoute);
+            Assert.AreEqual(true, outlet.outlStatus);
             //Assert.AreEqual("P & D", outlet.outletType);
         }
 
@@ -101,12 +97,12 @@ namespace InvoiceOTCUnitTest
         {
             var outlet = m_outlet.GetOutletByName("LenovoMart");
 
-            Assert.AreEqual("outlet001", outlet.outletCode);
-            Assert.AreEqual("slsmtest", outlet.slsmCode);
-            Assert.AreEqual("LenovoMart", outlet.outletName);
-            Assert.AreEqual("Griya Asri 2", outlet.outletAddress);
-            Assert.AreEqual("F33", outlet.outletRoute);
-            Assert.AreEqual(false, outlet.outletStatus);
+            Assert.AreEqual("outlet001", outlet.outlCode);
+            Assert.AreEqual("slsmtest", outlet.outlSlsm);
+            Assert.AreEqual("LenovoMart", outlet.outlName);
+            Assert.AreEqual("Griya Asri 2", outlet.outlAddress);
+            Assert.AreEqual("F33", outlet.outlRoute);
+            Assert.AreEqual(false, outlet.outlStatus);
             //Assert.AreEqual("Retailer", outlet.outletType);
         }
 
@@ -115,32 +111,38 @@ namespace InvoiceOTCUnitTest
         {
             var outlet = m_outlet.GetOutletBySalesmanID("slsmtest");
 
-            Assert.AreEqual("outlet001", outlet.outletCode);
-            Assert.AreEqual("slsmtest", outlet.slsmCode);
-            Assert.AreEqual("LenovoMart", outlet.outletName);
-            Assert.AreEqual("Griya Asri 2", outlet.outletAddress);
-            Assert.AreEqual("F33", outlet.outletRoute);
-            Assert.AreEqual(false, outlet.outletStatus);
+            Assert.AreEqual("outlet001", outlet.outlCode);
+            Assert.AreEqual("slsmtest", outlet.outlSlsm);
+            Assert.AreEqual("LenovoMart", outlet.outlName);
+            Assert.AreEqual("Griya Asri 2", outlet.outlAddress);
+            Assert.AreEqual("F33", outlet.outlRoute);
+            Assert.AreEqual(false, outlet.outlStatus);
             //Assert.AreEqual("Retailer", outlet.outletType);
         }
 
         [Test]
         public void RemoveTest()
         {
-            var outletCode = "outlet001";
-            var outlet = m_outlet.GetOutletByCode(outletCode);
+            var outlCode = "outlet001";
+            var outlet = m_outlet.GetOutletByCode(outlCode);
 
             var result = m_outlet.Delete(outlet);
             Assert.IsTrue(result != 0);
 
-            var outletDeleted= m_outlet.GetOutletByCode(outletCode);
+            var outletDeleted= m_outlet.GetOutletByCode(outlCode);
             Assert.IsNull(outletDeleted);
         }
 
         [TearDown]
         public void Dispose()
         {
+            //var outlCode = new Outlet
+            //{
+            //    outlCode = "outlet001"
+            //};
 
+            //var result = m_outlet.Delete(outlCode);
+            //Assert.IsTrue(result != 0);
         }
         #endregion
     }

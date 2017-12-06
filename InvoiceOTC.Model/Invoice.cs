@@ -14,8 +14,9 @@ namespace InvoiceOTC.Model
 
         //Property Variables
         public FSBindingList<InvoiceDetail> p_Items { get; set; }
+
         public int invoiceID { get; set; }
-        public string nomorInvoice;
+        public string nomorInvoice { get; set; }
         public DateTime dueDate { get; set; }
         public string outletCode { get; set; }
         public decimal subTotal { get; set; }

@@ -16,7 +16,7 @@ namespace InvoiceOTC.Repository.Service
     {
         #region Declaration
         protected ILog m_Log;
-        protected static string m_Sql;
+        protected string m_Sql;
         protected IDapperContext context;
         #endregion
 
@@ -38,7 +38,7 @@ namespace InvoiceOTC.Repository.Service
             var result = 0;
             try
             {
-                m_Sql = @"Delete From Outlet Where OutletCode = @outletCode";
+                m_Sql = @"Delete From Outlet Where OutlCode = @outlCode";
 
                 result = context.db.Execute(m_Sql, obj);
             }
@@ -54,9 +54,9 @@ namespace InvoiceOTC.Repository.Service
             IList<Outlet> list = new List<Outlet>();
             try
             {
-                m_Sql = @"SELECT [OUTLCODE] ,[OUTLNAME] ,[OUTLADDRESS],[OUTLSLSM],[OUTLROUTE],[OUTLSTAT] FROM [OTF_Invoice].[dbo].[OUTLET]";
-
+                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT FROM OUTLET";
                 list = context.db.Query<Outlet>(m_Sql).ToList();
+                
             }
             catch
             {
@@ -70,14 +70,14 @@ namespace InvoiceOTC.Repository.Service
             Outlet outlet = null;
             try
             {
-                m_Sql = @"SELECT [OUTLCODE],[OUTLNAME],[OUTLADDRESS],[OUTLSLSM],[OUTLROUTE],[OUTLSTAT] FROM [OTF_Invoice].[dbo].[OUTLET]" +
+                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT FROM [OTF_Invoice].[dbo].[OUTLET]" +
                         " WHERE OUTLCODE = @outletCode";
 
                 outlet = context.db.Query<Outlet>(m_Sql, new { outletCode }).SingleOrDefault();
             }
             catch
             {
-
+               
             }
             return outlet;
         }
@@ -87,10 +87,10 @@ namespace InvoiceOTC.Repository.Service
             Outlet outlet = null;
             try
             {
-                m_Sql = @"SELECT [OUTLCODE],[OUTLNAME],[OUTLADDRESS],[OUTLSLSM],[OUTLROUTE],[OUTLSTAT] FROM [OTF_Invoice].[dbo].[OUTLET]" +
+                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT FROM [OTF_Invoice].[dbo].[OUTLET]" +
                         " WHERE OUTLNAME = @outletName";
 
-                outlet = context.db.Query<Outlet>(m_Sql, new { outletName }).SingleOrDefault();
+                outlet = context.db.Query<Outlet>(m_Sql, new { outletName }).SingleOrDefault();                
             }
             catch
             {
@@ -99,7 +99,7 @@ namespace InvoiceOTC.Repository.Service
             return outlet;
         }
 
-        public Outlet GetOutletBySalesmanID(string salesmanCode)
+        public Outlet GetOutletBySalesmanID(string slsmCode)
         {
             Outlet outlet = null;
             try
@@ -107,7 +107,7 @@ namespace InvoiceOTC.Repository.Service
                 m_Sql = @"SELECT [OUTLCODE],[OUTLNAME],[OUTLADDRESS],[OUTLSLSM],[OUTLROUTE],[OUTLSTAT] FROM [OTF_Invoice].[dbo].[OUTLET]" +
                         " WHERE OUTLSLSM = @slsmCode";
 
-                outlet = context.db.Query<Outlet>(m_Sql, new { salesmanCode }).SingleOrDefault();
+                outlet = context.db.Query<Outlet>(m_Sql, new { slsmCode }).SingleOrDefault();
             }
             catch
             {
@@ -124,7 +124,7 @@ namespace InvoiceOTC.Repository.Service
                 m_Sql = @"INSERT INTO OUTLET " +
                         "(OutlCode, OutlName, OutlAddress, OutlSlsm, OutlRoute, OutlStat)" +
                         " VALUES " +
-                        "(@outletCode, @outletName, @outletAddress, @slsmCode, @outletRoute, @OutletStatus)";
+                        "(@outlCode, @outlName, @outlAddress, @outlSlsm, @outlRoute, @OutlStatus)";
                 result = context.db.Execute(m_Sql, obj);
             }
             catch
@@ -139,13 +139,13 @@ namespace InvoiceOTC.Repository.Service
             var result = 0;
             try
             {
-                m_Sql = @"UPDATE ITEM OUTLET " +
-                        "OutlName = @outletName, " +
-                        "OutlAddress = @outletAddress, " +
-                        "OutlSlsm = @slsmCode, " +
-                        "OutlRoute = @outletRoute, " +
-                        "OutlStat = @outletStatus " +
-                        "WHERE OutlCode = @OutletCode";
+                m_Sql = @"UPDATE OUTLET SET " +
+                        "OutlName = @outlName, " +
+                        "OutlAddress = @outlAddress, " +
+                        "OutlSlsm = @outlSlsm, " +
+                        "OutlRoute = @outlRoute, " +
+                        "OutlStat = @outlStatus " +
+                        "WHERE OutlCode = @outlCode";
                 result = context.db.Execute(m_Sql, obj);
             }
             catch

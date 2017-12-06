@@ -8,6 +8,7 @@ using Dapper;
 using log4net;
 using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
+using FSCollections;
 
 namespace InvoiceOTC.Repository.Service
 {
@@ -55,7 +56,6 @@ namespace InvoiceOTC.Repository.Service
             try
             {
                 m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM [ITEM]";
-
                 listOfProduct = context.db.Query<Product>(m_Sql).ToList();                
             }
             catch 
@@ -125,6 +125,23 @@ namespace InvoiceOTC.Repository.Service
             }
 
             return result;
+        }
+
+        public FSBindingList<Product> GetAllSorted()
+        {
+            IList<Product> listOfProduct = new List<Product>();
+
+            try
+            {
+                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM [ITEM]";
+                listOfProduct = context.db.Query<Product>(m_Sql).ToList();
+            }
+            catch
+            {
+
+            }
+
+            return new FSBindingList<Product>(listOfProduct);
         }
     }
 }

@@ -490,8 +490,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip contextMenuRotiList;
         private System.Windows.Forms.ToolStripMenuItem deleteItemToolStripMenuItem;
-        private System.Windows.Forms.BindingSource bindingItems;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomorInvoiceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource bindingItems;        
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox invoiceIDTxt;
         private System.Windows.Forms.Label label2;

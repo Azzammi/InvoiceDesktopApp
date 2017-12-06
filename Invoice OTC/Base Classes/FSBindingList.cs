@@ -159,9 +159,8 @@ public class FSBindingList<T> : BindingList<T>
                 }
                 return -1;
             }
-            catch (InvalidCastException ex)
-            {
-                ex = null;
+            catch 
+            {               
                 return -1;
             }
             finally

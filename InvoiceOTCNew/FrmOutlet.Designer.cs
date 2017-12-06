@@ -1,6 +1,6 @@
 ﻿namespace InvoiceOTCNew
 {
-    partial class Form1
+    partial class FrmOutlet
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmOutlet));
+            this.outletBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.outletBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
@@ -43,27 +43,33 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.productBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.productDataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).BeginInit();
-            this.productBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
+            this.outletBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.outletDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outletBindingNavigator)).BeginInit();
+            this.outletBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.outletDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // productBindingSource
+            // outletBindingSource
             // 
-            this.productBindingSource.DataSource = typeof(InvoiceOTC.Model.Product);
-            this.productBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.BindingSource_AddingNew);
-            this.productBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.BindingSource_ListChanged);
+            this.outletBindingSource.DataSource = typeof(InvoiceOTC.Model.Outlet);
+            this.outletBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.BindingSource_AddingNew);
+            this.outletBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.BindingSource_ListChanged);
             // 
-            // productBindingNavigator
+            // outletBindingNavigator
             // 
-            this.productBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.productBindingNavigator.BindingSource = this.productBindingSource;
-            this.productBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.productBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.productBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.outletBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.outletBindingNavigator.BindingSource = this.outletBindingSource;
+            this.outletBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.outletBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.outletBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -75,17 +81,17 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.productBindingNavigatorSaveItem});
-            this.productBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.productBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.productBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.productBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.productBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.productBindingNavigator.Name = "productBindingNavigator";
-            this.productBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productBindingNavigator.Size = new System.Drawing.Size(812, 25);
-            this.productBindingNavigator.TabIndex = 0;
-            this.productBindingNavigator.Text = "bindingNavigator1";
+            this.outletBindingNavigatorSaveItem});
+            this.outletBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.outletBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.outletBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.outletBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.outletBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.outletBindingNavigator.Name = "outletBindingNavigator";
+            this.outletBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.outletBindingNavigator.Size = new System.Drawing.Size(801, 25);
+            this.outletBindingNavigator.TabIndex = 0;
+            this.outletBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -172,46 +178,94 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // productBindingNavigatorSaveItem
+            // outletBindingNavigatorSaveItem
             // 
-            this.productBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.productBindingNavigatorSaveItem.Enabled = false;
-            this.productBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("productBindingNavigatorSaveItem.Image")));
-            this.productBindingNavigatorSaveItem.Name = "productBindingNavigatorSaveItem";
-            this.productBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.productBindingNavigatorSaveItem.Text = "Save Data";
+            this.outletBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.outletBindingNavigatorSaveItem.Enabled = false;
+            this.outletBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("outletBindingNavigatorSaveItem.Image")));
+            this.outletBindingNavigatorSaveItem.Name = "outletBindingNavigatorSaveItem";
+            this.outletBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.outletBindingNavigatorSaveItem.Text = "Save Data";
+            this.outletBindingNavigatorSaveItem.Click += new System.EventHandler(this.outletBindingNavigatorSaveItem_Click);
             // 
-            // productDataGridView
+            // outletDataGridView
             // 
-            this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productDataGridView.Location = new System.Drawing.Point(0, 25);
-            this.productDataGridView.Name = "productDataGridView";
-            this.productDataGridView.Size = new System.Drawing.Size(812, 298);
-            this.productDataGridView.TabIndex = 1;
+            this.outletDataGridView.AutoGenerateColumns = false;
+            this.outletDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.outletDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewCheckBoxColumn2});
+            this.outletDataGridView.DataSource = this.outletBindingSource;
+            this.outletDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.outletDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.outletDataGridView.Name = "outletDataGridView";
+            this.outletDataGridView.Size = new System.Drawing.Size(801, 325);
+            this.outletDataGridView.TabIndex = 1;
             // 
-            // Form1
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "outlCode";
+            this.dataGridViewTextBoxColumn6.HeaderText = "outlCode";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "outlName";
+            this.dataGridViewTextBoxColumn7.HeaderText = "outlName";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "outlAddress";
+            this.dataGridViewTextBoxColumn8.HeaderText = "outlAddress";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "outlSlsm";
+            this.dataGridViewTextBoxColumn9.HeaderText = "outlSlsm";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "outlRoute";
+            this.dataGridViewTextBoxColumn10.HeaderText = "outlRoute";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "outlStatus";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "outlStatus";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            // 
+            // FrmOutlet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 323);
-            this.Controls.Add(this.productDataGridView);
-            this.Controls.Add(this.productBindingNavigator);
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).EndInit();
-            this.productBindingNavigator.ResumeLayout(false);
-            this.productBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
+            this.ClientSize = new System.Drawing.Size(801, 350);
+            this.Controls.Add(this.outletDataGridView);
+            this.Controls.Add(this.outletBindingNavigator);
+            this.Name = "FrmOutlet";
+            this.Text = "FrmOutlet";
+            this.Load += new System.EventHandler(this.FrmOutlet_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outletBindingNavigator)).EndInit();
+            this.outletBindingNavigator.ResumeLayout(false);
+            this.outletBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.outletDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.BindingSource outletBindingSource;
+        private System.Windows.Forms.BindingNavigator outletBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -223,10 +277,13 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton productBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView productDataGridView;
-        public System.Windows.Forms.BindingSource productBindingSource;
-        public System.Windows.Forms.BindingNavigator productBindingNavigator;
+        private System.Windows.Forms.ToolStripButton outletBindingNavigatorSaveItem;        
+        private System.Windows.Forms.DataGridView outletDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
     }
 }
-

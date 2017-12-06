@@ -18,7 +18,7 @@ namespace Invoice_OTC.View
     {
         #region Declaration
         //private SortableBindingList<Logs> m_LogList;
-        private Log4NetRepository rep;
+        //private Log4NetRepository rep;
         #endregion
 
         public FrmLogReport()

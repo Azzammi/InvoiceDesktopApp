@@ -630,8 +630,7 @@
         private System.Windows.Forms.ToolStripButton cetakBtn;
         private System.Windows.Forms.TextBox outletAddressTextBox;
         private System.Windows.Forms.CheckBox isPPNCheckBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1;        
         private System.Windows.Forms.DataGridView dgItem;
         private System.Windows.Forms.BindingSource RotiToChooseBindingSource;
         private System.Windows.Forms.DataGridViewComboBoxColumn ItemCode;

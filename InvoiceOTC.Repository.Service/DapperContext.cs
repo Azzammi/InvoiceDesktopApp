@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
+using System.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,14 +22,31 @@ namespace InvoiceOTC.Repository.Service
         #region Constructor
         public DapperContext()
         {
-            //For Get directory and database
+            /* SQL Server Connection Section
+           // For Get directory and database
             //var dbName = System.IO.Directory.GetCurrentDirectory() + "OTF_Invoice";
 
             string dbName = "OTF_Invoice";
 
             m_ProviderName = "System.Data.SqlClient";
-            //m_ConnectionString = "Data Source = (local)/sqlexpress; Initial Catalog = " + dbName + "; Integrated Security = True;" ;
+            ///m_ConnectionString = "Data Source = (local)/sqlexpress; Initial Catalog = " + dbName + "; Integrated Security = True;" ;
             m_ConnectionString = @"Data Source = (local)\sqlexpress; Initial Catalog = " + dbName + "; Integrated Security = True;";
+            */
+
+            var server = "localhost";
+            var port = "5432";
+            var dbName = "otf_invoice";
+            var userID = "postgres";
+            var userPassword = "password";
+            //var appName = "Invoice OTC";
+
+            m_ProviderName = "Npgsql";
+            m_ConnectionString = string.Format("Server={0};Port={1};User Id={2};Password={3};Database={4}", server, port, userID, userPassword, dbName);
+
+            if (m_Db == null)
+            {
+                m_Db = GetOpenConnection(m_ProviderName, m_ConnectionString);
+            }
         }
 
         /// <summary>
@@ -50,7 +67,7 @@ namespace InvoiceOTC.Repository.Service
 
             try
             {
-                DbProviderFactory provider = DbProviderFactories.GetFactory(providerName);
+                DbProviderFactory provider = DbProviderFactories.GetFactory(providerName);             
                 conn = provider.CreateConnection();
                 conn.ConnectionString = connectionString;
                 conn.Open();

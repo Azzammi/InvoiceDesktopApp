@@ -163,7 +163,7 @@ namespace InvoiceOTC.Repository.Service
             throw new NotImplementedException();
         }
 
-        public Invoice GetInvoiceByNomor(int nomorInvoice)
+        public Invoice GetInvoiceByNomor(string nomorInvoice)
         {
             throw new NotImplementedException();
         }
@@ -251,6 +251,11 @@ namespace InvoiceOTC.Repository.Service
 
             }
             return result;
+        }
+
+        public Invoice GetInvoiceByNomor(int nomorInvoice)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }
