@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invoice OTC", "Invoice OTC\Invoice OTC.csproj", "{D9686316-D311-4FA6-AFF5-31BF760AF57B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bindingNavigatorStrip", "bindingNavigatorStrip\bindingNavigatorStrip.csproj", "{BD491E50-01E2-46E7-8B16-C6EB401E85FD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceOTC.Model", "InvoiceOTC.Model\InvoiceOTC.Model.csproj", "{042F7B2A-D2BC-49E0-9024-7F81ABD447EA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceOTC.Repository.API", "InvoiceOTC.Repository.API\InvoiceOTC.Repository.API.csproj", "{09D68629-E6A4-4EF4-84F9-035786AC68B4}"
@@ -27,10 +25,6 @@ Global
 		{D9686316-D311-4FA6-AFF5-31BF760AF57B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9686316-D311-4FA6-AFF5-31BF760AF57B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9686316-D311-4FA6-AFF5-31BF760AF57B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BD491E50-01E2-46E7-8B16-C6EB401E85FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BD491E50-01E2-46E7-8B16-C6EB401E85FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BD491E50-01E2-46E7-8B16-C6EB401E85FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BD491E50-01E2-46E7-8B16-C6EB401E85FD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{042F7B2A-D2BC-49E0-9024-7F81ABD447EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{042F7B2A-D2BC-49E0-9024-7F81ABD447EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{042F7B2A-D2BC-49E0-9024-7F81ABD447EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
