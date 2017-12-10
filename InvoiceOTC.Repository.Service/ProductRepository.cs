@@ -37,7 +37,7 @@ namespace InvoiceOTC.Repository.Service
             var result = 0;
             try
             {
-                m_Sql = @"Delete From ITEM Where ITEMCODE = @itemCode";
+                m_Sql = @"Delete From Product Where ITEMCODE = @itemCode";
                 
                 result = context.db.Execute(m_Sql, obj);                
             }
@@ -55,7 +55,7 @@ namespace InvoiceOTC.Repository.Service
 
             try
             {
-                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM [ITEM]";
+                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product";
                 listOfProduct = context.db.Query<Product>(m_Sql).ToList();                
             }
             catch 
@@ -71,7 +71,7 @@ namespace InvoiceOTC.Repository.Service
             Product product = null ;
             try
             {
-                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM [ITEM] " +
+                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product " +
                          "WHERE ITEMCODE = @itemCode";
                 product = context.db.Query<Product>(m_Sql, new { itemCode }).SingleOrDefault();
             }
@@ -88,7 +88,7 @@ namespace InvoiceOTC.Repository.Service
             var result = 0;
             try
             {
-                m_Sql = @"INSERT INTO ITEM " +
+                m_Sql = @"INSERT INTO Product " +
                         "(ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat)" +
                         " VALUES " +
                         "(@itemCode, @itemName, @itemSort, @brand, @jenis, @category, @subCategory, @price, @stat)";
@@ -107,7 +107,7 @@ namespace InvoiceOTC.Repository.Service
             var result = 0;
             try
             {
-                m_Sql = @"UPDATE ITEM SET " +
+                m_Sql = @"UPDATE Product SET " +
                         "ITEMNAME = @itemName, " +
                         "ITEMSORT = @itemSort, " +
                         "Brand = @brand, " +
@@ -133,7 +133,7 @@ namespace InvoiceOTC.Repository.Service
 
             try
             {
-                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM [ITEM]";
+                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product";
                 listOfProduct = context.db.Query<Product>(m_Sql).ToList();
             }
             catch

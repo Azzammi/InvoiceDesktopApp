@@ -70,7 +70,7 @@ namespace InvoiceOTC.Repository.Service
             Outlet outlet = null;
             try
             {
-                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT FROM [OTF_Invoice].[dbo].[OUTLET]" +
+                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT FROM OUTLET" +
                         " WHERE OUTLCODE = @outletCode";
 
                 outlet = context.db.Query<Outlet>(m_Sql, new { outletCode }).SingleOrDefault();
@@ -87,7 +87,7 @@ namespace InvoiceOTC.Repository.Service
             Outlet outlet = null;
             try
             {
-                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT FROM [OTF_Invoice].[dbo].[OUTLET]" +
+                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT FROM OUTLET" +
                         " WHERE OUTLNAME = @outletName";
 
                 outlet = context.db.Query<Outlet>(m_Sql, new { outletName }).SingleOrDefault();                
@@ -104,7 +104,7 @@ namespace InvoiceOTC.Repository.Service
             Outlet outlet = null;
             try
             {
-                m_Sql = @"SELECT [OUTLCODE],[OUTLNAME],[OUTLADDRESS],[OUTLSLSM],[OUTLROUTE],[OUTLSTAT] FROM [OTF_Invoice].[dbo].[OUTLET]" +
+                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT FROM OUTLET" +
                         " WHERE OUTLSLSM = @slsmCode";
 
                 outlet = context.db.Query<Outlet>(m_Sql, new { slsmCode }).SingleOrDefault();
@@ -160,7 +160,7 @@ namespace InvoiceOTC.Repository.Service
             IList<Outlet> list = new List<Outlet>();
             try
             {
-                m_Sql = @"SELECT [OUTLCODE] ,[OUTLNAME] ,[OUTLADDRESS],[OUTLSLSM],[OUTLROUTE],[OUTLSTAT] FROM [OTF_Invoice].[dbo].[OUTLET]";
+                m_Sql = @"SELECT OUTLCODE ,OUTLNAME ,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT FROM OUTLET";
 
                 list = context.db.Query<Outlet>(m_Sql).ToList();
             }

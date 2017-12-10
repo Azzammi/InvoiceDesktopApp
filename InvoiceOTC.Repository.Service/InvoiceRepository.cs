@@ -10,6 +10,7 @@ using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 
 using FSCollections;
+using System.Windows.Forms;
 
 namespace InvoiceOTC.Repository.Service
 {
@@ -58,6 +59,42 @@ namespace InvoiceOTC.Repository.Service
             return result;
         }
 
+        private IEnumerable<Invoice> MappingRecordToObj(string sql, object param = null)
+        {
+            IEnumerable<Invoice> listOfInvoice = null;
+            try
+            {
+                var invoiceDictionary = new Dictionary<int, Invoice>();
+
+                listOfInvoice = context.db.Query<Invoice, InvoiceDetail, Invoice>(
+                        sql,
+                        (invoice, invoiceDetail) =>
+                        {
+                            Invoice invoiceEntry;
+
+                            if (!invoiceDictionary.TryGetValue(invoice.invoiceID, out invoiceEntry))
+                            {
+                                invoiceEntry = invoice;
+                                invoiceEntry.detail = new List<InvoiceDetail>();
+                            //invoiceEntry.p_Items = new FSBindingList<InvoiceDetail>(detail);
+                            invoiceDictionary.Add(invoiceEntry.invoiceID, invoiceEntry);
+                            }
+
+                            invoiceEntry.detail.Add(invoiceDetail);
+                            return invoiceEntry;
+                        },param,
+                        splitOn: "rotiID")
+                    .Distinct();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+            return listOfInvoice;
+        }
         /// <summary>
         /// Using Custom class to achieve sorting ability. Dapper ORM Multi Mapping One to Many
         /// </summary>
@@ -67,7 +104,7 @@ namespace InvoiceOTC.Repository.Service
             IList<Invoice> listOfInvoice = new List<Invoice>();
             try
             {
-                m_Sql = @"SELECT * FROM Invoiced AS A INNER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID;";               
+                m_Sql = @"SELECT * FROM Invoice AS A INNER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID;";               
 
                 var invoiceDictionary = new Dictionary<int, Invoice>();
 
@@ -110,46 +147,9 @@ namespace InvoiceOTC.Repository.Service
             IList<Invoice> listOfInvoice = new List<Invoice>();
             try
             {
-                m_Sql = @"SELECT * FROM Invoiced AS A INNER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID;";
+                m_Sql = @"SELECT * FROM Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID;";
 
-                //listOfInvoice = context.db.Query<Invoice>(m_Sql).ToList();
-                /////Dapper Mapping
-                //var data = context.db.Query<Invoice, InvoiceDetail, Invoice>(m_Sql, (Invoice, InvoiceDetail) => { Invoice.invoiceID = InvoiceDetail.invoiceID; return Invoice; });
-
-                ////DAPPER Multi Mapping One on One
-                //var invoices = context.db.Query<Invoice, InvoiceDetail, Invoice>(
-                //    m_Sql,
-                //    (invoice, invoiceDetail) =>
-                //    {
-                //        invoice.detail = invoiceDetail;
-                //        return invoice;
-                //    },
-                //    splitOn: "InvoiceID")
-                //.Distinct()
-                //.ToList();
-
-                var invoiceDictionary = new Dictionary<int, Invoice>();
-
-                listOfInvoice = context.db.Query<Invoice, InvoiceDetail, Invoice>(
-                        m_Sql,
-                        (invoice, invoiceDetail) =>
-                        {
-                            Invoice invoiceEntry;
-
-                            if (!invoiceDictionary.TryGetValue(invoice.invoiceID, out invoiceEntry))
-                            {
-                                invoiceEntry = invoice;
-                               invoiceEntry.detail = new List<InvoiceDetail>();
-                                //invoiceEntry.p_Items = new FSBindingList<InvoiceDetail>(detail);
-                                invoiceDictionary.Add(invoiceEntry.invoiceID, invoiceEntry);
-                            }
-
-                            invoiceEntry.detail.Add(invoiceDetail);
-                            return invoiceEntry;
-                        },
-                        splitOn: "rotiID")
-                    .Distinct()
-                    .ToList();
+                listOfInvoice = MappingRecordToObj(m_Sql).ToList();
             }
             catch
             {
@@ -158,24 +158,47 @@ namespace InvoiceOTC.Repository.Service
             return listOfInvoice;
         }
 
-        public Invoice GetInvoiceByID(int idInvoice)
+        public Invoice GetInvoiceByID(int invoiceID)
         {
-            throw new NotImplementedException();
+            Invoice invoice = null;
+            try
+            {
+                m_Sql = @"SELECT * FROM Invoice AS A INNER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID WHERE A.invoiceID = @invoiceID;";
+
+                invoice = MappingRecordToObj(m_Sql, new { invoiceID }).SingleOrDefault();
+            }
+            catch
+            {
+
+            }      
+            return invoice;
         }
 
         public Invoice GetInvoiceByNomor(string nomorInvoice)
         {
-            throw new NotImplementedException();
-        }
-
-        public IList<InvoiceDetail> GetInvoiceDetail()
-        {
-            IList<InvoiceDetail> listOfDetail = new List<InvoiceDetail>();
+            Invoice invoiceTU = null;
             try
             {
-                m_Sql = @"SELECT [rotiID],[InvoiceID],[itemCode],[itemQty],[discount],[itemPrice],[subTotal] FROM [OTF_Invoice].[dbo].[invoiceDetail]";
+                m_Sql = @"SELECT * FROM Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID WHERE A.nomorInvoice = @nomorInvoice;";
 
-                listOfDetail = context.db.Query<InvoiceDetail>(m_Sql).ToList();
+                invoiceTU = MappingRecordToObj(m_Sql, new { nomorInvoice }).SingleOrDefault();
+            }
+            catch
+            {
+
+            }
+            return invoiceTU;
+        }
+
+        public IList<Invoice> GetInvoicesByNomor(string nomorInvoice)
+        {
+            IList<Invoice> listOfDetail = new List<Invoice>();
+            try
+            {
+                m_Sql = @"SELECT * FROM  Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID WHERE A.nomorinvoice LIKE @nomorInvoice;";
+
+                nomorInvoice = string.Format("%{0}%", nomorInvoice);
+                listOfDetail = MappingRecordToObj(m_Sql, new { nomorInvoice }).ToList();
             }
             catch
             {
@@ -189,20 +212,19 @@ namespace InvoiceOTC.Repository.Service
             var result = 0;
             try
             {
-                m_Sql = @"INSERT INTO [OTF_Invoice].[dbo].[INVOICED]
-                            ([noInvoice]
-                            ,[dueDate]
-                            ,[outletCode]
-                            ,[subTotal]
-                            ,[ppn]
-                            ,[total]
-                            ,[issuedDate]
-                            ,[isPPN]
-                            ,[nomorPO]
-                            ,[periode]
-                            ,[pengguna]
-                            ,[id_payment]
-                            ,[isPayed])
+                m_Sql = @"INSERT INTO INVOICE (nomorinvoice
+                            ,dueDate
+                            ,outletCode
+                            ,subTotal
+                            ,ppn
+                            ,total
+                            ,issuedDate
+                            ,isPPN
+                            ,nomorPO
+                            ,periode
+                            ,pengguna
+                            ,idpayment
+                            ,isPayed)
                         VALUES 
                             (@nomorInvoice
                             ,@dueDate
@@ -215,10 +237,10 @@ namespace InvoiceOTC.Repository.Service
                             ,@nomorPO
                             ,@periode
                             ,@pengguna
-                            ,@paymentMethod
-                            ,@isPayed; ";
+                            ,@idPayment
+                            ,@isPayed); ";
 
-                result = context.db.Execute(m_Sql);
+                result = context.db.Execute(m_Sql, obj);
             }
             catch
             {
@@ -232,7 +254,7 @@ namespace InvoiceOTC.Repository.Service
             var result = 0;
             try
             {
-                m_Sql = @"Update INVOICED SET noInvoice = @nomorInvoice, " +
+                m_Sql = @"Update INVOICE SET nomorinvoice = @nomorInvoice, " +
                         "dueDate = @dueDate, " +
                         "outletCode = @outletCode, " +
                         "subTotal = @subTotal, " +
@@ -240,22 +262,17 @@ namespace InvoiceOTC.Repository.Service
                         "total = @total, " +
                         "issuedDate = @issuedDate, " +
                         "isPPN = @isPPN, " +
-                        "nomorPO = @nomorPO, " +
+                        "nomorPO = @nomorPO " +
                         //"pengguna = '{0}' " +
                         "WHERE InvoiceID = @invoiceID";
 
-                result = context.db.Execute(m_Sql);
+                result = context.db.Execute(m_Sql, obj);
             }
             catch
             {
-
+               
             }
             return result;
-        }
-
-        public Invoice GetInvoiceByNomor(int nomorInvoice)
-        {
-            throw new NotImplementedException();
         }
         #endregion
     }

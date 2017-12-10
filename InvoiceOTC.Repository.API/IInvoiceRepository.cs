@@ -23,12 +23,14 @@ namespace InvoiceOTC.Repository.API
         /// </summary>
         /// <param name="nomorInvoice"></param>
         /// <returns></returns>
-        Invoice GetInvoiceByNomor(int nomorInvoice);
+        Invoice GetInvoiceByNomor(string nomorInvoice);
 
         /// <summary>
         /// Using Custom class to achieve sorting ability. Dapper ORM Multi Mapping One to Many
         /// </summary>
         /// <returns></returns>
         FSBindingList<Invoice> GetAllSorted();
+
+        IList<Invoice> GetInvoicesByNomor(string nomorInvoice);
     }
 }

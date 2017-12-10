@@ -40,6 +40,7 @@ namespace InvoiceOTCUnitTest
                 issuedDate = DateTime.Now,
                 subTotal = 2400000232300,
                 ppn = 423232323,
+
                 nomorPO = "PS02221",
                 isPPN = true,
                 pengguna = "admin",
@@ -52,28 +53,38 @@ namespace InvoiceOTCUnitTest
         [Test]
         public void EditTest()
         {
-            //var existingInvoice = invoice.GetInvoiceByNomor("9000");
-            var newInvoice = new Invoice
-            {
-                nomorInvoice = "9077",
-                dueDate = DateTime.Now,
-                outletCode = "71390002",
-                issuedDate = DateTime.Now,
-                subTotal = 98092384093444,
-                ppn = 0,
-                nomorPO = "PS02221",
-                isPPN = false,
-                pengguna = "System",
-            };
+            var invoices = invoice.GetInvoicesByNomor("9000");
+            var existingInvoice = invoice.GetInvoiceByNomor("9000");
+            existingInvoice.nomorInvoice = "9077";
+            existingInvoice.dueDate = DateTime.Now;
+            existingInvoice.outletCode = "71390002";
+            existingInvoice.issuedDate = DateTime.Now;
+            existingInvoice.subTotal = 98092384093444;
+            existingInvoice.ppn = 0;
+            existingInvoice.nomorPO = "PS02221";
+            existingInvoice.isPPN = false;
+            existingInvoice.pengguna = "System";
+            existingInvoice.isPayed = true;
+            
 
-            var result = invoice.Update(newInvoice);
+            var result = invoice.Update(existingInvoice);
             Assert.IsTrue(result != 0);
+        }
+
+        [Test]
+        public void GetAll()
+        {
+            var invoices = invoice.GetAll();
+            Assert.IsNotNull(invoice);
         }
 
         [Test]
         public void RemoveTest()
         {
+            Invoice removeInvoice = invoice.GetInvoiceByNomor("9077");
 
+            var result = invoice.Delete(removeInvoice);
+            Assert.IsTrue(result != 0);
         }
         #endregion
     }
