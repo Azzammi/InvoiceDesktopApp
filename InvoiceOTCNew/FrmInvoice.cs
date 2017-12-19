@@ -14,21 +14,26 @@ using InvoiceOTC.Repository.Service;
 
 namespace InvoiceOTCNew
 {
-    public partial class FrmInvoice : Form
+    public partial class FrmInvoice : templateEntryFrm
     {
         #region Declaration
         private IInvoiceRepository invoiceRepository;
         private IOutletRepository outletRepository;
         private IProductRepository productRepository;
+
+        private bool _IsAddNew;
         #endregion
 
-        public FrmInvoice()
+        public FrmInvoice(bool isAddNew)
         {
             InitializeComponent();
 
             invoiceRepository = new InvoiceRepository();
             outletRepository = new OutletRepository();
             productRepository = new ProductRepository();
+
+            SetHeader("Invoice");
+            _IsAddNew = isAddNew;
         }
 
         private void invoiceBindingNavigator_RefreshItems(object sender, EventArgs e)
@@ -40,11 +45,30 @@ namespace InvoiceOTCNew
         {
             //IList<Invoice> listInvoice = invoiceRepository.GetAll();
             
-            invoiceBindingSource.DataSource = invoiceRepository.GetAllSorted();
+            invoiceBindingSource.DataSource = invoiceRepository.GetAll();
             outletBindingSource.DataSource = outletRepository.GetAll();
-            productBindingSource.DataSource = productRepository.GetAllSorted();
-        
-            //pItemsBindingSource.DataSource = listInvoice.SelectMany(x => x.detail).ToList();            
+            productBindingSource.DataSource = productRepository.GetAll();
+
+            //pItemsBindingSource.DataSource = listInvoice.SelectMany(x => x.detail).ToList();      
+            bindingSource = invoiceBindingSource;      
         }
+
+        protected override void Simpan()
+        {
+            Invoice dataInvoice = (Invoice)invoiceBindingSource.Current;
+            switch (_IsAddNew)
+            {
+                case true:
+                    invoiceRepository.Save(dataInvoice);
+                    break;
+                case false:
+                    invoiceRepository.Update(dataInvoice);
+                    break;
+                default:
+                    MessageBox.Show("Condition not set !!", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
+        }
+        
     }
 }

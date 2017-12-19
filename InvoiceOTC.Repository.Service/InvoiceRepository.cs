@@ -11,6 +11,7 @@ using InvoiceOTC.Repository.API;
 
 using FSCollections;
 using System.Windows.Forms;
+using System.Data.Common;
 
 namespace InvoiceOTC.Repository.Service
 {
@@ -46,7 +47,7 @@ namespace InvoiceOTC.Repository.Service
                 m_Sql = @"Delete From Invoice Where invoiceID = @invoiceID";
                 result = context.db.Execute(m_Sql, obj);
 
-                foreach(InvoiceDetail detail in obj.p_Items)
+                foreach(InvoiceDetail detail in obj.detail)
                 {
                     m_Detail.Delete(detail);
                 }
@@ -83,7 +84,7 @@ namespace InvoiceOTC.Repository.Service
                             invoiceEntry.detail.Add(invoiceDetail);
                             return invoiceEntry;
                         },param,
-                        splitOn: "rotiID")
+                        splitOn: "detailID")
                     .Distinct();
 
             }
@@ -95,6 +96,7 @@ namespace InvoiceOTC.Repository.Service
 
             return listOfInvoice;
         }
+
         /// <summary>
         /// Using Custom class to achieve sorting ability. Dapper ORM Multi Mapping One to Many
         /// </summary>
@@ -238,9 +240,25 @@ namespace InvoiceOTC.Repository.Service
                             ,@periode
                             ,@pengguna
                             ,@idPayment
-                            ,@isPayed); ";
+                            ,@isPayed); 
 
-                result = context.db.Execute(m_Sql, obj);
+                            SELECT currVal('invoiced_seq');";
+
+                //result = context.db.Execute(m_Sql, obj);
+                result = context.db.Query<int>(m_Sql, 
+                                                    new { obj.nomorInvoice, obj.dueDate,
+                                                        obj.outletCode, obj.subTotal,
+                                                        obj.ppn, obj.total,
+                                                        obj.issuedDate, obj.isPPN,
+                                                        obj.nomorPO, obj.periode,
+                                                        obj.pengguna, obj.idPayment,
+                                                        obj.isPayed }).SingleOrDefault();
+
+                foreach(InvoiceDetail detail in obj.detail)
+                {
+                    detail.invoiceID = result;
+                    m_Detail.Save(detail);
+                }
             }
             catch
             {
@@ -267,12 +285,22 @@ namespace InvoiceOTC.Repository.Service
                         "WHERE InvoiceID = @invoiceID";
 
                 result = context.db.Execute(m_Sql, obj);
+
+                foreach (InvoiceDetail detail in obj.detail)
+                {
+                    m_Detail.Update(detail);
+                }
             }
             catch
             {
                
             }
             return result;
+        }
+
+        public string GetInvoiceID(string nomorInvoice)
+        {
+            throw new NotImplementedException();
         }
         #endregion
     }

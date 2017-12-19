@@ -40,7 +40,7 @@ namespace InvoiceOTC.Repository.Service
             var result = 0;
             try
             {
-                m_Sql = @"Delete From InvoiceDetail Where rotiID = @p_ID";
+                m_Sql = @"Delete From InvoiceDetail Where detailID = @detailID";
 
                 result = context.db.Execute(m_Sql, obj);
             }
@@ -59,12 +59,94 @@ namespace InvoiceOTC.Repository.Service
 
         public int Save(InvoiceDetail obj)
         {
-            throw new NotImplementedException();
+            var result = 0;         
+            try
+            {
+                m_Sql = @"INSERT INTO invoicedetail(
+                         invoiceid, itemcode, itemqty, discount, itemprice, subtotal)
+                         VALUES (@invoiceID, @itemCode, @itemQty, @discount, @itemPrice, @subTotal);";
+                result = context.db.Execute(m_Sql, obj);
+            }
+            catch
+            {
+
+            }
+
+            return result;
         }
 
         public int Update(InvoiceDetail obj)
         {
-            throw new NotImplementedException();
+            var result = 0;   
+
+            try
+            {
+                m_Sql = @"UPDATE invoicedetail SET 
+                        detailID = @detailID,                          
+                        itemcode = @itemCode, 
+                        itemqty = @itemQty, 
+                        discount = @discount, 
+                        itemprice= @itemPrice, 
+                        subtotal= @subTotal
+                        WHERE invoiceID = @invoiceID;";
+                result = context.db.Execute(m_Sql, obj);
+            }
+            catch
+            {
+
+            }
+
+            return result;
         }
+
+        public int Save(int invoiceID, InvoiceDetail obj)
+        {
+            var result = 0;
+            obj.invoiceID = invoiceID;
+
+            try
+            {
+                m_Sql = @"INSERT INTO invoicedetail(
+                        detailID, invoiceid, itemcode, itemqty, discount, itemprice, subtotal)
+                         VALUES (@invoiceID, @itemCode, @itemQty, @discount, @itemPrice, @subTotal);";
+                result = context.db.Execute(m_Sql, obj);
+            }
+            catch
+            {
+
+            }
+
+            return result;
+        }
+
+        public int Delete(int invoiceID)
+        {
+            var result = 0;           
+
+            try
+            {
+                m_Sql = @"DELETE FROM InvoiceDetail WHERE invoiceID = @invoiceID;";
+                result = context.db.Execute(m_Sql, new { invoiceID });
+            }
+            catch
+            {
+
+            }
+
+            return result;
+        }
+
+        //public InvoiceDetail GetInvoiceDetailByItemCode(int invoiceID, string itemCode)
+        //{
+        //    InvoiceDetail detail = null;
+        //    try
+        //    {
+        //        m_Sql = "SELECT * FRO"
+        //    }
+        //    catch
+        //    {
+
+        //    }
+        //}
     }
 }

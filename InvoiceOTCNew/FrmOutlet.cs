@@ -15,7 +15,7 @@ using FSCollections;
 
 namespace InvoiceOTCNew
 {
-    public partial class FrmOutlet : Form, IBaseFormCRUD
+    public partial class FrmOutlet : Form
     {
         #region Declaration
         private IOutletRepository m_Outlet;
@@ -73,6 +73,20 @@ namespace InvoiceOTCNew
         private void outletBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            outletBindingSource.AddNew();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Outlet newOutlet = (Outlet)outletBindingSource.Current;
+            var result = m_Outlet.Save(newOutlet);
+
+            if(result != 0) { MessageBox.Show("Berhasil"); }
+            button1.PerformClick();
         }
     }
 }

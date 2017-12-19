@@ -15,16 +15,14 @@ namespace InvoiceOTCUnitTest
     class InvoiceRepoTest
     {
         #region Declaration
-        private IInvoiceRepository invoice;
-        private IInvoiceDetailRepository invoiceDetail;
+        private IInvoiceRepository invoice;        
         #endregion
 
         #region Constructor
         [SetUp]
         public void Init()
         {
-            invoice = new InvoiceRepository();
-            invoiceDetail = new InvoiceDetailRepository();
+            invoice = new InvoiceRepository();            
         }
         #endregion
 
@@ -52,8 +50,7 @@ namespace InvoiceOTCUnitTest
 
         [Test]
         public void EditTest()
-        {
-            var invoices = invoice.GetInvoicesByNomor("9000");
+        {            
             var existingInvoice = invoice.GetInvoiceByNomor("9000");
             existingInvoice.nomorInvoice = "9077";
             existingInvoice.dueDate = DateTime.Now;

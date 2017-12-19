@@ -30,7 +30,7 @@ namespace InvoiceOTC.Repository.API
         /// </summary>
         /// <returns></returns>
         FSBindingList<Invoice> GetAllSorted();
-
+        
         IList<Invoice> GetInvoicesByNomor(string nomorInvoice);
     }
 }
