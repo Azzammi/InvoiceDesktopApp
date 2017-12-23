@@ -65,66 +65,67 @@
             // outlAddressLabel
             // 
             outlAddressLabel.AutoSize = true;
+            outlAddressLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             outlAddressLabel.ForeColor = System.Drawing.Color.White;
-            outlAddressLabel.Location = new System.Drawing.Point(3, 53);
+            outlAddressLabel.Location = new System.Drawing.Point(3, 57);
             outlAddressLabel.Name = "outlAddressLabel";
-            outlAddressLabel.Size = new System.Drawing.Size(68, 13);
+            outlAddressLabel.Size = new System.Drawing.Size(75, 124);
             outlAddressLabel.TabIndex = 0;
             outlAddressLabel.Text = "outl Address:";
             // 
             // outlCodeLabel
             // 
-            outlCodeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             outlCodeLabel.AutoSize = true;
+            outlCodeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             outlCodeLabel.ForeColor = System.Drawing.Color.White;
             outlCodeLabel.Location = new System.Drawing.Point(3, 0);
             outlCodeLabel.Name = "outlCodeLabel";
-            outlCodeLabel.Size = new System.Drawing.Size(55, 13);
+            outlCodeLabel.Size = new System.Drawing.Size(75, 28);
             outlCodeLabel.TabIndex = 2;
             outlCodeLabel.Text = "outl Code:";
             outlCodeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // outlNameLabel
             // 
-            outlNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             outlNameLabel.AutoSize = true;
+            outlNameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             outlNameLabel.ForeColor = System.Drawing.Color.White;
-            outlNameLabel.Location = new System.Drawing.Point(3, 26);
+            outlNameLabel.Location = new System.Drawing.Point(3, 28);
             outlNameLabel.Name = "outlNameLabel";
-            outlNameLabel.Size = new System.Drawing.Size(58, 13);
+            outlNameLabel.Size = new System.Drawing.Size(75, 29);
             outlNameLabel.TabIndex = 4;
             outlNameLabel.Text = "outl Name:";
             // 
             // outlRouteLabel
             // 
             outlRouteLabel.AutoSize = true;
+            outlRouteLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             outlRouteLabel.ForeColor = System.Drawing.Color.White;
-            outlRouteLabel.Location = new System.Drawing.Point(3, 177);
+            outlRouteLabel.Location = new System.Drawing.Point(3, 181);
             outlRouteLabel.Name = "outlRouteLabel";
-            outlRouteLabel.Size = new System.Drawing.Size(59, 13);
+            outlRouteLabel.Size = new System.Drawing.Size(75, 27);
             outlRouteLabel.TabIndex = 6;
             outlRouteLabel.Text = "outl Route:";
             // 
             // outlSlsmLabel
             // 
             outlSlsmLabel.AutoSize = true;
+            outlSlsmLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             outlSlsmLabel.ForeColor = System.Drawing.Color.White;
-            outlSlsmLabel.Location = new System.Drawing.Point(3, 204);
+            outlSlsmLabel.Location = new System.Drawing.Point(3, 208);
             outlSlsmLabel.Name = "outlSlsmLabel";
-            outlSlsmLabel.Size = new System.Drawing.Size(52, 13);
+            outlSlsmLabel.Size = new System.Drawing.Size(75, 26);
             outlSlsmLabel.TabIndex = 8;
             outlSlsmLabel.Text = "outl Slsm:";
             // 
             // outlStatusLabel
             // 
             outlStatusLabel.AutoSize = true;
+            outlStatusLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             outlStatusLabel.ForeColor = System.Drawing.Color.White;
-            outlStatusLabel.Location = new System.Drawing.Point(3, 230);
+            outlStatusLabel.Location = new System.Drawing.Point(3, 234);
             outlStatusLabel.Name = "outlStatusLabel";
-            outlStatusLabel.Size = new System.Drawing.Size(60, 13);
+            outlStatusLabel.Size = new System.Drawing.Size(75, 21);
             outlStatusLabel.TabIndex = 10;
             outlStatusLabel.Text = "outl Status:";
             // 
@@ -224,7 +225,7 @@
             // outlNameTextBox
             // 
             this.outlNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.outletBindingSource, "outlName", true));
-            this.outlNameTextBox.Location = new System.Drawing.Point(84, 29);
+            this.outlNameTextBox.Location = new System.Drawing.Point(84, 31);
             this.outlNameTextBox.Name = "outlNameTextBox";
             this.outlNameTextBox.Size = new System.Drawing.Size(104, 20);
             this.outlNameTextBox.TabIndex = 1;
@@ -233,7 +234,7 @@
             // 
             this.outlAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.outletBindingSource, "outlAddress", true));
             this.outlAddressTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outlAddressTextBox.Location = new System.Drawing.Point(84, 56);
+            this.outlAddressTextBox.Location = new System.Drawing.Point(84, 60);
             this.outlAddressTextBox.Multiline = true;
             this.outlAddressTextBox.Name = "outlAddressTextBox";
             this.outlAddressTextBox.Size = new System.Drawing.Size(259, 118);
@@ -242,7 +243,7 @@
             // outlRouteTextBox
             // 
             this.outlRouteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.outletBindingSource, "outlRoute", true));
-            this.outlRouteTextBox.Location = new System.Drawing.Point(84, 180);
+            this.outlRouteTextBox.Location = new System.Drawing.Point(84, 184);
             this.outlRouteTextBox.Name = "outlRouteTextBox";
             this.outlRouteTextBox.Size = new System.Drawing.Size(104, 20);
             this.outlRouteTextBox.TabIndex = 3;
@@ -250,7 +251,7 @@
             // outlSlsmTextBox
             // 
             this.outlSlsmTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.outletBindingSource, "outlSlsm", true));
-            this.outlSlsmTextBox.Location = new System.Drawing.Point(84, 207);
+            this.outlSlsmTextBox.Location = new System.Drawing.Point(84, 211);
             this.outlSlsmTextBox.Name = "outlSlsmTextBox";
             this.outlSlsmTextBox.Size = new System.Drawing.Size(104, 20);
             this.outlSlsmTextBox.TabIndex = 4;
@@ -259,7 +260,7 @@
             // 
             this.outlStatusCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.outletBindingSource, "outlStatus", true));
             this.outlStatusCheckBox.ForeColor = System.Drawing.Color.White;
-            this.outlStatusCheckBox.Location = new System.Drawing.Point(84, 233);
+            this.outlStatusCheckBox.Location = new System.Drawing.Point(84, 237);
             this.outlStatusCheckBox.Name = "outlStatusCheckBox";
             this.outlStatusCheckBox.Size = new System.Drawing.Size(104, 15);
             this.outlStatusCheckBox.TabIndex = 5;

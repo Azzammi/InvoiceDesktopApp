@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InvoiceOTCNew</RootNamespace>
     <AssemblyName>InvoiceOTCNew</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
@@ -53,9 +53,18 @@
       <HintPath>..\packages\Npgsql.3.2.6\lib\net451\Npgsql.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Syncfusion.Grid.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Grid.Grouping.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Grid.Grouping.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Grid.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Grouping.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Shared.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
+    <Reference Include="Syncfusion.Shared.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
       <Private>True</Private>
@@ -69,8 +78,12 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helper\DialogHelper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,25 +96,43 @@
     <Compile Include="FrmInvoice.Designer.cs">
       <DependentUpon>FrmInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmList.Designer.cs">
+      <DependentUpon>FrmList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmListBoundGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmListBoundGrid.Designer.cs">
+      <DependentUpon>FrmListBoundGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmOutlet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmOutlet.Designer.cs">
       <DependentUpon>FrmOutlet.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProduct.Designer.cs">
+      <DependentUpon>FrmProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\KeyPressHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="templateEntryFrm.cs">
+    <Compile Include="Template\templateEntryFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="templateEntryFrm.Designer.cs">
+    <Compile Include="Template\templateEntryFrm.Designer.cs">
       <DependentUpon>templateEntryFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TemplateListForm.cs">
+    <Compile Include="Template\TemplateListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TemplateListForm.Designer.cs">
+    <Compile Include="Template\TemplateListForm.Designer.cs">
       <DependentUpon>TemplateListForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
@@ -110,8 +141,17 @@
     <EmbeddedResource Include="FrmInvoice.resx">
       <DependentUpon>FrmInvoice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmList.resx">
+      <DependentUpon>FrmList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListBoundGrid.resx">
+      <DependentUpon>FrmListBoundGrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmOutlet.resx">
       <DependentUpon>FrmOutlet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProduct.resx">
+      <DependentUpon>FrmProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -122,10 +162,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="templateEntryFrm.resx">
+    <EmbeddedResource Include="Template\templateEntryFrm.resx">
       <DependentUpon>templateEntryFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TemplateListForm.resx">
+    <EmbeddedResource Include="Template\TemplateListForm.resx">
       <DependentUpon>TemplateListForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

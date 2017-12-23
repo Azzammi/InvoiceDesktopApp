@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace InvoiceOTCNew
 {
-    public partial class TemplateListForm : Form
+    public partial class FrmProduct : templateEntryFrm
     {
-        public TemplateListForm()
+        public FrmProduct()
         {
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void FrmProduct_Load(object sender, EventArgs e)
         {
 
         }

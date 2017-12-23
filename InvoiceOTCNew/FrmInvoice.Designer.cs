@@ -57,21 +57,21 @@
             this.issuedDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.nomorInvoiceTextBox = new System.Windows.Forms.TextBox();
             this.nomorPOTextBox = new System.Windows.Forms.TextBox();
-            this.outletCodeTextBox = new System.Windows.Forms.TextBox();
             this.penggunaTextBox = new System.Windows.Forms.TextBox();
             this.periodeTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.p_ItemsDataGridView = new System.Windows.Forms.DataGridView();
-            this.detailBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.subTotalTextBox = new System.Windows.Forms.TextBox();
-            this.ppnTextBox = new System.Windows.Forms.TextBox();
-            this.totalTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detailBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.subTotalTextBox = new System.Windows.Forms.TextBox();
+            this.ppnTextBox = new System.Windows.Forms.TextBox();
+            this.totalTextBox = new System.Windows.Forms.TextBox();
+            this.outletCodeComboBox = new System.Windows.Forms.ComboBox();
             dueDateLabel = new System.Windows.Forms.Label();
             idPaymentLabel = new System.Windows.Forms.Label();
             invoiceIDLabel = new System.Windows.Forms.Label();
@@ -182,7 +182,7 @@
             // penggunaLabel
             // 
             penggunaLabel.AutoSize = true;
-            penggunaLabel.Location = new System.Drawing.Point(3, 242);
+            penggunaLabel.Location = new System.Drawing.Point(3, 243);
             penggunaLabel.Name = "penggunaLabel";
             penggunaLabel.Size = new System.Drawing.Size(58, 13);
             penggunaLabel.TabIndex = 18;
@@ -191,7 +191,7 @@
             // periodeLabel
             // 
             periodeLabel.AutoSize = true;
-            periodeLabel.Location = new System.Drawing.Point(3, 268);
+            periodeLabel.Location = new System.Drawing.Point(3, 269);
             periodeLabel.Name = "periodeLabel";
             periodeLabel.Size = new System.Drawing.Size(45, 13);
             periodeLabel.TabIndex = 20;
@@ -278,11 +278,11 @@
             this.tableLayoutPanel5.Controls.Add(nomorPOLabel, 0, 7);
             this.tableLayoutPanel5.Controls.Add(this.nomorPOTextBox, 1, 7);
             this.tableLayoutPanel5.Controls.Add(outletCodeLabel, 0, 8);
-            this.tableLayoutPanel5.Controls.Add(this.outletCodeTextBox, 1, 8);
             this.tableLayoutPanel5.Controls.Add(penggunaLabel, 0, 9);
             this.tableLayoutPanel5.Controls.Add(this.penggunaTextBox, 1, 9);
             this.tableLayoutPanel5.Controls.Add(periodeLabel, 0, 10);
             this.tableLayoutPanel5.Controls.Add(this.periodeTextBox, 1, 10);
+            this.tableLayoutPanel5.Controls.Add(this.outletCodeComboBox, 1, 8);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -373,18 +373,10 @@
             this.nomorPOTextBox.Size = new System.Drawing.Size(200, 20);
             this.nomorPOTextBox.TabIndex = 15;
             // 
-            // outletCodeTextBox
-            // 
-            this.outletCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "outletCode", true));
-            this.outletCodeTextBox.Location = new System.Drawing.Point(226, 219);
-            this.outletCodeTextBox.Name = "outletCodeTextBox";
-            this.outletCodeTextBox.Size = new System.Drawing.Size(200, 20);
-            this.outletCodeTextBox.TabIndex = 17;
-            // 
             // penggunaTextBox
             // 
             this.penggunaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "pengguna", true));
-            this.penggunaTextBox.Location = new System.Drawing.Point(226, 245);
+            this.penggunaTextBox.Location = new System.Drawing.Point(226, 246);
             this.penggunaTextBox.Name = "penggunaTextBox";
             this.penggunaTextBox.Size = new System.Drawing.Size(200, 20);
             this.penggunaTextBox.TabIndex = 19;
@@ -392,7 +384,7 @@
             // periodeTextBox
             // 
             this.periodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "periode", true));
-            this.periodeTextBox.Location = new System.Drawing.Point(226, 271);
+            this.periodeTextBox.Location = new System.Drawing.Point(226, 272);
             this.periodeTextBox.Name = "periodeTextBox";
             this.periodeTextBox.Size = new System.Drawing.Size(200, 20);
             this.periodeTextBox.TabIndex = 21;
@@ -428,6 +420,42 @@
             this.p_ItemsDataGridView.Name = "p_ItemsDataGridView";
             this.p_ItemsDataGridView.Size = new System.Drawing.Size(442, 327);
             this.p_ItemsDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "itemCode";
+            this.dataGridViewTextBoxColumn3.DataSource = this.productBindingSource;
+            this.dataGridViewTextBoxColumn3.DisplayMember = "itemName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "itemCode";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn3.ValueMember = "itemCode";
+            this.dataGridViewTextBoxColumn3.Width = 300;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "itemQty";
+            this.dataGridViewTextBoxColumn4.HeaderText = "itemQty";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "discount";
+            this.dataGridViewTextBoxColumn5.HeaderText = "discount";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "itemPrice";
+            this.dataGridViewTextBoxColumn6.HeaderText = "itemPrice";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "subTotal";
+            this.dataGridViewTextBoxColumn7.HeaderText = "subTotal";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
             // detailBindingSource
             // 
@@ -479,41 +507,17 @@
             this.totalTextBox.Size = new System.Drawing.Size(200, 20);
             this.totalTextBox.TabIndex = 27;
             // 
-            // dataGridViewTextBoxColumn3
+            // outletCodeComboBox
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "itemCode";
-            this.dataGridViewTextBoxColumn3.DataSource = this.productBindingSource;
-            this.dataGridViewTextBoxColumn3.DisplayMember = "itemName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "itemCode";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn3.ValueMember = "itemCode";
-            this.dataGridViewTextBoxColumn3.Width = 300;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "itemQty";
-            this.dataGridViewTextBoxColumn4.HeaderText = "itemQty";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "discount";
-            this.dataGridViewTextBoxColumn5.HeaderText = "discount";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "itemPrice";
-            this.dataGridViewTextBoxColumn6.HeaderText = "itemPrice";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "subTotal";
-            this.dataGridViewTextBoxColumn7.HeaderText = "subTotal";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.outletCodeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.invoiceBindingSource, "outletCode", true));
+            this.outletCodeComboBox.DataSource = this.outletBindingSource;
+            this.outletCodeComboBox.DisplayMember = "outlName";
+            this.outletCodeComboBox.FormattingEnabled = true;
+            this.outletCodeComboBox.Location = new System.Drawing.Point(226, 219);
+            this.outletCodeComboBox.Name = "outletCodeComboBox";
+            this.outletCodeComboBox.Size = new System.Drawing.Size(200, 21);
+            this.outletCodeComboBox.TabIndex = 22;
+            this.outletCodeComboBox.ValueMember = "outlCode";
             // 
             // FrmInvoice
             // 
@@ -558,7 +562,6 @@
         private System.Windows.Forms.DateTimePicker issuedDateDateTimePicker;
         private System.Windows.Forms.TextBox nomorInvoiceTextBox;
         private System.Windows.Forms.TextBox nomorPOTextBox;
-        private System.Windows.Forms.TextBox outletCodeTextBox;
         private System.Windows.Forms.TextBox penggunaTextBox;
         private System.Windows.Forms.TextBox periodeTextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
@@ -573,5 +576,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.ComboBox outletCodeComboBox;
     }
 }

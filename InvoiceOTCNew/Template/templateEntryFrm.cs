@@ -19,6 +19,11 @@ namespace InvoiceOTCNew
             InitializeComponent();
         }
 
+        public templateEntryFrm(bool isAddNew)
+        {
+            InitializeComponent();
+            CekKondisi(isAddNew);
+        }
         #endregion
 
         #region Protected and Override Method
@@ -29,7 +34,7 @@ namespace InvoiceOTCNew
         protected void SetHeader(string header)
         {
             this.Text = header;
-            this.lblHeader.Text = header;
+            this.lblHeader.Text = header.ToUpper();
         }
 
         protected virtual void Simpan()
@@ -42,6 +47,18 @@ namespace InvoiceOTCNew
             
         }
 
+        protected virtual void CekKondisi(bool condition)
+        {
+            switch (condition)
+            {
+                case true:
+                    break;
+                case false:
+                    break;
+                default:
+                    break;
+            }
+        }
         #endregion
 
 
@@ -59,5 +76,7 @@ namespace InvoiceOTCNew
         {
             Simpan();
         }
+
+
     }
 }
