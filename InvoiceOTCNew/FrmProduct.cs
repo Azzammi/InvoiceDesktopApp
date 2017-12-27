@@ -24,7 +24,10 @@ namespace InvoiceOTCNew
             productRepository = new ProductRepository();
             CekKondisi(FormCondition.Ready);
         }
-
+        /// <summary>
+        /// Passing data for edit
+        /// </summary>
+        /// <param name="data"></param>
         public FrmProduct(Product data)
         {
             InitializeComponent();

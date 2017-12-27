@@ -27,11 +27,18 @@ namespace InvoiceOTCNew
         #region Overrided Method
         protected override void tambahBtn_Click(object sender, EventArgs e)
         {
-            base.tambahBtn_Click(sender, e);
+            var frm = new FrmOutlet();
+            frm.Listener = this;
+            frm.ShowDialog();
         }
         protected override void EditBtn_Click(object sender, EventArgs e)
         {
-            base.EditBtn_Click(sender, e);
+            Outlet outlet = (Outlet)outletBindingSource.Current;
+            if (outlet == null) return;
+
+            var frm = new FrmOutlet(outlet);
+            frm.Listener = this;
+            frm.ShowDialog();
         }
         protected override void DeleteBtn_Click(object sender, EventArgs e)
         {

@@ -36,7 +36,7 @@ namespace InvoiceOTCNew
             productList = product.GetAllSorted();
             productBindingSource.DataSource = productList;
 
-            productDataGridView.DataSource = productBindingSource;         
+            productDataGridView.DataSource = TimeZoneInfo.GetSystemTimeZones();     
         }
 
         public void BindingSource_ListChanged(object sender, ListChangedEventArgs e)

@@ -95,6 +95,12 @@
     <Compile Include="FrmListProduct.Designer.cs">
       <DependentUpon>FrmListProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOutlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOutlet.Designer.cs">
+      <DependentUpon>FrmOutlet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\DialogHelper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -119,12 +125,6 @@
     </Compile>
     <Compile Include="FrmListBoundGrid.Designer.cs">
       <DependentUpon>FrmListBoundGrid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmOutlet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmOutlet.Designer.cs">
-      <DependentUpon>FrmOutlet.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmProduct.cs">
       <SubType>Form</SubType>

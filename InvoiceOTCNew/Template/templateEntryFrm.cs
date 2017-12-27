@@ -38,6 +38,7 @@ namespace InvoiceOTCNew
         {
             this.Text = header;
             this.lblHeader.Text = header.ToUpper();
+            this.Text = header.ToUpperInvariant();
         }       
       
         /// <summary>

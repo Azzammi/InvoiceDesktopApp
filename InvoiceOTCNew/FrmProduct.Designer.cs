@@ -73,6 +73,7 @@
             brandLabel.Size = new System.Drawing.Size(100, 31);
             brandLabel.TabIndex = 0;
             brandLabel.Text = "brand:";
+            brandLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // categoryLabel
             // 
@@ -85,6 +86,7 @@
             categoryLabel.Size = new System.Drawing.Size(100, 30);
             categoryLabel.TabIndex = 2;
             categoryLabel.Text = "category:";
+            categoryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // itemCodeLabel
             // 
@@ -97,6 +99,7 @@
             itemCodeLabel.Size = new System.Drawing.Size(100, 28);
             itemCodeLabel.TabIndex = 4;
             itemCodeLabel.Text = "item Code:";
+            itemCodeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // itemNameLabel
             // 
@@ -109,6 +112,7 @@
             itemNameLabel.Size = new System.Drawing.Size(100, 33);
             itemNameLabel.TabIndex = 6;
             itemNameLabel.Text = "item Name:";
+            itemNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // itemSortLabel
             // 
@@ -121,6 +125,7 @@
             itemSortLabel.Size = new System.Drawing.Size(100, 31);
             itemSortLabel.TabIndex = 8;
             itemSortLabel.Text = "item Sort:";
+            itemSortLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // jenisLabel
             // 
@@ -133,6 +138,7 @@
             jenisLabel.Size = new System.Drawing.Size(100, 32);
             jenisLabel.TabIndex = 10;
             jenisLabel.Text = "jenis:";
+            jenisLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // priceLabel
             // 
@@ -145,6 +151,7 @@
             priceLabel.Size = new System.Drawing.Size(100, 27);
             priceLabel.TabIndex = 12;
             priceLabel.Text = "price:";
+            priceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // statLabel
             // 
@@ -157,6 +164,7 @@
             statLabel.Size = new System.Drawing.Size(100, 21);
             statLabel.TabIndex = 14;
             statLabel.Text = "stat:";
+            statLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // subCategoryLabel
             // 
@@ -169,6 +177,7 @@
             subCategoryLabel.Size = new System.Drawing.Size(100, 29);
             subCategoryLabel.TabIndex = 16;
             subCategoryLabel.Text = "sub Category:";
+            subCategoryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel4
             // 
