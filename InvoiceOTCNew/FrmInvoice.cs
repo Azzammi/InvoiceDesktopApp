@@ -19,9 +19,7 @@ namespace InvoiceOTCNew
         #region Declaration
         private IInvoiceRepository invoiceRepository;
         private IOutletRepository outletRepository;
-        private IProductRepository productRepository;
-
-        private bool _IsAddNew;
+        private IProductRepository productRepository;        
         #endregion
 
         public FrmInvoice(bool isAddNew)
@@ -33,30 +31,32 @@ namespace InvoiceOTCNew
             productRepository = new ProductRepository();
 
             SetHeader("Invoice");
-            _IsAddNew = isAddNew;
+            this.isAddNew = isAddNew;
+
+            if(isAddNew == true)
+            {
+                invoiceBindingSource.AddNew();
+            }
         }
-
-        private void invoiceBindingNavigator_RefreshItems(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void FrmInvoice_Load(object sender, EventArgs e)
         {
             //IList<Invoice> listInvoice = invoiceRepository.GetAll();
             
-            invoiceBindingSource.DataSource = invoiceRepository.GetAll();
+           invoiceBindingSource.DataSource = invoiceRepository.GetAll();
             outletBindingSource.DataSource = outletRepository.GetAll();
             productBindingSource.DataSource = productRepository.GetAll();
 
             //pItemsBindingSource.DataSource = listInvoice.SelectMany(x => x.detail).ToList();      
-            bindingSource = invoiceBindingSource;      
+            //bindingSource.DataSource = invoiceRepository ;      
         }
 
-        protected override void Simpan()
-        {
+        protected override void button2_Click(object sender, EventArgs e)
+        {            
             Invoice dataInvoice = (Invoice)invoiceBindingSource.Current;
-            switch (_IsAddNew)
+            if (dataInvoice == null) return;
+
+            switch (isAddNew)
             {
                 case true:
                     invoiceRepository.Save(dataInvoice);
@@ -68,6 +68,10 @@ namespace InvoiceOTCNew
                     MessageBox.Show("Condition not set !!", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
             }
+
+            isAddNew = true;
+            CekKondisi(FormCondition.Ready);
+            invoiceBindingSource.AddNew();
         }
         
     }

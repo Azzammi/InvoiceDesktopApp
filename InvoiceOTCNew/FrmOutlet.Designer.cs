@@ -72,6 +72,7 @@
             outlAddressLabel.Size = new System.Drawing.Size(75, 124);
             outlAddressLabel.TabIndex = 0;
             outlAddressLabel.Text = "outl Address:";
+            outlAddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // outlCodeLabel
             // 
@@ -83,7 +84,7 @@
             outlCodeLabel.Size = new System.Drawing.Size(75, 28);
             outlCodeLabel.TabIndex = 2;
             outlCodeLabel.Text = "outl Code:";
-            outlCodeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            outlCodeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // outlNameLabel
             // 
@@ -95,6 +96,7 @@
             outlNameLabel.Size = new System.Drawing.Size(75, 29);
             outlNameLabel.TabIndex = 4;
             outlNameLabel.Text = "outl Name:";
+            outlNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // outlRouteLabel
             // 
@@ -106,6 +108,7 @@
             outlRouteLabel.Size = new System.Drawing.Size(75, 27);
             outlRouteLabel.TabIndex = 6;
             outlRouteLabel.Text = "outl Route:";
+            outlRouteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // outlSlsmLabel
             // 
@@ -117,6 +120,7 @@
             outlSlsmLabel.Size = new System.Drawing.Size(75, 26);
             outlSlsmLabel.TabIndex = 8;
             outlSlsmLabel.Text = "outl Slsm:";
+            outlSlsmLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // outlStatusLabel
             // 
@@ -128,6 +132,7 @@
             outlStatusLabel.Size = new System.Drawing.Size(75, 21);
             outlStatusLabel.TabIndex = 10;
             outlStatusLabel.Text = "outl Status:";
+            outlStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // outletBindingSource
             // 

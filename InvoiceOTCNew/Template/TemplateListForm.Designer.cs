@@ -132,6 +132,7 @@
             this.editBtn.TabIndex = 1;
             this.editBtn.Text = "Edit ";
             this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // DeleteBtn
             // 
@@ -173,7 +174,7 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "TemplateListForm";
-            this.Text = "TemplateListForm";
+            this.Text = "TemplateListForm";            
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

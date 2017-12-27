@@ -59,6 +59,7 @@
             this.nomorPOTextBox = new System.Windows.Forms.TextBox();
             this.penggunaTextBox = new System.Windows.Forms.TextBox();
             this.periodeTextBox = new System.Windows.Forms.TextBox();
+            this.outletCodeComboBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.p_ItemsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -71,7 +72,6 @@
             this.subTotalTextBox = new System.Windows.Forms.TextBox();
             this.ppnTextBox = new System.Windows.Forms.TextBox();
             this.totalTextBox = new System.Windows.Forms.TextBox();
-            this.outletCodeComboBox = new System.Windows.Forms.ComboBox();
             dueDateLabel = new System.Windows.Forms.Label();
             idPaymentLabel = new System.Windows.Forms.Label();
             invoiceIDLabel = new System.Windows.Forms.Label();
@@ -101,126 +101,168 @@
             // dueDateLabel
             // 
             dueDateLabel.AutoSize = true;
+            dueDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            dueDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dueDateLabel.ForeColor = System.Drawing.Color.White;
             dueDateLabel.Location = new System.Drawing.Point(3, 0);
             dueDateLabel.Name = "dueDateLabel";
-            dueDateLabel.Size = new System.Drawing.Size(54, 13);
+            dueDateLabel.Size = new System.Drawing.Size(217, 26);
             dueDateLabel.TabIndex = 0;
             dueDateLabel.Text = "due Date:";
             // 
             // idPaymentLabel
             // 
             idPaymentLabel.AutoSize = true;
+            idPaymentLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            idPaymentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            idPaymentLabel.ForeColor = System.Drawing.Color.White;
             idPaymentLabel.Location = new System.Drawing.Point(3, 26);
             idPaymentLabel.Name = "idPaymentLabel";
-            idPaymentLabel.Size = new System.Drawing.Size(62, 13);
+            idPaymentLabel.Size = new System.Drawing.Size(217, 26);
             idPaymentLabel.TabIndex = 2;
             idPaymentLabel.Text = "id Payment:";
             // 
             // invoiceIDLabel
             // 
             invoiceIDLabel.AutoSize = true;
+            invoiceIDLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            invoiceIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            invoiceIDLabel.ForeColor = System.Drawing.Color.White;
             invoiceIDLabel.Location = new System.Drawing.Point(3, 52);
             invoiceIDLabel.Name = "invoiceIDLabel";
-            invoiceIDLabel.Size = new System.Drawing.Size(58, 13);
+            invoiceIDLabel.Size = new System.Drawing.Size(217, 26);
             invoiceIDLabel.TabIndex = 4;
             invoiceIDLabel.Text = "invoice ID:";
             // 
             // isPayedLabel
             // 
             isPayedLabel.AutoSize = true;
+            isPayedLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            isPayedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            isPayedLabel.ForeColor = System.Drawing.Color.White;
             isPayedLabel.Location = new System.Drawing.Point(3, 78);
             isPayedLabel.Name = "isPayedLabel";
-            isPayedLabel.Size = new System.Drawing.Size(50, 13);
+            isPayedLabel.Size = new System.Drawing.Size(217, 30);
             isPayedLabel.TabIndex = 6;
             isPayedLabel.Text = "is Payed:";
             // 
             // isPPNLabel
             // 
             isPPNLabel.AutoSize = true;
+            isPPNLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            isPPNLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            isPPNLabel.ForeColor = System.Drawing.Color.White;
             isPPNLabel.Location = new System.Drawing.Point(3, 108);
             isPPNLabel.Name = "isPPNLabel";
-            isPPNLabel.Size = new System.Drawing.Size(42, 13);
+            isPPNLabel.Size = new System.Drawing.Size(217, 30);
             isPPNLabel.TabIndex = 8;
             isPPNLabel.Text = "is PPN:";
             // 
             // issuedDateLabel
             // 
             issuedDateLabel.AutoSize = true;
+            issuedDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            issuedDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            issuedDateLabel.ForeColor = System.Drawing.Color.White;
             issuedDateLabel.Location = new System.Drawing.Point(3, 138);
             issuedDateLabel.Name = "issuedDateLabel";
-            issuedDateLabel.Size = new System.Drawing.Size(66, 13);
+            issuedDateLabel.Size = new System.Drawing.Size(217, 26);
             issuedDateLabel.TabIndex = 10;
             issuedDateLabel.Text = "issued Date:";
             // 
             // nomorInvoiceLabel
             // 
             nomorInvoiceLabel.AutoSize = true;
+            nomorInvoiceLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            nomorInvoiceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nomorInvoiceLabel.ForeColor = System.Drawing.Color.White;
             nomorInvoiceLabel.Location = new System.Drawing.Point(3, 164);
             nomorInvoiceLabel.Name = "nomorInvoiceLabel";
-            nomorInvoiceLabel.Size = new System.Drawing.Size(77, 13);
+            nomorInvoiceLabel.Size = new System.Drawing.Size(217, 26);
             nomorInvoiceLabel.TabIndex = 12;
             nomorInvoiceLabel.Text = "nomor Invoice:";
             // 
             // nomorPOLabel
             // 
             nomorPOLabel.AutoSize = true;
+            nomorPOLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            nomorPOLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nomorPOLabel.ForeColor = System.Drawing.Color.White;
             nomorPOLabel.Location = new System.Drawing.Point(3, 190);
             nomorPOLabel.Name = "nomorPOLabel";
-            nomorPOLabel.Size = new System.Drawing.Size(57, 13);
+            nomorPOLabel.Size = new System.Drawing.Size(217, 26);
             nomorPOLabel.TabIndex = 14;
             nomorPOLabel.Text = "nomor PO:";
             // 
             // outletCodeLabel
             // 
             outletCodeLabel.AutoSize = true;
+            outletCodeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            outletCodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            outletCodeLabel.ForeColor = System.Drawing.Color.White;
             outletCodeLabel.Location = new System.Drawing.Point(3, 216);
             outletCodeLabel.Name = "outletCodeLabel";
-            outletCodeLabel.Size = new System.Drawing.Size(64, 13);
+            outletCodeLabel.Size = new System.Drawing.Size(217, 27);
             outletCodeLabel.TabIndex = 16;
             outletCodeLabel.Text = "outlet Code:";
             // 
             // penggunaLabel
             // 
             penggunaLabel.AutoSize = true;
+            penggunaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            penggunaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            penggunaLabel.ForeColor = System.Drawing.Color.White;
             penggunaLabel.Location = new System.Drawing.Point(3, 243);
             penggunaLabel.Name = "penggunaLabel";
-            penggunaLabel.Size = new System.Drawing.Size(58, 13);
+            penggunaLabel.Size = new System.Drawing.Size(217, 26);
             penggunaLabel.TabIndex = 18;
             penggunaLabel.Text = "pengguna:";
             // 
             // periodeLabel
             // 
             periodeLabel.AutoSize = true;
+            periodeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            periodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            periodeLabel.ForeColor = System.Drawing.Color.White;
             periodeLabel.Location = new System.Drawing.Point(3, 269);
             periodeLabel.Name = "periodeLabel";
-            periodeLabel.Size = new System.Drawing.Size(45, 13);
+            periodeLabel.Size = new System.Drawing.Size(217, 26);
             periodeLabel.TabIndex = 20;
             periodeLabel.Text = "periode:";
             // 
             // ppnLabel
             // 
             ppnLabel.AutoSize = true;
+            ppnLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            ppnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ppnLabel.ForeColor = System.Drawing.Color.White;
             ppnLabel.Location = new System.Drawing.Point(3, 35);
             ppnLabel.Name = "ppnLabel";
-            ppnLabel.Size = new System.Drawing.Size(28, 13);
+            ppnLabel.Size = new System.Drawing.Size(215, 38);
             ppnLabel.TabIndex = 22;
             ppnLabel.Text = "ppn:";
             // 
             // subTotalLabel
             // 
             subTotalLabel.AutoSize = true;
+            subTotalLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            subTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            subTotalLabel.ForeColor = System.Drawing.Color.White;
             subTotalLabel.Location = new System.Drawing.Point(3, 0);
             subTotalLabel.Name = "subTotalLabel";
-            subTotalLabel.Size = new System.Drawing.Size(54, 13);
+            subTotalLabel.Size = new System.Drawing.Size(215, 35);
             subTotalLabel.TabIndex = 24;
             subTotalLabel.Text = "sub Total:";
             // 
             // totalLabel
             // 
             totalLabel.AutoSize = true;
+            totalLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            totalLabel.ForeColor = System.Drawing.Color.White;
             totalLabel.Location = new System.Drawing.Point(3, 73);
             totalLabel.Name = "totalLabel";
-            totalLabel.Size = new System.Drawing.Size(30, 13);
+            totalLabel.Size = new System.Drawing.Size(215, 38);
             totalLabel.TabIndex = 26;
             totalLabel.Text = "total:";
             // 
@@ -332,6 +374,7 @@
             // isPayedCheckBox
             // 
             this.isPayedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceBindingSource, "isPayed", true));
+            this.isPayedCheckBox.ForeColor = System.Drawing.Color.White;
             this.isPayedCheckBox.Location = new System.Drawing.Point(226, 81);
             this.isPayedCheckBox.Name = "isPayedCheckBox";
             this.isPayedCheckBox.Size = new System.Drawing.Size(200, 24);
@@ -342,6 +385,7 @@
             // isPPNCheckBox
             // 
             this.isPPNCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceBindingSource, "isPPN", true));
+            this.isPPNCheckBox.ForeColor = System.Drawing.Color.White;
             this.isPPNCheckBox.Location = new System.Drawing.Point(226, 111);
             this.isPPNCheckBox.Name = "isPPNCheckBox";
             this.isPPNCheckBox.Size = new System.Drawing.Size(200, 24);
@@ -388,6 +432,18 @@
             this.periodeTextBox.Name = "periodeTextBox";
             this.periodeTextBox.Size = new System.Drawing.Size(200, 20);
             this.periodeTextBox.TabIndex = 21;
+            // 
+            // outletCodeComboBox
+            // 
+            this.outletCodeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.invoiceBindingSource, "outletCode", true));
+            this.outletCodeComboBox.DataSource = this.outletBindingSource;
+            this.outletCodeComboBox.DisplayMember = "outlName";
+            this.outletCodeComboBox.FormattingEnabled = true;
+            this.outletCodeComboBox.Location = new System.Drawing.Point(226, 219);
+            this.outletCodeComboBox.Name = "outletCodeComboBox";
+            this.outletCodeComboBox.Size = new System.Drawing.Size(200, 21);
+            this.outletCodeComboBox.TabIndex = 22;
+            this.outletCodeComboBox.ValueMember = "outlCode";
             // 
             // tableLayoutPanel6
             // 
@@ -507,24 +563,13 @@
             this.totalTextBox.Size = new System.Drawing.Size(200, 20);
             this.totalTextBox.TabIndex = 27;
             // 
-            // outletCodeComboBox
-            // 
-            this.outletCodeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.invoiceBindingSource, "outletCode", true));
-            this.outletCodeComboBox.DataSource = this.outletBindingSource;
-            this.outletCodeComboBox.DisplayMember = "outlName";
-            this.outletCodeComboBox.FormattingEnabled = true;
-            this.outletCodeComboBox.Location = new System.Drawing.Point(226, 219);
-            this.outletCodeComboBox.Name = "outletCodeComboBox";
-            this.outletCodeComboBox.Size = new System.Drawing.Size(200, 21);
-            this.outletCodeComboBox.TabIndex = 22;
-            this.outletCodeComboBox.ValueMember = "outlCode";
-            // 
             // FrmInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(907, 561);
             this.Controls.Add(this.tableLayoutPanel4);
+            this.MaximizeBox = false;
             this.Name = "FrmInvoice";
             this.Text = "FrmInvoice";
             this.Load += new System.EventHandler(this.FrmInvoice_Load);

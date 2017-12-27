@@ -62,7 +62,7 @@
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(303, 52);
-            this.panel2.TabIndex = 2;
+            this.panel2.TabIndex = 0;
             // 
             // lblHeader
             // 
@@ -137,7 +137,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "templateEntryFrm";
             this.Text = "templateEntryFrm";
-            this.Load += new System.EventHandler(this.templateEntryFrm_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.templateEntryFrm_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

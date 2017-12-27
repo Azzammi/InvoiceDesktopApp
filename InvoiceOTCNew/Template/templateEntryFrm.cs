@@ -1,29 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using InvoiceOTCNew.Helper;
 
 namespace InvoiceOTCNew
 {
     public partial class templateEntryFrm : Form
-    {       
-        public BindingSource bindingSource { get; set; }
+    {
+        #region Declaration       
+        protected BindingSource bindingSource;
+        protected bool isAddNew;
+        protected FormCondition _condition;
+
+        public IListener Listener { get; set; }
+        #endregion
+
+        #region Enum
+        public enum FormCondition
+        {
+            Ready = 0,
+            Inputting = 1,
+        }
+        #endregion
+
         #region Constructor
         public templateEntryFrm()
         {
             InitializeComponent();
-        }
-
-        public templateEntryFrm(bool isAddNew)
-        {
-            InitializeComponent();
-            CekKondisi(isAddNew);
-        }
+        }        
         #endregion
 
         #region Protected and Override Method
@@ -35,48 +38,53 @@ namespace InvoiceOTCNew
         {
             this.Text = header;
             this.lblHeader.Text = header.ToUpper();
-        }
-
-        protected virtual void Simpan()
-        {
-
-        }
-
-        protected virtual void AddNew()
-        {
-            
-        }
-
-        protected virtual void CekKondisi(bool condition)
+        }       
+      
+        /// <summary>
+        /// To check if form is ready to input new data or not
+        /// </summary>
+        /// <param name="condition"></param>
+        /// <returns></returns>
+        protected FormCondition CekKondisi(FormCondition condition)
         {
             switch (condition)
             {
-                case true:
+                case FormCondition.Ready:
+                    button1.Enabled = true;
+                    button2.Enabled = false;
+                    InputControlHelper.DisableInput(this);
                     break;
-                case false:
+                case FormCondition.Inputting:
+                    button1.Enabled = false;
+                    button2.Enabled = true;
+                                        
+                    InputControlHelper.EnableInput(this);
                     break;
                 default:
                     break;
             }
+
+            _condition = condition;
+            return condition;
+        }
+
+        protected virtual void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected virtual void button2_Click(object sender, EventArgs e)
+        {
+
         }
         #endregion
 
-
-        private void templateEntryFrm_Load(object sender, EventArgs e)
+        private void templateEntryFrm_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if(_condition == FormCondition.Inputting)
+            {
+                e.Cancel = true;
+            }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            bindingSource.AddNew();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Simpan();
-        }
-
-
     }
 }
