@@ -4,11 +4,15 @@ using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 using InvoiceOTC.Repository.Service;
 using InvoiceOTCNew.Helper;
+using System.Windows.Forms;
 
 namespace InvoiceOTCNew
 {
     public partial class FrmListBoundGrid : TemplateListForm, IListener
     {
+        #region Declaration
+        private IInvoiceRepository invoiceRepo;
+        #endregion
         public FrmListBoundGrid()
         {
             InitializeComponent();
@@ -17,34 +21,45 @@ namespace InvoiceOTCNew
 
         private void FrmListBoundGrid_Load(object sender, EventArgs e)
         {
-            IInvoiceRepository invoiceRepo = new InvoiceRepository();
-
-            invoiceBindingSource.DataSource = invoiceRepo.GetAll();
+           invoiceRepo = new InvoiceRepository();
+           invoiceBindingSource.DataSource = invoiceRepo.GetAll();
         }
 
         protected override void tambahBtn_Click(object sender, EventArgs e)
         {
-            var frm = new FrmInvoice(true);
+            var frm = new FrmInvoice();
             frm.Listener = this;
             frm.ShowDialog();
         }
       
         protected override void EditBtn_Click(object sender, EventArgs e)
         {
-            var frm = new FrmInvoice(false);
+            Invoice currentInvoice = (Invoice)invoiceBindingSource.Current;
+            if (currentInvoice == null) return;
+
+            var frm = new FrmInvoice(currentInvoice);
             frm.Listener = this;
             frm.ShowDialog();
         }
      
         protected override void DeleteBtn_Click(object sender, EventArgs e)
         {
-            Invoice deleteInvoice = (Invoice)invoiceBindingSource.Current;
+            //Get Item Roti
+            if (invoiceBindingSource.DataSource == null) return;
+            if (dataGridView1.SelectedRows.Count == 0) return;
 
-            if (deleteInvoice == null) return;
-
-            if (DialogHelper.DeleteDialog(deleteInvoice) != 0)
+            //Confirm Delete     
+            if (DialogHelper.DeleteDialog(dataGridView1.SelectedRows.Count + " record(s)") != 0)
             {
-
+                foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                {
+                    Invoice item = row.DataBoundItem as Invoice;
+                    if (item != null)
+                    {
+                        invoiceRepo.Delete(item);
+                        invoiceBindingSource.Remove(item);
+                    }
+                }
             }
         }
 
@@ -60,12 +75,7 @@ namespace InvoiceOTCNew
             {
                 invoiceBindingSource.ResetBindings(true);
                 invoiceBindingSource.Add(data);
-            }
-            else
-            {
-                var currentSource = (Invoice)invoiceBindingSource.DataSource;
-                currentSource = (Invoice)data;     
-            }
+            }          
         }
         #endregion
     }

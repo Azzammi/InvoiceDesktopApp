@@ -106,7 +106,7 @@
             this.ClientSize = new System.Drawing.Size(669, 416);
             this.Controls.Add(this.outletDataGridView);
             this.Name = "FrmListOutlet";
-            this.Text = "Outlet";
+            this.Text = "j";
             this.Controls.SetChildIndex(this.outletDataGridView, 0);
             ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletDataGridView)).EndInit();

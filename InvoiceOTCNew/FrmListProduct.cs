@@ -4,6 +4,7 @@ using InvoiceOTC.Repository.Service;
 using System;
 
 using InvoiceOTCNew.Helper;
+using System.Windows.Forms;
 
 namespace InvoiceOTCNew
 {
@@ -44,7 +45,23 @@ namespace InvoiceOTCNew
 
         protected override void DeleteBtn_Click(object sender, EventArgs e)
         {
-            base.DeleteBtn_Click(sender, e);
+            //Get Item Roti
+            if (productBindingSource.DataSource == null) return;
+            if (productDataGridView.SelectedRows.Count == 0) return;
+
+            //Confirm Delete     
+            if (DialogHelper.DeleteDialog(productDataGridView.SelectedRows.Count + " record(s)") != 0)
+            {
+                foreach (DataGridViewRow row in productDataGridView.SelectedRows)
+                {
+                    Product item = row.DataBoundItem as Product;
+                    if (item != null)
+                    {
+                        productRepository.Delete(item);
+                        productBindingSource.Remove(item);
+                    }
+                }
+            }
         }
 
         #region IListener

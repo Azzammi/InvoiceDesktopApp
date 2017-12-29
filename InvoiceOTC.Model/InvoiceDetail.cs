@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,7 +18,7 @@ namespace InvoiceOTC.Model
         public int itemQty {get; set;}
         public double discount {get; set;}
         public decimal itemPrice {get; set;}
-        public decimal subTotal {get; set;}
+        public decimal subTotal {get; set;}       
 
         #endregion
     }

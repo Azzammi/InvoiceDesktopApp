@@ -5,6 +5,10 @@ namespace InvoiceOTCNew.Helper
 {
     public sealed class InputControlHelper
     {
+        /// <summary>
+        /// Disable all input controls in a form. And in tableLayoutPanel too
+        /// </summary>
+        /// <param name="sender"></param>
         public static void DisableInput(Form sender)
         {
             foreach (Control control in sender.Controls)
@@ -26,6 +30,10 @@ namespace InvoiceOTCNew.Helper
                 }
             }
         }
+        /// <summary>
+        /// Enable all input controls in a form. And in tableLayoutPanel too
+        /// </summary>
+        /// <param name="sender"></param>
         public static void EnableInput(Form sender)
         {
             foreach (Control control in sender.Controls)

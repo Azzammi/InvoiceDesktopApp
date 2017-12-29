@@ -78,7 +78,7 @@ namespace InvoiceOTC.Repository.Service
                                 invoiceEntry = invoice;
                                 invoiceEntry.detail = new List<InvoiceDetail>();
                             //invoiceEntry.p_Items = new FSBindingList<InvoiceDetail>(detail);
-                            invoiceDictionary.Add(invoiceEntry.invoiceID, invoiceEntry);
+                                invoiceDictionary.Add(invoiceEntry.invoiceID, invoiceEntry);
                             }
 
                             invoiceEntry.detail.Add(invoiceDetail);
@@ -124,12 +124,12 @@ namespace InvoiceOTC.Repository.Service
                                 List<InvoiceDetail> detail = new List<InvoiceDetail>();
 
                                 //Convert it to custom list
-                                invoiceEntry.p_Items = new FSBindingList<InvoiceDetail>(detail);
+                                //invoiceEntry.p_Items = new FSBindingList<InvoiceDetail>(detail);
                                 invoiceDictionary.Add(invoiceEntry.invoiceID, invoiceEntry);
                             }
 
                             //Add invoiceDetail item to Invoice
-                            invoiceEntry.p_Items.Add(invoiceDetail);
+                            //invoiceEntry.p_Items.Add(invoiceDetail);
                             return invoiceEntry;
                         },
                         splitOn: "rotiID")
