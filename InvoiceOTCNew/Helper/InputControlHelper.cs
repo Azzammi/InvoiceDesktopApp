@@ -6,7 +6,7 @@ namespace InvoiceOTCNew.Helper
     public sealed class InputControlHelper
     {
         /// <summary>
-        /// Disable all input controls in a form. And in tableLayoutPanel too
+        /// Disable all input controls in a form. And in tableLayoutPanel too.
         /// </summary>
         /// <param name="sender"></param>
         public static void DisableInput(Form sender)
@@ -17,7 +17,7 @@ namespace InvoiceOTCNew.Helper
                 {
                     foreach (Control innerControl in control.Controls)
                     {
-                        if (innerControl is CheckBox || innerControl is TextBox || innerControl is ComboBox)
+                        if (innerControl is CheckBox || innerControl is TextBox || innerControl is ComboBox || innerControl is TableLayoutPanel)
                         {
                             innerControl.Enabled = false;
                         }
@@ -42,7 +42,7 @@ namespace InvoiceOTCNew.Helper
                 {
                     foreach (Control innerControl in control.Controls)
                     {                        
-                        if (innerControl is CheckBox || innerControl is TextBox || innerControl is ComboBox)
+                        if (innerControl is CheckBox || innerControl is TextBox || innerControl is ComboBox || innerControl is TableLayoutPanel)
                         {
                             innerControl.Enabled = true;
                         }

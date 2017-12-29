@@ -32,7 +32,11 @@ namespace InvoiceOTCNew
             outletRepository = new OutletRepository();
             productRepository = new ProductRepository();
 
+            productBindingSource.DataSource = productRepository.GetAll();
+            outletBindingSource.DataSource = outletRepository.GetAll();
+
             CekKondisi(FormCondition.Ready);
+            isAddNew = false;
         }
 
         /// <summary>
@@ -48,18 +52,16 @@ namespace InvoiceOTCNew
             outletRepository = new OutletRepository();
             productRepository = new ProductRepository();
 
-            CekKondisi(FormCondition.Ready);
+            productBindingSource.DataSource = productRepository.GetAll();
+            outletBindingSource.DataSource = outletRepository.GetAll();
+
+            CekKondisi(FormCondition.Inputting);
             invoiceBindingSource.Add(data);
             isAddNew = false;
+           
         }
         #endregion
-
-        private void FrmInvoice_Load(object sender, EventArgs e)
-        {            
-            outletBindingSource.DataSource = outletRepository.GetAll();
-            productBindingSource.DataSource = productRepository.GetAll();    
-        }
-
+        
         #region Overrided Methods
         protected override void button1_Click(object sender, EventArgs e)
         {
@@ -79,6 +81,7 @@ namespace InvoiceOTCNew
             {
                 case true:
                     invoiceRepository.Save(dataInvoice);
+                    Listener.Ok(this, true, dataInvoice);
                     break;
                 case false:
                     invoiceRepository.Update(dataInvoice);
@@ -89,8 +92,7 @@ namespace InvoiceOTCNew
             }
 
             isAddNew = false;
-            CekKondisi(FormCondition.Ready);
-            invoiceBindingSource.AddNew();
+            CekKondisi(FormCondition.Ready);            
         }
         #endregion
 

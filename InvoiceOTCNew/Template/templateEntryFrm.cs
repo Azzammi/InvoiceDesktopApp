@@ -51,15 +51,18 @@ namespace InvoiceOTCNew
             switch (condition)
             {
                 case FormCondition.Ready:
+                    
+                    InputControlHelper.DisableInput(this);
                     button1.Enabled = true;
                     button2.Enabled = false;
-                    InputControlHelper.DisableInput(this);
+
                     break;
                 case FormCondition.Inputting:
+                    
+                    InputControlHelper.EnableInput(this);
                     button1.Enabled = false;
                     button2.Enabled = true;
-                                        
-                    InputControlHelper.EnableInput(this);
+
                     break;
                 default:
                     break;

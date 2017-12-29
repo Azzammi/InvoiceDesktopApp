@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -47,7 +48,8 @@
             this.idPaymentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isPayedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.itemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemCode = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.itemQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +58,7 @@
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // invoiceBindingSource
@@ -189,6 +192,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -205,11 +209,22 @@
             this.dataGridView2.Size = new System.Drawing.Size(176, 151);
             this.dataGridView2.TabIndex = 1;
             // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(InvoiceOTC.Model.Product);
+            // 
             // itemCode
             // 
             this.itemCode.DataPropertyName = "itemCode";
+            this.itemCode.DataSource = this.productBindingSource;
+            dataGridViewCellStyle1.NullValue = " ";
+            this.itemCode.DefaultCellStyle = dataGridViewCellStyle1;
+            this.itemCode.DisplayMember = "itemCode";
             this.itemCode.HeaderText = "itemCode";
             this.itemCode.Name = "itemCode";
+            this.itemCode.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.itemCode.ValueMember = "itemCode";
             // 
             // itemQty
             // 
@@ -249,6 +264,7 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,7 +289,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idPaymentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isPayedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn itemCode;
+        private System.Windows.Forms.BindingSource productBindingSource;
+        private System.Windows.Forms.DataGridViewComboBoxColumn itemCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemQty;
         private System.Windows.Forms.DataGridViewTextBoxColumn discount;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemPrice;

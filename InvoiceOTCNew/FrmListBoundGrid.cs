@@ -12,17 +12,23 @@ namespace InvoiceOTCNew
     {
         #region Declaration
         private IInvoiceRepository invoiceRepo;
+        private IProductRepository productRepo;
         #endregion
+
         public FrmListBoundGrid()
         {
             InitializeComponent();
             SetHeader("Invoice");
+
+            productRepo = new ProductRepository();
+            invoiceRepo = new InvoiceRepository();            
+            invoiceBindingSource.DataSource = invoiceRepo.GetAll();
+            productBindingSource.DataSource = productRepo.GetAll();
         }
 
         private void FrmListBoundGrid_Load(object sender, EventArgs e)
         {
-           invoiceRepo = new InvoiceRepository();
-           invoiceBindingSource.DataSource = invoiceRepo.GetAll();
+           
         }
 
         protected override void tambahBtn_Click(object sender, EventArgs e)
