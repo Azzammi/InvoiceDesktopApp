@@ -21,7 +21,7 @@ namespace InvoiceOTCNew
             SetHeader("outlet");
             outletRepository = new OutletRepository();
 
-            outletBindingSource.DataSource = outletRepository.GetAll();
+            outletBindingSource.DataSource = outletRepository.GetAllSorted();
         }
         #endregion
 

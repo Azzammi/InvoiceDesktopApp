@@ -8,6 +8,7 @@ using Dapper;
 using log4net;
 using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
+using System.Windows.Forms;
 
 namespace InvoiceOTC.Repository.Service
 {
@@ -31,7 +32,6 @@ namespace InvoiceOTC.Repository.Service
         }
         #endregion
 
-
         #region Methods
 
         #endregion
@@ -40,7 +40,7 @@ namespace InvoiceOTC.Repository.Service
             var result = 0;
             try
             {
-                m_Sql = @"Delete From InvoiceDetail Where detailID = @detailID";
+                m_Sql = @"Delete From InvoiceDetail Where invoiceID = @invoiceID and itemCode = @itemCode";
 
                 result = context.db.Execute(m_Sql, obj);
             }
@@ -59,6 +59,8 @@ namespace InvoiceOTC.Repository.Service
 
         public int Save(InvoiceDetail obj)
         {
+            if (obj.itemCode == null) return 0;
+
             var result = 0;         
             try
             {
@@ -66,10 +68,11 @@ namespace InvoiceOTC.Repository.Service
                          invoiceid, itemcode, itemqty, discount, itemprice, subtotal)
                          VALUES (@invoiceID, @itemCode, @itemQty, @discount, @itemPrice, @subTotal);";
                 result = context.db.Execute(m_Sql, obj);
+                if (result == 0) result = Update(obj);
             }
             catch
             {
-
+                result = Update(obj);
             }
 
             return result;
@@ -81,14 +84,12 @@ namespace InvoiceOTC.Repository.Service
 
             try
             {
-                m_Sql = @"UPDATE invoicedetail SET 
-                        detailID = @detailID,                          
-                        itemcode = @itemCode, 
+                m_Sql = @"UPDATE invoicedetail SET                                                                   
                         itemqty = @itemQty, 
                         discount = @discount, 
                         itemprice= @itemPrice, 
                         subtotal= @subTotal
-                        WHERE invoiceID = @invoiceID;";
+                        WHERE invoiceID = @invoiceID and itemCode = @itemCode;";
                 result = context.db.Execute(m_Sql, obj);
             }
             catch
@@ -97,29 +98,9 @@ namespace InvoiceOTC.Repository.Service
             }
 
             return result;
-        }
+        }        
 
-        public int Save(int invoiceID, InvoiceDetail obj)
-        {
-            var result = 0;
-            obj.invoiceID = invoiceID;
-
-            try
-            {
-                m_Sql = @"INSERT INTO invoicedetail(
-                        detailID, invoiceid, itemcode, itemqty, discount, itemprice, subtotal)
-                         VALUES (@invoiceID, @itemCode, @itemQty, @discount, @itemPrice, @subTotal);";
-                result = context.db.Execute(m_Sql, obj);
-            }
-            catch
-            {
-
-            }
-
-            return result;
-        }
-
-        public int Delete(int invoiceID)
+        public int DeleteAll(int invoiceID)
         {
             var result = 0;           
 

@@ -31,7 +31,8 @@ namespace InvoiceOTC.Model
         public bool isPayed { get; set; }
 
         public List<InvoiceDetail> detail {get; set;}
-        
+        public FSBindingList<InvoiceDetail> p_Items { get; set; }
+
         #endregion
     }
 }

@@ -51,15 +51,14 @@ namespace InvoiceOTCNew
             Outlet outlet = (Outlet)outletBindingSource.Current;
             if (outlet == null) return;
 
-            if (isAddNew && outlet.outlCode != null)
+            if (isAddNew)
             {
                 outletRepository.Save(outlet);
                 Listener.Ok(this, true, outlet);
             }
             else
             {
-                outletRepository.Update(outlet);
-                Listener.Ok(this, false, outlet);
+                outletRepository.Update(outlet);                
             }
 
             CekKondisi(FormCondition.Ready);

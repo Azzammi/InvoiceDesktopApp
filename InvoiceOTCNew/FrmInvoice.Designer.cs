@@ -42,6 +42,9 @@
             System.Windows.Forms.Label ppnLabel;
             System.Windows.Forms.Label subTotalLabel;
             System.Windows.Forms.Label totalLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.outletBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -56,24 +59,26 @@
             this.dueDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.idPaymentTextBox = new System.Windows.Forms.TextBox();
             this.isPayedCheckBox = new System.Windows.Forms.CheckBox();
+            this.comboBoxAdv1 = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.subTotalTextBox = new System.Windows.Forms.TextBox();
             this.ppnTextBox = new System.Windows.Forms.TextBox();
             this.totalTextBox = new System.Windows.Forms.TextBox();
+            this.countBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.subTotalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subTotalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.detailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemCode = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.itemQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBoxBase1 = new Syncfusion.Windows.Forms.Tools.ComboBoxBase();
             dueDateLabel = new System.Windows.Forms.Label();
             idPaymentLabel = new System.Windows.Forms.Label();
             isPayedLabel = new System.Windows.Forms.Label();
@@ -92,11 +97,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxAdv1)).BeginInit();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pItemsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxBase1)).BeginInit();
             this.SuspendLayout();
             // 
             // dueDateLabel
@@ -107,7 +113,7 @@
             dueDateLabel.ForeColor = System.Drawing.Color.White;
             dueDateLabel.Location = new System.Drawing.Point(3, 105);
             dueDateLabel.Name = "dueDateLabel";
-            dueDateLabel.Size = new System.Drawing.Size(217, 26);
+            dueDateLabel.Size = new System.Drawing.Size(125, 26);
             dueDateLabel.TabIndex = 0;
             dueDateLabel.Text = "due Date:";
             // 
@@ -119,7 +125,7 @@
             idPaymentLabel.ForeColor = System.Drawing.Color.White;
             idPaymentLabel.Location = new System.Drawing.Point(3, 213);
             idPaymentLabel.Name = "idPaymentLabel";
-            idPaymentLabel.Size = new System.Drawing.Size(217, 31);
+            idPaymentLabel.Size = new System.Drawing.Size(125, 31);
             idPaymentLabel.TabIndex = 2;
             idPaymentLabel.Text = "id Payment:";
             // 
@@ -131,7 +137,7 @@
             isPayedLabel.ForeColor = System.Drawing.Color.White;
             isPayedLabel.Location = new System.Drawing.Point(3, 244);
             isPayedLabel.Name = "isPayedLabel";
-            isPayedLabel.Size = new System.Drawing.Size(217, 41);
+            isPayedLabel.Size = new System.Drawing.Size(125, 41);
             isPayedLabel.TabIndex = 6;
             isPayedLabel.Text = "is Payed:";
             // 
@@ -143,7 +149,7 @@
             isPPNLabel.ForeColor = System.Drawing.Color.White;
             isPPNLabel.Location = new System.Drawing.Point(3, 131);
             isPPNLabel.Name = "isPPNLabel";
-            isPPNLabel.Size = new System.Drawing.Size(217, 30);
+            isPPNLabel.Size = new System.Drawing.Size(125, 30);
             isPPNLabel.TabIndex = 8;
             isPPNLabel.Text = "is PPN:";
             // 
@@ -155,7 +161,7 @@
             issuedDateLabel.ForeColor = System.Drawing.Color.White;
             issuedDateLabel.Location = new System.Drawing.Point(3, 26);
             issuedDateLabel.Name = "issuedDateLabel";
-            issuedDateLabel.Size = new System.Drawing.Size(217, 26);
+            issuedDateLabel.Size = new System.Drawing.Size(125, 26);
             issuedDateLabel.TabIndex = 10;
             issuedDateLabel.Text = "issued Date:";
             // 
@@ -167,7 +173,7 @@
             nomorInvoiceLabel.ForeColor = System.Drawing.Color.White;
             nomorInvoiceLabel.Location = new System.Drawing.Point(3, 0);
             nomorInvoiceLabel.Name = "nomorInvoiceLabel";
-            nomorInvoiceLabel.Size = new System.Drawing.Size(217, 26);
+            nomorInvoiceLabel.Size = new System.Drawing.Size(125, 26);
             nomorInvoiceLabel.TabIndex = 12;
             nomorInvoiceLabel.Text = "nomor Invoice:";
             // 
@@ -179,7 +185,7 @@
             nomorPOLabel.ForeColor = System.Drawing.Color.White;
             nomorPOLabel.Location = new System.Drawing.Point(3, 79);
             nomorPOLabel.Name = "nomorPOLabel";
-            nomorPOLabel.Size = new System.Drawing.Size(217, 26);
+            nomorPOLabel.Size = new System.Drawing.Size(125, 26);
             nomorPOLabel.TabIndex = 14;
             nomorPOLabel.Text = "nomor PO:";
             // 
@@ -191,7 +197,7 @@
             outletCodeLabel.ForeColor = System.Drawing.Color.White;
             outletCodeLabel.Location = new System.Drawing.Point(3, 52);
             outletCodeLabel.Name = "outletCodeLabel";
-            outletCodeLabel.Size = new System.Drawing.Size(217, 27);
+            outletCodeLabel.Size = new System.Drawing.Size(125, 27);
             outletCodeLabel.TabIndex = 16;
             outletCodeLabel.Text = "Outlet:";
             // 
@@ -203,7 +209,7 @@
             penggunaLabel.ForeColor = System.Drawing.Color.White;
             penggunaLabel.Location = new System.Drawing.Point(3, 161);
             penggunaLabel.Name = "penggunaLabel";
-            penggunaLabel.Size = new System.Drawing.Size(217, 26);
+            penggunaLabel.Size = new System.Drawing.Size(125, 26);
             penggunaLabel.TabIndex = 18;
             penggunaLabel.Text = "pengguna:";
             // 
@@ -215,7 +221,7 @@
             periodeLabel.ForeColor = System.Drawing.Color.White;
             periodeLabel.Location = new System.Drawing.Point(3, 187);
             periodeLabel.Name = "periodeLabel";
-            periodeLabel.Size = new System.Drawing.Size(217, 26);
+            periodeLabel.Size = new System.Drawing.Size(125, 26);
             periodeLabel.TabIndex = 20;
             periodeLabel.Text = "periode:";
             // 
@@ -225,9 +231,9 @@
             ppnLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             ppnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             ppnLabel.ForeColor = System.Drawing.Color.White;
-            ppnLabel.Location = new System.Drawing.Point(3, 26);
+            ppnLabel.Location = new System.Drawing.Point(3, 27);
             ppnLabel.Name = "ppnLabel";
-            ppnLabel.Size = new System.Drawing.Size(215, 29);
+            ppnLabel.Size = new System.Drawing.Size(264, 31);
             ppnLabel.TabIndex = 22;
             ppnLabel.Text = "ppn:";
             // 
@@ -239,7 +245,7 @@
             subTotalLabel.ForeColor = System.Drawing.Color.White;
             subTotalLabel.Location = new System.Drawing.Point(3, 0);
             subTotalLabel.Name = "subTotalLabel";
-            subTotalLabel.Size = new System.Drawing.Size(215, 26);
+            subTotalLabel.Size = new System.Drawing.Size(264, 27);
             subTotalLabel.TabIndex = 24;
             subTotalLabel.Text = "sub Total:";
             // 
@@ -249,9 +255,9 @@
             totalLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             totalLabel.ForeColor = System.Drawing.Color.White;
-            totalLabel.Location = new System.Drawing.Point(3, 55);
+            totalLabel.Location = new System.Drawing.Point(3, 58);
             totalLabel.Name = "totalLabel";
-            totalLabel.Size = new System.Drawing.Size(215, 38);
+            totalLabel.Size = new System.Drawing.Size(264, 29);
             totalLabel.TabIndex = 26;
             totalLabel.Text = "total:";
             // 
@@ -270,8 +276,8 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.02977F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.97023F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -279,14 +285,14 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(907, 384);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(907, 397);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.93103F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.06897F));
             this.tableLayoutPanel5.Controls.Add(penggunaLabel, 0, 9);
             this.tableLayoutPanel5.Controls.Add(this.penggunaTextBox, 1, 9);
             this.tableLayoutPanel5.Controls.Add(periodeLabel, 0, 10);
@@ -306,7 +312,7 @@
             this.tableLayoutPanel5.Controls.Add(idPaymentLabel, 0, 14);
             this.tableLayoutPanel5.Controls.Add(isPayedLabel, 0, 15);
             this.tableLayoutPanel5.Controls.Add(this.isPayedCheckBox, 1, 15);
-            this.tableLayoutPanel5.Controls.Add(this.comboBoxBase1, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.comboBoxAdv1, 1, 3);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -328,13 +334,13 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(447, 378);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(348, 391);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // penggunaTextBox
             // 
             this.penggunaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "pengguna", true));
-            this.penggunaTextBox.Location = new System.Drawing.Point(226, 164);
+            this.penggunaTextBox.Location = new System.Drawing.Point(134, 164);
             this.penggunaTextBox.Name = "penggunaTextBox";
             this.penggunaTextBox.Size = new System.Drawing.Size(200, 20);
             this.penggunaTextBox.TabIndex = 19;
@@ -342,7 +348,7 @@
             // periodeTextBox
             // 
             this.periodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "periode", true));
-            this.periodeTextBox.Location = new System.Drawing.Point(226, 190);
+            this.periodeTextBox.Location = new System.Drawing.Point(134, 190);
             this.periodeTextBox.Name = "periodeTextBox";
             this.periodeTextBox.Size = new System.Drawing.Size(200, 20);
             this.periodeTextBox.TabIndex = 21;
@@ -350,15 +356,15 @@
             // nomorInvoiceTextBox
             // 
             this.nomorInvoiceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "nomorInvoice", true));
-            this.nomorInvoiceTextBox.Location = new System.Drawing.Point(226, 3);
+            this.nomorInvoiceTextBox.Location = new System.Drawing.Point(134, 3);
             this.nomorInvoiceTextBox.Name = "nomorInvoiceTextBox";
-            this.nomorInvoiceTextBox.Size = new System.Drawing.Size(172, 20);
+            this.nomorInvoiceTextBox.Size = new System.Drawing.Size(89, 20);
             this.nomorInvoiceTextBox.TabIndex = 13;
             // 
             // issuedDateDateTimePicker
             // 
             this.issuedDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceBindingSource, "issuedDate", true));
-            this.issuedDateDateTimePicker.Location = new System.Drawing.Point(226, 29);
+            this.issuedDateDateTimePicker.Location = new System.Drawing.Point(134, 29);
             this.issuedDateDateTimePicker.Name = "issuedDateDateTimePicker";
             this.issuedDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.issuedDateDateTimePicker.TabIndex = 11;
@@ -366,7 +372,7 @@
             // nomorPOTextBox
             // 
             this.nomorPOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "nomorPO", true));
-            this.nomorPOTextBox.Location = new System.Drawing.Point(226, 82);
+            this.nomorPOTextBox.Location = new System.Drawing.Point(134, 82);
             this.nomorPOTextBox.Name = "nomorPOTextBox";
             this.nomorPOTextBox.Size = new System.Drawing.Size(200, 20);
             this.nomorPOTextBox.TabIndex = 15;
@@ -375,17 +381,18 @@
             // 
             this.isPPNCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceBindingSource, "isPPN", true));
             this.isPPNCheckBox.ForeColor = System.Drawing.Color.White;
-            this.isPPNCheckBox.Location = new System.Drawing.Point(226, 134);
+            this.isPPNCheckBox.Location = new System.Drawing.Point(134, 134);
             this.isPPNCheckBox.Name = "isPPNCheckBox";
             this.isPPNCheckBox.Size = new System.Drawing.Size(200, 24);
             this.isPPNCheckBox.TabIndex = 9;
-            this.isPPNCheckBox.Text = "checkBox1";
+            this.isPPNCheckBox.Text = "PPN 10%";
             this.isPPNCheckBox.UseVisualStyleBackColor = true;
+            this.isPPNCheckBox.CheckedChanged += new System.EventHandler(this.isPPNCheckBox_CheckedChanged);
             // 
             // dueDateDateTimePicker
             // 
             this.dueDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceBindingSource, "dueDate", true));
-            this.dueDateDateTimePicker.Location = new System.Drawing.Point(226, 108);
+            this.dueDateDateTimePicker.Location = new System.Drawing.Point(134, 108);
             this.dueDateDateTimePicker.Name = "dueDateDateTimePicker";
             this.dueDateDateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.dueDateDateTimePicker.TabIndex = 1;
@@ -393,7 +400,7 @@
             // idPaymentTextBox
             // 
             this.idPaymentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "idPayment", true));
-            this.idPaymentTextBox.Location = new System.Drawing.Point(226, 216);
+            this.idPaymentTextBox.Location = new System.Drawing.Point(134, 216);
             this.idPaymentTextBox.Name = "idPaymentTextBox";
             this.idPaymentTextBox.Size = new System.Drawing.Size(200, 20);
             this.idPaymentTextBox.TabIndex = 3;
@@ -402,12 +409,25 @@
             // 
             this.isPayedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceBindingSource, "isPayed", true));
             this.isPayedCheckBox.ForeColor = System.Drawing.Color.White;
-            this.isPayedCheckBox.Location = new System.Drawing.Point(226, 247);
+            this.isPayedCheckBox.Location = new System.Drawing.Point(134, 247);
             this.isPayedCheckBox.Name = "isPayedCheckBox";
             this.isPayedCheckBox.Size = new System.Drawing.Size(200, 24);
             this.isPayedCheckBox.TabIndex = 7;
-            this.isPayedCheckBox.Text = "checkBox1";
+            this.isPayedCheckBox.Text = "Payed";
             this.isPayedCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxAdv1
+            // 
+            this.comboBoxAdv1.BeforeTouchSize = new System.Drawing.Size(200, 21);
+            this.comboBoxAdv1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.invoiceBindingSource, "outletCode", true));
+            this.comboBoxAdv1.DataSource = this.outletBindingSource;
+            this.comboBoxAdv1.DisplayMember = "outlName";
+            this.comboBoxAdv1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAdv1.Location = new System.Drawing.Point(134, 55);
+            this.comboBoxAdv1.Name = "comboBoxAdv1";
+            this.comboBoxAdv1.Size = new System.Drawing.Size(200, 21);
+            this.comboBoxAdv1.TabIndex = 22;
+            this.comboBoxAdv1.ValueMember = "outlCode";
             // 
             // tableLayoutPanel6
             // 
@@ -416,12 +436,12 @@
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.dataGridView1, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(456, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(357, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(448, 378);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.05371F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.94629F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(547, 391);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // tableLayoutPanel7
@@ -435,62 +455,74 @@
             this.tableLayoutPanel7.Controls.Add(this.ppnTextBox, 1, 1);
             this.tableLayoutPanel7.Controls.Add(totalLabel, 0, 2);
             this.tableLayoutPanel7.Controls.Add(this.totalTextBox, 1, 2);
+            this.tableLayoutPanel7.Controls.Add(this.countBtn, 1, 3);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 282);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 273);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 3;
+            this.tableLayoutPanel7.RowCount = 4;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.2973F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.7027F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(442, 93);
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(541, 115);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // subTotalTextBox
             // 
-            this.subTotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "subTotal", true));
-            this.subTotalTextBox.Location = new System.Drawing.Point(224, 3);
+            this.subTotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "subTotal", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
+            this.subTotalTextBox.Location = new System.Drawing.Point(273, 3);
             this.subTotalTextBox.Name = "subTotalTextBox";
-            this.subTotalTextBox.Size = new System.Drawing.Size(200, 20);
+            this.subTotalTextBox.Size = new System.Drawing.Size(262, 20);
             this.subTotalTextBox.TabIndex = 25;
+            this.subTotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // ppnTextBox
             // 
-            this.ppnTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "ppn", true));
-            this.ppnTextBox.Location = new System.Drawing.Point(224, 29);
+            this.ppnTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "ppn", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
+            this.ppnTextBox.Location = new System.Drawing.Point(273, 30);
             this.ppnTextBox.Name = "ppnTextBox";
-            this.ppnTextBox.Size = new System.Drawing.Size(200, 20);
+            this.ppnTextBox.Size = new System.Drawing.Size(262, 20);
             this.ppnTextBox.TabIndex = 23;
+            this.ppnTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // totalTextBox
             // 
-            this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "total", true));
-            this.totalTextBox.Location = new System.Drawing.Point(224, 58);
+            this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "total", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
+            this.totalTextBox.Location = new System.Drawing.Point(273, 61);
             this.totalTextBox.Name = "totalTextBox";
-            this.totalTextBox.Size = new System.Drawing.Size(200, 20);
+            this.totalTextBox.Size = new System.Drawing.Size(262, 20);
             this.totalTextBox.TabIndex = 27;
+            this.totalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // countBtn
+            // 
+            this.countBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.countBtn.Location = new System.Drawing.Point(273, 90);
+            this.countBtn.Name = "countBtn";
+            this.countBtn.Size = new System.Drawing.Size(265, 22);
+            this.countBtn.TabIndex = 28;
+            this.countBtn.Text = "Hitung";
+            this.countBtn.UseVisualStyleBackColor = true;
+            this.countBtn.Click += new System.EventHandler(this.countBtn_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.subTotalDataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dataGridView1.DataSource = this.detailBindingSource;
+            this.dataGridViewTextBoxColumn4,
+            this.subTotalDataGridViewTextBoxColumn1});
+            this.dataGridView1.DataSource = this.pItemsBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(442, 273);
+            this.dataGridView1.Size = new System.Drawing.Size(541, 264);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // subTotalDataGridViewTextBoxColumn1
-            // 
-            this.subTotalDataGridViewTextBoxColumn1.DataPropertyName = "subTotal";
-            this.subTotalDataGridViewTextBoxColumn1.HeaderText = "subTotal";
-            this.subTotalDataGridViewTextBoxColumn1.Name = "subTotalDataGridViewTextBoxColumn1";
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
+            this.dataGridView1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView1_UserDeletingRow);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -502,10 +534,14 @@
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn1.ValueMember = "itemCode";
+            this.dataGridViewTextBoxColumn1.Width = 200;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "itemQty";
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn2.HeaderText = "itemQty";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
@@ -518,13 +554,31 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "itemPrice";
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn4.HeaderText = "itemPrice";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // subTotalDataGridViewTextBoxColumn1
+            // 
+            this.subTotalDataGridViewTextBoxColumn1.DataPropertyName = "subTotal";
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.subTotalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.subTotalDataGridViewTextBoxColumn1.HeaderText = "subTotal";
+            this.subTotalDataGridViewTextBoxColumn1.Name = "subTotalDataGridViewTextBoxColumn1";
+            // 
+            // pItemsBindingSource
+            // 
+            this.pItemsBindingSource.DataMember = "p_Items";
+            this.pItemsBindingSource.DataSource = this.invoiceBindingSource;
             // 
             // detailBindingSource
             // 
             this.detailBindingSource.DataMember = "detail";
             this.detailBindingSource.DataSource = this.invoiceBindingSource;
+            this.detailBindingSource.CurrentItemChanged += new System.EventHandler(this.detailBindingSource_CurrentItemChanged);
             // 
             // itemCode
             // 
@@ -561,20 +615,11 @@
             this.subTotalDataGridViewTextBoxColumn.HeaderText = "subTotal";
             this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
             // 
-            // comboBoxBase1
-            // 
-            this.comboBoxBase1.BeforeTouchSize = new System.Drawing.Size(121, 21);
-            this.comboBoxBase1.Location = new System.Drawing.Point(226, 55);
-            this.comboBoxBase1.Name = "comboBoxBase1";
-            this.comboBoxBase1.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxBase1.TabIndex = 22;
-            this.comboBoxBase1.Text = "comboBoxBase1";
-            // 
             // FrmInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 483);
+            this.ClientSize = new System.Drawing.Size(907, 496);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Name = "FrmInvoice";
             this.Text = "FrmInvoice";
@@ -585,12 +630,13 @@
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxAdv1)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pItemsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxBase1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -623,12 +669,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn itemPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource detailBindingSource;
+        private Syncfusion.Windows.Forms.Tools.ComboBoxAdv comboBoxAdv1;
+        private System.Windows.Forms.Button countBtn;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.BindingSource detailBindingSource;
-        private Syncfusion.Windows.Forms.Tools.ComboBoxBase comboBoxBase1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.BindingSource pItemsBindingSource;
     }
 }

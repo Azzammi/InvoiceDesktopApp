@@ -12,7 +12,7 @@ namespace InvoiceOTC.Model
         #region Declarations
 
         //Property Variables
-        public int detailId { get; set; }
+        //public int detailId { get; set; }
         public int invoiceID {get; set;}
         public string itemCode {get; set;}
         public int itemQty {get; set;}

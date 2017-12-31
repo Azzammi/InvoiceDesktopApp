@@ -22,7 +22,7 @@ namespace InvoiceOTCNew
 
             productRepo = new ProductRepository();
             invoiceRepo = new InvoiceRepository();            
-            invoiceBindingSource.DataSource = invoiceRepo.GetAll();
+            invoiceBindingSource.DataSource = invoiceRepo.GetAllSorted();
             productBindingSource.DataSource = productRepo.GetAll();
         }
 
@@ -50,6 +50,9 @@ namespace InvoiceOTCNew
      
         protected override void DeleteBtn_Click(object sender, EventArgs e)
         {
+            //Remove the event first - to prevent executing the other method
+            dataGridView1.UserDeletingRow -= dataGridView1_UserDeletingRow;
+
             //Get Item Roti
             if (invoiceBindingSource.DataSource == null) return;
             if (dataGridView1.SelectedRows.Count == 0) return;
@@ -67,6 +70,9 @@ namespace InvoiceOTCNew
                     }
                 }
             }
+
+            //Assign the method again
+            dataGridView1.UserDeletingRow += dataGridView1_UserDeletingRow;
         }
 
         #region IListener Method
@@ -81,8 +87,36 @@ namespace InvoiceOTCNew
             {
                 invoiceBindingSource.ResetBindings(true);
                 invoiceBindingSource.Add(data);
-            }          
+            }
+            else
+            {
+                invoiceBindingSource.ResetCurrentItem();
+            }
         }
         #endregion
+
+        private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            //Get Item 
+            if (invoiceBindingSource.DataSource == null) e.Cancel = true;
+            if (dataGridView1.CurrentRow == null) e.Cancel = true;
+
+            DataGridViewRow row = dataGridView1.CurrentRow;
+            Invoice item = row.DataBoundItem as Invoice;
+
+            //Confirm Delete     
+            if (DialogHelper.DeleteDialog(item.nomorInvoice) != 0)
+            {
+                if (item != null)
+                {
+                    invoiceRepo.Delete(item);
+                    invoiceBindingSource.Remove(item);
+                }
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

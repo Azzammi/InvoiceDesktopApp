@@ -30,7 +30,25 @@ namespace InvoiceOTC.Repository.API
         /// </summary>
         /// <returns></returns>
         FSBindingList<Invoice> GetAllSorted();
+
+        /// <summary>
+        /// Get Total Summary of SubTotal in InvoiceDetail
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        decimal GetSubTotalSum(Invoice data);
+
+        /// <summary>
+        /// Get Subtotal for each product
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        void GetSubTotal(InvoiceDetail data);
+
+        decimal GetPPN(Invoice data);
+
+        decimal GetInvoiceNett(Invoice data);
         
-        IList<Invoice> GetInvoicesByNomor(string nomorInvoice);
+        //IList<Invoice> GetInvoicesByNomor(string nomorInvoice);
     }
 }

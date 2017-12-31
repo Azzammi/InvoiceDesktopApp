@@ -138,8 +138,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblHeader;
+        protected System.Windows.Forms.Button button1;
+        protected System.Windows.Forms.Button button2;
     }
 }

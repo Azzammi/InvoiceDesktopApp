@@ -38,7 +38,7 @@ namespace InvoiceOTCUnitTest
                 outlName = "outletTestName",
                 outlAddress = "outlAddressNo.002020",
                 outlRoute = "F01",
-                outlStatus = true
+                outlStat = true
                 //outletType = "P & D"
             };
 
@@ -56,7 +56,7 @@ namespace InvoiceOTCUnitTest
                 outlName = "LenovoMart",
                 outlAddress = "Griya Asri 2",
                 outlRoute = "F33",
-                outlStatus = false
+                outlStat = false
                // outletType = "Retailer"
             };
 
@@ -88,7 +88,7 @@ namespace InvoiceOTCUnitTest
             Assert.AreEqual("outletTestName", outlet.outlName);
             Assert.AreEqual("outlAddressNo.002020", outlet.outlAddress);
             Assert.AreEqual("F01", outlet.outlRoute);
-            Assert.AreEqual(true, outlet.outlStatus);
+            Assert.AreEqual(true, outlet.outlStat);
             //Assert.AreEqual("P & D", outlet.outletType);
         }
 
@@ -102,7 +102,7 @@ namespace InvoiceOTCUnitTest
             Assert.AreEqual("LenovoMart", outlet.outlName);
             Assert.AreEqual("Griya Asri 2", outlet.outlAddress);
             Assert.AreEqual("F33", outlet.outlRoute);
-            Assert.AreEqual(false, outlet.outlStatus);
+            Assert.AreEqual(false, outlet.outlStat);
             //Assert.AreEqual("Retailer", outlet.outletType);
         }
 
@@ -116,7 +116,7 @@ namespace InvoiceOTCUnitTest
             Assert.AreEqual("LenovoMart", outlet.outlName);
             Assert.AreEqual("Griya Asri 2", outlet.outlAddress);
             Assert.AreEqual("F33", outlet.outlRoute);
-            Assert.AreEqual(false, outlet.outlStatus);
+            Assert.AreEqual(false, outlet.outlStat);
             //Assert.AreEqual("Retailer", outlet.outletType);
         }
 

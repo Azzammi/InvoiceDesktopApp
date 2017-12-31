@@ -15,6 +15,6 @@ namespace InvoiceOTC.Model
         public string outlAddress { get; set; }
         public string outlSlsm { get; set; }
         public string outlRoute { get; set; }
-        public bool outlStatus { get; set; }        
+        public bool outlStat { get; set; }        
     }
 }

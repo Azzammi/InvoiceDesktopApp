@@ -38,28 +38,7 @@ namespace InvoiceOTC.Repository.Service
         }
         #endregion
 
-        #region Methods
-        public int Delete(Invoice obj)
-        {
-            var result = 0;
-            try
-            {
-                m_Sql = @"Delete From Invoice Where invoiceID = @invoiceID";
-                result = context.db.Execute(m_Sql, obj);
-
-                foreach(InvoiceDetail detail in obj.detail)
-                {
-                    m_Detail.Delete(detail);
-                }
-            }
-            catch
-            {
-
-            }
-
-            return result;
-        }
-
+        #region Methods Select
         private IEnumerable<Invoice> MappingRecordToObj(string sql, object param = null)
         {
             IEnumerable<Invoice> listOfInvoice = null;
@@ -77,18 +56,55 @@ namespace InvoiceOTC.Repository.Service
                             {
                                 invoiceEntry = invoice;
                                 invoiceEntry.detail = new List<InvoiceDetail>();
-                            //invoiceEntry.p_Items = new FSBindingList<InvoiceDetail>(detail);
+                                //invoiceEntry.p_Items = new FSBindingList<InvoiceDetail>(detail);
                                 invoiceDictionary.Add(invoiceEntry.invoiceID, invoiceEntry);
                             }
 
                             invoiceEntry.detail.Add(invoiceDetail);
                             return invoiceEntry;
-                        },param,
-                        splitOn: "detailID")
+                        }, param,
+                        splitOn: "invoiceID")
                     .Distinct();
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+            return listOfInvoice;
+        }
+
+        private IEnumerable<Invoice> MappingRecordToObjSorted(string sql, object param = null)
+        {
+            IEnumerable<Invoice> listOfInvoice = null;
+            try
+            {
+                var invoiceDictionary = new Dictionary<int, Invoice>();
+
+                listOfInvoice = context.db.Query<Invoice, InvoiceDetail, Invoice>(
+                        sql,
+                        (invoice, invoiceDetail) =>
+                        {
+                            Invoice invoiceEntry;
+
+                            if (!invoiceDictionary.TryGetValue(invoice.invoiceID, out invoiceEntry))
+                            {
+                                invoiceEntry = invoice;
+                                List<InvoiceDetail> detail = new List<InvoiceDetail>();
+                                invoiceEntry.p_Items = new FSBindingList<InvoiceDetail>(detail);
+                                invoiceDictionary.Add(invoiceEntry.invoiceID, invoiceEntry);
+                            }
+
+                            invoiceEntry.p_Items.Add(invoiceDetail);
+                            return invoiceEntry;
+                        }, param,
+                        splitOn: "invoiceID")
+                    .Distinct();
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
@@ -106,35 +122,8 @@ namespace InvoiceOTC.Repository.Service
             IList<Invoice> listOfInvoice = new List<Invoice>();
             try
             {
-                m_Sql = @"SELECT * FROM Invoice AS A INNER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID;";               
-
-                var invoiceDictionary = new Dictionary<int, Invoice>();
-
-                listOfInvoice = context.db.Query<Invoice, InvoiceDetail, Invoice>(
-                        m_Sql,
-                        (invoice, invoiceDetail) =>
-                        {
-                            Invoice invoiceEntry;
-
-                            if (!invoiceDictionary.TryGetValue(invoice.invoiceID, out invoiceEntry))
-                            {
-                                invoiceEntry = invoice;
-
-                                //Declare the list type first
-                                List<InvoiceDetail> detail = new List<InvoiceDetail>();
-
-                                //Convert it to custom list
-                                //invoiceEntry.p_Items = new FSBindingList<InvoiceDetail>(detail);
-                                invoiceDictionary.Add(invoiceEntry.invoiceID, invoiceEntry);
-                            }
-
-                            //Add invoiceDetail item to Invoice
-                            //invoiceEntry.p_Items.Add(invoiceDetail);
-                            return invoiceEntry;
-                        },
-                        splitOn: "rotiID")
-                    .Distinct()
-                    .ToList();
+                m_Sql = @"SELECT * FROM Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID;";
+                listOfInvoice = MappingRecordToObjSorted(m_Sql).ToList();
             }
             catch
             {
@@ -142,6 +131,7 @@ namespace InvoiceOTC.Repository.Service
             }
 
             return new FSBindingList<Invoice>(listOfInvoice);
+
         }
 
         public IList<Invoice> GetAll()
@@ -172,7 +162,7 @@ namespace InvoiceOTC.Repository.Service
             catch
             {
 
-            }      
+            }
             return invoice;
         }
 
@@ -208,7 +198,9 @@ namespace InvoiceOTC.Repository.Service
             }
             return listOfDetail;
         }
+        #endregion
 
+        #region Methods Crud
         public int Save(Invoice obj)
         {
             var result = 0;
@@ -254,7 +246,7 @@ namespace InvoiceOTC.Repository.Service
                                                         obj.pengguna, obj.idPayment,
                                                         obj.isPayed }).SingleOrDefault();
 
-                foreach(InvoiceDetail detail in obj.detail)
+                foreach(InvoiceDetail detail in obj.p_Items)
                 {
                     detail.invoiceID = result;
                     m_Detail.Save(detail);
@@ -272,7 +264,8 @@ namespace InvoiceOTC.Repository.Service
             var result = 0;
             try
             {
-                m_Sql = @"Update INVOICE SET nomorinvoice = @nomorInvoice, " +
+                m_Sql = @"UPDATE INVOICE SET " +
+                        "nomorinvoice = @nomorInvoice, " +
                         "dueDate = @dueDate, " +
                         "outletCode = @outletCode, " +
                         "subTotal = @subTotal, " +
@@ -280,15 +273,20 @@ namespace InvoiceOTC.Repository.Service
                         "total = @total, " +
                         "issuedDate = @issuedDate, " +
                         "isPPN = @isPPN, " +
-                        "nomorPO = @nomorPO " +
-                        //"pengguna = '{0}' " +
+                        "nomorPO = @nomorPO, " +
+                        "pengguna = @pengguna, " +
+                        "periode = @periode, " +
+                        "idpayment = @idpayment, " +
+                        "ispayed = @ispayed "  +
                         "WHERE InvoiceID = @invoiceID";
 
                 result = context.db.Execute(m_Sql, obj);
 
-                foreach (InvoiceDetail detail in obj.detail)
+                var invoiceID = obj.invoiceID;
+                foreach (InvoiceDetail detail in obj.p_Items)
                 {
-                    m_Detail.Update(detail);
+                    detail.invoiceID = invoiceID;
+                    m_Detail.Save(detail);
                 }
             }
             catch
@@ -298,10 +296,84 @@ namespace InvoiceOTC.Repository.Service
             return result;
         }
 
+        public int Delete(Invoice obj)
+        {
+            var result = 0;
+            try
+            {
+                m_Sql = @"Delete From Invoice Where invoiceID = @invoiceID";
+                result = context.db.Execute(m_Sql, obj);
+
+                m_Detail.DeleteAll(obj.invoiceID);
+            }
+            catch
+            {
+
+            }
+
+            return result;
+        }
+
+        #endregion
+
+        #region Methods Count
+
         public string GetInvoiceID(string nomorInvoice)
         {
             throw new NotImplementedException();
         }
+
+        public decimal GetSubTotalSum(Invoice data)
+        {            
+            decimal result = 0;
+            foreach(InvoiceDetail detail in data.p_Items)
+            {
+                if (detail == null)
+                {
+                    result += 0;
+                }
+                else
+                {
+                    result += detail.subTotal;
+                }               
+            }
+
+            data.subTotal = result;
+            return result;
+        }
+
+        public void GetSubTotal(InvoiceDetail data)
+        {
+            if (data == null) return;
+            decimal result = 0;
+            double discount = 0;
+
+            discount = ((double)data.itemPrice * data.itemQty) * data.discount / 100;
+            result = data.itemQty * data.itemPrice - (decimal)discount;
+            data.subTotal = result;            
+        }
+
+        public decimal GetPPN(Invoice data)
+        {
+            decimal result = 0;
+            if(data.isPPN != false)
+            {
+                result = data.subTotal * 10 / 100;
+                data.ppn = (float)result;
+            }           
+
+            return result;
+        }
+
+        public decimal GetInvoiceNett(Invoice data)
+        {
+            decimal result = 0;
+            result = GetSubTotalSum(data) + GetPPN(data);
+            data.total = result;
+
+            return result;
+        }
+
         #endregion
     }
 }

@@ -29,33 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.outletBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.outletDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).BeginInit();
+            this.outletBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.outlCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outlNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outlAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outlSlsmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outlRouteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outlStatDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.outletDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // outletBindingSource
-            // 
-            this.outletBindingSource.DataSource = typeof(InvoiceOTC.Model.Outlet);
             // 
             // outletDataGridView
             // 
             this.outletDataGridView.AutoGenerateColumns = false;
             this.outletDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.outletDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewCheckBoxColumn1});
+            this.outlCodeDataGridViewTextBoxColumn,
+            this.outlNameDataGridViewTextBoxColumn,
+            this.outlAddressDataGridViewTextBoxColumn,
+            this.outlSlsmDataGridViewTextBoxColumn,
+            this.outlRouteDataGridViewTextBoxColumn,
+            this.outlStatDataGridViewCheckBoxColumn});
             this.outletDataGridView.DataSource = this.outletBindingSource;
             this.outletDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.outletDataGridView.Location = new System.Drawing.Point(0, 58);
@@ -63,41 +59,45 @@
             this.outletDataGridView.Size = new System.Drawing.Size(669, 311);
             this.outletDataGridView.TabIndex = 3;
             // 
-            // dataGridViewTextBoxColumn1
+            // outletBindingSource
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "outlCode";
-            this.dataGridViewTextBoxColumn1.HeaderText = "outlCode";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.outletBindingSource.DataSource = typeof(InvoiceOTC.Model.Outlet);
             // 
-            // dataGridViewTextBoxColumn2
+            // outlCodeDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "outlName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "outlName";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.outlCodeDataGridViewTextBoxColumn.DataPropertyName = "outlCode";
+            this.outlCodeDataGridViewTextBoxColumn.HeaderText = "outlCode";
+            this.outlCodeDataGridViewTextBoxColumn.Name = "outlCodeDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn3
+            // outlNameDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "outlAddress";
-            this.dataGridViewTextBoxColumn3.HeaderText = "outlAddress";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.outlNameDataGridViewTextBoxColumn.DataPropertyName = "outlName";
+            this.outlNameDataGridViewTextBoxColumn.HeaderText = "outlName";
+            this.outlNameDataGridViewTextBoxColumn.Name = "outlNameDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn4
+            // outlAddressDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "outlSlsm";
-            this.dataGridViewTextBoxColumn4.HeaderText = "outlSlsm";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.outlAddressDataGridViewTextBoxColumn.DataPropertyName = "outlAddress";
+            this.outlAddressDataGridViewTextBoxColumn.HeaderText = "outlAddress";
+            this.outlAddressDataGridViewTextBoxColumn.Name = "outlAddressDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn5
+            // outlSlsmDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "outlRoute";
-            this.dataGridViewTextBoxColumn5.HeaderText = "outlRoute";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.outlSlsmDataGridViewTextBoxColumn.DataPropertyName = "outlSlsm";
+            this.outlSlsmDataGridViewTextBoxColumn.HeaderText = "outlSlsm";
+            this.outlSlsmDataGridViewTextBoxColumn.Name = "outlSlsmDataGridViewTextBoxColumn";
             // 
-            // dataGridViewCheckBoxColumn1
+            // outlRouteDataGridViewTextBoxColumn
             // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "outlStatus";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "outlStatus";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.outlRouteDataGridViewTextBoxColumn.DataPropertyName = "outlRoute";
+            this.outlRouteDataGridViewTextBoxColumn.HeaderText = "outlRoute";
+            this.outlRouteDataGridViewTextBoxColumn.Name = "outlRouteDataGridViewTextBoxColumn";
+            // 
+            // outlStatDataGridViewCheckBoxColumn
+            // 
+            this.outlStatDataGridViewCheckBoxColumn.DataPropertyName = "outlStat";
+            this.outlStatDataGridViewCheckBoxColumn.HeaderText = "outlStat";
+            this.outlStatDataGridViewCheckBoxColumn.Name = "outlStatDataGridViewCheckBoxColumn";
             // 
             // FrmListOutlet
             // 
@@ -108,15 +108,13 @@
             this.Name = "FrmListOutlet";
             this.Text = "j";
             this.Controls.SetChildIndex(this.outletDataGridView, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.BindingSource outletBindingSource;
         private System.Windows.Forms.DataGridView outletDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -124,5 +122,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn outlCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn outlNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn outlAddressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn outlSlsmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn outlRouteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn outlStatDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.BindingSource outletBindingSource;
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Security;
+using System.Linq;
 using System.Security.Permissions;
 
 
@@ -46,6 +46,12 @@ public class FSBindingList<T> : BindingList<T>
         /// </summary>
         /// <param name="list">An <see cref="T:System.Collections.Generic.IList`1" /> of items to be contained in the <see cref="T:System.ComponentModel.BindingList`1" />.</param>
         public FSBindingList(IList<T> list) : base(list) { }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SortableBindingList{T}"/> class.
+        /// </summary>
+        /// <param name="source">An <see cref="T:System.Collections.Generic.IList`1" /> of items to be contained in the <see cref="T:System.ComponentModel.BindingList`1" />.</param>
+        public FSBindingList(IEnumerable<T> source) : base(source.ToList()) { }
         public FSBindingList() { }
         #endregion
 

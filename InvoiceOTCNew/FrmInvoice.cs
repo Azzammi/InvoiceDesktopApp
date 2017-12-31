@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 using InvoiceOTC.Repository.Service;
+using FSCollections;
 
 namespace InvoiceOTCNew
 {
@@ -18,6 +14,7 @@ namespace InvoiceOTCNew
     {
         #region Declaration
         private IInvoiceRepository invoiceRepository;
+        private IInvoiceDetailRepository invoiceDetailRepository;
         private IOutletRepository outletRepository;
         private IProductRepository productRepository;
         #endregion
@@ -29,6 +26,7 @@ namespace InvoiceOTCNew
             SetHeader("Invoice");
 
             invoiceRepository = new InvoiceRepository();
+            invoiceDetailRepository = new InvoiceDetailRepository();
             outletRepository = new OutletRepository();
             productRepository = new ProductRepository();
 
@@ -49,6 +47,7 @@ namespace InvoiceOTCNew
             SetHeader("Invoice");
 
             invoiceRepository = new InvoiceRepository();
+            invoiceDetailRepository = new InvoiceDetailRepository();
             outletRepository = new OutletRepository();
             productRepository = new ProductRepository();
 
@@ -57,8 +56,8 @@ namespace InvoiceOTCNew
 
             CekKondisi(FormCondition.Inputting);
             invoiceBindingSource.Add(data);
-            isAddNew = false;
-           
+            
+            isAddNew = false;           
         }
         #endregion
         
@@ -73,9 +72,9 @@ namespace InvoiceOTCNew
         protected override void button2_Click(object sender, EventArgs e)
         {
             Invoice dataInvoice = (Invoice)invoiceBindingSource.Current;
-            //List<object> lik = ((List<InvoiceDetail>)detailBindingSource.DataSource).Cast<object>().ToList();
+            
             if (dataInvoice == null) return;
-            dataInvoice.detail = detailBindingSource.List.Cast<InvoiceDetail>().ToList();
+            button1.PerformClick();
 
             switch (isAddNew)
             {
@@ -94,8 +93,70 @@ namespace InvoiceOTCNew
             isAddNew = false;
             CekKondisi(FormCondition.Ready);            
         }
+
         #endregion
+        
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.CurrentRow;
+            InvoiceDetail item = row.DataBoundItem as InvoiceDetail;
+            
+            if(e.ColumnIndex == 3)
+            {                
+                countBtn.PerformClick();
+            }
 
+            invoiceRepository.GetSubTotal(item);
+        }
 
+        private void isPPNCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (isPPNCheckBox.CheckState == CheckState.Checked)
+            {
+                invoiceRepository.GetInvoiceNett((Invoice)invoiceBindingSource.Current);
+            }
+            else
+            {
+                ((Invoice)invoiceBindingSource.Current).ppn = 0;
+            }            
+        }
+
+        private void detailBindingSource_CurrentItemChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void countBtn_Click(object sender, EventArgs e)
+        {
+            Invoice dataInvoice = (Invoice)invoiceBindingSource.Current;
+            dataInvoice.p_Items = pItemsBindingSource.List.Cast<InvoiceDetail>().ToListSorted();
+            
+            invoiceRepository.GetInvoiceNett(dataInvoice);
+            invoiceBindingSource.ResetCurrentItem();
+        }
+
+        private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            //Get Item 
+            if (pItemsBindingSource.DataSource == null) e.Cancel = true; 
+            if (dataGridView1.CurrentRow == null) e.Cancel = true;
+
+            DataGridViewRow row = dataGridView1.CurrentRow;
+            InvoiceDetail item = row.DataBoundItem as InvoiceDetail;
+
+            //Confirm Delete     
+            if (DialogHelper.DeleteDialog(item.itemCode) != 0)
+            {                
+                if (item != null)
+                {
+                    if (isAddNew != false) invoiceDetailRepository.Delete(item);
+                    productBindingSource.Remove(item);                                          
+                }
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

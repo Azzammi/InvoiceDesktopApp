@@ -21,7 +21,7 @@ namespace InvoiceOTCNew
             SetHeader("Product");
             productRepository = new ProductRepository();
 
-            productBindingSource.DataSource = productRepository.GetAll();
+            productBindingSource.DataSource = productRepository.GetAllSorted();
         }
         #endregion
 

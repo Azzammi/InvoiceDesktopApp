@@ -79,6 +79,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseClasses\ExtensionListType.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="BaseClasses\FSBindingItem.cs" />
     <Compile Include="BaseClasses\FSBindingList.cs" />

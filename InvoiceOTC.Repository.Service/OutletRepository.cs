@@ -124,7 +124,7 @@ namespace InvoiceOTC.Repository.Service
                 m_Sql = @"INSERT INTO OUTLET " +
                         "(OutlCode, OutlName, OutlAddress, OutlSlsm, OutlRoute, OutlStat)" +
                         " VALUES " +
-                        "(@outlCode, @outlName, @outlAddress, @outlSlsm, @outlRoute, @OutlStatus)";
+                        "(@outlCode, @outlName, @outlAddress, @outlSlsm, @outlRoute, @OutlStat)";
                 result = context.db.Execute(m_Sql, obj);
             }
             catch
@@ -144,7 +144,7 @@ namespace InvoiceOTC.Repository.Service
                         "OutlAddress = @outlAddress, " +
                         "OutlSlsm = @outlSlsm, " +
                         "OutlRoute = @outlRoute, " +
-                        "OutlStat = @outlStatus " +
+                        "OutlStat = @outlStat " +
                         "WHERE OutlCode = @outlCode";
                 result = context.db.Execute(m_Sql, obj);
             }
@@ -160,7 +160,7 @@ namespace InvoiceOTC.Repository.Service
             IList<Outlet> list = new List<Outlet>();
             try
             {
-                m_Sql = @"SELECT OUTLCODE ,OUTLNAME ,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT FROM OUTLET";
+                m_Sql = @"SELECT outlcode, outlname, outladdress, outlslsm, outlroute, outlstat FROM outlet";
 
                 list = context.db.Query<Outlet>(m_Sql).ToList();
             }

@@ -9,9 +9,12 @@ using InvoiceOTC.Model;
 namespace InvoiceOTC.Repository.API
 {
     public interface IInvoiceDetailRepository : IBaseRepository<InvoiceDetail>
-    {
-        int Save(int invoiceID, InvoiceDetail obj);
-        int Delete(int invoiceID);
-        //InvoiceDetail GetInvoiceDetailByItemCode(int invoiceID, string itemCode);
+    {        
+        /// <summary>
+        /// Delete all invoice detail based on invoiceID
+        /// </summary>
+        /// <param name="invoiceID"></param>
+        /// <returns></returns>
+        int DeleteAll(int invoiceID);        
     }
 }

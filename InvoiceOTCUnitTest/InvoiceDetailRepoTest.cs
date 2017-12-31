@@ -87,7 +87,7 @@ namespace InvoiceOTCUnitTest
             var getInvoice = invoice.GetInvoiceByNomor("9000");
             var detail = getInvoice.detail.First(s => s.invoiceID == getInvoice.invoiceID);
 
-            var result = invoiceDetail.Delete(detail.invoiceID);
+            var result = invoiceDetail.Delete(detail);
             Assert.IsTrue(result != 0);
 
             var result2 = invoice.Delete(getInvoice);
