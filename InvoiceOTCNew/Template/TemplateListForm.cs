@@ -44,13 +44,18 @@ namespace InvoiceOTCNew
             this.headerLbl.Text = header.ToUpper();
         }
 
+        protected void SetDataSource(BindingSource source)
+        {
+            findStrip2.bindingSource = source;
+        }
+
         protected virtual void tambahBtn_Click(object sender, EventArgs e)
         {
 
         }
         protected virtual void CloseBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
         protected virtual void EditBtn_Click(object sender, EventArgs e)
         {
@@ -58,11 +63,19 @@ namespace InvoiceOTCNew
         }
         protected virtual void DeleteBtn_Click(object sender, EventArgs e)
         {
-
+          
         }
 
+        protected virtual void findStrip1_ItemFound(object sender, InvoiceOTC.Controller.ItemFoundEventArgs e)
+        {
+
+        }
         #endregion
-        
+
+        protected virtual void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
     
 }

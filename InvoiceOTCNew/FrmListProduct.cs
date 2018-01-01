@@ -5,6 +5,7 @@ using System;
 
 using InvoiceOTCNew.Helper;
 using System.Windows.Forms;
+using InvoiceOTC.Controller;
 
 namespace InvoiceOTCNew
 {
@@ -19,9 +20,11 @@ namespace InvoiceOTCNew
         {
             InitializeComponent();
             SetHeader("Product");
+            SetDataSource(productBindingSource);
+
             productRepository = new ProductRepository();
 
-            productBindingSource.DataSource = productRepository.GetAllSorted();
+            productBindingSource.DataSource = productRepository.GetAll();
         }
         #endregion
 
@@ -64,6 +67,27 @@ namespace InvoiceOTCNew
             }
         }
 
+        protected override void findStrip1_ItemFound(object sender, ItemFoundEventArgs e)
+        {
+            //If value found, select row
+            if (e.Index >= 0)
+            {
+                this.productDataGridView.ClearSelection();
+                this.productDataGridView.Rows[e.Index].Selected = true;
+
+                //Change current list data source item
+                //To ensure currency accross all controls
+                //bound to this data source
+                this.productBindingSource.Position = e.Index;
+            }
+        }
+
+        protected override void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            productBindingSource.DataSource =  productRepository.Search(findStrip2.searchInCmb.Text, findStrip2.searchTxt.Text);
+        }        
+        #endregion
+
         #region IListener
         public void Ok(object sender, object data)
         {
@@ -76,9 +100,8 @@ namespace InvoiceOTCNew
             {
                 productBindingSource.Add(data);
             }
-        #endregion
-
-        #endregion
+            
         }
+        #endregion
     }
 }

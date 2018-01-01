@@ -5,6 +5,7 @@ using InvoiceOTC.Repository.API;
 using InvoiceOTC.Repository.Service;
 using InvoiceOTCNew.Helper;
 using System.Windows.Forms;
+using InvoiceOTC.Controller;
 
 namespace InvoiceOTCNew
 {
@@ -19,6 +20,7 @@ namespace InvoiceOTCNew
         {
             InitializeComponent();
             SetHeader("Invoice");
+            SetDataSource(invoiceBindingSource);
 
             productRepo = new ProductRepository();
             invoiceRepo = new InvoiceRepository();            
@@ -31,13 +33,13 @@ namespace InvoiceOTCNew
            
         }
 
+        #region Overrided Method
         protected override void tambahBtn_Click(object sender, EventArgs e)
         {
             var frm = new FrmInvoice();
             frm.Listener = this;
             frm.ShowDialog();
         }
-      
         protected override void EditBtn_Click(object sender, EventArgs e)
         {
             Invoice currentInvoice = (Invoice)invoiceBindingSource.Current;
@@ -47,7 +49,6 @@ namespace InvoiceOTCNew
             frm.Listener = this;
             frm.ShowDialog();
         }
-     
         protected override void DeleteBtn_Click(object sender, EventArgs e)
         {
             //Remove the event first - to prevent executing the other method
@@ -74,6 +75,25 @@ namespace InvoiceOTCNew
             //Assign the method again
             dataGridView1.UserDeletingRow += dataGridView1_UserDeletingRow;
         }
+        protected override void findStrip1_ItemFound(object sender, ItemFoundEventArgs e)
+        {
+            //If value found, select row
+            if (e.Index >= 0)
+            {
+                this.dataGridView1.ClearSelection();
+                this.dataGridView1.Rows[e.Index].Selected = true;
+
+                //Change current list data source item
+                //To ensure currency accross all controls
+                //bound to this data source
+                this.invoiceBindingSource.Position = e.Index;
+            }
+        }
+        protected override void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            invoiceBindingSource.DataSource = invoiceRepo.Search(findStrip2.searchInCmb.Text, findStrip2.searchTxt.Text);
+        }
+        #endregion
 
         #region IListener Method
         public void Ok(object sender, object data)

@@ -56,11 +56,11 @@ namespace InvoiceOTCNew
 
             CekKondisi(FormCondition.Inputting);
             invoiceBindingSource.Add(data);
-            
-            isAddNew = false;           
+
+            isAddNew = false;
         }
         #endregion
-        
+
         #region Overrided Methods
         protected override void button1_Click(object sender, EventArgs e)
         {
@@ -72,9 +72,9 @@ namespace InvoiceOTCNew
         protected override void button2_Click(object sender, EventArgs e)
         {
             Invoice dataInvoice = (Invoice)invoiceBindingSource.Current;
-            
-            if (dataInvoice == null) return;
-            button1.PerformClick();
+
+            if (dataInvoice == null || dataInvoice.p_Items == null || dataInvoice.nomorInvoice == null) return;
+            countBtn.PerformClick();
 
             switch (isAddNew)
             {
@@ -95,42 +95,31 @@ namespace InvoiceOTCNew
         }
 
         #endregion
-        
+
+        #region Supporting Methods
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dataGridView1.CurrentRow;
             InvoiceDetail item = row.DataBoundItem as InvoiceDetail;
-            
-            if(e.ColumnIndex == 3)
-            {                
+
+            if (e.ColumnIndex == 3)
+            {
                 countBtn.PerformClick();
             }
 
             invoiceRepository.GetSubTotal(item);
         }
 
-        private void isPPNCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (isPPNCheckBox.CheckState == CheckState.Checked)
-            {
-                invoiceRepository.GetInvoiceNett((Invoice)invoiceBindingSource.Current);
-            }
-            else
-            {
-                ((Invoice)invoiceBindingSource.Current).ppn = 0;
-            }            
-        }
-
         private void detailBindingSource_CurrentItemChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void countBtn_Click(object sender, EventArgs e)
         {
             Invoice dataInvoice = (Invoice)invoiceBindingSource.Current;
             dataInvoice.p_Items = pItemsBindingSource.List.Cast<InvoiceDetail>().ToListSorted();
-            
+
             invoiceRepository.GetInvoiceNett(dataInvoice);
             invoiceBindingSource.ResetCurrentItem();
         }
@@ -138,7 +127,7 @@ namespace InvoiceOTCNew
         private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             //Get Item 
-            if (pItemsBindingSource.DataSource == null) e.Cancel = true; 
+            if (pItemsBindingSource.DataSource == null) e.Cancel = true;
             if (dataGridView1.CurrentRow == null) e.Cancel = true;
 
             DataGridViewRow row = dataGridView1.CurrentRow;
@@ -146,11 +135,11 @@ namespace InvoiceOTCNew
 
             //Confirm Delete     
             if (DialogHelper.DeleteDialog(item.itemCode) != 0)
-            {                
+            {
                 if (item != null)
                 {
                     if (isAddNew != false) invoiceDetailRepository.Delete(item);
-                    productBindingSource.Remove(item);                                          
+                    productBindingSource.Remove(item);
                 }
             }
             else
@@ -158,5 +147,7 @@ namespace InvoiceOTCNew
                 e.Cancel = true;
             }
         }
+        #endregion
+
     }
 }

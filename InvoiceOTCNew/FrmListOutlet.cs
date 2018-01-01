@@ -5,6 +5,7 @@ using InvoiceOTC.Repository.Service;
 
 using InvoiceOTCNew.Helper;
 using System.Windows.Forms;
+using InvoiceOTC.Controller;
 
 namespace InvoiceOTCNew
 {
@@ -19,9 +20,11 @@ namespace InvoiceOTCNew
         {
             InitializeComponent();
             SetHeader("outlet");
+            SetDataSource(outletBindingSource);
+
             outletRepository = new OutletRepository();
 
-            outletBindingSource.DataSource = outletRepository.GetAllSorted();
+            outletBindingSource.DataSource = outletRepository.GetAll();
         }
         #endregion
 
@@ -61,6 +64,24 @@ namespace InvoiceOTCNew
                 }
             }
         }
+        protected override void findStrip1_ItemFound(object sender, ItemFoundEventArgs e)
+        {
+            //If value found, select row
+            if (e.Index >= 0)
+            {
+                this.outletDataGridView.ClearSelection();
+                this.outletDataGridView.Rows[e.Index].Selected = true;
+
+                //Change current list data source item
+                //To ensure currency accross all controls
+                //bound to this data source
+                this.outletBindingSource.Position = e.Index;
+            }
+        }
+        protected override void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            outletBindingSource.DataSource = outletRepository.Search(findStrip2.searchInCmb.Text, findStrip2.searchTxt.Text);
+        }
         #endregion        
 
         #region IListener Method
@@ -77,5 +98,6 @@ namespace InvoiceOTCNew
             }
         }
         #endregion
+        
     }
 }

@@ -40,6 +40,11 @@ namespace InvoiceOTC.Repository.Service
             return result;
         }
 
+        public IList<Logs> Search(string key, string value)
+        {
+            throw new NotImplementedException();
+        }
+
         public int Update(Logs obj)
         {
             throw new NotImplementedException();

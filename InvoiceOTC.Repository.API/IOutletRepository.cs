@@ -31,11 +31,6 @@ namespace InvoiceOTC.Repository.API
         /// <param name="outletName"></param>
         /// <returns></returns>
         Outlet GetOutletByName(string outletName);
-
-        /// <summary>
-        /// Get a custom list to achieve sorting ability
-        /// </summary>
-        /// <returns>FSBindingList<T></T></returns>
-        FSBindingList<Outlet> GetAllSorted();        
+     
     }
 }

@@ -16,12 +16,6 @@ namespace InvoiceOTC.Repository.API
         /// </summary>
         /// <param name="itemCode"></param>
         /// <returns></returns>
-        Product GetItemByID(string itemCode);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        FSBindingList<Product> GetAllSorted();
+        Product GetItemByID(string itemCode);        
     }
 }

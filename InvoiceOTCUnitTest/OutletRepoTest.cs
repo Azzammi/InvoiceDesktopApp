@@ -74,7 +74,7 @@ namespace InvoiceOTCUnitTest
         [Test]
         public void GetAllSorted()
         {
-            var outlets = m_outlet.GetAllSorted();
+            var outlets = m_outlet.GetAll();
             Assert.IsNotNull(outlets);
         }
 

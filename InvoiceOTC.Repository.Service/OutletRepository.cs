@@ -32,31 +32,15 @@ namespace InvoiceOTC.Repository.Service
         }
         #endregion
 
-        #region Methods
-        public int Delete(Outlet obj)
-        {
-            var result = 0;
-            try
-            {
-                m_Sql = @"Delete From Outlet Where OutlCode = @outlCode";
-
-                result = context.db.Execute(m_Sql, obj);
-            }
-            catch
-            {
-
-            }
-            return result;
-        }
-
+        #region Select Methods
         public IList<Outlet> GetAll()
         {
             IList<Outlet> list = new List<Outlet>();
             try
             {
                 m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT FROM OUTLET";
-                list = context.db.Query<Outlet>(m_Sql).ToList();
-                
+                list = context.db.Query<Outlet>(m_Sql).ToListSorted();
+
             }
             catch
             {
@@ -77,7 +61,7 @@ namespace InvoiceOTC.Repository.Service
             }
             catch
             {
-               
+
             }
             return outlet;
         }
@@ -90,7 +74,7 @@ namespace InvoiceOTC.Repository.Service
                 m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT FROM OUTLET" +
                         " WHERE OUTLNAME = @outletName";
 
-                outlet = context.db.Query<Outlet>(m_Sql, new { outletName }).SingleOrDefault();                
+                outlet = context.db.Query<Outlet>(m_Sql, new { outletName }).SingleOrDefault();
             }
             catch
             {
@@ -115,6 +99,41 @@ namespace InvoiceOTC.Repository.Service
             }
             return outlet;
         }
+
+        public IList<Outlet> Search(string key, string value)
+        {
+            IList<Outlet> list = new List<Outlet>();
+            string newValue = "%" + value + "%";
+            try
+            {
+                m_Sql = @"SELECT outlcode, outlname, outladdress, outlslsm, outlroute, outlstat FROM outlet WHERE " + key + " ILIKE @newValue";
+
+                list = context.db.Query<Outlet>(m_Sql, new { newValue }).ToListSorted();
+            }
+            catch
+            {
+
+            }
+            return list;
+        }
+        #endregion
+
+        #region CRUD Methods
+        public int Delete(Outlet obj)
+        {
+            var result = 0;
+            try
+            {
+                m_Sql = @"Delete From Outlet Where OutlCode = @outlCode";
+
+                result = context.db.Execute(m_Sql, obj);
+            }
+            catch
+            {
+
+            }
+            return result;
+        }      
 
         public int Save(Outlet obj)
         {
@@ -153,22 +172,6 @@ namespace InvoiceOTC.Repository.Service
 
             }
             return result;
-        }
-
-        public FSBindingList<Outlet> GetAllSorted()
-        {
-            IList<Outlet> list = new List<Outlet>();
-            try
-            {
-                m_Sql = @"SELECT outlcode, outlname, outladdress, outlslsm, outlroute, outlstat FROM outlet";
-
-                list = context.db.Query<Outlet>(m_Sql).ToList();
-            }
-            catch
-            {
-
-            }
-            return new FSBindingList<Outlet>(list);
         }
         #endregion
     }

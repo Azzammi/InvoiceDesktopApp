@@ -50,6 +50,20 @@ namespace InvoiceOTCUnitTest
         }
 
         [Test]
+        public void GetById()
+        {
+            var productBaru = m_product.GetItemByID("TST00001");
+            Assert.AreEqual("TST00001", productBaru.itemCode);
+            Assert.AreEqual("TEST UNIT UPDATE", productBaru.itemName);
+            Assert.AreEqual("UPD", productBaru.itemSort.Trim());
+            Assert.AreEqual("Tester Update", productBaru.brand);
+            Assert.AreEqual("Testing Update", productBaru.category);
+            Assert.AreEqual("UnitTest Update", productBaru.subCategory);
+            Assert.AreEqual(242409290829048, productBaru.price);
+            Assert.AreEqual(false, productBaru.stat);
+        }
+
+        [Test]
         public void AddTest()
         {
             var product = new Product

@@ -9,6 +9,7 @@ using log4net;
 using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 using FSCollections;
+using System.Windows.Forms;
 
 namespace InvoiceOTC.Repository.Service
 {
@@ -32,23 +33,7 @@ namespace InvoiceOTC.Repository.Service
         }
         #endregion
 
-        public int Delete(Product obj)
-        {
-            var result = 0;
-            try
-            {
-                m_Sql = @"Delete From Product Where ITEMCODE = @itemCode";
-                
-                result = context.db.Execute(m_Sql, obj);                
-            }
-            catch
-            {
-
-            }
-
-            return result;
-        }
-
+        #region Select Methods
         public IList<Product> GetAll()
         {
             IList<Product> listOfProduct = new List<Product>();
@@ -56,9 +41,9 @@ namespace InvoiceOTC.Repository.Service
             try
             {
                 m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product";
-                listOfProduct = context.db.Query<Product>(m_Sql).ToList();                
+                listOfProduct = context.db.Query<Product>(m_Sql).ToListSorted();
             }
-            catch 
+            catch
             {
 
             }
@@ -66,13 +51,35 @@ namespace InvoiceOTC.Repository.Service
             return listOfProduct;
         }
 
+        public IList<Product> Search(string key, string value)
+        {
+            IList<Product> listOfProduct = new List<Product>();
+            //Little modification to accept value
+            string newValue = "%" + value + "%";
+
+            try
+            {
+                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product WHERE " + key + " ILIKE @newValue ";
+                listOfProduct = context.db.Query<Product>(m_Sql, new { newValue }).ToListSorted();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return listOfProduct;
+        }
+
         public Product GetItemByID(string itemCode)
         {
-            Product product = null ;
+            Product product = null;
+
             try
             {
                 m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product " +
-                         "WHERE ITEMCODE = @itemCode";
+                         "WHERE ITEMCODE = @value";
                 product = context.db.Query<Product>(m_Sql, new { itemCode }).SingleOrDefault();
             }
             catch
@@ -81,6 +88,25 @@ namespace InvoiceOTC.Repository.Service
             }
 
             return product;
+        }
+        #endregion
+
+        #region CRUD Methods
+        public int Delete(Product obj)
+        {
+            var result = 0;
+            try
+            {
+                m_Sql = @"Delete From Product Where ITEMCODE = @itemCode";
+
+                result = context.db.Execute(m_Sql, obj);
+            }
+            catch
+            {
+
+            }
+
+            return result;
         }
 
         public int Save(Product obj)
@@ -92,7 +118,7 @@ namespace InvoiceOTC.Repository.Service
                         "(ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat)" +
                         " VALUES " +
                         "(@itemCode, @itemName, @itemSort, @brand, @jenis, @category, @subCategory, @price, @stat)";
-                result = context.db.Execute(m_Sql, obj);             
+                result = context.db.Execute(m_Sql, obj);
             }
             catch
             {
@@ -117,7 +143,7 @@ namespace InvoiceOTC.Repository.Service
                         "price = @price, " +
                         "Stat = @stat " +
                         "WHERE ITEMCODE = @itemCode";
-                result = context.db.Execute(m_Sql, obj);            
+                result = context.db.Execute(m_Sql, obj);
             }
             catch
             {
@@ -126,22 +152,7 @@ namespace InvoiceOTC.Repository.Service
 
             return result;
         }
+        #endregion
 
-        public FSBindingList<Product> GetAllSorted()
-        {
-            IList<Product> listOfProduct = new List<Product>();
-
-            try
-            {
-                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product";
-                listOfProduct = context.db.Query<Product>(m_Sql).ToList();
-            }
-            catch
-            {
-
-            }
-
-            return new FSBindingList<Product>(listOfProduct);
-        }
     }
 }

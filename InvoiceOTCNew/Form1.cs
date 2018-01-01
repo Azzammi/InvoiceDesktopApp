@@ -33,8 +33,8 @@ namespace InvoiceOTCNew
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            productList = product.GetAllSorted();
-            productBindingSource.DataSource = productList;
+          
+            productBindingSource.DataSource = product.GetAll();
 
             productDataGridView.DataSource = TimeZoneInfo.GetSystemTimeZones();     
         }

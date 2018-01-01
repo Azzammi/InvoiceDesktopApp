@@ -387,7 +387,6 @@
             this.isPPNCheckBox.TabIndex = 9;
             this.isPPNCheckBox.Text = "PPN 10%";
             this.isPPNCheckBox.UseVisualStyleBackColor = true;
-            this.isPPNCheckBox.CheckedChanged += new System.EventHandler(this.isPPNCheckBox_CheckedChanged);
             // 
             // dueDateDateTimePicker
             // 

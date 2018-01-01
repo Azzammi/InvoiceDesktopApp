@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.outletDataGridView = new System.Windows.Forms.DataGridView();
-            this.outletBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.outlCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outlNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outlAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outlSlsmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outlRouteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outlStatDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.outletBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.outletDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -54,14 +54,10 @@
             this.outlStatDataGridViewCheckBoxColumn});
             this.outletDataGridView.DataSource = this.outletBindingSource;
             this.outletDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outletDataGridView.Location = new System.Drawing.Point(0, 58);
+            this.outletDataGridView.Location = new System.Drawing.Point(0, 90);
             this.outletDataGridView.Name = "outletDataGridView";
-            this.outletDataGridView.Size = new System.Drawing.Size(669, 311);
+            this.outletDataGridView.Size = new System.Drawing.Size(711, 279);
             this.outletDataGridView.TabIndex = 3;
-            // 
-            // outletBindingSource
-            // 
-            this.outletBindingSource.DataSource = typeof(InvoiceOTC.Model.Outlet);
             // 
             // outlCodeDataGridViewTextBoxColumn
             // 
@@ -99,11 +95,15 @@
             this.outlStatDataGridViewCheckBoxColumn.HeaderText = "outlStat";
             this.outlStatDataGridViewCheckBoxColumn.Name = "outlStatDataGridViewCheckBoxColumn";
             // 
+            // outletBindingSource
+            // 
+            this.outletBindingSource.DataSource = typeof(InvoiceOTC.Model.Outlet);
+            // 
             // FrmListOutlet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(669, 416);
+            this.ClientSize = new System.Drawing.Size(711, 416);
             this.Controls.Add(this.outletDataGridView);
             this.Name = "FrmListOutlet";
             this.Text = "j";
@@ -111,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.outletDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

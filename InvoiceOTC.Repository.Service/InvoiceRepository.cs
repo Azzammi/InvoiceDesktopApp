@@ -198,6 +198,23 @@ namespace InvoiceOTC.Repository.Service
             }
             return listOfDetail;
         }
+
+        public IList<Invoice> Search(string key, string value)
+        {
+            IList<Invoice> listOfDetail = new List<Invoice>();
+            try
+            {
+                m_Sql = @"SELECT * FROM  Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID WHERE A." + key + " ILIKE @newValue;";
+
+                var newValue = "%" + value + "%";
+                listOfDetail = MappingRecordToObjSorted(m_Sql, new { newValue }).ToListSorted();
+            }
+            catch
+            {
+
+            }
+            return listOfDetail;
+        }
         #endregion
 
         #region Methods Crud
@@ -316,8 +333,7 @@ namespace InvoiceOTC.Repository.Service
 
         #endregion
 
-        #region Methods Count
-
+        #region Count Methods
         public string GetInvoiceID(string nomorInvoice)
         {
             throw new NotImplementedException();
@@ -373,7 +389,6 @@ namespace InvoiceOTC.Repository.Service
 
             return result;
         }
-
         #endregion
     }
 }

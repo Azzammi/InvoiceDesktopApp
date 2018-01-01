@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TemplateListForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.headerLbl = new System.Windows.Forms.Label();
@@ -38,10 +39,13 @@
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.advancedSearchBtn = new System.Windows.Forms.ToolStripButton();
+            this.findStrip2 = new InvoiceOTC.Controller.FindStrip();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.findStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -165,12 +169,37 @@
             this.panel1.Size = new System.Drawing.Size(413, 41);
             this.panel1.TabIndex = 1;
             // 
+            // advancedSearchBtn
+            // 
+            this.advancedSearchBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.advancedSearchBtn.ForeColor = System.Drawing.Color.White;
+            this.advancedSearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("advancedSearchBtn.Image")));
+            this.advancedSearchBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.advancedSearchBtn.Name = "advancedSearchBtn";
+            this.advancedSearchBtn.Size = new System.Drawing.Size(108, 29);
+            this.advancedSearchBtn.Text = "Advanced Search !";
+            this.advancedSearchBtn.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // findStrip2
+            // 
+            this.findStrip2.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.findStrip2.bindingSource = null;
+            this.findStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.advancedSearchBtn});
+            this.findStrip2.Location = new System.Drawing.Point(0, 58);
+            this.findStrip2.Name = "findStrip2";
+            this.findStrip2.Size = new System.Drawing.Size(875, 32);
+            this.findStrip2.TabIndex = 2;
+            this.findStrip2.Text = "findStrip2";
+            this.findStrip2.ItemFound += new InvoiceOTC.Controller.ItemFoundEventHandler(this.findStrip1_ItemFound);
+            // 
             // TemplateListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(875, 387);
+            this.Controls.Add(this.findStrip2);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "TemplateListForm";
@@ -181,7 +210,10 @@
             this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.findStrip2.ResumeLayout(false);
+            this.findStrip2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -197,5 +229,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Label headerLbl;
+        private System.Windows.Forms.ToolStripButton advancedSearchBtn;
+        protected InvoiceOTC.Controller.FindStrip findStrip2;
     }
 }
