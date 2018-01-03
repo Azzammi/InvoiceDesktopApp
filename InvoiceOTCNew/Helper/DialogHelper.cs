@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace InvoiceOTCNew
@@ -28,6 +29,11 @@ namespace InvoiceOTCNew
                 result = 0;
             }
             return result;
+        }
+
+        public static void OpenExcelFile()
+        {
+
         }
     }
 }
