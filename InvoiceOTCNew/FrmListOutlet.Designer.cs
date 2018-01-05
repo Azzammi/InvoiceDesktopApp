@@ -54,10 +54,11 @@
             this.outlStatDataGridViewCheckBoxColumn});
             this.outletDataGridView.DataSource = this.outletBindingSource;
             this.outletDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outletDataGridView.Location = new System.Drawing.Point(0, 90);
+            this.outletDataGridView.Location = new System.Drawing.Point(0, 93);
             this.outletDataGridView.Name = "outletDataGridView";
-            this.outletDataGridView.Size = new System.Drawing.Size(711, 279);
+            this.outletDataGridView.Size = new System.Drawing.Size(711, 276);
             this.outletDataGridView.TabIndex = 3;
+            this.outletDataGridView.SelectionChanged += new System.EventHandler(this.outletDataGridView_SelectionChanged);
             // 
             // outlCodeDataGridViewTextBoxColumn
             // 
@@ -111,18 +112,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.outletDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView outletDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridView outletDataGridView;        
         private System.Windows.Forms.DataGridViewTextBoxColumn outlCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn outlNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn outlAddressDataGridViewTextBoxColumn;

@@ -70,12 +70,18 @@ namespace InvoiceOTCNew
         {
 
         }
-        #endregion
 
-        protected virtual void toolStripButton1_Click(object sender, EventArgs e)
+        protected virtual void advancedSearchBtn_Click(object sender, EventArgs e)
         {
-            
+
         }
+        protected virtual void importBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+        #endregion
     }
     
 }

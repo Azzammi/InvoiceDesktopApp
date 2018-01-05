@@ -16,7 +16,7 @@ namespace InvoiceOTCNew
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmImportProduk());
+            Application.Run(new FrmMiniMenu());
         }
     }
 }

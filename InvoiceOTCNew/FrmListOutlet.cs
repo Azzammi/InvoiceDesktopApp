@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 using InvoiceOTC.Repository.Service;
@@ -77,10 +78,15 @@ namespace InvoiceOTCNew
                 //bound to this data source
                 this.outletBindingSource.Position = e.Index;
             }
-        }
-        protected override void toolStripButton1_Click(object sender, EventArgs e)
+        }           
+        protected override void advancedSearchBtn_Click(object sender, EventArgs e)
         {
             outletBindingSource.DataSource = outletRepository.Search(findStrip2.searchInCmb.Text, findStrip2.searchTxt.Text);
+        }
+        protected override void importBtn_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmImportOutlet();
+            frm.ShowDialog();
         }
         #endregion        
 
@@ -98,6 +104,29 @@ namespace InvoiceOTCNew
             }
         }
         #endregion
-        
+
+        private void outletDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            int selectedCellCount = outletDataGridView.GetCellCount(DataGridViewElementStates.Selected);
+
+            if (selectedCellCount > 0)
+            {
+                if (outletDataGridView.AreAllCellsSelected(true))
+                {
+                    MessageBox.Show("Just Select cells that have number !");
+                }
+                else
+                {
+                    //Using Linq to iterate through selected cells
+                    countDGCellBtn.Text = "Count : " + selectedCellCount; 
+                                       
+                    var total =  (from DataGridViewCell cell in outletDataGridView.SelectedCells
+                                  where cell.FormattedValue.ToString() != string.Empty && cell.ValueType != typeof(string)
+                                  select Convert.ToInt32(cell.FormattedValue)).Sum().ToString();
+                    totalDGCellBtn.Text = "Total : " + total;
+                    
+                }
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace InvoiceOTCNew
 {
-    partial class FrmImportProduk
+    partial class FrmImportOutlet
     {
         /// <summary>
         /// Required designer variable.
@@ -51,8 +51,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(763, 308);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(670, 321);
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // dataGridView1
             // 
@@ -60,40 +60,40 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(757, 217);
+            this.dataGridView1.Size = new System.Drawing.Size(664, 230);
             this.dataGridView1.TabIndex = 0;
             // 
             // openFileBtn
             // 
             this.openFileBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.openFileBtn.Location = new System.Drawing.Point(3, 226);
+            this.openFileBtn.Location = new System.Drawing.Point(3, 239);
             this.openFileBtn.Name = "openFileBtn";
-            this.openFileBtn.Size = new System.Drawing.Size(757, 38);
+            this.openFileBtn.Size = new System.Drawing.Size(664, 38);
             this.openFileBtn.TabIndex = 3;
             this.openFileBtn.Text = "Browse Excel File";
             this.openFileBtn.UseVisualStyleBackColor = true;
-            this.openFileBtn.Click += new System.EventHandler(this.browseBtn_Click);
+            this.openFileBtn.Click += new System.EventHandler(this.openFileBtn_Click);
             // 
             // button1
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(3, 270);
+            this.button1.Location = new System.Drawing.Point(3, 283);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(757, 35);
+            this.button1.Size = new System.Drawing.Size(664, 35);
             this.button1.TabIndex = 7;
             this.button1.Text = "Import";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.ImportBtn_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // FrmImportProduk
+            // FrmImportOutlet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 308);
+            this.ClientSize = new System.Drawing.Size(670, 321);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FrmImportProduk";
+            this.Name = "FrmImportOutlet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmImportProduk";
+            this.Text = "FrmImportOutlet";
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

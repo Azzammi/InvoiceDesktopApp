@@ -57,6 +57,9 @@ namespace InvoiceOTC.Repository.Service
             //Little modification to accept value
             string newValue = "%" + value + "%";
 
+            //Set default value if Key isEmpty
+            if (string.IsNullOrEmpty(key)) key = "ITEMNAME";
+
             try
             {
                 m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product WHERE " + key + " ILIKE @newValue ";

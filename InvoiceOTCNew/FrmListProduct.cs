@@ -2,6 +2,7 @@
 using InvoiceOTC.Repository.API;
 using InvoiceOTC.Repository.Service;
 using System;
+using System.Linq;
 
 using InvoiceOTCNew.Helper;
 using System.Windows.Forms;
@@ -82,10 +83,16 @@ namespace InvoiceOTCNew
             }
         }
 
-        protected override void toolStripButton1_Click(object sender, EventArgs e)
+        protected override void advancedSearchBtn_Click(object sender, EventArgs e)
         {
-            productBindingSource.DataSource =  productRepository.Search(findStrip2.searchInCmb.Text, findStrip2.searchTxt.Text);
-        }        
+            productBindingSource.DataSource = productRepository.Search(findStrip2.searchInCmb.Text, findStrip2.searchTxt.Text);
+        }
+
+        protected override void importBtn_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmImportProduk();
+            frm.ShowDialog();
+        }
         #endregion
 
         #region IListener
@@ -103,5 +110,27 @@ namespace InvoiceOTCNew
             
         }
         #endregion
+
+        private void productDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            int selectedCellCount = productDataGridView.GetCellCount(DataGridViewElementStates.Selected);
+
+            if (selectedCellCount > 0)
+            {
+                if (productDataGridView.AreAllCellsSelected(true))
+                {
+                    MessageBox.Show("Just Select cells that have number !");
+                }
+                else
+                {
+                    //Using Linq to iterate through selected cells
+                    countDGCellBtn.Text = "Count : " + selectedCellCount;
+                    var total = (from DataGridViewCell cell in productDataGridView.SelectedCells
+                                 where cell.FormattedValue.ToString() != string.Empty && cell.ValueType != typeof(string) && cell.ValueType != typeof(DateTime)
+                                 select Convert.ToDecimal(cell.FormattedValue)).Sum().ToString();
+                    totalDGCellBtn.Text = "Total : " + total;
+                }
+            }
+        }
     }
 }

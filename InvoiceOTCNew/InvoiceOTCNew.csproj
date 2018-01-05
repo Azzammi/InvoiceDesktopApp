@@ -95,6 +95,12 @@
     <Compile Include="FindStrip.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FrmImportOutlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImportOutlet.Designer.cs">
+      <DependentUpon>FrmImportOutlet.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmImportProduk.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,8 +186,14 @@
     <Compile Include="Template\TemplateListForm.Designer.cs">
       <DependentUpon>TemplateListForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FindStrip.resx">
+      <DependentUpon>FindStrip.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmImportOutlet.resx">
+      <DependentUpon>FrmImportOutlet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmImportProduk.resx">
       <DependentUpon>FrmImportProduk.cs</DependentUpon>

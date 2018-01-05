@@ -47,26 +47,32 @@ namespace InvoiceOTCNew
                 switch (opd.ShowDialog())
                 {
                     case DialogResult.Cancel:
-                        break;
+                        return null;                        
                     case DialogResult.OK:
                         fileName = opd.FileName;
                         break;
+                    default:
+                        return null;
                 }
-            }                
+            }
 
             var constr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" +
                        "'" + fileName + "'" +
                        ";Extended Properties='Excel 8.0;HDR=YES;';";
 
-            OleDbConnection con = new OleDbConnection(constr);
-            OleDbCommand oconn = new OleDbCommand("Select * From [" + sheetName + "$]", con);
-            con.Open();
+            using (OleDbConnection con = new OleDbConnection(constr))
+            {
+                OleDbCommand oconn = new OleDbCommand("Select * From [" + sheetName + "$]", con);
+                con.Open();
 
-            OleDbDataAdapter sda = new OleDbDataAdapter(oconn);
-            DataTable data = new DataTable();
-            sda.Fill(data);
+                OleDbDataAdapter sda = new OleDbDataAdapter(oconn);
+                DataTable data = new DataTable();
+                sda.Fill(data);
 
-            return data;
+
+                con.Close();
+                return data;
+            }                  
         }
     }
 }

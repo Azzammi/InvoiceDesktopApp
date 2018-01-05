@@ -202,6 +202,10 @@ namespace InvoiceOTC.Repository.Service
         public IList<Invoice> Search(string key, string value)
         {
             IList<Invoice> listOfDetail = new List<Invoice>();
+
+            //Set default value if Key isEmpty
+            if (string.IsNullOrEmpty(key)) key = "ITEMNAME";
+
             try
             {
                 m_Sql = @"SELECT * FROM  Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID WHERE A." + key + " ILIKE @newValue;";

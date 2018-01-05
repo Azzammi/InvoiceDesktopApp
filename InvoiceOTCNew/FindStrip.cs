@@ -35,11 +35,9 @@ namespace InvoiceOTC.Controller
         public ToolStripTextBox searchTxt;
         public ToolStripComboBox searchInCmb;
         private ToolStripLabel toolStripLabel1;        
-        private ToolStripLabel toolStripLabel2;        
-        private ToolStripButton searchBtn;
+        private ToolStripLabel toolStripLabel2;                
         private ToolStripButton refreshBtn;
-        private BindingSource m_bindingSource;
-        private Syncfusion.Windows.Forms.Tools.ToolStripCheckBox advancedSearchChk;
+        private BindingSource m_bindingSource;        
         public event ItemFoundEventHandler ItemFound;
         #endregion
 
@@ -85,19 +83,7 @@ namespace InvoiceOTC.Controller
             {
                 this.searchInCmb.SelectedIndex = 0;
             }
-        }
-
-        private void searchBtnToolStripButton_Click(object sender,EventArgs e)
-        {
-            if(advancedSearchChk.CheckState == CheckState.Checked)
-            {
-                //AdvancedSearchMethod();               
-            }
-            else
-            {
-                this.Find();
-            }            
-        }
+        }        
 
         private void refreshBtn_Click(object sender, EventArgs e)
         {
@@ -131,18 +117,6 @@ namespace InvoiceOTC.Controller
             //Report Find results
             ItemFound?.Invoke(this, e);
         }
-
-        private void AdvancedSearchChk_CheckedChanged(object sender, EventArgs e)
-        {
-            if(advancedSearchChk.CheckState == CheckState.Checked)
-            {
-                searchBtn.Visible = false;
-            }
-            else
-            {
-                searchBtn.Visible = true;
-            }
-        }
         #endregion
 
         #region InitComponent
@@ -152,9 +126,7 @@ namespace InvoiceOTC.Controller
             this.searchTxt = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.searchInCmb = new System.Windows.Forms.ToolStripComboBox();
-            this.searchBtn = new System.Windows.Forms.ToolStripButton();
             this.refreshBtn = new System.Windows.Forms.ToolStripButton();
-            this.advancedSearchChk = new Syncfusion.Windows.Forms.Tools.ToolStripCheckBox();
             this.SuspendLayout();
             // 
             // toolStripLabel1
@@ -183,16 +155,6 @@ namespace InvoiceOTC.Controller
             this.searchInCmb.Size = new System.Drawing.Size(100, 32);
             this.searchInCmb.GotFocus += new System.EventHandler(this.searchInToolStripCombobox_GotFocus);
             // 
-            // searchBtn
-            // 
-            this.searchBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.searchBtn.ForeColor = System.Drawing.Color.White;
-            this.searchBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(52, 29);
-            this.searchBtn.Text = "Search !";
-            this.searchBtn.Click += new System.EventHandler(this.searchBtnToolStripButton_Click);
-            // 
             // refreshBtn
             // 
             this.refreshBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -204,13 +166,6 @@ namespace InvoiceOTC.Controller
             this.refreshBtn.Text = "Refresh";
             this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
-            // advancedSearchChk
-            // 
-            this.advancedSearchChk.Name = "advancedSearchChk";
-            this.advancedSearchChk.Size = new System.Drawing.Size(155, 29);
-            this.advancedSearchChk.Text = "Enable Advanced Search";
-            this.advancedSearchChk.CheckedChanged += AdvancedSearchChk_CheckedChanged;
-            // 
             // FindStrip
             // 
             this.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -219,9 +174,7 @@ namespace InvoiceOTC.Controller
             this.searchTxt,
             this.toolStripLabel2,
             this.searchInCmb,
-            this.searchBtn,
-            this.refreshBtn,
-            this.advancedSearchChk});
+            this.refreshBtn});
             this.Name = "findStrip2";
             this.Size = new System.Drawing.Size(772, 32);
             this.TabIndex = 2;

@@ -98,8 +98,9 @@
     <Compile Include="InvoiceRepository.cs" />
     <Compile Include="Log4NetAppender.cs" />
     <Compile Include="Log4NetRepository.cs" />
+    <Compile Include="OutletImportExcelRepository.cs" />
     <Compile Include="OutletRepository.cs" />
-    <Compile Include="ProductImportExcel.cs" />
+    <Compile Include="ProductImportExcelRepository.cs" />
     <Compile Include="ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

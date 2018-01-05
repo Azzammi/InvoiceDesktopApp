@@ -104,6 +104,10 @@ namespace InvoiceOTC.Repository.Service
         {
             IList<Outlet> list = new List<Outlet>();
             string newValue = "%" + value + "%";
+
+            //Set default value if Key isEmpty
+            if (string.IsNullOrEmpty(key)) key = "ITEMNAME";
+
             try
             {
                 m_Sql = @"SELECT outlcode, outlname, outladdress, outlslsm, outlroute, outlstat FROM outlet WHERE " + key + " ILIKE @newValue";

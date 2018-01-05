@@ -643,8 +643,7 @@
         #endregion
 
         private System.Windows.Forms.BindingSource invoiceBindingSource;
-        private System.Windows.Forms.BindingSource outletBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paymentMethodDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource outletBindingSource;        
         private System.Windows.Forms.BindingSource productBindingSource;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
