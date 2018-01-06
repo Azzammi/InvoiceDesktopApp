@@ -89,12 +89,11 @@
             // 
             // advancedSearchBtn
             // 
-            this.advancedSearchBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.advancedSearchBtn.ForeColor = System.Drawing.Color.White;
-            this.advancedSearchBtn.Image = ((System.Drawing.Image)(resources.GetObject("advancedSearchBtn.Image")));
+            this.advancedSearchBtn.Image = global::InvoiceOTCNew.Properties.Resources.Google_Web_Search_50px;
             this.advancedSearchBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.advancedSearchBtn.Name = "advancedSearchBtn";
-            this.advancedSearchBtn.Size = new System.Drawing.Size(52, 26);
+            this.advancedSearchBtn.Size = new System.Drawing.Size(68, 26);
             this.advancedSearchBtn.Text = "Search !";
             this.advancedSearchBtn.Click += new System.EventHandler(this.advancedSearchBtn_Click);
             // 
@@ -102,7 +101,7 @@
             // 
             this.importBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.importBtn.ForeColor = System.Drawing.Color.White;
-            this.importBtn.Image = ((System.Drawing.Image)(resources.GetObject("importBtn.Image")));
+            this.importBtn.Image = global::InvoiceOTCNew.Properties.Resources.import_excel32;
             this.importBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.importBtn.Name = "importBtn";
             this.importBtn.Size = new System.Drawing.Size(63, 26);
