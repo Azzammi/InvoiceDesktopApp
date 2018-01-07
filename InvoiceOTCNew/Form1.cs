@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using InvoiceOTC.Model;
@@ -21,6 +16,8 @@ namespace InvoiceOTCNew
     {
         #region Declaration
         private IProductRepository product;
+        private IInvoiceRepository invoiceRepo;
+        private IOutletRepository outletRepo;
         public FSBindingList<Product> productList { get; set; }
         #endregion
 
@@ -28,6 +25,8 @@ namespace InvoiceOTCNew
         {
             InitializeComponent();
             product = new ProductRepository();
+            invoiceRepo = new InvoiceRepository();
+            outletRepo = new OutletRepository();
         }
         
 
@@ -35,8 +34,11 @@ namespace InvoiceOTCNew
         {
           
             productBindingSource.DataSource = product.GetAll();
+            productDataGridView.DataSource = TimeZoneInfo.GetSystemTimeZones();
 
-            productDataGridView.DataSource = TimeZoneInfo.GetSystemTimeZones();     
+            InvoiceBindingSource.DataSource = invoiceRepo.GetAll();
+            OutletBindingSource.DataSource = outletRepo.GetAll();
+            this.reportViewer1.RefreshReport();
         }
 
         public void BindingSource_ListChanged(object sender, ListChangedEventArgs e)

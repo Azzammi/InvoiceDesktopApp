@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.productBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -45,17 +46,17 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.productBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.productDataGridView = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.InvoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.OutletBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).BeginInit();
             this.productBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InvoiceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OutletBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(InvoiceOTC.Model.Product);
-            this.productBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.BindingSource_AddingNew);
-            this.productBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.BindingSource_ListChanged);
             // 
             // productBindingNavigator
             // 
@@ -184,11 +185,40 @@
             // productDataGridView
             // 
             this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.productDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.productDataGridView.Location = new System.Drawing.Point(0, 227);
             this.productDataGridView.Name = "productDataGridView";
-            this.productDataGridView.Size = new System.Drawing.Size(812, 298);
+            this.productDataGridView.Size = new System.Drawing.Size(812, 96);
             this.productDataGridView.TabIndex = 1;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Top;
+            reportDataSource1.Name = "invoice";
+            reportDataSource1.Value = this.InvoiceBindingSource;
+            reportDataSource2.Name = "Outlet";
+            reportDataSource2.Value = this.OutletBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "InvoiceOTCNew.rptInvoice.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 25);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(812, 196);
+            this.reportViewer1.TabIndex = 2;
+            // 
+            // InvoiceBindingSource
+            // 
+            this.InvoiceBindingSource.DataSource = typeof(InvoiceOTC.Model.Invoice);
+            // 
+            // OutletBindingSource
+            // 
+            this.OutletBindingSource.DataSource = typeof(InvoiceOTC.Model.Outlet);
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(InvoiceOTC.Model.Product);
+            this.productBindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.BindingSource_AddingNew);
+            this.productBindingSource.ListChanged += new System.ComponentModel.ListChangedEventHandler(this.BindingSource_ListChanged);
             // 
             // Form1
             // 
@@ -196,16 +226,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 323);
             this.Controls.Add(this.productDataGridView);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.productBindingNavigator);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).EndInit();
             this.productBindingNavigator.ResumeLayout(false);
             this.productBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InvoiceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.OutletBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,6 +260,9 @@
         private System.Windows.Forms.DataGridView productDataGridView;
         public System.Windows.Forms.BindingSource productBindingSource;
         public System.Windows.Forms.BindingNavigator productBindingNavigator;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource InvoiceBindingSource;
+        private System.Windows.Forms.BindingSource OutletBindingSource;
     }
 }
 

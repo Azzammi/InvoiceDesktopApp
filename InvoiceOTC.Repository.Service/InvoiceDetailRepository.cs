@@ -37,9 +37,27 @@ namespace InvoiceOTC.Repository.Service
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// This Method use only on crystal report
+        /// </summary>
+        /// <returns></returns>
         public IList<InvoiceDetail> GetAll()
         {
-            throw new NotImplementedException();
+            IList<InvoiceDetail> list = new List<InvoiceDetail>();
+                       
+            try
+            {
+                m_Sql = @"SELECT invoiceid, itemcode, itemqty, discount, itemprice, subtotal FROM invoicedetail;";
+
+                list = context.db.Query<InvoiceDetail>(m_Sql).ToList();
+            }
+            catch
+            {
+
+            }
+
+            return list;
         }
         #endregion
 
