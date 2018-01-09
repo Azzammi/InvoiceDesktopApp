@@ -9,7 +9,7 @@ namespace InvoiceOTC.Model
 {
     public class InvoiceDetail
     {
-        #region Declarations
+        #region Properties
 
         //Property Variables
         //public int detailId { get; set; }

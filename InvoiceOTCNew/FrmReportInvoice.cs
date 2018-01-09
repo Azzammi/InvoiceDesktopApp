@@ -25,6 +25,8 @@ namespace InvoiceOTCNew
             outletRepo = new OutletRepository();
             productRepo = new ProductRepository();
             invoiceDetailRepo = new InvoiceDetailRepository();
+
+            LoadReport();
         }
 
        private void LoadReport()

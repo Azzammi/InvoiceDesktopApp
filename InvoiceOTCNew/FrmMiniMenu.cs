@@ -38,5 +38,12 @@ namespace InvoiceOTCNew
             var frm = new FrmListBoundGrid();
             frm.ShowDialog();
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmListBoundGrid();
+            frm.Parent = tabbedMDIManager1;
+            frm.ShowDialog();
+        }
     }
 }

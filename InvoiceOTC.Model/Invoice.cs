@@ -10,7 +10,7 @@ namespace InvoiceOTC.Model
 {
     public class Invoice
     {
-        #region Declaration
+        #region Properties
 
         //Property Variables
         //public FSBindingList<InvoiceDetail> p_Items { get; set; }

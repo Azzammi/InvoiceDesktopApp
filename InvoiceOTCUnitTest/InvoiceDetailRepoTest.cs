@@ -93,6 +93,14 @@ namespace InvoiceOTCUnitTest
             var result2 = invoice.Delete(getInvoice);
             Assert.IsTrue(result != 0);
         }
+
+        [Test]
+        public void GetAll()
+        {
+            var result = invoiceDetail.GetAll();
+
+            Assert.IsNotNull(result);
+        }
         #endregion
     }
 }

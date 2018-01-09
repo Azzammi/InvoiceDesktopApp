@@ -18,7 +18,7 @@ namespace InvoiceOTC.Model
         public string jenis { get; set; }
         public string category { get; set; }
         public string subCategory { get; set; }
-        public Nullable<decimal> price { get; set; }
+        public decimal price { get; set; }
         public bool stat { get; set; }
     }
 }
