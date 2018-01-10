@@ -21,29 +21,25 @@ namespace InvoiceOTCNew
             InitializeComponent();           
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void listOutletShow(object sender, EventArgs e)
         {
             var frm = new FrmListOutlet();
-            frm.ShowDialog();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void listProductShow(object sender, EventArgs e)
         {
             var frm = new FrmListProduct();
-            frm.ShowDialog();
+            frm.MdiParent = this;
+            frm.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void listInvoiceShow(object sender, EventArgs e)
         {
             var frm = new FrmListBoundGrid();
-            frm.ShowDialog();
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            var frm = new FrmListBoundGrid();
-            frm.Parent = tabbedMDIManager1;
-            frm.ShowDialog();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

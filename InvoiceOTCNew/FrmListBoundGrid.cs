@@ -94,7 +94,14 @@ namespace InvoiceOTCNew
         {
             invoiceBindingSource.DataSource = invoiceRepo.Search(findStrip2.searchInCmb.Text, findStrip2.searchTxt.Text);
         }
-        
+        protected override void printBtn_Click(object sender, EventArgs e)
+        {
+            Invoice currentInvoice = (Invoice)invoiceBindingSource.Current;
+            if (currentInvoice == null) return;
+
+            var frm = new FrmReportInvoice(currentInvoice.nomorInvoice);            
+            frm.ShowDialog();
+        }
         #endregion
 
         #region IListener Method
@@ -117,6 +124,7 @@ namespace InvoiceOTCNew
         }
         #endregion
 
+        #region DataGridView Method
         private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             //Get Item 
@@ -180,9 +188,10 @@ namespace InvoiceOTCNew
                     var total = (from DataGridViewCell cell in dataGridView2.SelectedCells
                                  where cell.FormattedValue.ToString() != string.Empty && cell.ValueType != typeof(string)
                                  select Convert.ToDecimal(cell.FormattedValue)).Sum().ToString("N");
-                    totalDGCellBtn.Text = "Total : " +  total; 
+                    totalDGCellBtn.Text = "Total : " + total;
                 }
             }
         }
+        #endregion
     }
 }

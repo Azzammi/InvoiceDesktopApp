@@ -15,9 +15,11 @@ namespace InvoiceOTCNew
         private IOutletRepository outletRepo;
         private IProductRepository productRepo;
         private IInvoiceDetailRepository invoiceDetailRepo;
+
+        private object _param;
         #endregion
 
-        public FrmReportInvoice()
+        public FrmReportInvoice(object param = null)
         {
             InitializeComponent();
 
@@ -26,6 +28,7 @@ namespace InvoiceOTCNew
             productRepo = new ProductRepository();
             invoiceDetailRepo = new InvoiceDetailRepository();
 
+            _param = param;
             LoadReport();
         }
 
@@ -45,7 +48,7 @@ namespace InvoiceOTCNew
             crInvoice.Database.Tables["InvoiceOTC_Model_Outlet"].SetDataSource(outletRepo.GetAll());
 
             //Set the parameter value
-            crInvoice.SetParameterValue("nomorInvoice", "7878");
+            crInvoice.SetParameterValue("nomorInvoice", _param);
 
             crystalReportViewer1.ReportSource = crInvoice;
             crystalReportViewer1.Refresh();

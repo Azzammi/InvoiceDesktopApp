@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -84,7 +84,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(545, 97);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(710, 97);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // dataGridView1
@@ -109,7 +109,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(298, 91);
+            this.dataGridView1.Size = new System.Drawing.Size(391, 91);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView1_UserDeletingRow);
@@ -135,27 +135,27 @@
             // subTotalDataGridViewTextBoxColumn
             // 
             this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "subTotal";
-            dataGridViewCellStyle12.Format = "N0";
-            dataGridViewCellStyle12.NullValue = null;
-            this.subTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.subTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.subTotalDataGridViewTextBoxColumn.HeaderText = "subTotal";
             this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
             // 
             // ppnDataGridViewTextBoxColumn
             // 
             this.ppnDataGridViewTextBoxColumn.DataPropertyName = "ppn";
-            dataGridViewCellStyle13.Format = "N0";
-            dataGridViewCellStyle13.NullValue = null;
-            this.ppnDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ppnDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.ppnDataGridViewTextBoxColumn.HeaderText = "ppn";
             this.ppnDataGridViewTextBoxColumn.Name = "ppnDataGridViewTextBoxColumn";
             // 
             // totalDataGridViewTextBoxColumn
             // 
             this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
-            dataGridViewCellStyle14.Format = "N0";
-            dataGridViewCellStyle14.NullValue = null;
-            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.totalDataGridViewTextBoxColumn.HeaderText = "total";
             this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
             // 
@@ -214,9 +214,9 @@
             this.subTotalDataGridViewTextBoxColumn1});
             this.dataGridView2.DataSource = this.pItemsBindingSource;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(307, 3);
+            this.dataGridView2.Location = new System.Drawing.Point(400, 3);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(235, 91);
+            this.dataGridView2.Size = new System.Drawing.Size(307, 91);
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
             // 
@@ -224,8 +224,8 @@
             // 
             this.itemCode.DataPropertyName = "itemCode";
             this.itemCode.DataSource = this.productBindingSource;
-            dataGridViewCellStyle8.NullValue = " ";
-            this.itemCode.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.NullValue = " ";
+            this.itemCode.DefaultCellStyle = dataGridViewCellStyle4;
             this.itemCode.DisplayMember = "itemName";
             this.itemCode.HeaderText = "itemCode";
             this.itemCode.Name = "itemCode";
@@ -240,9 +240,9 @@
             // itemQty
             // 
             this.itemQty.DataPropertyName = "itemQty";
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
-            this.itemQty.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = null;
+            this.itemQty.DefaultCellStyle = dataGridViewCellStyle5;
             this.itemQty.HeaderText = "itemQty";
             this.itemQty.Name = "itemQty";
             // 
@@ -255,18 +255,18 @@
             // itemPrice
             // 
             this.itemPrice.DataPropertyName = "itemPrice";
-            dataGridViewCellStyle10.Format = "N0";
-            dataGridViewCellStyle10.NullValue = null;
-            this.itemPrice.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.itemPrice.DefaultCellStyle = dataGridViewCellStyle6;
             this.itemPrice.HeaderText = "itemPrice";
             this.itemPrice.Name = "itemPrice";
             // 
             // subTotalDataGridViewTextBoxColumn1
             // 
             this.subTotalDataGridViewTextBoxColumn1.DataPropertyName = "subTotal";
-            dataGridViewCellStyle11.Format = "N0";
-            dataGridViewCellStyle11.NullValue = null;
-            this.subTotalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.subTotalDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
             this.subTotalDataGridViewTextBoxColumn1.HeaderText = "subTotal";
             this.subTotalDataGridViewTextBoxColumn1.Name = "subTotalDataGridViewTextBoxColumn1";
             // 
@@ -279,7 +279,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 262);
+            this.ClientSize = new System.Drawing.Size(710, 262);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Name = "FrmListBoundGrid";
             this.Text = "FrmListBoundGrid";

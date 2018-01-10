@@ -79,8 +79,11 @@ namespace InvoiceOTCNew
         {
 
         }
+        protected virtual void printBtn_Click(object sender, EventArgs e)
+        {
 
-       
+        }
+
         #endregion
     }
     
