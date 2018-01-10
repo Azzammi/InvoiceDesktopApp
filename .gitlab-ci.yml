@@ -4,21 +4,21 @@ variables:
   SolutionName: "Northwind.sln"
 
 stages: # tipe dari job
-  - restore # stage untuk merestore paket nuget
+  #- restore # stage untuk merestore paket nuget
   - build # stage untuk proses build  
   
-cache:
-  untracked: true
-  paths:    
-    - lib # folder hasil restore nuget package    
+#cache:
+ # untracked: true
+ # paths:    
+ #   - lib # folder hasil restore nuget package    
 
-restore_nuget_package: # job 1
-  stage: restore
-  script:
-    - echo "Sedang merestore paket nuget untuk %SolutionName%..."
-    - '"%NugetPath%" restore "src\%SolutionName%"'  
+#restore_nuget_package: # job 1
+ # stage: restore
+ # script:
+ #   - echo "Sedang merestore paket nuget untuk %SolutionName%..."
+ #   - '"%NugetPath%" restore "src\%SolutionName%"'  
     
-build_solution: # job 2
+build_solution: # job 1
   stage: build
   script:     
     - echo "Sedang melakukan proses build untuk %SolutionName%..."
