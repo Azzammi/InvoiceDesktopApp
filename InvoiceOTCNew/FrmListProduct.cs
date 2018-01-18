@@ -21,6 +21,7 @@ namespace InvoiceOTCNew
         {
             InitializeComponent();
             SetHeader("Product");
+            SetDataGridTheme(productDataGridView);
             SetDataSource(productBindingSource);
 
             productRepository = new ProductRepository();

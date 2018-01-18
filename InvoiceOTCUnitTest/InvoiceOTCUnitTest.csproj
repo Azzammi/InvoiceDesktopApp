@@ -55,6 +55,7 @@
     <Compile Include="DapperContextTest.cs" />
     <Compile Include="InvoiceDetailRepoTest.cs" />
     <Compile Include="InvoiceRepoTest.cs" />
+    <Compile Include="Log4NetRepoTest.cs" />
     <Compile Include="OutletRepoTest.cs" />
     <Compile Include="ProductRepoTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,6 +64,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="SalesmanRepoTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

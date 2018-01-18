@@ -104,7 +104,7 @@
     <Compile Include="IOutletRepository.cs" />
     <Compile Include="Import Excel\IProductImportExcel.cs" />
     <Compile Include="IProductRepository.cs" />
-    <Compile Include="ISalesman.cs" />
+    <Compile Include="ISalesmanRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

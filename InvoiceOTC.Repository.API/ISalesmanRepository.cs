@@ -8,7 +8,7 @@ using InvoiceOTC.Model;
 
 namespace InvoiceOTC.Repository.API
 {
-    interface ISalesman : IBaseRepository<Salesman>
+    public interface ISalesmanRepository : IBaseRepository<Salesman>
     {
         /// <summary>
         /// Get Salesman by salesman id

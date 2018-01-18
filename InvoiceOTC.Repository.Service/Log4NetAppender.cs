@@ -13,17 +13,11 @@ using InvoiceOTC.Model;
 namespace InvoiceOTC.Repository.Service
 {
     class Log4NetAppender : AppenderSkeleton
-    {
-        #region Declaration
-        //SortableBindingList<Logs> m_Log;
-        #endregion
-        
+    {        
         protected override void Append(LoggingEvent loggingEvent)
         {
-            Log4NetRepository repository = new Log4NetRepository();
-            //m_Log = repository.GetSortedList();
-            //m_Log = new SortableBindingList<Logs>();
-
+            Log4NetRepository logRepository = new Log4NetRepository();
+                 
             // cek nilai custom properties
             var newValue = (loggingEvent.LookupProperty("NewValue") != null) ? loggingEvent.LookupProperty("NewValue").ToString() : string.Empty;
             var oldValue = (loggingEvent.LookupProperty("OldValue") != null) ? loggingEvent.LookupProperty("OldValue").ToString() : string.Empty;
@@ -46,8 +40,7 @@ namespace InvoiceOTC.Repository.Service
             LogicalThreadContext.Properties.Clear();
 
             // simpan hasil log ke database
-            //m_Log.Add(log);
-            //repository.Save(m_Log);
+            logRepository.Save(log);
         }
     }
 }

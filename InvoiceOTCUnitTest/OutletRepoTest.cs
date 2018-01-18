@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using InvoiceOTC.Model;
+﻿using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 using InvoiceOTC.Repository.Service;
-using FSCollections;
 using NUnit.Framework;
 
 namespace InvoiceOTCUnitTest

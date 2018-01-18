@@ -22,8 +22,9 @@ namespace InvoiceOTC.Repository.Service
         #region Constructor
         public DapperContext()
         {
-            /* SQL Server Connection Section
-           // For Get directory and database
+            #region  SQL Server Connection Section
+            /*
+            //For Get directory and database
             //var dbName = System.IO.Directory.GetCurrentDirectory() + "OTF_Invoice";
 
             string dbName = "OTF_Invoice";
@@ -32,6 +33,7 @@ namespace InvoiceOTC.Repository.Service
             ///m_ConnectionString = "Data Source = (local)/sqlexpress; Initial Catalog = " + dbName + "; Integrated Security = True;" ;
             m_ConnectionString = @"Data Source = (local)\sqlexpress; Initial Catalog = " + dbName + "; Integrated Security = True;";
             */
+            #endregion
 
             var server = "localhost";
             var port = "5432";
@@ -48,7 +50,6 @@ namespace InvoiceOTC.Repository.Service
                 m_Db = GetOpenConnection(m_ProviderName, m_ConnectionString);
             }
         }
-
         /// <summary>
         /// DapperContext For Logger Data
         /// </summary>
@@ -61,13 +62,25 @@ namespace InvoiceOTC.Repository.Service
             m_ConnectionString = @"Data Source = " + dbName + "; Version = 3";
         }
         #endregion
+
+        #region Properties        
+        public IDbConnection db
+        {
+            get
+            {
+                return m_Db ?? (m_Db = GetOpenConnection(m_ProviderName, m_ConnectionString));
+            }
+        }
+        #endregion        
+
+        #region Methods   
         private IDbConnection GetOpenConnection(string providerName, string connectionString)
         {
             DbConnection conn = null;
 
             try
             {
-                DbProviderFactory provider = DbProviderFactories.GetFactory(providerName);             
+                DbProviderFactory provider = DbProviderFactories.GetFactory(providerName);
                 conn = provider.CreateConnection();
                 conn.ConnectionString = connectionString;
                 conn.Open();
@@ -78,14 +91,6 @@ namespace InvoiceOTC.Repository.Service
 
             return conn;
         }
-        public IDbConnection db
-        {
-            get
-            {
-                return m_Db ?? (m_Db = GetOpenConnection(m_ProviderName, m_ConnectionString));
-            }
-        }
-
         public void Dispose()
         {
             if (m_Db != null)
@@ -103,10 +108,11 @@ namespace InvoiceOTC.Repository.Service
 
             GC.SuppressFinalize(this);
         }
-
         public string GetLastID()
         {
             throw new NotImplementedException();
         }
+        #endregion
+
     }
 }

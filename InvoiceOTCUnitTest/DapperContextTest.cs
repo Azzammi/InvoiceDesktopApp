@@ -22,7 +22,7 @@ namespace InvoiceOTCUnitTest
         [SetUp]
         public void Init()
         {
-            
+            //context = new DapperContext();   
         }
         #endregion
 

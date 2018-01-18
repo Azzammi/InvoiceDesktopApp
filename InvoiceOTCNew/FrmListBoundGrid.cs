@@ -15,18 +15,23 @@ namespace InvoiceOTCNew
         #region Declaration
         private IInvoiceRepository invoiceRepo;
         private IProductRepository productRepo;
+        private IOutletRepository outletRepo;
         #endregion
 
         public FrmListBoundGrid()
         {
             InitializeComponent();
             SetHeader("Invoice");
+            SetDataGridTheme(dataGridView1, dataGridView2);
             SetDataSource(invoiceBindingSource);
 
             productRepo = new ProductRepository();
-            invoiceRepo = new InvoiceRepository();            
+            invoiceRepo = new InvoiceRepository();
+            outletRepo = new OutletRepository();
+
             invoiceBindingSource.DataSource = invoiceRepo.GetAllSorted();
             productBindingSource.DataSource = productRepo.GetAll();
+            outletBindingSource.DataSource = outletRepo.GetAll();
         }
 
         private void FrmListBoundGrid_Load(object sender, EventArgs e)

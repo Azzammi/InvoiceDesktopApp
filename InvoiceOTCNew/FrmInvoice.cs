@@ -100,11 +100,16 @@ namespace InvoiceOTCNew
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dataGridView1.CurrentRow;
+            Product currentProduct = (Product)productBindingSource.Current;
             InvoiceDetail item = row.DataBoundItem as InvoiceDetail;
 
             if (e.ColumnIndex == 3)
             {
                 countBtn.PerformClick();
+            }
+            else if(e.ColumnIndex == 0)
+            {
+                row.Cells[3].Value = currentProduct.price;
             }
 
             invoiceRepository.GetSubTotal(item);

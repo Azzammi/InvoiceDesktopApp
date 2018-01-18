@@ -38,13 +38,20 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.timeLbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.sumLbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.countLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.invoiceBtn = new System.Windows.Forms.ToolStripButton();
             this.outletBtn = new System.Windows.Forms.ToolStripButton();
             this.productBtn = new System.Windows.Forms.ToolStripButton();
+            this.laporanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rekapInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripEx1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +63,10 @@
             this.tabbedMDIManager1.DropDownButtonToolTip = "";
             this.tabbedMDIManager1.ImageSize = new System.Drawing.Size(16, 16);
             this.tabbedMDIManager1.NeedUpdateHostedForm = false;
+            this.tabbedMDIManager1.ShowCloseButtonBackColor = true;
+            this.tabbedMDIManager1.ShowCloseButtonForActiveTabOnly = true;
+            this.tabbedMDIManager1.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererBlendDark);
+            this.tabbedMDIManager1.ThemesEnabled = true;
             // 
             // toolStripEx1
             // 
@@ -81,7 +92,7 @@
             this.toolStripButton1.Size = new System.Drawing.Size(98, 28);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;            
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripButton2
             // 
@@ -94,10 +105,13 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.masterToolStripMenuItem,
-            this.invoiceToolStripMenuItem});
+            this.invoiceToolStripMenuItem,
+            this.logsToolStripMenuItem,
+            this.laporanToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(851, 24);
@@ -106,32 +120,73 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // masterToolStripMenuItem
             // 
+            this.masterToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
             this.masterToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.masterToolStripMenuItem.Text = "Master";
             // 
             // invoiceToolStripMenuItem
             // 
+            this.invoiceToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
             this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.invoiceToolStripMenuItem.Text = "Invoice";            
+            this.invoiceToolStripMenuItem.Text = "Invoice";
+            // 
+            // logsToolStripMenuItem
+            // 
+            this.logsToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.logsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.logsToolStripMenuItem.Name = "logsToolStripMenuItem";
+            this.logsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.logsToolStripMenuItem.Text = "Logs";
+            this.logsToolStripMenuItem.Click += new System.EventHandler(this.logsToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.timeLbl,
+            this.sumLbl,
+            this.countLbl});
             this.statusStrip1.Location = new System.Drawing.Point(0, 275);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(851, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // timeLbl
+            // 
+            this.timeLbl.ForeColor = System.Drawing.Color.White;
+            this.timeLbl.Name = "timeLbl";
+            this.timeLbl.Size = new System.Drawing.Size(600, 17);
+            this.timeLbl.Spring = true;
+            this.timeLbl.Text = "toolStripStatusLabel1";
+            // 
+            // sumLbl
+            // 
+            this.sumLbl.ForeColor = System.Drawing.Color.White;
+            this.sumLbl.Name = "sumLbl";
+            this.sumLbl.Size = new System.Drawing.Size(118, 17);
+            this.sumLbl.Text = "toolStripStatusLabel1";
+            // 
+            // countLbl
+            // 
+            this.countLbl.ForeColor = System.Drawing.Color.White;
+            this.countLbl.Name = "countLbl";
+            this.countLbl.Size = new System.Drawing.Size(118, 17);
+            this.countLbl.Text = "toolStripStatusLabel1";
+            // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.invoiceBtn,
@@ -139,6 +194,7 @@
             this.productBtn});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.toolStrip1.Size = new System.Drawing.Size(851, 39);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
@@ -173,24 +229,45 @@
             this.productBtn.Text = "Product";
             this.productBtn.Click += new System.EventHandler(this.listProductShow);
             // 
+            // laporanToolStripMenuItem
+            // 
+            this.laporanToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rekapInvoiceToolStripMenuItem});
+            this.laporanToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.laporanToolStripMenuItem.Name = "laporanToolStripMenuItem";
+            this.laporanToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.laporanToolStripMenuItem.Text = "Laporan";
+            // 
+            // rekapInvoiceToolStripMenuItem
+            // 
+            this.rekapInvoiceToolStripMenuItem.Name = "rekapInvoiceToolStripMenuItem";
+            this.rekapInvoiceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rekapInvoiceToolStripMenuItem.Text = "Rekap Invoice";
+            this.rekapInvoiceToolStripMenuItem.Click += new System.EventHandler(this.rekapInvoiceToolStripMenuItem_Click);
+            // 
             // FrmMiniMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(851, 297);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ForeColor = System.Drawing.Color.White;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMiniMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMiniMenu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.toolStripEx1.ResumeLayout(false);
             this.toolStripEx1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -212,5 +289,11 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripButton outletBtn;
         private System.Windows.Forms.ToolStripButton productBtn;
+        private System.Windows.Forms.ToolStripStatusLabel timeLbl;
+        private System.Windows.Forms.ToolStripStatusLabel sumLbl;
+        private System.Windows.Forms.ToolStripStatusLabel countLbl;
+        private System.Windows.Forms.ToolStripMenuItem logsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem laporanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rekapInvoiceToolStripMenuItem;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace InvoiceOTCNew
 {
-    partial class FrmReportInvoice
+    partial class FrmReportRekapInvoice
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.outletBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -40,20 +45,29 @@
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ReuseParameterValuesOnRefresh = true;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(875, 428);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(793, 308);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.ParameterPanel;
             // 
-            // FrmReportInvoice
+            // invoiceBindingSource
+            // 
+            this.invoiceBindingSource.DataSource = typeof(InvoiceOTC.Model.Invoice);
+            // 
+            // outletBindingSource
+            // 
+            this.outletBindingSource.DataSource = typeof(InvoiceOTC.Model.Outlet);
+            // 
+            // FrmReportRekapInvoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(875, 428);
+            this.ClientSize = new System.Drawing.Size(793, 308);
             this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "FrmReportInvoice";
+            this.Name = "FrmReportRekapInvoice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmReportInvoice";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "FrmReportRekapInvoice";
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -61,5 +75,7 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.BindingSource invoiceBindingSource;
+        private System.Windows.Forms.BindingSource outletBindingSource;
     }
 }

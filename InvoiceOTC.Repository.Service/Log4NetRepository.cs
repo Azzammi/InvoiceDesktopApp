@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using FSCollections;
 using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 
@@ -12,55 +13,29 @@ namespace InvoiceOTC.Repository.Service
     public class Log4NetRepository : ILog4NetRepository
     {
         #region Declaration
-
+        private FSBindingList<Logs> m_LogList;
         #endregion
-        public int Delete(Logs obj)
+
+        #region Constructor
+        public Log4NetRepository()
         {
-            throw new NotImplementedException();
+            
         }
+        #endregion
 
-        public IList<Logs> GetAll()
+        #region  methods
+        public FSBindingList<Logs> GetAll()
         {
-            throw new NotImplementedException();
+            FSBindingList<Logs> log = new FSBindingList<Logs>();
+            log.Load(System.IO.Directory.GetCurrentDirectory() + "\\Logs.log");
+            return log;
         }
-
-        public int Save(Logs obj)
+        public void Save(Logs data)
         {
-            var result = 0;
-
-            try
-            {
-                
-            }
-            catch
-            {
-
-            }
-
-            return result;
+            m_LogList = GetAll();
+            m_LogList.Add(data);
+            m_LogList.Save(System.IO.Directory.GetCurrentDirectory() + "\\Logs.log");
         }
-
-        public IList<Logs> Search(string key, string value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Update(Logs obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        //public void Save(SortableBindingList<Logs> log)
-        //{
-        //    log.Save(System.IO.Directory.GetCurrentDirectory() + "\\Logs.log");            
-        //}
-
-        //public SortableBindingList<Logs> GetSortedList()
-        //{
-        //    //  return SortableBindingList<Logs>(GetAll());
-        //    SortableBindingList<Logs> log = new SortableBindingList<Logs>();
-        //    log.Load(System.IO.Directory.GetCurrentDirectory() + "\\Logs.log");
-        //    return log;
-        //} 
+        #endregion
     }
 }

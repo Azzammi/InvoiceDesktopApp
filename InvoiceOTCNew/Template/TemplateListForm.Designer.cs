@@ -32,7 +32,9 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.findStrip2 = new InvoiceOTC.Controller.FindStrip();
             this.advancedSearchBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.importBtn = new System.Windows.Forms.ToolStripButton();
+            this.printBtn = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.headerLbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -46,8 +48,6 @@
             this.totalDGCellBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.countDGCellBtn = new System.Windows.Forms.ToolStripButton();
-            this.printBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tableLayoutPanel1.SuspendLayout();
             this.findStrip2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -101,6 +101,12 @@
             this.advancedSearchBtn.Text = "Search !";
             this.advancedSearchBtn.Click += new System.EventHandler(this.advancedSearchBtn_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 29);
+            // 
             // importBtn
             // 
             this.importBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -111,6 +117,17 @@
             this.importBtn.Size = new System.Drawing.Size(63, 26);
             this.importBtn.Text = "Import";
             this.importBtn.Click += new System.EventHandler(this.importBtn_Click);
+            // 
+            // printBtn
+            // 
+            this.printBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.printBtn.ForeColor = System.Drawing.Color.White;
+            this.printBtn.Image = global::InvoiceOTCNew.Properties.Resources.Print_96px;
+            this.printBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printBtn.Name = "printBtn";
+            this.printBtn.Size = new System.Drawing.Size(52, 26);
+            this.printBtn.Text = "Print";
+            this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
             // 
             // panel2
             // 
@@ -222,6 +239,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackColor = System.Drawing.Color.DarkGray;
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -260,23 +278,6 @@
             this.countDGCellBtn.Name = "countDGCellBtn";
             this.countDGCellBtn.Size = new System.Drawing.Size(50, 22);
             this.countDGCellBtn.Text = "Count :";
-            // 
-            // printBtn
-            // 
-            this.printBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.printBtn.ForeColor = System.Drawing.Color.White;
-            this.printBtn.Image = global::InvoiceOTCNew.Properties.Resources.Print_96px;
-            this.printBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printBtn.Name = "printBtn";
-            this.printBtn.Size = new System.Drawing.Size(52, 26);
-            this.printBtn.Text = "Print";
-            this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 29);
             // 
             // TemplateListForm
             // 

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using InvoiceOTC.Model;
+﻿using InvoiceOTC.Model;
+using FSCollections;
 
 namespace InvoiceOTC.Repository.API
 {
-    public interface ILog4NetRepository : IBaseRepository<Logs>
+    public interface ILog4NetRepository
     {
-        
+        void Save(Logs data);
+        FSBindingList<Logs> GetAll();
     }
 }
