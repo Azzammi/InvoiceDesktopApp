@@ -32,23 +32,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMiniMenu));
             this.tabbedMDIManager1 = new Syncfusion.Windows.Forms.Tools.TabbedMDIManager(this.components);
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.laporanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rekapInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.timeLbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.softwareLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.sumLbl = new System.Windows.Forms.ToolStripStatusLabel();
-            this.countLbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timeLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.timerCtl = new System.Windows.Forms.Timer(this.components);
             this.invoiceBtn = new System.Windows.Forms.ToolStripButton();
             this.outletBtn = new System.Windows.Forms.ToolStripButton();
             this.productBtn = new System.Windows.Forms.ToolStripButton();
-            this.laporanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rekapInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripEx1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -60,13 +62,16 @@
             this.tabbedMDIManager1.AttachedTo = this;
             this.tabbedMDIManager1.CloseButtonBackColor = System.Drawing.Color.White;
             this.tabbedMDIManager1.CloseButtonToolTip = "";
+            this.tabbedMDIManager1.CloseButtonVisible = false;
             this.tabbedMDIManager1.DropDownButtonToolTip = "";
             this.tabbedMDIManager1.ImageSize = new System.Drawing.Size(16, 16);
             this.tabbedMDIManager1.NeedUpdateHostedForm = false;
+            this.tabbedMDIManager1.ShowCloseButton = true;
             this.tabbedMDIManager1.ShowCloseButtonBackColor = true;
             this.tabbedMDIManager1.ShowCloseButtonForActiveTabOnly = true;
             this.tabbedMDIManager1.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererBlendDark);
             this.tabbedMDIManager1.ThemesEnabled = true;
+            this.tabbedMDIManager1.UseIconsInTabs = false;
             // 
             // toolStripEx1
             // 
@@ -84,25 +89,6 @@
             this.toolStripEx1.Size = new System.Drawing.Size(486, 31);
             this.toolStripEx1.TabIndex = 0;
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(98, 28);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 28);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -111,7 +97,8 @@
             this.masterToolStripMenuItem,
             this.invoiceToolStripMenuItem,
             this.logsToolStripMenuItem,
-            this.laporanToolStripMenuItem});
+            this.laporanToolStripMenuItem,
+            this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(851, 24);
@@ -148,26 +135,42 @@
             this.logsToolStripMenuItem.Text = "Logs";
             this.logsToolStripMenuItem.Click += new System.EventHandler(this.logsToolStripMenuItem_Click);
             // 
+            // laporanToolStripMenuItem
+            // 
+            this.laporanToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rekapInvoiceToolStripMenuItem});
+            this.laporanToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.laporanToolStripMenuItem.Name = "laporanToolStripMenuItem";
+            this.laporanToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.laporanToolStripMenuItem.Text = "Laporan";
+            // 
+            // rekapInvoiceToolStripMenuItem
+            // 
+            this.rekapInvoiceToolStripMenuItem.Name = "rekapInvoiceToolStripMenuItem";
+            this.rekapInvoiceToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.rekapInvoiceToolStripMenuItem.Text = "Rekap Invoice";
+            this.rekapInvoiceToolStripMenuItem.Click += new System.EventHandler(this.rekapInvoiceToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.timeLbl,
+            this.softwareLbl,
             this.sumLbl,
-            this.countLbl});
+            this.timeLbl});
             this.statusStrip1.Location = new System.Drawing.Point(0, 275);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(851, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // timeLbl
+            // softwareLbl
             // 
-            this.timeLbl.ForeColor = System.Drawing.Color.White;
-            this.timeLbl.Name = "timeLbl";
-            this.timeLbl.Size = new System.Drawing.Size(600, 17);
-            this.timeLbl.Spring = true;
-            this.timeLbl.Text = "toolStripStatusLabel1";
+            this.softwareLbl.ForeColor = System.Drawing.Color.White;
+            this.softwareLbl.Name = "softwareLbl";
+            this.softwareLbl.Size = new System.Drawing.Size(600, 17);
+            this.softwareLbl.Spring = true;
+            this.softwareLbl.Text = "toolStripStatusLabel1";
             // 
             // sumLbl
             // 
@@ -176,12 +179,12 @@
             this.sumLbl.Size = new System.Drawing.Size(118, 17);
             this.sumLbl.Text = "toolStripStatusLabel1";
             // 
-            // countLbl
+            // timeLbl
             // 
-            this.countLbl.ForeColor = System.Drawing.Color.White;
-            this.countLbl.Name = "countLbl";
-            this.countLbl.Size = new System.Drawing.Size(118, 17);
-            this.countLbl.Text = "toolStripStatusLabel1";
+            this.timeLbl.ForeColor = System.Drawing.Color.White;
+            this.timeLbl.Name = "timeLbl";
+            this.timeLbl.Size = new System.Drawing.Size(118, 17);
+            this.timeLbl.Text = "toolStripStatusLabel1";
             // 
             // toolStrip1
             // 
@@ -199,51 +202,64 @@
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // timerCtl
+            // 
+            this.timerCtl.Enabled = true;
+            this.timerCtl.Tick += new System.EventHandler(this.timerCtl_Tick);
+            // 
             // invoiceBtn
             // 
-            this.invoiceBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.invoiceBtn.Image = global::InvoiceOTCNew.Properties.Resources.Bank_96px;
+            this.invoiceBtn.Image = global::InvoiceOTCNew.Properties.Resources.Invoice;
             this.invoiceBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.invoiceBtn.Name = "invoiceBtn";
-            this.invoiceBtn.Size = new System.Drawing.Size(36, 36);
+            this.invoiceBtn.Size = new System.Drawing.Size(81, 36);
             this.invoiceBtn.Text = "Invoice";
             this.invoiceBtn.Click += new System.EventHandler(this.listInvoiceShow);
             // 
             // outletBtn
             // 
-            this.outletBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.outletBtn.Image = global::InvoiceOTCNew.Properties.Resources.View_Details_50px;
+            this.outletBtn.Image = global::InvoiceOTCNew.Properties.Resources.Shop_WF;
             this.outletBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.outletBtn.Name = "outletBtn";
-            this.outletBtn.Size = new System.Drawing.Size(36, 36);
+            this.outletBtn.Size = new System.Drawing.Size(76, 36);
             this.outletBtn.Text = "Outlet";
             this.outletBtn.Click += new System.EventHandler(this.listOutletShow);
             // 
             // productBtn
             // 
-            this.productBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.productBtn.Image = global::InvoiceOTCNew.Properties.Resources.List_96px;
+            this.productBtn.Image = global::InvoiceOTCNew.Properties.Resources.Product_Box_02_WF;
             this.productBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.productBtn.Name = "productBtn";
-            this.productBtn.Size = new System.Drawing.Size(36, 36);
+            this.productBtn.Size = new System.Drawing.Size(85, 36);
             this.productBtn.Text = "Product";
             this.productBtn.Click += new System.EventHandler(this.listProductShow);
             // 
-            // laporanToolStripMenuItem
+            // toolStripButton1
             // 
-            this.laporanToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rekapInvoiceToolStripMenuItem});
-            this.laporanToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.laporanToolStripMenuItem.Name = "laporanToolStripMenuItem";
-            this.laporanToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.laporanToolStripMenuItem.Text = "Laporan";
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(98, 14);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // rekapInvoiceToolStripMenuItem
+            // toolStripButton2
             // 
-            this.rekapInvoiceToolStripMenuItem.Name = "rekapInvoiceToolStripMenuItem";
-            this.rekapInvoiceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.rekapInvoiceToolStripMenuItem.Text = "Rekap Invoice";
-            this.rekapInvoiceToolStripMenuItem.Click += new System.EventHandler(this.rekapInvoiceToolStripMenuItem_Click);
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 14);
+            this.toolStripButton2.Text = "toolStripButton2";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // FrmMiniMenu
             // 
@@ -256,6 +272,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.Color.White;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMiniMenu";
@@ -289,11 +306,13 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripButton outletBtn;
         private System.Windows.Forms.ToolStripButton productBtn;
-        private System.Windows.Forms.ToolStripStatusLabel timeLbl;
+        private System.Windows.Forms.ToolStripStatusLabel softwareLbl;
         private System.Windows.Forms.ToolStripStatusLabel sumLbl;
-        private System.Windows.Forms.ToolStripStatusLabel countLbl;
+        private System.Windows.Forms.ToolStripStatusLabel timeLbl;
         private System.Windows.Forms.ToolStripMenuItem logsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem laporanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rekapInvoiceToolStripMenuItem;
+        private System.Windows.Forms.Timer timerCtl;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }

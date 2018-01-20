@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Paid Invoice1-WF.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -100,6 +103,12 @@
   <ItemGroup>
     <Compile Include="FindStrip.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmImportOutlet.cs">
       <SubType>Form</SubType>
@@ -240,6 +249,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmImportOutlet.resx">
       <DependentUpon>FrmImportOutlet.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,154 +364,34 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Accept Database_96px.png" />
+    <None Include="Resources\Customer.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Add Database_96px.png" />
+    <None Include="Resources\Invoice.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Add_50px.png" />
+    <None Include="Resources\PaidInvoice.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Available Updates_50px.png" />
+    <None Include="Resources\PendingInvoice.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Bank_96px.png" />
+    <None Include="Resources\Shop-WF.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bg_body.gif" />
+    <None Include="Resources\Product-Box-02-WF.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bg-1.png" />
+    <None Include="Resources\delete.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bg-2.png" />
+    <None Include="Resources\Add-New.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bg-3.png" />
+    <None Include="Resources\Save2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bg-background.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bg-main.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bg-sidebar-title.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bg-sidebar-title-me.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cash In Hand_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Close Window_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Data Backup_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Database_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Delete Database_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Delete_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Doctor Male_48px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Double Tick_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Edit_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Facebook_64px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Fast Forward_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Google Web Search_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Health Book_50px_1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Health Book_50px_3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Home_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Info_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\List_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Maintenance_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Mortar and Pestle_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Mortar_and_Pestle.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\MySQL_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\no-profile.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Open Folder_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Paid_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Pencil Tip_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\peta_lokasi.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Plus_32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Plus_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Print_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Receipt_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Receive Cash_96px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Rewind_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Save_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Save_50px_1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\View Details_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Xlarge Icons_50px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\import-excel32.png" />
+    <Content Include="Paid Invoice1-WF.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -45,8 +45,8 @@
             this.ExitBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.totalDGCellBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.totalDGCellBtn = new System.Windows.Forms.ToolStripButton();
             this.countDGCellBtn = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.findStrip2.SuspendLayout();
@@ -94,10 +94,9 @@
             // advancedSearchBtn
             // 
             this.advancedSearchBtn.ForeColor = System.Drawing.Color.White;
-            this.advancedSearchBtn.Image = global::InvoiceOTCNew.Properties.Resources.Google_Web_Search_50px;
             this.advancedSearchBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.advancedSearchBtn.Name = "advancedSearchBtn";
-            this.advancedSearchBtn.Size = new System.Drawing.Size(68, 26);
+            this.advancedSearchBtn.Size = new System.Drawing.Size(52, 26);
             this.advancedSearchBtn.Text = "Search !";
             this.advancedSearchBtn.Click += new System.EventHandler(this.advancedSearchBtn_Click);
             // 
@@ -111,10 +110,9 @@
             // 
             this.importBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.importBtn.ForeColor = System.Drawing.Color.White;
-            this.importBtn.Image = global::InvoiceOTCNew.Properties.Resources.import_excel32;
             this.importBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.importBtn.Name = "importBtn";
-            this.importBtn.Size = new System.Drawing.Size(63, 26);
+            this.importBtn.Size = new System.Drawing.Size(47, 26);
             this.importBtn.Text = "Import";
             this.importBtn.Click += new System.EventHandler(this.importBtn_Click);
             // 
@@ -122,10 +120,9 @@
             // 
             this.printBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.printBtn.ForeColor = System.Drawing.Color.White;
-            this.printBtn.Image = global::InvoiceOTCNew.Properties.Resources.Print_96px;
             this.printBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printBtn.Name = "printBtn";
-            this.printBtn.Size = new System.Drawing.Size(52, 26);
+            this.printBtn.Size = new System.Drawing.Size(36, 26);
             this.printBtn.Text = "Print";
             this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
             // 
@@ -187,6 +184,8 @@
             // tambahBtn
             // 
             this.tambahBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tambahBtn.Image = global::InvoiceOTCNew.Properties.Resources.Add_New;
+            this.tambahBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tambahBtn.Location = new System.Drawing.Point(3, 3);
             this.tambahBtn.Name = "tambahBtn";
             this.tambahBtn.Size = new System.Drawing.Size(106, 35);
@@ -253,6 +252,12 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // totalDGCellBtn
             // 
             this.totalDGCellBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -262,12 +267,6 @@
             this.totalDGCellBtn.Name = "totalDGCellBtn";
             this.totalDGCellBtn.Size = new System.Drawing.Size(44, 22);
             this.totalDGCellBtn.Text = "Total :";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // countDGCellBtn
             // 

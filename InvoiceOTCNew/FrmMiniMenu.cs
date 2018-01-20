@@ -61,5 +61,16 @@ namespace InvoiceOTCNew
             var frm = new FrmReportRekapInvoice();
             frm.ShowDialog();
         }
+
+        private void timerCtl_Tick(object sender, EventArgs e)
+        {
+            timeLbl.Text = DateTime.Now.ToShortDateString() + " | " + DateTime.Now.ToShortTimeString();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmAbout();
+            frm.ShowDialog();
+        }
     }
 }
