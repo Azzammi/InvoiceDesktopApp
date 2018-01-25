@@ -1,0 +1,27 @@
+variables:
+  MsBuildPath: "C:\\Program Files (x86)\\MSBuild\\12.0\\Bin\\MSBuild.exe"
+  NugetPath: "C:\\GitLab-Runner\\NuGet\\nuget.exe"
+  SolutionName: "Northwind.sln"
+
+stages: # tipe dari job
+  #- restore # stage untuk merestore paket nuget
+  - build # stage untuk proses build  
+  
+#cache:
+ # untracked: true
+ # paths:    
+ #   - lib # folder hasil restore nuget package    
+
+#restore_nuget_package: # job 1
+ # stage: restore
+ # script:
+ #   - echo "Sedang merestore paket nuget untuk %SolutionName%..."
+ #   - '"%NugetPath%" restore "src\%SolutionName%"'  
+    
+build_solution: # job 1
+  stage: build
+  script:     
+    - echo "Sedang melakukan proses build untuk %SolutionName%..."
+    - '"%MsBuildPath%" "src\%SolutionName%"'    
+  only:
+- master # validasi untuk branch atau tag
