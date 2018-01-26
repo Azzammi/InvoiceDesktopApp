@@ -3,10 +3,11 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
+using FSCollections;
 using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 using InvoiceOTC.Repository.Service;
-using FSCollections;
+using InvoiceOTCNew.Helper;
 
 namespace InvoiceOTCNew
 {
@@ -74,6 +75,7 @@ namespace InvoiceOTCNew
             Invoice dataInvoice = (Invoice)invoiceBindingSource.Current;
 
             if (dataInvoice == null || dataInvoice.p_Items == null || dataInvoice.nomorInvoice == null) return;
+            dataInvoice.pengguna = Session.GetCurrentUser();
             countBtn.PerformClick();
 
             switch (isAddNew)

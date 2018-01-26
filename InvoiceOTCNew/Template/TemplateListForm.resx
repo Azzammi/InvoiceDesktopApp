@@ -120,10 +120,28 @@
   <metadata name="findStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>122, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="importBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALSSURBVGhD7ZihdhQxGIVXVFb0ASoqeIAKRAUPgEAgKhCV
+        CEQFAlGB2HOQSASSB6isQPAAFRWIygoEAllRUdHdhe9P7m4nO8lkOKfJjJjvnJ6ZTW6m9ybZJLOzFKvV
+        6uVyufyxWCxu/w6E/W/zgJcT2eoHDd7qGaOBIJ9krxvM75P8Xu3GxqFspiHAscSjA2/vZTMNurmXj5K5
+        bKYxkdeOkinA0EwBhmYKMDT/HSDfoDDmwVtxTAGqYx68FcfTBKD8kAPfg5c8QtlPLjuSReFU+d2rQzjn
+        vJEkgKoyI4CRz9JscyZJCzMpTYCFkqQF1WUCULdLj//yskd0FD+QbANle9T9caIGKf0a6soEMOjRV9IF
+        xHqUsq+q3iY5Ygb15QIYGDuXNqA5p7k/UnEAvX/NpfM7Q33ZAJizN7jWe7Omyx5/OzLawoLpMUmQlQ1g
+        YORU+gBNmzP/KcTq1LwTpOUDoLNevvRNQihvvV+vR0fNO0FXPoCBNro3xGDEjtUsC/I6AQymRWpv2IDm
+        QvJe0KReAPTRvWENdXdckmt+DPT1AhhMj+jeYFD3QbLe0Kx6gOiaL15L1hva1AuAPrnmG5peu5L3An3V
+        ANE1v4l90SXvBU3qBEB7QA9nf1NF88A0e65mWWhSJwA9Gz3nm2HdbqDsikvnGWgNuvIB6NHUOf88tTfQ
+        Jv9DLSAtGwBN6px/i8l9blPvDXdWr8ckQVo2AD0cPedj7lSS5N5A2+yujKxcAIylzvl2sAvmuE0nXxvC
+        MzrPRUjKBKCuc83fYm7TxaaVPm+g7DeX5MmUumIBsmt+A/ccm1b6HMDofHEPjUD10wegvNea38A9h2v0
+        vYEy2xuib2dUlxmBWpgHb8UxBaiOefBWHFOA6pgHb8WR98NqcCKxMaoAeMu/0SF6Zsua2oyNF7LZDcLm
+        sI0CNrtvstcPRuIdI3Gj9oNhHvDykdvI+8Ns9g/mz9y7ZekbnAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>227, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="totalDGCellBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

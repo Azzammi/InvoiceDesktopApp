@@ -28,7 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.crViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
+            // 
+            // crViewer
+            // 
+            this.crViewer.ActiveViewIndex = -1;
+            this.crViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crViewer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crViewer.Location = new System.Drawing.Point(0, 0);
+            this.crViewer.Name = "crViewer";
+            this.crViewer.Size = new System.Drawing.Size(639, 262);
+            this.crViewer.TabIndex = 0;
+            this.crViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // TemplateReportFrm
             // 
@@ -36,12 +49,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(639, 262);
+            this.Controls.Add(this.crViewer);
             this.Name = "TemplateReportFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TemplateReportFrm";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        protected CrystalDecisions.Windows.Forms.CrystalReportViewer crViewer;
     }
 }

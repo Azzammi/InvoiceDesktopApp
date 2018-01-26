@@ -16,8 +16,6 @@ namespace InvoiceOTC.Repository.Service
     {        
         protected override void Append(LoggingEvent loggingEvent)
         {
-            Log4NetRepository logRepository = new Log4NetRepository();
-                 
             // cek nilai custom properties
             var newValue = (loggingEvent.LookupProperty("NewValue") != null) ? loggingEvent.LookupProperty("NewValue").ToString() : string.Empty;
             var oldValue = (loggingEvent.LookupProperty("OldValue") != null) ? loggingEvent.LookupProperty("OldValue").ToString() : string.Empty;
@@ -40,6 +38,7 @@ namespace InvoiceOTC.Repository.Service
             LogicalThreadContext.Properties.Clear();
 
             // simpan hasil log ke database
+            ILog4NetRepository logRepository = new Log4NetRepository();
             logRepository.Save(log);
         }
     }

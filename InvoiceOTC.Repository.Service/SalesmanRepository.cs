@@ -61,8 +61,7 @@ namespace InvoiceOTC.Repository.Service
             string newValue = "%" + value + "%";
 
             //Default Key For Search
-            if (string.IsNullOrEmpty(key)) key = "slsmCode";
-            
+            if (string.IsNullOrEmpty(key)) key = "slsmCode";            
             try
             {
                 m_Sql = @"SELECT slsmcode, slsmidnumber, slsmname, slsmaddress, slsmtelp, slsmsupv, slsmphoto, stat FROM salesman " +
@@ -72,7 +71,7 @@ namespace InvoiceOTC.Repository.Service
             }
             catch (Exception ex)
             {
-
+                logger.Error("Terjadi Error, silahkan liat log aktivitas", ex);
             }
             return list;
         }

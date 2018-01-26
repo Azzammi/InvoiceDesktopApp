@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -110,28 +125,28 @@
     <Compile Include="FrmAbout.Designer.cs">
       <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmImportOutlet.cs">
+    <Compile Include="Outlet\FrmImportOutlet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmImportOutlet.Designer.cs">
+    <Compile Include="Outlet\FrmImportOutlet.Designer.cs">
       <DependentUpon>FrmImportOutlet.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmImportProduk.cs">
+    <Compile Include="Product\FrmImportProduk.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmImportProduk.Designer.cs">
+    <Compile Include="Product\FrmImportProduk.Designer.cs">
       <DependentUpon>FrmImportProduk.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListOutlet.cs">
+    <Compile Include="Outlet\FrmListOutlet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListOutlet.Designer.cs">
+    <Compile Include="Outlet\FrmListOutlet.Designer.cs">
       <DependentUpon>FrmListOutlet.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListProduct.cs">
+    <Compile Include="Product\FrmListProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListProduct.Designer.cs">
+    <Compile Include="Product\FrmListProduct.Designer.cs">
       <DependentUpon>FrmListProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLog.cs">
@@ -139,6 +154,12 @@
     </Compile>
     <Compile Include="FrmLog.Designer.cs">
       <DependentUpon>FrmLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMainMenu.cs">
       <SubType>Form</SubType>
@@ -152,22 +173,22 @@
     <Compile Include="FrmMiniMenu.Designer.cs">
       <DependentUpon>FrmMiniMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmOutlet.cs">
+    <Compile Include="Outlet\FrmOutlet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmOutlet.Designer.cs">
+    <Compile Include="Outlet\FrmOutlet.Designer.cs">
       <DependentUpon>FrmOutlet.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmReportInvoice.cs">
+    <Compile Include="Report\FrmReportInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmReportInvoice.Designer.cs">
+    <Compile Include="Report\FrmReportInvoice.Designer.cs">
       <DependentUpon>FrmReportInvoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmReportRekapInvoice.cs">
+    <Compile Include="Report\FrmReportRekapInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmReportRekapInvoice.Designer.cs">
+    <Compile Include="Report\FrmReportRekapInvoice.Designer.cs">
       <DependentUpon>FrmReportRekapInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\DialogHelper.cs" />
@@ -195,34 +216,43 @@
     <Compile Include="FrmListBoundGrid.Designer.cs">
       <DependentUpon>FrmListBoundGrid.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmProduct.cs">
+    <Compile Include="Product\FrmProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmProduct.Designer.cs">
+    <Compile Include="Product\FrmProduct.Designer.cs">
       <DependentUpon>FrmProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\EncryptHelper.cs" />
     <Compile Include="Helper\IListener.cs" />
     <Compile Include="Helper\InputControlHelper.cs" />
     <Compile Include="Helper\KeyPressHelper.cs" />
+    <Compile Include="Helper\Session.cs" />
+    <Compile Include="Helper\SingleProgramInstanceHelper.cs" />
     <Compile Include="ItemFoundEventArgs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rptInvoiceWODisc.cs">
+    <Compile Include="Report\rptInvoiceWODisc.cs">
       <DependentUpon>rptInvoiceWODisc.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="rptInvoice.cs">
+    <Compile Include="Report\rptInvoice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptInvoice.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="rptRekapInvoice.cs">
+    <Compile Include="Report\rptRekapInvoice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptRekapInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RptSuratJalan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptSuratJalan.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Template\templateEntryFrm.cs">
@@ -252,10 +282,10 @@
     <EmbeddedResource Include="FrmAbout.resx">
       <DependentUpon>FrmAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmImportOutlet.resx">
+    <EmbeddedResource Include="Outlet\FrmImportOutlet.resx">
       <DependentUpon>FrmImportOutlet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmImportProduk.resx">
+    <EmbeddedResource Include="Product\FrmImportProduk.resx">
       <DependentUpon>FrmImportProduk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmInvoice.resx">
@@ -267,14 +297,17 @@
     <EmbeddedResource Include="FrmListBoundGrid.resx">
       <DependentUpon>FrmListBoundGrid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListOutlet.resx">
+    <EmbeddedResource Include="Outlet\FrmListOutlet.resx">
       <DependentUpon>FrmListOutlet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListProduct.resx">
+    <EmbeddedResource Include="Product\FrmListProduct.resx">
       <DependentUpon>FrmListProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLog.resx">
       <DependentUpon>FrmLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMainMenu.resx">
       <DependentUpon>FrmMainMenu.cs</DependentUpon>
@@ -282,16 +315,16 @@
     <EmbeddedResource Include="FrmMiniMenu.resx">
       <DependentUpon>FrmMiniMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmOutlet.resx">
+    <EmbeddedResource Include="Outlet\FrmOutlet.resx">
       <DependentUpon>FrmOutlet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmProduct.resx">
+    <EmbeddedResource Include="Product\FrmProduct.resx">
       <DependentUpon>FrmProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmReportInvoice.resx">
+    <EmbeddedResource Include="Report\FrmReportInvoice.resx">
       <DependentUpon>FrmReportInvoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmReportRekapInvoice.resx">
+    <EmbeddedResource Include="Report\FrmReportRekapInvoice.resx">
       <DependentUpon>FrmReportRekapInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -304,18 +337,22 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="rptInvoiceWODisc.rpt">
+    <EmbeddedResource Include="Report\rptInvoiceWODisc.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptInvoiceWODisc.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptInvoice.rpt">
+    <EmbeddedResource Include="Report\rptInvoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptInvoice.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="RptOutletList.rdlc" />
-    <EmbeddedResource Include="rptRekapInvoice.rpt">
+    <EmbeddedResource Include="Report\RptOutletList.rdlc" />
+    <EmbeddedResource Include="Report\rptRekapInvoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptRekapInvoice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RptSuratJalan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptSuratJalan.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Template\templateEntryFrm.resx">
       <DependentUpon>templateEntryFrm.cs</DependentUpon>
@@ -333,6 +370,7 @@
     <None Include="Properties\DataSources\InvoiceOTC.Model.Outlet.datasource" />
     <None Include="Properties\DataSources\InvoiceOTC.Model.Product.datasource" />
     <None Include="Properties\DataSources\InvoiceOTC.Model.Salesman.datasource" />
+    <None Include="Properties\DataSources\InvoiceOTC.Model.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -392,6 +430,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Paid Invoice1-WF.ico" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\Print-WF.png" />
+    <None Include="Resources\File Excel.png" />
+    <None Include="Resources\edit2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

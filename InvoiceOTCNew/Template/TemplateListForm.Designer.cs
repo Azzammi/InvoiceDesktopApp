@@ -43,11 +43,11 @@
             this.editBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.totalDGCellBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.countDGCellBtn = new System.Windows.Forms.ToolStripButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.findStrip2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -110,9 +110,10 @@
             // 
             this.importBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.importBtn.ForeColor = System.Drawing.Color.White;
+            this.importBtn.Image = ((System.Drawing.Image)(resources.GetObject("importBtn.Image")));
             this.importBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.importBtn.Name = "importBtn";
-            this.importBtn.Size = new System.Drawing.Size(47, 26);
+            this.importBtn.Size = new System.Drawing.Size(63, 26);
             this.importBtn.Text = "Import";
             this.importBtn.Click += new System.EventHandler(this.importBtn_Click);
             // 
@@ -120,9 +121,10 @@
             // 
             this.printBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.printBtn.ForeColor = System.Drawing.Color.White;
+            this.printBtn.Image = global::InvoiceOTCNew.Properties.Resources.Print;
             this.printBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printBtn.Name = "printBtn";
-            this.printBtn.Size = new System.Drawing.Size(36, 26);
+            this.printBtn.Size = new System.Drawing.Size(52, 26);
             this.printBtn.Text = "Print";
             this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
             // 
@@ -153,8 +155,9 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.88572F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.11428F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.textBox1, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel2.ForeColor = System.Drawing.Color.Black;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 315);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -197,6 +200,8 @@
             // editBtn
             // 
             this.editBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editBtn.Image = global::InvoiceOTCNew.Properties.Resources.edit2;
+            this.editBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.editBtn.Location = new System.Drawing.Point(115, 3);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(106, 35);
@@ -208,6 +213,8 @@
             // DeleteBtn
             // 
             this.DeleteBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DeleteBtn.Image = global::InvoiceOTCNew.Properties.Resources.delete;
+            this.DeleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DeleteBtn.Location = new System.Drawing.Point(227, 3);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(106, 35);
@@ -227,15 +234,6 @@
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(413, 41);
-            this.panel1.TabIndex = 1;
-            // 
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.DarkGray;
@@ -252,12 +250,6 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
             // totalDGCellBtn
             // 
             this.totalDGCellBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -268,6 +260,12 @@
             this.totalDGCellBtn.Size = new System.Drawing.Size(44, 22);
             this.totalDGCellBtn.Text = "Total :";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // countDGCellBtn
             // 
             this.countDGCellBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -277,6 +275,16 @@
             this.countDGCellBtn.Name = "countDGCellBtn";
             this.countDGCellBtn.Size = new System.Drawing.Size(50, 22);
             this.countDGCellBtn.Text = "Count :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(3, 3);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(413, 41);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "To Delete Data, Select the leftmost cell of the row to select all cell in row the" +
+    "n press delete";
             // 
             // TemplateListForm
             // 
@@ -297,6 +305,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -315,7 +324,6 @@
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel1;
         protected System.Windows.Forms.Label headerLbl;
         private System.Windows.Forms.ToolStripButton advancedSearchBtn;
         protected InvoiceOTC.Controller.FindStrip findStrip2;
@@ -326,5 +334,6 @@
         protected System.Windows.Forms.ToolStripButton countDGCellBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton printBtn;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

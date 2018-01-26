@@ -37,7 +37,6 @@
             System.Windows.Forms.Label nomorInvoiceLabel;
             System.Windows.Forms.Label nomorPOLabel;
             System.Windows.Forms.Label outletCodeLabel;
-            System.Windows.Forms.Label penggunaLabel;
             System.Windows.Forms.Label periodeLabel;
             System.Windows.Forms.Label ppnLabel;
             System.Windows.Forms.Label subTotalLabel;
@@ -53,7 +52,6 @@
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.penggunaTextBox = new System.Windows.Forms.TextBox();
             this.periodeTextBox = new System.Windows.Forms.TextBox();
             this.nomorInvoiceTextBox = new System.Windows.Forms.TextBox();
             this.issuedDateDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -90,7 +88,6 @@
             nomorInvoiceLabel = new System.Windows.Forms.Label();
             nomorPOLabel = new System.Windows.Forms.Label();
             outletCodeLabel = new System.Windows.Forms.Label();
-            penggunaLabel = new System.Windows.Forms.Label();
             periodeLabel = new System.Windows.Forms.Label();
             ppnLabel = new System.Windows.Forms.Label();
             subTotalLabel = new System.Windows.Forms.Label();
@@ -126,7 +123,7 @@
             idPaymentLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             idPaymentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             idPaymentLabel.ForeColor = System.Drawing.Color.White;
-            idPaymentLabel.Location = new System.Drawing.Point(3, 213);
+            idPaymentLabel.Location = new System.Drawing.Point(3, 187);
             idPaymentLabel.Name = "idPaymentLabel";
             idPaymentLabel.Size = new System.Drawing.Size(125, 31);
             idPaymentLabel.TabIndex = 2;
@@ -138,7 +135,7 @@
             isPayedLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             isPayedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             isPayedLabel.ForeColor = System.Drawing.Color.White;
-            isPayedLabel.Location = new System.Drawing.Point(3, 244);
+            isPayedLabel.Location = new System.Drawing.Point(3, 218);
             isPayedLabel.Name = "isPayedLabel";
             isPayedLabel.Size = new System.Drawing.Size(125, 41);
             isPayedLabel.TabIndex = 6;
@@ -204,25 +201,13 @@
             outletCodeLabel.TabIndex = 16;
             outletCodeLabel.Text = "Outlet:";
             // 
-            // penggunaLabel
-            // 
-            penggunaLabel.AutoSize = true;
-            penggunaLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            penggunaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            penggunaLabel.ForeColor = System.Drawing.Color.White;
-            penggunaLabel.Location = new System.Drawing.Point(3, 161);
-            penggunaLabel.Name = "penggunaLabel";
-            penggunaLabel.Size = new System.Drawing.Size(125, 26);
-            penggunaLabel.TabIndex = 18;
-            penggunaLabel.Text = "pengguna:";
-            // 
             // periodeLabel
             // 
             periodeLabel.AutoSize = true;
             periodeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             periodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             periodeLabel.ForeColor = System.Drawing.Color.White;
-            periodeLabel.Location = new System.Drawing.Point(3, 187);
+            periodeLabel.Location = new System.Drawing.Point(3, 161);
             periodeLabel.Name = "periodeLabel";
             periodeLabel.Size = new System.Drawing.Size(125, 26);
             periodeLabel.TabIndex = 20;
@@ -296,8 +281,6 @@
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.93103F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.06897F));
-            this.tableLayoutPanel5.Controls.Add(penggunaLabel, 0, 9);
-            this.tableLayoutPanel5.Controls.Add(this.penggunaTextBox, 1, 9);
             this.tableLayoutPanel5.Controls.Add(periodeLabel, 0, 10);
             this.tableLayoutPanel5.Controls.Add(this.periodeTextBox, 1, 10);
             this.tableLayoutPanel5.Controls.Add(this.nomorInvoiceTextBox, 1, 0);
@@ -340,18 +323,10 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(348, 391);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
-            // penggunaTextBox
-            // 
-            this.penggunaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "pengguna", true));
-            this.penggunaTextBox.Location = new System.Drawing.Point(134, 164);
-            this.penggunaTextBox.Name = "penggunaTextBox";
-            this.penggunaTextBox.Size = new System.Drawing.Size(200, 20);
-            this.penggunaTextBox.TabIndex = 6;
-            // 
             // periodeTextBox
             // 
             this.periodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "periode", true));
-            this.periodeTextBox.Location = new System.Drawing.Point(134, 190);
+            this.periodeTextBox.Location = new System.Drawing.Point(134, 164);
             this.periodeTextBox.Name = "periodeTextBox";
             this.periodeTextBox.Size = new System.Drawing.Size(200, 20);
             this.periodeTextBox.TabIndex = 7;
@@ -402,7 +377,7 @@
             // idPaymentTextBox
             // 
             this.idPaymentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "idPayment", true));
-            this.idPaymentTextBox.Location = new System.Drawing.Point(134, 216);
+            this.idPaymentTextBox.Location = new System.Drawing.Point(134, 190);
             this.idPaymentTextBox.Name = "idPaymentTextBox";
             this.idPaymentTextBox.Size = new System.Drawing.Size(200, 20);
             this.idPaymentTextBox.TabIndex = 8;
@@ -411,7 +386,7 @@
             // 
             this.isPayedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceBindingSource, "isPayed", true));
             this.isPayedCheckBox.ForeColor = System.Drawing.Color.White;
-            this.isPayedCheckBox.Location = new System.Drawing.Point(134, 247);
+            this.isPayedCheckBox.Location = new System.Drawing.Point(134, 221);
             this.isPayedCheckBox.Name = "isPayedCheckBox";
             this.isPayedCheckBox.Size = new System.Drawing.Size(200, 24);
             this.isPayedCheckBox.TabIndex = 9;
@@ -680,7 +655,6 @@
         private System.Windows.Forms.DateTimePicker issuedDateDateTimePicker;
         private System.Windows.Forms.TextBox nomorInvoiceTextBox;
         private System.Windows.Forms.TextBox nomorPOTextBox;
-        private System.Windows.Forms.TextBox penggunaTextBox;
         private System.Windows.Forms.TextBox periodeTextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;        
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;

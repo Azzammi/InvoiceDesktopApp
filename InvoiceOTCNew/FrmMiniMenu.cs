@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 
 using InvoiceOTCNew.Helper;
+using System.Reflection;
 
 namespace InvoiceOTCNew
 {
@@ -13,29 +14,28 @@ namespace InvoiceOTCNew
 
         public FrmMiniMenu()
         {
-            InitializeComponent();           
+            InitializeComponent();
+
+            this.Text = AssemblyProduct;
+            softwareLbl.Text = AssemblyProduct + " " + AssemblyCopyright;
         }
 
         private void listOutletShow(object sender, EventArgs e)
         {
             var frm = new FrmListOutlet();
-            frm.MdiParent = this;
-            frm.Show();
+            CheckExistingForm(frm);
         }
 
         private void listProductShow(object sender, EventArgs e)
         {
             var frm = new FrmListProduct();
-            frm.MdiParent = this;
-            frm.Show();
+            CheckExistingForm(frm);
         }
 
         private void listInvoiceShow(object sender, EventArgs e)
         {
-            var frm = new FrmListBoundGrid();
-            frm.Listener = this;
-            frm.MdiParent = this;
-            frm.Show();
+            var frm = new FrmListBoundGrid();            
+            CheckExistingForm(frm);
         }
 
         #region IListener
@@ -71,6 +71,70 @@ namespace InvoiceOTCNew
         {
             var frm = new FrmAbout();
             frm.ShowDialog();
+        }
+
+        private void CheckExistingForm(Form frm)
+        {
+            /* Function to check for the existing form */
+            foreach (Form window in Application.OpenForms)
+            {
+                if (window.GetType() == frm.GetType())
+                {
+                    window.Activate();
+                    return;
+                }                
+            }
+            /* The code end here */
+
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        #region Application Information Properties
+        public string AssemblyProduct
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+                return ((AssemblyProductAttribute)attributes[0]).Product;
+            }
+        }
+        public string AssemblyCopyright
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyCopyrightAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+                return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
+            }
+        }
+        #endregion
+
+        private void FrmMiniMenu_Load(object sender, EventArgs e)
+        {
+            CheckSession();
+        }
+
+        /// <summary>
+        /// Method to check if user already logged in
+        /// </summary>
+        private void CheckSession()
+        {
+            if (string.IsNullOrEmpty(Session.GetCurrentUser()) || Session.GetLoginStatus() != true)
+            {
+                using (FrmLogin frm = new FrmLogin())
+                {
+                    frm.ShowDialog();
+                }
+                userLbl.Text = Session.GetCurrentUser();
+            }
         }
     }
 }

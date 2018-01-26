@@ -84,7 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseClasses\ExtensionListType.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="BaseClasses\FSBindingItem.cs" />
     <Compile Include="BaseClasses\FSBindingList.cs" />
     <Compile Include="BaseClasses\FSPropertyComaparer.cs" />
@@ -96,6 +95,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseClasses\StringComparison.cs" />
     <Compile Include="Salesman.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

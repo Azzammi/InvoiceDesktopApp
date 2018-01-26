@@ -160,6 +160,7 @@ namespace InvoiceOTC.Controller
             this.refreshBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.refreshBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.refreshBtn.ForeColor = System.Drawing.Color.White;
+            this.refreshBtn.Image = global::InvoiceOTCNew.Properties.Resources.refresh;
             this.refreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(50, 29);

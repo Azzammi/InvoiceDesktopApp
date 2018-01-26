@@ -11,10 +11,7 @@ namespace InvoiceOTC.Model
     public class Invoice
     {
         #region Properties
-
-        //Property Variables
-        //public FSBindingList<InvoiceDetail> p_Items { get; set; }
-
+        
         public int invoiceID { get; set; }
         public string nomorInvoice { get; set; }
         public DateTime dueDate { get; set; }

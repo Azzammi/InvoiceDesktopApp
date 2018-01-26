@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using InvoiceOTCNew.Helper;
 
 using log4net;
 using System.Reflection;
@@ -16,12 +17,21 @@ namespace InvoiceOTCNew
         [STAThread]
         static void Main()
         {
-            // TODO: ganti dengan user/operator pada saat login
-            GlobalContext.Properties["UserName"] = "Admin";
-
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMiniMenu());
-        }
+            Application.SetCompatibleTextRenderingDefault(false);            
+
+            /* Use this block code to prevent opening same program */
+            using (SingleProgramInstanceHelper spi = new SingleProgramInstanceHelper("x5k6yz"))
+            {
+                if (spi.IsSingleInstance)
+                {
+                    Application.Run(new FrmMiniMenu());
+                }
+                else
+                {
+                    spi.RaiseOtherProcess();
+                }
+            }
+        }        
     }
 }
