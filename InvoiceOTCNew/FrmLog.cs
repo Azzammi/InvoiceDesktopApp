@@ -7,6 +7,7 @@ using InvoiceOTC.Repository.Service;
 using InvoiceOTCNew.Helper;
 using System.Windows.Forms;
 using InvoiceOTC.Controller;
+using System.Collections.Generic;
 
 namespace InvoiceOTCNew
 {
@@ -20,8 +21,56 @@ namespace InvoiceOTCNew
         {
             InitializeComponent();
 
-            log4netRepo = new Log4NetRepository();
-            logsBindingSource.DataSource = log4netRepo.GetAll();
+            log4netRepo = new Log4NetRepository();            
+            logData = log4netRepo.GetAll();
+
+            PageOffsetList offsetList = new PageOffsetList();
+            offsetList.TotalRecords = logData.Count;
+            totalRecords = logData.Count;
+
+            logsBindingNavigator.BindingSource = logsBindingSource;
+            logsBindingSource.CurrentChanged += new System.EventHandler(bindingSource1_CurrentChanged);
+            logsBindingSource.DataSource = offsetList;
+        }
+
+        private IList<Logs> logData;
+        private int totalRecords = 0;
+        private const int pageSize = 10;
+        
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+            // The desired page has changed, so fetch the page of records using the "Current" offset 
+            int offset = (int)logsBindingSource.Current;
+            var records = new List<Logs>();
+            for (int i = offset; i < offset + pageSize && i < totalRecords; i++)
+                records.Add(logData[i]);
+            logsDataGridView.DataSource = records;
+        }
+
+        class Record
+        {
+            public Logs Log { get; set; }
+        }
+
+        class PageOffsetList : System.ComponentModel.IListSource
+        {
+            public bool ContainsListCollection { get; protected set; }
+            public int TotalRecords { get;  set; }
+            
+            public System.Collections.IList GetList()
+            {
+                // Return a list of page offsets based on "totalRecords" and "pageSize"
+                var pageOffsets = new List<int>();
+                for (int offset = 0; offset < TotalRecords; offset += pageSize)
+                    pageOffsets.Add(offset);
+                return pageOffsets;
+            }
+        }
+
+        private void logsBindingSource_CurrentChanged(object sender, EventArgs e)
+        {            
+            //MessageBox.Show(log.LogDate.ToString());
         }
     }
 }

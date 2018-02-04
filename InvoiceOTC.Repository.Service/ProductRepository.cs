@@ -43,9 +43,9 @@ namespace InvoiceOTC.Repository.Service
                 m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product";
                 listOfProduct = context.db.Query<Product>(m_Sql).ToListSorted();
             }
-            catch
+            catch(Exception ex)
             {
-
+                m_Log.Error("Get Data Failed", ex);
             }
 
             return listOfProduct;
@@ -70,6 +70,23 @@ namespace InvoiceOTC.Repository.Service
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+
+            return listOfProduct;
+        }
+
+        public IList<Product> GetActiveProduct()
+        {
+            IList<Product> listOfProduct = new List<Product>();
+
+            try
+            {
+                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product WHERE Stat = 't'";
+                listOfProduct = context.db.Query<Product>(m_Sql).ToListSorted();
+            }
+            catch (Exception ex)
+            {
+                m_Log.Error("Get Data Failed", ex);
             }
 
             return listOfProduct;
@@ -156,6 +173,5 @@ namespace InvoiceOTC.Repository.Service
             return result;
         }
         #endregion
-
     }
 }

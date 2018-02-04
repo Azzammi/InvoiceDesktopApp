@@ -1,6 +1,6 @@
 ﻿namespace InvoiceOTCNew
 {
-    partial class templateEntryFrm
+    partial class TemplateEntryFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -113,7 +113,7 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // templateEntryFrm
+            // TemplateEntryFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -123,10 +123,10 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "templateEntryFrm";
+            this.Name = "TemplateEntryFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "templateEntryFrm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.templateEntryFrm_FormClosing);
+            this.Text = "TemplateEntryFrm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TemplateEntryFrm_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

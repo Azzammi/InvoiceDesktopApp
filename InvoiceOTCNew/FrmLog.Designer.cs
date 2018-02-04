@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLog));
-            this.logsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.logsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -45,24 +44,22 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.logsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.logsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).BeginInit();
+            this.logsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.logIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.levelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.methodNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.messageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.newValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oldValueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exceptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdByDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.logsBindingNavigator)).BeginInit();
             this.logsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // logsBindingSource
-            // 
-            this.logsBindingSource.DataSource = typeof(InvoiceOTC.Model.Logs);
             // 
             // logsBindingNavigator
             // 
@@ -90,7 +87,7 @@
             this.logsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.logsBindingNavigator.Name = "logsBindingNavigator";
             this.logsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.logsBindingNavigator.Size = new System.Drawing.Size(781, 25);
+            this.logsBindingNavigator.Size = new System.Drawing.Size(1054, 25);
             this.logsBindingNavigator.TabIndex = 0;
             this.logsBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -193,91 +190,103 @@
             this.logsDataGridView.AutoGenerateColumns = false;
             this.logsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.logsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10});
+            this.logIDDataGridViewTextBoxColumn,
+            this.levelDataGridViewTextBoxColumn,
+            this.classNameDataGridViewTextBoxColumn,
+            this.methodNameDataGridViewTextBoxColumn,
+            this.messageDataGridViewTextBoxColumn,
+            this.newValueDataGridViewTextBoxColumn,
+            this.oldValueDataGridViewTextBoxColumn,
+            this.exceptionDataGridViewTextBoxColumn,
+            this.createdByDataGridViewTextBoxColumn,
+            this.logDateDataGridViewTextBoxColumn});
             this.logsDataGridView.DataSource = this.logsBindingSource;
             this.logsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.logsDataGridView.Location = new System.Drawing.Point(0, 25);
             this.logsDataGridView.Name = "logsDataGridView";
-            this.logsDataGridView.Size = new System.Drawing.Size(781, 264);
+            this.logsDataGridView.Size = new System.Drawing.Size(1054, 264);
             this.logsDataGridView.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn2
+            // logsBindingSource
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Level";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Level";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.logsBindingSource.DataSource = typeof(InvoiceOTC.Model.Logs);
+            this.logsBindingSource.CurrentChanged += new System.EventHandler(this.logsBindingSource_CurrentChanged);
             // 
-            // dataGridViewTextBoxColumn3
+            // logIDDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ClassName";
-            this.dataGridViewTextBoxColumn3.HeaderText = "ClassName";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.logIDDataGridViewTextBoxColumn.DataPropertyName = "LogID";
+            this.logIDDataGridViewTextBoxColumn.HeaderText = "LogID";
+            this.logIDDataGridViewTextBoxColumn.Name = "logIDDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn4
+            // levelDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "MethodName";
-            this.dataGridViewTextBoxColumn4.HeaderText = "MethodName";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.levelDataGridViewTextBoxColumn.DataPropertyName = "Level";
+            this.levelDataGridViewTextBoxColumn.HeaderText = "Level";
+            this.levelDataGridViewTextBoxColumn.Name = "levelDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn5
+            // classNameDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Message";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Message";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.classNameDataGridViewTextBoxColumn.DataPropertyName = "ClassName";
+            this.classNameDataGridViewTextBoxColumn.HeaderText = "ClassName";
+            this.classNameDataGridViewTextBoxColumn.Name = "classNameDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn6
+            // methodNameDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "NewValue";
-            this.dataGridViewTextBoxColumn6.HeaderText = "NewValue";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.methodNameDataGridViewTextBoxColumn.DataPropertyName = "MethodName";
+            this.methodNameDataGridViewTextBoxColumn.HeaderText = "MethodName";
+            this.methodNameDataGridViewTextBoxColumn.Name = "methodNameDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn7
+            // messageDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "OldValue";
-            this.dataGridViewTextBoxColumn7.HeaderText = "OldValue";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.messageDataGridViewTextBoxColumn.DataPropertyName = "Message";
+            this.messageDataGridViewTextBoxColumn.HeaderText = "Message";
+            this.messageDataGridViewTextBoxColumn.Name = "messageDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn8
+            // newValueDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Exception";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Exception";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.newValueDataGridViewTextBoxColumn.DataPropertyName = "NewValue";
+            this.newValueDataGridViewTextBoxColumn.HeaderText = "NewValue";
+            this.newValueDataGridViewTextBoxColumn.Name = "newValueDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn9
+            // oldValueDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "CreatedBy";
-            this.dataGridViewTextBoxColumn9.HeaderText = "CreatedBy";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.oldValueDataGridViewTextBoxColumn.DataPropertyName = "OldValue";
+            this.oldValueDataGridViewTextBoxColumn.HeaderText = "OldValue";
+            this.oldValueDataGridViewTextBoxColumn.Name = "oldValueDataGridViewTextBoxColumn";
             // 
-            // dataGridViewTextBoxColumn10
+            // exceptionDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "LogDate";
-            this.dataGridViewTextBoxColumn10.HeaderText = "LogDate";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.exceptionDataGridViewTextBoxColumn.DataPropertyName = "Exception";
+            this.exceptionDataGridViewTextBoxColumn.HeaderText = "Exception";
+            this.exceptionDataGridViewTextBoxColumn.Name = "exceptionDataGridViewTextBoxColumn";
+            // 
+            // createdByDataGridViewTextBoxColumn
+            // 
+            this.createdByDataGridViewTextBoxColumn.DataPropertyName = "CreatedBy";
+            this.createdByDataGridViewTextBoxColumn.HeaderText = "CreatedBy";
+            this.createdByDataGridViewTextBoxColumn.Name = "createdByDataGridViewTextBoxColumn";
+            // 
+            // logDateDataGridViewTextBoxColumn
+            // 
+            this.logDateDataGridViewTextBoxColumn.DataPropertyName = "LogDate";
+            this.logDateDataGridViewTextBoxColumn.HeaderText = "LogDate";
+            this.logDateDataGridViewTextBoxColumn.Name = "logDateDataGridViewTextBoxColumn";
             // 
             // FrmLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(781, 289);
+            this.ClientSize = new System.Drawing.Size(1054, 289);
             this.Controls.Add(this.logsDataGridView);
             this.Controls.Add(this.logsBindingNavigator);
             this.Name = "FrmLog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLog";
-            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logsBindingNavigator)).EndInit();
             this.logsBindingNavigator.ResumeLayout(false);
             this.logsBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,14 +309,15 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton logsBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView logsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn logIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn levelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn methodNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn messageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn newValueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oldValueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn exceptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdByDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn logDateDataGridViewTextBoxColumn;
     }
 }

@@ -11,7 +11,7 @@ using InvoiceOTCNew.Helper;
 
 namespace InvoiceOTCNew
 {
-    public partial class FrmInvoice : templateEntryFrm
+    public partial class FrmInvoice : TemplateEntryFrm
     {
         #region Declaration
         private IInvoiceRepository invoiceRepository;
@@ -52,7 +52,7 @@ namespace InvoiceOTCNew
             outletRepository = new OutletRepository();
             productRepository = new ProductRepository();
 
-            productBindingSource.DataSource = productRepository.GetAll();
+            productBindingSource.DataSource = productRepository.GetActiveProduct();
             outletBindingSource.DataSource = outletRepository.GetAll();
 
             CekKondisi(FormCondition.Inputting);
@@ -145,7 +145,7 @@ namespace InvoiceOTCNew
             {
                 if (item != null)
                 {
-                    if (isAddNew != false) invoiceDetailRepository.Delete(item);
+                    if (isAddNew != true) invoiceDetailRepository.Delete(item);
                     productBindingSource.Remove(item);
                 }
             }

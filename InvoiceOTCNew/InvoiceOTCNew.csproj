@@ -125,6 +125,12 @@
     <Compile Include="FrmAbout.Designer.cs">
       <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBatchEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBatchEdit.Designer.cs">
+      <DependentUpon>FrmBatchEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Outlet\FrmImportOutlet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,11 +261,11 @@
       <DependentUpon>RptSuratJalan.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Template\templateEntryFrm.cs">
+    <Compile Include="Template\TemplateEntryFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Template\templateEntryFrm.Designer.cs">
-      <DependentUpon>templateEntryFrm.cs</DependentUpon>
+    <Compile Include="Template\TemplateEntryFrm.Designer.cs">
+      <DependentUpon>TemplateEntryFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Template\TemplateListForm.cs">
       <SubType>Form</SubType>
@@ -281,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAbout.resx">
       <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBatchEdit.resx">
+      <DependentUpon>FrmBatchEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Outlet\FrmImportOutlet.resx">
       <DependentUpon>FrmImportOutlet.cs</DependentUpon>
@@ -354,8 +363,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptSuratJalan.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Template\templateEntryFrm.resx">
-      <DependentUpon>templateEntryFrm.cs</DependentUpon>
+    <EmbeddedResource Include="Template\TemplateEntryFrm.resx">
+      <DependentUpon>TemplateEntryFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Template\TemplateListForm.resx">
       <DependentUpon>TemplateListForm.cs</DependentUpon>

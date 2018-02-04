@@ -4,7 +4,7 @@ using InvoiceOTCNew.Helper;
 
 namespace InvoiceOTCNew
 {
-    public partial class templateEntryFrm : Form
+    public partial class TemplateEntryFrm : Form
     {
         #region Declaration       
         protected BindingSource bindingSource;
@@ -23,7 +23,7 @@ namespace InvoiceOTCNew
         #endregion
 
         #region Constructor
-        public templateEntryFrm()
+        public TemplateEntryFrm()
         {
             InitializeComponent();
         }        
@@ -83,7 +83,7 @@ namespace InvoiceOTCNew
         }
         #endregion
 
-        private void templateEntryFrm_FormClosing(object sender, FormClosingEventArgs e)
+        private void TemplateEntryFrm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(_condition == FormCondition.Inputting)
             {

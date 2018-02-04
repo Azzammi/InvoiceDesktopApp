@@ -5,7 +5,7 @@ using InvoiceOTC.Repository.Service;
 
 namespace InvoiceOTCNew
 {
-    public partial class FrmOutlet : templateEntryFrm
+    public partial class FrmOutlet : TemplateEntryFrm
     {
         #region Declaration
         private IOutletRepository outletRepository;

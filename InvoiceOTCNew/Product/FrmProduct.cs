@@ -6,7 +6,7 @@ using InvoiceOTC.Repository.Service;
 using InvoiceOTCNew.Helper;
 namespace InvoiceOTCNew
 {
-    public partial class FrmProduct : templateEntryFrm
+    public partial class FrmProduct : TemplateEntryFrm
     {
         #region Declaration
         private IProductRepository productRepository;        
