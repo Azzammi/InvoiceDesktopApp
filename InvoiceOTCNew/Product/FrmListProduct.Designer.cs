@@ -147,7 +147,7 @@
             this.Controls.Add(this.tableLayoutPanel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmListProduct";
-            this.Text = "FrmListProduct";
+            this.Text = "FrmListProduct";            
             this.Controls.SetChildIndex(this.tableLayoutPanel4, 0);
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();

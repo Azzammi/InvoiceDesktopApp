@@ -125,11 +125,12 @@
     <Compile Include="FrmAbout.Designer.cs">
       <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBatchEdit.cs">
+    <Compile Include="Helper\DataGridViewHelper.cs" />
+    <Compile Include="Product\FrmBatchProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBatchEdit.Designer.cs">
-      <DependentUpon>FrmBatchEdit.cs</DependentUpon>
+    <Compile Include="Product\FrmBatchProduct.Designer.cs">
+      <DependentUpon>FrmBatchProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Outlet\FrmImportOutlet.cs">
       <SubType>Form</SubType>
@@ -191,6 +192,18 @@
     <Compile Include="Report\FrmReportInvoice.Designer.cs">
       <DependentUpon>FrmReportInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\FrmReportListOutlet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FrmReportListOutlet.Designer.cs">
+      <DependentUpon>FrmReportListOutlet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FrmReportListProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FrmReportListProduct.Designer.cs">
+      <DependentUpon>FrmReportListProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\FrmReportRekapInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,10 +217,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInvoice.cs">
+    <Compile Include="Invoice\FrmInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInvoice.Designer.cs">
+    <Compile Include="Invoice\FrmInvoice.Designer.cs">
       <DependentUpon>FrmInvoice.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmList.cs">
@@ -216,10 +229,10 @@
     <Compile Include="FrmList.Designer.cs">
       <DependentUpon>FrmList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListBoundGrid.cs">
+    <Compile Include="Invoice\FrmListBoundGrid.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListBoundGrid.Designer.cs">
+    <Compile Include="Invoice\FrmListBoundGrid.Designer.cs">
       <DependentUpon>FrmListBoundGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="Product\FrmProduct.cs">
@@ -249,6 +262,18 @@
       <DependentUpon>rptInvoice.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\RptListOutlet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptListOutlet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\RptListProduct.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptListProduct.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\rptRekapInvoice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -266,6 +291,12 @@
     </Compile>
     <Compile Include="Template\TemplateEntryFrm.Designer.cs">
       <DependentUpon>TemplateEntryFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Template\TemplateFormBatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Template\TemplateFormBatch.Designer.cs">
+      <DependentUpon>TemplateFormBatch.cs</DependentUpon>
     </Compile>
     <Compile Include="Template\TemplateListForm.cs">
       <SubType>Form</SubType>
@@ -288,8 +319,8 @@
     <EmbeddedResource Include="FrmAbout.resx">
       <DependentUpon>FrmAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBatchEdit.resx">
-      <DependentUpon>FrmBatchEdit.cs</DependentUpon>
+    <EmbeddedResource Include="Product\FrmBatchProduct.resx">
+      <DependentUpon>FrmBatchProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Outlet\FrmImportOutlet.resx">
       <DependentUpon>FrmImportOutlet.cs</DependentUpon>
@@ -297,13 +328,13 @@
     <EmbeddedResource Include="Product\FrmImportProduk.resx">
       <DependentUpon>FrmImportProduk.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInvoice.resx">
+    <EmbeddedResource Include="Invoice\FrmInvoice.resx">
       <DependentUpon>FrmInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmList.resx">
       <DependentUpon>FrmList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListBoundGrid.resx">
+    <EmbeddedResource Include="Invoice\FrmListBoundGrid.resx">
       <DependentUpon>FrmListBoundGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Outlet\FrmListOutlet.resx">
@@ -333,6 +364,9 @@
     <EmbeddedResource Include="Report\FrmReportInvoice.resx">
       <DependentUpon>FrmReportInvoice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\FrmReportListOutlet.resx">
+      <DependentUpon>FrmReportListOutlet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmReportRekapInvoice.resx">
       <DependentUpon>FrmReportRekapInvoice.cs</DependentUpon>
     </EmbeddedResource>
@@ -354,6 +388,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptInvoice.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\RptListOutlet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptListOutlet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RptListProduct.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptListProduct.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\RptOutletList.rdlc" />
     <EmbeddedResource Include="Report\rptRekapInvoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -365,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Template\TemplateEntryFrm.resx">
       <DependentUpon>TemplateEntryFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\TemplateFormBatch.resx">
+      <DependentUpon>TemplateFormBatch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Template\TemplateListForm.resx">
       <DependentUpon>TemplateListForm.cs</DependentUpon>
@@ -439,6 +484,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Paid Invoice1-WF.ico" />
+    <None Include="Resources\User - 05.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\Print-WF.png" />
     <None Include="Resources\File Excel.png" />

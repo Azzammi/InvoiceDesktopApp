@@ -100,7 +100,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(98, 14);
+            this.toolStripButton1.Size = new System.Drawing.Size(98, 28);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -111,7 +111,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 14);
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 28);
             this.toolStripButton2.Text = "toolStripButton2";
             // 
             // menuStrip1
@@ -206,21 +206,23 @@
             // rekapInvoiceToolStripMenuItem
             // 
             this.rekapInvoiceToolStripMenuItem.Name = "rekapInvoiceToolStripMenuItem";
-            this.rekapInvoiceToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.rekapInvoiceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.rekapInvoiceToolStripMenuItem.Text = "Rekap Invoice";
             this.rekapInvoiceToolStripMenuItem.Click += new System.EventHandler(this.rekapInvoiceToolStripMenuItem_Click);
             // 
             // listOutletToolStripMenuItem
             // 
             this.listOutletToolStripMenuItem.Name = "listOutletToolStripMenuItem";
-            this.listOutletToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.listOutletToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.listOutletToolStripMenuItem.Text = "List Outlet";
+            this.listOutletToolStripMenuItem.Click += new System.EventHandler(this.listOutletToolStripMenuItem_Click);
             // 
             // listProductToolStripMenuItem
             // 
             this.listProductToolStripMenuItem.Name = "listProductToolStripMenuItem";
-            this.listProductToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.listProductToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.listProductToolStripMenuItem.Text = "List Product";
+            this.listProductToolStripMenuItem.Click += new System.EventHandler(this.listProductToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -247,15 +249,16 @@
             // 
             this.softwareLbl.ForeColor = System.Drawing.Color.White;
             this.softwareLbl.Name = "softwareLbl";
-            this.softwareLbl.Size = new System.Drawing.Size(569, 17);
+            this.softwareLbl.Size = new System.Drawing.Size(584, 17);
             this.softwareLbl.Spring = true;
             this.softwareLbl.Text = "toolStripStatusLabel1";
             // 
             // userLbl
             // 
             this.userLbl.ForeColor = System.Drawing.Color.White;
+            this.userLbl.Image = global::InvoiceOTCNew.Properties.Resources.User___05;
             this.userLbl.Name = "userLbl";
-            this.userLbl.Size = new System.Drawing.Size(118, 17);
+            this.userLbl.Size = new System.Drawing.Size(134, 17);
             this.userLbl.Text = "toolStripStatusLabel1";
             // 
             // timeLbl
@@ -331,6 +334,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMiniMenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMiniMenu_FormClosing);
             this.Load += new System.EventHandler(this.FrmMiniMenu_Load);
             this.toolStripEx1.ResumeLayout(false);
             this.toolStripEx1.PerformLayout();

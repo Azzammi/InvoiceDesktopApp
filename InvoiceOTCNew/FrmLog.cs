@@ -48,11 +48,9 @@ namespace InvoiceOTCNew
             logsDataGridView.DataSource = records;
         }
 
-        class Record
-        {
-            public Logs Log { get; set; }
-        }
-
+        /// <summary>
+        /// This Class was used to get pageoffset and set it to bindingsource
+        /// </summary>
         class PageOffsetList : System.ComponentModel.IListSource
         {
             public bool ContainsListCollection { get; protected set; }

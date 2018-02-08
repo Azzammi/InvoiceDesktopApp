@@ -4,6 +4,7 @@ using InvoiceOTCNew.Helper;
 
 using log4net;
 using System.Reflection;
+using System.Globalization;
 
 [assembly: log4net.Config.XmlConfigurator(Watch =true)]
 namespace InvoiceOTCNew
@@ -11,6 +12,10 @@ namespace InvoiceOTCNew
     static class Program
     {
         public static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
+        // Display string representations of numbers for en-us culture
+        public static readonly CultureInfo ci = new CultureInfo("en-us");
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

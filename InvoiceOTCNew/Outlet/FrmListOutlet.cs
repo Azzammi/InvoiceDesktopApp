@@ -21,7 +21,7 @@ namespace InvoiceOTCNew
         {
             InitializeComponent();
             SetHeader("outlet");
-            SetDataGridTheme(outletDataGridView);
+            DataGridViewHelper.SetDataGridTheme(outletDataGridView);
             SetDataSource(outletBindingSource);
 
             outletRepository = new OutletRepository();

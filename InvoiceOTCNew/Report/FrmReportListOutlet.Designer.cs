@@ -1,6 +1,6 @@
 ﻿namespace InvoiceOTCNew
 {
-    partial class FrmBatchEdit
+    partial class FrmReportListOutlet
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // FrmBatchEdit
+            // FrmReportListOutlet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 350);
-            this.Name = "FrmBatchEdit";
-            this.Text = "FrmBatchEdit";
+            this.ClientSize = new System.Drawing.Size(623, 257);
+            this.Name = "FrmReportListOutlet";
+            this.Text = "FrmReportListOutlet";
             this.ResumeLayout(false);
 
         }

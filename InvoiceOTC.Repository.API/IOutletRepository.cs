@@ -31,6 +31,12 @@ namespace InvoiceOTC.Repository.API
         /// <param name="outletName"></param>
         /// <returns></returns>
         Outlet GetOutletByName(string outletName);
+
+        /// <summary>
+        /// Get only active outlet
+        /// </summary>
+        /// <returns></returns>
+        IList<Outlet> GetActiveOutlet();
      
     }
 }

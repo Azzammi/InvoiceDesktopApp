@@ -21,10 +21,10 @@ namespace InvoiceOTCNew
         {
             InitializeComponent();
             SetHeader("Product");
-            SetDataGridTheme(productDataGridView);
+            DataGridViewHelper.SetDataGridTheme(productDataGridView);
             SetDataSource(productBindingSource);
 
-            productRepository = new ProductRepository();
+            productRepository = new ProductRepository(Program.log);
 
             productBindingSource.DataSource = productRepository.GetAll();
         }
@@ -50,7 +50,7 @@ namespace InvoiceOTCNew
 
         protected override void DeleteBtn_Click(object sender, EventArgs e)
         {
-            //Get Item Roti
+            //Verification 
             if (productBindingSource.DataSource == null) return;
             if (productDataGridView.SelectedRows.Count == 0) return;
 
@@ -94,6 +94,12 @@ namespace InvoiceOTCNew
             var frm = new FrmImportProduk();
             frm.ShowDialog();
         }
+
+        protected override void printBtn_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmBatchProduct();
+            frm.ShowDialog();
+        }
         #endregion
 
         #region IListener
@@ -108,7 +114,7 @@ namespace InvoiceOTCNew
             {
                 productBindingSource.Add(data);
             }
-            
+
         }
         #endregion
 
@@ -128,7 +134,7 @@ namespace InvoiceOTCNew
                     countDGCellBtn.Text = "Count : " + selectedCellCount;
                     var total = (from DataGridViewCell cell in productDataGridView.SelectedCells
                                  where cell.FormattedValue.ToString() != string.Empty && cell.ValueType != typeof(string) && cell.ValueType != typeof(DateTime)
-                                 select Convert.ToDecimal(cell.FormattedValue)).Sum().ToString();
+                                 select Convert.ToDecimal(cell.FormattedValue)).Sum().ToString("N03", Program.ci);
                     totalDGCellBtn.Text = "Total : " + total;
                 }
             }

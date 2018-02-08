@@ -121,9 +121,9 @@ namespace InvoiceOTC.Repository.Service
 
                 result = context.db.Execute(m_Sql, obj);
             }
-            catch
+            catch(Exception ex)
             {
-
+                m_Log.Error("Delete Error", ex);
             }
 
             return result;
@@ -140,9 +140,9 @@ namespace InvoiceOTC.Repository.Service
                         "(@itemCode, @itemName, @itemSort, @brand, @jenis, @category, @subCategory, @price, @stat)";
                 result = context.db.Execute(m_Sql, obj);
             }
-            catch
+            catch(Exception ex)
             {
-                
+                m_Log.Error("INSERT ERROR", ex);
             }
 
             return result;
@@ -165,9 +165,9 @@ namespace InvoiceOTC.Repository.Service
                         "WHERE ITEMCODE = @itemCode";
                 result = context.db.Execute(m_Sql, obj);
             }
-            catch
+            catch(Exception ex)
             {
-
+                m_Log.Error("Update Error", ex);
             }
 
             return result;

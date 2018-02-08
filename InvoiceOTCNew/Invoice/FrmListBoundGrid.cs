@@ -22,7 +22,7 @@ namespace InvoiceOTCNew
         {
             InitializeComponent();
             SetHeader("Invoice");
-            SetDataGridTheme(dataGridView1, dataGridView2);
+            DataGridViewHelper.SetDataGridTheme(dataGridView1, dataGridView2);
             SetDataSource(invoiceBindingSource);
 
             productRepo = new ProductRepository();
@@ -170,7 +170,7 @@ namespace InvoiceOTCNew
                     countDGCellBtn.Text = "Count : " + selectedCellCount;
                     var total = (from DataGridViewCell cell in dataGridView1.SelectedCells
                                  where cell.FormattedValue.ToString() != string.Empty && cell.ValueType != typeof(string) && cell.ValueType != typeof(DateTime)
-                                 select Convert.ToDecimal(cell.FormattedValue)).Sum().ToString();
+                                 select Convert.ToDecimal(cell.FormattedValue)).Sum().ToString("N03",Program.ci);
                     totalDGCellBtn.Text = "Total : " + total;
                 }
             }

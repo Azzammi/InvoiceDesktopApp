@@ -8,6 +8,7 @@ using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 using InvoiceOTC.Repository.Service;
 using InvoiceOTCNew.Helper;
+using log4net;
 
 namespace InvoiceOTCNew
 {
@@ -47,12 +48,12 @@ namespace InvoiceOTCNew
             InitializeComponent();
             SetHeader("Invoice");
 
-            invoiceRepository = new InvoiceRepository();
-            invoiceDetailRepository = new InvoiceDetailRepository();
-            outletRepository = new OutletRepository();
-            productRepository = new ProductRepository();
+            invoiceRepository = new InvoiceRepository(Program.log);
+            invoiceDetailRepository = new InvoiceDetailRepository(Program.log);
+            outletRepository = new OutletRepository(Program.log);
+            productRepository = new ProductRepository(Program.log);
 
-            productBindingSource.DataSource = productRepository.GetActiveProduct();
+            productBindingSource.DataSource = productRepository.GetAll();
             outletBindingSource.DataSource = outletRepository.GetAll();
 
             CekKondisi(FormCondition.Inputting);

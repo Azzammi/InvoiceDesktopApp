@@ -117,6 +117,22 @@ namespace InvoiceOTC.Repository.Service
             }
             return list;
         }
+
+        public IList<Outlet> GetActiveOutlet()
+        {
+            IList<Outlet> list = new List<Outlet>();
+            try
+            {
+                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT FROM OUTLET WHERE OUTLSTAT = 't'";
+                list = context.db.Query<Outlet>(m_Sql).ToListSorted();
+
+            }
+            catch
+            {
+
+            }
+            return list;
+        }
         #endregion
 
         #region CRUD Methods

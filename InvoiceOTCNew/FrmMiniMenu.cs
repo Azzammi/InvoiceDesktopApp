@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 
+using InvoiceOTC.Repository.API;
+using InvoiceOTC.Repository.Service;
 using InvoiceOTCNew.Helper;
 using System.Reflection;
 
@@ -9,16 +11,19 @@ namespace InvoiceOTCNew
     public partial class FrmMiniMenu : Form, IListener
     {
         #region Declaration
-        
+        private IUserRepository userRepo;
         #endregion
 
+        #region Constructor
         public FrmMiniMenu()
         {
             InitializeComponent();
+            userRepo = new UserRepository(Program.log);
 
             this.Text = AssemblyProduct;
             softwareLbl.Text = AssemblyProduct + " " + AssemblyCopyright;
         }
+        #endregion
 
         private void listOutletShow(object sender, EventArgs e)
         {
@@ -73,6 +78,19 @@ namespace InvoiceOTCNew
             frm.ShowDialog();
         }
 
+        private void listProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmReportListProduct();
+            frm.ShowDialog();
+        }
+
+        private void listOutletToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmReportListOutlet();
+            frm.ShowDialog();
+        }
+
+        #region Form Handling
         private void CheckExistingForm(Form frm)
         {
             /* Function to check for the existing form */
@@ -82,13 +100,42 @@ namespace InvoiceOTCNew
                 {
                     window.Activate();
                     return;
-                }                
+                }
             }
             /* The code end here */
 
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void FrmMiniMenu_Load(object sender, EventArgs e)
+        {
+            CheckSession();
+        }
+
+        #region User Handling
+        /// <summary>
+        /// Method to check if user already logged in
+        /// </summary>
+        private void CheckSession()
+        {
+            if (string.IsNullOrEmpty(Session.GetCurrentUser()) || Session.GetLoginStatus() != true)
+            {
+                using (FrmLogin frm = new FrmLogin())
+                {
+                    frm.ShowDialog();
+                }
+                userLbl.Text = Session.GetCurrentUser();
+            }
+        }
+        private void FrmMiniMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            userRepo.Logout();
+            Session.LogOut();
+        }
+        #endregion
+
+        #endregion
 
         #region Application Information Properties
         public string AssemblyProduct
@@ -115,26 +162,9 @@ namespace InvoiceOTCNew
                 return ((AssemblyCopyrightAttribute)attributes[0]).Copyright;
             }
         }
+
         #endregion
 
-        private void FrmMiniMenu_Load(object sender, EventArgs e)
-        {
-            CheckSession();
-        }
-
-        /// <summary>
-        /// Method to check if user already logged in
-        /// </summary>
-        private void CheckSession()
-        {
-            if (string.IsNullOrEmpty(Session.GetCurrentUser()) || Session.GetLoginStatus() != true)
-            {
-                using (FrmLogin frm = new FrmLogin())
-                {
-                    frm.ShowDialog();
-                }
-                userLbl.Text = Session.GetCurrentUser();
-            }
-        }
+       
     }
 }

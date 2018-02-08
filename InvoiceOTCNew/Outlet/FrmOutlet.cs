@@ -17,7 +17,7 @@ namespace InvoiceOTCNew
             InitializeComponent();
             SetHeader("outlet");
 
-            outletRepository = new OutletRepository();
+            outletRepository = new OutletRepository(Program.log);
             CekKondisi(FormCondition.Ready);
         }
         /// <summary>

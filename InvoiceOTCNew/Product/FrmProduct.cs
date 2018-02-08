@@ -21,7 +21,7 @@ namespace InvoiceOTCNew
             InitializeComponent();
             SetHeader("Product");
 
-            productRepository = new ProductRepository();
+            productRepository = new ProductRepository(Program.log);
             CekKondisi(FormCondition.Ready);
         }
         /// <summary>
