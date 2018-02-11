@@ -39,7 +39,7 @@
             this.crViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crViewer.Location = new System.Drawing.Point(0, 0);
             this.crViewer.Name = "crViewer";
-            this.crViewer.Size = new System.Drawing.Size(639, 262);
+            this.crViewer.Size = new System.Drawing.Size(998, 427);
             this.crViewer.TabIndex = 0;
             this.crViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -48,7 +48,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(639, 262);
+            this.ClientSize = new System.Drawing.Size(998, 427);
             this.Controls.Add(this.crViewer);
             this.Name = "TemplateReportFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

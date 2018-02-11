@@ -100,7 +100,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(98, 28);
+            this.toolStripButton1.Size = new System.Drawing.Size(98, 14);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -111,7 +111,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 28);
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 14);
             this.toolStripButton2.Text = "toolStripButton2";
             // 
             // menuStrip1
@@ -206,21 +206,21 @@
             // rekapInvoiceToolStripMenuItem
             // 
             this.rekapInvoiceToolStripMenuItem.Name = "rekapInvoiceToolStripMenuItem";
-            this.rekapInvoiceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.rekapInvoiceToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.rekapInvoiceToolStripMenuItem.Text = "Rekap Invoice";
             this.rekapInvoiceToolStripMenuItem.Click += new System.EventHandler(this.rekapInvoiceToolStripMenuItem_Click);
             // 
             // listOutletToolStripMenuItem
             // 
             this.listOutletToolStripMenuItem.Name = "listOutletToolStripMenuItem";
-            this.listOutletToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.listOutletToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.listOutletToolStripMenuItem.Text = "List Outlet";
             this.listOutletToolStripMenuItem.Click += new System.EventHandler(this.listOutletToolStripMenuItem_Click);
             // 
             // listProductToolStripMenuItem
             // 
             this.listProductToolStripMenuItem.Name = "listProductToolStripMenuItem";
-            this.listProductToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.listProductToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.listProductToolStripMenuItem.Text = "List Product";
             this.listProductToolStripMenuItem.Click += new System.EventHandler(this.listProductToolStripMenuItem_Click);
             // 
@@ -239,9 +239,9 @@
             this.softwareLbl,
             this.userLbl,
             this.timeLbl});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 275);
+            this.statusStrip1.Location = new System.Drawing.Point(86, 275);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(851, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(765, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -249,7 +249,7 @@
             // 
             this.softwareLbl.ForeColor = System.Drawing.Color.White;
             this.softwareLbl.Name = "softwareLbl";
-            this.softwareLbl.Size = new System.Drawing.Size(584, 17);
+            this.softwareLbl.Size = new System.Drawing.Size(498, 17);
             this.softwareLbl.Spring = true;
             this.softwareLbl.Text = "toolStripStatusLabel1";
             // 
@@ -271,6 +271,7 @@
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -280,7 +281,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(851, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(86, 273);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -289,7 +290,7 @@
             this.invoiceBtn.Image = global::InvoiceOTCNew.Properties.Resources.Invoice;
             this.invoiceBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.invoiceBtn.Name = "invoiceBtn";
-            this.invoiceBtn.Size = new System.Drawing.Size(81, 36);
+            this.invoiceBtn.Size = new System.Drawing.Size(83, 36);
             this.invoiceBtn.Text = "Invoice";
             this.invoiceBtn.Click += new System.EventHandler(this.listInvoiceShow);
             // 
@@ -298,7 +299,7 @@
             this.outletBtn.Image = global::InvoiceOTCNew.Properties.Resources.Shop_WF;
             this.outletBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.outletBtn.Name = "outletBtn";
-            this.outletBtn.Size = new System.Drawing.Size(76, 36);
+            this.outletBtn.Size = new System.Drawing.Size(83, 36);
             this.outletBtn.Text = "Outlet";
             this.outletBtn.Click += new System.EventHandler(this.listOutletShow);
             // 
@@ -307,7 +308,7 @@
             this.productBtn.Image = global::InvoiceOTCNew.Properties.Resources.Product_Box_02_WF;
             this.productBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.productBtn.Name = "productBtn";
-            this.productBtn.Size = new System.Drawing.Size(85, 36);
+            this.productBtn.Size = new System.Drawing.Size(83, 36);
             this.productBtn.Text = "Product";
             this.productBtn.Click += new System.EventHandler(this.listProductShow);
             // 
@@ -322,8 +323,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(851, 297);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.ForeColor = System.Drawing.Color.White;

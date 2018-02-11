@@ -35,6 +35,7 @@
             System.Windows.Forms.Label outlRouteLabel;
             System.Windows.Forms.Label outlSlsmLabel;
             System.Windows.Forms.Label outlStatLabel;
+            System.Windows.Forms.Label isppnLabel;
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.outletBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -43,12 +44,14 @@
             this.outlNameTextBox = new System.Windows.Forms.TextBox();
             this.outlRouteTextBox = new System.Windows.Forms.TextBox();
             this.outlSlsmTextBox = new System.Windows.Forms.TextBox();
+            this.isppnCheckBox = new System.Windows.Forms.CheckBox();
             outlAddressLabel = new System.Windows.Forms.Label();
             outlCodeLabel = new System.Windows.Forms.Label();
             outlNameLabel = new System.Windows.Forms.Label();
             outlRouteLabel = new System.Windows.Forms.Label();
             outlSlsmLabel = new System.Windows.Forms.Label();
             outlStatLabel = new System.Windows.Forms.Label();
+            isppnLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +61,7 @@
             outlAddressLabel.AutoSize = true;
             outlAddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             outlAddressLabel.ForeColor = System.Drawing.Color.White;
-            outlAddressLabel.Location = new System.Drawing.Point(3, 63);
+            outlAddressLabel.Location = new System.Drawing.Point(3, 59);
             outlAddressLabel.Name = "outlAddressLabel";
             outlAddressLabel.Size = new System.Drawing.Size(77, 15);
             outlAddressLabel.TabIndex = 0;
@@ -80,7 +83,7 @@
             outlNameLabel.AutoSize = true;
             outlNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             outlNameLabel.ForeColor = System.Drawing.Color.White;
-            outlNameLabel.Location = new System.Drawing.Point(3, 29);
+            outlNameLabel.Location = new System.Drawing.Point(3, 27);
             outlNameLabel.Name = "outlNameLabel";
             outlNameLabel.Size = new System.Drawing.Size(67, 15);
             outlNameLabel.TabIndex = 4;
@@ -91,7 +94,7 @@
             outlRouteLabel.AutoSize = true;
             outlRouteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             outlRouteLabel.ForeColor = System.Drawing.Color.White;
-            outlRouteLabel.Location = new System.Drawing.Point(3, 119);
+            outlRouteLabel.Location = new System.Drawing.Point(3, 115);
             outlRouteLabel.Name = "outlRouteLabel";
             outlRouteLabel.Size = new System.Drawing.Size(66, 15);
             outlRouteLabel.TabIndex = 6;
@@ -102,7 +105,7 @@
             outlSlsmLabel.AutoSize = true;
             outlSlsmLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             outlSlsmLabel.ForeColor = System.Drawing.Color.White;
-            outlSlsmLabel.Location = new System.Drawing.Point(3, 153);
+            outlSlsmLabel.Location = new System.Drawing.Point(3, 149);
             outlSlsmLabel.Name = "outlSlsmLabel";
             outlSlsmLabel.Size = new System.Drawing.Size(61, 15);
             outlSlsmLabel.TabIndex = 8;
@@ -113,7 +116,7 @@
             outlStatLabel.AutoSize = true;
             outlStatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             outlStatLabel.ForeColor = System.Drawing.Color.White;
-            outlStatLabel.Location = new System.Drawing.Point(3, 184);
+            outlStatLabel.Location = new System.Drawing.Point(3, 180);
             outlStatLabel.Name = "outlStatLabel";
             outlStatLabel.Size = new System.Drawing.Size(54, 15);
             outlStatLabel.TabIndex = 10;
@@ -136,10 +139,12 @@
             this.tableLayoutPanel2.Controls.Add(this.outlNameTextBox, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.outlRouteTextBox, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.outlSlsmTextBox, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.isppnCheckBox, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(isppnLabel, 0, 6);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 58);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 6;
+            this.tableLayoutPanel2.RowCount = 7;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.03175F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.96825F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 56F));
@@ -147,7 +152,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(391, 217);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(407, 233);
             this.tableLayoutPanel2.TabIndex = 3;
             // 
             // checkBox1
@@ -156,11 +161,11 @@
             this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.outletBindingSource, "outlStat", true));
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBox1.ForeColor = System.Drawing.Color.White;
-            this.checkBox1.Location = new System.Drawing.Point(106, 187);
+            this.checkBox1.Location = new System.Drawing.Point(111, 183);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(67, 19);
+            this.checkBox1.Size = new System.Drawing.Size(57, 19);
             this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Active ?";
+            this.checkBox1.Text = "Active";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // outletBindingSource
@@ -170,7 +175,7 @@
             // outlAddressTextBox
             // 
             this.outlAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.outletBindingSource, "outlAddress", true));
-            this.outlAddressTextBox.Location = new System.Drawing.Point(106, 66);
+            this.outlAddressTextBox.Location = new System.Drawing.Point(111, 62);
             this.outlAddressTextBox.Multiline = true;
             this.outlAddressTextBox.Name = "outlAddressTextBox";
             this.outlAddressTextBox.Size = new System.Drawing.Size(282, 45);
@@ -179,7 +184,7 @@
             // outlCodeTextBox
             // 
             this.outlCodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.outletBindingSource, "outlCode", true));
-            this.outlCodeTextBox.Location = new System.Drawing.Point(106, 3);
+            this.outlCodeTextBox.Location = new System.Drawing.Point(111, 3);
             this.outlCodeTextBox.Name = "outlCodeTextBox";
             this.outlCodeTextBox.Size = new System.Drawing.Size(282, 20);
             this.outlCodeTextBox.TabIndex = 0;
@@ -187,7 +192,7 @@
             // outlNameTextBox
             // 
             this.outlNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.outletBindingSource, "outlName", true));
-            this.outlNameTextBox.Location = new System.Drawing.Point(106, 32);
+            this.outlNameTextBox.Location = new System.Drawing.Point(111, 30);
             this.outlNameTextBox.Name = "outlNameTextBox";
             this.outlNameTextBox.Size = new System.Drawing.Size(282, 20);
             this.outlNameTextBox.TabIndex = 1;
@@ -195,7 +200,7 @@
             // outlRouteTextBox
             // 
             this.outlRouteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.outletBindingSource, "outlRoute", true));
-            this.outlRouteTextBox.Location = new System.Drawing.Point(106, 122);
+            this.outlRouteTextBox.Location = new System.Drawing.Point(111, 118);
             this.outlRouteTextBox.Name = "outlRouteTextBox";
             this.outlRouteTextBox.Size = new System.Drawing.Size(282, 20);
             this.outlRouteTextBox.TabIndex = 3;
@@ -203,16 +208,37 @@
             // outlSlsmTextBox
             // 
             this.outlSlsmTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.outletBindingSource, "outlSlsm", true));
-            this.outlSlsmTextBox.Location = new System.Drawing.Point(106, 156);
+            this.outlSlsmTextBox.Location = new System.Drawing.Point(111, 152);
             this.outlSlsmTextBox.Name = "outlSlsmTextBox";
             this.outlSlsmTextBox.Size = new System.Drawing.Size(282, 20);
             this.outlSlsmTextBox.TabIndex = 4;
+            // 
+            // isppnLabel
+            // 
+            isppnLabel.AutoSize = true;
+            isppnLabel.ForeColor = System.Drawing.Color.White;
+            isppnLabel.Location = new System.Drawing.Point(3, 212);
+            isppnLabel.Name = "isppnLabel";
+            isppnLabel.Size = new System.Drawing.Size(60, 13);
+            isppnLabel.TabIndex = 12;
+            isppnLabel.Text = "Use PPN ?";
+            // 
+            // isppnCheckBox
+            // 
+            this.isppnCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.outletBindingSource, "isppn", true));
+            this.isppnCheckBox.ForeColor = System.Drawing.Color.White;
+            this.isppnCheckBox.Location = new System.Drawing.Point(111, 215);
+            this.isppnCheckBox.Name = "isppnCheckBox";
+            this.isppnCheckBox.Size = new System.Drawing.Size(104, 15);
+            this.isppnCheckBox.TabIndex = 13;
+            this.isppnCheckBox.Text = "Yes";
+            this.isppnCheckBox.UseVisualStyleBackColor = true;
             // 
             // FrmOutlet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 316);
+            this.ClientSize = new System.Drawing.Size(407, 332);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Name = "FrmOutlet";
             this.Text = "FrmOutlet";
@@ -234,5 +260,6 @@
         private System.Windows.Forms.TextBox outlRouteTextBox;
         private System.Windows.Forms.TextBox outlSlsmTextBox;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox isppnCheckBox;
     }
 }

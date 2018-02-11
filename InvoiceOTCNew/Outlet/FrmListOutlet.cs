@@ -89,6 +89,11 @@ namespace InvoiceOTCNew
             var frm = new FrmImportOutlet();
             frm.ShowDialog();
         }
+        protected override void printBtn_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmBatchOutlet();
+            frm.ShowDialog();
+        }
         #endregion        
 
         #region IListener Method
@@ -106,6 +111,7 @@ namespace InvoiceOTCNew
         }
         #endregion
 
+        #region DetaGridViewMethod
         private void outletDataGridView_SelectionChanged(object sender, EventArgs e)
         {
             int selectedCellCount = outletDataGridView.GetCellCount(DataGridViewElementStates.Selected);
@@ -119,15 +125,16 @@ namespace InvoiceOTCNew
                 else
                 {
                     //Using Linq to iterate through selected cells
-                    countDGCellBtn.Text = "Count : " + selectedCellCount; 
-                                       
-                    var total =  (from DataGridViewCell cell in outletDataGridView.SelectedCells
-                                  where cell.FormattedValue.ToString() != string.Empty && cell.ValueType != typeof(string)
-                                  select Convert.ToInt32(cell.FormattedValue)).Sum().ToString();
+                    countDGCellBtn.Text = "Count : " + selectedCellCount;
+
+                    var total = (from DataGridViewCell cell in outletDataGridView.SelectedCells
+                                 where cell.FormattedValue.ToString() != string.Empty && cell.ValueType != typeof(string)
+                                 select Convert.ToInt32(cell.FormattedValue)).Sum().ToString();
                     totalDGCellBtn.Text = "Total : " + total;
-                    
+
                 }
             }
         }
+        #endregion
     }
 }

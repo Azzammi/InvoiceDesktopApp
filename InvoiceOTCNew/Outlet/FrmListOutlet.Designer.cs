@@ -30,13 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.outletDataGridView = new System.Windows.Forms.DataGridView();
+            this.outletBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.outlCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outlNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outlAddressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outlSlsmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outlRouteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.outlStatDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.outletBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.isppn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.outletDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -51,14 +52,19 @@
             this.outlAddressDataGridViewTextBoxColumn,
             this.outlSlsmDataGridViewTextBoxColumn,
             this.outlRouteDataGridViewTextBoxColumn,
-            this.outlStatDataGridViewCheckBoxColumn});
+            this.outlStatDataGridViewCheckBoxColumn,
+            this.isppn});
             this.outletDataGridView.DataSource = this.outletBindingSource;
             this.outletDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.outletDataGridView.Location = new System.Drawing.Point(0, 93);
             this.outletDataGridView.Name = "outletDataGridView";
-            this.outletDataGridView.Size = new System.Drawing.Size(711, 276);
+            this.outletDataGridView.Size = new System.Drawing.Size(711, 251);
             this.outletDataGridView.TabIndex = 3;
             this.outletDataGridView.SelectionChanged += new System.EventHandler(this.outletDataGridView_SelectionChanged);
+            // 
+            // outletBindingSource
+            // 
+            this.outletBindingSource.DataSource = typeof(InvoiceOTC.Model.Outlet);
             // 
             // outlCodeDataGridViewTextBoxColumn
             // 
@@ -96,9 +102,11 @@
             this.outlStatDataGridViewCheckBoxColumn.HeaderText = "outlStat";
             this.outlStatDataGridViewCheckBoxColumn.Name = "outlStatDataGridViewCheckBoxColumn";
             // 
-            // outletBindingSource
+            // isppn
             // 
-            this.outletBindingSource.DataSource = typeof(InvoiceOTC.Model.Outlet);
+            this.isppn.DataPropertyName = "isppn";
+            this.isppn.HeaderText = "isppn";
+            this.isppn.Name = "isppn";
             // 
             // FrmListOutlet
             // 
@@ -112,17 +120,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.outletDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.DataGridView outletDataGridView;        
+        private System.Windows.Forms.BindingSource outletBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn outlCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn outlNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn outlAddressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn outlSlsmDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn outlRouteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn outlStatDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.BindingSource outletBindingSource;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isppn;
     }
 }

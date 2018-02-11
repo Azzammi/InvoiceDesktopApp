@@ -155,7 +155,15 @@ namespace InvoiceOTCNew
                 e.Cancel = true;
             }
         }
-        #endregion
+        
+        private void outletBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+            Outlet outlet = (Outlet)outletBindingSource.Current;
+            Invoice currentInvoice = (Invoice)invoiceBindingSource.Current;
 
+            if (outlet == null || currentInvoice == null) return;
+            currentInvoice.isPPN = outlet.isppn;
+        }
+        #endregion
     }
 }

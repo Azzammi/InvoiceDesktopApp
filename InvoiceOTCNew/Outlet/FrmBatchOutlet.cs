@@ -8,28 +8,27 @@ using InvoiceOTCNew.Helper;
 
 namespace InvoiceOTCNew
 {
-    public partial class FrmBatchProduct : TemplateFormBatch
+    public partial class FrmBatchOutlet : TemplateFormBatch
     {
         #region Declaration
-        private IProductRepository productRepo;
+        private IOutletRepository outletRepo;
         #endregion
 
         #region Constructor
-        public FrmBatchProduct()
+        public FrmBatchOutlet()
         {
             InitializeComponent();
-            productRepo = new ProductRepository(Program.log);
+            outletRepo = new OutletRepository(Program.log);
 
-            SetHeader("Product Batch Operation");
-            SetDataSource(productBindingSource);
-            DataGridViewHelper.SetDataGridTheme(productDataGridView);
+            SetHeader("Set Active Outlet");
+            DataGridViewHelper.SetDataGridTheme(outletDataGridView);
         }
         #endregion
 
-        #region Form Load
-        private void FrmBatchProduct_Load(object sender, EventArgs e)
+        #region Form-Load
+        private void FrmBatchOutlet_Load(object sender, EventArgs e)
         {
-            productBindingSource.DataSource = productRepo.GetAll();
+            outletBindingSource.DataSource = outletRepo.GetAll();
         }
         #endregion
 
@@ -37,32 +36,32 @@ namespace InvoiceOTCNew
         protected override void CheckAllBtn_CheckedChanged(object sender, EventArgs e)
         {
             // Validation 
-            if (productBindingSource.DataSource == null) return;            
-           
+            if (outletBindingSource.DataSource == null) return;
+
             if (CheckAllBtn.Checked != false)
             {
-                foreach (DataGridViewRow row in productDataGridView.Rows)
+                foreach (DataGridViewRow row in outletDataGridView.Rows)
                 {
-                    Product item = row.DataBoundItem as Product;
+                    Outlet item = row.DataBoundItem as Outlet;
                     if (item != null)
                     {
-                        item.stat = true;
+                        item.outlStat = true;
                     }
                 }
             }
             else
             {
-                foreach (DataGridViewRow row in productDataGridView.Rows)
+                foreach (DataGridViewRow row in outletDataGridView.Rows)
                 {
-                    Product item = row.DataBoundItem as Product;
+                    Outlet item = row.DataBoundItem as Outlet;
                     if (item != null)
                     {
-                        item.stat = false;
+                        item.outlStat = false;
                     }
                 }
             }
 
-            productBindingSource.ResetBindings(false);
+            outletBindingSource.ResetBindings(false);
         }
         protected override void printBtn_Click(object sender, EventArgs e)
         {
@@ -70,18 +69,17 @@ namespace InvoiceOTCNew
         }
         protected override void saveBtn_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in productDataGridView.Rows)
+            foreach (DataGridViewRow row in outletDataGridView.Rows)
             {
-                Product item = row.DataBoundItem as Product;
+                Outlet item = row.DataBoundItem as Outlet;
                 if (item != null)
                 {
-                    productRepo.Update(item);
+                    outletRepo.Update(item);
                 }
             }
 
             this.Close();
         }
-        #endregion
-
+        #endregion        
     }
 }
