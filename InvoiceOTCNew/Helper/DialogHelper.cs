@@ -75,5 +75,29 @@ namespace InvoiceOTCNew
             }                  
         }
 
+        /// <summary>
+        /// Show Exit Confirmation
+        /// </summary>
+        /// <param name="sender">The want to close form</param>
+        /// <returns></returns>
+        public static int ExitDialog(Form sender)
+        {
+            var result = 0;
+
+            //Confirm Delete           
+            var message = String.Format("Mau Menutup form ini : " + sender.Name + ", masih ada data yang belum tersimpan !");
+            DialogResult dialogResult = MessageBox.Show(message, "Confirm Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            //Delete Item
+            if (dialogResult == DialogResult.Yes || dialogResult == DialogResult.OK)
+            {
+                result = 1;
+            }
+            else
+            {
+                result = 0;
+            }
+            return result;
+        }
     }
 }

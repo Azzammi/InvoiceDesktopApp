@@ -25,8 +25,8 @@ namespace InvoiceOTCNew
         #region Constructor
         public TemplateEntryFrm()
         {
-            InitializeComponent();
-        }        
+            InitializeComponent();            
+        }
         #endregion
 
         #region Protected and Override Method
@@ -39,8 +39,8 @@ namespace InvoiceOTCNew
             this.Text = header;
             this.lblHeader.Text = header.ToUpper();
             this.Text = header.ToUpperInvariant();
-        }       
-      
+        }
+
         /// <summary>
         /// To check if form is ready to input new data or not
         /// </summary>
@@ -51,14 +51,14 @@ namespace InvoiceOTCNew
             switch (condition)
             {
                 case FormCondition.Ready:
-                    
+
                     InputControlHelper.DisableInput(this);
                     button1.Enabled = true;
                     button2.Enabled = false;
 
                     break;
                 case FormCondition.Inputting:
-                    
+
                     InputControlHelper.EnableInput(this);
                     button1.Enabled = false;
                     button2.Enabled = true;
@@ -68,6 +68,8 @@ namespace InvoiceOTCNew
                     break;
             }
 
+            //Method to setup the control
+            InputControlHelper.SetUpControls(this);
             _condition = condition;
             return condition;
         }
@@ -83,12 +85,26 @@ namespace InvoiceOTCNew
         }
         #endregion
 
+        #region Supplementary Function
+        /// <summary>
+        /// Prevent window from closing before the data inputted is saved
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TemplateEntryFrm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(_condition == FormCondition.Inputting)
+            if (_condition == FormCondition.Inputting)
             {
-                e.Cancel = true;
+                if(DialogHelper.ExitDialog(this) != 0)
+                {
+                    e.Cancel = false;
+                }
+                else
+                {
+                    e.Cancel = true;
+                }                
             }
-        }
+        }       
+        #endregion    
     }
 }

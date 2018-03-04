@@ -32,8 +32,8 @@ namespace InvoiceOTCNew
             outletRepository = new OutletRepository();
             productRepository = new ProductRepository();
 
-            productBindingSource.DataSource = productRepository.GetAll();
-            outletBindingSource.DataSource = outletRepository.GetAll();
+            productBindingSource.DataSource = productRepository.GetActiveProduct();
+            outletBindingSource.DataSource = outletRepository.GetActiveOutlet();
 
             CekKondisi(FormCondition.Ready);
             isAddNew = false;
@@ -53,8 +53,8 @@ namespace InvoiceOTCNew
             outletRepository = new OutletRepository(Program.log);
             productRepository = new ProductRepository(Program.log);
 
-            productBindingSource.DataSource = productRepository.GetAll();
-            outletBindingSource.DataSource = outletRepository.GetAll();
+            productBindingSource.DataSource = productRepository.GetActiveProduct();
+            outletBindingSource.DataSource = outletRepository.GetActiveOutlet();
 
             CekKondisi(FormCondition.Inputting);
             invoiceBindingSource.Add(data);
@@ -76,6 +76,8 @@ namespace InvoiceOTCNew
             Invoice dataInvoice = (Invoice)invoiceBindingSource.Current;
 
             if (dataInvoice == null || dataInvoice.p_Items == null || dataInvoice.nomorInvoice == null) return;
+            dataInvoice.issuedDate = issuedDateDateTimePicker.Value;
+            dataInvoice.dueDate = dueDateDateTimePicker.Value;
             dataInvoice.pengguna = Session.GetCurrentUser();
             countBtn.PerformClick();
 

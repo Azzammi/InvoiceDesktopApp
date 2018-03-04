@@ -126,6 +126,7 @@
       <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\DataGridViewHelper.cs" />
+    <Compile Include="Helper\StringHelper.cs" />
     <Compile Include="Outlet\FrmBatchOutlet.cs">
       <SubType>Form</SubType>
     </Compile>
