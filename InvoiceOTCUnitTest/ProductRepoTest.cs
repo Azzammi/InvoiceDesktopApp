@@ -14,7 +14,7 @@ namespace InvoiceOTCUnitTest
     [TestFixture]
     public class ProductRepoTest
     {
-        /* The method name still random cause of Nunit Bug */
+        /* The method name still random, cause of Nunit Bug */
 
         #region Declaration
         private IProductRepository m_product;
@@ -37,16 +37,7 @@ namespace InvoiceOTCUnitTest
             var index = 0;
             var product = products[index];
 
-            Assert.IsNotNull(products);
-            //Assert.AreEqual("TST00001", product.itemCode.Trim());
-            //Assert.AreEqual("ROTI TAWAR SPESIAL", product.itemName.Trim());
-            //Assert.AreEqual("RTS", product.itemSort.Trim());
-            //Assert.AreEqual("SARI ROTI", product.brand.Trim());
-            //Assert.AreEqual("BREAD", product.jenis.Trim());
-            //Assert.AreEqual("WHITE BREAD", product.category.Trim());
-            //Assert.AreEqual("TAWAR SERIES", product.subCategory.Trim());
-            //Assert.AreEqual(12000, product.price);
-            //Assert.AreEqual(false, product.stat);
+            Assert.IsNotNull(products);       
         }
 
         [Test]
@@ -61,6 +52,25 @@ namespace InvoiceOTCUnitTest
             Assert.AreEqual("UnitTest Update", productBaru.subCategory);
             Assert.AreEqual(242409290829048, productBaru.price);
             Assert.AreEqual(false, productBaru.stat);
+        }
+
+        [Test]
+        public void GetBySearch()
+        {
+            var products = m_product.Search("ITEMCODE", "TST00001");
+
+            var index = 0;
+            var product = products[index];
+
+            Assert.IsNotNull(products);
+            Assert.AreEqual("TEST UNIT UPDATE", product.itemName);
+        }
+
+        [Test]
+        public void GetActiveProduct()
+        {
+            var products = m_product.GetActiveProduct();
+            Assert.IsNotNull(products);
         }
 
         [Test]

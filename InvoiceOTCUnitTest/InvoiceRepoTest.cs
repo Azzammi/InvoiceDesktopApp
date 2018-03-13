@@ -73,7 +73,7 @@ namespace InvoiceOTCUnitTest
         {
             var invoices = invoice.GetAll();
             Assert.IsNotNull(invoice);
-        }
+        }        
 
         [Test]
         public void RemoveTest()

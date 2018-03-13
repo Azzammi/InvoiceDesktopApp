@@ -43,11 +43,11 @@
             this.editBtn = new System.Windows.Forms.Button();
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.totalDGCellBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.countDGCellBtn = new System.Windows.Forms.ToolStripButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tableLayoutPanel1.SuspendLayout();
             this.findStrip2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -234,21 +234,15 @@
             this.ExitBtn.UseVisualStyleBackColor = true;
             this.ExitBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
-            // toolStrip1
+            // textBox1
             // 
-            this.toolStrip1.BackColor = System.Drawing.Color.DarkGray;
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.totalDGCellBtn,
-            this.toolStripSeparator1,
-            this.countDGCellBtn});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 362);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip1.Size = new System.Drawing.Size(875, 25);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
+            this.textBox1.Location = new System.Drawing.Point(3, 3);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(413, 41);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.Text = "To Delete Data, Select the leftmost cell of the row to select all cell in row the" +
+    "n press delete";
             // 
             // totalDGCellBtn
             // 
@@ -276,21 +270,27 @@
             this.countDGCellBtn.Size = new System.Drawing.Size(50, 22);
             this.countDGCellBtn.Text = "Count :";
             // 
-            // textBox1
+            // toolStrip1
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(413, 41);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "To Delete Data, Select the leftmost cell of the row to select all cell in row the" +
-    "n press delete";
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.totalDGCellBtn,
+            this.toolStripSeparator1,
+            this.countDGCellBtn});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 362);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.toolStrip1.Size = new System.Drawing.Size(875, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // TemplateListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(875, 387);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -328,12 +328,12 @@
         private System.Windows.Forms.ToolStripButton advancedSearchBtn;
         protected InvoiceOTC.Controller.FindStrip findStrip2;
         private System.Windows.Forms.ToolStripButton importBtn;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        protected System.Windows.Forms.ToolStripButton totalDGCellBtn;
-        protected System.Windows.Forms.ToolStripButton countDGCellBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton printBtn;
         private System.Windows.Forms.TextBox textBox1;
+        protected System.Windows.Forms.ToolStripButton totalDGCellBtn;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        protected System.Windows.Forms.ToolStripButton countDGCellBtn;
+        private System.Windows.Forms.ToolStrip toolStrip1;
     }
 }

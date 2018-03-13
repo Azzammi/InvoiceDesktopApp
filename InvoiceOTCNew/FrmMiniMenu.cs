@@ -129,9 +129,20 @@ namespace InvoiceOTCNew
             }
         }
         private void FrmMiniMenu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            userRepo.Logout();
-            Session.LogOut();
+        {         
+            //Check if user already logged
+            if(Session.GetLoginStatus() != false)
+            {
+                if (DialogHelper.ExitDialog(this) != 0)
+                {
+                    userRepo.Logout();
+                    Session.LogOut();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }                        
         }
         #endregion
 

@@ -31,6 +31,8 @@ namespace InvoiceOTCNew
             logsBindingNavigator.BindingSource = logsBindingSource;
             logsBindingSource.CurrentChanged += new System.EventHandler(bindingSource1_CurrentChanged);
             logsBindingSource.DataSource = offsetList;
+
+            DataGridViewHelper.SetDataGridTheme(logsDataGridView);
         }
 
         private IList<Logs> logData;

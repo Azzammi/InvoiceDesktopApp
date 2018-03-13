@@ -81,7 +81,7 @@ namespace InvoiceOTC.Repository.Service
 
             try
             {
-                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product WHERE Stat = 't'";
+                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product WHERE Stat = 't' ORDER BY ITEMCODE ASC";
                 listOfProduct = context.db.Query<Product>(m_Sql).ToListSorted();
             }
             catch (Exception ex)
@@ -99,7 +99,7 @@ namespace InvoiceOTC.Repository.Service
             try
             {
                 m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product " +
-                         "WHERE ITEMCODE = @value";
+                         "WHERE ITEMCODE = @itemCode";
                 product = context.db.Query<Product>(m_Sql, new { itemCode }).SingleOrDefault();
             }
             catch

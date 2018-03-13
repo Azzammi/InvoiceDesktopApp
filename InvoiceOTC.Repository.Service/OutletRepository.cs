@@ -160,7 +160,7 @@ namespace InvoiceOTC.Repository.Service
                 m_Sql = @"INSERT INTO OUTLET " +
                         "(OutlCode, OutlName, OutlAddress, OutlSlsm, OutlRoute, OutlStat, ISPPN)" +
                         " VALUES " +
-                        "(@outlCode, @outlName, @outlAddress, @outlSlsm, @outlRoute, @OutlStat)";
+                        "(@outlCode, @outlName, @outlAddress, @outlSlsm, @outlRoute, @OutlStat, @isPPN)";
                 result = context.db.Execute(m_Sql, obj);
             }
             catch
