@@ -65,21 +65,9 @@ namespace InvoiceOTCUnitTest
         }
 
         [Test]
-        public void GetBySearch()
+        public void GetAllSorted()
         {
-            var outlets = m_outlet.Search("OutlCode", "outlet001");
-
-            var index = 0;
-            var outlet = outlets[index];
-
-            Assert.IsNotNull(outlets);
-            Assert.AreEqual("slsmtest", outlet.outlSlsm);
-        }
-
-        [Test]
-        public void GetActiveOutlet()
-        {
-            var outlets = m_outlet.GetActiveOutlet();
+            var outlets = m_outlet.GetAll();
             Assert.IsNotNull(outlets);
         }
 
@@ -98,7 +86,7 @@ namespace InvoiceOTCUnitTest
         }
 
         [Test]
-        public void GetOutletByName()
+        public void EditTestGetOutletByName()
         {
             var outlet = m_outlet.GetOutletByName("LenovoMart");
 
@@ -112,7 +100,7 @@ namespace InvoiceOTCUnitTest
         }
 
         [Test]
-        public void GetOutletBySalesmanId()
+        public void EditTestGetOutletBySalesmanId()
         {
             var outlet = m_outlet.GetOutletBySalesmanID("slsmtest");
 

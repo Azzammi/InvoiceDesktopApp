@@ -310,9 +310,9 @@ namespace InvoiceOTC.Repository.Service
                     m_Detail.Save(detail);
                 }
             }
-            catch(Exception ex)
+            catch
             {
-                m_Log.Error("Update Invoice failed", ex);
+               
             }
             return result;
         }

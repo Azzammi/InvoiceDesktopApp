@@ -81,7 +81,6 @@
       <HintPath>..\packages\Npgsql.3.2.6\lib\net451\Npgsql.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Syncfusion.Compression.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Grid.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Grid.Grouping.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Grid.Grouping.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
@@ -90,10 +89,8 @@
     <Reference Include="Syncfusion.Shared.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Shared.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.SpellChecker.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
-    <Reference Include="Syncfusion.Spreadsheet.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="Syncfusion.Tools.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="Syncfusion.Tools.Windows, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.XlsIO.Base, Version=15.3460.0.26, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -128,14 +125,7 @@
     <Compile Include="FrmAbout.Designer.cs">
       <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRibbonMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRibbonMenu.Designer.cs">
-      <DependentUpon>FrmRibbonMenu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Helper\DataGridViewHelper.cs" />
-    <Compile Include="Helper\IMainMenu.cs" />
     <Compile Include="Helper\StringHelper.cs" />
     <Compile Include="Outlet\FrmBatchOutlet.cs">
       <SubType>Form</SubType>
@@ -184,6 +174,12 @@
     </Compile>
     <Compile Include="FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMainMenu.Designer.cs">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMiniMenu.cs">
       <SubType>Form</SubType>
@@ -330,9 +326,6 @@
     <EmbeddedResource Include="FrmAbout.resx">
       <DependentUpon>FrmAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRibbonMenu.resx">
-      <DependentUpon>FrmRibbonMenu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Outlet\FrmBatchOutlet.resx">
       <DependentUpon>FrmBatchOutlet.cs</DependentUpon>
     </EmbeddedResource>
@@ -365,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMainMenu.resx">
+      <DependentUpon>FrmMainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMiniMenu.resx">
       <DependentUpon>FrmMiniMenu.cs</DependentUpon>
