@@ -30,7 +30,7 @@ namespace InvoiceOTCNew
             {
                 if (spi.IsSingleInstance)
                 {
-                    Application.Run(new FrmMiniMenu());
+                    Application.Run(new FrmRibbonMenu());
                 }
                 else
                 {

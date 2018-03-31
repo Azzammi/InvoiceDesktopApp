@@ -120,7 +120,7 @@ namespace InvoiceOTCNew
         #region Report
         public void invoicePrint_Show(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+
         }
         public void productsPrint_Show(object sender, EventArgs e)
         {
@@ -165,5 +165,17 @@ namespace InvoiceOTCNew
         {
             timeLbl.Text = DateTime.Now.ToShortDateString() + " | " + DateTime.Now.ToShortTimeString();
         }
+
+        #region Tab AR
+        #region Invoice
+
+        private void createInvoiceMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmInvoice();
+            frm.ShowDialog();
+        }
+        #endregion
+        #endregion
+
     }
 }

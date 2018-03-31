@@ -30,7 +30,8 @@ namespace InvoiceOTCNew.Helper
         {
             switch (input.Text)
             {
-                case null: throw new ArgumentNullException(nameof(input.Text));                
+                case null: throw new ArgumentNullException(nameof(input.Text));
+                case "": return "";         
                 default: return input.Text.First().ToString().ToUpper() + input.Text.Substring(1);
             }
         }

@@ -60,7 +60,7 @@
             // 
             outlAddressLabel.AutoSize = true;
             outlAddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            outlAddressLabel.ForeColor = System.Drawing.Color.White;
+            outlAddressLabel.ForeColor = System.Drawing.Color.Black;
             outlAddressLabel.Location = new System.Drawing.Point(3, 59);
             outlAddressLabel.Name = "outlAddressLabel";
             outlAddressLabel.Size = new System.Drawing.Size(77, 15);
@@ -71,7 +71,7 @@
             // 
             outlCodeLabel.AutoSize = true;
             outlCodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            outlCodeLabel.ForeColor = System.Drawing.Color.White;
+            outlCodeLabel.ForeColor = System.Drawing.Color.Black;
             outlCodeLabel.Location = new System.Drawing.Point(3, 0);
             outlCodeLabel.Name = "outlCodeLabel";
             outlCodeLabel.Size = new System.Drawing.Size(62, 15);
@@ -82,7 +82,7 @@
             // 
             outlNameLabel.AutoSize = true;
             outlNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            outlNameLabel.ForeColor = System.Drawing.Color.White;
+            outlNameLabel.ForeColor = System.Drawing.Color.Black;
             outlNameLabel.Location = new System.Drawing.Point(3, 27);
             outlNameLabel.Name = "outlNameLabel";
             outlNameLabel.Size = new System.Drawing.Size(67, 15);
@@ -93,7 +93,7 @@
             // 
             outlRouteLabel.AutoSize = true;
             outlRouteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            outlRouteLabel.ForeColor = System.Drawing.Color.White;
+            outlRouteLabel.ForeColor = System.Drawing.Color.Black;
             outlRouteLabel.Location = new System.Drawing.Point(3, 115);
             outlRouteLabel.Name = "outlRouteLabel";
             outlRouteLabel.Size = new System.Drawing.Size(66, 15);
@@ -104,7 +104,7 @@
             // 
             outlSlsmLabel.AutoSize = true;
             outlSlsmLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            outlSlsmLabel.ForeColor = System.Drawing.Color.White;
+            outlSlsmLabel.ForeColor = System.Drawing.Color.Black;
             outlSlsmLabel.Location = new System.Drawing.Point(3, 149);
             outlSlsmLabel.Name = "outlSlsmLabel";
             outlSlsmLabel.Size = new System.Drawing.Size(61, 15);
@@ -115,12 +115,22 @@
             // 
             outlStatLabel.AutoSize = true;
             outlStatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            outlStatLabel.ForeColor = System.Drawing.Color.White;
+            outlStatLabel.ForeColor = System.Drawing.Color.Black;
             outlStatLabel.Location = new System.Drawing.Point(3, 180);
             outlStatLabel.Name = "outlStatLabel";
             outlStatLabel.Size = new System.Drawing.Size(54, 15);
             outlStatLabel.TabIndex = 10;
             outlStatLabel.Text = "outl Stat:";
+            // 
+            // isppnLabel
+            // 
+            isppnLabel.AutoSize = true;
+            isppnLabel.ForeColor = System.Drawing.Color.Black;
+            isppnLabel.Location = new System.Drawing.Point(3, 212);
+            isppnLabel.Name = "isppnLabel";
+            isppnLabel.Size = new System.Drawing.Size(60, 13);
+            isppnLabel.TabIndex = 12;
+            isppnLabel.Text = "Use PPN ?";
             // 
             // tableLayoutPanel2
             // 
@@ -212,16 +222,6 @@
             this.outlSlsmTextBox.Name = "outlSlsmTextBox";
             this.outlSlsmTextBox.Size = new System.Drawing.Size(282, 20);
             this.outlSlsmTextBox.TabIndex = 4;
-            // 
-            // isppnLabel
-            // 
-            isppnLabel.AutoSize = true;
-            isppnLabel.ForeColor = System.Drawing.Color.White;
-            isppnLabel.Location = new System.Drawing.Point(3, 212);
-            isppnLabel.Name = "isppnLabel";
-            isppnLabel.Size = new System.Drawing.Size(60, 13);
-            isppnLabel.TabIndex = 12;
-            isppnLabel.Text = "Use PPN ?";
             // 
             // isppnCheckBox
             // 

@@ -132,7 +132,7 @@ namespace InvoiceOTC.Controller
             // toolStripLabel1
             // 
             this.toolStripLabel1.AutoSize = false;
-            this.toolStripLabel1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.toolStripLabel1.ForeColor = System.Drawing.Color.Black;
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(48, 29);
             this.toolStripLabel1.Text = "Search :";
@@ -144,7 +144,7 @@ namespace InvoiceOTC.Controller
             // 
             // toolStripLabel2
             // 
-            this.toolStripLabel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.toolStripLabel2.ForeColor = System.Drawing.Color.Black;
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(58, 29);
             this.toolStripLabel2.Text = "Search In:";

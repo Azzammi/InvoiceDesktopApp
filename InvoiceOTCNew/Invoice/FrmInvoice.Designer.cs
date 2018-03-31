@@ -110,7 +110,7 @@
             dueDateLabel.AutoSize = true;
             dueDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             dueDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dueDateLabel.ForeColor = System.Drawing.Color.White;
+            dueDateLabel.ForeColor = System.Drawing.Color.Black;
             dueDateLabel.Location = new System.Drawing.Point(3, 111);
             dueDateLabel.Name = "dueDateLabel";
             dueDateLabel.Size = new System.Drawing.Size(132, 28);
@@ -122,7 +122,7 @@
             idPaymentLabel.AutoSize = true;
             idPaymentLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             idPaymentLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idPaymentLabel.ForeColor = System.Drawing.Color.White;
+            idPaymentLabel.ForeColor = System.Drawing.Color.Black;
             idPaymentLabel.Location = new System.Drawing.Point(3, 197);
             idPaymentLabel.Name = "idPaymentLabel";
             idPaymentLabel.Size = new System.Drawing.Size(132, 31);
@@ -134,7 +134,7 @@
             isPayedLabel.AutoSize = true;
             isPayedLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             isPayedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            isPayedLabel.ForeColor = System.Drawing.Color.White;
+            isPayedLabel.ForeColor = System.Drawing.Color.Black;
             isPayedLabel.Location = new System.Drawing.Point(3, 228);
             isPayedLabel.Name = "isPayedLabel";
             isPayedLabel.Size = new System.Drawing.Size(132, 41);
@@ -146,7 +146,7 @@
             isPPNLabel.AutoSize = true;
             isPPNLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             isPPNLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            isPPNLabel.ForeColor = System.Drawing.Color.White;
+            isPPNLabel.ForeColor = System.Drawing.Color.Black;
             isPPNLabel.Location = new System.Drawing.Point(3, 139);
             isPPNLabel.Name = "isPPNLabel";
             isPPNLabel.Size = new System.Drawing.Size(132, 30);
@@ -158,7 +158,7 @@
             issuedDateLabel.AutoSize = true;
             issuedDateLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             issuedDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            issuedDateLabel.ForeColor = System.Drawing.Color.White;
+            issuedDateLabel.ForeColor = System.Drawing.Color.Black;
             issuedDateLabel.Location = new System.Drawing.Point(3, 28);
             issuedDateLabel.Name = "issuedDateLabel";
             issuedDateLabel.Size = new System.Drawing.Size(132, 28);
@@ -170,7 +170,7 @@
             nomorInvoiceLabel.AutoSize = true;
             nomorInvoiceLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             nomorInvoiceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nomorInvoiceLabel.ForeColor = System.Drawing.Color.White;
+            nomorInvoiceLabel.ForeColor = System.Drawing.Color.Black;
             nomorInvoiceLabel.Location = new System.Drawing.Point(3, 0);
             nomorInvoiceLabel.Name = "nomorInvoiceLabel";
             nomorInvoiceLabel.Size = new System.Drawing.Size(132, 28);
@@ -182,7 +182,7 @@
             nomorPOLabel.AutoSize = true;
             nomorPOLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             nomorPOLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nomorPOLabel.ForeColor = System.Drawing.Color.White;
+            nomorPOLabel.ForeColor = System.Drawing.Color.Black;
             nomorPOLabel.Location = new System.Drawing.Point(3, 83);
             nomorPOLabel.Name = "nomorPOLabel";
             nomorPOLabel.Size = new System.Drawing.Size(132, 28);
@@ -194,7 +194,7 @@
             outletCodeLabel.AutoSize = true;
             outletCodeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             outletCodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            outletCodeLabel.ForeColor = System.Drawing.Color.White;
+            outletCodeLabel.ForeColor = System.Drawing.Color.Black;
             outletCodeLabel.Location = new System.Drawing.Point(3, 56);
             outletCodeLabel.Name = "outletCodeLabel";
             outletCodeLabel.Size = new System.Drawing.Size(132, 27);
@@ -206,7 +206,7 @@
             periodeLabel.AutoSize = true;
             periodeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             periodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            periodeLabel.ForeColor = System.Drawing.Color.White;
+            periodeLabel.ForeColor = System.Drawing.Color.Black;
             periodeLabel.Location = new System.Drawing.Point(3, 169);
             periodeLabel.Name = "periodeLabel";
             periodeLabel.Size = new System.Drawing.Size(132, 28);
@@ -218,7 +218,7 @@
             ppnLabel.AutoSize = true;
             ppnLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             ppnLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            ppnLabel.ForeColor = System.Drawing.Color.White;
+            ppnLabel.ForeColor = System.Drawing.Color.Black;
             ppnLabel.Location = new System.Drawing.Point(3, 30);
             ppnLabel.Name = "ppnLabel";
             ppnLabel.Size = new System.Drawing.Size(279, 34);
@@ -230,7 +230,7 @@
             subTotalLabel.AutoSize = true;
             subTotalLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             subTotalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            subTotalLabel.ForeColor = System.Drawing.Color.White;
+            subTotalLabel.ForeColor = System.Drawing.Color.Black;
             subTotalLabel.Location = new System.Drawing.Point(3, 0);
             subTotalLabel.Name = "subTotalLabel";
             subTotalLabel.Size = new System.Drawing.Size(279, 30);
@@ -242,7 +242,7 @@
             totalLabel.AutoSize = true;
             totalLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             totalLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            totalLabel.ForeColor = System.Drawing.Color.White;
+            totalLabel.ForeColor = System.Drawing.Color.Black;
             totalLabel.Location = new System.Drawing.Point(3, 64);
             totalLabel.Name = "totalLabel";
             totalLabel.Size = new System.Drawing.Size(279, 29);

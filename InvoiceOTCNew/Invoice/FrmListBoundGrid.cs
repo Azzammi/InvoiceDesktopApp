@@ -153,50 +153,68 @@ namespace InvoiceOTCNew
                 e.Cancel = true;
             }
         }
-
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            int selectedCellCount = dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
-
-            if (selectedCellCount > 0)
+            try
             {
-                if (dataGridView1.AreAllCellsSelected(true))
+                int selectedCellCount = dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
+
+                if (selectedCellCount > 0)
                 {
-                    MessageBox.Show("Just Select cells that have number !");
-                }
-                else
-                {
-                    //Using Linq to iterate through selected cells
-                    countDGCellBtn.Text = "Count : " + selectedCellCount;
-                    var total = (from DataGridViewCell cell in dataGridView1.SelectedCells
-                                 where cell.FormattedValue.ToString() != string.Empty && cell.ValueType != typeof(string) && cell.ValueType != typeof(DateTime)
-                                 select Convert.ToDecimal(cell.FormattedValue)).Sum().ToString("N03",Program.ci);
-                    totalDGCellBtn.Text = "Total : " + total;
+                    if (dataGridView1.AreAllCellsSelected(true))
+                    {
+                        MessageBox.Show("Just Select cells that have number !");
+                    }
+                    else
+                    {
+                        //Using Linq to iterate through selected cells
+                        countDGCellBtn.Text = "Count : " + selectedCellCount;
+                        var total = (from DataGridViewCell cell in dataGridView1.SelectedCells
+                                     where cell.FormattedValue.ToString() != string.Empty && cell.ValueType != typeof(string) && cell.ValueType != typeof(DateTime)
+                                     select Convert.ToDecimal(cell.FormattedValue)).Sum().ToString("N03", Program.ci);
+                        totalDGCellBtn.Text = "Total : " + total;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                Program.log.Error("Error", ex);
+            }
+            
         }
-
         private void dataGridView2_SelectionChanged(object sender, EventArgs e)
         {
-            int selectedCellCount = dataGridView2.GetCellCount(DataGridViewElementStates.Selected);
-
-            if (selectedCellCount > 0)
+            try
             {
-                if (dataGridView2.AreAllCellsSelected(true))
+                int selectedCellCount = dataGridView2.GetCellCount(DataGridViewElementStates.Selected);
+
+                if (selectedCellCount > 0)
                 {
-                    MessageBox.Show("Just Select cells that have number !");
-                }
-                else
-                {
-                    //Using Linq to iterate through selected cells
-                    countDGCellBtn.Text = "Count : " + selectedCellCount;
-                    var total = (from DataGridViewCell cell in dataGridView2.SelectedCells
-                                 where cell.FormattedValue.ToString() != string.Empty && cell.ValueType != typeof(string)
-                                 select Convert.ToDecimal(cell.FormattedValue)).Sum().ToString("N");
-                    totalDGCellBtn.Text = "Total : " + total;
+                    if (dataGridView2.AreAllCellsSelected(true))
+                    {
+                        MessageBox.Show("Just Select cells that have number !");
+                    }
+                    else
+                    {
+                        //Using Linq to iterate through selected cells
+                        countDGCellBtn.Text = "Count : " + selectedCellCount;
+                        var total = (from DataGridViewCell cell in dataGridView2.SelectedCells
+                                     where cell.FormattedValue.ToString() != string.Empty && cell.ValueType != typeof(string)
+                                     select Convert.ToDecimal(cell.FormattedValue)).Sum().ToString("N");
+                        totalDGCellBtn.Text = "Total : " + total;
+                    }
                 }
             }
+            catch (Exception ex){
+                Program.log.Error("Error", ex);
+            }
+            
         }
         #endregion
+
+        private void FrmListBoundGrid_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
     }
 }

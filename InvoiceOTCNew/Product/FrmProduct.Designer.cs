@@ -67,8 +67,8 @@
             brandLabel.AutoSize = true;
             brandLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             brandLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            brandLabel.ForeColor = System.Drawing.Color.White;
-            brandLabel.Location = new System.Drawing.Point(3, 124);
+            brandLabel.ForeColor = System.Drawing.Color.Black;
+            brandLabel.Location = new System.Drawing.Point(3, 130);
             brandLabel.Name = "brandLabel";
             brandLabel.Size = new System.Drawing.Size(100, 31);
             brandLabel.TabIndex = 0;
@@ -80,8 +80,8 @@
             categoryLabel.AutoSize = true;
             categoryLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             categoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            categoryLabel.ForeColor = System.Drawing.Color.White;
-            categoryLabel.Location = new System.Drawing.Point(3, 155);
+            categoryLabel.ForeColor = System.Drawing.Color.Black;
+            categoryLabel.Location = new System.Drawing.Point(3, 161);
             categoryLabel.Name = "categoryLabel";
             categoryLabel.Size = new System.Drawing.Size(100, 30);
             categoryLabel.TabIndex = 2;
@@ -93,10 +93,10 @@
             itemCodeLabel.AutoSize = true;
             itemCodeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             itemCodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            itemCodeLabel.ForeColor = System.Drawing.Color.White;
+            itemCodeLabel.ForeColor = System.Drawing.Color.Black;
             itemCodeLabel.Location = new System.Drawing.Point(3, 0);
             itemCodeLabel.Name = "itemCodeLabel";
-            itemCodeLabel.Size = new System.Drawing.Size(100, 28);
+            itemCodeLabel.Size = new System.Drawing.Size(100, 31);
             itemCodeLabel.TabIndex = 4;
             itemCodeLabel.Text = "item Code:";
             itemCodeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -106,10 +106,10 @@
             itemNameLabel.AutoSize = true;
             itemNameLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             itemNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            itemNameLabel.ForeColor = System.Drawing.Color.White;
-            itemNameLabel.Location = new System.Drawing.Point(3, 28);
+            itemNameLabel.ForeColor = System.Drawing.Color.Black;
+            itemNameLabel.Location = new System.Drawing.Point(3, 31);
             itemNameLabel.Name = "itemNameLabel";
-            itemNameLabel.Size = new System.Drawing.Size(100, 33);
+            itemNameLabel.Size = new System.Drawing.Size(100, 36);
             itemNameLabel.TabIndex = 6;
             itemNameLabel.Text = "item Name:";
             itemNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -119,8 +119,8 @@
             itemSortLabel.AutoSize = true;
             itemSortLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             itemSortLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            itemSortLabel.ForeColor = System.Drawing.Color.White;
-            itemSortLabel.Location = new System.Drawing.Point(3, 61);
+            itemSortLabel.ForeColor = System.Drawing.Color.Black;
+            itemSortLabel.Location = new System.Drawing.Point(3, 67);
             itemSortLabel.Name = "itemSortLabel";
             itemSortLabel.Size = new System.Drawing.Size(100, 31);
             itemSortLabel.TabIndex = 8;
@@ -132,8 +132,8 @@
             jenisLabel.AutoSize = true;
             jenisLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             jenisLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            jenisLabel.ForeColor = System.Drawing.Color.White;
-            jenisLabel.Location = new System.Drawing.Point(3, 92);
+            jenisLabel.ForeColor = System.Drawing.Color.Black;
+            jenisLabel.Location = new System.Drawing.Point(3, 98);
             jenisLabel.Name = "jenisLabel";
             jenisLabel.Size = new System.Drawing.Size(100, 32);
             jenisLabel.TabIndex = 10;
@@ -145,8 +145,8 @@
             priceLabel.AutoSize = true;
             priceLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             priceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            priceLabel.ForeColor = System.Drawing.Color.White;
-            priceLabel.Location = new System.Drawing.Point(3, 214);
+            priceLabel.ForeColor = System.Drawing.Color.Black;
+            priceLabel.Location = new System.Drawing.Point(3, 220);
             priceLabel.Name = "priceLabel";
             priceLabel.Size = new System.Drawing.Size(100, 27);
             priceLabel.TabIndex = 12;
@@ -158,8 +158,8 @@
             statLabel.AutoSize = true;
             statLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             statLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            statLabel.ForeColor = System.Drawing.Color.White;
-            statLabel.Location = new System.Drawing.Point(3, 241);
+            statLabel.ForeColor = System.Drawing.Color.Black;
+            statLabel.Location = new System.Drawing.Point(3, 247);
             statLabel.Name = "statLabel";
             statLabel.Size = new System.Drawing.Size(100, 21);
             statLabel.TabIndex = 14;
@@ -171,8 +171,8 @@
             subCategoryLabel.AutoSize = true;
             subCategoryLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             subCategoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            subCategoryLabel.ForeColor = System.Drawing.Color.White;
-            subCategoryLabel.Location = new System.Drawing.Point(3, 185);
+            subCategoryLabel.ForeColor = System.Drawing.Color.Black;
+            subCategoryLabel.Location = new System.Drawing.Point(3, 191);
             subCategoryLabel.Name = "subCategoryLabel";
             subCategoryLabel.Size = new System.Drawing.Size(100, 29);
             subCategoryLabel.TabIndex = 16;
@@ -215,7 +215,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(296, 262);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(296, 268);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // itemCodeTextBox
@@ -233,7 +233,7 @@
             // itemSortTextBox
             // 
             this.itemSortTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "itemSort", true));
-            this.itemSortTextBox.Location = new System.Drawing.Point(109, 64);
+            this.itemSortTextBox.Location = new System.Drawing.Point(109, 70);
             this.itemSortTextBox.Name = "itemSortTextBox";
             this.itemSortTextBox.Size = new System.Drawing.Size(178, 20);
             this.itemSortTextBox.TabIndex = 9;
@@ -241,7 +241,7 @@
             // itemNameTextBox
             // 
             this.itemNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "itemName", true));
-            this.itemNameTextBox.Location = new System.Drawing.Point(109, 31);
+            this.itemNameTextBox.Location = new System.Drawing.Point(109, 34);
             this.itemNameTextBox.Name = "itemNameTextBox";
             this.itemNameTextBox.Size = new System.Drawing.Size(178, 20);
             this.itemNameTextBox.TabIndex = 1;
@@ -250,7 +250,7 @@
             // 
             this.jenisComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "jenis", true));
             this.jenisComboBox.FormattingEnabled = true;
-            this.jenisComboBox.Location = new System.Drawing.Point(109, 95);
+            this.jenisComboBox.Location = new System.Drawing.Point(109, 101);
             this.jenisComboBox.Name = "jenisComboBox";
             this.jenisComboBox.Size = new System.Drawing.Size(178, 21);
             this.jenisComboBox.TabIndex = 11;
@@ -259,7 +259,7 @@
             // 
             this.brandComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "brand", true));
             this.brandComboBox.FormattingEnabled = true;
-            this.brandComboBox.Location = new System.Drawing.Point(109, 127);
+            this.brandComboBox.Location = new System.Drawing.Point(109, 133);
             this.brandComboBox.Name = "brandComboBox";
             this.brandComboBox.Size = new System.Drawing.Size(178, 21);
             this.brandComboBox.TabIndex = 1;
@@ -268,7 +268,7 @@
             // 
             this.categoryComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "category", true));
             this.categoryComboBox.FormattingEnabled = true;
-            this.categoryComboBox.Location = new System.Drawing.Point(109, 158);
+            this.categoryComboBox.Location = new System.Drawing.Point(109, 164);
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(178, 21);
             this.categoryComboBox.TabIndex = 3;
@@ -277,7 +277,7 @@
             // 
             this.subCategoryComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "subCategory", true));
             this.subCategoryComboBox.FormattingEnabled = true;
-            this.subCategoryComboBox.Location = new System.Drawing.Point(109, 188);
+            this.subCategoryComboBox.Location = new System.Drawing.Point(109, 194);
             this.subCategoryComboBox.Name = "subCategoryComboBox";
             this.subCategoryComboBox.Size = new System.Drawing.Size(178, 21);
             this.subCategoryComboBox.TabIndex = 17;
@@ -285,17 +285,17 @@
             // statCheckBox
             // 
             this.statCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productBindingSource, "stat", true));
-            this.statCheckBox.Location = new System.Drawing.Point(109, 244);
+            this.statCheckBox.Location = new System.Drawing.Point(109, 250);
             this.statCheckBox.Name = "statCheckBox";
             this.statCheckBox.Size = new System.Drawing.Size(121, 15);
             this.statCheckBox.TabIndex = 15;
-            this.statCheckBox.Text = "checkBox1";
+            this.statCheckBox.Text = "isActive";
             this.statCheckBox.UseVisualStyleBackColor = true;
             // 
             // priceTextBox
             // 
             this.priceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "price", true));
-            this.priceTextBox.Location = new System.Drawing.Point(109, 217);
+            this.priceTextBox.Location = new System.Drawing.Point(109, 223);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(178, 20);
             this.priceTextBox.TabIndex = 13;
@@ -308,7 +308,6 @@
             this.Controls.Add(this.tableLayoutPanel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FrmProduct";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmProduct";
             this.Load += new System.EventHandler(this.FrmProduct_Load);
             this.Controls.SetChildIndex(this.tableLayoutPanel4, 0);
