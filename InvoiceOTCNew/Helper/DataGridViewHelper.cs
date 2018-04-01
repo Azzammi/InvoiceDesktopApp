@@ -48,7 +48,7 @@ namespace InvoiceOTCNew.Helper
 
             dgView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             dgView1.AutoGenerateColumns = false;
-            dgView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             dgView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;            
             dgView1.ColumnHeadersHeight = 22;
             dgView1.DefaultCellStyle = dataGridViewCellStyle1;
@@ -58,7 +58,7 @@ namespace InvoiceOTCNew.Helper
             {
                 dgView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
                 dgView2.AutoGenerateColumns = false;
-                dgView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                 dgView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
                 dgView2.ColumnHeadersHeight = 22;
                 dgView2.DefaultCellStyle = dataGridViewCellStyle1;
