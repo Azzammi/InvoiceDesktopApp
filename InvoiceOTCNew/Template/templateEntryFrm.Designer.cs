@@ -1,4 +1,7 @@
-﻿namespace InvoiceOTCNew
+﻿using System.Windows.Forms;
+using InvoiceOTCNew.Helper;
+
+namespace InvoiceOTCNew
 {
     partial class TemplateEntryFrm
     {
@@ -123,6 +126,7 @@
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "TemplateEntryFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -144,5 +148,25 @@
         private System.Windows.Forms.Label lblHeader;
         protected System.Windows.Forms.Button button1;
         protected System.Windows.Forms.Button button2;
+
+        /// <summary>
+        /// Override to achieve keyboard operated form
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="keyData"></param>
+        /// <returns></returns>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Enter:
+                    KeyPressHelper.NextFocus();
+                    break;
+                case Keys.Escape:
+                    this.Close();
+                    break;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }

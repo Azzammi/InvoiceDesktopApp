@@ -1,6 +1,8 @@
-﻿namespace InvoiceOTCNew
+﻿using System.Windows.Forms;
+
+namespace InvoiceOTCNew
 {
-    partial class TemplateReportFrm
+    partial class TemplateReportFrm 
     {
         /// <summary>
         /// Required designer variable.
@@ -50,9 +52,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(998, 427);
             this.Controls.Add(this.crViewer);
+            this.KeyPreview = true;
             this.Name = "TemplateReportFrm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TemplateReportFrm";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }
@@ -60,5 +64,23 @@
         #endregion
 
         protected CrystalDecisions.Windows.Forms.CrystalReportViewer crViewer;
+
+        /// <summary>
+        /// Override to achieve keyboard operated form
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="keyData"></param>
+        /// <returns></returns>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Control | Keys.P:
+                    crViewer.PrintReport();
+                    break;
+             
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }

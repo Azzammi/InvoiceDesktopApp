@@ -23,6 +23,7 @@ namespace InvoiceOTCNew
             SetHeader("outlet");
             DataGridViewHelper.SetDataGridTheme(outletDataGridView);
             SetDataSource(outletBindingSource);
+            SetDGUserDeletingRow(outletDataGridView);
 
             outletRepository = new OutletRepository();
 

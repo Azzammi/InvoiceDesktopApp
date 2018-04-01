@@ -71,7 +71,7 @@
             brandLabel.Location = new System.Drawing.Point(3, 130);
             brandLabel.Name = "brandLabel";
             brandLabel.Size = new System.Drawing.Size(100, 31);
-            brandLabel.TabIndex = 0;
+            brandLabel.TabIndex = 4;
             brandLabel.Text = "brand:";
             brandLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -84,7 +84,7 @@
             categoryLabel.Location = new System.Drawing.Point(3, 161);
             categoryLabel.Name = "categoryLabel";
             categoryLabel.Size = new System.Drawing.Size(100, 30);
-            categoryLabel.TabIndex = 2;
+            categoryLabel.TabIndex = 5;
             categoryLabel.Text = "category:";
             categoryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -97,7 +97,7 @@
             itemCodeLabel.Location = new System.Drawing.Point(3, 0);
             itemCodeLabel.Name = "itemCodeLabel";
             itemCodeLabel.Size = new System.Drawing.Size(100, 31);
-            itemCodeLabel.TabIndex = 4;
+            itemCodeLabel.TabIndex = 0;
             itemCodeLabel.Text = "item Code:";
             itemCodeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -110,7 +110,7 @@
             itemNameLabel.Location = new System.Drawing.Point(3, 31);
             itemNameLabel.Name = "itemNameLabel";
             itemNameLabel.Size = new System.Drawing.Size(100, 36);
-            itemNameLabel.TabIndex = 6;
+            itemNameLabel.TabIndex = 1;
             itemNameLabel.Text = "item Name:";
             itemNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -123,7 +123,7 @@
             itemSortLabel.Location = new System.Drawing.Point(3, 67);
             itemSortLabel.Name = "itemSortLabel";
             itemSortLabel.Size = new System.Drawing.Size(100, 31);
-            itemSortLabel.TabIndex = 8;
+            itemSortLabel.TabIndex = 2;
             itemSortLabel.Text = "item Sort:";
             itemSortLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -136,7 +136,7 @@
             jenisLabel.Location = new System.Drawing.Point(3, 98);
             jenisLabel.Name = "jenisLabel";
             jenisLabel.Size = new System.Drawing.Size(100, 32);
-            jenisLabel.TabIndex = 10;
+            jenisLabel.TabIndex = 3;
             jenisLabel.Text = "jenis:";
             jenisLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -149,7 +149,7 @@
             priceLabel.Location = new System.Drawing.Point(3, 220);
             priceLabel.Name = "priceLabel";
             priceLabel.Size = new System.Drawing.Size(100, 27);
-            priceLabel.TabIndex = 12;
+            priceLabel.TabIndex = 7;
             priceLabel.Text = "price:";
             priceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -162,7 +162,7 @@
             statLabel.Location = new System.Drawing.Point(3, 247);
             statLabel.Name = "statLabel";
             statLabel.Size = new System.Drawing.Size(100, 21);
-            statLabel.TabIndex = 14;
+            statLabel.TabIndex = 8;
             statLabel.Text = "stat:";
             statLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -175,7 +175,7 @@
             subCategoryLabel.Location = new System.Drawing.Point(3, 191);
             subCategoryLabel.Name = "subCategoryLabel";
             subCategoryLabel.Size = new System.Drawing.Size(100, 29);
-            subCategoryLabel.TabIndex = 16;
+            subCategoryLabel.TabIndex = 6;
             subCategoryLabel.Text = "sub Category:";
             subCategoryLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -224,7 +224,7 @@
             this.itemCodeTextBox.Location = new System.Drawing.Point(109, 3);
             this.itemCodeTextBox.Name = "itemCodeTextBox";
             this.itemCodeTextBox.Size = new System.Drawing.Size(178, 20);
-            this.itemCodeTextBox.TabIndex = 0;
+            this.itemCodeTextBox.TabIndex = 9;
             // 
             // productBindingSource
             // 
@@ -236,7 +236,7 @@
             this.itemSortTextBox.Location = new System.Drawing.Point(109, 70);
             this.itemSortTextBox.Name = "itemSortTextBox";
             this.itemSortTextBox.Size = new System.Drawing.Size(178, 20);
-            this.itemSortTextBox.TabIndex = 9;
+            this.itemSortTextBox.TabIndex = 11;
             // 
             // itemNameTextBox
             // 
@@ -244,7 +244,7 @@
             this.itemNameTextBox.Location = new System.Drawing.Point(109, 34);
             this.itemNameTextBox.Name = "itemNameTextBox";
             this.itemNameTextBox.Size = new System.Drawing.Size(178, 20);
-            this.itemNameTextBox.TabIndex = 1;
+            this.itemNameTextBox.TabIndex = 10;
             // 
             // jenisComboBox
             // 
@@ -253,7 +253,7 @@
             this.jenisComboBox.Location = new System.Drawing.Point(109, 101);
             this.jenisComboBox.Name = "jenisComboBox";
             this.jenisComboBox.Size = new System.Drawing.Size(178, 21);
-            this.jenisComboBox.TabIndex = 11;
+            this.jenisComboBox.TabIndex = 12;
             // 
             // brandComboBox
             // 
@@ -262,7 +262,7 @@
             this.brandComboBox.Location = new System.Drawing.Point(109, 133);
             this.brandComboBox.Name = "brandComboBox";
             this.brandComboBox.Size = new System.Drawing.Size(178, 21);
-            this.brandComboBox.TabIndex = 1;
+            this.brandComboBox.TabIndex = 13;
             // 
             // categoryComboBox
             // 
@@ -271,7 +271,7 @@
             this.categoryComboBox.Location = new System.Drawing.Point(109, 164);
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(178, 21);
-            this.categoryComboBox.TabIndex = 3;
+            this.categoryComboBox.TabIndex = 14;
             // 
             // subCategoryComboBox
             // 
@@ -280,7 +280,7 @@
             this.subCategoryComboBox.Location = new System.Drawing.Point(109, 194);
             this.subCategoryComboBox.Name = "subCategoryComboBox";
             this.subCategoryComboBox.Size = new System.Drawing.Size(178, 21);
-            this.subCategoryComboBox.TabIndex = 17;
+            this.subCategoryComboBox.TabIndex = 15;
             // 
             // statCheckBox
             // 
@@ -288,7 +288,7 @@
             this.statCheckBox.Location = new System.Drawing.Point(109, 250);
             this.statCheckBox.Name = "statCheckBox";
             this.statCheckBox.Size = new System.Drawing.Size(121, 15);
-            this.statCheckBox.TabIndex = 15;
+            this.statCheckBox.TabIndex = 17;
             this.statCheckBox.Text = "isActive";
             this.statCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -298,7 +298,7 @@
             this.priceTextBox.Location = new System.Drawing.Point(109, 223);
             this.priceTextBox.Name = "priceTextBox";
             this.priceTextBox.Size = new System.Drawing.Size(178, 20);
-            this.priceTextBox.TabIndex = 13;
+            this.priceTextBox.TabIndex = 16;
             // 
             // FrmProduct
             // 

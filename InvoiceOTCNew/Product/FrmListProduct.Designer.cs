@@ -79,7 +79,7 @@
             this.productDataGridView.Name = "productDataGridView";
             this.productDataGridView.Size = new System.Drawing.Size(869, 216);
             this.productDataGridView.TabIndex = 0;
-            this.productDataGridView.SelectionChanged += new System.EventHandler(this.productDataGridView_SelectionChanged);
+            this.productDataGridView.SelectionChanged += new System.EventHandler(this.productDataGridView_SelectionChanged);            
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -147,7 +147,7 @@
             this.Controls.Add(this.tableLayoutPanel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FrmListProduct";
-            this.Text = "FrmListProduct";            
+            this.Text = "FrmListProduct";
             this.Controls.SetChildIndex(this.tableLayoutPanel4, 0);
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();

@@ -1,4 +1,5 @@
-﻿namespace InvoiceOTCNew
+﻿using System.Windows.Forms;
+namespace InvoiceOTCNew
 {
     partial class TemplateListForm
     {
@@ -30,6 +31,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TemplateListForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.findStrip2 = new InvoiceOTC.Controller.FindStrip();
+            this.advancedSearchBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.importBtn = new System.Windows.Forms.ToolStripButton();
+            this.printBtn = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.headerLbl = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -43,17 +49,12 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.countDGCellBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.findStrip2 = new InvoiceOTC.Controller.FindStrip();
-            this.advancedSearchBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.importBtn = new System.Windows.Forms.ToolStripButton();
-            this.printBtn = new System.Windows.Forms.ToolStripButton();
             this.tableLayoutPanel1.SuspendLayout();
+            this.findStrip2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.findStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -70,6 +71,63 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(875, 93);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // findStrip2
+            // 
+            this.findStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
+            this.findStrip2.bindingSource = null;
+            this.findStrip2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.findStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.findStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.advancedSearchBtn,
+            this.toolStripSeparator2,
+            this.importBtn,
+            this.printBtn});
+            this.findStrip2.Location = new System.Drawing.Point(0, 54);
+            this.findStrip2.Name = "findStrip2";
+            this.findStrip2.Padding = new System.Windows.Forms.Padding(5);
+            this.findStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.findStrip2.Size = new System.Drawing.Size(875, 39);
+            this.findStrip2.TabIndex = 2;
+            this.findStrip2.Text = "findStrip2";
+            this.findStrip2.ItemFound += new InvoiceOTC.Controller.ItemFoundEventHandler(this.findStrip1_ItemFound);
+            // 
+            // advancedSearchBtn
+            // 
+            this.advancedSearchBtn.ForeColor = System.Drawing.Color.Black;
+            this.advancedSearchBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.advancedSearchBtn.Name = "advancedSearchBtn";
+            this.advancedSearchBtn.Size = new System.Drawing.Size(52, 26);
+            this.advancedSearchBtn.Text = "Search !";
+            this.advancedSearchBtn.Click += new System.EventHandler(this.advancedSearchBtn_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 29);
+            // 
+            // importBtn
+            // 
+            this.importBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.importBtn.ForeColor = System.Drawing.Color.Black;
+            this.importBtn.Image = ((System.Drawing.Image)(resources.GetObject("importBtn.Image")));
+            this.importBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.importBtn.Name = "importBtn";
+            this.importBtn.Size = new System.Drawing.Size(63, 26);
+            this.importBtn.Text = "Import";
+            this.importBtn.Click += new System.EventHandler(this.importBtn_Click);
+            // 
+            // printBtn
+            // 
+            this.printBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.printBtn.ForeColor = System.Drawing.Color.Black;
+            this.printBtn.Image = global::InvoiceOTCNew.Properties.Resources.Print;
+            this.printBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printBtn.Name = "printBtn";
+            this.printBtn.Size = new System.Drawing.Size(52, 26);
+            this.printBtn.Text = "Print";
+            this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
             // 
             // panel2
             // 
@@ -229,63 +287,6 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // findStrip2
-            // 
-            this.findStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
-            this.findStrip2.bindingSource = null;
-            this.findStrip2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.findStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.findStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.advancedSearchBtn,
-            this.toolStripSeparator2,
-            this.importBtn,
-            this.printBtn});
-            this.findStrip2.Location = new System.Drawing.Point(0, 54);
-            this.findStrip2.Name = "findStrip2";
-            this.findStrip2.Padding = new System.Windows.Forms.Padding(5);
-            this.findStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.findStrip2.Size = new System.Drawing.Size(875, 39);
-            this.findStrip2.TabIndex = 2;
-            this.findStrip2.Text = "findStrip2";
-            this.findStrip2.ItemFound += new InvoiceOTC.Controller.ItemFoundEventHandler(this.findStrip1_ItemFound);
-            // 
-            // advancedSearchBtn
-            // 
-            this.advancedSearchBtn.ForeColor = System.Drawing.Color.Black;
-            this.advancedSearchBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.advancedSearchBtn.Name = "advancedSearchBtn";
-            this.advancedSearchBtn.Size = new System.Drawing.Size(52, 26);
-            this.advancedSearchBtn.Text = "Search !";
-            this.advancedSearchBtn.Click += new System.EventHandler(this.advancedSearchBtn_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 29);
-            // 
-            // importBtn
-            // 
-            this.importBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.importBtn.ForeColor = System.Drawing.Color.Black;
-            this.importBtn.Image = ((System.Drawing.Image)(resources.GetObject("importBtn.Image")));
-            this.importBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.importBtn.Name = "importBtn";
-            this.importBtn.Size = new System.Drawing.Size(63, 26);
-            this.importBtn.Text = "Import";
-            this.importBtn.Click += new System.EventHandler(this.importBtn_Click);
-            // 
-            // printBtn
-            // 
-            this.printBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.printBtn.ForeColor = System.Drawing.Color.Black;
-            this.printBtn.Image = global::InvoiceOTCNew.Properties.Resources.Print;
-            this.printBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printBtn.Name = "printBtn";
-            this.printBtn.Size = new System.Drawing.Size(52, 26);
-            this.printBtn.Text = "Print";
-            this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
-            // 
             // TemplateListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,11 +296,14 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.toolStrip1);
+            this.KeyPreview = true;
             this.Name = "TemplateListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TemplateListForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.findStrip2.ResumeLayout(false);
+            this.findStrip2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -307,8 +311,6 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.findStrip2.ResumeLayout(false);
-            this.findStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,5 +337,28 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         protected System.Windows.Forms.ToolStripButton countDGCellBtn;
         private System.Windows.Forms.ToolStrip toolStrip1;
+
+        /// <summary>
+        /// Override to achieve keyboard operated form
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="keyData"></param>
+        /// <returns></returns>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Control | Keys.N:
+                    tambahBtn.PerformClick();
+                    break;
+                case Keys.Control | Keys.E:
+                    editBtn.PerformClick();
+                    break;
+                case Keys.Delete:
+                    DeleteBtn.PerformClick();
+                    break;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
     }
 }

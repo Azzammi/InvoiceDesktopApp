@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using InvoiceOTC.Model;
-using InvoiceOTC.Repository.API;
-using InvoiceOTC.Repository.Service;
-using System.Runtime.InteropServices;
 
 namespace InvoiceOTCNew
 {
@@ -53,6 +41,15 @@ namespace InvoiceOTCNew
             findStrip2.bindingSource = source;
         }        
 
+        /// <summary>
+        /// Set Datagridview event
+        /// </summary>
+        /// <param name="dgView"></param>
+        protected void SetDGUserDeletingRow(DataGridView dgView)
+        {
+            dgView.UserDeletingRow += dgView_UserDeletingRow;
+        }
+
         protected virtual void tambahBtn_Click(object sender, EventArgs e)
         {
 
@@ -86,6 +83,17 @@ namespace InvoiceOTCNew
 
         }
         #endregion
+
+        /// <summary>
+        /// Adding method when user delete data from dgv
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            e.Cancel = true; //To Prevent Deleting data when user press No in confirm dialog
+            DeleteBtn.PerformClick();
+        }
     }
     
 }

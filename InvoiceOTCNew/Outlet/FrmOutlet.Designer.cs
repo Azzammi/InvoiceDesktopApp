@@ -64,7 +64,7 @@
             outlAddressLabel.Location = new System.Drawing.Point(3, 59);
             outlAddressLabel.Name = "outlAddressLabel";
             outlAddressLabel.Size = new System.Drawing.Size(77, 15);
-            outlAddressLabel.TabIndex = 0;
+            outlAddressLabel.TabIndex = 2;
             outlAddressLabel.Text = "outl Address:";
             // 
             // outlCodeLabel
@@ -75,7 +75,7 @@
             outlCodeLabel.Location = new System.Drawing.Point(3, 0);
             outlCodeLabel.Name = "outlCodeLabel";
             outlCodeLabel.Size = new System.Drawing.Size(62, 15);
-            outlCodeLabel.TabIndex = 2;
+            outlCodeLabel.TabIndex = 0;
             outlCodeLabel.Text = "outl Code:";
             // 
             // outlNameLabel
@@ -86,7 +86,7 @@
             outlNameLabel.Location = new System.Drawing.Point(3, 27);
             outlNameLabel.Name = "outlNameLabel";
             outlNameLabel.Size = new System.Drawing.Size(67, 15);
-            outlNameLabel.TabIndex = 4;
+            outlNameLabel.TabIndex = 1;
             outlNameLabel.Text = "outl Name:";
             // 
             // outlRouteLabel
@@ -97,7 +97,7 @@
             outlRouteLabel.Location = new System.Drawing.Point(3, 115);
             outlRouteLabel.Name = "outlRouteLabel";
             outlRouteLabel.Size = new System.Drawing.Size(66, 15);
-            outlRouteLabel.TabIndex = 6;
+            outlRouteLabel.TabIndex = 3;
             outlRouteLabel.Text = "outl Route:";
             // 
             // outlSlsmLabel
@@ -108,7 +108,7 @@
             outlSlsmLabel.Location = new System.Drawing.Point(3, 149);
             outlSlsmLabel.Name = "outlSlsmLabel";
             outlSlsmLabel.Size = new System.Drawing.Size(61, 15);
-            outlSlsmLabel.TabIndex = 8;
+            outlSlsmLabel.TabIndex = 4;
             outlSlsmLabel.Text = "outl Slsm:";
             // 
             // outlStatLabel
@@ -119,7 +119,7 @@
             outlStatLabel.Location = new System.Drawing.Point(3, 180);
             outlStatLabel.Name = "outlStatLabel";
             outlStatLabel.Size = new System.Drawing.Size(54, 15);
-            outlStatLabel.TabIndex = 10;
+            outlStatLabel.TabIndex = 5;
             outlStatLabel.Text = "outl Stat:";
             // 
             // isppnLabel
@@ -129,7 +129,7 @@
             isppnLabel.Location = new System.Drawing.Point(3, 212);
             isppnLabel.Name = "isppnLabel";
             isppnLabel.Size = new System.Drawing.Size(60, 13);
-            isppnLabel.TabIndex = 12;
+            isppnLabel.TabIndex = 6;
             isppnLabel.Text = "Use PPN ?";
             // 
             // tableLayoutPanel2
@@ -174,7 +174,7 @@
             this.checkBox1.Location = new System.Drawing.Point(111, 183);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(57, 19);
-            this.checkBox1.TabIndex = 5;
+            this.checkBox1.TabIndex = 12;
             this.checkBox1.Text = "Active";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -189,7 +189,7 @@
             this.outlAddressTextBox.Multiline = true;
             this.outlAddressTextBox.Name = "outlAddressTextBox";
             this.outlAddressTextBox.Size = new System.Drawing.Size(282, 45);
-            this.outlAddressTextBox.TabIndex = 2;
+            this.outlAddressTextBox.TabIndex = 9;
             // 
             // outlCodeTextBox
             // 
@@ -197,7 +197,7 @@
             this.outlCodeTextBox.Location = new System.Drawing.Point(111, 3);
             this.outlCodeTextBox.Name = "outlCodeTextBox";
             this.outlCodeTextBox.Size = new System.Drawing.Size(282, 20);
-            this.outlCodeTextBox.TabIndex = 0;
+            this.outlCodeTextBox.TabIndex = 7;
             // 
             // outlNameTextBox
             // 
@@ -205,7 +205,7 @@
             this.outlNameTextBox.Location = new System.Drawing.Point(111, 30);
             this.outlNameTextBox.Name = "outlNameTextBox";
             this.outlNameTextBox.Size = new System.Drawing.Size(282, 20);
-            this.outlNameTextBox.TabIndex = 1;
+            this.outlNameTextBox.TabIndex = 8;
             // 
             // outlRouteTextBox
             // 
@@ -213,7 +213,7 @@
             this.outlRouteTextBox.Location = new System.Drawing.Point(111, 118);
             this.outlRouteTextBox.Name = "outlRouteTextBox";
             this.outlRouteTextBox.Size = new System.Drawing.Size(282, 20);
-            this.outlRouteTextBox.TabIndex = 3;
+            this.outlRouteTextBox.TabIndex = 10;
             // 
             // outlSlsmTextBox
             // 
@@ -221,7 +221,7 @@
             this.outlSlsmTextBox.Location = new System.Drawing.Point(111, 152);
             this.outlSlsmTextBox.Name = "outlSlsmTextBox";
             this.outlSlsmTextBox.Size = new System.Drawing.Size(282, 20);
-            this.outlSlsmTextBox.TabIndex = 4;
+            this.outlSlsmTextBox.TabIndex = 11;
             // 
             // isppnCheckBox
             // 

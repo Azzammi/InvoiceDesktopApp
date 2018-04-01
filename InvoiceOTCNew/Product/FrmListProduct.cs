@@ -23,6 +23,7 @@ namespace InvoiceOTCNew
             SetHeader("Product");
             DataGridViewHelper.SetDataGridTheme(productDataGridView);
             SetDataSource(productBindingSource);
+            SetDGUserDeletingRow(productDataGridView);
 
             productRepository = new ProductRepository(Program.log);
 
@@ -65,8 +66,8 @@ namespace InvoiceOTCNew
                         productRepository.Delete(item);
                         productBindingSource.Remove(item);
                     }
-                }
-            }
+                }              
+            }          
         }
 
         protected override void findStrip1_ItemFound(object sender, ItemFoundEventArgs e)

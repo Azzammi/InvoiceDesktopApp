@@ -27,6 +27,9 @@ namespace InvoiceOTCNew
         #region Methods
         private void okBtn_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(usernameTextBox.Text)) errorProvider1.SetError(usernameTextBox, "Username Cannot be empty "); 
+            if (string.IsNullOrEmpty(passwordTextBox.Text)) errorProvider1.SetError(passwordTextBox, "Password Cannot be empty ");
+
             User user = userRepo.Login(usernameTextBox.Text, passwordTextBox.Text);
 
             if (user != null)

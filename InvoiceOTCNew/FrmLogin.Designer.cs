@@ -1,4 +1,7 @@
-﻿namespace InvoiceOTCNew
+﻿using System.Windows.Forms;
+using InvoiceOTCNew.Helper;
+
+namespace InvoiceOTCNew
 {
     partial class FrmLogin
     {
@@ -28,6 +31,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label usernameLabel;
             System.Windows.Forms.Label passwordLabel;
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -39,11 +43,13 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             usernameLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // usernameLabel
@@ -109,20 +115,20 @@
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.usernameTextBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTextBox.Location = new System.Drawing.Point(3, 68);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(401, 24);
+            this.usernameTextBox.Size = new System.Drawing.Size(363, 24);
             this.usernameTextBox.TabIndex = 1;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.passwordTextBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTextBox.Location = new System.Drawing.Point(3, 124);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(401, 24);
+            this.passwordTextBox.Size = new System.Drawing.Size(363, 24);
             this.passwordTextBox.TabIndex = 3;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
@@ -183,6 +189,10 @@
             this.panel1.Size = new System.Drawing.Size(203, 227);
             this.panel1.TabIndex = 1;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,6 +200,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(622, 233);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.KeyPreview = true;
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLogin";
@@ -198,6 +209,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -212,5 +224,25 @@
         private System.Windows.Forms.Button okBtn;
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Label label1;
+
+        /// <summary>
+        /// Override to achieve keyboard operated form
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="keyData"></param>
+        /// <returns></returns>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Enter:
+                    KeyPressHelper.NextFocus();
+                    break;
+
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private ErrorProvider errorProvider1;
     }
 }
