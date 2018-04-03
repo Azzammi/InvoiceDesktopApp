@@ -40,7 +40,7 @@ namespace InvoiceOTC.Repository.Service
 
             try
             {
-                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product";
+                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Products";
                 listOfProduct = context.db.Query<Product>(m_Sql).ToListSorted();
             }
             catch(Exception ex)
@@ -62,7 +62,7 @@ namespace InvoiceOTC.Repository.Service
 
             try
             {
-                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product WHERE " + key + " ILIKE @newValue ";
+                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Products WHERE " + key + " ILIKE @newValue ";
                 listOfProduct = context.db.Query<Product>(m_Sql, new { newValue }).ToListSorted();
 
 
@@ -81,7 +81,7 @@ namespace InvoiceOTC.Repository.Service
 
             try
             {
-                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product WHERE Stat = 't' ORDER BY ITEMCODE ASC";
+                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Products WHERE Stat = 't' ORDER BY ITEMCODE ASC";
                 listOfProduct = context.db.Query<Product>(m_Sql).ToListSorted();
             }
             catch (Exception ex)
@@ -98,7 +98,7 @@ namespace InvoiceOTC.Repository.Service
 
             try
             {
-                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Product " +
+                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Products " +
                          "WHERE ITEMCODE = @itemCode";
                 product = context.db.Query<Product>(m_Sql, new { itemCode }).SingleOrDefault();
             }
@@ -117,7 +117,7 @@ namespace InvoiceOTC.Repository.Service
             var result = 0;
             try
             {
-                m_Sql = @"Delete From Product Where ITEMCODE = @itemCode";
+                m_Sql = @"Delete From Products Where ITEMCODE = @itemCode";
 
                 result = context.db.Execute(m_Sql, obj);
             }
@@ -128,13 +128,12 @@ namespace InvoiceOTC.Repository.Service
 
             return result;
         }
-
         public int Save(Product obj)
         {
             var result = 0;
             try
             {
-                m_Sql = @"INSERT INTO Product " +
+                m_Sql = @"INSERT INTO Products " +
                         "(ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat)" +
                         " VALUES " +
                         "(@itemCode, @itemName, @itemSort, @brand, @jenis, @category, @subCategory, @price, @stat)";
@@ -147,13 +146,12 @@ namespace InvoiceOTC.Repository.Service
 
             return result;
         }
-
         public int Update(Product obj)
         {
             var result = 0;
             try
             {
-                m_Sql = @"UPDATE Product SET " +
+                m_Sql = @"UPDATE Products SET " +
                         "ITEMNAME = @itemName, " +
                         "ITEMSORT = @itemSort, " +
                         "Brand = @brand, " +
