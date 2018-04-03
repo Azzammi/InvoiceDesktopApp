@@ -98,12 +98,6 @@ namespace InvoiceOTCNew
             CheckExistingForm(frm);
         }
 
-        public void logs_Show(object sender, EventArgs e)
-        {
-            var frm = new FrmLog();
-            frm.ShowDialog();
-        }
-
         public void outlets_Show(object sender, EventArgs e)
         {
             var frm = new FrmListOutlet();
@@ -125,17 +119,17 @@ namespace InvoiceOTCNew
         public void productsPrint_Show(object sender, EventArgs e)
         {
             var frm = new FrmReportListProduct();
-            frm.ShowDialog();
+            CheckExistingForm(frm);
         }
         public void outletsPrint_Show(object sender, EventArgs e)
         {
             var frm = new FrmReportListOutlet();
-            frm.ShowDialog();
+            CheckExistingForm(frm);
         }
         public void rekapInvoice_Show(object sender, EventArgs e)
         {
             var frm = new FrmReportRekapInvoice();
-            frm.ShowDialog();
+            CheckExistingForm(frm);
         }
         #endregion
                
@@ -177,6 +171,20 @@ namespace InvoiceOTCNew
         #endregion
 
         #endregion
+
+        #region Tab Logs and About
+        private void helpToolStripButton_Click(object sender, EventArgs e)
+        {
+            var frm = new FrmAbout();
+            frm.ShowDialog();
+        }
+        public void logs_Show(object sender, EventArgs e)
+        {
+            var frm = new FrmLog();
+            frm.ShowDialog();
+        }
+        #endregion  
+
         private void tabbedMDIManager1_TabControlRemoved(object sender, Syncfusion.Windows.Forms.Tools.TabbedMDITabControlEventArgs args)
         {           
             panel1.Visible = true;            
@@ -184,6 +192,6 @@ namespace InvoiceOTCNew
         private void tabbedMDIManager1_TabControlAdding(object sender, Syncfusion.Windows.Forms.Tools.TabbedMDITabControlEventArgs args)
         {
             panel1.Visible = false;
-        }
+        }       
     }
 }

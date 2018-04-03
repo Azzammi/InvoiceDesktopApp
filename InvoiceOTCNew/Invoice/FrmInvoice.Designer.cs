@@ -113,7 +113,7 @@
             dueDateLabel.ForeColor = System.Drawing.Color.Black;
             dueDateLabel.Location = new System.Drawing.Point(3, 111);
             dueDateLabel.Name = "dueDateLabel";
-            dueDateLabel.Size = new System.Drawing.Size(132, 28);
+            dueDateLabel.Size = new System.Drawing.Size(143, 28);
             dueDateLabel.TabIndex = 0;
             dueDateLabel.Text = "DUE DATE";
             // 
@@ -125,7 +125,7 @@
             idPaymentLabel.ForeColor = System.Drawing.Color.Black;
             idPaymentLabel.Location = new System.Drawing.Point(3, 197);
             idPaymentLabel.Name = "idPaymentLabel";
-            idPaymentLabel.Size = new System.Drawing.Size(132, 31);
+            idPaymentLabel.Size = new System.Drawing.Size(143, 31);
             idPaymentLabel.TabIndex = 2;
             idPaymentLabel.Text = "ID PAYMENT";
             // 
@@ -137,7 +137,7 @@
             isPayedLabel.ForeColor = System.Drawing.Color.Black;
             isPayedLabel.Location = new System.Drawing.Point(3, 228);
             isPayedLabel.Name = "isPayedLabel";
-            isPayedLabel.Size = new System.Drawing.Size(132, 41);
+            isPayedLabel.Size = new System.Drawing.Size(143, 41);
             isPayedLabel.TabIndex = 6;
             isPayedLabel.Text = "IS PAYED";
             // 
@@ -149,7 +149,7 @@
             isPPNLabel.ForeColor = System.Drawing.Color.Black;
             isPPNLabel.Location = new System.Drawing.Point(3, 139);
             isPPNLabel.Name = "isPPNLabel";
-            isPPNLabel.Size = new System.Drawing.Size(132, 30);
+            isPPNLabel.Size = new System.Drawing.Size(143, 30);
             isPPNLabel.TabIndex = 8;
             isPPNLabel.Text = "IS PPN:";
             // 
@@ -161,7 +161,7 @@
             issuedDateLabel.ForeColor = System.Drawing.Color.Black;
             issuedDateLabel.Location = new System.Drawing.Point(3, 28);
             issuedDateLabel.Name = "issuedDateLabel";
-            issuedDateLabel.Size = new System.Drawing.Size(132, 28);
+            issuedDateLabel.Size = new System.Drawing.Size(143, 28);
             issuedDateLabel.TabIndex = 10;
             issuedDateLabel.Text = "ISSUED";
             // 
@@ -173,7 +173,7 @@
             nomorInvoiceLabel.ForeColor = System.Drawing.Color.Black;
             nomorInvoiceLabel.Location = new System.Drawing.Point(3, 0);
             nomorInvoiceLabel.Name = "nomorInvoiceLabel";
-            nomorInvoiceLabel.Size = new System.Drawing.Size(132, 28);
+            nomorInvoiceLabel.Size = new System.Drawing.Size(143, 28);
             nomorInvoiceLabel.TabIndex = 12;
             nomorInvoiceLabel.Text = "NO. INVOICE";
             // 
@@ -185,7 +185,7 @@
             nomorPOLabel.ForeColor = System.Drawing.Color.Black;
             nomorPOLabel.Location = new System.Drawing.Point(3, 83);
             nomorPOLabel.Name = "nomorPOLabel";
-            nomorPOLabel.Size = new System.Drawing.Size(132, 28);
+            nomorPOLabel.Size = new System.Drawing.Size(143, 28);
             nomorPOLabel.TabIndex = 14;
             nomorPOLabel.Text = "NOMOR PO";
             // 
@@ -197,7 +197,7 @@
             outletCodeLabel.ForeColor = System.Drawing.Color.Black;
             outletCodeLabel.Location = new System.Drawing.Point(3, 56);
             outletCodeLabel.Name = "outletCodeLabel";
-            outletCodeLabel.Size = new System.Drawing.Size(132, 27);
+            outletCodeLabel.Size = new System.Drawing.Size(143, 27);
             outletCodeLabel.TabIndex = 16;
             outletCodeLabel.Text = "OUTLET";
             // 
@@ -209,7 +209,7 @@
             periodeLabel.ForeColor = System.Drawing.Color.Black;
             periodeLabel.Location = new System.Drawing.Point(3, 169);
             periodeLabel.Name = "periodeLabel";
-            periodeLabel.Size = new System.Drawing.Size(132, 28);
+            periodeLabel.Size = new System.Drawing.Size(143, 28);
             periodeLabel.TabIndex = 20;
             periodeLabel.Text = "PERIODE";
             // 
@@ -221,7 +221,7 @@
             ppnLabel.ForeColor = System.Drawing.Color.Black;
             ppnLabel.Location = new System.Drawing.Point(3, 30);
             ppnLabel.Name = "ppnLabel";
-            ppnLabel.Size = new System.Drawing.Size(279, 34);
+            ppnLabel.Size = new System.Drawing.Size(226, 34);
             ppnLabel.TabIndex = 22;
             ppnLabel.Text = "PPN";
             // 
@@ -233,7 +233,7 @@
             subTotalLabel.ForeColor = System.Drawing.Color.Black;
             subTotalLabel.Location = new System.Drawing.Point(3, 0);
             subTotalLabel.Name = "subTotalLabel";
-            subTotalLabel.Size = new System.Drawing.Size(279, 30);
+            subTotalLabel.Size = new System.Drawing.Size(226, 30);
             subTotalLabel.TabIndex = 24;
             subTotalLabel.Text = "SUBTOTAL";
             // 
@@ -245,7 +245,7 @@
             totalLabel.ForeColor = System.Drawing.Color.Black;
             totalLabel.Location = new System.Drawing.Point(3, 64);
             totalLabel.Name = "totalLabel";
-            totalLabel.Size = new System.Drawing.Size(279, 29);
+            totalLabel.Size = new System.Drawing.Size(226, 29);
             totalLabel.TabIndex = 26;
             totalLabel.Text = "TOTAL";
             // 
@@ -265,23 +265,27 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.02977F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.97023F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 58);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(954, 416);
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.01661F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.89037F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.92691F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(954, 602);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.93103F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.06897F));
+            this.tableLayoutPanel4.SetColumnSpan(this.tableLayoutPanel5, 2);
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.82278F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.17722F));
             this.tableLayoutPanel5.Controls.Add(periodeLabel, 0, 10);
             this.tableLayoutPanel5.Controls.Add(this.periodeTextBox, 1, 10);
             this.tableLayoutPanel5.Controls.Add(this.nomorInvoiceTextBox, 1, 0);
@@ -321,14 +325,14 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(366, 410);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(948, 265);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // periodeTextBox
             // 
             this.periodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "periode", true));
             this.periodeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.periodeTextBox.Location = new System.Drawing.Point(141, 172);
+            this.periodeTextBox.Location = new System.Drawing.Point(152, 172);
             this.periodeTextBox.Name = "periodeTextBox";
             this.periodeTextBox.Size = new System.Drawing.Size(200, 22);
             this.periodeTextBox.TabIndex = 7;
@@ -337,16 +341,16 @@
             // 
             this.nomorInvoiceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "nomorInvoice", true));
             this.nomorInvoiceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomorInvoiceTextBox.Location = new System.Drawing.Point(141, 3);
+            this.nomorInvoiceTextBox.Location = new System.Drawing.Point(152, 3);
             this.nomorInvoiceTextBox.Name = "nomorInvoiceTextBox";
-            this.nomorInvoiceTextBox.Size = new System.Drawing.Size(89, 22);
+            this.nomorInvoiceTextBox.Size = new System.Drawing.Size(174, 22);
             this.nomorInvoiceTextBox.TabIndex = 0;
             // 
             // issuedDateDateTimePicker
             // 
             this.issuedDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceBindingSource, "issuedDate", true));
             this.issuedDateDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.issuedDateDateTimePicker.Location = new System.Drawing.Point(141, 31);
+            this.issuedDateDateTimePicker.Location = new System.Drawing.Point(152, 31);
             this.issuedDateDateTimePicker.Name = "issuedDateDateTimePicker";
             this.issuedDateDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.issuedDateDateTimePicker.TabIndex = 1;
@@ -355,7 +359,7 @@
             // 
             this.nomorPOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "nomorPO", true));
             this.nomorPOTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomorPOTextBox.Location = new System.Drawing.Point(141, 86);
+            this.nomorPOTextBox.Location = new System.Drawing.Point(152, 86);
             this.nomorPOTextBox.Name = "nomorPOTextBox";
             this.nomorPOTextBox.Size = new System.Drawing.Size(209, 22);
             this.nomorPOTextBox.TabIndex = 3;
@@ -365,7 +369,7 @@
             this.isPPNCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceBindingSource, "isPPN", true));
             this.isPPNCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.isPPNCheckBox.ForeColor = System.Drawing.Color.Black;
-            this.isPPNCheckBox.Location = new System.Drawing.Point(141, 142);
+            this.isPPNCheckBox.Location = new System.Drawing.Point(152, 142);
             this.isPPNCheckBox.Name = "isPPNCheckBox";
             this.isPPNCheckBox.Size = new System.Drawing.Size(200, 24);
             this.isPPNCheckBox.TabIndex = 5;
@@ -376,7 +380,7 @@
             // 
             this.dueDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceBindingSource, "dueDate", true));
             this.dueDateDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dueDateDateTimePicker.Location = new System.Drawing.Point(141, 114);
+            this.dueDateDateTimePicker.Location = new System.Drawing.Point(152, 114);
             this.dueDateDateTimePicker.Name = "dueDateDateTimePicker";
             this.dueDateDateTimePicker.Size = new System.Drawing.Size(209, 22);
             this.dueDateDateTimePicker.TabIndex = 4;
@@ -385,7 +389,7 @@
             // 
             this.idPaymentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "idPayment", true));
             this.idPaymentTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idPaymentTextBox.Location = new System.Drawing.Point(141, 200);
+            this.idPaymentTextBox.Location = new System.Drawing.Point(152, 200);
             this.idPaymentTextBox.Name = "idPaymentTextBox";
             this.idPaymentTextBox.Size = new System.Drawing.Size(200, 22);
             this.idPaymentTextBox.TabIndex = 8;
@@ -395,7 +399,7 @@
             this.isPayedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceBindingSource, "isPayed", true));
             this.isPayedCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.isPayedCheckBox.ForeColor = System.Drawing.Color.Black;
-            this.isPayedCheckBox.Location = new System.Drawing.Point(141, 231);
+            this.isPayedCheckBox.Location = new System.Drawing.Point(152, 231);
             this.isPayedCheckBox.Name = "isPayedCheckBox";
             this.isPayedCheckBox.Size = new System.Drawing.Size(200, 24);
             this.isPayedCheckBox.TabIndex = 9;
@@ -409,7 +413,7 @@
             this.comboBoxAdv1.DataSource = this.outletBindingSource;
             this.comboBoxAdv1.DisplayMember = "outlName";
             this.comboBoxAdv1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAdv1.Location = new System.Drawing.Point(141, 59);
+            this.comboBoxAdv1.Location = new System.Drawing.Point(152, 59);
             this.comboBoxAdv1.Name = "comboBoxAdv1";
             this.comboBoxAdv1.Size = new System.Drawing.Size(200, 24);
             this.comboBoxAdv1.TabIndex = 2;
@@ -418,16 +422,15 @@
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(375, 3);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(480, 472);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 2;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.05371F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.94629F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(576, 410);
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(471, 127);
             this.tableLayoutPanel6.TabIndex = 1;
             // 
             // tableLayoutPanel7
@@ -443,23 +446,23 @@
             this.tableLayoutPanel7.Controls.Add(this.totalTextBox, 1, 2);
             this.tableLayoutPanel7.Controls.Add(this.countBtn, 1, 3);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 286);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 4;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.2973F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.7027F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(570, 121);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(465, 121);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // subTotalTextBox
             // 
             this.subTotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "subTotal", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
             this.subTotalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subTotalTextBox.Location = new System.Drawing.Point(288, 3);
+            this.subTotalTextBox.Location = new System.Drawing.Point(235, 3);
             this.subTotalTextBox.Name = "subTotalTextBox";
-            this.subTotalTextBox.Size = new System.Drawing.Size(262, 22);
+            this.subTotalTextBox.Size = new System.Drawing.Size(227, 22);
             this.subTotalTextBox.TabIndex = 0;
             this.subTotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -467,9 +470,9 @@
             // 
             this.ppnTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "ppn", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
             this.ppnTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ppnTextBox.Location = new System.Drawing.Point(288, 33);
+            this.ppnTextBox.Location = new System.Drawing.Point(235, 33);
             this.ppnTextBox.Name = "ppnTextBox";
-            this.ppnTextBox.Size = new System.Drawing.Size(262, 22);
+            this.ppnTextBox.Size = new System.Drawing.Size(227, 22);
             this.ppnTextBox.TabIndex = 1;
             this.ppnTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -477,18 +480,18 @@
             // 
             this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "total", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
             this.totalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalTextBox.Location = new System.Drawing.Point(288, 67);
+            this.totalTextBox.Location = new System.Drawing.Point(235, 67);
             this.totalTextBox.Name = "totalTextBox";
-            this.totalTextBox.Size = new System.Drawing.Size(262, 22);
+            this.totalTextBox.Size = new System.Drawing.Size(227, 22);
             this.totalTextBox.TabIndex = 2;
             this.totalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // countBtn
             // 
             this.countBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.countBtn.Location = new System.Drawing.Point(288, 96);
+            this.countBtn.Location = new System.Drawing.Point(235, 96);
             this.countBtn.Name = "countBtn";
-            this.countBtn.Size = new System.Drawing.Size(279, 22);
+            this.countBtn.Size = new System.Drawing.Size(227, 22);
             this.countBtn.TabIndex = 3;
             this.countBtn.Text = "Hitung";
             this.countBtn.UseVisualStyleBackColor = true;
@@ -519,6 +522,7 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.subTotalDataGridViewTextBoxColumn1});
+            this.tableLayoutPanel4.SetColumnSpan(this.dataGridView1, 2);
             this.dataGridView1.DataSource = this.pItemsBindingSource;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
@@ -529,9 +533,9 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 274);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(570, 277);
+            this.dataGridView1.Size = new System.Drawing.Size(948, 192);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView1_UserDeletingRow);
@@ -631,8 +635,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(954, 515);
+            this.ClientSize = new System.Drawing.Size(954, 701);
             this.Controls.Add(this.tableLayoutPanel4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmInvoice";
             this.Text = "FrmInvoice";
             this.Controls.SetChildIndex(this.tableLayoutPanel4, 0);

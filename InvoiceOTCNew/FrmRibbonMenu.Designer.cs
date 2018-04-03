@@ -40,31 +40,19 @@ namespace InvoiceOTCNew
             this.ribbonControlAdv1 = new Syncfusion.Windows.Forms.Tools.RibbonControlAdv();
             this.toolStripTabItem1 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx1 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
-            this.refCustomerBtn = new System.Windows.Forms.ToolStripButton();
-            this.refProductBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripEx3 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
-            this.userTsButton = new System.Windows.Forms.ToolStripButton();
-            this.hakAksesTsButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripTabItem4 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx7 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripTabItem6 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx9 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
-            this.invoiceToolStripDDButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTabItem3 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.printReportToolStripEx = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripPanelItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripPanelItem();
-            this.rekapInvoiceStripButton = new System.Windows.Forms.ToolStripButton();
-            this.listProductStripButton = new System.Windows.Forms.ToolStripButton();
-            this.listOutletStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripTabItem2 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx5 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
-            this.logLogBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripTabItem7 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.tabbedMDIManager1 = new Syncfusion.Windows.Forms.Tools.TabbedMDIManager(this.components);
             this.statusStripEx1 = new Syncfusion.Windows.Forms.Tools.StatusStripEx();
-            this.userLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.timeLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.softwareLbl = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -74,7 +62,20 @@ namespace InvoiceOTCNew
             this.toolStripEx6 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripTabItem5 = new Syncfusion.Windows.Forms.Tools.ToolStripTabItem();
             this.toolStripEx8 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
+            this.userLbl = new System.Windows.Forms.ToolStripStatusLabel();
+            this.refCustomerBtn = new System.Windows.Forms.ToolStripButton();
+            this.refProductBtn = new System.Windows.Forms.ToolStripButton();
+            this.userTsButton = new System.Windows.Forms.ToolStripButton();
+            this.hakAksesTsButton = new System.Windows.Forms.ToolStripButton();
+            this.invoiceToolStripDDButton = new System.Windows.Forms.ToolStripDropDownButton();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.rekapInvoiceStripButton = new System.Windows.Forms.ToolStripButton();
+            this.listProductStripButton = new System.Windows.Forms.ToolStripButton();
+            this.listOutletStripButton = new System.Windows.Forms.ToolStripButton();
+            this.logLogBtn = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControlAdv1)).BeginInit();
             this.ribbonControlAdv1.SuspendLayout();
             this.toolStripTabItem1.Panel.SuspendLayout();
@@ -113,7 +114,7 @@ namespace InvoiceOTCNew
             this.ribbonControlAdv1.OfficeMenu.Size = new System.Drawing.Size(12, 65);
             this.ribbonControlAdv1.QuickPanelImageLayout = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ribbonControlAdv1.RibbonHeaderImage = Syncfusion.Windows.Forms.Tools.RibbonHeaderImage.None;
-            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem7;
+            this.ribbonControlAdv1.SelectedTab = this.toolStripTabItem2;
             this.ribbonControlAdv1.ShowRibbonDisplayOptionButton = true;
             this.ribbonControlAdv1.Size = new System.Drawing.Size(911, 150);
             this.ribbonControlAdv1.SystemText.QuickAccessDialogDropDownName = "Start menu";
@@ -155,25 +156,6 @@ namespace InvoiceOTCNew
             this.toolStripEx1.TabIndex = 0;
             this.toolStripEx1.Text = "Master Data";
             // 
-            // refCustomerBtn
-            // 
-            this.refCustomerBtn.Image = ((System.Drawing.Image)(resources.GetObject("refCustomerBtn.Image")));
-            this.refCustomerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.refCustomerBtn.Name = "refCustomerBtn";
-            this.refCustomerBtn.Size = new System.Drawing.Size(76, 67);
-            this.refCustomerBtn.Text = "Customer";
-            this.refCustomerBtn.Click += new System.EventHandler(this.outlets_Show);
-            // 
-            // refProductBtn
-            // 
-            this.refProductBtn.Image = global::InvoiceOTCNew.Properties.Resources.Product_Box_02_WF;
-            this.refProductBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.refProductBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.refProductBtn.Name = "refProductBtn";
-            this.refProductBtn.Size = new System.Drawing.Size(99, 67);
-            this.refProductBtn.Text = "Product";
-            this.refProductBtn.Click += new System.EventHandler(this.products_Show);
-            // 
             // toolStripEx3
             // 
             this.toolStripEx3.AutoSize = false;
@@ -190,22 +172,6 @@ namespace InvoiceOTCNew
             this.toolStripEx3.Size = new System.Drawing.Size(162, 88);
             this.toolStripEx3.TabIndex = 2;
             this.toolStripEx3.Text = "User";
-            // 
-            // userTsButton
-            // 
-            this.userTsButton.Image = global::InvoiceOTCNew.Properties.Resources.Add_New;
-            this.userTsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.userTsButton.Name = "userTsButton";
-            this.userTsButton.Size = new System.Drawing.Size(50, 67);
-            this.userTsButton.Text = "User";
-            // 
-            // hakAksesTsButton
-            // 
-            this.hakAksesTsButton.Image = global::InvoiceOTCNew.Properties.Resources.Add_New;
-            this.hakAksesTsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.hakAksesTsButton.Name = "hakAksesTsButton";
-            this.hakAksesTsButton.Size = new System.Drawing.Size(79, 67);
-            this.hakAksesTsButton.Text = "Hak Akses";
             // 
             // toolStripTabItem4
             // 
@@ -267,31 +233,6 @@ namespace InvoiceOTCNew
             this.toolStripEx9.Size = new System.Drawing.Size(207, 88);
             this.toolStripEx9.TabIndex = 0;
             // 
-            // invoiceToolStripDDButton
-            // 
-            this.invoiceToolStripDDButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.toolStripMenuItem2});
-            this.invoiceToolStripDDButton.Image = global::InvoiceOTCNew.Properties.Resources.Invoice;
-            this.invoiceToolStripDDButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.invoiceToolStripDDButton.Name = "invoiceToolStripDDButton";
-            this.invoiceToolStripDDButton.Size = new System.Drawing.Size(72, 67);
-            this.invoiceToolStripDDButton.Text = "Invoice";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(193, 22);
-            this.toolStripMenuItem1.Text = "createInvoiceMenuItem";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.createInvoiceMenuItem_Click);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(193, 22);
-            this.toolStripMenuItem2.Text = "listInvoiceMenuItem";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.invoices_Show);
-            // 
             // toolStripTabItem3
             // 
             this.toolStripTabItem3.Name = "toolStripTabItem3";
@@ -335,33 +276,6 @@ namespace InvoiceOTCNew
             this.toolStripPanelItem2.Text = "toolStripPanelItem2";
             this.toolStripPanelItem2.Transparent = true;
             // 
-            // rekapInvoiceStripButton
-            // 
-            this.rekapInvoiceStripButton.Image = global::InvoiceOTCNew.Properties.Resources.Print;
-            this.rekapInvoiceStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.rekapInvoiceStripButton.Name = "rekapInvoiceStripButton";
-            this.rekapInvoiceStripButton.Size = new System.Drawing.Size(100, 20);
-            this.rekapInvoiceStripButton.Text = "Rekap Invoice";
-            this.rekapInvoiceStripButton.Click += new System.EventHandler(this.rekapInvoice_Show);
-            // 
-            // listProductStripButton
-            // 
-            this.listProductStripButton.Image = global::InvoiceOTCNew.Properties.Resources.Print;
-            this.listProductStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.listProductStripButton.Name = "listProductStripButton";
-            this.listProductStripButton.Size = new System.Drawing.Size(90, 20);
-            this.listProductStripButton.Text = "List Product";
-            this.listProductStripButton.Click += new System.EventHandler(this.productsPrint_Show);
-            // 
-            // listOutletStripButton
-            // 
-            this.listOutletStripButton.Image = global::InvoiceOTCNew.Properties.Resources.Print;
-            this.listOutletStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.listOutletStripButton.Name = "listOutletStripButton";
-            this.listOutletStripButton.Size = new System.Drawing.Size(81, 20);
-            this.listOutletStripButton.Text = "List Outlet";
-            this.listOutletStripButton.Click += new System.EventHandler(this.outletsPrint_Show);
-            // 
             // toolStripTabItem2
             // 
             this.toolStripTabItem2.Name = "toolStripTabItem2";
@@ -386,21 +300,12 @@ namespace InvoiceOTCNew
             this.toolStripEx5.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStripEx5.Image = null;
             this.toolStripEx5.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logLogBtn});
+            this.logLogBtn,
+            this.helpToolStripButton});
             this.toolStripEx5.Location = new System.Drawing.Point(0, 1);
             this.toolStripEx5.Name = "toolStripEx5";
-            this.toolStripEx5.Size = new System.Drawing.Size(164, 88);
+            this.toolStripEx5.Size = new System.Drawing.Size(404, 88);
             this.toolStripEx5.TabIndex = 0;
-            // 
-            // logLogBtn
-            // 
-            this.logLogBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.logLogBtn.Image = ((System.Drawing.Image)(resources.GetObject("logLogBtn.Image")));
-            this.logLogBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.logLogBtn.Name = "logLogBtn";
-            this.logLogBtn.Size = new System.Drawing.Size(35, 67);
-            this.logLogBtn.Text = "Logs";
-            this.logLogBtn.Click += new System.EventHandler(this.logs_Show);
             // 
             // toolStripTabItem7
             // 
@@ -445,13 +350,6 @@ namespace InvoiceOTCNew
             this.statusStripEx1.Size = new System.Drawing.Size(901, 22);
             this.statusStripEx1.TabIndex = 2;
             this.statusStripEx1.Text = "statusStripEx1";
-            // 
-            // userLbl
-            // 
-            this.userLbl.Image = global::InvoiceOTCNew.Properties.Resources.User___05;
-            this.userLbl.Name = "userLbl";
-            this.userLbl.Size = new System.Drawing.Size(134, 16);
-            this.userLbl.Text = "toolStripStatusLabel1";
             // 
             // timeLbl
             // 
@@ -546,6 +444,109 @@ namespace InvoiceOTCNew
             this.toolStripEx8.Size = new System.Drawing.Size(100, 25);
             this.toolStripEx8.TabIndex = 0;
             // 
+            // userLbl
+            // 
+            this.userLbl.Image = global::InvoiceOTCNew.Properties.Resources.User___05;
+            this.userLbl.Name = "userLbl";
+            this.userLbl.Size = new System.Drawing.Size(134, 16);
+            this.userLbl.Text = "toolStripStatusLabel1";
+            // 
+            // refCustomerBtn
+            // 
+            this.refCustomerBtn.Image = ((System.Drawing.Image)(resources.GetObject("refCustomerBtn.Image")));
+            this.refCustomerBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.refCustomerBtn.Name = "refCustomerBtn";
+            this.refCustomerBtn.Size = new System.Drawing.Size(76, 67);
+            this.refCustomerBtn.Text = "Customer";
+            this.refCustomerBtn.Click += new System.EventHandler(this.outlets_Show);
+            // 
+            // refProductBtn
+            // 
+            this.refProductBtn.Image = global::InvoiceOTCNew.Properties.Resources.Product_Box_03_WF;
+            this.refProductBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.refProductBtn.Name = "refProductBtn";
+            this.refProductBtn.Size = new System.Drawing.Size(67, 67);
+            this.refProductBtn.Text = "Product";
+            this.refProductBtn.Click += new System.EventHandler(this.products_Show);
+            // 
+            // userTsButton
+            // 
+            this.userTsButton.Image = global::InvoiceOTCNew.Properties.Resources.Add_New;
+            this.userTsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.userTsButton.Name = "userTsButton";
+            this.userTsButton.Size = new System.Drawing.Size(50, 67);
+            this.userTsButton.Text = "User";
+            // 
+            // hakAksesTsButton
+            // 
+            this.hakAksesTsButton.Image = global::InvoiceOTCNew.Properties.Resources.Add_New;
+            this.hakAksesTsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.hakAksesTsButton.Name = "hakAksesTsButton";
+            this.hakAksesTsButton.Size = new System.Drawing.Size(79, 67);
+            this.hakAksesTsButton.Text = "Hak Akses";
+            // 
+            // invoiceToolStripDDButton
+            // 
+            this.invoiceToolStripDDButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
+            this.invoiceToolStripDDButton.Image = global::InvoiceOTCNew.Properties.Resources.Invoice;
+            this.invoiceToolStripDDButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.invoiceToolStripDDButton.Name = "invoiceToolStripDDButton";
+            this.invoiceToolStripDDButton.Size = new System.Drawing.Size(72, 67);
+            this.invoiceToolStripDDButton.Text = "Invoice";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(193, 22);
+            this.toolStripMenuItem1.Text = "createInvoiceMenuItem";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.createInvoiceMenuItem_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(193, 22);
+            this.toolStripMenuItem2.Text = "listInvoiceMenuItem";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.invoices_Show);
+            // 
+            // rekapInvoiceStripButton
+            // 
+            this.rekapInvoiceStripButton.Image = global::InvoiceOTCNew.Properties.Resources.Print;
+            this.rekapInvoiceStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.rekapInvoiceStripButton.Name = "rekapInvoiceStripButton";
+            this.rekapInvoiceStripButton.Size = new System.Drawing.Size(100, 20);
+            this.rekapInvoiceStripButton.Text = "Rekap Invoice";
+            this.rekapInvoiceStripButton.Click += new System.EventHandler(this.rekapInvoice_Show);
+            // 
+            // listProductStripButton
+            // 
+            this.listProductStripButton.Image = global::InvoiceOTCNew.Properties.Resources.Print;
+            this.listProductStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.listProductStripButton.Name = "listProductStripButton";
+            this.listProductStripButton.Size = new System.Drawing.Size(90, 20);
+            this.listProductStripButton.Text = "List Product";
+            this.listProductStripButton.Click += new System.EventHandler(this.productsPrint_Show);
+            // 
+            // listOutletStripButton
+            // 
+            this.listOutletStripButton.Image = global::InvoiceOTCNew.Properties.Resources.Print;
+            this.listOutletStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.listOutletStripButton.Name = "listOutletStripButton";
+            this.listOutletStripButton.Size = new System.Drawing.Size(81, 20);
+            this.listOutletStripButton.Text = "List Outlet";
+            this.listOutletStripButton.Click += new System.EventHandler(this.outletsPrint_Show);
+            // 
+            // logLogBtn
+            // 
+            this.logLogBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.logLogBtn.Image = ((System.Drawing.Image)(resources.GetObject("logLogBtn.Image")));
+            this.logLogBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.logLogBtn.Name = "logLogBtn";
+            this.logLogBtn.Size = new System.Drawing.Size(35, 67);
+            this.logLogBtn.Text = "Logs";
+            this.logLogBtn.Click += new System.EventHandler(this.logs_Show);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -556,6 +557,15 @@ namespace InvoiceOTCNew
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(901, 249);
             this.panel1.TabIndex = 3;
+            // 
+            // helpToolStripButton
+            // 
+            this.helpToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripButton.Image")));
+            this.helpToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.helpToolStripButton.Name = "helpToolStripButton";
+            this.helpToolStripButton.Size = new System.Drawing.Size(59, 67);
+            this.helpToolStripButton.Text = "&About";
+            this.helpToolStripButton.Click += new System.EventHandler(this.helpToolStripButton_Click);
             // 
             // FrmRibbonMenu
             // 
@@ -637,5 +647,6 @@ namespace InvoiceOTCNew
         private System.Windows.Forms.ToolStripButton userTsButton;
         private System.Windows.Forms.ToolStripButton hakAksesTsButton;
         private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem7;
+        private System.Windows.Forms.ToolStripButton helpToolStripButton;
     }
 }

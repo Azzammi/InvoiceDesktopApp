@@ -128,11 +128,23 @@
     <Compile Include="FrmAbout.Designer.cs">
       <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\FrmListUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\FrmListUser.Designer.cs">
+      <DependentUpon>FrmListUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRibbonMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRibbonMenu.Designer.cs">
       <DependentUpon>FrmRibbonMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUser.Designer.cs">
+      <DependentUpon>FrmUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\DataGridViewHelper.cs" />
     <Compile Include="Helper\IMainMenu.cs" />
@@ -240,10 +252,10 @@
     <Compile Include="Invoice\FrmInvoice.Designer.cs">
       <DependentUpon>FrmInvoice.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmList.cs">
+    <Compile Include="User\FrmList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmList.Designer.cs">
+    <Compile Include="User\FrmList.Designer.cs">
       <DependentUpon>FrmList.cs</DependentUpon>
     </Compile>
     <Compile Include="Invoice\FrmListBoundGrid.cs">
@@ -336,8 +348,14 @@
     <EmbeddedResource Include="FrmAbout.resx">
       <DependentUpon>FrmAbout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User\FrmListUser.resx">
+      <DependentUpon>FrmListUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRibbonMenu.resx">
       <DependentUpon>FrmRibbonMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUser.resx">
+      <DependentUpon>FrmUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoice\FrmInvoiceNew.resx">
       <DependentUpon>FrmInvoiceNew.cs</DependentUpon>
@@ -357,7 +375,7 @@
     <EmbeddedResource Include="Invoice\FrmInvoice.resx">
       <DependentUpon>FrmInvoice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmList.resx">
+    <EmbeddedResource Include="User\FrmList.resx">
       <DependentUpon>FrmList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoice\FrmListBoundGrid.resx">
