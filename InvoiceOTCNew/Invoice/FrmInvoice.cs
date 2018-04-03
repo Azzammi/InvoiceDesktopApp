@@ -35,8 +35,6 @@ namespace InvoiceOTCNew
             productBindingSource.DataSource = productRepository.GetActiveProduct();
             outletBindingSource.DataSource = outletRepository.GetActiveOutlet();
 
-            DataGridViewHelper.SetDataGridTheme(dataGridView1);
-
             CekKondisi(FormCondition.Ready);
             isAddNew = false;
         }
@@ -57,8 +55,6 @@ namespace InvoiceOTCNew
 
             productBindingSource.DataSource = productRepository.GetActiveProduct();
             outletBindingSource.DataSource = outletRepository.GetActiveOutlet();
-
-            DataGridViewHelper.SetDataGridTheme(dataGridView1);
 
             CekKondisi(FormCondition.Inputting);
             invoiceBindingSource.Add(data);
