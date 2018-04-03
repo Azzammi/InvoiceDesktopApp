@@ -357,14 +357,14 @@
             this.nomorPOTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomorPOTextBox.Location = new System.Drawing.Point(141, 86);
             this.nomorPOTextBox.Name = "nomorPOTextBox";
-            this.nomorPOTextBox.Size = new System.Drawing.Size(200, 22);
+            this.nomorPOTextBox.Size = new System.Drawing.Size(209, 22);
             this.nomorPOTextBox.TabIndex = 3;
             // 
             // isPPNCheckBox
             // 
             this.isPPNCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceBindingSource, "isPPN", true));
             this.isPPNCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.isPPNCheckBox.ForeColor = System.Drawing.Color.White;
+            this.isPPNCheckBox.ForeColor = System.Drawing.Color.Black;
             this.isPPNCheckBox.Location = new System.Drawing.Point(141, 142);
             this.isPPNCheckBox.Name = "isPPNCheckBox";
             this.isPPNCheckBox.Size = new System.Drawing.Size(200, 24);
@@ -378,7 +378,7 @@
             this.dueDateDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dueDateDateTimePicker.Location = new System.Drawing.Point(141, 114);
             this.dueDateDateTimePicker.Name = "dueDateDateTimePicker";
-            this.dueDateDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.dueDateDateTimePicker.Size = new System.Drawing.Size(209, 22);
             this.dueDateDateTimePicker.TabIndex = 4;
             // 
             // idPaymentTextBox
@@ -394,7 +394,7 @@
             // 
             this.isPayedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceBindingSource, "isPayed", true));
             this.isPayedCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.isPayedCheckBox.ForeColor = System.Drawing.Color.White;
+            this.isPayedCheckBox.ForeColor = System.Drawing.Color.Black;
             this.isPayedCheckBox.Location = new System.Drawing.Point(141, 231);
             this.isPayedCheckBox.Name = "isPayedCheckBox";
             this.isPayedCheckBox.Size = new System.Drawing.Size(200, 24);

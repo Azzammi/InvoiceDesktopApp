@@ -19,7 +19,7 @@ namespace InvoiceOTCNew
     public partial class FrmRibbonMenu : Syncfusion.Windows.Forms.Tools.RibbonForm, IMainMenu
     {
         #region Declaration
-        private IUserRepository userRepo;
+        private IUserRepository userRepo;        
         #endregion
 
         public FrmRibbonMenu()
@@ -175,7 +175,15 @@ namespace InvoiceOTCNew
             frm.ShowDialog();
         }
         #endregion
-        #endregion
 
+        #endregion
+        private void tabbedMDIManager1_TabControlRemoved(object sender, Syncfusion.Windows.Forms.Tools.TabbedMDITabControlEventArgs args)
+        {           
+            panel1.Visible = true;            
+        }
+        private void tabbedMDIManager1_TabControlAdding(object sender, Syncfusion.Windows.Forms.Tools.TabbedMDITabControlEventArgs args)
+        {
+            panel1.Visible = false;
+        }
     }
 }

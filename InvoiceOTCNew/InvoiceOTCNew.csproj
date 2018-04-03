@@ -137,6 +137,12 @@
     <Compile Include="Helper\DataGridViewHelper.cs" />
     <Compile Include="Helper\IMainMenu.cs" />
     <Compile Include="Helper\StringHelper.cs" />
+    <Compile Include="Invoice\FrmInvoiceNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoice\FrmInvoiceNew.Designer.cs">
+      <DependentUpon>FrmInvoiceNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Outlet\FrmBatchOutlet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +339,9 @@
     <EmbeddedResource Include="FrmRibbonMenu.resx">
       <DependentUpon>FrmRibbonMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invoice\FrmInvoiceNew.resx">
+      <DependentUpon>FrmInvoiceNew.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Outlet\FrmBatchOutlet.resx">
       <DependentUpon>FrmBatchOutlet.cs</DependentUpon>
     </EmbeddedResource>
@@ -470,9 +479,6 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Customer.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Invoice.png" />
   </ItemGroup>
   <ItemGroup>
@@ -498,9 +504,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Paid Invoice1-WF.ico" />
+    <None Include="Resources\User Favourites-02-WF.png" />
+    <None Include="Resources\Product Box-03-WF.png" />
+    <None Include="Resources\Print-WF.png" />
+    <None Include="Resources\Microsoft-Excel-2013-01.png" />
+    <None Include="Resources\Excel-Import and Export.png" />
+    <None Include="Resources\Customer.png" />
+    <None Include="Resources\Contact Settings-WF.png" />
+    <None Include="Resources\Command-Refresh-01.png" />
+    <None Include="Resources\Imports-WF.png" />
+    <None Include="Resources\Export-02-WF.png" />
+    <None Include="Resources\Server-WF.png" />
+    <None Include="Resources\Database-WF.png" />
+    <None Include="Resources\Database-Connection-WF.png" />
+    <None Include="Resources\Access-restricted-WF.png" />
     <None Include="Resources\User - 05.png" />
     <None Include="Resources\refresh.png" />
-    <None Include="Resources\Print-WF.png" />
     <None Include="Resources\File Excel.png" />
     <None Include="Resources\edit2.png" />
   </ItemGroup>

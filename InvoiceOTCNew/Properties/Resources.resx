@@ -127,9 +127,6 @@
   <data name="PaidInvoice" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PaidInvoice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Customer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Customer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Invoice" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Invoice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,5 +156,44 @@
   </data>
   <data name="User___05" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\User - 05.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Access_restricted_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Access-restricted-WF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Command_Refresh_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Command-Refresh-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Contact_Settings_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Contact Settings-WF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Customer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Customer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Database_Connection_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Database-Connection-WF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Database_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Database-WF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Excel_Import_and_Export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Excel-Import and Export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Export_02_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Export-02-WF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Imports_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Imports-WF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Microsoft_Excel_2013_01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Microsoft-Excel-2013-01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Product_Box_03_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Product Box-03-WF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Server_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Server-WF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="User_Favourites_02_WF" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\User Favourites-02-WF.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
