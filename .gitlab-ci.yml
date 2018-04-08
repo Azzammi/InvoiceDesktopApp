@@ -22,6 +22,6 @@
     stage: build
     script:     
       - echo "Sedang melakukan proses build untuk %SolutionName%..."
-      - '"%MsBuildPath%" "src\%SolutionName%"'    
+      - '"%MsBuildPath%" "%SolutionName%"'    
     only:
       - master # validasi untuk branch atau tag
