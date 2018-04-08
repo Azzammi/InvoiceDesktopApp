@@ -70,6 +70,7 @@ namespace InvoiceOTC.Repository.Service
         public int Save(User obj)
         {
             var result = 0;
+            
             try
             {
                 m_Sql = @"INSERT INTO users(userid, username, password, authlevel, joineddate)
@@ -120,7 +121,7 @@ namespace InvoiceOTC.Repository.Service
             var user = new User();
             try
             {
-                m_Sql = @"SELECT userid, Password FROM users WHERE username = @username;";
+                m_Sql = @"SELECT userid, Password, authLevel FROM users WHERE username = @username;";
                 user = context.db.Query<User>(m_Sql, new { username }).SingleOrDefault();
 
                 if(user != null)

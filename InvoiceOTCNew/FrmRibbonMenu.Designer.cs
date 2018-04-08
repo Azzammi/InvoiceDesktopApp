@@ -198,6 +198,7 @@ namespace InvoiceOTCNew
             this.userTsButton.Name = "userTsButton";
             this.userTsButton.Size = new System.Drawing.Size(50, 67);
             this.userTsButton.Text = "User";
+            this.userTsButton.Click += new System.EventHandler(this.userTsButton_Click);
             // 
             // hakAksesTsButton
             // 

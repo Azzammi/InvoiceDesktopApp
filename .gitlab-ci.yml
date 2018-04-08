@@ -1,24 +1,27 @@
-variables:
-  PROJECT_NAME: "Invoice OTC"
-before_script:
-  - echo "starting build for %PROJECT_NAME%"
-  - echo "Restoring NuGet Packages..."
-  - c:\gitlab-runner\nuget restore "%PROJECT_NAME%.sln"
-stages:
-  - build
-  - test
-build:
-  stage: build
-  script:
-  - echo "Release build..."
-  - '"C:\Windows\Microsoft.NET\Framework64\v4.0.30319\msbuild.exe" /consoleloggerparameters:ErrorsOnly /maxcpucount /nologo /property:Configuration=Release /verbosity:quiet "%PROJECT_NAME%.sln"'
-  artifacts:
+  variables:
+    MsBuildPath: "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe"
+    NugetPath: "C:\\gitlab-runner\\nuget"
+    SolutionName: "Invoice OTC.sln"
+  
+  stages: # tipe dari job
+    - restore # stage untuk merestore paket nuget
+    - build # stage untuk proses build  
+    
+  cache:
     untracked: true
-test:
-  stage: test
-  script:
-  - echo "starting tests"
-  - cd %PROJECT_NAME%Tests/bin/Release
-  - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\MSTest.exe" /testcontainer:%PROJECT_NAME%Tests.dll'
-  dependencies:
-  - build
+    paths:    
+      - lib # folder hasil restore nuget package    
+  
+  restore_nuget_package: # job 1
+    stage: restore
+    script:
+      - echo "Sedang merestore paket nuget untuk %SolutionName%..."
+      - '"%NugetPath%" restore "src\%SolutionName%"'  
+      
+  build_solution: # job 2
+    stage: build
+    script:     
+      - echo "Sedang melakukan proses build untuk %SolutionName%..."
+      - '"%MsBuildPath%" "src\%SolutionName%"'    
+    only:
+      - master # validasi untuk branch atau tag

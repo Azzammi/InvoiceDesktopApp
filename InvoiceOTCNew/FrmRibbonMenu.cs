@@ -192,6 +192,12 @@ namespace InvoiceOTCNew
         private void tabbedMDIManager1_TabControlAdding(object sender, Syncfusion.Windows.Forms.Tools.TabbedMDITabControlEventArgs args)
         {
             panel1.Visible = false;
-        }       
+        }
+
+        private void userTsButton_Click(object sender, EventArgs e)
+        {
+            FrmUser frm = new FrmUser();
+            frm.ShowDialog();
+        }
     }
 }

@@ -3,7 +3,7 @@ using System.Text;
 
 namespace InvoiceOTCNew.Helper
 {
-    class EncryptHelper
+    public class EncryptHelper
     {
         /* Class yang bertugas melakukan segala aktifitas pengenkripsian 
          * terutama pada password user yang akan di hash menggunakan

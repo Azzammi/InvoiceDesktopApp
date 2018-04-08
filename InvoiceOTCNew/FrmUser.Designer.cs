@@ -47,10 +47,6 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(InvoiceOTC.Model.User);
-            // 
             // authLevelLabel
             // 
             authLevelLabel.AutoSize = true;
@@ -60,16 +56,6 @@
             authLevelLabel.Size = new System.Drawing.Size(88, 35);
             authLevelLabel.TabIndex = 3;
             authLevelLabel.Text = "Auth Level:";
-            // 
-            // authLevelComboBox
-            // 
-            this.authLevelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "AuthLevel", true));
-            this.authLevelComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.authLevelComboBox.FormattingEnabled = true;
-            this.authLevelComboBox.Location = new System.Drawing.Point(97, 105);
-            this.authLevelComboBox.Name = "authLevelComboBox";
-            this.authLevelComboBox.Size = new System.Drawing.Size(329, 21);
-            this.authLevelComboBox.TabIndex = 4;
             // 
             // passwordLabel
             // 
@@ -81,15 +67,6 @@
             passwordLabel.TabIndex = 7;
             passwordLabel.Text = "Password:";
             // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Password", true));
-            this.passwordTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.passwordTextBox.Location = new System.Drawing.Point(97, 71);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(329, 20);
-            this.passwordTextBox.TabIndex = 8;
-            // 
             // userIDLabel
             // 
             userIDLabel.AutoSize = true;
@@ -100,15 +77,6 @@
             userIDLabel.TabIndex = 9;
             userIDLabel.Text = "User ID:";
             // 
-            // userIDTextBox
-            // 
-            this.userIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "UserID", true));
-            this.userIDTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.userIDTextBox.Location = new System.Drawing.Point(97, 3);
-            this.userIDTextBox.Name = "userIDTextBox";
-            this.userIDTextBox.Size = new System.Drawing.Size(329, 20);
-            this.userIDTextBox.TabIndex = 10;
-            // 
             // usernameLabel
             // 
             usernameLabel.AutoSize = true;
@@ -118,6 +86,43 @@
             usernameLabel.Size = new System.Drawing.Size(88, 34);
             usernameLabel.TabIndex = 11;
             usernameLabel.Text = "Username:";
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(InvoiceOTC.Model.User);
+            // 
+            // authLevelComboBox
+            // 
+            this.authLevelComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "AuthLevel", true));
+            this.authLevelComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.authLevelComboBox.FormattingEnabled = true;
+            this.authLevelComboBox.Items.AddRange(new object[] {
+            "Accounting",
+            "Admin\t",
+            "Superuser"});
+            this.authLevelComboBox.Location = new System.Drawing.Point(97, 105);
+            this.authLevelComboBox.Name = "authLevelComboBox";
+            this.authLevelComboBox.Size = new System.Drawing.Size(329, 21);
+            this.authLevelComboBox.TabIndex = 4;
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Password", true));
+            this.passwordTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.passwordTextBox.Location = new System.Drawing.Point(97, 71);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(329, 20);
+            this.passwordTextBox.TabIndex = 8;
+            this.passwordTextBox.UseSystemPasswordChar = true;
+            // 
+            // userIDTextBox
+            // 
+            this.userIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "UserID", true));
+            this.userIDTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.userIDTextBox.Location = new System.Drawing.Point(97, 3);
+            this.userIDTextBox.Name = "userIDTextBox";
+            this.userIDTextBox.Size = new System.Drawing.Size(329, 20);
+            this.userIDTextBox.TabIndex = 10;
             // 
             // usernameTextBox
             // 
