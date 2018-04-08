@@ -16,7 +16,7 @@
     stage: restore
     script:
       - echo "Sedang merestore paket nuget untuk %SolutionName%..."
-      - '"%NugetPath%" restore "src\%SolutionName%"'  
+      - '"%NugetPath%" restore "%SolutionName%"'  
       
   build_solution: # job 2
     stage: build
