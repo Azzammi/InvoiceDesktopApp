@@ -1,5 +1,5 @@
   variables:
-    MsBuildPath: "C:\\Windows\\Microsoft.NET\\Framework64\\v4.0.30319\\msbuild.exe"
+    MsBuildPath: "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\msbuild.exe"
     NugetPath: "C:\\gitlab-runner\\nuget"
     SolutionName: "Invoice OTC.sln"
   
