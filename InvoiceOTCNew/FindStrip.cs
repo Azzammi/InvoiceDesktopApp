@@ -115,7 +115,7 @@ namespace InvoiceOTC.Controller
         protected virtual void OnItemFound(ItemFoundEventArgs e)
         {
             //Report Find results
-            ItemFound?.Invoke(this, e);
+            //ItemFound?.Invoke(this, e);
         }
         #endregion
 
