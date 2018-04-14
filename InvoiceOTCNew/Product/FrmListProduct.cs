@@ -24,6 +24,7 @@ namespace InvoiceOTCNew
             DataGridViewHelper.SetDataGridTheme(productDataGridView);
             SetDataSource(productBindingSource);
             SetDGUserDeletingRow(productDataGridView);
+            
 
             productRepository = new ProductRepository(Program.log);
 
@@ -38,7 +39,6 @@ namespace InvoiceOTCNew
             frm.Listener = this;
             frm.ShowDialog();
         }
-
         protected override void EditBtn_Click(object sender, EventArgs e)
         {
             Product currentProduct = (Product)productBindingSource.Current;
@@ -48,7 +48,6 @@ namespace InvoiceOTCNew
             frm.Listener = this;
             frm.ShowDialog();
         }
-
         protected override void DeleteBtn_Click(object sender, EventArgs e)
         {
             //Verification 
@@ -68,26 +67,10 @@ namespace InvoiceOTCNew
                     }
                 }              
             }          
-        }
-
-        protected override void findStrip1_ItemFound(object sender, ItemFoundEventArgs e)
-        {
-            //If value found, select row
-            if (e.Index >= 0)
-            {
-                this.productDataGridView.ClearSelection();
-                this.productDataGridView.Rows[e.Index].Selected = true;
-
-                //Change current list data source item
-                //To ensure currency accross all controls
-                //bound to this data source
-                this.productBindingSource.Position = e.Index;
-            }
-        }
-
+        }        
         protected override void advancedSearchBtn_Click(object sender, EventArgs e)
         {
-            productBindingSource.DataSource = productRepository.Search(findStrip2.searchInCmb.Text, findStrip2.searchTxt.Text);
+         //   productBindingSource.DataSource = productRepository.Search(toolStrip2..Text, toolStrip2.searchTxt.Text);
         }
 
         protected override void importBtn_Click(object sender, EventArgs e)

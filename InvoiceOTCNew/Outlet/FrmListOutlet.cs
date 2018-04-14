@@ -66,24 +66,11 @@ namespace InvoiceOTCNew
                     }
                 }
             }
-        }
-        protected override void findStrip1_ItemFound(object sender, ItemFoundEventArgs e)
-        {
-            //If value found, select row
-            if (e.Index >= 0)
-            {
-                this.outletDataGridView.ClearSelection();
-                this.outletDataGridView.Rows[e.Index].Selected = true;
-
-                //Change current list data source item
-                //To ensure currency accross all controls
-                //bound to this data source
-                this.outletBindingSource.Position = e.Index;
-            }
-        }           
+        }        
         protected override void advancedSearchBtn_Click(object sender, EventArgs e)
         {
-            outletBindingSource.DataSource = outletRepository.Search(findStrip2.searchInCmb.Text, findStrip2.searchTxt.Text);
+           //outletBindingSource.DataSource = outletRepository.Search(toolStrip2.searchincmb.Text, toolStrip2.searchTxt.Text);
+           //this.toolStrip2.s
         }
         protected override void importBtn_Click(object sender, EventArgs e)
         {

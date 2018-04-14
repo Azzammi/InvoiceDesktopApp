@@ -51,6 +51,19 @@
             this.outletBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subTotalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.subTotalTextBox = new System.Windows.Forms.TextBox();
+            this.ppnTextBox = new System.Windows.Forms.TextBox();
+            this.totalTextBox = new System.Windows.Forms.TextBox();
+            this.countBtn = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.periodeTextBox = new System.Windows.Forms.TextBox();
             this.nomorInvoiceTextBox = new System.Windows.Forms.TextBox();
@@ -61,19 +74,6 @@
             this.idPaymentTextBox = new System.Windows.Forms.TextBox();
             this.isPayedCheckBox = new System.Windows.Forms.CheckBox();
             this.comboBoxAdv1 = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.subTotalTextBox = new System.Windows.Forms.TextBox();
-            this.ppnTextBox = new System.Windows.Forms.TextBox();
-            this.totalTextBox = new System.Windows.Forms.TextBox();
-            this.countBtn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subTotalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.detailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemCode = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.itemQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,12 +96,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxAdv1)).BeginInit();
-            this.tableLayoutPanel6.SuspendLayout();
-            this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pItemsBindingSource)).BeginInit();
+            this.tableLayoutPanel6.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxAdv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,7 +174,7 @@
             nomorInvoiceLabel.Location = new System.Drawing.Point(3, 0);
             nomorInvoiceLabel.Name = "nomorInvoiceLabel";
             nomorInvoiceLabel.Size = new System.Drawing.Size(143, 28);
-            nomorInvoiceLabel.TabIndex = 12;
+            nomorInvoiceLabel.TabIndex = 0;
             nomorInvoiceLabel.Text = "NO. INVOICE";
             // 
             // nomorPOLabel
@@ -280,223 +280,6 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(954, 602);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel4.SetColumnSpan(this.tableLayoutPanel5, 2);
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.82278F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.17722F));
-            this.tableLayoutPanel5.Controls.Add(periodeLabel, 0, 10);
-            this.tableLayoutPanel5.Controls.Add(this.periodeTextBox, 1, 10);
-            this.tableLayoutPanel5.Controls.Add(this.nomorInvoiceTextBox, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(nomorInvoiceLabel, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(issuedDateLabel, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.issuedDateDateTimePicker, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(outletCodeLabel, 0, 3);
-            this.tableLayoutPanel5.Controls.Add(nomorPOLabel, 0, 4);
-            this.tableLayoutPanel5.Controls.Add(this.nomorPOTextBox, 1, 4);
-            this.tableLayoutPanel5.Controls.Add(isPPNLabel, 0, 7);
-            this.tableLayoutPanel5.Controls.Add(this.isPPNCheckBox, 1, 7);
-            this.tableLayoutPanel5.Controls.Add(dueDateLabel, 0, 5);
-            this.tableLayoutPanel5.Controls.Add(this.dueDateDateTimePicker, 1, 5);
-            this.tableLayoutPanel5.Controls.Add(this.idPaymentTextBox, 1, 14);
-            this.tableLayoutPanel5.Controls.Add(idPaymentLabel, 0, 14);
-            this.tableLayoutPanel5.Controls.Add(isPayedLabel, 0, 15);
-            this.tableLayoutPanel5.Controls.Add(this.isPayedCheckBox, 1, 15);
-            this.tableLayoutPanel5.Controls.Add(this.comboBoxAdv1, 1, 3);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 17;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(948, 265);
-            this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // periodeTextBox
-            // 
-            this.periodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "periode", true));
-            this.periodeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.periodeTextBox.Location = new System.Drawing.Point(152, 172);
-            this.periodeTextBox.Name = "periodeTextBox";
-            this.periodeTextBox.Size = new System.Drawing.Size(200, 22);
-            this.periodeTextBox.TabIndex = 7;
-            // 
-            // nomorInvoiceTextBox
-            // 
-            this.nomorInvoiceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "nomorInvoice", true));
-            this.nomorInvoiceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomorInvoiceTextBox.Location = new System.Drawing.Point(152, 3);
-            this.nomorInvoiceTextBox.Name = "nomorInvoiceTextBox";
-            this.nomorInvoiceTextBox.Size = new System.Drawing.Size(174, 22);
-            this.nomorInvoiceTextBox.TabIndex = 0;
-            // 
-            // issuedDateDateTimePicker
-            // 
-            this.issuedDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceBindingSource, "issuedDate", true));
-            this.issuedDateDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.issuedDateDateTimePicker.Location = new System.Drawing.Point(152, 31);
-            this.issuedDateDateTimePicker.Name = "issuedDateDateTimePicker";
-            this.issuedDateDateTimePicker.Size = new System.Drawing.Size(200, 22);
-            this.issuedDateDateTimePicker.TabIndex = 1;
-            // 
-            // nomorPOTextBox
-            // 
-            this.nomorPOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "nomorPO", true));
-            this.nomorPOTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomorPOTextBox.Location = new System.Drawing.Point(152, 86);
-            this.nomorPOTextBox.Name = "nomorPOTextBox";
-            this.nomorPOTextBox.Size = new System.Drawing.Size(209, 22);
-            this.nomorPOTextBox.TabIndex = 3;
-            // 
-            // isPPNCheckBox
-            // 
-            this.isPPNCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceBindingSource, "isPPN", true));
-            this.isPPNCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.isPPNCheckBox.ForeColor = System.Drawing.Color.Black;
-            this.isPPNCheckBox.Location = new System.Drawing.Point(152, 142);
-            this.isPPNCheckBox.Name = "isPPNCheckBox";
-            this.isPPNCheckBox.Size = new System.Drawing.Size(200, 24);
-            this.isPPNCheckBox.TabIndex = 5;
-            this.isPPNCheckBox.Text = "PPN 10%";
-            this.isPPNCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // dueDateDateTimePicker
-            // 
-            this.dueDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceBindingSource, "dueDate", true));
-            this.dueDateDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dueDateDateTimePicker.Location = new System.Drawing.Point(152, 114);
-            this.dueDateDateTimePicker.Name = "dueDateDateTimePicker";
-            this.dueDateDateTimePicker.Size = new System.Drawing.Size(209, 22);
-            this.dueDateDateTimePicker.TabIndex = 4;
-            // 
-            // idPaymentTextBox
-            // 
-            this.idPaymentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "idPayment", true));
-            this.idPaymentTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idPaymentTextBox.Location = new System.Drawing.Point(152, 200);
-            this.idPaymentTextBox.Name = "idPaymentTextBox";
-            this.idPaymentTextBox.Size = new System.Drawing.Size(200, 22);
-            this.idPaymentTextBox.TabIndex = 8;
-            // 
-            // isPayedCheckBox
-            // 
-            this.isPayedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceBindingSource, "isPayed", true));
-            this.isPayedCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.isPayedCheckBox.ForeColor = System.Drawing.Color.Black;
-            this.isPayedCheckBox.Location = new System.Drawing.Point(152, 231);
-            this.isPayedCheckBox.Name = "isPayedCheckBox";
-            this.isPayedCheckBox.Size = new System.Drawing.Size(200, 24);
-            this.isPayedCheckBox.TabIndex = 9;
-            this.isPayedCheckBox.Text = "Payed";
-            this.isPayedCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxAdv1
-            // 
-            this.comboBoxAdv1.BeforeTouchSize = new System.Drawing.Size(200, 24);
-            this.comboBoxAdv1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.invoiceBindingSource, "outletCode", true));
-            this.comboBoxAdv1.DataSource = this.outletBindingSource;
-            this.comboBoxAdv1.DisplayMember = "outlName";
-            this.comboBoxAdv1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxAdv1.Location = new System.Drawing.Point(152, 59);
-            this.comboBoxAdv1.Name = "comboBoxAdv1";
-            this.comboBoxAdv1.Size = new System.Drawing.Size(200, 24);
-            this.comboBoxAdv1.TabIndex = 2;
-            this.comboBoxAdv1.ValueMember = "outlCode";
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 1;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(480, 472);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(471, 127);
-            this.tableLayoutPanel6.TabIndex = 1;
-            // 
-            // tableLayoutPanel7
-            // 
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(subTotalLabel, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.subTotalTextBox, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(ppnLabel, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.ppnTextBox, 1, 1);
-            this.tableLayoutPanel7.Controls.Add(totalLabel, 0, 2);
-            this.tableLayoutPanel7.Controls.Add(this.totalTextBox, 1, 2);
-            this.tableLayoutPanel7.Controls.Add(this.countBtn, 1, 3);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 4;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.2973F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.7027F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(465, 121);
-            this.tableLayoutPanel7.TabIndex = 1;
-            // 
-            // subTotalTextBox
-            // 
-            this.subTotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "subTotal", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
-            this.subTotalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subTotalTextBox.Location = new System.Drawing.Point(235, 3);
-            this.subTotalTextBox.Name = "subTotalTextBox";
-            this.subTotalTextBox.Size = new System.Drawing.Size(227, 22);
-            this.subTotalTextBox.TabIndex = 0;
-            this.subTotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // ppnTextBox
-            // 
-            this.ppnTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "ppn", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
-            this.ppnTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ppnTextBox.Location = new System.Drawing.Point(235, 33);
-            this.ppnTextBox.Name = "ppnTextBox";
-            this.ppnTextBox.Size = new System.Drawing.Size(227, 22);
-            this.ppnTextBox.TabIndex = 1;
-            this.ppnTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // totalTextBox
-            // 
-            this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "total", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
-            this.totalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalTextBox.Location = new System.Drawing.Point(235, 67);
-            this.totalTextBox.Name = "totalTextBox";
-            this.totalTextBox.Size = new System.Drawing.Size(227, 22);
-            this.totalTextBox.TabIndex = 2;
-            this.totalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // countBtn
-            // 
-            this.countBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.countBtn.Location = new System.Drawing.Point(235, 96);
-            this.countBtn.Name = "countBtn";
-            this.countBtn.Size = new System.Drawing.Size(227, 22);
-            this.countBtn.TabIndex = 3;
-            this.countBtn.Text = "Hitung";
-            this.countBtn.UseVisualStyleBackColor = true;
-            this.countBtn.Click += new System.EventHandler(this.countBtn_Click);
-            // 
             // dataGridView1
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -590,6 +373,223 @@
             this.pItemsBindingSource.DataMember = "p_Items";
             this.pItemsBindingSource.DataSource = this.invoiceBindingSource;
             // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 1;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(480, 472);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 127F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(471, 127);
+            this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(subTotalLabel, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.subTotalTextBox, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(ppnLabel, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.ppnTextBox, 1, 1);
+            this.tableLayoutPanel7.Controls.Add(totalLabel, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.totalTextBox, 1, 2);
+            this.tableLayoutPanel7.Controls.Add(this.countBtn, 1, 3);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 4;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.2973F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.7027F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(465, 121);
+            this.tableLayoutPanel7.TabIndex = 1;
+            // 
+            // subTotalTextBox
+            // 
+            this.subTotalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "subTotal", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
+            this.subTotalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subTotalTextBox.Location = new System.Drawing.Point(235, 3);
+            this.subTotalTextBox.Name = "subTotalTextBox";
+            this.subTotalTextBox.Size = new System.Drawing.Size(227, 22);
+            this.subTotalTextBox.TabIndex = 0;
+            this.subTotalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // ppnTextBox
+            // 
+            this.ppnTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "ppn", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
+            this.ppnTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ppnTextBox.Location = new System.Drawing.Point(235, 33);
+            this.ppnTextBox.Name = "ppnTextBox";
+            this.ppnTextBox.Size = new System.Drawing.Size(227, 22);
+            this.ppnTextBox.TabIndex = 1;
+            this.ppnTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // totalTextBox
+            // 
+            this.totalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "total", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
+            this.totalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalTextBox.Location = new System.Drawing.Point(235, 67);
+            this.totalTextBox.Name = "totalTextBox";
+            this.totalTextBox.Size = new System.Drawing.Size(227, 22);
+            this.totalTextBox.TabIndex = 2;
+            this.totalTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // countBtn
+            // 
+            this.countBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.countBtn.Location = new System.Drawing.Point(235, 96);
+            this.countBtn.Name = "countBtn";
+            this.countBtn.Size = new System.Drawing.Size(227, 22);
+            this.countBtn.TabIndex = 3;
+            this.countBtn.Text = "Hitung";
+            this.countBtn.UseVisualStyleBackColor = true;
+            this.countBtn.Click += new System.EventHandler(this.countBtn_Click);
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel4.SetColumnSpan(this.tableLayoutPanel5, 2);
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.82278F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.17722F));
+            this.tableLayoutPanel5.Controls.Add(periodeLabel, 0, 10);
+            this.tableLayoutPanel5.Controls.Add(this.periodeTextBox, 1, 10);
+            this.tableLayoutPanel5.Controls.Add(this.nomorInvoiceTextBox, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(nomorInvoiceLabel, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(issuedDateLabel, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.issuedDateDateTimePicker, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(outletCodeLabel, 0, 3);
+            this.tableLayoutPanel5.Controls.Add(nomorPOLabel, 0, 4);
+            this.tableLayoutPanel5.Controls.Add(this.nomorPOTextBox, 1, 4);
+            this.tableLayoutPanel5.Controls.Add(isPPNLabel, 0, 7);
+            this.tableLayoutPanel5.Controls.Add(this.isPPNCheckBox, 1, 7);
+            this.tableLayoutPanel5.Controls.Add(dueDateLabel, 0, 5);
+            this.tableLayoutPanel5.Controls.Add(this.dueDateDateTimePicker, 1, 5);
+            this.tableLayoutPanel5.Controls.Add(this.idPaymentTextBox, 1, 14);
+            this.tableLayoutPanel5.Controls.Add(idPaymentLabel, 0, 14);
+            this.tableLayoutPanel5.Controls.Add(isPayedLabel, 0, 15);
+            this.tableLayoutPanel5.Controls.Add(this.isPayedCheckBox, 1, 15);
+            this.tableLayoutPanel5.Controls.Add(this.comboBoxAdv1, 1, 3);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 17;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(948, 265);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // periodeTextBox
+            // 
+            this.periodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "periode", true));
+            this.periodeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.periodeTextBox.Location = new System.Drawing.Point(152, 172);
+            this.periodeTextBox.Name = "periodeTextBox";
+            this.periodeTextBox.Size = new System.Drawing.Size(200, 22);
+            this.periodeTextBox.TabIndex = 7;
+            // 
+            // nomorInvoiceTextBox
+            // 
+            this.nomorInvoiceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "nomorInvoice", true));
+            this.nomorInvoiceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomorInvoiceTextBox.Location = new System.Drawing.Point(152, 3);
+            this.nomorInvoiceTextBox.Name = "nomorInvoiceTextBox";
+            this.nomorInvoiceTextBox.Size = new System.Drawing.Size(174, 22);
+            this.nomorInvoiceTextBox.TabIndex = 1;
+            // 
+            // issuedDateDateTimePicker
+            // 
+            this.issuedDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceBindingSource, "issuedDate", true));
+            this.issuedDateDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.issuedDateDateTimePicker.Location = new System.Drawing.Point(152, 31);
+            this.issuedDateDateTimePicker.Name = "issuedDateDateTimePicker";
+            this.issuedDateDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.issuedDateDateTimePicker.TabIndex = 2;
+            // 
+            // nomorPOTextBox
+            // 
+            this.nomorPOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "nomorPO", true));
+            this.nomorPOTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomorPOTextBox.Location = new System.Drawing.Point(152, 86);
+            this.nomorPOTextBox.Name = "nomorPOTextBox";
+            this.nomorPOTextBox.Size = new System.Drawing.Size(209, 22);
+            this.nomorPOTextBox.TabIndex = 4;
+            // 
+            // isPPNCheckBox
+            // 
+            this.isPPNCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceBindingSource, "isPPN", true));
+            this.isPPNCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isPPNCheckBox.ForeColor = System.Drawing.Color.Black;
+            this.isPPNCheckBox.Location = new System.Drawing.Point(152, 142);
+            this.isPPNCheckBox.Name = "isPPNCheckBox";
+            this.isPPNCheckBox.Size = new System.Drawing.Size(200, 24);
+            this.isPPNCheckBox.TabIndex = 6;
+            this.isPPNCheckBox.Text = "PPN 10%";
+            this.isPPNCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // dueDateDateTimePicker
+            // 
+            this.dueDateDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.invoiceBindingSource, "dueDate", true));
+            this.dueDateDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dueDateDateTimePicker.Location = new System.Drawing.Point(152, 114);
+            this.dueDateDateTimePicker.Name = "dueDateDateTimePicker";
+            this.dueDateDateTimePicker.Size = new System.Drawing.Size(209, 22);
+            this.dueDateDateTimePicker.TabIndex = 5;
+            // 
+            // idPaymentTextBox
+            // 
+            this.idPaymentTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.invoiceBindingSource, "idPayment", true));
+            this.idPaymentTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idPaymentTextBox.Location = new System.Drawing.Point(152, 200);
+            this.idPaymentTextBox.Name = "idPaymentTextBox";
+            this.idPaymentTextBox.Size = new System.Drawing.Size(200, 22);
+            this.idPaymentTextBox.TabIndex = 8;
+            // 
+            // isPayedCheckBox
+            // 
+            this.isPayedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.invoiceBindingSource, "isPayed", true));
+            this.isPayedCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.isPayedCheckBox.ForeColor = System.Drawing.Color.Black;
+            this.isPayedCheckBox.Location = new System.Drawing.Point(152, 231);
+            this.isPayedCheckBox.Name = "isPayedCheckBox";
+            this.isPayedCheckBox.Size = new System.Drawing.Size(200, 24);
+            this.isPayedCheckBox.TabIndex = 9;
+            this.isPayedCheckBox.Text = "Payed";
+            this.isPayedCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxAdv1
+            // 
+            this.comboBoxAdv1.BeforeTouchSize = new System.Drawing.Size(200, 24);
+            this.comboBoxAdv1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.invoiceBindingSource, "outletCode", true));
+            this.comboBoxAdv1.DataSource = this.outletBindingSource;
+            this.comboBoxAdv1.DisplayMember = "outlName";
+            this.comboBoxAdv1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAdv1.Location = new System.Drawing.Point(152, 59);
+            this.comboBoxAdv1.Name = "comboBoxAdv1";
+            this.comboBoxAdv1.Size = new System.Drawing.Size(200, 24);
+            this.comboBoxAdv1.TabIndex = 3;
+            this.comboBoxAdv1.ValueMember = "outlCode";
+            // 
             // detailBindingSource
             // 
             this.detailBindingSource.DataMember = "detail";
@@ -645,14 +645,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxAdv1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pItemsBindingSource)).EndInit();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pItemsBindingSource)).EndInit();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxAdv1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailBindingSource)).EndInit();
             this.ResumeLayout(false);
 

@@ -122,7 +122,7 @@ namespace InvoiceOTC.Repository.Service
             IList<Invoice> listOfInvoice = new List<Invoice>();
             try
             {
-                m_Sql = @"SELECT * FROM Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID;";
+                m_Sql = @"SELECT * FROM Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID ORDER BY A.InvoiceID ASC";
                 listOfInvoice = MappingRecordToObjSorted(m_Sql).ToList();
             }
             catch
@@ -139,8 +139,9 @@ namespace InvoiceOTC.Repository.Service
             IList<Invoice> listOfInvoice = new List<Invoice>();
             try
             {
-                m_Sql = @"SELECT * FROM Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID;";
-
+                m_Sql = @"SELECT A.invoiceid, nomorinvoice, duedate, outletcode, A.subtotal, ppn, 
+                                total, issueddate, isppn, nomorpo, periode, pengguna, idpayment, 
+                                ispayed FROM Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID ORDER BY A.InvoiceID;";
                 listOfInvoice = MappingRecordToObj(m_Sql).ToList();
             }
             catch

@@ -103,7 +103,7 @@
             this.authLevelComboBox.Location = new System.Drawing.Point(97, 105);
             this.authLevelComboBox.Name = "authLevelComboBox";
             this.authLevelComboBox.Size = new System.Drawing.Size(329, 21);
-            this.authLevelComboBox.TabIndex = 4;
+            this.authLevelComboBox.TabIndex = 3;
             // 
             // passwordTextBox
             // 
@@ -112,7 +112,7 @@
             this.passwordTextBox.Location = new System.Drawing.Point(97, 71);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(329, 20);
-            this.passwordTextBox.TabIndex = 8;
+            this.passwordTextBox.TabIndex = 2;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
             // userIDTextBox
@@ -122,7 +122,7 @@
             this.userIDTextBox.Location = new System.Drawing.Point(97, 3);
             this.userIDTextBox.Name = "userIDTextBox";
             this.userIDTextBox.Size = new System.Drawing.Size(329, 20);
-            this.userIDTextBox.TabIndex = 10;
+            this.userIDTextBox.TabIndex = 0;
             // 
             // usernameTextBox
             // 
@@ -131,7 +131,7 @@
             this.usernameTextBox.Location = new System.Drawing.Point(97, 37);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(329, 20);
-            this.usernameTextBox.TabIndex = 12;
+            this.usernameTextBox.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
@@ -155,7 +155,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(429, 137);
-            this.tableLayoutPanel2.TabIndex = 13;
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
             // FrmUser
             // 

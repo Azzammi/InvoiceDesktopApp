@@ -85,7 +85,17 @@ namespace InvoiceOTCNew.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Command_Refresh_01 {
             get {
-                object obj = ResourceManager.GetObject("Command_Refresh_01", resourceCulture);
+                object obj = ResourceManager.GetObject("Command-Refresh-01", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Command_Refresh_011 {
+            get {
+                object obj = ResourceManager.GetObject("Command_Refresh_011", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

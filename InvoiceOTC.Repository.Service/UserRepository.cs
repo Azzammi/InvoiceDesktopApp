@@ -88,7 +88,7 @@ namespace InvoiceOTC.Repository.Service
             var result = 0;
             try
             {
-                m_Sql = @"UPDATE users" +
+                m_Sql = @"UPDATE users " +
                          "SET username = @username, password = @password, authlevel = @authlevel, joineddate = @joineddate " +
                          "WHERE userid = @userid;";
                 result = context.db.Execute(m_Sql, obj);
@@ -104,7 +104,7 @@ namespace InvoiceOTC.Repository.Service
             var result = 0;
             try
             {
-                m_Sql = @"DELETE FROM users WHERE UserID = @userid and username = @username";
+                m_Sql = @"DELETE FROM users WHERE UserID = @userid";
                 result = context.db.Execute(m_Sql, obj);
             }
             catch(Exception ex)

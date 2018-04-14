@@ -61,7 +61,7 @@ namespace InvoiceOTCUnitTest
         {
             var user = new User
             {
-                UserID = "80001314"           
+                UserID = "80001314"
             };
 
             var result = userRepo.Delete(user);

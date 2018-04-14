@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 using InvoiceOTC.Repository.Service;
 using InvoiceOTCNew.Helper;
-using System.Windows.Forms;
 using InvoiceOTC.Controller;
+
+using FSCollections;
 
 namespace InvoiceOTCNew
 {
@@ -16,22 +19,36 @@ namespace InvoiceOTCNew
         private IInvoiceRepository invoiceRepo;
         private IProductRepository productRepo;
         private IOutletRepository outletRepo;
+
+        private IList<Invoice> invoiceData;
+        private PageOffset pageOffset;
+        private int totalRecords = 0;        
         #endregion
 
         public FrmListBoundGrid()
         {
             InitializeComponent();
             SetHeader("Invoice");
-            DataGridViewHelper.SetDataGridTheme(dataGridView1, dataGridView2);
+            DataGridViewHelper.SetDataGridTheme(dataGridView1);
             SetDataSource(invoiceBindingSource);
 
             productRepo = new ProductRepository();
             invoiceRepo = new InvoiceRepository();
             outletRepo = new OutletRepository();
 
-            invoiceBindingSource.DataSource = invoiceRepo.GetAllSorted();
-            productBindingSource.DataSource = productRepo.GetAll();
+            invoiceData = invoiceRepo.GetAllSorted();
+            invoiceBindingSource.DataSource = invoiceData;
+            productBindingSource.DataSource = productRepo.GetAll();      
             outletBindingSource.DataSource = outletRepo.GetAll();
+
+            pageOffset = new PageOffset();
+            pageOffset.PageSize = 10;
+            pageOffset.TotalRecords = invoiceData.Count;
+            totalRecords = invoiceData.Count;
+
+            bindingNavigator1.BindingSource = invoiceBindingSource;
+            invoiceBindingSource.CurrentChanged += new System.EventHandler(bindingSource1_CurrentChanged);
+            invoiceBindingSource.DataSource = pageOffset;
         }
 
         private void FrmListBoundGrid_Load(object sender, EventArgs e)
@@ -48,7 +65,7 @@ namespace InvoiceOTCNew
         }
         protected override void EditBtn_Click(object sender, EventArgs e)
         {
-            Invoice currentInvoice = (Invoice)invoiceBindingSource.Current;
+            Invoice currentInvoice = (Invoice)dataGridView1.CurrentRow.DataBoundItem;
             if (currentInvoice == null) return;
 
             var frm = new FrmInvoice(currentInvoice);
@@ -56,7 +73,7 @@ namespace InvoiceOTCNew
             frm.ShowDialog();
         }
         protected override void DeleteBtn_Click(object sender, EventArgs e)
-        {
+        {            
             //Remove the event first - to prevent executing the other method
             dataGridView1.UserDeletingRow -= dataGridView1_UserDeletingRow;
 
@@ -74,34 +91,21 @@ namespace InvoiceOTCNew
                     {
                         invoiceRepo.Delete(item);
                         invoiceBindingSource.Remove(item);
+                        
                     }
                 }
             }
 
             //Assign the method again
             dataGridView1.UserDeletingRow += dataGridView1_UserDeletingRow;
-        }
-        protected override void findStrip1_ItemFound(object sender, ItemFoundEventArgs e)
-        {
-            //If value found, select row
-            if (e.Index >= 0)
-            {
-                this.dataGridView1.ClearSelection();
-                this.dataGridView1.Rows[e.Index].Selected = true;
-
-                //Change current list data source item
-                //To ensure currency accross all controls
-                //bound to this data source
-                this.invoiceBindingSource.Position = e.Index;
-            }
-        }
+        }        
         protected override void advancedSearchBtn_Click(object sender, EventArgs e)
         {
-            invoiceBindingSource.DataSource = invoiceRepo.Search(findStrip2.searchInCmb.Text, findStrip2.searchTxt.Text);
+            //invoiceBindingSource.DataSource = invoiceRepo.Search(finds.searchInCmb.Text, findStrip2.searchTxt.Text);
         }
         protected override void printBtn_Click(object sender, EventArgs e)
         {
-            Invoice currentInvoice = (Invoice)invoiceBindingSource.Current;
+            Invoice currentInvoice = (Invoice)dataGridView1.CurrentRow.DataBoundItem;
             if (currentInvoice == null) return;
 
             var frm = new FrmReportInvoice(currentInvoice.nomorInvoice);            
@@ -114,13 +118,12 @@ namespace InvoiceOTCNew
         {
             throw new NotImplementedException();
         }
-
         public void Ok(object sender, bool isNewData, object data)
         {
             if (isNewData)
             {
                 invoiceBindingSource.ResetBindings(true);
-                invoiceBindingSource.Add(data);
+                //invoiceBindingSource.Add(data);
             }
             else
             {
@@ -179,42 +182,25 @@ namespace InvoiceOTCNew
             catch (Exception ex)
             {
                 Program.log.Error("Error", ex);
-            }
-            
-        }
-        private void dataGridView2_SelectionChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                int selectedCellCount = dataGridView2.GetCellCount(DataGridViewElementStates.Selected);
-
-                if (selectedCellCount > 0)
-                {
-                    if (dataGridView2.AreAllCellsSelected(true))
-                    {
-                        MessageBox.Show("Just Select cells that have number !");
-                    }
-                    else
-                    {
-                        //Using Linq to iterate through selected cells
-                        countDGCellBtn.Text = "Count : " + selectedCellCount;
-                        var total = (from DataGridViewCell cell in dataGridView2.SelectedCells
-                                     where cell.FormattedValue.ToString() != string.Empty && cell.ValueType != typeof(string)
-                                     select Convert.ToDecimal(cell.FormattedValue)).Sum().ToString("N");
-                        totalDGCellBtn.Text = "Total : " + total;
-                    }
-                }
-            }
-            catch (Exception ex){
-                Program.log.Error("Error", ex);
-            }
-            
-        }
+            }            
+        }    
         #endregion
 
         private void FrmListBoundGrid_FormClosing(object sender, FormClosingEventArgs e)
         {
 
         }
+
+        #region Paging
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
+            // The desired page has changed, so fetch the page of records using the "Current" offset 
+            int offset = (int)invoiceBindingSource.Current;
+            var records = new List<Invoice>();
+            for (int i = offset; i < offset + pageOffset.PageSize && i < totalRecords; i++)
+                records.Add(invoiceData[i]);
+            dataGridView1.DataSource = records;
+        }
+        #endregion
     }
 }

@@ -31,10 +31,16 @@ namespace InvoiceOTCNew
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TemplateListForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.findStrip2 = new InvoiceOTC.Controller.FindStrip();
-            this.advancedSearchBtn = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.importBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.searchTxt = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.searchInCmb = new System.Windows.Forms.ToolStripComboBox();
+            this.searchBtn = new System.Windows.Forms.ToolStripButton();
+            this.clearBtn = new System.Windows.Forms.ToolStripButton();
+            this.refreshBtn = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.importExcelBtn = new System.Windows.Forms.ToolStripButton();
             this.printBtn = new System.Windows.Forms.ToolStripButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.headerLbl = new System.Windows.Forms.Label();
@@ -50,7 +56,7 @@ namespace InvoiceOTCNew
             this.countDGCellBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tableLayoutPanel1.SuspendLayout();
-            this.findStrip2.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -61,7 +67,7 @@ namespace InvoiceOTCNew
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.findStrip2, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.toolStrip2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -69,63 +75,106 @@ namespace InvoiceOTCNew
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(875, 93);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(875, 90);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // findStrip2
+            // toolStrip2
             // 
-            this.findStrip2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(220)))), ((int)(((byte)(240)))));
-            this.findStrip2.bindingSource = null;
-            this.findStrip2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.findStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.findStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.advancedSearchBtn,
-            this.toolStripSeparator2,
-            this.importBtn,
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStrip2.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.searchTxt,
+            this.toolStripLabel2,
+            this.searchInCmb,
+            this.searchBtn,
+            this.clearBtn,
+            this.refreshBtn,
+            this.toolStripSeparator3,
+            this.importExcelBtn,
             this.printBtn});
-            this.findStrip2.Location = new System.Drawing.Point(0, 54);
-            this.findStrip2.Name = "findStrip2";
-            this.findStrip2.Padding = new System.Windows.Forms.Padding(5);
-            this.findStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.findStrip2.Size = new System.Drawing.Size(875, 39);
-            this.findStrip2.TabIndex = 2;
-            this.findStrip2.Text = "findStrip2";
-            this.findStrip2.ItemFound += new InvoiceOTC.Controller.ItemFoundEventHandler(this.findStrip1_ItemFound);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 51);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(875, 39);
+            this.toolStrip2.TabIndex = 3;
+            this.toolStrip2.Text = "toolStrip2";
             // 
-            // advancedSearchBtn
+            // toolStripLabel1
             // 
-            this.advancedSearchBtn.ForeColor = System.Drawing.Color.Black;
-            this.advancedSearchBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.advancedSearchBtn.Name = "advancedSearchBtn";
-            this.advancedSearchBtn.Size = new System.Drawing.Size(52, 26);
-            this.advancedSearchBtn.Text = "Search !";
-            this.advancedSearchBtn.Click += new System.EventHandler(this.advancedSearchBtn_Click);
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(42, 36);
+            this.toolStripLabel1.Text = "Search";
             // 
-            // toolStripSeparator2
+            // searchTxt
             // 
-            this.toolStripSeparator2.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 29);
+            this.searchTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchTxt.Name = "searchTxt";
+            this.searchTxt.Size = new System.Drawing.Size(100, 39);
             // 
-            // importBtn
+            // toolStripLabel2
             // 
-            this.importBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.importBtn.ForeColor = System.Drawing.Color.Black;
-            this.importBtn.Image = ((System.Drawing.Image)(resources.GetObject("importBtn.Image")));
-            this.importBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.importBtn.Name = "importBtn";
-            this.importBtn.Size = new System.Drawing.Size(63, 26);
-            this.importBtn.Text = "Import";
-            this.importBtn.Click += new System.EventHandler(this.importBtn_Click);
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(55, 36);
+            this.toolStripLabel2.Text = "Search In";
+            // 
+            // searchInCmb
+            // 
+            this.searchInCmb.Name = "searchInCmb";
+            this.searchInCmb.Size = new System.Drawing.Size(100, 39);
+            // 
+            // searchBtn
+            // 
+            this.searchBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.searchBtn.Image = ((System.Drawing.Image)(resources.GetObject("searchBtn.Image")));
+            this.searchBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.searchBtn.Name = "searchBtn";
+            this.searchBtn.Size = new System.Drawing.Size(46, 36);
+            this.searchBtn.Text = "Search";
+            this.searchBtn.Click += new System.EventHandler(this.advancedSearchBtn_Click);
+            // 
+            // clearBtn
+            // 
+            this.clearBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.clearBtn.Image = ((System.Drawing.Image)(resources.GetObject("clearBtn.Image")));
+            this.clearBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(38, 36);
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.refreshBtn.Image = global::InvoiceOTCNew.Properties.Resources.Command_Refresh_011;
+            this.refreshBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(82, 36);
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
+            // 
+            // importExcelBtn
+            // 
+            this.importExcelBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.importExcelBtn.Image = global::InvoiceOTCNew.Properties.Resources.Excel_Import_and_Export;
+            this.importExcelBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.importExcelBtn.Name = "importExcelBtn";
+            this.importExcelBtn.Size = new System.Drawing.Size(108, 36);
+            this.importExcelBtn.Text = "Import Excel";
+            this.importExcelBtn.Click += new System.EventHandler(this.importBtn_Click);
             // 
             // printBtn
             // 
             this.printBtn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.printBtn.ForeColor = System.Drawing.Color.Black;
             this.printBtn.Image = global::InvoiceOTCNew.Properties.Resources.Print;
             this.printBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.printBtn.Name = "printBtn";
-            this.printBtn.Size = new System.Drawing.Size(52, 26);
+            this.printBtn.Size = new System.Drawing.Size(68, 36);
             this.printBtn.Text = "Print";
             this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
             // 
@@ -136,7 +185,7 @@ namespace InvoiceOTCNew
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(869, 48);
+            this.panel2.Size = new System.Drawing.Size(869, 45);
             this.panel2.TabIndex = 0;
             // 
             // headerLbl
@@ -188,7 +237,6 @@ namespace InvoiceOTCNew
             // tambahBtn
             // 
             this.tambahBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tambahBtn.Image = global::InvoiceOTCNew.Properties.Resources.Add_New;
             this.tambahBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tambahBtn.Location = new System.Drawing.Point(3, 3);
             this.tambahBtn.Name = "tambahBtn";
@@ -201,7 +249,6 @@ namespace InvoiceOTCNew
             // editBtn
             // 
             this.editBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.editBtn.Image = global::InvoiceOTCNew.Properties.Resources.edit2;
             this.editBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.editBtn.Location = new System.Drawing.Point(115, 3);
             this.editBtn.Name = "editBtn";
@@ -214,7 +261,6 @@ namespace InvoiceOTCNew
             // DeleteBtn
             // 
             this.DeleteBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DeleteBtn.Image = global::InvoiceOTCNew.Properties.Resources.delete;
             this.DeleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DeleteBtn.Location = new System.Drawing.Point(227, 3);
             this.DeleteBtn.Name = "DeleteBtn";
@@ -302,8 +348,8 @@ namespace InvoiceOTCNew
             this.Text = "TemplateListForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.findStrip2.ResumeLayout(false);
-            this.findStrip2.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -327,11 +373,6 @@ namespace InvoiceOTCNew
         private System.Windows.Forms.Button ExitBtn;
         private System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Label headerLbl;
-        private System.Windows.Forms.ToolStripButton advancedSearchBtn;
-        protected InvoiceOTC.Controller.FindStrip findStrip2;
-        private System.Windows.Forms.ToolStripButton importBtn;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton printBtn;
         private System.Windows.Forms.TextBox textBox1;
         protected System.Windows.Forms.ToolStripButton totalDGCellBtn;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -360,5 +401,16 @@ namespace InvoiceOTCNew
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }
+        private ToolStripLabel toolStripLabel1;
+        private ToolStripLabel toolStripLabel2;
+        private ToolStripButton searchBtn;
+        private ToolStripButton clearBtn;
+        private ToolStripButton refreshBtn;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripButton importExcelBtn;
+        private ToolStripButton printBtn;
+        protected ToolStrip toolStrip2;
+        public ToolStripTextBox searchTxt;
+        public ToolStripComboBox searchInCmb;
     }
 }

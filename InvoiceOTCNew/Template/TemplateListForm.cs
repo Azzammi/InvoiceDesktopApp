@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace InvoiceOTCNew
@@ -38,7 +39,7 @@ namespace InvoiceOTCNew
         /// <param name="source"></param>
         protected void SetDataSource(BindingSource source)
         {
-            findStrip2.bindingSource = source;
+            bindingSource = source;
         }        
 
         /// <summary>
@@ -65,11 +66,7 @@ namespace InvoiceOTCNew
         protected virtual void DeleteBtn_Click(object sender, EventArgs e)
         {
           
-        }
-        protected virtual void findStrip1_ItemFound(object sender, InvoiceOTC.Controller.ItemFoundEventArgs e)
-        {
-
-        }
+        }      
         protected virtual void advancedSearchBtn_Click(object sender, EventArgs e)
         {
 
@@ -82,6 +79,34 @@ namespace InvoiceOTCNew
         {
 
         }
+        protected virtual void refreshBtn_Click(object sender, EventArgs e) { }
+        protected virtual void clearBtn_Click(object sender, EventArgs e) { }
+        #endregion
+
+        #region ToolStrip Method
+        protected void searchInToolStripCombobox_GotFocus(object sender, EventArgs e)
+        {
+            //Bail in no data source
+            if (bindingSource == null) return;
+            if (bindingSource.DataSource == null) return;
+
+            this.searchInCmb.Items.Clear();
+
+            //Add columns name to search in list
+            PropertyDescriptorCollection properties = ((ITypedList)bindingSource).GetItemProperties(null);
+
+            foreach (PropertyDescriptor property in properties)
+            {
+                if (property.PropertyType == typeof(string)) { this.searchInCmb.Items.Insert(0, property.Name); }
+                //this.searchInCmb.Items.Insert(0, property.Name);
+            }
+
+            //Select first columns name in list,, if columns name were added
+            if (this.searchInCmb.Items.Count > 0)
+            {
+                this.searchInCmb.SelectedIndex = 0;
+            }
+        }
         #endregion
 
         /// <summary>
@@ -89,11 +114,12 @@ namespace InvoiceOTCNew
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// 
         private void dgView_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             e.Cancel = true; //To Prevent Deleting data when user press No in confirm dialog
             DeleteBtn.PerformClick();
-        }
+        }        
     }
     
 }
