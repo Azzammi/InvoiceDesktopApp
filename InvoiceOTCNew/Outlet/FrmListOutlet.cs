@@ -26,8 +26,9 @@ namespace InvoiceOTCNew
             SetDGUserDeletingRow(outletDataGridView);
 
             outletRepository = new OutletRepository();
-
             outletBindingSource.DataSource = outletRepository.GetAll();
+
+            searchInCmb.GotFocus += searchInToolStripCombobox_GotFocus;
         }
         #endregion
 
@@ -69,8 +70,7 @@ namespace InvoiceOTCNew
         }        
         protected override void advancedSearchBtn_Click(object sender, EventArgs e)
         {
-           //outletBindingSource.DataSource = outletRepository.Search(toolStrip2.searchincmb.Text, toolStrip2.searchTxt.Text);
-           //this.toolStrip2.s
+           outletBindingSource.DataSource = outletRepository.Search(searchInCmb.Text, searchTxt.Text);           
         }
         protected override void importBtn_Click(object sender, EventArgs e)
         {
@@ -82,6 +82,10 @@ namespace InvoiceOTCNew
             var frm = new FrmBatchOutlet();
             frm.ShowDialog();
         }
+        protected override void refreshBtn_Click(object sender, EventArgs e)
+        {
+            outletBindingSource.DataSource = outletRepository.GetAll();
+        }
         #endregion        
 
         #region IListener Method
@@ -89,7 +93,6 @@ namespace InvoiceOTCNew
         {
             throw new NotImplementedException();
         }
-
         public void Ok(object sender, bool isNewData, object data)
         {
             if (isNewData)

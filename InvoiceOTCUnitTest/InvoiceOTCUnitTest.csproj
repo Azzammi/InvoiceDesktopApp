@@ -89,10 +89,6 @@
       <Project>{aa807a36-246c-491c-9b20-52624877d81a}</Project>
       <Name>InvoiceOTC.Repository.Service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\InvoiceOTCNew\InvoiceOTCNew.csproj">
-      <Project>{4938330d-2899-42fa-9fd3-f63e8df9e4f3}</Project>
-      <Name>InvoiceOTCNew</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

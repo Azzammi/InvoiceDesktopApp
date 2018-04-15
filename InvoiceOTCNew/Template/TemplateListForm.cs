@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace InvoiceOTCNew
 {
@@ -37,10 +38,8 @@ namespace InvoiceOTCNew
         /// Set Data Source to get the schema
         /// </summary>
         /// <param name="source"></param>
-        protected void SetDataSource(BindingSource source)
-        {
-            bindingSource = source;
-        }        
+        protected void SetDataSource(BindingSource source) { bindingSource = source; }        
+        protected void SetDataSource<TSource> (IList<TSource> source) { bindingSource = new BindingSource(); bindingSource.DataSource =  source; }
 
         /// <summary>
         /// Set Datagridview event
@@ -80,7 +79,10 @@ namespace InvoiceOTCNew
 
         }
         protected virtual void refreshBtn_Click(object sender, EventArgs e) { }
-        protected virtual void clearBtn_Click(object sender, EventArgs e) { }
+        protected virtual void clearBtn_Click(object sender, EventArgs e) {
+            searchTxt.Clear();
+            refreshBtn.PerformClick();
+        }
         #endregion
 
         #region ToolStrip Method

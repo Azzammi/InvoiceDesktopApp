@@ -29,31 +29,40 @@ namespace InvoiceOTCNew
         {
             InitializeComponent();
             SetHeader("Invoice");
-            DataGridViewHelper.SetDataGridTheme(dataGridView1);
-            SetDataSource(invoiceBindingSource);
+            DataGridViewHelper.SetDataGridTheme(dataGridView1);            
 
             productRepo = new ProductRepository();
             invoiceRepo = new InvoiceRepository();
             outletRepo = new OutletRepository();
 
+            InitData();
+            searchInCmb.GotFocus += searchInToolStripCombobox_GotFocus;
+        }
+
+        private void FrmListBoundGrid_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void InitData()
+        {
+            invoiceBindingSource.CurrentChanged -= new EventHandler(bindingSource1_CurrentChanged);
+
             invoiceData = invoiceRepo.GetAllSorted();
             invoiceBindingSource.DataSource = invoiceData;
-            productBindingSource.DataSource = productRepo.GetAll();      
+            productBindingSource.DataSource = productRepo.GetAll();
             outletBindingSource.DataSource = outletRepo.GetAll();
+
+            SetDataSource(invoiceData);
 
             pageOffset = new PageOffset();
             pageOffset.PageSize = 10;
             pageOffset.TotalRecords = invoiceData.Count;
             totalRecords = invoiceData.Count;
 
-            bindingNavigator1.BindingSource = invoiceBindingSource;
-            invoiceBindingSource.CurrentChanged += new System.EventHandler(bindingSource1_CurrentChanged);
+            bindingNavigator1.BindingSource = invoiceBindingSource;            
+            invoiceBindingSource.CurrentChanged += new EventHandler(bindingSource1_CurrentChanged);
             invoiceBindingSource.DataSource = pageOffset;
-        }
-
-        private void FrmListBoundGrid_Load(object sender, EventArgs e)
-        {
-           
         }
 
         #region Overrided Method
@@ -101,7 +110,7 @@ namespace InvoiceOTCNew
         }        
         protected override void advancedSearchBtn_Click(object sender, EventArgs e)
         {
-            //invoiceBindingSource.DataSource = invoiceRepo.Search(finds.searchInCmb.Text, findStrip2.searchTxt.Text);
+            dataGridView1.DataSource = invoiceRepo.Search(searchInCmb.Text, searchTxt.Text);
         }
         protected override void printBtn_Click(object sender, EventArgs e)
         {
@@ -110,6 +119,10 @@ namespace InvoiceOTCNew
 
             var frm = new FrmReportInvoice(currentInvoice.nomorInvoice);            
             frm.ShowDialog();
+        }
+        protected override void refreshBtn_Click(object sender, EventArgs e)
+        {
+            InitData();
         }
         #endregion
 

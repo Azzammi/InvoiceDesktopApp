@@ -155,12 +155,6 @@
     <Compile Include="Helper\DataGridViewHelper.cs" />
     <Compile Include="Helper\IMainMenu.cs" />
     <Compile Include="Helper\StringHelper.cs" />
-    <Compile Include="Invoice\FrmInvoiceNew.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Invoice\FrmInvoiceNew.Designer.cs">
-      <DependentUpon>FrmInvoiceNew.cs</DependentUpon>
-    </Compile>
     <Compile Include="Outlet\FrmBatchOutlet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,9 +356,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUser.resx">
       <DependentUpon>FrmUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Invoice\FrmInvoiceNew.resx">
-      <DependentUpon>FrmInvoiceNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Outlet\FrmBatchOutlet.resx">
       <DependentUpon>FrmBatchOutlet.cs</DependentUpon>

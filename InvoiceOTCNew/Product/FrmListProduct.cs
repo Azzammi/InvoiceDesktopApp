@@ -23,11 +23,9 @@ namespace InvoiceOTCNew
             SetHeader("Product");
             DataGridViewHelper.SetDataGridTheme(productDataGridView);
             SetDataSource(productBindingSource);
-            SetDGUserDeletingRow(productDataGridView);
-            
+            SetDGUserDeletingRow(productDataGridView);            
 
             productRepository = new ProductRepository(Program.log);
-
             productBindingSource.DataSource = productRepository.GetAll();
         }
         #endregion
@@ -70,19 +68,21 @@ namespace InvoiceOTCNew
         }        
         protected override void advancedSearchBtn_Click(object sender, EventArgs e)
         {
-         //   productBindingSource.DataSource = productRepository.Search(toolStrip2..Text, toolStrip2.searchTxt.Text);
+           productBindingSource.DataSource = productRepository.Search(searchInCmb.Text, searchTxt.Text);
         }
-
         protected override void importBtn_Click(object sender, EventArgs e)
         {
             var frm = new FrmImportProduk();
             frm.ShowDialog();
         }
-
         protected override void printBtn_Click(object sender, EventArgs e)
         {
             var frm = new FrmBatchProduct();
             frm.ShowDialog();
+        }
+        protected override void refreshBtn_Click(object sender, EventArgs e)
+        {            
+            productBindingSource.DataSource = productRepository.GetAll();
         }
         #endregion
 

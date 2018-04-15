@@ -17,14 +17,14 @@ namespace InvoiceOTCNew.Helper
                 {
                     foreach (Control innerControl in control.Controls)
                     {
-                        if (innerControl is CheckBox || innerControl is TextBox || innerControl is ComboBox || innerControl is TableLayoutPanel)
+                        if (innerControl is CheckBox || innerControl is TextBox || innerControl is ComboBox || innerControl is DataGridView || innerControl is TableLayoutPanel)
                         {
                             innerControl.Enabled = false;
                         }
                     }
                 }
 
-                if (control is CheckBox || control is TextBox || control is ComboBox)
+                if (control is CheckBox || control is TextBox || control is ComboBox || control is DataGridView)
                 {
                     control.Enabled = false;
                 }
@@ -43,14 +43,14 @@ namespace InvoiceOTCNew.Helper
                 {
                     foreach (Control innerControl in control.Controls)
                     {                        
-                        if (innerControl is CheckBox || innerControl is TextBox || innerControl is ComboBox || innerControl is TableLayoutPanel)
+                        if (innerControl is CheckBox || innerControl is TextBox || innerControl is ComboBox || innerControl is DataGridView || innerControl is TableLayoutPanel)
                         {
                             innerControl.Enabled = true;
                         }
                     }
                 }
 
-                if (control is CheckBox || control is TextBox || control is ComboBox)
+                if (control is CheckBox || control is TextBox || control is ComboBox || control is DataGridView)
                 {
                     control.Enabled = true;
                 }

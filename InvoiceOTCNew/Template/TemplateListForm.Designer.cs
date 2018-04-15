@@ -409,8 +409,8 @@ namespace InvoiceOTCNew
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripButton importExcelBtn;
         private ToolStripButton printBtn;
-        protected ToolStrip toolStrip2;
         public ToolStripTextBox searchTxt;
         public ToolStripComboBox searchInCmb;
+        private ToolStrip toolStrip2;
     }
 }

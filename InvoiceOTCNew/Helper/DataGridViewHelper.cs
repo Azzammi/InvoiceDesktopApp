@@ -14,7 +14,7 @@ namespace InvoiceOTCNew.Helper
         public static void SetDataGridTheme(DataGridView dgView1, DataGridView dgView2 = null)
         {
             #region AlternatingRows Cell Style
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();            
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();                       
             dataGridViewCellStyle1.BackColor = Color.White;
             dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = Color.Black;
@@ -25,34 +25,39 @@ namespace InvoiceOTCNew.Helper
 
             #region Column Header Style
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.Control;
             dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.Padding = new Padding(4);
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;            
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;            
             #endregion
 
             #region Default Cell Style
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();            
             dataGridViewCellStyle6.BackColor = Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));            
             dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;        
-            #endregion
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            #endregion            
 
-            dgView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dgView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgView1.AutoGenerateColumns = false;
             dgView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             dgView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;            
             dgView1.ColumnHeadersHeight = 22;
-            dgView1.DefaultCellStyle = dataGridViewCellStyle1;
+            dgView1.DefaultCellStyle = dataGridViewCellStyle6;
             dgView1.RowTemplate.Height = 40;
+
+            //Function to convert first letter in columnsHeader to uppercase
+            foreach (DataGridViewColumn columnHeader in dgView1.Columns)
+            {
+                columnHeader.HeaderText = StringHelper.FirstLetterToUpper(columnHeader.HeaderText);
+            }
 
             if (dgView2 != null)
             {
@@ -63,6 +68,12 @@ namespace InvoiceOTCNew.Helper
                 dgView2.ColumnHeadersHeight = 22;
                 dgView2.DefaultCellStyle = dataGridViewCellStyle1;
                 dgView2.RowTemplate.Height = 40;
+            
+                //Function to convert first letter in columnsHeader to uppercase
+                foreach (DataGridViewColumn columnHeader in dgView2.Columns)
+                {
+                    columnHeader.HeaderText = StringHelper.FirstLetterToUpper(columnHeader.HeaderText);
+                }
             }
         }
     }
