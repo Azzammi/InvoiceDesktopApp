@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceOTCNew", "InvoiceOTC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceOTCUnitTest", "InvoiceOTCUnitTest\InvoiceOTCUnitTest.csproj", "{01282710-96D5-4C96-BB72-791B60D386A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseConnection", "DatabaseConnection\DatabaseConnection.csproj", "{98F21765-A79B-4B0F-A7F2-B280BDFB8A11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{01282710-96D5-4C96-BB72-791B60D386A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01282710-96D5-4C96-BB72-791B60D386A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01282710-96D5-4C96-BB72-791B60D386A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98F21765-A79B-4B0F-A7F2-B280BDFB8A11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98F21765-A79B-4B0F-A7F2-B280BDFB8A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98F21765-A79B-4B0F-A7F2-B280BDFB8A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98F21765-A79B-4B0F-A7F2-B280BDFB8A11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

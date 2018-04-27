@@ -7,9 +7,6 @@ using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 using InvoiceOTC.Repository.Service;
 using InvoiceOTCNew.Helper;
-using InvoiceOTC.Controller;
-
-using FSCollections;
 
 namespace InvoiceOTCNew
 {
@@ -114,10 +111,35 @@ namespace InvoiceOTCNew
         }
         protected override void printBtn_Click(object sender, EventArgs e)
         {
-            Invoice currentInvoice = (Invoice)dataGridView1.CurrentRow.DataBoundItem;
-            if (currentInvoice == null) return;
+            //Invoice currentInvoice = (Invoice)dataGridView1.CurrentRow.DataBoundItem;
+            //if (currentInvoice == null) return;
+            List<int> invoiceNumbers = new List<int>();
+            try
+            {
+                int selectedCellCount = dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
 
-            var frm = new FrmReportInvoice(currentInvoice.nomorInvoice);            
+                if (selectedCellCount > 0)
+                {
+                    if (dataGridView1.AreAllCellsSelected(true))
+                    {
+                        MessageBox.Show("Just Select cells that have number !");
+                    }
+                    else
+                    {                                                
+                        foreach(DataGridViewRow row in dataGridView1.SelectedRows)
+                        {
+                            invoiceNumbers.Add(Convert.ToInt32(row.Cells[0].Value));
+                        }                        
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Program.log.Error("Error", ex);
+            }
+
+
+            var frm = new FrmReportInvoice(invoiceNumbers.ToArray());            
             frm.ShowDialog();
         }
         protected override void refreshBtn_Click(object sender, EventArgs e)

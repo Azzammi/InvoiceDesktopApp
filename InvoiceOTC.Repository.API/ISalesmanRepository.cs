@@ -20,8 +20,8 @@ namespace InvoiceOTC.Repository.API
         /// <summary>
         /// Get Salesman by sales name
         /// </summary>
-        /// <param name="salesmanName"></param>
+        /// <param name="salesmanCode"></param>
         /// <returns></returns>
-        Salesman GetSalesmanByName(string salesmanName);
+        Salesman GetSalesmanByCode(string salesmanCode);
     }
 }

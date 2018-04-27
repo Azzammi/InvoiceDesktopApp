@@ -3,6 +3,7 @@
 using InvoiceOTC.Repository.API;
 using InvoiceOTC.Repository.Service;
 using InvoiceOTCNew.Report;
+using InvoiceOTCNew.Report.CrFiles;
 
 namespace InvoiceOTCNew
 {
@@ -41,7 +42,7 @@ namespace InvoiceOTCNew
             //invoiceObjectReport.Load(Application.StartupPath + "\\rptInvoice.rpt");
             
             //FieldingRw crInvoice = new FieldingRw();
-            rptInvoiceWODisc crInvoice = new rptInvoiceWODisc();
+            rptInvoiceWODiscDev crInvoice = new rptInvoiceWODiscDev();
             //rptSubReportInvoice crInvoice = new rptSubReportInvoice();
 
             //Set DataSource First            
@@ -51,7 +52,7 @@ namespace InvoiceOTCNew
             crInvoice.Database.Tables["InvoiceOTC_Model_Outlet"].SetDataSource(outletRepo.GetAll());
 
             //Set the parameter value
-            crInvoice.SetParameterValue("nomorInvoice", _param);
+            crInvoice.SetParameterValue("invoiceID", _param);
 
             crViewer.ReportSource = crInvoice;
             crViewer.Refresh();

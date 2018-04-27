@@ -43,8 +43,7 @@ namespace InvoiceOTCNew
             outletBindingSource.AddNew();
             isAddNew = true;
 
-            CekKondisi(FormCondition.Inputting);
-            outlCodeTextBox.Focus();
+            CekKondisi(FormCondition.Inputting);            
         }
         protected override void button2_Click(object sender, EventArgs e)
         {

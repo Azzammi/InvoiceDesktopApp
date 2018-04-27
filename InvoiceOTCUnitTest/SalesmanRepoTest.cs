@@ -29,7 +29,7 @@ namespace InvoiceOTCUnitTest
                 slsmCode = "20180001",
                 slsmName = "Mamet",
                 slsmAddress = "Perum Telaga Murni No.22",
-                slsmIdNumber = "31274000001",
+                slsmIdNumber = 31274000,
                 slsmSupv = "Munadi",
                 slsmPhoto = "Pgoto",
                 slsmTelp = "0882332323"
@@ -47,7 +47,7 @@ namespace InvoiceOTCUnitTest
                 slsmCode = "20180001",
                 slsmName = "RAHMAT HIDAYAT",
                 slsmAddress = "Perum Telaga Murni No.22 rt.2 rW. 69",
-                slsmIdNumber = "31274000001",
+                slsmIdNumber = 31274000,
                 slsmSupv = "Munadi",
                 slsmPhoto = "tURURURURUR",
                 slsmTelp = "888921212"
@@ -74,6 +74,26 @@ namespace InvoiceOTCUnitTest
         {
             var list = salesmanRepo.GetAll();
             Assert.IsNotNull(list);
+        }
+
+        [Test]
+        public void GetSalesmanByCode()
+        {
+            var slsmCode = "20180001";
+            var result = salesmanRepo.GetSalesmanByCode(slsmCode);
+
+            Assert.IsNotNull(result);
+        }
+
+        [Test]
+        public void GetSalesmanById()
+        {
+            var slsmCode = "20180001";
+            var salesman = salesmanRepo.GetSalesmanByCode(slsmCode);
+
+            var result = salesmanRepo.GetSalesmanByID(salesman.slsmIdNumber);
+
+            Assert.IsNotNull(result);
         }
 
         [Test]

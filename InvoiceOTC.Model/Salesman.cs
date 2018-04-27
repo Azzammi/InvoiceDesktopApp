@@ -11,7 +11,7 @@ namespace InvoiceOTC.Model
     {
         #region Declaration
         public string slsmCode {get; set;}
-        public string slsmIdNumber { get; set; }
+        public int slsmIdNumber { get; set; }
         public string slsmName {get; set;}
         public string slsmAddress {get; set;}
         public string slsmTelp {get; set;}

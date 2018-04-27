@@ -14,7 +14,7 @@ namespace InvoiceOTCNew
     {
 
         #region Declaration
-
+        private BindingSource bindingSource;
         #endregion
 
         public TemplateFormBatch()
@@ -39,7 +39,7 @@ namespace InvoiceOTCNew
         /// <param name="source"></param>
         protected void SetDataSource(BindingSource source)
         {
-            findStrip2.bindingSource = source;
+            bindingSource = source;
         }        
         #endregion
 

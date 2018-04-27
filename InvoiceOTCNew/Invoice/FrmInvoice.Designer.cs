@@ -162,7 +162,7 @@
             issuedDateLabel.Location = new System.Drawing.Point(3, 28);
             issuedDateLabel.Name = "issuedDateLabel";
             issuedDateLabel.Size = new System.Drawing.Size(143, 28);
-            issuedDateLabel.TabIndex = 10;
+            issuedDateLabel.TabIndex = 11;
             issuedDateLabel.Text = "ISSUED";
             // 
             // nomorInvoiceLabel
@@ -174,7 +174,7 @@
             nomorInvoiceLabel.Location = new System.Drawing.Point(3, 0);
             nomorInvoiceLabel.Name = "nomorInvoiceLabel";
             nomorInvoiceLabel.Size = new System.Drawing.Size(143, 28);
-            nomorInvoiceLabel.TabIndex = 0;
+            nomorInvoiceLabel.TabIndex = 1;
             nomorInvoiceLabel.Text = "NO. INVOICE";
             // 
             // nomorPOLabel
@@ -278,7 +278,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.89037F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.92691F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(954, 602);
-            this.tableLayoutPanel4.TabIndex = 1;
+            this.tableLayoutPanel4.TabIndex = 2;
             // 
             // dataGridView1
             // 
@@ -319,7 +319,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 274);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(948, 192);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView1_UserDeletingRow);
             // 
@@ -506,7 +506,7 @@
             this.periodeTextBox.Location = new System.Drawing.Point(152, 172);
             this.periodeTextBox.Name = "periodeTextBox";
             this.periodeTextBox.Size = new System.Drawing.Size(200, 22);
-            this.periodeTextBox.TabIndex = 7;
+            this.periodeTextBox.TabIndex = 8;
             // 
             // nomorInvoiceTextBox
             // 
@@ -515,7 +515,7 @@
             this.nomorInvoiceTextBox.Location = new System.Drawing.Point(152, 3);
             this.nomorInvoiceTextBox.Name = "nomorInvoiceTextBox";
             this.nomorInvoiceTextBox.Size = new System.Drawing.Size(174, 22);
-            this.nomorInvoiceTextBox.TabIndex = 1;
+            this.nomorInvoiceTextBox.TabIndex = 2;
             // 
             // issuedDateDateTimePicker
             // 
@@ -524,7 +524,7 @@
             this.issuedDateDateTimePicker.Location = new System.Drawing.Point(152, 31);
             this.issuedDateDateTimePicker.Name = "issuedDateDateTimePicker";
             this.issuedDateDateTimePicker.Size = new System.Drawing.Size(200, 22);
-            this.issuedDateDateTimePicker.TabIndex = 2;
+            this.issuedDateDateTimePicker.TabIndex = 3;
             // 
             // nomorPOTextBox
             // 
@@ -533,7 +533,7 @@
             this.nomorPOTextBox.Location = new System.Drawing.Point(152, 86);
             this.nomorPOTextBox.Name = "nomorPOTextBox";
             this.nomorPOTextBox.Size = new System.Drawing.Size(209, 22);
-            this.nomorPOTextBox.TabIndex = 4;
+            this.nomorPOTextBox.TabIndex = 5;
             // 
             // isPPNCheckBox
             // 
@@ -543,7 +543,7 @@
             this.isPPNCheckBox.Location = new System.Drawing.Point(152, 142);
             this.isPPNCheckBox.Name = "isPPNCheckBox";
             this.isPPNCheckBox.Size = new System.Drawing.Size(200, 24);
-            this.isPPNCheckBox.TabIndex = 6;
+            this.isPPNCheckBox.TabIndex = 7;
             this.isPPNCheckBox.Text = "PPN 10%";
             this.isPPNCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -554,7 +554,7 @@
             this.dueDateDateTimePicker.Location = new System.Drawing.Point(152, 114);
             this.dueDateDateTimePicker.Name = "dueDateDateTimePicker";
             this.dueDateDateTimePicker.Size = new System.Drawing.Size(209, 22);
-            this.dueDateDateTimePicker.TabIndex = 5;
+            this.dueDateDateTimePicker.TabIndex = 6;
             // 
             // idPaymentTextBox
             // 
@@ -563,7 +563,7 @@
             this.idPaymentTextBox.Location = new System.Drawing.Point(152, 200);
             this.idPaymentTextBox.Name = "idPaymentTextBox";
             this.idPaymentTextBox.Size = new System.Drawing.Size(200, 22);
-            this.idPaymentTextBox.TabIndex = 8;
+            this.idPaymentTextBox.TabIndex = 9;
             // 
             // isPayedCheckBox
             // 
@@ -573,7 +573,7 @@
             this.isPayedCheckBox.Location = new System.Drawing.Point(152, 231);
             this.isPayedCheckBox.Name = "isPayedCheckBox";
             this.isPayedCheckBox.Size = new System.Drawing.Size(200, 24);
-            this.isPayedCheckBox.TabIndex = 9;
+            this.isPayedCheckBox.TabIndex = 10;
             this.isPayedCheckBox.Text = "Payed";
             this.isPayedCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -587,7 +587,7 @@
             this.comboBoxAdv1.Location = new System.Drawing.Point(152, 59);
             this.comboBoxAdv1.Name = "comboBoxAdv1";
             this.comboBoxAdv1.Size = new System.Drawing.Size(200, 24);
-            this.comboBoxAdv1.TabIndex = 3;
+            this.comboBoxAdv1.TabIndex = 4;
             this.comboBoxAdv1.ValueMember = "outlCode";
             // 
             // detailBindingSource

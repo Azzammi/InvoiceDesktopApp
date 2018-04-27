@@ -50,8 +50,7 @@ namespace InvoiceOTCNew
             productBindingSource.AddNew();
             isAddNew = true;
                         
-            CekKondisi(FormCondition.Inputting);
-            itemCodeTextBox.Focus();
+            CekKondisi(FormCondition.Inputting);            
         }
 
         protected override void button2_Click(object sender, EventArgs e)

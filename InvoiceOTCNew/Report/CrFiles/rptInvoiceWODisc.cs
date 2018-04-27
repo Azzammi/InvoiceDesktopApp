@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InvoiceOTCNew.Report {
+namespace InvoiceOTCNew.Report.CrFiles {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace InvoiceOTCNew.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptRekapInvoice : ReportClass {
+    public class rptInvoiceWODisc : ReportClass {
         
-        public rptRekapInvoice() {
+        public rptInvoiceWODisc() {
         }
         
         public override string ResourceName {
             get {
-                return "rptRekapInvoice.rpt";
+                return "rptInvoiceWODisc.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace InvoiceOTCNew.Report {
         
         public override string FullResourceName {
             get {
-                return "InvoiceOTCNew.Report.rptRekapInvoice.rpt";
+                return "InvoiceOTCNew.Report.CrFiles.rptInvoiceWODisc.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace InvoiceOTCNew.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace InvoiceOTCNew.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace InvoiceOTCNew.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,25 +90,33 @@ namespace InvoiceOTCNew.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_tanggal1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
-                return this.DataDefinition.ParameterFields[0];
+                return this.ReportDefinition.Sections[5];
             }
         }
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_tanggal2 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.DataDefinition.ParameterFields[1];
+                return this.ReportDefinition.Sections[6];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_nomorInvoice {
+            get {
+                return this.DataDefinition.ParameterFields[0];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptRekapInvoice : Component, ICachedReport {
+    public class CachedrptInvoiceWODisc : Component, ICachedReport {
         
-        public CachedrptRekapInvoice() {
+        public CachedrptInvoiceWODisc() {
         }
         
         [Browsable(false)]
@@ -145,7 +153,7 @@ namespace InvoiceOTCNew.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptRekapInvoice rpt = new rptRekapInvoice();
+            rptInvoiceWODisc rpt = new rptInvoiceWODisc();
             rpt.Site = this.Site;
             return rpt;
         }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InvoiceOTCNew.Report {
+namespace InvoiceOTCNew.Report.CrFiles {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace InvoiceOTCNew.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class RptListProduct : ReportClass {
+    public class rptInvoice : ReportClass {
         
-        public RptListProduct() {
+        public rptInvoice() {
         }
         
         public override string ResourceName {
             get {
-                return "RptListProduct.rpt";
+                return "rptInvoice.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace InvoiceOTCNew.Report {
         
         public override string FullResourceName {
             get {
-                return "InvoiceOTCNew.Report.RptListProduct.rpt";
+                return "InvoiceOTCNew.Report.CrFiles.rptInvoice.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace InvoiceOTCNew.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace InvoiceOTCNew.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,17 +82,41 @@ namespace InvoiceOTCNew.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[5];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[6];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_nomorInvoice {
+            get {
+                return this.DataDefinition.ParameterFields[0];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRptListProduct : Component, ICachedReport {
+    public class CachedrptInvoice : Component, ICachedReport {
         
-        public CachedRptListProduct() {
+        public CachedrptInvoice() {
         }
         
         [Browsable(false)]
@@ -129,7 +153,7 @@ namespace InvoiceOTCNew.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            RptListProduct rpt = new RptListProduct();
+            rptInvoice rpt = new rptInvoice();
             rpt.Site = this.Site;
             return rpt;
         }

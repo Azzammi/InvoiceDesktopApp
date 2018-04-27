@@ -37,9 +37,9 @@ namespace InvoiceOTC.Repository.Service
 
             var server = "localhost";
             var port = "5432";
-            var dbName = "otf_invoice";
-            var userID = "postgres";
-            var userPassword = "password";
+            var dbName = "otf_Invoice";
+            var userID = "openpg";
+            var userPassword = "openpgpwd";
             //var appName = "Invoice OTC";
 
             m_ProviderName = "Npgsql";

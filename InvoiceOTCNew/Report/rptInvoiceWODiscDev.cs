@@ -16,14 +16,14 @@ namespace InvoiceOTCNew.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptInvoice : ReportClass {
+    public class rptInvoiceWODiscDev : ReportClass {
         
-        public rptInvoice() {
+        public rptInvoiceWODiscDev() {
         }
         
         public override string ResourceName {
             get {
-                return "rptInvoice.rpt";
+                return "rptInvoiceWODiscDev.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace InvoiceOTCNew.Report {
         
         public override string FullResourceName {
             get {
-                return "InvoiceOTCNew.Report.rptInvoice.rpt";
+                return "InvoiceOTCNew.Report.rptInvoiceWODiscDev.rpt";
             }
             set {
                 // Do nothing
@@ -106,7 +106,7 @@ namespace InvoiceOTCNew.Report {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_nomorInvoice {
+        public CrystalDecisions.Shared.IParameterField Parameter_invoiceID {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -114,9 +114,9 @@ namespace InvoiceOTCNew.Report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptInvoice : Component, ICachedReport {
+    public class CachedrptInvoiceWODiscDev : Component, ICachedReport {
         
-        public CachedrptInvoice() {
+        public CachedrptInvoiceWODiscDev() {
         }
         
         [Browsable(false)]
@@ -153,7 +153,7 @@ namespace InvoiceOTCNew.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptInvoice rpt = new rptInvoice();
+            rptInvoiceWODiscDev rpt = new rptInvoiceWODiscDev();
             rpt.Site = this.Site;
             return rpt;
         }

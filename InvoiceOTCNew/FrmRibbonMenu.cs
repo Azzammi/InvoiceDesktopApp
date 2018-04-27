@@ -13,6 +13,7 @@ using InvoiceOTC.Model;
 using InvoiceOTC.Repository.API;
 using InvoiceOTC.Repository.Service;
 using System.Reflection;
+using System.Data;
 
 namespace InvoiceOTCNew
 {
@@ -29,6 +30,8 @@ namespace InvoiceOTCNew
 
             this.Text = AssemblyProduct();
             softwareLbl.Text = AssemblyProduct() + " " + AssemblyCopyright();
+
+            isConnected();
         }
 
         #region Application Properties
@@ -65,7 +68,24 @@ namespace InvoiceOTCNew
             }
         }
         #endregion
-        
+
+        #region Checking Connection
+        private bool isConnected()
+        {
+            DapperContext context = new DapperContext();
+            if(context.db != null)
+            {
+                connectionStatusBtn.Text = "Connection is OK";
+                return true;
+            }
+            else
+            {
+                connectionStatusBtn.Text = "Connection is Closed";
+                return false;
+            }
+        }
+        #endregion
+
         public void CheckExistingForm(Form frm)
         {
             /* Function to check for the existing form */
@@ -108,6 +128,12 @@ namespace InvoiceOTCNew
         {
             var frm = new FrmListProduct();
             CheckExistingForm(frm);
+        }
+
+        private void userTsButton_Click(object sender, EventArgs e)
+        {
+            FrmUser frm = new FrmUser();
+            frm.ShowDialog();
         }
         #endregion
 
@@ -194,10 +220,5 @@ namespace InvoiceOTCNew
             panel1.Visible = false;
         }
 
-        private void userTsButton_Click(object sender, EventArgs e)
-        {
-            FrmUser frm = new FrmUser();
-            frm.ShowDialog();
-        }
     }
 }

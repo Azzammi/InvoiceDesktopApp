@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
-using InvoiceOTCNew.Helper;
-
-using log4net;
 using System.Reflection;
 using System.Globalization;
+
+using log4net;
+
+using InvoiceOTCNew.Helper;
 
 [assembly: log4net.Config.XmlConfigurator(Watch =true)]
 namespace InvoiceOTCNew
@@ -37,6 +38,6 @@ namespace InvoiceOTCNew
                     spi.RaiseOtherProcess();
                 }
             }
-        }        
+        }   
     }
 }

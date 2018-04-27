@@ -68,6 +68,7 @@ namespace InvoiceOTCNew
             this.userLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.timeLbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.softwareLbl = new Syncfusion.Windows.Forms.Tools.StatusStripLabel();
+            this.connectionStatusBtn = new Syncfusion.Windows.Forms.Tools.StatusStripButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStripEx2 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
             this.toolStripEx4 = new Syncfusion.Windows.Forms.Tools.ToolStripEx();
@@ -445,15 +446,16 @@ namespace InvoiceOTCNew
             // statusStripEx1
             // 
             this.statusStripEx1.BackColor = System.Drawing.SystemColors.Control;
-            this.statusStripEx1.BeforeTouchSize = new System.Drawing.Size(901, 22);
+            this.statusStripEx1.BeforeTouchSize = new System.Drawing.Size(901, 25);
             this.statusStripEx1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userLbl,
             this.timeLbl,
-            this.softwareLbl});
-            this.statusStripEx1.Location = new System.Drawing.Point(6, 400);
+            this.softwareLbl,
+            this.connectionStatusBtn});
+            this.statusStripEx1.Location = new System.Drawing.Point(6, 397);
             this.statusStripEx1.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(135)))), ((int)(((byte)(206)))), ((int)(((byte)(255)))));
             this.statusStripEx1.Name = "statusStripEx1";
-            this.statusStripEx1.Size = new System.Drawing.Size(901, 22);
+            this.statusStripEx1.Size = new System.Drawing.Size(901, 25);
             this.statusStripEx1.TabIndex = 2;
             this.statusStripEx1.Text = "statusStripEx1";
             // 
@@ -476,6 +478,13 @@ namespace InvoiceOTCNew
             this.softwareLbl.Name = "softwareLbl";
             this.softwareLbl.Size = new System.Drawing.Size(96, 15);
             this.softwareLbl.Text = "statusStripLabel1";
+            // 
+            // connectionStatusBtn
+            // 
+            this.connectionStatusBtn.Margin = new System.Windows.Forms.Padding(0, 4, 0, 2);
+            this.connectionStatusBtn.Name = "connectionStatusBtn";
+            this.connectionStatusBtn.Size = new System.Drawing.Size(108, 19);
+            this.connectionStatusBtn.Text = "statusStripButton1";
             // 
             // timer1
             // 
@@ -559,13 +568,12 @@ namespace InvoiceOTCNew
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(6, 151);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(901, 249);
+            this.panel1.Size = new System.Drawing.Size(901, 246);
             this.panel1.TabIndex = 3;
             // 
             // FrmRibbonMenu
@@ -649,5 +657,6 @@ namespace InvoiceOTCNew
         private System.Windows.Forms.ToolStripButton hakAksesTsButton;
         private Syncfusion.Windows.Forms.Tools.ToolStripTabItem toolStripTabItem7;
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
+        private Syncfusion.Windows.Forms.Tools.StatusStripButton connectionStatusBtn;
     }
 }

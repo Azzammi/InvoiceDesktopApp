@@ -44,17 +44,34 @@ namespace InvoiceOTC.Repository.Service
             }
             return list;
         }
-
         public Salesman GetSalesmanByID(int salesmanID)
         {
-            throw new NotImplementedException();
+            Salesman salesman = null;
+            try
+            {
+                m_Sql = @"SELECT slsmcode, slsmidnumber, slsmname, slsmaddress, slsmtelp, slsmsupv, slsmphoto, stat FROM salesman WHERE slsmidnumber = @salesmanID";
+                salesman = context.db.ExecuteScalar<Salesman>(m_Sql, new { salesmanID });
+            }
+            catch (Exception ex)
+            {
+                logger.Error("Error in select query", ex);
+            }
+            return salesman;
         }
-
-        public Salesman GetSalesmanByName(string salesmanName)
+        public Salesman GetSalesmanByCode(string salesmanCode)
         {
-            throw new NotImplementedException();
+            Salesman salesman = null;
+            try
+            {
+                m_Sql = @"SELECT slsmcode, slsmidnumber, slsmname, slsmaddress, slsmtelp, slsmsupv, slsmphoto, stat FROM salesman WHERE slsmcode = @salesmanCode;";
+                salesman = context.db.ExecuteScalar<Salesman>(m_Sql, new { salesmanCode });
+            }
+            catch (Exception ex)
+            {
+                logger.Error("Error in select query", ex);
+            }
+            return salesman;
         }
-
         public IList<Salesman> Search(string key, string value)
         {
             IList<Salesman> list = new List<Salesman>();

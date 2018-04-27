@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InvoiceOTCNew.Report {
+namespace InvoiceOTCNew.Report.CrFiles {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace InvoiceOTCNew.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class RptListOutlet : ReportClass {
+    public class RptListProduct : ReportClass {
         
-        public RptListOutlet() {
+        public RptListProduct() {
         }
         
         public override string ResourceName {
             get {
-                return "RptListOutlet.rpt";
+                return "RptListProduct.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace InvoiceOTCNew.Report {
         
         public override string FullResourceName {
             get {
-                return "InvoiceOTCNew.Report.RptListOutlet.rpt";
+                return "InvoiceOTCNew.Report.CrFiles.RptListProduct.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace InvoiceOTCNew.Report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedRptListOutlet : Component, ICachedReport {
+    public class CachedRptListProduct : Component, ICachedReport {
         
-        public CachedRptListOutlet() {
+        public CachedRptListProduct() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace InvoiceOTCNew.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            RptListOutlet rpt = new RptListOutlet();
+            RptListProduct rpt = new RptListProduct();
             rpt.Site = this.Site;
             return rpt;
         }

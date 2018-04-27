@@ -70,8 +70,9 @@ namespace InvoiceOTCNew
         #region Overrided Methods
         protected override void button1_Click(object sender, EventArgs e)
         {
-            isAddNew = true;
             invoiceBindingSource.AddNew();
+
+            isAddNew = true;            
             CekKondisi(FormCondition.Inputting);
         }
 
