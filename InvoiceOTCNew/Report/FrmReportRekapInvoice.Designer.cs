@@ -37,7 +37,7 @@
             // 
             // crViewer
             // 
-            this.crViewer.Size = new System.Drawing.Size(793, 308);
+            this.crViewer.Size = new System.Drawing.Size(934, 497);
             // 
             // invoiceBindingSource
             // 
@@ -51,9 +51,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 308);
+            this.ClientSize = new System.Drawing.Size(934, 497);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "FrmReportRekapInvoice";
             this.Text = "FrmReportRekapInvoice";
+            this.Load += new System.EventHandler(this.FrmReportRekapInvoice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -62,6 +64,6 @@
 
         #endregion
         private System.Windows.Forms.BindingSource invoiceBindingSource;
-        private System.Windows.Forms.BindingSource outletBindingSource;
+        private System.Windows.Forms.BindingSource outletBindingSource;        
     }
 }

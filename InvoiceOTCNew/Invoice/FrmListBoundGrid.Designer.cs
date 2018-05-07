@@ -29,14 +29,25 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListBoundGrid));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmListBoundGrid));
             this.invoiceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.invoiceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomorInvoiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomorPODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.issuedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outletCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.outletBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ppnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.penggunaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isPayedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -47,22 +58,12 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.totalLbl = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.amountDueLbl = new System.Windows.Forms.ToolStripLabel();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pItemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.invoiceID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomorInvoiceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.outletCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ppnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.issuedDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isPPNDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.nomorPODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.penggunaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.periodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPaymentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isPayedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -89,7 +90,7 @@
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(710, 100);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(710, 190);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // dataGridView1
@@ -99,30 +100,111 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.invoiceID,
             this.nomorInvoiceDataGridViewTextBoxColumn,
+            this.nomorPODataGridViewTextBoxColumn,
+            this.issuedDateDataGridViewTextBoxColumn,
             this.dueDateDataGridViewTextBoxColumn,
             this.outletCodeDataGridViewTextBoxColumn,
             this.subTotalDataGridViewTextBoxColumn,
             this.ppnDataGridViewTextBoxColumn,
             this.totalDataGridViewTextBoxColumn,
-            this.issuedDateDataGridViewTextBoxColumn,
-            this.isPPNDataGridViewCheckBoxColumn,
-            this.nomorPODataGridViewTextBoxColumn,
             this.penggunaDataGridViewTextBoxColumn,
-            this.periodeDataGridViewTextBoxColumn,
-            this.idPaymentDataGridViewTextBoxColumn,
             this.isPayedDataGridViewCheckBoxColumn});
             this.dataGridView1.DataSource = this.invoiceBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(704, 74);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(704, 164);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView1_UserDeletingRow);
             // 
+            // invoiceID
+            // 
+            this.invoiceID.DataPropertyName = "invoiceID";
+            this.invoiceID.HeaderText = "invoiceID";
+            this.invoiceID.Name = "invoiceID";
+            this.invoiceID.ReadOnly = true;
+            this.invoiceID.Visible = false;
+            // 
+            // nomorInvoiceDataGridViewTextBoxColumn
+            // 
+            this.nomorInvoiceDataGridViewTextBoxColumn.DataPropertyName = "nomorInvoice";
+            this.nomorInvoiceDataGridViewTextBoxColumn.HeaderText = "nomorInvoice";
+            this.nomorInvoiceDataGridViewTextBoxColumn.Name = "nomorInvoiceDataGridViewTextBoxColumn";
+            // 
+            // nomorPODataGridViewTextBoxColumn
+            // 
+            this.nomorPODataGridViewTextBoxColumn.DataPropertyName = "nomorPO";
+            this.nomorPODataGridViewTextBoxColumn.HeaderText = "nomorPO";
+            this.nomorPODataGridViewTextBoxColumn.Name = "nomorPODataGridViewTextBoxColumn";
+            // 
+            // issuedDateDataGridViewTextBoxColumn
+            // 
+            this.issuedDateDataGridViewTextBoxColumn.DataPropertyName = "issuedDate";
+            this.issuedDateDataGridViewTextBoxColumn.HeaderText = "issuedDate";
+            this.issuedDateDataGridViewTextBoxColumn.Name = "issuedDateDataGridViewTextBoxColumn";
+            // 
+            // dueDateDataGridViewTextBoxColumn
+            // 
+            this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "dueDate";
+            this.dueDateDataGridViewTextBoxColumn.HeaderText = "dueDate";
+            this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
+            // 
+            // outletCodeDataGridViewTextBoxColumn
+            // 
+            this.outletCodeDataGridViewTextBoxColumn.DataPropertyName = "outletCode";
+            this.outletCodeDataGridViewTextBoxColumn.DataSource = this.outletBindingSource;
+            this.outletCodeDataGridViewTextBoxColumn.DisplayMember = "outlName";
+            this.outletCodeDataGridViewTextBoxColumn.HeaderText = "outletCode";
+            this.outletCodeDataGridViewTextBoxColumn.Name = "outletCodeDataGridViewTextBoxColumn";
+            this.outletCodeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.outletCodeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.outletCodeDataGridViewTextBoxColumn.ValueMember = "outlCode";
+            this.outletCodeDataGridViewTextBoxColumn.Width = 300;
+            // 
             // outletBindingSource
             // 
             this.outletBindingSource.DataSource = typeof(InvoiceOTC.Model.Outlet);
+            // 
+            // subTotalDataGridViewTextBoxColumn
+            // 
+            this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "subTotal";
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.subTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.subTotalDataGridViewTextBoxColumn.HeaderText = "subTotal";
+            this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
+            // 
+            // ppnDataGridViewTextBoxColumn
+            // 
+            this.ppnDataGridViewTextBoxColumn.DataPropertyName = "ppn";
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.ppnDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ppnDataGridViewTextBoxColumn.HeaderText = "ppn";
+            this.ppnDataGridViewTextBoxColumn.Name = "ppnDataGridViewTextBoxColumn";
+            // 
+            // totalDataGridViewTextBoxColumn
+            // 
+            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.totalDataGridViewTextBoxColumn.HeaderText = "total";
+            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
+            // 
+            // penggunaDataGridViewTextBoxColumn
+            // 
+            this.penggunaDataGridViewTextBoxColumn.DataPropertyName = "pengguna";
+            this.penggunaDataGridViewTextBoxColumn.HeaderText = "pengguna";
+            this.penggunaDataGridViewTextBoxColumn.Name = "penggunaDataGridViewTextBoxColumn";
+            // 
+            // isPayedDataGridViewCheckBoxColumn
+            // 
+            this.isPayedDataGridViewCheckBoxColumn.DataPropertyName = "isPayed";
+            this.isPayedDataGridViewCheckBoxColumn.HeaderText = "isPayed";
+            this.isPayedDataGridViewCheckBoxColumn.Name = "isPayedDataGridViewCheckBoxColumn";
             // 
             // bindingNavigator1
             // 
@@ -138,8 +220,12 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 80);
+            this.bindingNavigatorSeparator2,
+            this.toolStripLabel1,
+            this.totalLbl,
+            this.toolStripLabel2,
+            this.amountDueLbl});
+            this.bindingNavigator1.Location = new System.Drawing.Point(0, 170);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -217,6 +303,30 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 20);
             // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(40, 17);
+            this.toolStripLabel1.Text = "Total :";
+            // 
+            // totalLbl
+            // 
+            this.totalLbl.Name = "totalLbl";
+            this.totalLbl.Size = new System.Drawing.Size(13, 17);
+            this.totalLbl.Text = "0";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(81, 17);
+            this.toolStripLabel2.Text = "Amount Due :";
+            // 
+            // amountDueLbl
+            // 
+            this.amountDueLbl.Name = "amountDueLbl";
+            this.amountDueLbl.Size = new System.Drawing.Size(13, 17);
+            this.amountDueLbl.Text = "0";
+            // 
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(InvoiceOTC.Model.Product);
@@ -226,112 +336,11 @@
             this.pItemsBindingSource.DataMember = "p_Items";
             this.pItemsBindingSource.DataSource = this.invoiceBindingSource;
             // 
-            // invoiceID
-            // 
-            this.invoiceID.DataPropertyName = "invoiceID";
-            this.invoiceID.HeaderText = "invoiceID";
-            this.invoiceID.Name = "invoiceID";
-            this.invoiceID.ReadOnly = true;
-            this.invoiceID.Visible = false;
-            // 
-            // nomorInvoiceDataGridViewTextBoxColumn
-            // 
-            this.nomorInvoiceDataGridViewTextBoxColumn.DataPropertyName = "nomorInvoice";
-            this.nomorInvoiceDataGridViewTextBoxColumn.HeaderText = "nomorInvoice";
-            this.nomorInvoiceDataGridViewTextBoxColumn.Name = "nomorInvoiceDataGridViewTextBoxColumn";
-            // 
-            // dueDateDataGridViewTextBoxColumn
-            // 
-            this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "dueDate";
-            this.dueDateDataGridViewTextBoxColumn.HeaderText = "dueDate";
-            this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
-            // 
-            // outletCodeDataGridViewTextBoxColumn
-            // 
-            this.outletCodeDataGridViewTextBoxColumn.DataPropertyName = "outletCode";
-            this.outletCodeDataGridViewTextBoxColumn.DataSource = this.outletBindingSource;
-            this.outletCodeDataGridViewTextBoxColumn.DisplayMember = "outlName";
-            this.outletCodeDataGridViewTextBoxColumn.HeaderText = "outletCode";
-            this.outletCodeDataGridViewTextBoxColumn.Name = "outletCodeDataGridViewTextBoxColumn";
-            this.outletCodeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.outletCodeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.outletCodeDataGridViewTextBoxColumn.ValueMember = "outlCode";
-            this.outletCodeDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // subTotalDataGridViewTextBoxColumn
-            // 
-            this.subTotalDataGridViewTextBoxColumn.DataPropertyName = "subTotal";
-            dataGridViewCellStyle1.Format = "N0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.subTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.subTotalDataGridViewTextBoxColumn.HeaderText = "subTotal";
-            this.subTotalDataGridViewTextBoxColumn.Name = "subTotalDataGridViewTextBoxColumn";
-            // 
-            // ppnDataGridViewTextBoxColumn
-            // 
-            this.ppnDataGridViewTextBoxColumn.DataPropertyName = "ppn";
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.ppnDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ppnDataGridViewTextBoxColumn.HeaderText = "ppn";
-            this.ppnDataGridViewTextBoxColumn.Name = "ppnDataGridViewTextBoxColumn";
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.totalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.totalDataGridViewTextBoxColumn.HeaderText = "total";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            // 
-            // issuedDateDataGridViewTextBoxColumn
-            // 
-            this.issuedDateDataGridViewTextBoxColumn.DataPropertyName = "issuedDate";
-            this.issuedDateDataGridViewTextBoxColumn.HeaderText = "issuedDate";
-            this.issuedDateDataGridViewTextBoxColumn.Name = "issuedDateDataGridViewTextBoxColumn";
-            // 
-            // isPPNDataGridViewCheckBoxColumn
-            // 
-            this.isPPNDataGridViewCheckBoxColumn.DataPropertyName = "isPPN";
-            this.isPPNDataGridViewCheckBoxColumn.HeaderText = "isPPN";
-            this.isPPNDataGridViewCheckBoxColumn.Name = "isPPNDataGridViewCheckBoxColumn";
-            // 
-            // nomorPODataGridViewTextBoxColumn
-            // 
-            this.nomorPODataGridViewTextBoxColumn.DataPropertyName = "nomorPO";
-            this.nomorPODataGridViewTextBoxColumn.HeaderText = "nomorPO";
-            this.nomorPODataGridViewTextBoxColumn.Name = "nomorPODataGridViewTextBoxColumn";
-            // 
-            // penggunaDataGridViewTextBoxColumn
-            // 
-            this.penggunaDataGridViewTextBoxColumn.DataPropertyName = "pengguna";
-            this.penggunaDataGridViewTextBoxColumn.HeaderText = "pengguna";
-            this.penggunaDataGridViewTextBoxColumn.Name = "penggunaDataGridViewTextBoxColumn";
-            // 
-            // periodeDataGridViewTextBoxColumn
-            // 
-            this.periodeDataGridViewTextBoxColumn.DataPropertyName = "periode";
-            this.periodeDataGridViewTextBoxColumn.HeaderText = "periode";
-            this.periodeDataGridViewTextBoxColumn.Name = "periodeDataGridViewTextBoxColumn";
-            // 
-            // idPaymentDataGridViewTextBoxColumn
-            // 
-            this.idPaymentDataGridViewTextBoxColumn.DataPropertyName = "idPayment";
-            this.idPaymentDataGridViewTextBoxColumn.HeaderText = "idPayment";
-            this.idPaymentDataGridViewTextBoxColumn.Name = "idPaymentDataGridViewTextBoxColumn";
-            // 
-            // isPayedDataGridViewCheckBoxColumn
-            // 
-            this.isPayedDataGridViewCheckBoxColumn.DataPropertyName = "isPayed";
-            this.isPayedDataGridViewCheckBoxColumn.HeaderText = "isPayed";
-            this.isPayedDataGridViewCheckBoxColumn.Name = "isPayedDataGridViewCheckBoxColumn";
-            // 
             // FrmListBoundGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 262);
+            this.ClientSize = new System.Drawing.Size(710, 352);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Name = "FrmListBoundGrid";
             this.Text = "FrmListBoundGrid";
@@ -372,19 +381,20 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel totalLbl;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripLabel amountDueLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn invoiceID;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomorInvoiceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomorPODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn issuedDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn outletCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ppnDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn issuedDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isPPNDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomorPODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn penggunaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn periodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPaymentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isPayedDataGridViewCheckBoxColumn;
     }
 }

@@ -45,10 +45,24 @@ namespace InvoiceOTC.Repository.API
         /// <returns></returns>
         void GetSubTotal(InvoiceDetail data);
 
+        /// <summary>
+        /// Get PPN 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         decimal GetPPN(Invoice data);
 
+        /// <summary>
+        /// Get Invoice nett from subtotal add ppn
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         decimal GetInvoiceNett(Invoice data);
-        
-        //IList<Invoice> GetInvoicesByNomor(string nomorInvoice);
+
+        /// <summary>
+        /// Get All Invoice that has passed the due date
+        /// </summary>
+        /// <returns></returns>
+        IList<Invoice> GetExpiredInvoices();
     }
 }

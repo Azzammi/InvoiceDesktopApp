@@ -7,6 +7,16 @@ namespace InvoiceOTCNew
         public TemplateReportFrm()
         {
             InitializeComponent();
-        }              
+        }
+
+        protected virtual void LoadReport()
+        {
+            
+        }
+
+        private void crViewer_ReportRefresh(object source, CrystalDecisions.Windows.Forms.ViewerEventArgs e)
+        {
+            
+        }
     }
 }

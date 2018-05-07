@@ -60,6 +60,9 @@ namespace InvoiceOTCNew
             bindingNavigator1.BindingSource = invoiceBindingSource;            
             invoiceBindingSource.CurrentChanged += new EventHandler(bindingSource1_CurrentChanged);
             invoiceBindingSource.DataSource = pageOffset;
+
+            //Miscellanacious
+            totalLbl.Text = GetTotalValue().ToString("N03", Program.ci);
         }
 
         #region Overrided Method
@@ -144,7 +147,7 @@ namespace InvoiceOTCNew
         }
         protected override void refreshBtn_Click(object sender, EventArgs e)
         {
-            InitData();
+            InitData();            
         }
         #endregion
 
@@ -167,7 +170,7 @@ namespace InvoiceOTCNew
         }
         #endregion
 
-        #region DataGridView Method
+        #region DataGridView Method & Miscellanation 
         private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             //Get Item 
@@ -219,6 +222,20 @@ namespace InvoiceOTCNew
                 Program.log.Error("Error", ex);
             }            
         }    
+        private decimal GetAmountValue() { var total = (from Invoice invoice in invoiceData where invoice.subTotal != 0 select invoice.subTotal).Sum(); return total; }
+        private decimal GetTotalValue() { var total = (from Invoice invoice in invoiceData select invoice.subTotal).Sum(); return total; }
+        private void CheckDueDate(){
+            int result = 0;
+            foreach(DataGridViewRow row in dataGridView1.Rows)
+            {
+                var dateToCompare = Convert.ToDateTime(row.Cells[4].Value);
+                result = DateTime.Compare(dateToCompare, DateTime.Now);
+                if(result < 0)
+                {
+                    row.Cells[4].Style = DataGridViewHelper.Danger();
+                }
+            }
+        }
         #endregion
 
         private void FrmListBoundGrid_FormClosing(object sender, FormClosingEventArgs e)
@@ -235,6 +252,8 @@ namespace InvoiceOTCNew
             for (int i = offset; i < offset + pageOffset.PageSize && i < totalRecords; i++)
                 records.Add(invoiceData[i]);
             dataGridView1.DataSource = records;
+
+            CheckDueDate();
         }
         #endregion
     }

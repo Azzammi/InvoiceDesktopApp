@@ -138,16 +138,13 @@ namespace InvoiceOTC.Repository.Service
         {
             IList<Invoice> listOfInvoice = new List<Invoice>();
             try
-            {
-                //m_Sql = @"SELECT A.invoiceid, nomorinvoice, duedate, outletcode, A.subtotal, ppn, 
-                //                total, issueddate, isppn, nomorpo, periode, pengguna, idpayment, 
-                //                ispayed FROM Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID ORDER BY A.InvoiceID;";
+            {                
                 m_Sql = @"SELECT * FROM Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID ORDER BY A.InvoiceID ASC";
                 listOfInvoice = MappingRecordToObj(m_Sql).ToList();
             }
-            catch
+            catch(Exception ex)
             {
-
+                m_Log.Error("Error in select query", ex);
             }
             return listOfInvoice;
         }
@@ -182,23 +179,21 @@ namespace InvoiceOTC.Repository.Service
 
             }
             return invoiceTU;
-        }
+        }   
 
-        public IList<Invoice> GetInvoicesByNomor(string nomorInvoice)
+        public IList<Invoice> GetExpiredInvoices()
         {
-            IList<Invoice> listOfDetail = new List<Invoice>();
+            IList<Invoice> listOfInvoice = new List<Invoice>();
             try
             {
-                m_Sql = @"SELECT * FROM  Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID WHERE A.nomorinvoice LIKE @nomorInvoice;";
-
-                nomorInvoice = string.Format("%{0}%", nomorInvoice);
-                listOfDetail = MappingRecordToObj(m_Sql, new { nomorInvoice }).ToList();
+                m_Sql = $" SELECT * FROM Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID ORDER BY A.InvoiceID ASC WHERE A.DueDate < {DateTime.Now}" ;
+                listOfInvoice = MappingRecordToObj(m_Sql).ToList();
             }
-            catch
+            catch (Exception ex)
             {
-
+                m_Log.Error("Error in select query", ex);
             }
-            return listOfDetail;
+            return listOfInvoice;
         }
 
         public IList<Invoice> Search(string key, string value)

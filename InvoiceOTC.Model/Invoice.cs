@@ -26,10 +26,10 @@ namespace InvoiceOTC.Model
         public string periode { get; set; }
         public string idPayment { get; set; }
         public bool isPayed { get; set; }
+        public decimal amountDue { get; set; }
 
         public List<InvoiceDetail> detail {get; set;}
         public FSBindingList<InvoiceDetail> p_Items { get; set; }
-
         #endregion
     }
 }

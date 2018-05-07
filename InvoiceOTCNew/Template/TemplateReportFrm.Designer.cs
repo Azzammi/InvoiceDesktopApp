@@ -36,21 +36,23 @@ namespace InvoiceOTCNew
             // crViewer
             // 
             this.crViewer.ActiveViewIndex = -1;
+            this.crViewer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.crViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crViewer.Cursor = System.Windows.Forms.Cursors.Default;
             this.crViewer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crViewer.Location = new System.Drawing.Point(0, 0);
             this.crViewer.Name = "crViewer";
-            this.crViewer.Size = new System.Drawing.Size(998, 427);
+            this.crViewer.Size = new System.Drawing.Size(998, 465);
             this.crViewer.TabIndex = 0;
             this.crViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crViewer.ReportRefresh += new CrystalDecisions.Windows.Forms.RefreshEventHandler(this.crViewer_ReportRefresh);
             // 
             // TemplateReportFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(998, 427);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(998, 465);
             this.Controls.Add(this.crViewer);
             this.KeyPreview = true;
             this.Name = "TemplateReportFrm";
@@ -78,7 +80,9 @@ namespace InvoiceOTCNew
                 case Keys.Control | Keys.P:
                     crViewer.PrintReport();
                     break;
-             
+                case Keys.F5:                    
+                    LoadReport();
+                    break;
             }
             return base.ProcessCmdKey(ref msg, keyData);
         }

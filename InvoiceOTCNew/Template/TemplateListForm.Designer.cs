@@ -236,49 +236,61 @@ namespace InvoiceOTCNew
             // 
             // tambahBtn
             // 
+            this.tambahBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.tambahBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tambahBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.tambahBtn.ForeColor = System.Drawing.Color.White;
             this.tambahBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tambahBtn.Location = new System.Drawing.Point(3, 3);
             this.tambahBtn.Name = "tambahBtn";
             this.tambahBtn.Size = new System.Drawing.Size(106, 35);
             this.tambahBtn.TabIndex = 0;
             this.tambahBtn.Text = "Tambah";
-            this.tambahBtn.UseVisualStyleBackColor = true;
+            this.tambahBtn.UseVisualStyleBackColor = false;
             this.tambahBtn.Click += new System.EventHandler(this.tambahBtn_Click);
             // 
             // editBtn
             // 
+            this.editBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(188)))), ((int)(((byte)(212)))));
             this.editBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.editBtn.ForeColor = System.Drawing.Color.White;
             this.editBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.editBtn.Location = new System.Drawing.Point(115, 3);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(106, 35);
             this.editBtn.TabIndex = 1;
             this.editBtn.Text = "Edit ";
-            this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.UseVisualStyleBackColor = false;
             this.editBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
             // DeleteBtn
             // 
+            this.DeleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.DeleteBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.DeleteBtn.ForeColor = System.Drawing.Color.White;
             this.DeleteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.DeleteBtn.Location = new System.Drawing.Point(227, 3);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(106, 35);
             this.DeleteBtn.TabIndex = 2;
             this.DeleteBtn.Text = "Delete";
-            this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.UseVisualStyleBackColor = false;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // ExitBtn
             // 
+            this.ExitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
             this.ExitBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ExitBtn.ForeColor = System.Drawing.Color.White;
             this.ExitBtn.Location = new System.Drawing.Point(339, 3);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(108, 35);
             this.ExitBtn.TabIndex = 3;
             this.ExitBtn.Text = "Cancel / Exit";
-            this.ExitBtn.UseVisualStyleBackColor = true;
+            this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
             // textBox1

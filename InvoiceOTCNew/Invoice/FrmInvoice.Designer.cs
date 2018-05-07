@@ -505,7 +505,7 @@
             this.periodeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.periodeTextBox.Location = new System.Drawing.Point(152, 172);
             this.periodeTextBox.Name = "periodeTextBox";
-            this.periodeTextBox.Size = new System.Drawing.Size(200, 22);
+            this.periodeTextBox.Size = new System.Drawing.Size(303, 22);
             this.periodeTextBox.TabIndex = 8;
             // 
             // nomorInvoiceTextBox
@@ -514,7 +514,7 @@
             this.nomorInvoiceTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomorInvoiceTextBox.Location = new System.Drawing.Point(152, 3);
             this.nomorInvoiceTextBox.Name = "nomorInvoiceTextBox";
-            this.nomorInvoiceTextBox.Size = new System.Drawing.Size(174, 22);
+            this.nomorInvoiceTextBox.Size = new System.Drawing.Size(109, 22);
             this.nomorInvoiceTextBox.TabIndex = 2;
             // 
             // issuedDateDateTimePicker
@@ -523,7 +523,7 @@
             this.issuedDateDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.issuedDateDateTimePicker.Location = new System.Drawing.Point(152, 31);
             this.issuedDateDateTimePicker.Name = "issuedDateDateTimePicker";
-            this.issuedDateDateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.issuedDateDateTimePicker.Size = new System.Drawing.Size(303, 22);
             this.issuedDateDateTimePicker.TabIndex = 3;
             // 
             // nomorPOTextBox
@@ -532,7 +532,7 @@
             this.nomorPOTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomorPOTextBox.Location = new System.Drawing.Point(152, 86);
             this.nomorPOTextBox.Name = "nomorPOTextBox";
-            this.nomorPOTextBox.Size = new System.Drawing.Size(209, 22);
+            this.nomorPOTextBox.Size = new System.Drawing.Size(303, 22);
             this.nomorPOTextBox.TabIndex = 5;
             // 
             // isPPNCheckBox
@@ -553,7 +553,7 @@
             this.dueDateDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dueDateDateTimePicker.Location = new System.Drawing.Point(152, 114);
             this.dueDateDateTimePicker.Name = "dueDateDateTimePicker";
-            this.dueDateDateTimePicker.Size = new System.Drawing.Size(209, 22);
+            this.dueDateDateTimePicker.Size = new System.Drawing.Size(303, 22);
             this.dueDateDateTimePicker.TabIndex = 6;
             // 
             // idPaymentTextBox
@@ -562,7 +562,7 @@
             this.idPaymentTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idPaymentTextBox.Location = new System.Drawing.Point(152, 200);
             this.idPaymentTextBox.Name = "idPaymentTextBox";
-            this.idPaymentTextBox.Size = new System.Drawing.Size(200, 22);
+            this.idPaymentTextBox.Size = new System.Drawing.Size(303, 22);
             this.idPaymentTextBox.TabIndex = 9;
             // 
             // isPayedCheckBox
@@ -579,14 +579,15 @@
             // 
             // comboBoxAdv1
             // 
-            this.comboBoxAdv1.BeforeTouchSize = new System.Drawing.Size(200, 24);
+            this.comboBoxAdv1.BeforeTouchSize = new System.Drawing.Size(303, 24);
             this.comboBoxAdv1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.invoiceBindingSource, "outletCode", true));
             this.comboBoxAdv1.DataSource = this.outletBindingSource;
             this.comboBoxAdv1.DisplayMember = "outlName";
+            this.comboBoxAdv1.FlatStyle = Syncfusion.Windows.Forms.Tools.ComboFlatStyle.System;
             this.comboBoxAdv1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxAdv1.Location = new System.Drawing.Point(152, 59);
             this.comboBoxAdv1.Name = "comboBoxAdv1";
-            this.comboBoxAdv1.Size = new System.Drawing.Size(200, 24);
+            this.comboBoxAdv1.Size = new System.Drawing.Size(303, 24);
             this.comboBoxAdv1.TabIndex = 4;
             this.comboBoxAdv1.ValueMember = "outlCode";
             // 

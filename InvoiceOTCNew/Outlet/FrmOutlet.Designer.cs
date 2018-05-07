@@ -170,7 +170,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.outletBindingSource, "outlStat", true));
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.ForeColor = System.Drawing.Color.Black;
             this.checkBox1.Location = new System.Drawing.Point(111, 183);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(57, 19);
@@ -226,7 +226,7 @@
             // isppnCheckBox
             // 
             this.isppnCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.outletBindingSource, "isppn", true));
-            this.isppnCheckBox.ForeColor = System.Drawing.Color.White;
+            this.isppnCheckBox.ForeColor = System.Drawing.Color.Black;
             this.isppnCheckBox.Location = new System.Drawing.Point(111, 215);
             this.isppnCheckBox.Name = "isppnCheckBox";
             this.isppnCheckBox.Size = new System.Drawing.Size(104, 15);

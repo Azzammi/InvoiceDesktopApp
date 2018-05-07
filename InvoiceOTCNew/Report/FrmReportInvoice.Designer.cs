@@ -39,10 +39,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 428);
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "FrmReportInvoice";
             this.Text = "FrmReportInvoice";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FrmReportInvoice_Load);
             this.ResumeLayout(false);
 
         }

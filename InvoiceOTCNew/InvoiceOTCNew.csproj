@@ -125,17 +125,35 @@
     <Compile Include="FrmAbout.Designer.cs">
       <DependentUpon>FrmAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSalesOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSalesOrder.Designer.cs">
+      <DependentUpon>FrmSalesOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\PageOffset.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Report\FrmReportRekapInvoiceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FrmReportRekapInvoiceDialog.Designer.cs">
+      <DependentUpon>FrmReportRekapInvoiceDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\rptInvoiceWODiscDev.cs">
       <DependentUpon>rptInvoiceWODiscDev.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Template\TemplateDialogFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Template\TemplateDialogFrm.Designer.cs">
+      <DependentUpon>TemplateDialogFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="User\FrmListUser.cs">
       <SubType>Form</SubType>
@@ -347,9 +365,18 @@
     <EmbeddedResource Include="FrmAbout.resx">
       <DependentUpon>FrmAbout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmSalesOrder.resx">
+      <DependentUpon>FrmSalesOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FrmReportRekapInvoiceDialog.resx">
+      <DependentUpon>FrmReportRekapInvoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\rptInvoiceWODiscDev.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptInvoiceWODiscDev.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Template\TemplateDialogFrm.resx">
+      <DependentUpon>TemplateDialogFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\FrmListUser.resx">
       <DependentUpon>FrmListUser.cs</DependentUpon>
@@ -460,6 +487,7 @@
     <None Include="Properties\DataSources\InvoiceOTC.Model.Outlet.datasource" />
     <None Include="Properties\DataSources\InvoiceOTC.Model.Product.datasource" />
     <None Include="Properties\DataSources\InvoiceOTC.Model.Salesman.datasource" />
+    <None Include="Properties\DataSources\InvoiceOTC.Model.SalesOrder.datasource" />
     <None Include="Properties\DataSources\InvoiceOTC.Model.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
