@@ -74,6 +74,9 @@
             this.idPaymentTextBox = new System.Windows.Forms.TextBox();
             this.isPayedCheckBox = new System.Windows.Forms.CheckBox();
             this.comboBoxAdv1 = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.qtyLabel = new System.Windows.Forms.Label();
             this.detailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.itemCode = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.itemQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,6 +105,7 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxAdv1)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detailBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -270,6 +274,7 @@
             this.tableLayoutPanel4.Controls.Add(this.dataGridView1, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel6, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel2, 0, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 58);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -591,6 +596,40 @@
             this.comboBoxAdv1.TabIndex = 4;
             this.comboBoxAdv1.ValueMember = "outlCode";
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.067941F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 91.93206F));
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.qtyLabel, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 472);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.89764F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.10236F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(471, 127);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Qty";
+            // 
+            // qtyLabel
+            // 
+            this.qtyLabel.AutoSize = true;
+            this.qtyLabel.Location = new System.Drawing.Point(41, 0);
+            this.qtyLabel.Name = "qtyLabel";
+            this.qtyLabel.Size = new System.Drawing.Size(13, 13);
+            this.qtyLabel.TabIndex = 1;
+            this.qtyLabel.Text = "0";
+            // 
             // detailBindingSource
             // 
             this.detailBindingSource.DataMember = "detail";
@@ -654,6 +693,8 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxAdv1)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detailBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -694,5 +735,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource pItemsBindingSource;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label qtyLabel;
     }
 }

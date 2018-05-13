@@ -22,7 +22,7 @@ namespace InvoiceOTCNew
         #endregion
 
         #region Load Method
-        private void LoadReport()
+        protected override void LoadReport()
         {
             RptListOutlet crInvoice = new RptListOutlet();
 

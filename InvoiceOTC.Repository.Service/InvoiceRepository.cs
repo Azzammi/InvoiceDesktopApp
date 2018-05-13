@@ -186,7 +186,7 @@ namespace InvoiceOTC.Repository.Service
             IList<Invoice> listOfInvoice = new List<Invoice>();
             try
             {
-                m_Sql = $" SELECT * FROM Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID ORDER BY A.InvoiceID ASC WHERE A.DueDate < {DateTime.Now}" ;
+                m_Sql = $" SELECT * FROM Invoice AS A LEFT OUTER JOIN InvoiceDetail AS B ON A.InvoiceID = B.InvoiceID WHERE A.DueDate::date < '{DateTime.Now.ToShortDateString()}' ORDER BY A.InvoiceID ASC" ;
                 listOfInvoice = MappingRecordToObj(m_Sql).ToList();
             }
             catch (Exception ex)
@@ -340,6 +340,11 @@ namespace InvoiceOTC.Repository.Service
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Get summary of subtotal per item
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
         public decimal GetSubTotalSum(Invoice data)
         {            
             decimal result = 0;
@@ -359,6 +364,10 @@ namespace InvoiceOTC.Repository.Service
             return result;
         }
 
+        /// <summary>
+        /// Get Sub total from item
+        /// </summary>
+        /// <param name="data"></param>
         public void GetSubTotal(InvoiceDetail data)
         {
             if (data == null) return;
@@ -389,6 +398,19 @@ namespace InvoiceOTC.Repository.Service
             data.total = result;
 
             return result;
+        }
+
+        public int GetTotalQty(Invoice data)
+        {
+            int qty = 0;
+            foreach(InvoiceDetail detail in data.p_Items)
+            {
+                if(detail != null)
+                {
+                    qty += detail.itemQty;
+                }
+            }
+            return qty;
         }
         #endregion
     }

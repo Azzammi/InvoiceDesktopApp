@@ -36,7 +36,7 @@ namespace InvoiceOTCNew
             LoadReport();
         }
 
-        private void LoadReport()
+        protected override void LoadReport()
         {
             //ReportDocument invoiceObjectReport = new ReportDocument(); ;
             //invoiceObjectReport.Load(Application.StartupPath + "\\rptInvoice.rpt");

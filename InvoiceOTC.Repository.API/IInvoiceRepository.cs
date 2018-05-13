@@ -60,6 +60,13 @@ namespace InvoiceOTC.Repository.API
         decimal GetInvoiceNett(Invoice data);
 
         /// <summary>
+        /// Get Item Total Qty
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        int GetTotalQty(Invoice data);
+
+        /// <summary>
         /// Get All Invoice that has passed the due date
         /// </summary>
         /// <returns></returns>

@@ -32,6 +32,8 @@ namespace InvoiceOTCNew
             softwareLbl.Text = AssemblyProduct() + " " + AssemblyCopyright();
 
             isConnected();
+            homeBtn.PerformClick();
+
         }
 
         #region Application Properties
@@ -104,6 +106,14 @@ namespace InvoiceOTCNew
         }
 
         #region Form Show
+        public void Dashboard_Show(object sender, EventArgs e)
+        {
+            var frm = new FrmDashBoard();
+            CheckExistingForm(frm);
+        }
+        #region Dashboard
+
+        #endregion
 
         #region Master Data
         public void about_Show(object sender, EventArgs e)
@@ -218,11 +228,6 @@ namespace InvoiceOTCNew
         private void tabbedMDIManager1_TabControlAdding(object sender, Syncfusion.Windows.Forms.Tools.TabbedMDITabControlEventArgs args)
         {
             panel1.Visible = false;
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        }        
     }
 }

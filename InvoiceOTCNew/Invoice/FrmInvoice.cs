@@ -64,6 +64,7 @@ namespace InvoiceOTCNew
             invoiceBindingSource.Add(data);
 
             isAddNew = false;
+            countBtn.PerformClick();
         }
         #endregion
 
@@ -133,10 +134,12 @@ namespace InvoiceOTCNew
         private void countBtn_Click(object sender, EventArgs e)
         {
             Invoice dataInvoice = (Invoice)invoiceBindingSource.Current;
-            dataInvoice.p_Items = pItemsBindingSource.List.Cast<InvoiceDetail>().ToListSorted();
+            dataInvoice.p_Items = pItemsBindingSource.List.Cast<InvoiceDetail>().ToListSorted();            
 
             invoiceRepository.GetInvoiceNett(dataInvoice);
             invoiceBindingSource.ResetCurrentItem();
+
+            qtyLabel.Text = invoiceRepository.GetTotalQty(dataInvoice).ToString();
         }
 
         private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
