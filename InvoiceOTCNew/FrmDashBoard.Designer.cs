@@ -30,6 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.outletCountLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.outletDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,16 +62,13 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.invoiceCountLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.outletCountLabel = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outletDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -88,6 +88,44 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.22007F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(915, 309);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.outletCountLabel, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label4, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 162);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(451, 144);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // outletCountLabel
+            // 
+            this.outletCountLabel.AutoSize = true;
+            this.outletCountLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.outletCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outletCountLabel.Location = new System.Drawing.Point(3, 0);
+            this.outletCountLabel.Name = "outletCountLabel";
+            this.outletCountLabel.Size = new System.Drawing.Size(219, 144);
+            this.outletCountLabel.TabIndex = 0;
+            this.outletCountLabel.Text = "0";
+            this.outletCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(228, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(220, 144);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Jumlah toko yang aktif";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // outletDataGridView
             // 
@@ -313,44 +351,6 @@
             this.label2.Text = "Invoice Yang Belum di bayar / sudah jatuh tempo";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.outletCountLabel, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label4, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 162);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(451, 144);
-            this.tableLayoutPanel3.TabIndex = 3;
-            // 
-            // outletCountLabel
-            // 
-            this.outletCountLabel.AutoSize = true;
-            this.outletCountLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.outletCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outletCountLabel.Location = new System.Drawing.Point(3, 0);
-            this.outletCountLabel.Name = "outletCountLabel";
-            this.outletCountLabel.Size = new System.Drawing.Size(219, 144);
-            this.outletCountLabel.TabIndex = 0;
-            this.outletCountLabel.Text = "0";
-            this.outletCountLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Location = new System.Drawing.Point(228, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(220, 144);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Jumlah toko yang aktif";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // FrmDashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,16 +358,18 @@
             this.ClientSize = new System.Drawing.Size(915, 309);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmDashBoard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmDashBoard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.outletDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.outletBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoiceBindingSource)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

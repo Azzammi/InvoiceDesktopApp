@@ -114,16 +114,27 @@ namespace InvoiceOTCNew
             Product currentProduct = (Product)productBindingSource.Current;
             InvoiceDetail item = row.DataBoundItem as InvoiceDetail;
 
-            if (e.ColumnIndex == 3)
+            switch (e.ColumnIndex)
             {
-                countBtn.PerformClick();
-            }
-            else if(e.ColumnIndex == 0)
-            {
-                row.Cells[3].Value = currentProduct.price;
+                case 0:
+                    row.Cells[1].Value = currentProduct.itemSort;
+                    row.Cells[4].Value = currentProduct.price;
+                    break;                
+                case 1:
+                    currentProduct = productRepository.GetItemBySort(row.Cells[1].Value.ToString().ToUpper());
+                    row.Cells[0].Value = currentProduct.itemCode;                    
+                    row.Cells[1].Value = currentProduct.itemSort;
+                    row.Cells[4].Value = currentProduct.price;
+                    break;
+                case 5:
+                    
+                    break;
+                default:
+                    countBtn.PerformClick();
+                    break;
             }
 
-            invoiceRepository.GetSubTotal(item);
+            invoiceRepository.GetSubTotal(item);            
         }
 
         private void detailBindingSource_CurrentItemChanged(object sender, EventArgs e)

@@ -95,18 +95,32 @@ namespace InvoiceOTC.Repository.Service
         public Product GetItemByID(string itemCode)
         {
             Product product = null;
-
             try
             {
                 m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Products " +
                          "WHERE ITEMCODE = @itemCode";
                 product = context.db.Query<Product>(m_Sql, new { itemCode }).SingleOrDefault();
             }
-            catch
+            catch(Exception ex)
             {
-
+                m_Log.Error("Get Product failed",ex);
             }
+            return product;
+        }
 
+        public Product GetItemBySort(string itemSort)
+        {
+            Product product = null;
+            try
+            {
+                m_Sql = @"SELECT ITEMCODE, ITEMNAME, ITEMSORT, Brand, Jenis, Category, SubCategory, Price, Stat FROM Products " +
+                         "WHERE ITEMSORT = @itemSort";
+                product = context.db.Query<Product>(m_Sql, new { itemSort }).SingleOrDefault();
+            }
+            catch (Exception ex)
+            {
+                m_Log.Error("Get Product failed", ex);
+            }
             return product;
         }
         #endregion

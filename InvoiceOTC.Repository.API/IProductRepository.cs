@@ -17,6 +17,13 @@ namespace InvoiceOTC.Repository.API
         /// <param name="itemCode"></param>
         /// <returns></returns>
         Product GetItemByID(string itemCode);
+    
+        /// <summary>
+        /// Return product by product sort name
+        /// </summary>
+        /// <param name="itemSort"></param>
+        /// <returns></returns>
+        Product GetItemBySort(string itemSort);
 
         /// <summary>
         /// Get only active product
