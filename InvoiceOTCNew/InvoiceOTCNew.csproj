@@ -149,6 +149,12 @@
     <Compile Include="Report\FrmReportRekapInvoiceDialog.Designer.cs">
       <DependentUpon>FrmReportRekapInvoiceDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\rptInvoiceWODiscDevHendra.cs">
+      <DependentUpon>rptInvoiceWODiscDevHendra.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Report\rptInvoiceWODiscDev.cs">
       <DependentUpon>rptInvoiceWODiscDev.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -379,6 +385,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmReportRekapInvoiceDialog.resx">
       <DependentUpon>FrmReportRekapInvoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptInvoiceWODiscDevHendra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptInvoiceWODiscDevHendra.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\rptInvoiceWODiscDev.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

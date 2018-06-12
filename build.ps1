@@ -3,6 +3,6 @@
     $SolutionName = "Invoice OTC.sln"
   
     echo "Sedang melakukan proses build 32 bit untuk $SolutionName ..."
-    $MsBuildPath $SolutionName    
+    & $MsBuildPath $SolutionName    
     echo "Sedang melakukan proses build 64 bit untuk $SolutionName ..."
-    $MsBuildPath64 $SolutionName    
+    & $MsBuildPath64 $SolutionName    
