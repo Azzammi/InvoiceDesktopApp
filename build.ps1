@@ -4,10 +4,10 @@
     $SolutionName = "Invoice OTC.sln"
   
  
-    echo "Sedang merestore paket nuget untuk $env:SolutionName"
-    $env:NugetPath restore $env:SolutionName  
+    echo "Sedang merestore paket nuget untuk $SolutionName"
+    $NugetPath restore $SolutionName  
    
-    echo "Sedang melakukan proses build 32 bit untuk $env:SolutionName ..."
-    $env:MsBuildPath $env:SolutionName    
-    echo "Sedang melakukan proses build 64 bit untuk $env:SolutionName ..."
-    $env:MsBuildPath64 $env:SolutionName    
+    echo "Sedang melakukan proses build 32 bit untuk $SolutionName ..."
+    $MsBuildPath $SolutionName    
+    echo "Sedang melakukan proses build 64 bit untuk $SolutionName ..."
+    $MsBuildPath64 $SolutionName    
