@@ -16,15 +16,15 @@
   restore_nuget_package: # job 1
     stage: restore
     script:
-      - echo "Sedang merestore paket nuget untuk $SolutionName..."
-      - "$NugetPath restore $SolutionName"  
+      - echo "Sedang merestore paket nuget untuk ${SolutionName}..."
+      - "${NugetPath} restore ${SolutionName}"  
       
   build_solution: # job 2
     stage: build
     script:     
-      - echo "Sedang melakukan proses build 32 bit untuk $SolutionName..."
-      - "$MsBuildPath $SolutionName"    
+      - echo "Sedang melakukan proses build 32 bit untuk ${SolutionName}..."
+      - "${MsBuildPath} ${SolutionName}"    
       - echo "Sedang melakukan proses build 64 bit untuk $SolutionName..."
-      - "$MsBuildPath64 $SolutionName"    
+      - "${MsBuildPath64} ${SolutionName}"    
     only:
       - master # validasi untuk branch atau tag
