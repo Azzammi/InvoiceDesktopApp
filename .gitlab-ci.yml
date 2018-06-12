@@ -13,8 +13,8 @@
         - .\restore.ps1 | Out-File c:\gitlab-runner\helloworld.txt
         
   build_solution: # job 2
-    stage: build | Out-File c:\gitlab-runner\helloworld.txt
+    stage: build 
     script:     
-      - .\build.ps1 
+      - .\build.ps1 | Out-File c:\gitlab-runner\helloworld.txt 
     only:
       - master # validasi untuk branch atau tag
