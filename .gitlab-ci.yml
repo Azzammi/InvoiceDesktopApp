@@ -1,8 +1,8 @@
   variables:
-    $env:MsBuildPath = "C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe"
-    $env:MsBuildPath64 = "C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\amd64\\MSBuild.exe"
-    $env:NugetPath = "C:\\gitlab-runner\\nuget"
-    $env:SolutionName = "Invoice OTC.sln"
+    MsBuildPath : "C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\MSBuild.exe"
+    MsBuildPath64 : "C:\\Program Files (x86)\\MSBuild\\14.0\\Bin\\amd64\\MSBuild.exe"
+    NugetPath : "C:\\gitlab-runner\\nuget"
+    SolutionName : "Invoice OTC.sln"
   
   stages: # tipe dari job
     - restore # stage untuk merestore paket nuget
@@ -16,15 +16,15 @@
   restore_nuget_package: # job 1
     stage: restore
     script:
-      - echo "Sedang merestore paket nuget untuk ${SolutionName}..."
-      - "${NugetPath} restore ${SolutionName}"  
+      - echo "Sedang merestore paket nuget untuk $env:SolutionName"
+      - "$env:NugetPath restore $env:SolutionName"  
       
   build_solution: # job 2
     stage: build
     script:     
-      - echo "Sedang melakukan proses build 32 bit untuk ${SolutionName}..."
-      - "${MsBuildPath} ${SolutionName}"    
-      - echo "Sedang melakukan proses build 64 bit untuk $SolutionName..."
-      - "${MsBuildPath64} ${SolutionName}"    
+      - echo "Sedang melakukan proses build 32 bit untuk $env:SolutionName ..."
+      - "$env:MsBuildPath $env:SolutionName"    
+      - echo "Sedang melakukan proses build 64 bit untuk $env:SolutionName ..."
+      - "$env:MsBuildPath64 $env:SolutionName"    
     only:
       - master # validasi untuk branch atau tag
