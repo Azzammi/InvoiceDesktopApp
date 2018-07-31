@@ -39,7 +39,7 @@ namespace InvoiceOTC.Repository.Service
         #endregion
 
         #region Methods Select
-        private IEnumerable<Invoice> MappingRecordToObj(string sql, object param = null)
+        public IEnumerable<Invoice> MappingRecordToObj(string sql, object param = null)
         {
             IEnumerable<Invoice> listOfInvoice = null;
             try
@@ -76,7 +76,7 @@ namespace InvoiceOTC.Repository.Service
             return listOfInvoice;
         }
 
-        private IEnumerable<Invoice> MappingRecordToObjSorted(string sql, object param = null)
+        public IEnumerable<Invoice> MappingRecordToObjSorted(string sql, object param = null)
         {
             IEnumerable<Invoice> listOfInvoice = null;
             try

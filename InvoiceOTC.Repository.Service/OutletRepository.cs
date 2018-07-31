@@ -35,7 +35,7 @@ namespace InvoiceOTC.Repository.Service
             IList<Outlet> list = new List<Outlet>();
             try
             {
-                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT,ISPPN FROM OUTLET";
+                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,slsmCode,OUTLROUTE,OUTLSTAT,ISPPN, OUTLDISC FROM OUTLET";
                 list = context.db.Query<Outlet>(m_Sql).ToListSorted();
 
             }
@@ -51,7 +51,7 @@ namespace InvoiceOTC.Repository.Service
             Outlet outlet = null;
             try
             {
-                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT,ISPPN FROM OUTLET" +
+                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,slsmCode,OUTLROUTE,OUTLSTAT,ISPPN, OUTLDISC FROM OUTLET" +
                         " WHERE OUTLCODE = @outletCode";
 
                 outlet = context.db.Query<Outlet>(m_Sql, new { outletCode }).SingleOrDefault();
@@ -68,7 +68,7 @@ namespace InvoiceOTC.Repository.Service
             Outlet outlet = null;
             try
             {
-                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT,ISPPN FROM OUTLET" +
+                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,slsmCode,OUTLROUTE,OUTLSTAT,ISPPN,OUTLDISC FROM OUTLET" +
                         " WHERE OUTLNAME = @outletName";
 
                 outlet = context.db.Query<Outlet>(m_Sql, new { outletName }).SingleOrDefault();
@@ -85,8 +85,8 @@ namespace InvoiceOTC.Repository.Service
             Outlet outlet = null;
             try
             {
-                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT,ISPPN FROM OUTLET" +
-                        " WHERE OUTLSLSM = @slsmCode";
+                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,slsmCode,OUTLROUTE,OUTLSTAT,ISPPN,OUTLDISC FROM OUTLET" +
+                        " WHERE slsmCode = @slsmCode";
 
                 outlet = context.db.Query<Outlet>(m_Sql, new { slsmCode }).SingleOrDefault();
             }
@@ -107,7 +107,7 @@ namespace InvoiceOTC.Repository.Service
 
             try
             {
-                m_Sql = @"SELECT outlcode, outlname, outladdress, outlslsm, outlroute, outlstat, isppn FROM outlet WHERE " + key + " ILIKE @newValue";
+                m_Sql = @"SELECT outlcode, outlname, outladdress, slsmCode, outlroute, outlstat, isppn, OUTLDISC FROM outlet WHERE " + key + " ILIKE @newValue";
 
                 list = context.db.Query<Outlet>(m_Sql, new { newValue }).ToListSorted();
             }
@@ -123,7 +123,7 @@ namespace InvoiceOTC.Repository.Service
             IList<Outlet> list = new List<Outlet>();
             try
             {
-                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,OUTLSLSM,OUTLROUTE,OUTLSTAT,ISPPN FROM OUTLET WHERE OUTLSTAT = 't'";
+                m_Sql = @"SELECT OUTLCODE,OUTLNAME,OUTLADDRESS,slsmCode,OUTLROUTE,OUTLSTAT,ISPPN, OUTLDISC FROM OUTLET WHERE OUTLSTAT = 't'";
                 list = context.db.Query<Outlet>(m_Sql).ToListSorted();
 
             }
@@ -158,9 +158,9 @@ namespace InvoiceOTC.Repository.Service
             try
             {
                 m_Sql = @"INSERT INTO OUTLET " +
-                        "(OutlCode, OutlName, OutlAddress, OutlSlsm, OutlRoute, OutlStat, ISPPN)" +
+                        "(OutlCode, OutlName, OutlAddress, slsmCode, OutlRoute, OutlStat, ISPPN, outlDisc)" +
                         " VALUES " +
-                        "(@outlCode, @outlName, @outlAddress, @outlSlsm, @outlRoute, @OutlStat, @isPPN)";
+                        "(@outlCode, @outlName, @outlAddress, @slsmCode, @outlRoute, @OutlStat, @isPPN, @outlDisc)";
                 result = context.db.Execute(m_Sql, obj);
             }
             catch
@@ -178,10 +178,11 @@ namespace InvoiceOTC.Repository.Service
                 m_Sql = @"UPDATE OUTLET SET " +
                         "OutlName = @outlName, " +
                         "OutlAddress = @outlAddress, " +
-                        "OutlSlsm = @outlSlsm, " +
+                        "slsmCode = @slsmCode, " +
                         "OutlRoute = @outlRoute, " +
                         "OutlStat = @outlStat, " +
-                        "ISPPN = @isppn " +
+                        "ISPPN = @isppn , " +
+                        "outlDisc = @outlDisc " +
                         "WHERE OutlCode = @outlCode";
                 result = context.db.Execute(m_Sql, obj);
             }

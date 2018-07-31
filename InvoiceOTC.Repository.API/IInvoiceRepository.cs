@@ -12,6 +12,22 @@ namespace InvoiceOTC.Repository.API
     public interface IInvoiceRepository : IBaseRepository<Invoice>
     {
         /// <summary>
+        /// Function to mapping 2 table from database
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        IEnumerable<Invoice> MappingRecordToObj(string sql, object param = null);
+
+        /// <summary>
+        /// Function to mapping 2 table from database, and have a sort ability
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="param"></param>
+        /// <returns></returns>
+        IEnumerable<Invoice> MappingRecordToObjSorted(string sql, object param = null);
+
+        /// <summary>
         /// Get Invoice by invoice ID
         /// </summary>
         /// <param name="idInvoice"></param>

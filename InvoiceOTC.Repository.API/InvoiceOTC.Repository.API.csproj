@@ -107,7 +107,8 @@
     <Compile Include="Import Excel\IProductImportExcel.cs" />
     <Compile Include="IProductRepository.cs" />
     <Compile Include="ISalesmanRepository.cs" />
-    <Compile Include="ISalesOrder.cs" />
+    <Compile Include="ISalesOrderDetailRepository.cs" />
+    <Compile Include="ISalesOrderRepository.cs" />
     <Compile Include="ISupplierRepository.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

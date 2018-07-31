@@ -90,6 +90,7 @@ namespace InvoiceOTC.Repository.Service
                          invoiceid, itemcode, itemqty, discount, itemprice, subtotal)
                          VALUES (@invoiceID, @itemCode, @itemQty, @discount, @itemPrice, @subTotal);";
                 result = context.db.Execute(m_Sql, obj);
+                //If Data already exist then update
                 if (result == 0) result = Update(obj);
             }
             catch

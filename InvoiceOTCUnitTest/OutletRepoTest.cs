@@ -26,7 +26,7 @@ namespace InvoiceOTCUnitTest
         {
             var outlet = new Outlet
             {
-                outlSlsm = "slsmtest",
+                slsmCode = "slsmtest",
                 outlCode = "outlet001",
                 outlName = "outletTestName",
                 outlAddress = "outlAddressNo.002020",
@@ -44,7 +44,7 @@ namespace InvoiceOTCUnitTest
         {
             var outlet = new Outlet
             {
-                outlSlsm = "slsmtest",
+                slsmCode = "slsmtest",
                 outlCode = "outlet001",
                 outlName = "LenovoMart",
                 outlAddress = "Griya Asri 2",
@@ -73,7 +73,7 @@ namespace InvoiceOTCUnitTest
             var outlet = outlets[index];
 
             Assert.IsNotNull(outlets);
-            Assert.AreEqual("slsmtest", outlet.outlSlsm);
+            Assert.AreEqual("slsmtest", outlet.slsmCode);
         }
 
         [Test]
@@ -89,7 +89,7 @@ namespace InvoiceOTCUnitTest
             var outlet= m_outlet.GetOutletByCode("outlet001");
 
             Assert.AreEqual("outlet001", outlet.outlCode);
-            Assert.AreEqual("slsmtest", outlet.outlSlsm);
+            Assert.AreEqual("slsmtest", outlet.slsmCode);
             Assert.AreEqual("outletTestName", outlet.outlName);
             Assert.AreEqual("outlAddressNo.002020", outlet.outlAddress);
             Assert.AreEqual("F01", outlet.outlRoute);
@@ -103,7 +103,7 @@ namespace InvoiceOTCUnitTest
             var outlet = m_outlet.GetOutletByName("LenovoMart");
 
             Assert.AreEqual("outlet001", outlet.outlCode);
-            Assert.AreEqual("slsmtest", outlet.outlSlsm);
+            Assert.AreEqual("slsmtest", outlet.slsmCode);
             Assert.AreEqual("LenovoMart", outlet.outlName);
             Assert.AreEqual("Griya Asri 2", outlet.outlAddress);
             Assert.AreEqual("F33", outlet.outlRoute);
@@ -117,7 +117,7 @@ namespace InvoiceOTCUnitTest
             var outlet = m_outlet.GetOutletBySalesmanID("slsmtest");
 
             Assert.AreEqual("outlet001", outlet.outlCode);
-            Assert.AreEqual("slsmtest", outlet.outlSlsm);
+            Assert.AreEqual("slsmtest", outlet.slsmCode);
             Assert.AreEqual("LenovoMart", outlet.outlName);
             Assert.AreEqual("Griya Asri 2", outlet.outlAddress);
             Assert.AreEqual("F33", outlet.outlRoute);

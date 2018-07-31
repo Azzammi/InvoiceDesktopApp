@@ -38,7 +38,7 @@ namespace InvoiceOTCNew
 
         private void FrmListBoundGrid_Load(object sender, EventArgs e)
         {
-           
+            CheckDueDate();
         }
 
         private void InitData()
@@ -123,17 +123,12 @@ namespace InvoiceOTCNew
 
                 if (selectedCellCount > 0)
                 {
-                    if (dataGridView1.AreAllCellsSelected(true))
-                    {
-                        MessageBox.Show("Just Select cells that have number !");
-                    }
-                    else
-                    {                                                
+                                                               
                         foreach(DataGridViewRow row in dataGridView1.SelectedRows)
                         {
                             invoiceNumbers.Add(Convert.ToInt32(row.Cells[0].Value));
                         }                        
-                    }
+                    
                 }
             }
             catch (Exception ex)
@@ -202,12 +197,8 @@ namespace InvoiceOTCNew
 
                 if (selectedCellCount > 0)
                 {
-                    if (dataGridView1.AreAllCellsSelected(true))
-                    {
-                        MessageBox.Show("Just Select cells that have number !");
-                    }
-                    else
-                    {
+                    if (dataGridView1.AreAllCellsSelected(false))
+                    {                    
                         //Using Linq to iterate through selected cells
                         countDGCellBtn.Text = "Count : " + selectedCellCount;
                         var total = (from DataGridViewCell cell in dataGridView1.SelectedCells

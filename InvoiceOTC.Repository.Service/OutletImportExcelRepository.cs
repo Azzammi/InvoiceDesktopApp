@@ -30,7 +30,7 @@ namespace InvoiceOTC.Repository.Service
                     myItem.outlCode = row.Cells[2].Value.ToString();
                     myItem.outlName = row.Cells[3].Value.ToString();
                     myItem.outlAddress = row.Cells[4].Value.ToString();
-                    myItem.outlSlsm = row.Cells[0].Value.ToString();
+                    myItem.slsmCode = row.Cells[0].Value.ToString();
                     myItem.outlRoute = row.Cells[5].Value.ToString();
                     myItem.outlStat = true;                   
 

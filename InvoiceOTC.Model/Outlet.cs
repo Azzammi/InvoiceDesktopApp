@@ -13,9 +13,10 @@ namespace InvoiceOTC.Model
         public string outlCode { get; set; }
         public string outlName { get; set; }
         public string outlAddress { get; set; }
-        public string outlSlsm { get; set; }
-        public string outlRoute { get; set; }
+        public string slsmCode { get; set; }
+        public string outlRoute { get; set; }        
         public bool outlStat { get; set; }       
-        public bool isppn { get; set; } 
+        public bool isppn { get; set; }
+        public int outlDisc { get; set; }
     }
 }

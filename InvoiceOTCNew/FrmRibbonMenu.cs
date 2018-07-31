@@ -31,9 +31,7 @@ namespace InvoiceOTCNew
             this.Text = AssemblyProduct();
             softwareLbl.Text = AssemblyProduct() + " " + AssemblyCopyright();
 
-            isConnected();
-            homeBtn.PerformClick();
-
+            isConnected();         
         }
 
         #region Application Properties
@@ -189,6 +187,7 @@ namespace InvoiceOTCNew
         }
         public void Form_Load(object sender, EventArgs e)
         {
+            homeBtn.PerformClick();
             CheckSession();
         }     
         public void timer1_tick(object sender, EventArgs e)

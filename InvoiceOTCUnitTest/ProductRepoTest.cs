@@ -14,7 +14,7 @@ namespace InvoiceOTCUnitTest
     [TestFixture]
     public class ProductRepoTest
     {
-        /* The method name still random, cause of Nunit Bug */
+        /* The method name when running is still random, cause of Nunit Bug */
 
         #region Declaration
         private IProductRepository m_product;
