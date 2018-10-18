@@ -103,14 +103,12 @@ namespace InvoiceOTCNew
             frm.Show();
         }
 
-        #region Form Show
+        #region Dashboard
         public void Dashboard_Show(object sender, EventArgs e)
         {
             var frm = new FrmDashBoard();
             CheckExistingForm(frm);
         }
-        #region Dashboard
-
         #endregion
 
         #region Master Data
@@ -165,9 +163,7 @@ namespace InvoiceOTCNew
             var frm = new FrmReportRekapInvoice();
             CheckExistingForm(frm);
         }
-        #endregion
-               
-        #endregion
+        #endregion                      
         
         public void Form_Closing(object sender, FormClosingEventArgs e)
         {

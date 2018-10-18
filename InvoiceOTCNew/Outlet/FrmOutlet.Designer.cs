@@ -217,7 +217,7 @@
             // 
             // outlSlsmTextBox
             // 
-            this.outlSlsmTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.outletBindingSource, "outlSlsm", true));
+            this.outlSlsmTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.outletBindingSource, "slsmCode", true));
             this.outlSlsmTextBox.Location = new System.Drawing.Point(111, 152);
             this.outlSlsmTextBox.Name = "outlSlsmTextBox";
             this.outlSlsmTextBox.Size = new System.Drawing.Size(282, 20);

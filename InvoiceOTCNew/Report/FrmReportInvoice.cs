@@ -42,8 +42,8 @@ namespace InvoiceOTCNew
             //invoiceObjectReport.Load(Application.StartupPath + "\\rptInvoice.rpt");
             
             //FieldingRw crInvoice = new FieldingRw();
-            rptInvoiceWODiscDev crInvoice = new rptInvoiceWODiscDev();
-            //rptInvoiceWODiscDevHendra crInvoice = new rptInvoiceWODiscDevHendra();
+            //rptInvoiceWODiscDev crInvoice = new rptInvoiceWODiscDev();
+            rptInvoiceWODiscDevHendra crInvoice = new rptInvoiceWODiscDevHendra();
 
             //Set DataSource First            
             crInvoice.Database.Tables["InvoiceOTC_Model_Invoice"].SetDataSource(invoiceRepo.GetAll());

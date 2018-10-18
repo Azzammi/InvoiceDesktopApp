@@ -51,7 +51,7 @@ namespace InvoiceOTCNew.Helper
             dgView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;            
             dgView1.ColumnHeadersHeight = 22;
             dgView1.DefaultCellStyle = dataGridViewCellStyle6;
-            dgView1.RowTemplate.Height = 40;
+            dgView1.RowTemplate.Height = 30;
 
             //Function to convert first letter in columnsHeader to uppercase
             foreach (DataGridViewColumn columnHeader in dgView1.Columns)
@@ -67,7 +67,7 @@ namespace InvoiceOTCNew.Helper
                 dgView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
                 dgView2.ColumnHeadersHeight = 22;
                 dgView2.DefaultCellStyle = dataGridViewCellStyle1;
-                dgView2.RowTemplate.Height = 40;
+                dgView2.RowTemplate.Height = 30;
             
                 //Function to convert first letter in columnsHeader to uppercase
                 foreach (DataGridViewColumn columnHeader in dgView2.Columns)

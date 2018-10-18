@@ -1,4 +1,6 @@
 ﻿using System;
+using FSCollections;
+using System.Collections.Generic;
 
 namespace InvoiceOTC.Model
 {
@@ -14,6 +16,9 @@ namespace InvoiceOTC.Model
         public string memo { get; set; }
         public string paymentAmount { get; set; }
         public string paymentStatus { get; set; }
+
+        public List<PaymentDetail> paymentDetail;
+        public FSBindingList<PaymentDetail> paymentDetailSortAble;
         #endregion        
     }
 }

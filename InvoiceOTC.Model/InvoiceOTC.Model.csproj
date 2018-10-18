@@ -92,6 +92,7 @@
     <Compile Include="Logs.cs" />
     <Compile Include="Outlet.cs" />
     <Compile Include="Payment.cs" />
+    <Compile Include="PaymentDetail.cs" />
     <Compile Include="Periode.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductPrices.cs" />

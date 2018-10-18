@@ -147,7 +147,7 @@ namespace InvoiceOTCNew
             Invoice dataInvoice = (Invoice)invoiceBindingSource.Current;
             dataInvoice.p_Items = pItemsBindingSource.List.Cast<InvoiceDetail>().ToListSorted();            
 
-            invoiceRepository.GetInvoiceNett(dataInvoice);
+            decimal total = invoiceRepository.GetInvoiceNett(dataInvoice);
             invoiceBindingSource.ResetCurrentItem();
 
             qtyLabel.Text = invoiceRepository.GetTotalQty(dataInvoice).ToString();

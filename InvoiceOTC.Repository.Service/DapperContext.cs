@@ -36,10 +36,10 @@ namespace InvoiceOTC.Repository.Service
             #endregion
 
             var server = "localhost";
-            var port = "5432";
-            var dbName = "otf_Invoice";
-            var userID = "openpg";
-            var userPassword = "openpgpwd";
+            var port = "5433";
+            var dbName = "OTF_Invoice";
+            var userID = "postgres";
+            var userPassword = "password";
             //var appName = "Invoice OTC";
 
             m_ProviderName = "Npgsql";
@@ -108,6 +108,7 @@ namespace InvoiceOTC.Repository.Service
 
             GC.SuppressFinalize(this);
         }
+
         public string GetLastID()
         {
             throw new NotImplementedException();

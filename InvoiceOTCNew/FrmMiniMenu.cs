@@ -22,6 +22,8 @@ namespace InvoiceOTCNew
 
             this.Text = AssemblyProduct;
             softwareLbl.Text = AssemblyProduct + " " + AssemblyCopyright;
+
+            
         }
         #endregion
 
@@ -88,6 +90,12 @@ namespace InvoiceOTCNew
         {
             var frm = new FrmReportListOutlet();
             frm.ShowDialog();
+        }
+
+        public void Dashboard_Show(object sender, EventArgs e)
+        {
+            var frm = new FrmDashBoard();
+            CheckExistingForm(frm);
         }
 
         #region Form Handling

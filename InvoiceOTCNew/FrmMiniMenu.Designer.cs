@@ -57,6 +57,7 @@
             this.outletBtn = new System.Windows.Forms.ToolStripButton();
             this.productBtn = new System.Windows.Forms.ToolStripButton();
             this.timerCtl = new System.Windows.Forms.Timer(this.components);
+            this.homeBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripEx1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -100,7 +101,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(98, 28);
+            this.toolStripButton1.Size = new System.Drawing.Size(98, 14);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -111,7 +112,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 28);
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 14);
             this.toolStripButton2.Text = "toolStripButton2";
             // 
             // menuStrip1
@@ -143,20 +144,20 @@
             // newInvoiceToolStripMenuItem
             // 
             this.newInvoiceToolStripMenuItem.Name = "newInvoiceToolStripMenuItem";
-            this.newInvoiceToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.newInvoiceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newInvoiceToolStripMenuItem.Text = "New Invoice";
             this.newInvoiceToolStripMenuItem.Click += new System.EventHandler(this.listInvoiceShow);
             // 
             // settingToolStripMenuItem
             // 
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.settingToolStripMenuItem.Text = "Setting";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // masterToolStripMenuItem
@@ -274,6 +275,7 @@
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeBtn,
             this.invoiceBtn,
             this.outletBtn,
             this.productBtn});
@@ -286,6 +288,7 @@
             // 
             // invoiceBtn
             // 
+            this.invoiceBtn.ForeColor = System.Drawing.Color.White;
             this.invoiceBtn.Image = global::InvoiceOTCNew.Properties.Resources.Invoice;
             this.invoiceBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.invoiceBtn.Name = "invoiceBtn";
@@ -295,6 +298,7 @@
             // 
             // outletBtn
             // 
+            this.outletBtn.ForeColor = System.Drawing.Color.White;
             this.outletBtn.Image = global::InvoiceOTCNew.Properties.Resources.Shop_WF;
             this.outletBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.outletBtn.Name = "outletBtn";
@@ -304,6 +308,7 @@
             // 
             // productBtn
             // 
+            this.productBtn.ForeColor = System.Drawing.Color.White;
             this.productBtn.Image = global::InvoiceOTCNew.Properties.Resources.Product_Box_02_WF;
             this.productBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.productBtn.Name = "productBtn";
@@ -316,6 +321,16 @@
             this.timerCtl.Enabled = true;
             this.timerCtl.Tick += new System.EventHandler(this.timerCtl_Tick);
             // 
+            // homeBtn
+            // 
+            this.homeBtn.ForeColor = System.Drawing.Color.White;
+            this.homeBtn.Image = global::InvoiceOTCNew.Properties.Resources.Contact_Settings_WF;
+            this.homeBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.homeBtn.Name = "homeBtn";
+            this.homeBtn.Size = new System.Drawing.Size(76, 36);
+            this.homeBtn.Text = "Home";
+            this.homeBtn.Click += new System.EventHandler(this.Dashboard_Show);
+            // 
             // FrmMiniMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,7 +341,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -377,5 +392,6 @@
         private System.Windows.Forms.ToolStripMenuItem outletToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listOutletToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton homeBtn;
     }
 }

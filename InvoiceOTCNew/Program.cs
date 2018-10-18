@@ -31,7 +31,7 @@ namespace InvoiceOTCNew
             {
                 if (spi.IsSingleInstance)
                 {
-                    Application.Run(new FrmSalesOrder());
+                    Application.Run(new FrmMiniMenu());
                 }
                 else
                 {
